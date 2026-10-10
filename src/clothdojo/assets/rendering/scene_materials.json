@@ -1,0 +1,48 @@
+{
+  "schema": "clothdojo_scene_materials_v1",
+  "sources": {
+    "isaac_5_0": {"revision": "5.0", "url": "https://docs.isaacsim.omniverse.nvidia.com/5.0.0/assets/usd_assets_overview.html"},
+    "geniesim_3_2": {"revision": "a0813aad7c16165daffbe6c2737754e0344809ee", "url": "https://huggingface.co/datasets/agibot-world/GenieSimAssets/tree/a0813aad7c16165daffbe6c2737754e0344809ee/objects/benchmark/table"}
+  },
+  "uv_convention": "Isaac materials repeat once per metre. Cropped GenieSim atlases fit once across the project table top to avoid repeat seams. These are our mappings, not measured source texture sizes.",
+  "materials": [
+    {
+      "id": "isaac_plywood", "source": "isaac_5_0", "kind": "mdl", "split": "train",
+      "license": "NVIDIA Isaac Sim Additional Software and Materials License",
+      "path": "isaac-5.0/NVIDIA/Materials/Base/Wood/Plywood.mdl", "subidentifier": "Plywood",
+      "source_sha256": "8e1e03c3e7d6d8aebdb685392a810cb2434cc3fb173699d7a720e8b12371055e"
+    },
+    {
+      "id": "isaac_oak_planks", "source": "isaac_5_0", "kind": "mdl", "split": "train",
+      "license": "NVIDIA Isaac Sim Additional Software and Materials License",
+      "path": "isaac-5.0/NVIDIA/Materials/Base/Wood/Oak_Planks.mdl", "subidentifier": "Oak_Planks",
+      "source_sha256": "ee7663babd82560bb96941610dcf9f6836fe7afc7117df31cbf9d0d816961ba9"
+    },
+    {
+      "id": "isaac_concrete_polished", "source": "isaac_5_0", "kind": "mdl", "split": "test",
+      "license": "NVIDIA Isaac Sim Additional Software and Materials License",
+      "path": "isaac-5.0/NVIDIA/Materials/Base/Masonry/Concrete_Polished.mdl", "subidentifier": "Concrete_Polished",
+      "source_sha256": "52256c09d0329af475217de04435495a348f9384b7cb248174b05ea0050f0573"
+    },
+    {
+      "id": "geniesim_table_000_wood", "source": "geniesim_3_2", "kind": "usd", "split": "train",
+      "license": "CC-BY-NC-SA-4.0",
+      "path": "geniesim-3.2/objects/benchmark/table/benchmark_table_000/Aligned.usd", "prim": "/World/Looks/ml_body",
+      "geometry_path": "geniesim-3.2/objects/benchmark/table/benchmark_table_000/Aligned.usda",
+      "geometry_sha256": "6082c88a1fb9ed61d5d2f6f761acc30c95843a677f74e2773dcfd520131aaea8",
+      "mesh": "/World/entity/body/visual",
+      "crop_xyxy": [0.02, 0.53, 0.98, 0.97],
+      "source_sha256": "c4b12880379aa9ce4cd9bf72d59e45ec3c2f83e57c83add9aead8dd12bf4bfbe"
+    },
+    {
+      "id": "geniesim_table_002_wood", "source": "geniesim_3_2", "kind": "usd", "split": "train",
+      "license": "CC-BY-NC-SA-4.0",
+      "path": "geniesim-3.2/objects/benchmark/table/benchmark_table_002/Aligned.usd", "prim": "/World/Looks/ml_body",
+      "geometry_path": "geniesim-3.2/objects/benchmark/table/benchmark_table_002/Aligned.usda",
+      "geometry_sha256": "d8de5a8e3c1332aa1e7dd85816191e049d5d5a37adae5ef0ff195fd7642bf7f5",
+      "mesh": "/World/entity/body/visual",
+      "crop_xyxy": [0.025, 0.275, 0.443, 0.975],
+      "source_sha256": "a804ee92d2b5fde009f67fbe0ce88b066f067c6801cb4756339bc95074658f0f"
+    }
+  ]
+}

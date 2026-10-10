@@ -1,0 +1,26 @@
+schema: clothdojo_evaluation_protocol
+protocol_id: shirt_fold_q_40s_v1
+stage: calibration
+task: shirt_fold
+
+timing:
+  control_fps: 50
+  horizon_seconds: 40.0
+  metric_hz: 1
+
+metric:
+  name: fold_quality
+
+success:
+  criterion: continuous_fold_quality_threshold_v1
+  continuous_seconds: 3.0
+  fold_quality_min: 0.14228658677130532
+
+target:
+  method: large_support_free_settle_v1
+  min_settle_seconds: 8.0
+  max_settle_seconds: 30.0
+  stability_window_seconds: 1.0
+  speed_rms_max_m_s: 0.02
+  robot_particle_collision: false
+  symmetry_center_xy: [0.651, 0.0]

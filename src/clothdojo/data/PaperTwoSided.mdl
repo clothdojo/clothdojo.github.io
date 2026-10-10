@@ -1,0 +1,24 @@
+mdl 1.8;
+import ::UsdPreviewSurface::*;
+import ::UsdPreviewSurfaceLib::*;
+
+export material PaperTwoSided(
+    uniform texture_2d color_texture = texture_2d(),
+    uniform texture_2d roughness_texture = texture_2d(),
+    uniform texture_2d normal_texture = texture_2d(),
+    uniform float2 uv_scale = float2(1.0),
+    uniform float back_scale = 0.8
+) = let {
+    float2 uv = ::UsdPreviewSurface::UsdPrimvarReader_float2(varname: "st") * uv_scale;
+    float3 c = ::UsdPreviewSurface::UsdUVTexture(file: color_texture, st: uv,
+        wrapS: ::UsdPreviewSurfaceLib::repeat, wrapT: ::UsdPreviewSurfaceLib::repeat).rgb;
+    float rough = ::UsdPreviewSurface::UsdUVTexture(file: roughness_texture, st: uv,
+        wrapS: ::UsdPreviewSurfaceLib::repeat, wrapT: ::UsdPreviewSurfaceLib::repeat).r;
+    float3 n = ::UsdPreviewSurface::UsdUVTexture(file: normal_texture, st: uv,
+        wrapS: ::UsdPreviewSurfaceLib::repeat, wrapT: ::UsdPreviewSurfaceLib::repeat,
+        scale: float4(2.0, 2.0, 2.0, 1.0),
+        bias: float4(-1.0, -1.0, -1.0, 0.0)).rgb;
+    material front = ::UsdPreviewSurface::UsdPreviewSurface(diffuseColor: c, roughness: rough, normal: n);
+    material back = ::UsdPreviewSurface::UsdPreviewSurface(diffuseColor: c * back_scale, roughness: rough, normal: n);
+} in material(thin_walled: true, surface: front.surface,
+    backface: back.surface, geometry: front.geometry, ior: front.ior);

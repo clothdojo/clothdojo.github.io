@@ -1,0 +1,6 @@
+config_name: piper
+config:
+  sim: clothdojo
+  robot: piper
+observation:
+  collect_freq: 50

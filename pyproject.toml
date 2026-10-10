@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=75,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clothdojo"
+version = "0.1.0a1"
+description = "Data and evaluation tools for bimanual garment manipulation"
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "numpy>=1.26,<1.27",
+    "scipy>=1.15.3,<1.18",
+    "opencv-python-headless==4.11.0.86",
+    "PyYAML>=6.0.2,<6.1",
+]
+
+[dependency-groups]
+dev = ["ruff==0.16.0"]
+
+[project.optional-dependencies]
+data = [
+    "pyarrow==20.0.0",
+]
+export = [
+    "lerobot @ https://github.com/huggingface/lerobot/archive/0cf864870cf29f4738d3ade893e6fd13fbd7cdb5.tar.gz ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "torch @ https://download.pytorch.org/whl/cu128/torch-2.7.1%2Bcu128-cp311-cp311-manylinux_2_28_x86_64.whl ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "torchvision @ https://download.pytorch.org/whl/cu128/torchvision-0.22.1%2Bcu128-cp311-cp311-manylinux_2_28_x86_64.whl ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "torchcodec==0.4.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "av==15.0.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "datasets==3.6.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "pyarrow==20.0.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "opencv-python==4.11.0.86 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+policy = [
+    "setuptools==75.8.2 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "rlinf @ https://github.com/RLinf/RLinf/archive/7d07a4212ee6858cc333e1d4fab7a37256d1f839.tar.gz ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "rlinf-openpi==0.1.1 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "hydra-core==1.4.0.dev1 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "omegaconf==2.4.0.dev4 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "ml-dtypes==0.4.1 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "tensorstore==0.1.74 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "huggingface-hub==0.32.3 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "fsspec==2025.3.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "gcsfs==2025.3.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "zarr==3.0.8 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "opencv-python==4.11.0.86 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "datasets==3.6.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "pyarrow==20.0.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "tyro==1.0.13 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "lerobot @ https://github.com/huggingface/lerobot/archive/0cf864870cf29f4738d3ade893e6fd13fbd7cdb5.tar.gz ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "torch @ https://download.pytorch.org/whl/cu128/torch-2.7.1%2Bcu128-cp311-cp311-manylinux_2_28_x86_64.whl ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "torchvision @ https://download.pytorch.org/whl/cu128/torchvision-0.22.1%2Bcu128-cp311-cp311-manylinux_2_28_x86_64.whl ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "torchcodec==0.4.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "av==15.0.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+sim = [
+    "imageio-ffmpeg==0.6.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "newton[sim] @ git+https://github.com/zlong-911/newton.git@363aab40133fa72d8536ec5e15802a466b1f6601 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "warp-lang==1.16.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "mujoco==3.11.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "mujoco-warp==3.11.0 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "usd-core==26.3 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "newton-usd-schemas==0.4.1 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+
+[tool.setuptools]
+license-files = ["LICENSE", "third_party/*/LICENSE"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"clothdojo.evaluation" = ["fold_quality_weights.json"]
+"clothdojo.assets" = ["simulation_manifest.json", "rendering/*.json"]
+"clothdojo.data" = ["*.mdl", "*.kit"]
+
+[tool.ruff]
+extend-exclude = ["XPolicyLab"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

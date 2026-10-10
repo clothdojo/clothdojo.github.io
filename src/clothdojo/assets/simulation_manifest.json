@@ -1,0 +1,76 @@
+{
+  "bundle": "piper-simulation-v1",
+  "garment_id": "rand_ZZCWITH5HY",
+  "files": [
+    {
+      "path": "garments/converted/rand_ZZCWITH5HY/rand_ZZCWITH5HY.usdc",
+      "sha256": "3a160c94d6315b90d2ec992f2b0ffa949ca2a5557be1025fdb59851812894098",
+      "bytes": 487550
+    },
+    {
+      "path": "robots/piper/payloads/Physics/mujoco.usda",
+      "sha256": "52c968c3b52cf2ce3d76dd2152417291b9c2fb75ca1efee7d6922b2a87088508",
+      "bytes": 91665
+    },
+    {
+      "path": "robots/piper/payloads/Physics/physics.usda",
+      "sha256": "caa961cfd41fe923eeddd4206a421e7c856b053fcde7864dc1ca835d6948a0d4",
+      "bytes": 37073
+    },
+    {
+      "path": "robots/piper/payloads/Physics/physx.usda",
+      "sha256": "4961970c5cd06498b27aa007f34e3cf44204cd96a29e09728653004e6cf73ef0",
+      "bytes": 3173
+    },
+    {
+      "path": "robots/piper/payloads/base.usda",
+      "sha256": "6eab859c717622319311426d7ec7c9fa2effe9e160f9a99eb6e5125889540640",
+      "bytes": 471806
+    },
+    {
+      "path": "robots/piper/payloads/collisions.usdc",
+      "sha256": "d4d72b4f560f52178642de6bd44e04a4010fab103f7c850267df5ccbd2335018",
+      "bytes": 328609
+    },
+    {
+      "path": "robots/piper/payloads/geometries.usd",
+      "sha256": "e8213095d2f277ca2bf281d924ee126449d9e46abf6589c55509468add7710b9",
+      "bytes": 8949207
+    },
+    {
+      "path": "robots/piper/payloads/installation.usdc",
+      "sha256": "d44c7539eb03d89fc4112689b562ccc454a25263654826556350be7b74f336c4",
+      "bytes": 450147
+    },
+    {
+      "path": "robots/piper/payloads/installation_materials.usda",
+      "sha256": "7dfc1ea796c535c00f1728476c76dbf9eb075e79482e0e65ef91acce9dd8aae0",
+      "bytes": 65191
+    },
+    {
+      "path": "robots/piper/payloads/instances.usda",
+      "sha256": "e16337b572453c22486d05b26ee80c651f77e4e871f1e15d57ae5ec0853ddb7d",
+      "bytes": 196224
+    },
+    {
+      "path": "robots/piper/payloads/materials.usda",
+      "sha256": "48c6148dcd52b272750cfbbffbc28723c835ef36c107e91ebf844b8c91b4f22b",
+      "bytes": 20752
+    },
+    {
+      "path": "robots/piper/payloads/robot.usda",
+      "sha256": "c81d0e472a684c8a1651cebced944fdfec881f4462e3d1c82623a5e9a3017ac4",
+      "bytes": 12006
+    },
+    {
+      "path": "robots/piper/piper.usda",
+      "sha256": "6804287b45ccb834a75dc39882c4cf7588dfca70d4026b283396b088e724aabf",
+      "bytes": 25308
+    },
+    {
+      "path": "robots/piper/piper_dual_m.usda",
+      "sha256": "ada8d624e1903668204c9d6a60f8f9687a2f776b774833b67175dfd69b0c82f6",
+      "bytes": 658
+    }
+  ]
+}

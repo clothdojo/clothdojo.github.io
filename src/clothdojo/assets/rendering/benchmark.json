@@ -1,0 +1,343 @@
+{
+  "schema": "clothdojo_visual_benchmark_v1",
+  "version": "2026-09-09-train-test",
+  "sources": {
+    "polyhaven": {
+      "url": "https://polyhaven.com/",
+      "license": "CC0-1.0",
+      "revision": "per-asset files_hash in materials.json"
+    },
+    "isaac_5_0": {
+      "url": "https://docs.isaacsim.omniverse.nvidia.com/5.0.0/assets/usd_assets_environments.html",
+      "license": "NVIDIA Isaac Sim Additional Software and Materials License",
+      "revision": "5.0",
+      "license_url": "https://docs.isaacsim.omniverse.nvidia.com/5.0.0/common/license-isaac-sim-additional.html"
+    },
+    "geniesim_3_2": {
+      "url": "https://huggingface.co/datasets/agibot-world/GenieSimAssets",
+      "license": "CC-BY-NC-SA-4.0",
+      "revision": "a0813aad7c16165daffbe6c2737754e0344809ee",
+      "license_url": "https://huggingface.co/datasets/agibot-world/GenieSimAssets/blob/a0813aad7c16165daffbe6c2737754e0344809ee/LICENSE"
+    }
+  },
+  "splits": {
+    "train": {
+      "cloth": [
+        "fabric_pattern_07",
+        "book_pattern",
+        "fabric_pattern_05",
+        "velour_velvet",
+        "cotton_jersey",
+        "rough_linen",
+        "denim_fabric_03",
+        "poly_wool_herringbone",
+        "quatrefoil_jacquard_fabric",
+        "curly_teddy_checkered",
+        "faux_fur_geometric",
+        "floral_jacquard",
+        "wool_boucle",
+        "caban",
+        "curly_teddy_natural",
+        "denim_fabric",
+        "denim_fabric_04",
+        "denim_fabric_05",
+        "denim_fabric_06",
+        "denmin_fabric_02",
+        "jersey_melange",
+        "jogging_melange",
+        "knitted_fleece",
+        "polar_fleece",
+        "terry_cloth",
+        "scuba_suede",
+        "stretch_poplin",
+        "terlenka",
+        "bi_stretch"
+      ],
+      "table": [
+        "plywood",
+        "wood_table_001",
+        "oak_veneer_01",
+        "marble_01",
+        "wood_table",
+        "wood_table_large",
+        "lacquered_cherry_wood",
+        "rosewood_veneer1",
+        "fine_grained_wood",
+        "terrazzo_tiles"
+      ],
+      "ground": [
+        "laminate_floor_02",
+        "concrete_floor_worn_001",
+        "wood_floor",
+        "granite_tile",
+        "concrete_floor_01",
+        "concrete_floor_02",
+        "wood_floor_deck",
+        "wood_floor_worn",
+        "floor_tiles_04",
+        "floor_tiles_06"
+      ],
+      "lighting": [
+        "neutral"
+      ],
+      "background": [
+        "isaac_office",
+        "isaac_warehouse",
+        "geniesim_laboratory",
+        "geniesim_restaurant",
+        "geniesim_factory",
+        "geniesim_market"
+      ]
+    },
+    "test": {
+      "cloth": [
+        "crepe_georgette",
+        "crepe_satin",
+        "ribbed_corduroy",
+        "waffle_pique_cotton",
+        "gingham_check"
+      ],
+      "table": [
+        "dark_wood",
+        "synthetic_wood"
+      ],
+      "ground": [
+        "interior_tiles",
+        "brown_floor_tiles"
+      ],
+      "lighting": [
+        "test_warm",
+        "test_cool"
+      ],
+      "background": [
+        "isaac_hospital",
+        "geniesim_home_02"
+      ]
+    }
+  },
+  "families": {
+    "cloth": {
+      "denim_series": [
+        "denim_fabric_03",
+        "denim_fabric",
+        "denim_fabric_04",
+        "denim_fabric_05",
+        "denim_fabric_06",
+        "denmin_fabric_02"
+      ],
+      "crepe": [
+        "crepe_georgette",
+        "crepe_satin"
+      ],
+      "curly_teddy": [
+        "curly_teddy_checkered",
+        "curly_teddy_natural"
+      ],
+      "fabric_pattern": [
+        "fabric_pattern_05",
+        "fabric_pattern_07"
+      ]
+    },
+    "table": {
+      "wood_table_series": [
+        "wood_table",
+        "wood_table_001",
+        "wood_table_large"
+      ]
+    },
+    "ground": {
+      "concrete_floor_series": [
+        "concrete_floor_01",
+        "concrete_floor_02",
+        "concrete_floor_worn_001"
+      ],
+      "wood_floor_series": [
+        "wood_floor",
+        "wood_floor_deck",
+        "wood_floor_worn"
+      ],
+      "floor_tiles_series": [
+        "floor_tiles_04",
+        "floor_tiles_06"
+      ]
+    }
+  },
+  "backgrounds": [
+    {
+      "id": "isaac_office",
+      "path": "isaac-5.0/Isaac/Environments/Office/office.usd",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "yaw": 0,
+      "hide_prims": [],
+      "source_sha256": "32b83ba60d0b12d953ed693bb1c2ab8c51332defc4bbb8240eced5ad2e2ce8d0",
+      "source": "isaac_5_0"
+    },
+    {
+      "id": "isaac_hospital",
+      "path": "isaac-5.0/Isaac/Environments/Hospital/hospital.usd",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "yaw": 0,
+      "hide_prims": [],
+      "source_sha256": "83e5d606fbb2de873314379e0ff74900930735eb3ae99b312c9bf17db0033383",
+      "source": "isaac_5_0"
+    },
+    {
+      "id": "isaac_warehouse",
+      "path": "isaac-5.0/Isaac/Environments/Simple_Warehouse/warehouse.usd",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "yaw": 0,
+      "hide_prims": [],
+      "source_sha256": "9c264843a2f296bb3c8b2e36f108b251442e31e12657b322d4b5556466b5344c",
+      "source": "isaac_5_0"
+    },
+    {
+      "id": "geniesim_laboratory",
+      "path": "geniesim-3.2/background/common/laboratory/Aligned.usd",
+      "translation": [
+        0.65,
+        0.0,
+        -0.0009521488
+      ],
+      "scale": 1.0,
+      "yaw": 0,
+      "hide_prims": [],
+      "source_sha256": "695eaf6b640c989c838285779f2acb1356921cafba6af9902ec7a7707088f02a",
+      "source": "geniesim_3_2"
+    },
+    {
+      "id": "geniesim_factory",
+      "path": "geniesim-3.2/background/common/factory/background.usd",
+      "translation": [
+        0.65,
+        0.0,
+        0.0
+      ],
+      "scale": 1.0,
+      "yaw": 0,
+      "hide_prims": [],
+      "source_sha256": "d3ccf530c0826ef33977bf5dd4da5cd3d397cbfa33c4a7b87d9077e9a8523273",
+      "source": "geniesim_3_2"
+    },
+    {
+      "id": "geniesim_restaurant",
+      "path": "geniesim-3.2/background/common/restaurant/Aligned.usd",
+      "translation": [
+        0.65,
+        -0.9650000000000001,
+        1.73
+      ],
+      "scale": 1.0,
+      "yaw": 0,
+      "hide_prims": [
+        "part_00",
+        "part_03"
+      ],
+      "source_sha256": "a5f219c8a48f1eb737fee79084079933ebb15e4f64cf5e9b7abff73fbfa6348a",
+      "source": "geniesim_3_2"
+    },
+    {
+      "id": "geniesim_market",
+      "path": "geniesim-3.2/background/common/market/Aligned.usd",
+      "translation": [
+        0.45499999999999996,
+        0.0,
+        1.62
+      ],
+      "scale": 1.0,
+      "yaw": 0,
+      "hide_prims": [],
+      "source_sha256": "24dbdbe08ecaddcab37d444e2bc41e06dd80e02c56cf68b713e20d7768e9cbd5",
+      "source": "geniesim_3_2"
+    },
+    {
+      "id": "geniesim_home_02",
+      "path": "geniesim-3.2/background/common/home_02/Aligned.usd",
+      "translation": [
+        4.764102,
+        -0.874167,
+        -0.0386904478
+      ],
+      "scale": 1.0,
+      "yaw": 240,
+      "hide_prims": [],
+      "source_sha256": "caa3be723733ec948e430a7bf243c1cb819f94bb9e0d94bdbd1abdcfd5fb77a5",
+      "source": "geniesim_3_2"
+    }
+  ],
+  "indoor_lighting": {
+    "target": [
+      0.65,
+      0,
+      0.65
+    ],
+    "position_range": [
+      [
+        0.15,
+        1.15
+      ],
+      [
+        -0.7,
+        0.7
+      ],
+      [
+        1.65,
+        2.05
+      ]
+    ],
+    "width": 1.2,
+    "height": 0.8,
+    "fill_position": [
+      0.65,
+      0,
+      1.8
+    ],
+    "fill_ratio": 0.12,
+    "conditions": {
+      "neutral": {
+        "intensity": [
+          10000,
+          24000
+        ],
+        "temperature": [
+          3500,
+          7000
+        ]
+      },
+      "test_warm": {
+        "intensity": [
+          10000,
+          24000
+        ],
+        "temperature": [
+          2800,
+          3500
+        ]
+      },
+      "test_cool": {
+        "intensity": [
+          10000,
+          24000
+        ],
+        "temperature": [
+          7000,
+          8000
+        ]
+      }
+    }
+  }
+}

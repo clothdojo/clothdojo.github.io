@@ -1,0 +1,4 @@
+assets/robots/piper/** -diff
+assets/garments/** -diff
+templates/*.npz -diff
+scripts/data/initial_states/*.npz -diff

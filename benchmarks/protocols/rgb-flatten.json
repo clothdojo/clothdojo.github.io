@@ -1,0 +1,33 @@
+{
+  "metric": {
+    "deformable_weight": 0.65,
+    "symmetry": "planar_90"
+  },
+  "protocol_id": "shirt_flatten_calibration",
+  "schema": "clothdojo_evaluation_protocol",
+  "stage": "calibration",
+  "success": {
+    "continuous_seconds": 0.1,
+    "criterion": "continuous_geometric_threshold_v1",
+    "deformable_distance_max": 0.08810820503011346,
+    "rigid_distance_max": 0.04299899448500946
+  },
+  "target": {
+    "max_settle_seconds": 30.0,
+    "method": "large_support_free_settle_v1",
+    "min_settle_seconds": 8.0,
+    "robot_particle_collision": false,
+    "speed_rms_max_m_s": 0.02,
+    "stability_window_seconds": 1.0,
+    "symmetry_center_xy": [
+      0.651,
+      0.0
+    ]
+  },
+  "task": "shirt_flatten",
+  "timing": {
+    "control_fps": 50,
+    "horizon_seconds": 60.0,
+    "metric_hz": 10
+  }
+}

@@ -1,0 +1,133 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.1.2"
+    }
+    defaultPrim = "piper_dual"
+    doc = """Converted Piper robot asset; generated from the upstream URDF source."""
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    subLayers = [
+        @./physics.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "piper_dual"
+{
+    over "Physics"
+    {
+        over "tn__leftjoint1_uF" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__leftjoint2_uF" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__leftjoint3_uF" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__leftjoint4_uF" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__leftjoint5_uF" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__leftjoint6_uF" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__leftjoint7_uF" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 57.29578
+        }
+
+        over "tn__leftjoint8_uF" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 57.29578
+        }
+
+        over "tn__rightjoint1_gH" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__rightjoint2_gH" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__rightjoint3_gH" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__rightjoint4_gH" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__rightjoint5_gH" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__rightjoint6_gH" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 286.4789
+        }
+
+        over "tn__rightjoint7_gH" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 57.29578
+        }
+
+        over "tn__rightjoint8_gH" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 57.29578
+        }
+    }
+}
+

@@ -1,0 +1,25 @@
+recursive-include scripts *.py *.npz
+include README.md
+exclude DATA.md
+include LICENSE
+include uv.lock
+include .python-version
+recursive-include configs *.yaml
+recursive-include env_cfg *.yml *.json
+recursive-include integrations *.py
+recursive-include scripts *.py
+recursive-include requirements *.txt
+recursive-include third_party/agilex LICENSE
+recursive-include third_party/lerobot LICENSE
+include third_party/README.md
+recursive-include assets/robots/piper *.usd *.usda *.usdc
+recursive-include assets/garments/converted/rand_ZZCWITH5HY *.usdc
+recursive-include templates *.npz
+
+# Selected third-party runtime; no model subprojects.
+recursive-include XPolicyLab *.py *.toml
+include XPolicyLab/LICENSE
+recursive-include docs *.md
+include THIRD_PARTY_NOTICES.md
+recursive-include third_party/xpolicylab LICENSE
+recursive-include tests *.py

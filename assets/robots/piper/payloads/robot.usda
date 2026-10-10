@@ -1,0 +1,357 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.1.2"
+    }
+    defaultPrim = "piper_dual"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def "piper_dual" (
+    prepend apiSchemas = ["IsaacRobotAPI"]
+)
+{
+    prepend rel isaac:physics:robotJoints = [
+        </piper_dual/Physics/root_joint>,
+        </piper_dual/Physics/left/clamp_mount>,
+        </piper_dual/Physics/right/clamp_mount>,
+        </piper_dual/Physics/left/mount>,
+        </piper_dual/Physics/right/mount>,
+        </piper_dual/Physics/left/joint1>,
+        </piper_dual/Physics/left/joint2>,
+        </piper_dual/Physics/left/joint3>,
+        </piper_dual/Physics/left/joint4>,
+        </piper_dual/Physics/left/joint5>,
+        </piper_dual/Physics/left/joint6>,
+        </piper_dual/Physics/left/joint7>,
+        </piper_dual/Physics/left/joint8>,
+        </piper_dual/Physics/left/camera_joint>,
+        </piper_dual/Physics/right/joint1>,
+        </piper_dual/Physics/right/joint2>,
+        </piper_dual/Physics/right/joint3>,
+        </piper_dual/Physics/right/joint4>,
+        </piper_dual/Physics/right/joint5>,
+        </piper_dual/Physics/right/joint6>,
+        </piper_dual/Physics/right/joint7>,
+        </piper_dual/Physics/right/joint8>,
+        </piper_dual/Physics/right/camera_joint>,
+    ]
+    prepend rel isaac:physics:robotLinks = [
+        </piper_dual/Geometry/world_base>,
+        </piper_dual/Geometry/world_base/left/clamp>,
+        </piper_dual/Geometry/world_base/right/clamp>,
+        </piper_dual/Geometry/world_base/left/base_link>,
+        </piper_dual/Geometry/world_base/left/base_link/link1>,
+        </piper_dual/Geometry/world_base/left/base_link/link1/link2>,
+        </piper_dual/Geometry/world_base/left/base_link/link1/link2/link3>,
+        </piper_dual/Geometry/world_base/left/base_link/link1/link2/link3/link4>,
+        </piper_dual/Geometry/world_base/left/base_link/link1/link2/link3/link4/link5>,
+        </piper_dual/Geometry/world_base/left/base_link/link1/link2/link3/link4/link5/link6>,
+        </piper_dual/Geometry/world_base/left/base_link/link1/link2/link3/link4/link5/link6/link7>,
+        </piper_dual/Geometry/world_base/left/base_link/link1/link2/link3/link4/link5/link6/link8>,
+        </piper_dual/Geometry/world_base/left/base_link/link1/link2/link3/link4/link5/link6/camera>,
+        </piper_dual/Geometry/world_base/right/base_link>,
+        </piper_dual/Geometry/world_base/right/base_link/link1>,
+        </piper_dual/Geometry/world_base/right/base_link/link1/link2>,
+        </piper_dual/Geometry/world_base/right/base_link/link1/link2/link3>,
+        </piper_dual/Geometry/world_base/right/base_link/link1/link2/link3/link4>,
+        </piper_dual/Geometry/world_base/right/base_link/link1/link2/link3/link4/link5>,
+        </piper_dual/Geometry/world_base/right/base_link/link1/link2/link3/link4/link5/link6>,
+        </piper_dual/Geometry/world_base/right/base_link/link1/link2/link3/link4/link5/link6/link7>,
+        </piper_dual/Geometry/world_base/right/base_link/link1/link2/link3/link4/link5/link6/link8>,
+        </piper_dual/Geometry/world_base/right/base_link/link1/link2/link3/link4/link5/link6/camera>,
+    ]
+    token isaac:robotType = "Default"
+
+    def "Geometry"
+    {
+        def "world_base" (
+            prepend apiSchemas = ["IsaacLinkAPI"]
+        )
+        {
+            def Scope "left"
+            {
+                over "clamp" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                }
+
+                over "base_link" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "link1" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "link2" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "link3" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "link4" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "link5" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                        over "link6" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                            over "link7" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                            }
+
+                                            over "link8" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                            }
+
+                                            over "camera" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "camera_optical_frame" (
+                                                    prepend apiSchemas = ["IsaacSiteAPI"]
+                                                )
+                                                {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            def Scope "right"
+            {
+                over "clamp" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                }
+
+                over "base_link" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "link1" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "link2" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "link3" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "link4" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "link5" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                        over "link6" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                            over "link7" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                            }
+
+                                            over "link8" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                            }
+
+                                            over "camera" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "camera_optical_frame" (
+                                                    prepend apiSchemas = ["IsaacSiteAPI"]
+                                                )
+                                                {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    def "Physics"
+    {
+        over "root_joint" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        def Scope "left"
+        {
+            over "clamp_mount" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "mount" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint1" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint2" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint3" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint4" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint5" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint6" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint7" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint8" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "camera_joint" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+        }
+
+        def Scope "right"
+        {
+            over "clamp_mount" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "mount" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint1" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint2" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint3" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint4" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint5" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint6" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint7" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "joint8" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+
+            over "camera_joint" (
+                prepend apiSchemas = ["IsaacJointAPI"]
+            )
+            {
+            }
+        }
+    }
+}
+

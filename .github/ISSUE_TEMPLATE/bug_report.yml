@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a reproducible problem in a supported workflow.
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include the commit/version, OS, Python, installation command, and GPU/driver if used.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Provide the smallest command and input configuration that reproduces the problem. Identify the asset/model versions without uploading private data or weights.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+      description: Include the complete relevant traceback. Remove credentials and private information.
+    validations:
+      required: true

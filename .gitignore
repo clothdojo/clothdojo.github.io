@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+/assets/*
+!/assets/garments/
+/assets/garments/*
+!/assets/garments/converted/
+/assets/garments/converted/*
+!/assets/garments/converted/rand_ZZCWITH5HY/
+!/assets/robots/
+/assets/robots/*
+!/assets/robots/piper/
+/outputs/
+/models/
+
+# Local preparation records; not part of the public project.
+/notes/
+/AGENTS.md
+/DATA.md

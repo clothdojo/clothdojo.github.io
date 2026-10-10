@@ -1,0 +1,9 @@
+# Linux x86_64 / Python 3.11. Install into a separate environment; see README.md.
+--extra-index-url https://pypi.nvidia.com
+--extra-index-url https://download.pytorch.org/whl/cpu
+isaacsim[extscache]==5.0.0.0
+isaacsim-replicator==5.0.0.0
+# Physics/rendering use Warp CUDA and RTX; the Isaac Python utilities use CPU Torch.
+torch==2.7.0+cpu
+torchvision==0.22.0+cpu
+torchaudio==2.7.0+cpu

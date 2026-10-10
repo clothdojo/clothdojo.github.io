@@ -1,0 +1,2477 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.1.2"
+    }
+    defaultPrim = "piper_dual"
+    doc = """Converted Piper robot asset; generated from the upstream URDF source."""
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    subLayers = [
+        @./physics.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "piper_dual"
+{
+    over "Physics"
+    {
+        def MjcActuator "tn__leftjoint1_uF_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__leftjoint1_uF>
+        }
+
+        def MjcActuator "tn__leftjoint2_uF_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__leftjoint2_uF>
+        }
+
+        def MjcActuator "tn__leftjoint3_uF_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__leftjoint3_uF>
+        }
+
+        def MjcActuator "tn__leftjoint4_uF_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__leftjoint4_uF>
+        }
+
+        def MjcActuator "tn__leftjoint5_uF_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__leftjoint5_uF>
+        }
+
+        def MjcActuator "tn__leftjoint6_uF_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__leftjoint6_uF>
+        }
+
+        def MjcActuator "tn__leftjoint7_uF_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__leftjoint7_uF>
+        }
+
+        def MjcActuator "tn__leftjoint8_uF_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__leftjoint8_uF>
+        }
+
+        def MjcActuator "tn__rightjoint1_gH_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__rightjoint1_gH>
+        }
+
+        def MjcActuator "tn__rightjoint2_gH_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__rightjoint2_gH>
+        }
+
+        def MjcActuator "tn__rightjoint3_gH_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__rightjoint3_gH>
+        }
+
+        def MjcActuator "tn__rightjoint4_gH_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__rightjoint4_gH>
+        }
+
+        def MjcActuator "tn__rightjoint5_gH_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__rightjoint5_gH>
+        }
+
+        def MjcActuator "tn__rightjoint6_gH_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__rightjoint6_gH>
+        }
+
+        def MjcActuator "tn__rightjoint7_gH_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__rightjoint7_gH>
+        }
+
+        def MjcActuator "tn__rightjoint8_gH_actuator"
+        {
+            uniform double mjc:forceRange:max = 100
+            uniform double mjc:forceRange:min = -100
+            custom rel mjc:target
+            prepend rel mjc:target = </piper_dual/Physics/tn__rightjoint8_gH>
+        }
+
+        over "root_joint"
+        {
+        }
+
+        over "tn__leftclamp_mount_hN"
+        {
+        }
+
+        over "tn__rightclamp_mount_yO"
+        {
+        }
+
+        over "tn__leftmount_eE"
+        {
+        }
+
+        over "tn__leftjoint1_uF" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__leftjoint2_uF" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__leftjoint3_uF" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__leftjoint4_uF" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__leftjoint5_uF" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__leftjoint6_uF" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__leftjoint7_uF" (
+            delete apiSchemas = ["PhysicsDriveAPI:linear", "PhysicsJointStateAPI:linear"]
+        )
+        {
+        }
+
+        over "tn__leftjoint8_uF" (
+            delete apiSchemas = ["PhysicsDriveAPI:linear", "PhysicsJointStateAPI:linear"]
+        )
+        {
+        }
+
+        over "tn__leftcamera_joint_xO"
+        {
+        }
+
+        over "tn__rightmount_vF"
+        {
+        }
+
+        over "tn__rightjoint1_gH" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__rightjoint2_gH" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__rightjoint3_gH" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__rightjoint4_gH" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__rightjoint5_gH" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__rightjoint6_gH" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "tn__rightjoint7_gH" (
+            delete apiSchemas = ["PhysicsDriveAPI:linear", "PhysicsJointStateAPI:linear"]
+        )
+        {
+        }
+
+        over "tn__rightjoint8_gH" (
+            delete apiSchemas = ["PhysicsDriveAPI:linear", "PhysicsJointStateAPI:linear"]
+        )
+        {
+        }
+
+        over "tn__rightcamera_joint_jQ"
+        {
+        }
+    }
+
+    over "Geometry"
+    {
+        over "world_base"
+        {
+            over "tn__leftbase_link_gK"
+            {
+                over "tn__leftlink1_eE"
+                {
+                    over "tn__leftlink2_eE"
+                    {
+                        over "tn__leftlink3_eE"
+                        {
+                            over "tn__leftlink4_eE"
+                            {
+                                over "tn__leftlink5_eE"
+                                {
+                                    over "tn__leftlink6_eE"
+                                    {
+                                        over "tn__leftlink7_eE"
+                                        {
+                                            over "link7"
+                                            {
+                                                over "tn__meshbb880dc67cc045009f211ef5eb81c008_vq0DINS"
+                                                {
+                                                }
+
+                                                over "tn__mesha4f9121bce6b474bbe4c71fe4fee8f8b_vq0DINS"
+                                                {
+                                                }
+                                            }
+
+                                            over "link7_1"
+                                            {
+                                            }
+                                        }
+
+                                        over "tn__leftlink8_eE"
+                                        {
+                                            over "link8"
+                                            {
+                                                over "tn__mesha402634b35b3497bbe399e5e6e8d66d1_vq0DINS"
+                                                {
+                                                }
+
+                                                over "tn__mesha113f79a6d9e43f48757781e31e033b8_vq0DINS"
+                                                {
+                                                }
+
+                                                over "tn__meshaeafbd671ffb42da94852dee9c8149c4001_bv0DINSt1"
+                                                {
+                                                }
+
+                                                over "tn__meshb9c17018abb243c6884370da2b43a335001_bv0DINSt1"
+                                                {
+                                                }
+                                            }
+
+                                            over "link8_1"
+                                            {
+                                            }
+                                        }
+
+                                        over "tn__leftcamera_uF"
+                                        {
+                                            over "tn__leftcamera_optical_frame_Wb0"
+                                            {
+                                            }
+
+                                            over "box"
+                                            {
+                                            }
+
+                                            over "box_1"
+                                            {
+                                            }
+                                        }
+
+                                        over "camera_v3"
+                                        {
+                                            over "tn__binary_stl_file039_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file038_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file037_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file036_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file035_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file034_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file032_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file031_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file030_qR"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1015_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1014_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1013_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1012_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid___________1003_xTHg0qlZ0i7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________2009_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________2008_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________3009_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________3008_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__1007_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__1006_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__2007_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__2006_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________1003_xTHg0qlZ0s2h4"
+                                            {
+                                            }
+                                        }
+
+                                        over "camera_v3_1"
+                                        {
+                                            over "tn__binary_stl_file039_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file038_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file037_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file036_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file035_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file034_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file032_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file031_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file030_qR"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1015_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1014_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1013_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1012_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid___________1003_xTHg0qlZ0i7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________2009_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________2008_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________3009_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________3008_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__1007_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__1006_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__2007_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__2006_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________1003_xTHg0qlZ0s2h4"
+                                            {
+                                            }
+                                        }
+                                    }
+
+                                    over "link5"
+                                    {
+                                        over "tn__meshffdf9a7cee1348be84cfe596574fc1b8_vq0DINS"
+                                        {
+                                        }
+
+                                        over "tn__mesha6784797aa264a34818493d6c0e4bec9_vq0DINS"
+                                        {
+                                        }
+
+                                        over "tn__meshae7f272255ec4b959bd630d6051a6052_vq0DINS"
+                                        {
+                                        }
+
+                                        over "tn__mesha32826faee894cb8a6cc4082a54cb94a_vq0DINS"
+                                        {
+                                        }
+
+                                        over "tn__mesha13e3e6dbcfb4d0f8475d06cbb8fd4a3_vq0DINS"
+                                        {
+                                        }
+
+                                        over "tn__meshc6cb981419da49729275bde64cb55a4a_vq0DINS"
+                                        {
+                                        }
+                                    }
+
+                                    over "link5_1"
+                                    {
+                                    }
+                                }
+
+                                over "link4"
+                                {
+                                    over "tn__mesha90d9e327a48413faeefa4400c829305_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__meshf42976da476c44ff8c506699f0dc4ad5_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__mesha09e12e5276c425fba0475b2fa3925ab_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__mesha00284f2e4064119a40b83e90245a0b0_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__meshae2f8ddec8514297af56a1dd3bf66509_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__mesha941c25194594ae798fb29a1dae46e59_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__mesha23146ede2a64420bee532890a0ff77b_vq0DINS"
+                                    {
+                                    }
+                                }
+
+                                over "link4_1"
+                                {
+                                }
+                            }
+
+                            over "link3"
+                            {
+                                over "tn__meshae91a55d213a416f846fe68926006ad0_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha178dfdd3f2045a392719be3fb1f8440_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha81abbf84f3b454cb3cea4f2a02a360d_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshad8f725065d74e9ea243f413b936960d_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshae79b3c57694483586a14dcfbe64f21b_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha1d8906f5d2d4fbcbf62e87d1e5cdc3a_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha5a9829e2c634122adb4a5a4d01db382_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshfe401ede7d124fe29dace23df76e1093_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha1e3e619d5e74f5faafd1a0e48cf128f_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshad97065351924e62923bd9ca7bdae348_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshde60218ef7fa4204ab3af568f3e1d8ff_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha87c98341b354b138cd7f12d64b697d2_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha0954e2e81394e9e82babc0c0f5ba81f_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha32eea84b32c43bdbd00b2bfc2f8934e_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha9fb16d144ab4a49abfb448e9fff084a_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha862d6c2edb54b1f9d19ce8ab0386fe8_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha392dc7da12944ca96e2722e7f057488_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshf8bead66dd374e2b91f156a786138334_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshb434199e0284486c8f09ae2ce7e61215_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshabb725c1efb24d52986377cdeaba3e25_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha7018561c7804346ba43587bf82ec0ad_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha053116579464f2b9bd446a0a19ced28_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshaecd654dddc943bb9968af6c2531fb19_vq0DINS"
+                                {
+                                }
+                            }
+
+                            over "link3_1"
+                            {
+                            }
+                        }
+
+                        over "link2"
+                        {
+                            over "tn__meshf32e8376d50a49dcbd27de97a52fccc2_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaf03738ab0f04d73886f062b791e4845_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4b93a0642f9419a8e857ce00e6f340e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha074b70dd253493a821df3afb49ae34e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha871b8dcc60449fe82cdbde739d9c334_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaa47d508aa0b4225aa44e8ee9850faff_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha75973e21de243aba76f90f2f24f3fdd_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshabae592f3ee6430aa4feac1c0f18ac5c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8e8413dd7a941afb1fad38aadc6818c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha576460afebb4397982f282f2648b837_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf61d6b60fcbe42cd9c8cb073051d2e1d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha5ca988b07944d40a25949c8c9ddcebc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshad56d47ebb884da3bbacfc1adc9fade8_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha96dde8b762943fbbd86bb3fa6677376_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha11238427ede4a97a827a90a499b1883_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshacb4a1aba4c54041b5a6bd491f53b79c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshdb5a06f526314bd5b2d906241d7918ae_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshdc5d23b47fed41a19512ff6fdc6266b0_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshe7d048d57816403db531b3355254bc91_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaec17b9652fb4c94ae47c6ac961e2daa_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshd5324224c9cf4f5b9ceb4a68908283e5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha83f0116f5ee44ba94ce780e42a87743_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaddd483865d844dcb7240cc4119b71fa_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshdd1d9a10463c4d1f97eba7b287e3fb38_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha1b5e90f58f0473ebd0b4af458f3b704_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8a89d8ccb9e4bd2b73274d8d4cc02c5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb3f81228f8ad4caf843c2a6ccb3d7fee_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf080bf8c36624dccbfba1927ee25d73c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha96bd7345ebd466cafc663e526bf1f49_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha9c5beddfec94534baaf05dcd21cceb6_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha3b60822c0db46c3b4206d47f2aef234_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha5b4f67254e2491d91953686402ecddd_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshacfd32f6986544e796c6cda28162b84d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshabefdb9dbff04a929f17fd5060f9dcbc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4667112b2a346baa42b34fbf87b17a0_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshe2f438d07b9d4a2282bf3207ef02a12e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshafcd309d963b45629262a835fe9b2426_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshe210da6aae2e421281fbb14fc74b58b7_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshcb7010404f6b411bac91447d4f6e0620_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshacfa4fed649745ac9c5c8f78aaa93f90_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha3bc682f121a4977b43d7887783a1b6a_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha0ed26f8cc5b4f1a9cff11216743dfa9_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshffe524b4efab444caa0e2c0e4d35542a_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4414fb9dcd64064b6f6fed99c62aa94_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha7c664b5de9b486490487c23523c0fdc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshac2c953ecef442b2af08887799420ca6_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha49fcc48e14643f3bc1dd037363a65c1_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha9a67e567fcb4d83ad5b40e467af90aa_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4a0cf4a2ac24327bbd9f659775c0840_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb912234b4f7d468abffb4cacbeef0c4d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshafb1538b3cc14423b0671bf98bf2d8c1_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshc7c7a7d8b95c4a3caeb19be3b306e346_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha1e7622bde6d46feb8ba153687bb1690_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha202312207c64c29b8df1340ba50a612_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaeb95ececebd4ec1989ed80767d409c4_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha423afb13ea44a41a0f5db36774f5b25_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8ef6445c341480f9bd41ee35e39a3cc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4c701ac9c4441bbb6ca29b6230ceac7_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha96ad2dc1c1f4ed0951a692620ef7fd9_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha185833b2a0b4d05a898d946f3acdae5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha08d342dfead4e32b42e6c174e7caee5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshab15c471f28b4ea98093342f436c94e8_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha30771c4b4274697bd30c8f32c3e6228_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf9990f6c79d549c1b2613519a1ad3351_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshae98ffefa1634f4a9e57e7ae72888789_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshac266dc0a2934557ae96e560e20b4599_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshad2d955069ee4dbd813a63a928a2e62e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha87232648a6440849779b3a705ad1180_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf0a69537e5dc4db58cd525e34960be9c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb663fdca315a4af5839c2f486a8fd321_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha74bdbeaf74e4c7aaae75e6deaacae85_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha0a62706531d48bab71365fed9f0b399_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf1ba208f42e545df96cd9424acecf7a6_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8863dfb25584804993a584ccf3dba32_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaeec2b48cb1642b19a0c3a2db404fe58_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha0a34f2c8c084825b5b929b156be6f87_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha50273c1180342428e41bb140f5196f3_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha76631dfa6e64f1992c42715479a2693_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha831052664ca43efa48db790ce4ca24c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb3481af259c942d5b615663b7810329b_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha764265350b34142a066a45e5f23e9f9_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha7797e841d8f460abef20dbe0540c01c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaba750b07ea1488a882d0b9569686ee0_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha351ec6dd8ae4fb88320f66392fe803c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshae977fdb8308425e813cf29bfdef7b15_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha7d8008759cc4291ae8e510a81d041a1_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha3c1961e8f864c9f8901310b48942f08_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha199d6ad91414314b076e135fc1e31da_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshc2223fc8dfb1420484426e626070fe42_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshd84c8e25f2af4d0fbcf781a439658828_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshafebac703f0b4c1389bc47a29b9de4cd_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha074eb7906644bf7893ce3f991f53336_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha62b71298b074f338739a526ae817dc0_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshd2806d9c28634e74b600457622f44483_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaf981e1acc15485cb43f5473dda30747_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshd3d252b9cccb42df98d7362a09e37291_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha389c932e30f489cbc42690203b488a9_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshab1a283a25804ccfbd8800380f012dbc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshea25216c95c64e7f8b7dee175b0a4be5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb336db098b1c4b05b925690d91812c03_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha55c7c9389cd4a1d92babb31d4e1568b_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha010b28a2316423c8a1df466731efaf3_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshe0399a09855f439faac9a42c64874dbc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshae2fa5c3d39e44089d123cb2e3109638_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshac7565dc3b5b4dacb9d5c82c3c901dad_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshd6ce5ca22ec749b2ac470caebf086a3d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaced4392c2924101aea334112c0bb60d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha788944c64224dbf8f3d188b94ae0c02_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshc803c81229c44cd6bdde830677da2746_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8ae89decae14f34a789ae4527e9f7d8_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha91d06f225e94dec8efdde38701d82a1_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha5cc46054e744b699ad8836981ab5bf5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb789be8a2db949b7998700890e519cd6_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha79817d28fe449c7828f664c523f8740_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf013bd5a25414afbb9441b997342b40f_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaa5c6997734f4653bd10f1f3d22a4ef2_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha9b94148fb6c488ba46d3cde6e875be6_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaad41143595940d8a679ace1c4202a0e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaa196afc272740c08873e27e9f76968d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha0e78bc5b1d4421180c08cc93fe407ac_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshca882510b1464e478a18b36bd77e3cff_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf3367dc4dc06472e9b040f214b4b4918_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshcf0a2f499c9b454a9f613cd5da0db92c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshc36278f38c5145e0aa254e011dd9d60d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha64f2740cbfe40619d8110e93822ad4e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha42f37004a3743269fe2889fb9c22f5b_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8973a45338b465a85d4085dc2f2e6a2_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshab4da7e370f94af6881be0107a4b4e35_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha80b70338ab84902ab6db5e758d29b8a_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha032c3eccbbd42a7a9a14a1e30100f1d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshff17a5c1f2f94a65bde1ba3a62f65940_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshad2e2e1c72f141c8b3b897993f0b4c60_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshe52f9450b42e4a0093aab403662a6167_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha16e76ac3dd04b3f9c9e5471b7d068e3_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha95f7f3087f4469e9522c5de5fc695bb_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshab5c46da37714074a0e5715b9e35ee56_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshafa1d2b2ad5a44e38a57050fa06e5295_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha2656f4f4ef346119ac4bc2982d4c9fa_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha60a7da947bb4697a1b5f2f9251a88e5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha175d2aeb3724bf1ab73abd42117ee25_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha52cb93455d94f6a85377feca222b01d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha728dfdcd94e40e584cee27c9a3e2b2a_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4f7fe117fef4b46b432d4dc24f3af19_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha806c755d4e24fc3b7432d1dd146e5c7_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha96f7ea5c01345a38a9371af11b7136d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshafbede52f6124108953102c1163cf57f_vq0DINS"
+                            {
+                            }
+                        }
+
+                        over "link2_1"
+                        {
+                        }
+                    }
+
+                    over "link1"
+                    {
+                        over "tn__meshe06beea3d0db4a4590829653d396f2ea_vq0DINS"
+                        {
+                        }
+
+                        over "tn__mesha8bf501d3d5e4b4893db38c3d3a18830_vq0DINS"
+                        {
+                        }
+
+                        over "tn__mesha90315d436df444cb40b88079c4304a8_vq0DINS"
+                        {
+                        }
+
+                        over "tn__mesha4746fff7646450986db4bf35d6fe88d_vq0DINS"
+                        {
+                        }
+
+                        over "tn__mesha40bf7b533f1414ca409ac9725b04181_vq0DINS"
+                        {
+                        }
+                    }
+
+                    over "link1_1"
+                    {
+                    }
+                }
+
+                over "base_link"
+                {
+                    over "tn__mesha89a05f590774a22aa1651724627239d_vq0DINS"
+                    {
+                    }
+
+                    over "tn__meshd7e7aeb5363247fba5c7f2c548b90e4f_vq0DINS"
+                    {
+                    }
+
+                    over "tn__mesha25835b3b50f4bdeab8da8c94ee3eeeb_vq0DINS"
+                    {
+                    }
+
+                    over "tn__mesha4e2be594c5d4450b865fd37faf99a11_vq0DINS"
+                    {
+                    }
+
+                    over "tn__mesha6fc254cbef148ea855b9ea0f6c60d39_vq0DINS"
+                    {
+                    }
+
+                    over "tn__meshb516954b9e5c4ebc925325c7e74e12b8_vq0DINS"
+                    {
+                    }
+                }
+
+                over "base_link_1"
+                {
+                }
+            }
+
+            over "tn__rightbase_link_xL"
+            {
+                over "tn__rightlink1_vF"
+                {
+                    over "tn__rightlink2_vF"
+                    {
+                        over "tn__rightlink3_vF"
+                        {
+                            over "tn__rightlink4_vF"
+                            {
+                                over "tn__rightlink5_vF"
+                                {
+                                    over "tn__rightlink6_vF"
+                                    {
+                                        over "tn__rightlink7_vF"
+                                        {
+                                            over "link7"
+                                            {
+                                                over "tn__meshbb880dc67cc045009f211ef5eb81c008_vq0DINS"
+                                                {
+                                                }
+
+                                                over "tn__mesha4f9121bce6b474bbe4c71fe4fee8f8b_vq0DINS"
+                                                {
+                                                }
+                                            }
+
+                                            over "link7_1"
+                                            {
+                                            }
+                                        }
+
+                                        over "tn__rightlink8_vF"
+                                        {
+                                            over "link8"
+                                            {
+                                                over "tn__mesha402634b35b3497bbe399e5e6e8d66d1_vq0DINS"
+                                                {
+                                                }
+
+                                                over "tn__mesha113f79a6d9e43f48757781e31e033b8_vq0DINS"
+                                                {
+                                                }
+
+                                                over "tn__meshaeafbd671ffb42da94852dee9c8149c4001_bv0DINSt1"
+                                                {
+                                                }
+
+                                                over "tn__meshb9c17018abb243c6884370da2b43a335001_bv0DINSt1"
+                                                {
+                                                }
+                                            }
+
+                                            over "link8_1"
+                                            {
+                                            }
+                                        }
+
+                                        over "tn__rightcamera_gH"
+                                        {
+                                            over "tn__rightcamera_optical_frame_nc0"
+                                            {
+                                            }
+
+                                            over "box"
+                                            {
+                                            }
+
+                                            over "box_1"
+                                            {
+                                            }
+                                        }
+
+                                        over "camera_v3"
+                                        {
+                                            over "tn__binary_stl_file039_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file038_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file037_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file036_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file035_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file034_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file032_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file031_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file030_qR"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1015_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1014_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1013_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1012_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid___________1003_xTHg0qlZ0i7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________2009_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________2008_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________3009_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________3008_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__1007_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__1006_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__2007_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__2006_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________1003_xTHg0qlZ0s2h4"
+                                            {
+                                            }
+                                        }
+
+                                        over "camera_v3_1"
+                                        {
+                                            over "tn__binary_stl_file039_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file038_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file037_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file036_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file035_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file034_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file032_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file031_qR"
+                                            {
+                                            }
+
+                                            over "tn__binary_stl_file030_qR"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1015_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1014_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1013_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid_______________1012_rZ0Lo0coY0rc6W9"
+                                            {
+                                            }
+
+                                            over "tn__solid___________1003_xTHg0qlZ0i7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________2009_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________2008_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________3009_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________3008_xTHg0qlZ0Is7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__1007_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__1006_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__2007_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid_________l__2006_gV0Ii0xWb0s7"
+                                            {
+                                            }
+
+                                            over "tn__solid___________1003_xTHg0qlZ0s2h4"
+                                            {
+                                            }
+                                        }
+                                    }
+
+                                    over "link5"
+                                    {
+                                        over "tn__meshffdf9a7cee1348be84cfe596574fc1b8_vq0DINS"
+                                        {
+                                        }
+
+                                        over "tn__mesha6784797aa264a34818493d6c0e4bec9_vq0DINS"
+                                        {
+                                        }
+
+                                        over "tn__meshae7f272255ec4b959bd630d6051a6052_vq0DINS"
+                                        {
+                                        }
+
+                                        over "tn__mesha32826faee894cb8a6cc4082a54cb94a_vq0DINS"
+                                        {
+                                        }
+
+                                        over "tn__mesha13e3e6dbcfb4d0f8475d06cbb8fd4a3_vq0DINS"
+                                        {
+                                        }
+
+                                        over "tn__meshc6cb981419da49729275bde64cb55a4a_vq0DINS"
+                                        {
+                                        }
+                                    }
+
+                                    over "link5_1"
+                                    {
+                                    }
+                                }
+
+                                over "link4"
+                                {
+                                    over "tn__mesha90d9e327a48413faeefa4400c829305_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__meshf42976da476c44ff8c506699f0dc4ad5_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__mesha09e12e5276c425fba0475b2fa3925ab_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__mesha00284f2e4064119a40b83e90245a0b0_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__meshae2f8ddec8514297af56a1dd3bf66509_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__mesha941c25194594ae798fb29a1dae46e59_vq0DINS"
+                                    {
+                                    }
+
+                                    over "tn__mesha23146ede2a64420bee532890a0ff77b_vq0DINS"
+                                    {
+                                    }
+                                }
+
+                                over "link4_1"
+                                {
+                                }
+                            }
+
+                            over "link3"
+                            {
+                                over "tn__meshae91a55d213a416f846fe68926006ad0_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha178dfdd3f2045a392719be3fb1f8440_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha81abbf84f3b454cb3cea4f2a02a360d_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshad8f725065d74e9ea243f413b936960d_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshae79b3c57694483586a14dcfbe64f21b_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha1d8906f5d2d4fbcbf62e87d1e5cdc3a_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha5a9829e2c634122adb4a5a4d01db382_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshfe401ede7d124fe29dace23df76e1093_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha1e3e619d5e74f5faafd1a0e48cf128f_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshad97065351924e62923bd9ca7bdae348_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshde60218ef7fa4204ab3af568f3e1d8ff_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha87c98341b354b138cd7f12d64b697d2_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha0954e2e81394e9e82babc0c0f5ba81f_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha32eea84b32c43bdbd00b2bfc2f8934e_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha9fb16d144ab4a49abfb448e9fff084a_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha862d6c2edb54b1f9d19ce8ab0386fe8_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha392dc7da12944ca96e2722e7f057488_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshf8bead66dd374e2b91f156a786138334_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshb434199e0284486c8f09ae2ce7e61215_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshabb725c1efb24d52986377cdeaba3e25_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha7018561c7804346ba43587bf82ec0ad_vq0DINS"
+                                {
+                                }
+
+                                over "tn__mesha053116579464f2b9bd446a0a19ced28_vq0DINS"
+                                {
+                                }
+
+                                over "tn__meshaecd654dddc943bb9968af6c2531fb19_vq0DINS"
+                                {
+                                }
+                            }
+
+                            over "link3_1"
+                            {
+                            }
+                        }
+
+                        over "link2"
+                        {
+                            over "tn__meshf32e8376d50a49dcbd27de97a52fccc2_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaf03738ab0f04d73886f062b791e4845_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4b93a0642f9419a8e857ce00e6f340e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha074b70dd253493a821df3afb49ae34e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha871b8dcc60449fe82cdbde739d9c334_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaa47d508aa0b4225aa44e8ee9850faff_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha75973e21de243aba76f90f2f24f3fdd_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshabae592f3ee6430aa4feac1c0f18ac5c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8e8413dd7a941afb1fad38aadc6818c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha576460afebb4397982f282f2648b837_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf61d6b60fcbe42cd9c8cb073051d2e1d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha5ca988b07944d40a25949c8c9ddcebc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshad56d47ebb884da3bbacfc1adc9fade8_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha96dde8b762943fbbd86bb3fa6677376_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha11238427ede4a97a827a90a499b1883_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshacb4a1aba4c54041b5a6bd491f53b79c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshdb5a06f526314bd5b2d906241d7918ae_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshdc5d23b47fed41a19512ff6fdc6266b0_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshe7d048d57816403db531b3355254bc91_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaec17b9652fb4c94ae47c6ac961e2daa_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshd5324224c9cf4f5b9ceb4a68908283e5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha83f0116f5ee44ba94ce780e42a87743_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaddd483865d844dcb7240cc4119b71fa_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshdd1d9a10463c4d1f97eba7b287e3fb38_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha1b5e90f58f0473ebd0b4af458f3b704_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8a89d8ccb9e4bd2b73274d8d4cc02c5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb3f81228f8ad4caf843c2a6ccb3d7fee_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf080bf8c36624dccbfba1927ee25d73c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha96bd7345ebd466cafc663e526bf1f49_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha9c5beddfec94534baaf05dcd21cceb6_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha3b60822c0db46c3b4206d47f2aef234_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha5b4f67254e2491d91953686402ecddd_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshacfd32f6986544e796c6cda28162b84d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshabefdb9dbff04a929f17fd5060f9dcbc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4667112b2a346baa42b34fbf87b17a0_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshe2f438d07b9d4a2282bf3207ef02a12e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshafcd309d963b45629262a835fe9b2426_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshe210da6aae2e421281fbb14fc74b58b7_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshcb7010404f6b411bac91447d4f6e0620_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshacfa4fed649745ac9c5c8f78aaa93f90_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha3bc682f121a4977b43d7887783a1b6a_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha0ed26f8cc5b4f1a9cff11216743dfa9_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshffe524b4efab444caa0e2c0e4d35542a_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4414fb9dcd64064b6f6fed99c62aa94_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha7c664b5de9b486490487c23523c0fdc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshac2c953ecef442b2af08887799420ca6_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha49fcc48e14643f3bc1dd037363a65c1_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha9a67e567fcb4d83ad5b40e467af90aa_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4a0cf4a2ac24327bbd9f659775c0840_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb912234b4f7d468abffb4cacbeef0c4d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshafb1538b3cc14423b0671bf98bf2d8c1_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshc7c7a7d8b95c4a3caeb19be3b306e346_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha1e7622bde6d46feb8ba153687bb1690_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha202312207c64c29b8df1340ba50a612_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaeb95ececebd4ec1989ed80767d409c4_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha423afb13ea44a41a0f5db36774f5b25_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8ef6445c341480f9bd41ee35e39a3cc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4c701ac9c4441bbb6ca29b6230ceac7_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha96ad2dc1c1f4ed0951a692620ef7fd9_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha185833b2a0b4d05a898d946f3acdae5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha08d342dfead4e32b42e6c174e7caee5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshab15c471f28b4ea98093342f436c94e8_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha30771c4b4274697bd30c8f32c3e6228_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf9990f6c79d549c1b2613519a1ad3351_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshae98ffefa1634f4a9e57e7ae72888789_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshac266dc0a2934557ae96e560e20b4599_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshad2d955069ee4dbd813a63a928a2e62e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha87232648a6440849779b3a705ad1180_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf0a69537e5dc4db58cd525e34960be9c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb663fdca315a4af5839c2f486a8fd321_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha74bdbeaf74e4c7aaae75e6deaacae85_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha0a62706531d48bab71365fed9f0b399_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf1ba208f42e545df96cd9424acecf7a6_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8863dfb25584804993a584ccf3dba32_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaeec2b48cb1642b19a0c3a2db404fe58_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha0a34f2c8c084825b5b929b156be6f87_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha50273c1180342428e41bb140f5196f3_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha76631dfa6e64f1992c42715479a2693_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha831052664ca43efa48db790ce4ca24c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb3481af259c942d5b615663b7810329b_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha764265350b34142a066a45e5f23e9f9_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha7797e841d8f460abef20dbe0540c01c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaba750b07ea1488a882d0b9569686ee0_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha351ec6dd8ae4fb88320f66392fe803c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshae977fdb8308425e813cf29bfdef7b15_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha7d8008759cc4291ae8e510a81d041a1_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha3c1961e8f864c9f8901310b48942f08_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha199d6ad91414314b076e135fc1e31da_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshc2223fc8dfb1420484426e626070fe42_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshd84c8e25f2af4d0fbcf781a439658828_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshafebac703f0b4c1389bc47a29b9de4cd_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha074eb7906644bf7893ce3f991f53336_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha62b71298b074f338739a526ae817dc0_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshd2806d9c28634e74b600457622f44483_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaf981e1acc15485cb43f5473dda30747_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshd3d252b9cccb42df98d7362a09e37291_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha389c932e30f489cbc42690203b488a9_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshab1a283a25804ccfbd8800380f012dbc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshea25216c95c64e7f8b7dee175b0a4be5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb336db098b1c4b05b925690d91812c03_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha55c7c9389cd4a1d92babb31d4e1568b_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha010b28a2316423c8a1df466731efaf3_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshe0399a09855f439faac9a42c64874dbc_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshae2fa5c3d39e44089d123cb2e3109638_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshac7565dc3b5b4dacb9d5c82c3c901dad_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshd6ce5ca22ec749b2ac470caebf086a3d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaced4392c2924101aea334112c0bb60d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha788944c64224dbf8f3d188b94ae0c02_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshc803c81229c44cd6bdde830677da2746_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8ae89decae14f34a789ae4527e9f7d8_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha91d06f225e94dec8efdde38701d82a1_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha5cc46054e744b699ad8836981ab5bf5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshb789be8a2db949b7998700890e519cd6_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha79817d28fe449c7828f664c523f8740_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf013bd5a25414afbb9441b997342b40f_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaa5c6997734f4653bd10f1f3d22a4ef2_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha9b94148fb6c488ba46d3cde6e875be6_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaad41143595940d8a679ace1c4202a0e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshaa196afc272740c08873e27e9f76968d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha0e78bc5b1d4421180c08cc93fe407ac_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshca882510b1464e478a18b36bd77e3cff_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshf3367dc4dc06472e9b040f214b4b4918_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshcf0a2f499c9b454a9f613cd5da0db92c_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshc36278f38c5145e0aa254e011dd9d60d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha64f2740cbfe40619d8110e93822ad4e_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha42f37004a3743269fe2889fb9c22f5b_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha8973a45338b465a85d4085dc2f2e6a2_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshab4da7e370f94af6881be0107a4b4e35_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha80b70338ab84902ab6db5e758d29b8a_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha032c3eccbbd42a7a9a14a1e30100f1d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshff17a5c1f2f94a65bde1ba3a62f65940_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshad2e2e1c72f141c8b3b897993f0b4c60_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshe52f9450b42e4a0093aab403662a6167_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha16e76ac3dd04b3f9c9e5471b7d068e3_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha95f7f3087f4469e9522c5de5fc695bb_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshab5c46da37714074a0e5715b9e35ee56_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshafa1d2b2ad5a44e38a57050fa06e5295_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha2656f4f4ef346119ac4bc2982d4c9fa_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha60a7da947bb4697a1b5f2f9251a88e5_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha175d2aeb3724bf1ab73abd42117ee25_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha52cb93455d94f6a85377feca222b01d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha728dfdcd94e40e584cee27c9a3e2b2a_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha4f7fe117fef4b46b432d4dc24f3af19_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha806c755d4e24fc3b7432d1dd146e5c7_vq0DINS"
+                            {
+                            }
+
+                            over "tn__mesha96f7ea5c01345a38a9371af11b7136d_vq0DINS"
+                            {
+                            }
+
+                            over "tn__meshafbede52f6124108953102c1163cf57f_vq0DINS"
+                            {
+                            }
+                        }
+
+                        over "link2_1"
+                        {
+                        }
+                    }
+
+                    over "link1"
+                    {
+                        over "tn__meshe06beea3d0db4a4590829653d396f2ea_vq0DINS"
+                        {
+                        }
+
+                        over "tn__mesha8bf501d3d5e4b4893db38c3d3a18830_vq0DINS"
+                        {
+                        }
+
+                        over "tn__mesha90315d436df444cb40b88079c4304a8_vq0DINS"
+                        {
+                        }
+
+                        over "tn__mesha4746fff7646450986db4bf35d6fe88d_vq0DINS"
+                        {
+                        }
+
+                        over "tn__mesha40bf7b533f1414ca409ac9725b04181_vq0DINS"
+                        {
+                        }
+                    }
+
+                    over "link1_1"
+                    {
+                    }
+                }
+
+                over "base_link"
+                {
+                    over "tn__mesha89a05f590774a22aa1651724627239d_vq0DINS"
+                    {
+                    }
+
+                    over "tn__meshd7e7aeb5363247fba5c7f2c548b90e4f_vq0DINS"
+                    {
+                    }
+
+                    over "tn__mesha25835b3b50f4bdeab8da8c94ee3eeeb_vq0DINS"
+                    {
+                    }
+
+                    over "tn__mesha4e2be594c5d4450b865fd37faf99a11_vq0DINS"
+                    {
+                    }
+
+                    over "tn__mesha6fc254cbef148ea855b9ea0f6c60d39_vq0DINS"
+                    {
+                    }
+
+                    over "tn__meshb516954b9e5c4ebc925325c7e74e12b8_vq0DINS"
+                    {
+                    }
+                }
+
+                over "base_link_1"
+                {
+                }
+            }
+
+            over "tn__leftclamp_eE"
+            {
+                over "box"
+                {
+                }
+
+                over "box_1"
+                {
+                }
+            }
+
+            over "tn__rightclamp_vF"
+            {
+                over "box"
+                {
+                }
+
+                over "box_1"
+                {
+                }
+            }
+        }
+    }
+
+    over "Materials"
+    {
+    }
+
+    over "VisualMaterials"
+    {
+    }
+}
+

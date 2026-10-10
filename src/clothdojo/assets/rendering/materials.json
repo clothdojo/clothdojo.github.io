@@ -1,0 +1,733 @@
+{
+  "schema": "clothdojo_visual_material_catalog",
+  "source": {
+    "name": "Poly Haven",
+    "license": "CC0",
+    "license_url": "https://polyhaven.com/license",
+    "api_url": "https://polyhaven.com/our-api",
+    "selected_on": "2026-09-09",
+    "working_resolution": "2k"
+  },
+  "source_files_hashes": {
+    "fabric_pattern_07": "af042f95980f6ccc87285c3bc23e11671a5fecde",
+    "book_pattern": "91db16c6ae2b8d5ab823f1d3970fdc9f6ef3cea5",
+    "fabric_pattern_05": "be7f619f251a6ba2f829e658c6a20948cdc18a4f",
+    "velour_velvet": "e306095d7fc7da415ba88dcfcc36cb894846a6ff",
+    "crepe_satin": "ed195e55fe094dcf7d4e58ebafb8f8e57af9ee19",
+    "cotton_jersey": "de468d9c53b8a1aaa40a37664f778bb44f9effdf",
+    "rough_linen": "4e637f8a844f5100c96dc1b33d4d63fd7309797a",
+    "denim_fabric_03": "8b690e4eb5ac56316f9e211272ed85e9e2e00a77",
+    "poly_wool_herringbone": "4ef2868d578f407e6aa9c761d7743b5d0a9c3918",
+    "quatrefoil_jacquard_fabric": "289ec1d471e918d27f469f0247b40cc6894f7204",
+    "curly_teddy_checkered": "873ed9432a90121b582a7c3d50f2a7432da63d40",
+    "faux_fur_geometric": "af81173163b5623e138cfb51cde90a57958ef946",
+    "floral_jacquard": "85ce792736452bdf8f584d4dbc2dc559b3160018",
+    "wool_boucle": "8b639b50e18a7d4c14f2fcf28340d37448bd35b1",
+    "plywood": "71277f7973f476845a1464810f133500691c2e43",
+    "wood_table_001": "141bbae9092a1169e3060de60359d9631592e6a4",
+    "oak_veneer_01": "a443b579da009eae524d5d318fc999faf964671a",
+    "marble_01": "11a4d204569907b76e1c4f7ef06a8b3fa90b5930",
+    "laminate_floor_02": "c5bf4f78e51905d1dc9c8b408abedc65b1933483",
+    "concrete_floor_worn_001": "e3d93fd423c3db5bbc000a930cc8b9d770187ce4",
+    "wood_floor": "a44e6375a09ab98780b876e709f2629e7ed30409",
+    "granite_tile": "e9721ed5c35b6d2dc5ad0dc9f8e9fd1b407949ff",
+    "bi_stretch": "ca5f42cc7120e050c92b7285ee1de9a631897c6b",
+    "caban": "3b99bf29cd53f14eeb68c0065ff23b8e5f83a6d1",
+    "crepe_georgette": "c9a102c977d0160cdcecddc00feb0bc5a643a147",
+    "curly_teddy_natural": "aea3edba338eb5599f103c79b55e6aaab659a934",
+    "denim_fabric": "96b7861fe6bf60dcc6cd7f46f471123cb07c1e2a",
+    "denim_fabric_04": "9a2c7f5d957f42eac87ea09c3d8c32973ab2c171",
+    "denim_fabric_05": "8a70b647ed4bdda38dd93d4d68e225418bc21f21",
+    "denim_fabric_06": "391cf3b8d04fbcd5f2e111885c3c333d03ce982b",
+    "denmin_fabric_02": "414e6d5d95efbd5f4215418985a6a0c63c1bf3ad",
+    "gingham_check": "4cc4c50cf2d19fff4d943642992880f85240256c",
+    "jersey_melange": "4be112100fd14897cc82f3832342db6bd8234d1e",
+    "jogging_melange": "79a8208d57e8307e6c3834a35351b788f7bb557a",
+    "knitted_fleece": "c316169377ce2f8e7231f440d66ade416974ede2",
+    "polar_fleece": "de9304ba352bc23a0c3a9635325f4bcb4e2628a5",
+    "ribbed_corduroy": "31ad0d0e5381a04f8297ebb77553fe8f6447de7f",
+    "scuba_suede": "c66f1b428f65f5ba0e6097c9ae96fbf8e5cbd03d",
+    "stretch_poplin": "040e1a500b3ee71a0b19c9df47054db76955fd82",
+    "terlenka": "0b5e6d78db1adba1f3be06f400052467c43bc98c",
+    "terry_cloth": "28b33177cb7034818d4a932322de37cf9f70f93c",
+    "waffle_pique_cotton": "cc5c1125053d2003090f5e2932ef719bfb33c73a",
+    "wood_table": "d1c2354499482c26b3648cd72d81f51414f11050",
+    "wood_table_large": "f5332e5e0fc48e1861abf19f01c46599874e2c37",
+    "fine_grained_wood": "955d8311658fa7b5a5e5d081f3b6c7e73b876087",
+    "lacquered_cherry_wood": "51529acac26452171bca6186287876dfd926378e",
+    "rosewood_veneer1": "e139e2515aa26af4c5d2dc9eda96679e0629964f",
+    "dark_wood": "889d13adefdcdcdd144068d2c22998ae47e7c777",
+    "terrazzo_tiles": "62f6e4d8c61e84c16c55b049f4e0bcf4a8cb45b8",
+    "synthetic_wood": "b16e0c7fac2bf57b65c16933165e7aca9d833f45",
+    "concrete_floor_01": "dd25145843a1f743897b3188e42822705db331e6",
+    "concrete_floor_02": "b047f5c1c115638de280913cdfb646c35048e503",
+    "wood_floor_deck": "3e27c4f1228d6f2c6ee3b27cbd2a9fc7f0d7117f",
+    "wood_floor_worn": "275a525261d4c4d1f488b870ee610448a96201cc",
+    "floor_tiles_06": "22b151bef1f180591e0d306e551fb15e4bdf2990",
+    "floor_tiles_04": "3745e85cec15b817918aa915a36dbfcea236e86c",
+    "interior_tiles": "2572aac325742047c9cf5ac676685699d94eaf0c",
+    "brown_floor_tiles": "62bd8dd15a6650e1472169aa9a83de5c05b4de5b"
+  },
+  "layout": {
+    "root": "data/visual-assets/polyhaven",
+    "material": "materials/{role}/{id}",
+    "lighting": "lighting/{id}.hdr"
+  },
+  "maps": {
+    "required": {
+      "base_color": "sRGB",
+      "normal_gl": "raw",
+      "roughness": "raw"
+    },
+    "excluded": {
+      "ao": "Avoid baked-lighting leakage in illumination experiments.",
+      "displacement": "Keep rendered surface detail separate from simulated cloth topology."
+    }
+  },
+  "materials": [
+    {
+      "id": "fabric_pattern_07",
+      "role": "cloth",
+      "color_channels": [
+        "col_03",
+        "col_1",
+        "col_2"
+      ],
+      "size_mm": [
+        400.0,
+        400.0
+      ]
+    },
+    {
+      "id": "book_pattern",
+      "role": "cloth",
+      "color_channels": [
+        "col1",
+        "col2"
+      ],
+      "size_mm": [
+        300.0,
+        300.0
+      ]
+    },
+    {
+      "id": "fabric_pattern_05",
+      "role": "cloth",
+      "color_channels": [
+        "col_01",
+        "col_02",
+        "col_03"
+      ],
+      "size_mm": [
+        500.0,
+        500.0
+      ]
+    },
+    {
+      "id": "velour_velvet",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        284.228,
+        273.5
+      ]
+    },
+    {
+      "id": "crepe_satin",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        263.199,
+        267.9
+      ]
+    },
+    {
+      "id": "cotton_jersey",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        263.603,
+        263.8
+      ]
+    },
+    {
+      "id": "rough_linen",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        270.708,
+        271.3
+      ]
+    },
+    {
+      "id": "denim_fabric_03",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        271.42801281852286,
+        270.9999978542328
+      ]
+    },
+    {
+      "id": "poly_wool_herringbone",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        270.0788548673393,
+        275.70000290870667
+      ]
+    },
+    {
+      "id": "quatrefoil_jacquard_fabric",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        280.11855714681565,
+        283.80000591278076
+      ]
+    },
+    {
+      "id": "curly_teddy_checkered",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        561.8443344798735,
+        474.0999639034271
+      ]
+    },
+    {
+      "id": "faux_fur_geometric",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        301.9999563694,
+        301.9766083948956
+      ]
+    },
+    {
+      "id": "floral_jacquard",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        252.9498182468769,
+        383.59999656677246
+      ]
+    },
+    {
+      "id": "wool_boucle",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        314.78237097288206,
+        390.10000228881836
+      ]
+    },
+    {
+      "id": "plywood",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        500.0,
+        500.0
+      ]
+    },
+    {
+      "id": "wood_table_001",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1500.0,
+        1500.0
+      ]
+    },
+    {
+      "id": "oak_veneer_01",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1830.0,
+        1830.0
+      ]
+    },
+    {
+      "id": "marble_01",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1500.0,
+        1500.0
+      ]
+    },
+    {
+      "id": "laminate_floor_02",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1700.0,
+        1700.0
+      ]
+    },
+    {
+      "id": "concrete_floor_worn_001",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        3000.0,
+        3000.0
+      ]
+    },
+    {
+      "id": "wood_floor",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1700.0,
+        1700.0
+      ]
+    },
+    {
+      "id": "granite_tile",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        2300.0,
+        2300.0
+      ]
+    },
+    {
+      "id": "bi_stretch",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        264.5644946243421,
+        264.4000053405762
+      ]
+    },
+    {
+      "id": "caban",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        273.9921411828764,
+        273.2999920845032
+      ]
+    },
+    {
+      "id": "crepe_georgette",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        261.1946943115489,
+        265.5999958515167
+      ]
+    },
+    {
+      "id": "curly_teddy_natural",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        335.804452696631,
+        330.90004324913025
+      ]
+    },
+    {
+      "id": "denim_fabric",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        100.00000149011612,
+        99.99999403953552
+      ]
+    },
+    {
+      "id": "denim_fabric_04",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        272.8973422962554,
+        269.3000137805939
+      ]
+    },
+    {
+      "id": "denim_fabric_05",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        270.1520343364256,
+        271.49999141693115
+      ]
+    },
+    {
+      "id": "denim_fabric_06",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        254.15802731412134,
+        254.0000081062317
+      ]
+    },
+    {
+      "id": "denmin_fabric_02",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        100.00000149011612,
+        99.99999403953552
+      ]
+    },
+    {
+      "id": "gingham_check",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        283.65123073689267,
+        296.79998755455017
+      ]
+    },
+    {
+      "id": "jersey_melange",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        290.62397202303356,
+        276.19999647140503
+      ]
+    },
+    {
+      "id": "jogging_melange",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        273.4973732349353,
+        273.2999920845032
+      ]
+    },
+    {
+      "id": "knitted_fleece",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        266.35669526830077,
+        270.3999876976013
+      ]
+    },
+    {
+      "id": "polar_fleece",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        273.2870444699951,
+        271.49999141693115
+      ]
+    },
+    {
+      "id": "ribbed_corduroy",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        266.40417517521894,
+        266.69999957084656
+      ]
+    },
+    {
+      "id": "scuba_suede",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        285.2202902890041,
+        278.89999747276306
+      ]
+    },
+    {
+      "id": "stretch_poplin",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        291.0233241569048,
+        280.8000147342682
+      ]
+    },
+    {
+      "id": "terlenka",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        265.70814767607123,
+        266.2999927997589
+      ]
+    },
+    {
+      "id": "terry_cloth",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        367.0535953781794,
+        363.20000886917114
+      ]
+    },
+    {
+      "id": "waffle_pique_cotton",
+      "role": "cloth",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        280.787176718274,
+        276.8000066280365
+      ]
+    },
+    {
+      "id": "wood_table",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "id": "wood_table_large",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1550.0000715255737,
+        1550.0000715255737
+      ]
+    },
+    {
+      "id": "fine_grained_wood",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        600.0000238418579,
+        600.0000238418579
+      ]
+    },
+    {
+      "id": "lacquered_cherry_wood",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "id": "rosewood_veneer1",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        2430.000066757202,
+        2430.000066757202
+      ]
+    },
+    {
+      "id": "dark_wood",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "id": "terrazzo_tiles",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "id": "synthetic_wood",
+      "role": "table",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "id": "concrete_floor_01",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "id": "concrete_floor_02",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "id": "wood_floor_deck",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1799.9999523162842,
+        1799.9999523162842
+      ]
+    },
+    {
+      "id": "wood_floor_worn",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1999.9996423721313,
+        1999.9996423721313
+      ]
+    },
+    {
+      "id": "floor_tiles_06",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        3000,
+        3000
+      ]
+    },
+    {
+      "id": "floor_tiles_04",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        4000,
+        4000
+      ]
+    },
+    {
+      "id": "interior_tiles",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1899.9998569488525,
+        1899.9998569488525
+      ]
+    },
+    {
+      "id": "brown_floor_tiles",
+      "role": "ground",
+      "color_channels": [
+        "Diffuse"
+      ],
+      "size_mm": [
+        1700.0000476837158,
+        1700.0000476837158
+      ]
+    }
+  ],
+  "lighting": []
+}
