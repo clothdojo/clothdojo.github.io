@@ -1,10 +1,52 @@
 {
-  "ref": "570e964bfa8ecaa6511dcb2a8e5d0b9fbf891430",
-  "commit": "570e964bfa8ecaa6511dcb2a8e5d0b9fbf891430",
+  "ref": "657102e3950dc8ca3b66804b9c22989950c65f0e",
+  "commit": "657102e3950dc8ca3b66804b9c22989950c65f0e",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
   "screenshots": [
+    {
+      "file": "desktop-hero-about-expanded.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#about",
+      "scrollY": 185,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/generation-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
+    },
+    {
+      "file": "desktop-generation-details-expanded.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#generate > details.explanation",
+      "scrollY": 2052,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/collection.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        },
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
+    },
     {
       "file": "desktop-opening.jpg",
       "page": "http://127.0.0.1:8787/index.html",
@@ -49,8 +91,14 @@
         "height": 1000
       },
       "selector": "[id=\"generate\"]",
-      "scrollY": 1008,
+      "scrollY": 1026,
       "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/generation-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        },
         {
           "src": "http://127.0.0.1:8787/assets/launch/collection.mp4",
           "time": 0.5,
@@ -67,7 +115,7 @@
         "height": 1000
       },
       "selector": "[id=\"render\"]",
-      "scrollY": 1993,
+      "scrollY": 2251,
       "visibleVideos": [
         {
           "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
@@ -85,7 +133,7 @@
         "height": 1000
       },
       "selector": "[id=\"transfer\"]",
-      "scrollY": 2578,
+      "scrollY": 2958,
       "visibleVideos": [
         {
           "src": "http://127.0.0.1:8787/assets/launch/transfer.mp4",
@@ -103,7 +151,7 @@
         "height": 1000
       },
       "selector": "[id=\"results\"]",
-      "scrollY": 3742,
+      "scrollY": 4147,
       "visibleVideos": []
     },
     {
@@ -114,7 +162,7 @@
         "height": 1000
       },
       "selector": "[id=\"method\"]",
-      "scrollY": 5530,
+      "scrollY": 5901,
       "visibleVideos": []
     },
     {
@@ -125,7 +173,7 @@
         "height": 1000
       },
       "selector": "[id=\"use\"]",
-      "scrollY": 6074,
+      "scrollY": 6274,
       "visibleVideos": []
     },
     {
@@ -136,15 +184,19 @@
         "height": 1000
       },
       "selector": ".transfer-evidence .table-block",
-      "scrollY": 3384,
-      "visibleVideos": [
-        {
-          "src": "http://127.0.0.1:8787/assets/launch/transfer.mp4",
-          "time": 0.5,
-          "readyState": 4,
-          "seeking": false
-        }
-      ]
+      "scrollY": 3728,
+      "visibleVideos": []
+    },
+    {
+      "file": "desktop-method-table.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#method .table-block",
+      "scrollY": 6506,
+      "visibleVideos": []
     },
     {
       "file": "desktop-policy-comparison.jpg",
@@ -154,8 +206,44 @@
         "height": 1000
       },
       "selector": ".research-study >> nth=2",
-      "scrollY": 4935,
+      "scrollY": 5303,
       "visibleVideos": []
+    },
+    {
+      "file": "mobile-390-hero-about-expanded.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#about",
+      "scrollY": 114,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-generation-details-expanded.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#generate > details.explanation",
+      "scrollY": 972,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-390-opening.jpg",
@@ -169,6 +257,12 @@
       "visibleVideos": [
         {
           "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        },
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
           "readyState": 4,
           "seeking": false
@@ -190,6 +284,12 @@
           "time": 0.5,
           "readyState": 4,
           "seeking": false
+        },
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
         }
       ]
     },
@@ -201,8 +301,14 @@
         "height": 844
       },
       "selector": "[id=\"generate\"]",
-      "scrollY": 725,
+      "scrollY": 520,
       "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        },
         {
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
@@ -219,7 +325,7 @@
         "height": 844
       },
       "selector": "[id=\"render\"]",
-      "scrollY": 1954,
+      "scrollY": 1167,
       "visibleVideos": [
         {
           "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
@@ -237,14 +343,8 @@
         "height": 844
       },
       "selector": "[id=\"transfer\"]",
-      "scrollY": 2656,
+      "scrollY": 1803,
       "visibleVideos": [
-        {
-          "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
-          "time": 0.5,
-          "readyState": 4,
-          "seeking": false
-        },
         {
           "src": "http://127.0.0.1:8787/assets/launch/transfer-source.mp4",
           "time": 0.5,
@@ -261,7 +361,7 @@
         "height": 844
       },
       "selector": "[id=\"results\"]",
-      "scrollY": 3811,
+      "scrollY": 2788,
       "visibleVideos": []
     },
     {
@@ -272,7 +372,7 @@
         "height": 844
       },
       "selector": "[id=\"method\"]",
-      "scrollY": 6516,
+      "scrollY": 5148,
       "visibleVideos": []
     },
     {
@@ -283,7 +383,7 @@
         "height": 844
       },
       "selector": "[id=\"use\"]",
-      "scrollY": 7348,
+      "scrollY": 5681,
       "visibleVideos": []
     },
     {
@@ -294,7 +394,18 @@
         "height": 844
       },
       "selector": ".transfer-evidence .table-block",
-      "scrollY": 3460,
+      "scrollY": 2400,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-390-method-table.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#method .table-block",
+      "scrollY": 5946,
       "visibleVideos": []
     },
     {
@@ -305,7 +416,7 @@
         "height": 844
       },
       "selector": ".research-study >> nth=2",
-      "scrollY": 5616,
+      "scrollY": 4350,
       "visibleVideos": []
     },
     {
@@ -320,6 +431,12 @@
       "visibleVideos": [
         {
           "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        },
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
           "readyState": 4,
           "seeking": false
@@ -341,6 +458,12 @@
           "time": 0.5,
           "readyState": 4,
           "seeking": false
+        },
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
         }
       ]
     },
@@ -352,8 +475,14 @@
         "height": 844
       },
       "selector": "[id=\"generate\"]",
-      "scrollY": 754,
+      "scrollY": 476,
       "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        },
         {
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
@@ -370,7 +499,7 @@
         "height": 844
       },
       "selector": "[id=\"render\"]",
-      "scrollY": 2043,
+      "scrollY": 1115,
       "visibleVideos": [
         {
           "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
@@ -388,7 +517,7 @@
         "height": 844
       },
       "selector": "[id=\"transfer\"]",
-      "scrollY": 2758,
+      "scrollY": 1719,
       "visibleVideos": [
         {
           "src": "http://127.0.0.1:8787/assets/launch/transfer-source.mp4",
@@ -406,7 +535,7 @@
         "height": 844
       },
       "selector": "[id=\"results\"]",
-      "scrollY": 4004,
+      "scrollY": 2691,
       "visibleVideos": []
     },
     {
@@ -417,7 +546,7 @@
         "height": 844
       },
       "selector": "[id=\"method\"]",
-      "scrollY": 6875,
+      "scrollY": 5148,
       "visibleVideos": []
     },
     {
@@ -428,7 +557,7 @@
         "height": 844
       },
       "selector": "[id=\"use\"]",
-      "scrollY": 7801,
+      "scrollY": 5681,
       "visibleVideos": []
     },
     {
@@ -439,7 +568,18 @@
         "height": 844
       },
       "selector": ".transfer-evidence .table-block",
-      "scrollY": 3602,
+      "scrollY": 2272,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-320-method-table.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "#method .table-block",
+      "scrollY": 5970,
       "visibleVideos": []
     },
     {
@@ -450,7 +590,7 @@
         "height": 844
       },
       "selector": ".research-study >> nth=2",
-      "scrollY": 5919,
+      "scrollY": 4317,
       "visibleVideos": []
     },
     {
@@ -688,6 +828,300 @@
   "layouts": [
     {
       "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-1-click-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-hero-about-expanded",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-1-click-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-1-keyboard-enter-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-1-keyboard-space-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-2-click-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-generation-details-expanded",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-2-click-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-2-keyboard-enter-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-2-keyboard-space-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-3-click-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-3-click-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-3-keyboard-enter-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-3-keyboard-space-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-4-click-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-4-click-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-4-keyboard-enter-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-4-keyboard-space-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-5-click-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-5-click-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-5-keyboard-enter-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-5-keyboard-space-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-6-click-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-6-click-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-6-keyboard-enter-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-6-keyboard-space-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-7-click-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-7-click-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-7-keyboard-enter-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-7-keyboard-space-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-8-click-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-8-click-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-8-keyboard-enter-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-8-keyboard-space-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-9-click-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-9-click-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-9-keyboard-enter-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-9-keyboard-space-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-10-click-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-10-click-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-10-keyboard-enter-open",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-explanation-10-keyboard-space-close",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
       "label": "desktop-opening",
       "width": 1440,
       "scrollWidth": 1440,
@@ -751,10 +1185,395 @@
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-method-table",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
       "label": "desktop-policy-comparison",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-1-click-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-hero-about-expanded",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-1-click-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-1-keyboard-enter-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-1-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-2-click-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-generation-details-expanded",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-2-click-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-2-keyboard-enter-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-2-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-3-click-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-3-click-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-3-keyboard-enter-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-3-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-4-click-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-4-click-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-4-keyboard-enter-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-4-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-5-click-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-5-click-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-5-keyboard-enter-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-5-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-6-click-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-6-click-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-6-keyboard-enter-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-6-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-7-click-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-7-click-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-7-keyboard-enter-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-7-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-8-click-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-8-click-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-8-keyboard-enter-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-8-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-9-click-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-9-click-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-9-keyboard-enter-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-9-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-10-click-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-10-click-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-10-keyboard-enter-open",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-explanation-10-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
@@ -831,6 +1650,15 @@
     {
       "page": "http://127.0.0.1:8787/index.html",
       "label": "mobile-390-transfer-table",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-method-table",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -1017,6 +1845,27 @@
     {
       "page": "http://127.0.0.1:8787/index.html",
       "label": "mobile-320-transfer-table",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "A.",
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-method-table",
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
@@ -1632,11 +2481,11 @@
       },
       "stylesheets": [
         {
-          "href": "http://127.0.0.1:8787/site.css?v=21",
+          "href": "http://127.0.0.1:8787/site.css?v=22",
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/results.css?v=21",
+          "href": "http://127.0.0.1:8787/results.css?v=22",
           "loaded": true
         }
       ]
@@ -1649,11 +2498,11 @@
       },
       "stylesheets": [
         {
-          "href": "http://127.0.0.1:8787/site.css?v=21",
+          "href": "http://127.0.0.1:8787/site.css?v=22",
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/results.css?v=21",
+          "href": "http://127.0.0.1:8787/results.css?v=22",
           "loaded": true
         }
       ]
@@ -1729,10 +2578,15 @@
   ],
   "checks": [
     "HTTP 206 byte-range media serving",
+    "desktop: all ten native explanation details default closed",
+    "desktop: all ten explanations support pointer, Enter and Space toggles without page overflow",
     "all media selections update source/poster/caption/pressed state and remain paused under reduced motion",
     "material switch preserves current physical timestamp",
     "all expanded replays, close button/Escape and media-source cleanup",
     "CPU quickstart clipboard copy",
+    "mobile-390: all ten native explanation details default closed",
+    "mobile-390: all ten explanations support pointer, Enter and Space toggles without page overflow",
+    "mobile-320: all ten native explanation details default closed",
     "real Chromium playback: one active video after task switch and HD open",
     "five results anchors, shared rendered table typography, desktop/mobile results screenshots"
   ],
@@ -1751,6 +2605,687 @@
     "acceptRanges": "bytes"
   },
   "codec": "probably",
+  "explanations": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "initial": [
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "About the project & authors"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "How generation works"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "What changes in a re-render?"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "How trajectory transfer works"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Evaluation protocol & limitations"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Protocol & interpretation"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Protocol & interpretation"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Protocol & interpretation"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Training supervision & method"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Requirements & expected output"
+        }
+      ],
+      "interactions": [
+        {
+          "summary": "About the project & authors",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "How generation works",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "What changes in a re-render?",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "How trajectory transfer works",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Evaluation protocol & limitations",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Protocol & interpretation",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Protocol & interpretation",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Protocol & interpretation",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Training supervision & method",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Requirements & expected output",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "initial": [
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "About the project & authors"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "How generation works"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "What changes in a re-render?"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "How trajectory transfer works"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Evaluation protocol & limitations"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Protocol & interpretation"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Protocol & interpretation"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Protocol & interpretation"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Training supervision & method"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Requirements & expected output"
+        }
+      ],
+      "interactions": [
+        {
+          "summary": "About the project & authors",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "How generation works",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "What changes in a re-render?",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "How trajectory transfer works",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Evaluation protocol & limitations",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Protocol & interpretation",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Protocol & interpretation",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Protocol & interpretation",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Training supervision & method",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "Requirements & expected output",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "initial": [
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "About the project & authors"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "How generation works"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "What changes in a re-render?"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "How trajectory transfer works"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Evaluation protocol & limitations"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Protocol & interpretation"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Protocol & interpretation"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Protocol & interpretation"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Training supervision & method"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Requirements & expected output"
+        }
+      ],
+      "interactions": []
+    }
+  ],
   "materialTiming": {
     "expectedTime": 1.25,
     "expectedSource": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
@@ -1758,7 +3293,7 @@
     "events": [
       {
         "type": "seeked",
-        "timestamp": 8552.600000000006,
+        "timestamp": 11483.700000000012,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-checkered.mp4",
         "time": 1.25,
         "duration": 5,
@@ -1779,7 +3314,7 @@
       },
       {
         "type": "loadedmetadata",
-        "timestamp": 8626.200000000012,
+        "timestamp": 11558.399999999994,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 0,
         "duration": 5,
@@ -1794,13 +3329,13 @@
         "buffered": [
           [
             0,
-            1.105
+            5
           ]
         ]
       },
       {
         "type": "seeked",
-        "timestamp": 8715.800000000017,
+        "timestamp": 11626.200000000012,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
@@ -1821,7 +3356,7 @@
       },
       {
         "type": "loadeddata",
-        "timestamp": 8715.800000000017,
+        "timestamp": 11626.200000000012,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
