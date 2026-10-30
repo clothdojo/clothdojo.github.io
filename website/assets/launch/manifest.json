@@ -1096,6 +1096,370 @@
       "playback_speed": 1,
       "codec": "h264",
       "pixel_format": "yuv420p(progressive)"
+    },
+    "generation-wide": {
+      "file": "generation-wide.mp4",
+      "poster": "generation-wide-poster.jpg",
+      "width": 1920,
+      "height": 1080,
+      "duration_seconds": 8.0,
+      "encoded_fps": 25.0,
+      "bytes": 891924,
+      "playback_speed": 1,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "source_fps": 50,
+      "re_rendered": true,
+      "sources": [
+        {
+          "trajectory": "data/rollouts/hil_sft40k_rtc_n5_h10_w5_exp_200assets_4states_20260902/trajectories/rand_24XNTUDUZ1_000001",
+          "asset_id": "rand_24XNTUDUZ1",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 900,
+            "step": 2,
+            "count": 200
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 18.0
+          },
+          "material": "velour_velvet",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -1.65,
+            -2.4,
+            0.0
+          ]
+        },
+        {
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00PJYCPW0L__01",
+          "asset_id": "rand_00PJYCPW0L",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 900,
+            "step": 2,
+            "count": 200
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 18.0
+          },
+          "material": "denim_fabric_03",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -1.65,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1GIQSRDLN2__03",
+          "asset_id": "rand_1GIQSRDLN2",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 900,
+            "step": 2,
+            "count": 200
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 18.0
+          },
+          "material": "fabric_pattern_07",
+          "color_channel": "col_03",
+          "scene_translation_m": [
+            -1.65,
+            2.4,
+            0.0
+          ]
+        },
+        {
+          "trajectory": "data/collections/shirt_fold/rollouts/fold_clean30k_standard2000_rtc30s_20260906/trajectories/rand_0TKY8IYX0W_000003",
+          "asset_id": "rand_0TKY8IYX0W",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "state_indices": {
+            "start": 600,
+            "stop_exclusive": 1000,
+            "step": 2,
+            "count": 200
+          },
+          "source_seconds": {
+            "start": 12.0,
+            "stop_exclusive": 20.0
+          },
+          "material": "curly_teddy_checkered",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            1.65,
+            -2.4,
+            0.0
+          ]
+        },
+        {
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0E362JU16I_000006",
+          "asset_id": "rand_0E362JU16I",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 900,
+            "step": 2,
+            "count": 200
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 18.0
+          },
+          "material": "rough_linen",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            1.65,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_041L4IHB7W_000000",
+          "asset_id": "rand_041L4IHB7W",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "state_indices": {
+            "start": 600,
+            "stop_exclusive": 1000,
+            "step": 2,
+            "count": 200
+          },
+          "source_seconds": {
+            "start": 12.0,
+            "stop_exclusive": 20.0
+          },
+          "material": "fabric_pattern_05",
+          "color_channel": "col_02",
+          "scene_translation_m": [
+            1.65,
+            2.4,
+            0.0
+          ]
+        }
+      ],
+      "unique_trajectories": 6,
+      "unique_garments": 6,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.08177646734562778,
+            -0.6470366456263211,
+            0.7580608079864755,
+            10.4
+          ],
+          [
+            0.9966506957748384,
+            0.05309018630780071,
+            -0.06219986116812107,
+            -0.8
+          ],
+          [
+            -0.0,
+            0.7606083166350743,
+            0.6492110509422636,
+            9.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 46.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "renderer": "Isaac Sim 5.0.0.0",
+      "samples_per_pixel": 16,
+      "render_resolution": [
+        1920,
+        1080
+      ],
+      "output_resize": "none",
+      "scope": "Presentation replay of distinct saved trajectories in one shared 3D scene; not a simultaneous-generation throughput measurement."
+    },
+    "flatten-wide": {
+      "file": "flatten-wide.mp4",
+      "poster": "flatten-wide-poster.jpg",
+      "width": 1280,
+      "height": 720,
+      "duration_seconds": 8.0,
+      "encoded_fps": 25.0,
+      "bytes": 350476,
+      "playback_speed": 1,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "source_fps": 50,
+      "re_rendered": true,
+      "sources": [
+        {
+          "trajectory": "data/rollouts/hil_sft40k_rtc_n5_h10_w5_exp_200assets_4states_20260902/trajectories/rand_24XNTUDUZ1_000001",
+          "asset_id": "rand_24XNTUDUZ1",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 900,
+            "step": 2,
+            "count": 200
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 18.0
+          },
+          "material": "velour_velvet",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -1.65,
+            -2.4,
+            0.0
+          ]
+        }
+      ],
+      "unique_trajectories": 1,
+      "unique_garments": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.08177646734562773,
+            -0.6470366456263211,
+            0.7580608079864755,
+            2.51
+          ],
+          [
+            0.9966506957748384,
+            0.05309018630780068,
+            -0.062199861168121026,
+            -2.6879999999999997
+          ],
+          [
+            -0.0,
+            0.7606083166350743,
+            0.6492110509422636,
+            4.156
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 46.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "renderer": "Isaac Sim 5.0.0.0",
+      "samples_per_pixel": 16,
+      "render_resolution": [
+        1920,
+        1080
+      ],
+      "output_resize": "Lanczos to 1280x720",
+      "scope": "Complete robot and tabletop replay from the shared presentation scene, with other workcells hidden."
+    },
+    "fold-wide": {
+      "file": "fold-wide.mp4",
+      "poster": "fold-wide-poster.jpg",
+      "width": 1280,
+      "height": 720,
+      "duration_seconds": 8.0,
+      "encoded_fps": 25.0,
+      "bytes": 295100,
+      "playback_speed": 1,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "source_fps": 50,
+      "re_rendered": true,
+      "sources": [
+        {
+          "trajectory": "data/collections/shirt_fold/rollouts/fold_clean30k_standard2000_rtc30s_20260906/trajectories/rand_0TKY8IYX0W_000003",
+          "asset_id": "rand_0TKY8IYX0W",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "state_indices": {
+            "start": 600,
+            "stop_exclusive": 1000,
+            "step": 2,
+            "count": 200
+          },
+          "source_seconds": {
+            "start": 12.0,
+            "stop_exclusive": 20.0
+          },
+          "material": "curly_teddy_checkered",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            1.65,
+            -2.4,
+            0.0
+          ]
+        }
+      ],
+      "unique_trajectories": 1,
+      "unique_garments": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.08177646734562773,
+            -0.6470366456263211,
+            0.7580608079864755,
+            5.81
+          ],
+          [
+            0.9966506957748384,
+            0.05309018630780068,
+            -0.062199861168121026,
+            -2.6879999999999997
+          ],
+          [
+            -0.0,
+            0.7606083166350743,
+            0.6492110509422636,
+            4.156
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 46.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "renderer": "Isaac Sim 5.0.0.0",
+      "samples_per_pixel": 16,
+      "render_resolution": [
+        1920,
+        1080
+      ],
+      "output_resize": "Lanczos to 1280x720",
+      "scope": "Complete robot and tabletop replay from the shared presentation scene, with other workcells hidden."
     }
   },
   "renderer": {
@@ -1103,6 +1467,6 @@
     "version": "5.0.0.0",
     "mode": "RTX path tracing",
     "samples_per_pixel": 16,
-    "scope": "All source films were rendered anew with external closeup cameras. Combined films are synchronized CPU compositions of these new films."
+    "scope": "Source films were newly rendered from saved trajectories using external cameras. Any combined films are identified in their individual records."
   }
 }
