@@ -45,8 +45,28 @@ document.querySelectorAll('dialog').forEach(dialog => {
     if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
   }});
 });
-document.getElementById('copy').addEventListener('click', async () => {
+document.getElementById('copy')?.addEventListener('click', async () => {
   const status = document.getElementById('copy-status');
   try { await navigator.clipboard.writeText(document.getElementById('commands').textContent); status.textContent = 'Copied'; }
   catch { status.textContent = 'Select the commands above to copy.'; }
 });
+
+document.querySelectorAll('details').forEach(detail => detail.addEventListener('toggle', () => {
+  detail.querySelectorAll('video[data-src]').forEach(video => {
+    if (detail.open) loadVideo(video);
+    else video.pause();
+  });
+}));
+const embodimentVideo = document.getElementById('embodiment-video');
+const robotButtons = [...document.querySelectorAll('[data-robot-film]')];
+robotButtons.forEach(button => button.addEventListener('click', () => {
+  robotButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  embodimentVideo.pause();
+  embodimentVideo.dataset.src = button.dataset.robotFilm;
+  embodimentVideo.src = button.dataset.robotFilm;
+  embodimentVideo.poster = button.dataset.robotPoster;
+  embodimentVideo.setAttribute('aria-label', button.dataset.robotTitle + ' flattening on the left and folding on the right');
+  embodimentVideo.load();
+  document.getElementById('embodiment-caption').textContent = button.dataset.robotTitle + ' · ' + (button.dataset.robotTitle === 'PIPER' ? 'Recorded trajectory replay' : 'Retargeted kinematic reference');
+  embodimentVideo.play().catch(() => {});
+}));

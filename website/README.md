@@ -8,9 +8,10 @@ python -m http.server 8765 --bind 127.0.0.1 --directory website
 
 ## Page structure
 
-- `index.html`: publication details, paired external-camera task film, 200-trajectory pullback, 500-asset preview, method, matched robot replays, and manuscript results.
+- `index.html`: paired external-camera task film, 500-asset preview and training-set counts, method, a large selectable robot replay, and the main downstream-data result. The 200-trajectory pullback is available in an expandable screening; publication details follow the main presentation.
+- `results.html`: all five experiment groups, full split results, protocols, quality images, and limitations. Homepage links target each group directly.
 - `explore.html`: 24 selected trajectory replays linked to a zoomable 500-garment atlas. Filters, hover previews, modal navigation, keyboard selection, and garment/replay links live here.
-- `styles.css` / `app.js`: homepage presentation and media dialogs. `explore.css` / `explorer.js`: the data explorer.
+- `styles.css`: shared styles and full experiment presentation. `home.css`: homepage composition. `app.js`: media dialogs, visibility loading, and matched robot selection. `explore.css` / `explorer.js`: the data explorer.
 
 Arial/Helvetica, white and light-neutral backgrounds, and a shared 1160 px content boundary establish the page frame. Media retains its encoded aspect ratio; the modal fits its natural dimensions. Videos have native controls, load near visibility, and pause offscreen. Reduced-motion preferences disable automatic ambient playback and hover previews; explicit task/robot playback remains available.
 
@@ -38,7 +39,7 @@ The atlas copies `outputs/presentation/asset_stage_500_v6_project_floor/asset_ma
 
 Manuscript metrics and protocols are retained. Combined data does not exceed Generated alone; the page does not assert a verified causal explanation.
 
-The results section additionally exposes cumulative generation ablations, seen/unseen garment splits, Human-to-Generated gains in all four evaluation conditions, four policy-model comparisons, source-linked terminal-state quality images, and the supplementary PIPER/UR5e task-composition results. Full model results and training-set sizes remain expandable. `assets/experiment-results.json` records the displayed numbers and manuscript table labels; `paper/sections/experiments.tex` is the source. Bars share a 0–100% scale. Policy pretraining differences and the distinction between closed-loop transfer experiments and kinematic showcase replays are disclosed.
+The full experiment page exposes cumulative generation ablations, seen/unseen garment splits, Human-to-Generated gains in all four evaluation conditions, four policy-model comparisons, source-linked terminal-state quality images, and the supplementary PIPER/UR5e task-composition results. Full model results and training-set sizes remain expandable. `assets/experiment-results.json` records the displayed numbers and manuscript table labels; `paper/sections/experiments.tex` is the source. Bars share a 0–100% scale. Policy pretraining differences and the distinction between closed-loop transfer experiments and kinematic showcase replays are disclosed. The homepage summarizes the same results and retains links to every experiment group.
 
 Static references, JavaScript syntax, media decoding, source uniqueness, and DOM-model explorer behavior can be checked locally. A DOM model is not browser layout verification. Browser screenshot QA is unavailable in this session.
 
