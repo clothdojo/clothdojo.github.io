@@ -1,6 +1,5 @@
 (() => {
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const narrow = matchMedia('(max-width: 700px)');
   const films = [...document.querySelectorAll('video[data-src]')];
   const visible = new Map();
   let active;
@@ -19,41 +18,25 @@
     const selected = [...visible].filter(([v]) => v.hasAttribute('data-auto')).sort((a,b) => b[1]-a[1])[0]?.[0];
     if (selected) play(selected);
   }
-  function choose(button, autoplay = true) {
+  function choose(button) {
     const video = document.getElementById(button.dataset.select);
     if (!video) return;
-    const position = video.hasAttribute('data-sync-time') ? video.currentTime : 0;
     const version = (versions.get(video) || 0) + 1;
     versions.set(video, version);
     video.pause();
     document.querySelectorAll('[data-select="' + video.id + '"]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
     video.dataset.src = button.dataset.src;
     video.poster = button.dataset.poster;
-    if (button.dataset.layout) video.dataset.layout = button.dataset.layout;
-    video.setAttribute('aria-label', button.dataset.caption);
+    video.setAttribute('aria-label', button.textContent.trim() + ': ' + button.dataset.caption);
     document.getElementById(video.id + '-caption').textContent = button.dataset.caption;
     video.addEventListener('loadedmetadata', () => {
       if (versions.get(video) !== version) return;
-      if (position && Number.isFinite(video.duration)) video.currentTime = Math.min(position, video.duration - .05);
-      if (autoplay && visible.has(video) && !motion.matches && !navigator.connection?.saveData && !document.hidden && !document.getElementById('media-dialog').open) play(video);
+      if (visible.has(video) && !motion.matches && !navigator.connection?.saveData && !document.hidden && !document.getElementById('media-dialog').open) play(video);
     }, { once: true });
     video.src = video.dataset.src;
     video.load();
   }
   document.querySelectorAll('[data-select]').forEach(button => button.addEventListener('click', () => choose(button)));
-  function mobileSingleViews() {
-    if (!narrow.matches) return;
-    for (const id of ['hero-film', 'collection-film', 'transfer-film']) {
-      const options = [...document.querySelectorAll('[data-select="' + id + '"]')];
-      const overview = options.find(b => b.classList.contains('desktop-overview'));
-      if (overview?.getAttribute('aria-pressed') === 'true') {
-        const first = options.find(b => !b.classList.contains('desktop-overview'));
-        if (first) choose(first, false);
-      }
-    }
-  }
-  mobileSingleViews();
-  narrow.addEventListener('change', mobileSingleViews);
   document.addEventListener('play', event => {
     if (event.target.tagName !== 'VIDEO' || event.target.paused) return;
     active = event.target;

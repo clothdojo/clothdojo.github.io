@@ -167,33 +167,40 @@ saveReport();
   async function heroReveal(page, prefix, captureFrames) {
     const video = page.locator('#hero-film');
     if (!await video.count()) return;
-    const source = 'assets/launch/generation-reveal.mp4';
-    const poster = 'assets/launch/generation-reveal-poster.jpg';
-    const firstTab = page.locator('[data-select="hero-film"]').first();
-    assert.equal(await video.getAttribute('data-src'), source, 'Hero must default to the continuous scale-reveal video at every viewport');
-    assert.equal(await video.getAttribute('poster'), poster, 'Hero must show the scale-reveal poster by default');
-    assert.equal(await firstTab.getAttribute('data-src'), source, 'The first hero tab must select the scale-reveal video');
-    assert.equal(await firstTab.getAttribute('aria-pressed'), 'true', 'At scale must be the initially selected hero tab');
-    assert.equal((await firstTab.textContent()).trim(), 'At scale');
-    assert(await firstTab.isVisible(), 'At scale must remain visible on desktop and mobile');
-    report.checks.push(prefix + ': visible At scale tab and reveal video selected by default');
-    if (!captureFrames) return;
-    for (const time of [0.5, 6, 11]) {
-      const shot = await capture(page, prefix + '-hero-reveal-' + String(time).replace('.', 'p') + 's', '#hero-film', time);
-      const state = shot.visibleVideos.find(item => item.id === 'hero-film');
-      const evidence = { viewport: page.viewportSize(), screenshot: shot.file, requestedTime: time, ...state };
-      (report.heroRevealFrames ||= []).push(evidence);
-      saveReport();
-      assert(state, 'Scale-reveal video must be visible in the timed screenshot');
-      assert.equal(state.currentSrc, new URL(source, page.url()).href, 'Timed screenshot must sample the actual scale-reveal source');
-      assert(state.duration > 11, 'Scale-reveal source must include the 11-second frame');
-      assert(Math.abs(state.time - time) < 0.05, 'Scale-reveal screenshot must preserve the requested frame time');
-      assert(state.readyState >= 3 && !state.seeking, 'Scale-reveal screenshot must contain a stable playable frame');
-      assert.equal(state.videoWidth, 1920);
-      assert.equal(state.videoHeight, 1080);
-      assert(state.controls && state.paused, 'Timed screenshots must retain native controls and pause the actual video');
+    const tasks = [{ task: 'flatten', label: 'Flattening', count: 400 }, { task: 'fold', label: 'Folding', count: 399 }];
+    const tabs = page.locator('[data-select="hero-film"]');
+    assert.equal(await tabs.count(), 2, 'Generation must separate the two task objectives');
+    assert.equal(await video.getAttribute('data-src'), 'assets/launch/generation-flatten.mp4');
+    assert.equal(await tabs.first().getAttribute('aria-pressed'), 'true');
+    assert.equal(await page.locator('#collection-film').count(), 0, 'The redundant four-sample collage must be removed');
+    for (let index = 0; index < tasks.length; index++) {
+      assert.equal((await tabs.nth(index).textContent()).trim(), tasks[index].label);
+      assert(await tabs.nth(index).isVisible(), 'Both task choices must be visible at every viewport');
     }
-    report.checks.push(prefix + ': real scale-reveal frames at 0.5, 6 and 11 seconds, stable native player at 1920x1080');
+    report.checks.push(prefix + ': two explicit task choices, Flattening selected by default, no duplicate collage');
+    if (!captureFrames) return;
+    for (const [index, task] of tasks.entries()) {
+      const source = 'assets/launch/generation-' + task.task + '.mp4';
+      await tabs.nth(index).click();
+      assert.equal(await video.getAttribute('poster'), source.replace('.mp4', '-poster.jpg'));
+      assert.match(await page.locator('#hero-film-caption').textContent(), new RegExp(task.count + ' garments'));
+      for (const time of [0, 4.75, 8, 16]) {
+        const shot = await capture(page, prefix + '-hero-' + task.task + '-' + String(time).replace('.', 'p') + 's', '#hero-film', time);
+        const state = shot.visibleVideos.find(item => item.id === 'hero-film');
+        (report.heroRevealFrames ||= []).push({ task: task.task, viewport: page.viewportSize(), screenshot: shot.file, requestedTime: time, ...state });
+        saveReport();
+        assert(state, 'Generation video must be visible in the timed screenshot');
+        assert.equal(state.currentSrc, new URL(source, page.url()).href);
+        assert(Math.abs(state.duration - 17) < 0.05, 'Complete-task film must include its final hold');
+        assert(Math.abs(state.time - time) < 0.05, 'Screenshot must preserve the requested frame time');
+        assert(state.readyState >= 3 && !state.seeking, 'Screenshot must contain a stable playable frame');
+        assert.equal(state.videoWidth, 1920);
+        assert.equal(state.videoHeight, 1080);
+        assert(state.controls && state.paused, 'Keep native controls in the screenshot');
+      }
+    }
+    await tabs.first().click();
+    report.checks.push(prefix + ': both complete-task films decoded at initial, near, moving-camera and all-completed times');
     saveReport();
   }
   async function captureSections(page, prefix) {
@@ -202,6 +209,18 @@ saveReport();
       const selector = '[id=' + JSON.stringify(id) + ']';
       await capture(page, prefix + '-' + id.replace(/[^a-zA-Z0-9_-]/g, '-'), selector);
     }
+  }
+  async function rerenderComparison(page, prefix) {
+    if (pagePath !== 'index.html') return;
+    assert.equal(await page.locator('#render video').count(), 1, 'Matched re-renders must use one synchronized video');
+    assert.equal(await page.locator('[data-select="appearance-film"]').count(), 0, 'Re-rendering must be visible as a direct comparison');
+    const shot = await capture(page, prefix + '-matched-rerender', '#appearance-film', 2.5);
+    const state = shot.visibleVideos.find(item => item.id === 'appearance-film');
+    assert(state && state.currentSrc.endsWith('/rerender-comparison.mp4'));
+    assert.equal(state.videoWidth, 1920);
+    assert.equal(state.videoHeight, 600);
+    assert(Math.abs(state.time - 2.5) < 0.05 && state.readyState >= 3 && !state.seeking);
+    report.checks.push(prefix + ': direct frame-matched re-rendering pair in one native player');
   }
   async function formalTitle(page, prefix) {
     if (pagePath !== 'index.html') return;
@@ -259,7 +278,7 @@ saveReport();
     const studies = page.locator('.research-study');
     if (await studies.count()) {
       const index = await studies.count() - 1;
-      await capture(page, prefix + '-policy-comparison', '.research-study >> nth=' + index);
+      await capture(page, prefix + '-transfer-evaluation', '.research-study >> nth=' + index);
     }
   }
   async function explanations(page, prefix, exercise) {
@@ -282,9 +301,9 @@ saveReport();
     const entry = { viewport: page.viewportSize(), initial, interactions: [] };
     (report.explanations ||= []).push(entry);
     saveReport();
-    assert.equal(initial.length, 10, 'Homepage must have ten native explanation details');
-    assert(initial.every(item => item.tag === 'DETAILS' && item.open === false && item.summary), 'All ten explanations must be native details, initially closed, with a summary');
-    report.checks.push(prefix + ': all ten native explanation details default closed');
+    assert.equal(initial.length, 8, 'Homepage must retain all eight explanations for the project, media, evidence, method and usage');
+    assert(initial.every(item => item.tag === 'DETAILS' && item.open === false && item.summary), 'Explanations must be native details, initially closed, with a summary');
+    report.checks.push(prefix + ': all ' + initial.length + ' native explanation details default closed');
     if (!exercise) return;
     for (let index = 0; index < initial.length; index++) {
       const item = details.nth(index);
@@ -309,14 +328,12 @@ saveReport();
         assert.equal(state.bodyVisible, open, label + ' ' + action + ' must toggle the explanation content');
         await layout(page, label + '-' + action);
         if (action === 'click-open') {
-          const section = await item.evaluate(element => element.closest('section')?.id);
           if (await item.getAttribute('id') === 'about') await capture(page, prefix + '-hero-about-expanded', '#about');
-          else if (section === 'generate') await capture(page, prefix + '-generation-details-expanded', '#generate > details.explanation');
         }
       }
     }
     assert(await details.evaluateAll(elements => elements.every(element => !element.open)), 'Explanation checks must leave all details closed');
-    report.checks.push(prefix + ': all ten explanations support pointer, Enter and Space toggles without page overflow');
+    report.checks.push(prefix + ': all ' + initial.length + ' explanations support pointer, Enter and Space toggles without page overflow');
     saveReport();
   }
   async function mediaSnapshot(locator) {
@@ -449,6 +466,7 @@ saveReport();
     await captureSections(desktop, 'desktop');
     await captureEvidenceDetails(desktop, 'desktop');
     await heroReveal(desktop, 'desktop', true);
+    await rerenderComparison(desktop, 'desktop');
     await interactions(desktop);
     const mainTable = pagePath === 'index.html' ? await tableStyle(desktop) : null;
     report.tableStyles = { homepage: mainTable };
@@ -457,20 +475,15 @@ saveReport();
       await formalTitle(mobile, 'mobile-' + width);
       await explanations(mobile, 'mobile-' + width, width === 390);
       await heroReveal(mobile, 'mobile-' + width, width === 390);
-      if (await mobile.locator('#collection-film').count()) {
-        assert((await mobile.locator('#collection-film').getAttribute('data-src')).endsWith('sample-01.mp4'), 'Mobile collection must default to a readable single replay');
-        assert.equal(await mobile.locator('[data-select="collection-film"][aria-pressed="true"]').getAttribute('data-src'), 'assets/launch/sample-01.mp4');
-        assert.equal(await mobile.locator('[data-select="collection-film"].desktop-overview').isVisible(), false, 'Collection overview must be hidden on mobile');
-      }
       if (await mobile.locator('#transfer-film').count()) {
-        assert((await mobile.locator('#transfer-film').getAttribute('data-src')).endsWith('transfer-source.mp4'), 'Mobile transfer must default to a readable single source replay');
-        assert.equal(await mobile.locator('#transfer-film').getAttribute('data-layout'), 'single');
-        assert.equal(await mobile.locator('[data-select="transfer-film"][aria-pressed="true"]').getAttribute('data-src'), 'assets/launch/transfer-source.mp4');
-        assert.equal(await mobile.locator('[data-select="transfer-film"].desktop-overview').isVisible(), false, 'Side-by-side transfer must be hidden on mobile');
+        assert((await mobile.locator('#transfer-film').getAttribute('data-src')).endsWith('/transfer.mp4'), 'Both robots must be visible in the synchronized comparison');
+        assert.equal(await mobile.locator('#transfer .media-labels p').count(), 2, 'Both robots need visible source/target labels');
+        assert(await mobile.locator('[data-expand="transfer-film"]').isVisible(), 'The mobile pair needs a larger-view entry');
       }
       await capture(mobile, 'mobile-' + width + '-opening');
       await captureSections(mobile, 'mobile-' + width);
       await captureEvidenceDetails(mobile, 'mobile-' + width);
+      await rerenderComparison(mobile, 'mobile-' + width);
       await mobile.context().close();
     }
     const active = await open({ width: 1440, height: 1000 }, 'no-preference');
@@ -480,10 +493,17 @@ saveReport();
       await active.waitForFunction(() => document.getElementById('hero-film').hasAttribute('src'));
       await active.locator('#hero-film').evaluate(async video => { await video.play(); });
       await active.locator('[data-select="hero-film"]').last().click();
-      await active.waitForFunction(() => !document.getElementById('hero-film').paused);
+      const expectedSource = new URL('assets/launch/generation-fold.mp4', origin).href;
+      await active.waitForFunction(source => {
+        const video = document.getElementById('hero-film');
+        return video.currentSrc === source && video.readyState >= 3 && !video.paused && video.currentTime > 0.1;
+      }, expectedSource);
       assert.equal(await active.locator('video').evaluateAll(videos => videos.filter(video => !video.paused).length), 1);
       await active.locator('[data-expand="hero-film"]').click();
-      await active.waitForFunction(() => !document.getElementById('expanded-film').paused);
+      await active.waitForFunction(source => {
+        const video = document.getElementById('expanded-film');
+        return video.currentSrc === source && video.readyState >= 3 && !video.paused && video.currentTime > 0.1;
+      }, expectedSource);
       assert.equal(await active.locator('video').evaluateAll(videos => videos.filter(video => !video.paused).length), 1);
       report.checks.push('real Chromium playback: one active video after task switch and HD open');
     }
