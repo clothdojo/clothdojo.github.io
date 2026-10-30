@@ -39,6 +39,7 @@ const report = { commit: process.env.REVIEW_SHA, screenshots: [], layouts: [], c
     await desktop.locator('#hero-hd').click();
     assert(await desktop.locator('#film-dialog').evaluate(d => d.open));
     await desktop.keyboard.press('Escape');
+    await desktop.waitForFunction(() => !document.getElementById('film-video').hasAttribute('src'));
     assert.equal(await desktop.locator('#film-video').getAttribute('src'), null);
     for (const target of ['aloha2', 'x5', 'fr3_duo', 'ur5e_2f85']) {
       await desktop.locator('[data-compare="' + target + '"]').click();
