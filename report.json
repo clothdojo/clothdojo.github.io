@@ -1,5 +1,5 @@
 {
-  "commit": "b93ee0ad58329a9c6ff74a6433e36b934621aa5a",
+  "commit": "edd0f13aaed6c4da301905b2c5493fbe091d793b",
   "screenshots": [
     "desktop-opening",
     "desktop-generation",
@@ -57,10 +57,11 @@
     }
   ],
   "checks": [
-    "task selection, HD dialog/Escape/source cleanup, four target robots"
+    "task selection, HD dialog/Escape/source cleanup, four target robots",
+    "real Chromium playback: one active video after task switch and HD open"
   ],
   "errors": [],
-  "browser": "141.0.7390.37",
-  "failure": "locator.evaluate: NotSupportedError: The element has no supported sources.\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:61:41",
-  "passed": false
+  "browser": "156.0.8078.47",
+  "codec": "probably",
+  "passed": true
 }
