@@ -7,7 +7,7 @@ fs.mkdirSync(out, { recursive: true });
 const report = { commit: process.env.REVIEW_SHA, screenshots: [], layouts: [], checks: [], errors: [] };
 
 (async () => {
-  const browser = await chromium.launch({ args: ['--disable-gpu'] });
+  const browser = await chromium.launch({ channel: 'chrome', args: ['--disable-gpu'] });
   report.browser = browser.version();
   async function open(viewport, reducedMotion = 'reduce') {
     const context = await browser.newContext({ viewport, deviceScaleFactor: 1, reducedMotion });
@@ -15,6 +15,7 @@ const report = { commit: process.env.REVIEW_SHA, screenshots: [], layouts: [], c
     page.on('pageerror', e => report.errors.push(e.message));
     page.on('response', r => { if (r.status() >= 400) report.errors.push(r.status() + ' ' + r.url()); });
     await page.goto('http://127.0.0.1:8787/', { waitUntil: 'networkidle' });
+    report.codec = await page.evaluate(() => document.createElement('video').canPlayType('video/mp4; codecs="avc1.640028"'));
     return page;
   }
   async function capture(page, name, selector) {
@@ -58,6 +59,8 @@ const report = { commit: process.env.REVIEW_SHA, screenshots: [], layouts: [], c
       assert(layout.scrollWidth <= width + 1, 'Horizontal page overflow at ' + width);
     }
     const active = await open({ width: 1440, height: 1000 }, 'no-preference');
+    await active.locator('#hero-video').scrollIntoViewIfNeeded();
+    await active.waitForFunction(() => document.getElementById('hero-video').hasAttribute('src'));
     await active.locator('#hero-video').evaluate(async v => { await v.play(); });
     await active.locator('[data-task="fold"]').click();
     await active.waitForFunction(() => !document.getElementById('hero-video').paused);
