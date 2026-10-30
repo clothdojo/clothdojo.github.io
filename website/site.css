@@ -154,7 +154,8 @@ sup {
   line-height:1.85
 }
 .hero {
-  padding-top:44px
+  padding-top:44px;
+  padding-bottom:60px
 }
 .hero-copy {
   text-align:left
@@ -208,10 +209,6 @@ sup {
 .film-tabs button[aria-pressed=true] {
   background:#e9f1f2;
   color:#246a77
-}
-.collection-figure video,.observation-film video {
-  aspect-ratio:8/5;
-  object-fit:contain
 }
 .hero-figure video {
   width:100%;
@@ -276,44 +273,6 @@ sup {
 .byline p:last-child {
   text-align:right
 }
-.generation-layout {
-  width:100%
-}
-.collection-figure video {
-  border-radius:4px
-}
-.generation-steps {
-  list-style:none;
-  margin:25px 0 0;
-  padding:0
-}
-.generation-steps li {
-  display:flex;
-  gap:19px;
-  padding:20px 0;
-  border-bottom:1px solid var(--line)
-}
-.generation-steps li:first-child {
-  padding-top:0
-}
-.generation-steps li>span {
-  font-size:12px;
-  color:#83a2aa;
-  line-height:26px
-}
-.generation-steps h3 {
-  font-size:18px;
-  letter-spacing:-.3px;
-  margin-bottom:6px
-}
-.generation-steps p {
-  font-size:13px;
-  color:var(--text);
-  line-height:1.8
-}
-.generation-steps+p {
-  margin-top:16px
-}
 .section-links {
   display:flex;
   justify-content:space-between;
@@ -333,113 +292,34 @@ sup {
   background:#edf3f3;
   padding-block:65px
 }
-.observation-section>.container {
-  display:grid;
-  grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);
-  gap:65px;
-  align-items:center
-}
-.observation-section .explanation {
-  grid-column:1/-1;
-  margin-top:0
-}
-.observation-copy>p:not(.eyebrow):not(.fine-print) {
-  font-size:14px;
-  color:var(--text);
-  line-height:1.9;
-  margin-top:20px;
-  max-width:390px
-}
-.observation-copy .fine-print {
-  margin-top:18px
-}
-.material-selector {
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-  margin-top:23px;
-  max-width:310px
-}
-.material-selector button {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:9px 12px;
-  border:1px solid transparent;
-  border-radius:3px;
-  background:none;
-  text-align:left;
-  font-size:13px;
-  color:#577079
-}
-.material-selector button[aria-pressed=true] {
-  background:#fff;
-  border-color:#cadbdd;
-  color:#234e5b
-}
-.swatch {
-  width:20px;
-  height:20px;
-  border:1px solid #0001;
-  border-radius:50%;
-  flex-shrink:0
-}
-.pattern {
-  background:repeating-linear-gradient(45deg,#8d9b50 0 3px,#ced89f 3px 6px)
-}
-.velvet {
-  background:#e67c9c
-}
-.checkered {
-  background:conic-gradient(#dae0d0 25%,#eef2e7 0 50%,#bfd1bd 0 75%,#eef2e7 0);
-  background-size:10px 10px
-}
-.observation-film video {
-  border-radius:5px
-}
-.transfer-film video {
+.observation-film video,.transfer-film video {
   aspect-ratio:16/5;
   object-fit:contain;
   border-radius:4px
 }
-.transfer-labels {
+.media-labels {
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  align-items:center;
   text-align:center;
-  padding:12px 0;
-  border-bottom:1px solid var(--line);
-  font-size:14px
+  color:var(--text);
+  font-size:14px;
+  line-height:1.5;
+  padding-bottom:12px
 }
-.transfer-labels small {
-  display:block;
-  font-size:11px;
-  color:var(--muted);
-  margin-top:3px
+.media-labels p {
+  padding-inline:8px
 }
 .transfer-evidence {
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);
-  align-items:center;
-  gap:50px;
-  margin-top:30px
-}
-.transfer-evidence>div {
   min-width:0
 }
 .transfer-evidence h3 {
-  font-size:22px;
-  margin-bottom:15px
+  font-size:15px;
+  letter-spacing:0;
+  margin-bottom:16px
 }
-.transfer-evidence p {
-  font-size:14px;
-  line-height:1.85;
-  color:var(--text)
-}
-.transfer-evidence a {
-  font-size:12px;
-  display:inline-block;
-  margin-top:15px
+.transfer-evidence>.table-block {
+  margin-top:0
 }
 .method-section {
   background:#f6f8f8;
@@ -672,15 +552,6 @@ dialog::backdrop {
   margin:auto
 }
 @media(max-width:1000px) {
-  .generation-steps h3 {
-    font-size:16px
-  }
-  .observation-section>.container {
-    gap:35px
-  }
-  .transfer-evidence {
-    gap:30px
-  }
   .quickstart {
     gap:30px
   }
@@ -717,7 +588,8 @@ dialog::backdrop {
     display:none
   }
   .hero {
-    padding-top:30px
+    padding-top:30px;
+    padding-bottom:40px
   }
   .hero h1 {
     font-size:clamp(24px,6.8vw,34px);
@@ -802,24 +674,9 @@ dialog::backdrop {
     line-height:1.85;
     margin-top:15px
   }
-  .generation-steps {
-    margin-top:15px
-  }
-  .generation-steps li {
-    padding-block:16px
-  }
-  .generation-steps h3 {
-    font-size:17px
-  }
-  .generation-steps p {
-    font-size:13px
-  }
   .film-tabs button {
     font-size:12px;
     padding:5px 12px
-  }
-  .collection-overview {
-    display:none!important
   }
   .launch figcaption {
     font-size:11px;
@@ -832,64 +689,12 @@ dialog::backdrop {
   .observation-section {
     padding-block:45px
   }
-  .observation-section>.container {
-    display:flex;
-    flex-direction:column;
-    gap:24px;
-    align-items:stretch
-  }
-  .observation-copy h2 br {
-    display:none
-  }
-  .observation-copy>p:not(.eyebrow):not(.fine-print) {
-    max-width:none;
-    font-size:13px;
-    margin-top:15px
-  }
-  .material-selector {
-    flex-direction:row;
-    flex-wrap:wrap;
-    max-width:none;
-    gap:8px;
-    margin-top:18px
-  }
-  .material-selector button {
-    font-size:11px;
-    padding:7px 8px;
-    gap:7px
-  }
-  .swatch {
-    width:16px;
-    height:16px
-  }
-  .observation-copy .fine-print {
-    font-size:11px;
-    margin-top:12px
-  }
-  .transfer-film video {
-    aspect-ratio:16/5
-  }
-  .transfer-labels {
-    font-size:12px;
-    gap:15px;
-    padding:10px 0
-  }
-  .transfer-labels small {
-    font-size:10px
-  }
-  .transfer-evidence {
-    grid-template-columns:1fr;
-    gap:4px;
-    margin-top:25px
-  }
-  .transfer-evidence h3 {
-    font-size:21px
-  }
-  .transfer-evidence p {
-    font-size:13px
-  }
   .fine-print {
     font-size:11px
+  }
+  .media-labels {
+    font-size:12px;
+    padding-bottom:10px
   }
   .method-section {
     padding-block:45px
@@ -958,14 +763,6 @@ dialog::backdrop {
     padding:13px
   }
 }
-.transfer-film video[data-layout=single] {
-  aspect-ratio:8/5
-}
-@media(max-width:700px) {
-  .desktop-overview {
-    display:none!important
-  }
-}
 @media(max-width:360px) {
   .hero-facts {
     gap:17px
@@ -974,13 +771,6 @@ dialog::backdrop {
     gap:13px
   }
   .nav-links a {
-    font-size:10px
-  }
-  .material-selector {
-    gap:4px
-  }
-  .material-selector button {
-    padding:7px 5px;
     font-size:10px
   }
 }

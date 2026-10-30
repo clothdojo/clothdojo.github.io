@@ -4,7 +4,7 @@ Buildless research website. GitHub Pages publishes this directory only; code, te
 
 ## Structure
 
-- `index.html`: complete-workcell demonstrations, repeatable generation, observation re-rendering, robot transfer, three experimental comparisons, method and practical entry points.
+- `index.html`: complete-task generation across distinct garments, observation re-rendering, robot transfer, generation/learning/transfer evaluations, method and practical entry points.
 - `site.css` / `site.js`: the shared visual system and homepage media interactions. The homepage does not depend on the archived homepage CSS or player scripts.
 - `results.html` / `results.css`: five complete experiment groups. Homepage research charts and all research tables use these same components.
 - `explore.html` / `explore.css` / `explorer.js`: the 24-trajectory catalog and interactive 500-garment atlas.
@@ -19,19 +19,19 @@ Serve the website locally with Node.js and a server that supports byte-range vid
 npx --yes http-server@14.1.1 website -a 127.0.0.1 -p 8765 -c-1
 ```
 
-HTTP byte-range support is required to verify video seeking and time-preserving source switches in the local preview.
+HTTP byte-range support is required to verify native video seeking and expanded replay in the local preview.
 
 ## Demonstration narrative
 
-The homepage opens with the full paper title, aligned with the demonstration below it. Desktop uses three semantic lines; narrow screens wrap the complete title without removing words. Collection counts and the authors' disclosure follow the video. Project details and authors, generation steps, replay explanations, experiment protocols, the detailed method and setup requirements use native, default-closed `details` sections. Videos, plots, key tables and entry points remain visible; expanding a section keeps its context on the page.
+The homepage opens with the full paper title, aligned with the demonstration below it. Desktop uses three semantic lines; narrow screens wrap the complete title without removing words. Collection counts and the authors' disclosure follow the video. Project details and authors, replay explanations, experiment protocols, the detailed method and setup requirements use native, default-closed `details` sections. Videos, plots, key tables and entry points remain visible; expanding a section keeps its context on the page.
 
-The primary demonstration opens at an oblique third-person view of a complete robot workcell, then moves through one shared 3D scene to reveal 24 workcells with different garments. All 24 use distinct saved autonomous trajectories, with real camera motion and 1× playback. Desktop and mobile both start with this reveal; separate flattening and folding views remain available. This illustrates the collection, not a live parallel-generation session or proof of complete-task success. Close views are reserved for the observation/material comparison and optional detail inspection.
+The primary demonstration has two task choices: 400 distinct garments for flattening and 399 for folding. Each starts at an oblique third-person view of one complete robot workcell, then reveals the task's larger collection in one shared 3D scene. Cloth material and environment are uniform so shape and motion carry the comparison. Every workcell replays a different saved autonomous trajectory from its initial state through its selected successful, released terminal state. Shorter executions retain that actual terminal state while others finish. These presentation replays illustrate the saved collection; they do not measure simultaneous generation throughput.
 
-The generated collection uses different garments and recorded trajectories rendered with the same new camera. Desktop visitors can inspect the overview or one trajectory. Mobile starts with a readable single trajectory.
+Both task films run for 17 seconds at 25 fps and explicitly use 4× playback. With source states recorded at 50 Hz, output frame `i` reads state `min(8*i, T)`, where `T` is the exported episode's successful terminal index. The maximum selected execution lasts less than 59 seconds, leaving more than two seconds with every garment at its completed state. Desktop and mobile use the same task choices. The earlier four-sample excerpt collage is no longer part of the homepage.
 
-Observation re-rendering uses matching physical states, robot motion, camera and frame times with different cloth materials. Selecting a material preserves the replay time. It changes observations, not physical execution.
+Observation re-rendering directly pairs two appearances of the same saved motion. Both columns use matching physical states, robot motion, camera, environment, lighting and frame times; only cloth material changes. A single 25 fps video keeps the columns synchronized and needs only one decoder. This five-second, 1× excerpt demonstrates observation reuse rather than complete-task success. Both columns are rendered RGB observations; “Reference appearance” does not imply an original camera recording.
 
-Robot transfer shows a source replay and a retargeted kinematic reference. Desktop supports side-by-side comparison; mobile starts with the source and can switch to the target at the same timestamp. The separate closed-loop policy table remains clearly distinguished from replay evidence.
+Robot transfer pairs a source replay with a retargeted kinematic reference at matching timestamps. Both robot identities are labeled above the video, with an expanded player available on desktop and mobile. The closed-loop policy table is in the evaluation section, separate from replay evidence. Full downstream policy comparisons remain on the results page.
 
 The generated training set has 7,848 trajectories: 3,992 flattening and 3,856 folding, covering 400 and 399 garments respectively. These counts differ from the 500-asset pool and selected demonstration subsets.
 
@@ -47,7 +47,7 @@ The first usage entry is an executable CPU saved-state scoring example. Generati
 
 Web videos use H.264 with `yuv420p` and fast-start metadata. They preserve the rendered aspect ratio. Only the selected variation is attached to its player. The shared player policy permits one playing video at a time, pauses offscreen/hidden media, and suppresses autoplay for reduced-motion or data-saver preferences. A manually paused visible video remains paused until it leaves view or the visitor chooses another item.
 
-All 64 videos referenced by the current homepage, results and explorer (including catalog clips and hover previews) run at 25 fps. The four collection samples use every second saved state from 50 Hz trajectories; the expert montage samples the original 50 fps RGB recordings. Neither uses interpolation or repeated low-rate frames to raise the frame rate. Short expert demonstrations retain their final frame until the shared phase boundary at 29.64 seconds. Archived design-study media are outside the current page set.
+Videos referenced by the current homepage, results and explorer (including catalog clips and hover previews) run at 25 fps. Frames sample saved physical states or the original RGB recordings; low-rate video is not repeated or interpolated to manufacture a higher motion frame rate. Completed generation trajectories retain their verified terminal state, and short expert demonstrations retain their final frame until the shared phase boundary at 29.64 seconds. Archived design-study media are outside the current page set.
 
 Native controls remain available. Expanded replay loads on explicit request and clears its source when closed. Source switches ignore late autoplay callbacks when their video is offscreen or a dialog is open.
 
@@ -55,9 +55,9 @@ Native controls remain available. Expanded replay loads on explicit request and 
 
 `.github/workflows/website-visual-review.yml` uses Playwright 1.56.1 and the runner's installed Google Chrome for H.264 playback. It accepts a Git ref and page path, and reviews the website work branches before publication on `main`.
 
-The verification server is pinned to `http-server` 14.1.1 and supports HTTP byte ranges for native video seeking. Before browser checks, a 1,024-byte media request must return HTTP 206 and a matching `Content-Range`. Material-switch diagnostics retain duration, seekable/buffered ranges and media events; this distinguishes loading or server problems from replay-time preservation failures.
+The verification server is pinned to `http-server` 14.1.1 and supports HTTP byte ranges for native video seeking. Before browser checks, a 1,024-byte media request must return HTTP 206 and a matching `Content-Range`.
 
-The review captures 1440 px desktop and 390/320 px mobile viewports, with decoded images and real video frames. It checks the full title's visibility, source selection, material timestamp preservation, native dialog cleanup, clipboard copying, exclusive playback, mobile defaults, page overflow, disclosure interactions and shared computed table styles. The scale-reveal video is also captured at 0.5, 6 and 11 seconds on desktop and mobile, with its actual playback timestamp and decoded dimensions recorded. Results-page screenshots cover all five experiment groups. JPEG screenshots and a report containing the tested commit and browser version are kept on `codex/site-visual-review`.
+The review captures 1440 px desktop and 390/320 px mobile viewports, with decoded images and real video frames. It checks the full title's visibility, task selection, synchronized re-rendering presentation, native dialog cleanup, clipboard copying, exclusive playback, mobile defaults, page overflow, disclosure interactions and shared computed table styles. Each generation film is also captured at 0, 4.75, 8 and 16 seconds on desktop and mobile, covering initial state, the near workcell's completed task, camera movement and the completed collection. Actual timestamps and decoded dimensions are recorded. Results-page screenshots cover all five experiment groups. JPEG screenshots and a report containing the tested commit and browser version are kept on `codex/site-visual-review`.
 
 Inspect screenshots as well as automated results: passing interaction checks is not a visual-quality assessment.
 
