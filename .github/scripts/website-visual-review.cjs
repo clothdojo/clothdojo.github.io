@@ -144,6 +144,12 @@ saveReport();
       await capture(page, prefix + '-policy-comparison', '.research-study >> nth=' + index);
     }
   }
+  async function mediaSnapshot(locator) {
+    return locator.evaluate(video => {
+      const ranges = list => Array.from({ length: list.length }, (_, index) => [list.start(index), list.end(index)]);
+      return { source: video.currentSrc, time: video.currentTime, duration: video.duration, readyState: video.readyState, seeking: video.seeking, seekable: ranges(video.seekable), buffered: ranges(video.buffered) };
+    });
+  }
   async function interactions(page) {
     progress('Interactions start: media selections');
     const options = page.locator('[data-select]');
@@ -172,21 +178,22 @@ saveReport();
       const expectedSource = new URL(source, page.url()).href;
       report.materialTiming = { expectedTime: 1.25, expectedSource, tolerance: 0.1, events: [] };
       await appearance.evaluate(video => {
-        const state = () => ({ source: video.currentSrc, time: video.currentTime, readyState: video.readyState, seeking: video.seeking });
+        const ranges = list => Array.from({ length: list.length }, (_, index) => [list.start(index), list.end(index)]);
+        const state = () => ({ source: video.currentSrc, time: video.currentTime, duration: video.duration, readyState: video.readyState, seeking: video.seeking, seekable: ranges(video.seekable), buffered: ranges(video.buffered) });
         window.__reviewMaterialEvents = [];
         for (const type of ['loadedmetadata', 'loadeddata', 'seeked']) {
           video.addEventListener(type, () => window.__reviewMaterialEvents.push({ type, timestamp: performance.now(), ...state() }));
         }
         video.currentTime = 1.25;
       });
-      report.materialTiming.before = await appearance.evaluate(video => ({ source: video.currentSrc, time: video.currentTime, readyState: video.readyState, seeking: video.seeking }));
+      report.materialTiming.before = await mediaSnapshot(appearance);
       saveReport();
       try {
         await page.waitForFunction(() => {
           const video = document.getElementById('appearance-film');
           return Math.abs(video.currentTime - 1.25) < 0.1 && !video.seeking;
         }, null, { timeout: 5000 });
-        report.materialTiming.before = await appearance.evaluate(video => ({ source: video.currentSrc, time: video.currentTime, readyState: video.readyState, seeking: video.seeking }));
+        report.materialTiming.before = await mediaSnapshot(appearance);
         saveReport();
         await button.click();
         await page.waitForFunction(src => {
@@ -195,7 +202,7 @@ saveReport();
         }, expectedSource, { timeout: 5000 });
         assert(Math.abs(await appearance.evaluate(video => video.currentTime) - 1.25) < 0.1, 'Material selection must preserve replay time');
       } finally {
-        report.materialTiming.after = await appearance.evaluate(video => ({ source: video.currentSrc, time: video.currentTime, readyState: video.readyState, seeking: video.seeking }));
+        report.materialTiming.after = await mediaSnapshot(appearance);
         report.materialTiming.events = await page.evaluate(() => window.__reviewMaterialEvents);
         saveReport();
       }
@@ -238,6 +245,28 @@ saveReport();
   try {
     browser = await chromium.launch({ channel: 'chrome', args: ['--disable-gpu'] });
     report.browser = browser.version();
+    progress('Verify HTTP byte-range serving');
+    const probe = await browser.newContext();
+    try {
+      const range = await probe.request.get(new URL('assets/launch/appearance-checkered.mp4', origin).href, { headers: { Range: 'bytes=0-1023' } });
+      report.httpRange = { status: range.status(), contentRange: range.headers()['content-range'], acceptRanges: range.headers()['accept-ranges'], bytes: (await range.body()).length };
+      saveReport();
+      assert.equal(report.httpRange.status, 206, 'Media server must serve byte-range requests with HTTP 206');
+      assert.match(report.httpRange.contentRange || '', /^bytes 0-1023\/\d+$/, 'Media server returned an invalid Content-Range');
+      assert.equal(report.httpRange.bytes, 1024, 'Media server returned the wrong byte-range length');
+      report.checks.push('HTTP 206 byte-range media serving');
+      progress('Observe deployed GitHub Pages byte-range response');
+      const hostedUrl = 'https://clothdojo.github.io/assets/hero.mp4';
+      try {
+        const hosted = await probe.request.get(hostedUrl, { headers: { Range: 'bytes=0-1023' }, timeout: 15000 });
+        report.hostedRange = { url: hostedUrl, status: hosted.status(), contentRange: hosted.headers()['content-range'], acceptRanges: hosted.headers()['accept-ranges'] };
+      } catch (error) {
+        report.hostedRange = { url: hostedUrl, error: error.message };
+      }
+      saveReport();
+    } finally {
+      await probe.close();
+    }
     const desktop = await open({ width: 1440, height: 1000 });
     await capture(desktop, 'desktop-opening');
     await captureSections(desktop, 'desktop');
