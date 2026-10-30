@@ -25,6 +25,7 @@ jobs:
         run: |
           npm install --prefix "$RUNNER_TEMP/browser-tools" playwright@1.56.1
           "$RUNNER_TEMP/browser-tools/node_modules/.bin/playwright" install --with-deps chromium
+          google-chrome --version
       - name: Render and exercise the current website
         env:
           NODE_PATH: ${{ runner.temp }}/browser-tools/node_modules
