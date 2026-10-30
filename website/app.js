@@ -1,35 +1,74 @@
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const videos = [...document.querySelectorAll('video[data-src]')];
+const visibleVideos = new Map();
+const connection = navigator.connection;
+let activeVideo;
+
 function loadVideo(video) {
   if (!video.getAttribute('src')) { video.src = video.dataset.src; video.load(); }
 }
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(({target: video, isIntersecting}) => {
-    if (isIntersecting) {
-      loadVideo(video);
-      if (video.hasAttribute('data-autoplay') && !reducedMotion.matches && !document.hidden) video.play().catch(() => {});
-    } else video.pause();
+function pauseOthers(selected) {
+  document.querySelectorAll('video').forEach(video => {
+    if (video !== selected) video.pause();
   });
-}, { threshold: .25 });
+}
+function playExclusive(video) {
+  loadVideo(video);
+  pauseOthers(video);
+  activeVideo = video;
+  video.play().catch(() => {});
+}
+function playVisiblePreview() {
+  if (document.hidden || reducedMotion.matches || connection?.saveData || activeVideo) return;
+  const selected = [...visibleVideos.entries()]
+    .filter(([video, ratio]) => ratio >= .25 && video.hasAttribute('data-autoplay'))
+    .sort((a, b) => b[1] - a[1])[0]?.[0];
+  if (selected) playExclusive(selected);
+}
+document.addEventListener('play', event => {
+  if (event.target.tagName !== 'VIDEO' || event.target.paused) return;
+  activeVideo = event.target;
+  pauseOthers(activeVideo);
+}, true);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(({target: video, isIntersecting, intersectionRatio}) => {
+    if (isIntersecting && intersectionRatio >= .25) {
+      visibleVideos.set(video, intersectionRatio);
+      loadVideo(video);
+    } else {
+      visibleVideos.delete(video);
+      video.pause();
+      if (activeVideo === video) activeVideo = undefined;
+    }
+  });
+  playVisiblePreview();
+}, { threshold: [0, .25, .5, .75, 1] });
 videos.forEach(video => observer.observe(video));
 document.addEventListener('visibilitychange', () => {
-  if (document.hidden) document.querySelectorAll('video').forEach(video => video.pause());
+  if (document.hidden) {
+    document.querySelectorAll('video').forEach(video => video.pause());
+    activeVideo = undefined;
+  } else playVisiblePreview();
 });
 reducedMotion.addEventListener('change', event => {
-  if (event.matches) videos.forEach(video => video.pause());
+  if (event.matches) {
+    videos.forEach(video => video.pause());
+    activeVideo = undefined;
+  } else playVisiblePreview();
 });
 const filmDialog = document.getElementById('film-dialog');
 const film = document.getElementById('film-video');
 document.querySelectorAll('[data-film]').forEach(button => button.addEventListener('click', () => {
-  document.querySelectorAll('video').forEach(video => video.pause());
+  pauseOthers(film);
   document.getElementById('film-title').textContent = button.dataset.title;
   film.src = button.dataset.film;
   film.load();
   filmDialog.showModal();
-  film.play().catch(() => {});
+  playExclusive(film);
 }));
 filmDialog.addEventListener('close', () => {
   film.pause(); film.removeAttribute('src'); film.load();
+  if (activeVideo === film) activeVideo = undefined;
 });
 const figureDialog = document.getElementById('figure-dialog');
 document.querySelectorAll('[data-image]').forEach(button => button.addEventListener('click', () => {
@@ -68,5 +107,8 @@ robotButtons.forEach(button => button.addEventListener('click', () => {
   embodimentVideo.setAttribute('aria-label', button.dataset.robotTitle + ' flattening on the left and folding on the right');
   embodimentVideo.load();
   document.getElementById('embodiment-caption').textContent = button.dataset.robotTitle + ' · ' + (button.dataset.robotTitle === 'PIPER' ? 'Recorded trajectory replay' : 'Retargeted kinematic reference');
-  embodimentVideo.play().catch(() => {});
+  const hdButton = document.getElementById('embodiment-hd');
+  hdButton.dataset.film = button.dataset.robotHd;
+  hdButton.dataset.title = button.dataset.robotTitle + ' · HD flattening / folding';
+  playExclusive(embodimentVideo);
 }));

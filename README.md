@@ -46,12 +46,29 @@ This is a code preview. Public download links and end-to-end GPU validation are 
 
 ## 2. Installation
 
+Clone the repository first:
+
+```bash
+git clone --depth 1 https://github.com/clothdojo/clothdojo.github.io.git
+cd clothdojo.github.io
+```
+
+### CPU-only example
+
+With Python 3.11 and [uv](https://docs.astral.sh/uv/), score an included saved cloth state without a simulator, GPU, checkpoint, or dataset download:
+
+```bash
+uv sync --frozen
+uv run --frozen python scripts/score_fold.py
+```
+
+The example reports a score of approximately 1.0203, a threshold of approximately 0.1423, and `frame_passes_threshold: true`. This tests the metric on one saved state, not the sustained success criterion over a complete rollout.
+
+### Simulation and policy environments
+
 Use Linux x86_64 with Python 3.11, a CUDA GPU, and [uv](https://docs.astral.sh/uv/). Prepare the main environment once from the repository root:
 
 ```bash
-git clone https://github.com/clothdojo/clothdojo.github.io.git
-cd clothdojo.github.io
-
 # Main environment: Newton simulation, policy serving, training, and LeRobot export.
 # The selected XPolicyLab communication runtime is included in this release.
 uv sync --frozen --extra sim --extra policy --extra export --extra data

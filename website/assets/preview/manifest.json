@@ -1,0 +1,86 @@
+{
+  "schema": "clothdojo_homepage_previews_v1",
+  "purpose": "Lightweight ambient playback; full-resolution replay loads on explicit request.",
+  "records": [
+    {
+      "file": "assets/preview/tasks-paired.mp4",
+      "source": "assets/curated/tasks-paired.mp4",
+      "width": 1280,
+      "height": 480,
+      "fps": 24,
+      "playback_speed": 1,
+      "source_bytes": 3788709,
+      "preview_bytes": 816446
+    },
+    {
+      "file": "assets/preview/garment-collection.mp4",
+      "source": "assets/garment-collection-web.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "playback_speed": 1,
+      "source_bytes": 4182181,
+      "preview_bytes": 2156071
+    },
+    {
+      "file": "assets/preview/generation-200.mp4",
+      "source": "assets/curated/generation-200.mp4",
+      "width": 1280,
+      "height": 480,
+      "fps": 24,
+      "playback_speed": 1,
+      "source_bytes": 11612400,
+      "preview_bytes": 2546701
+    },
+    {
+      "file": "assets/preview/robot-piper.mp4",
+      "source": "assets/curated/robot-piper.mp4",
+      "width": 1280,
+      "height": 480,
+      "fps": 24,
+      "playback_speed": 1,
+      "source_bytes": 995017,
+      "preview_bytes": 746461
+    },
+    {
+      "file": "assets/preview/robot-aloha2.mp4",
+      "source": "assets/curated/robot-aloha2.mp4",
+      "width": 1280,
+      "height": 480,
+      "fps": 24,
+      "playback_speed": 1,
+      "source_bytes": 764958,
+      "preview_bytes": 655844
+    },
+    {
+      "file": "assets/preview/robot-x5.mp4",
+      "source": "assets/curated/robot-x5.mp4",
+      "width": 1280,
+      "height": 480,
+      "fps": 24,
+      "playback_speed": 1,
+      "source_bytes": 840509,
+      "preview_bytes": 657610
+    },
+    {
+      "file": "assets/preview/robot-fr3_duo.mp4",
+      "source": "assets/curated/robot-fr3_duo.mp4",
+      "width": 1280,
+      "height": 480,
+      "fps": 24,
+      "playback_speed": 1,
+      "source_bytes": 1033193,
+      "preview_bytes": 774730
+    },
+    {
+      "file": "assets/preview/robot-ur5e_2f85.mp4",
+      "source": "assets/curated/robot-ur5e_2f85.mp4",
+      "width": 1280,
+      "height": 480,
+      "fps": 24,
+      "playback_speed": 1,
+      "source_bytes": 1048690,
+      "preview_bytes": 808928
+    }
+  ]
+}

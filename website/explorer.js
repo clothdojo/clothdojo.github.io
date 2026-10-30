@@ -97,7 +97,7 @@ function renderCases() {
     caption.append(title, duration, identity);
     button.append(media, caption);
     button.addEventListener('pointerenter', event => {
-      if (event.pointerType !== 'mouse' || reducedMotion.matches) return;
+      if (event.pointerType !== 'mouse' || reducedMotion.matches || navigator.connection?.saveData) return;
       stopPreview();
       currentPreview = preview;
       if (!preview.getAttribute('src')) preview.src = item.preview;
