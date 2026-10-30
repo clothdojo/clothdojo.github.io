@@ -1,5 +1,23 @@
 {
-  "version": 17,
+  "version": 20,
+  "homepage_media": {
+    "task_showcase": {
+      "files": ["hero-flatten.mp4", "hero-fold.mp4"],
+      "source_mapping": "hero-sources.json",
+      "scope": "Each film combines an external-camera task excerpt with three independent generated trajectories; no synchronized physical execution across panels is implied."
+    },
+    "appearance_replay": {
+      "file": "appearance-triptych.mp4",
+      "preview": "../preview/appearance-triptych.mp4",
+      "source_mapping": "appearance-triptych.json",
+      "scope": "Three fresh RTX renders of one recorded folding trajectory under different cloth materials; physical state, robot motion, camera and source times match."
+    },
+    "robot_comparisons": {
+      "files": ["compare-aloha2.mp4", "compare-x5.mp4", "compare-fr3_duo.mp4", "compare-ur5e_2f85.mp4"],
+      "source_mapping": "compare-sources.json",
+      "scope": "PIPER source versus target kinematic replay, with flattening above folding. Separate from closed-loop policy evaluation."
+    }
+  },
   "primary_selection": {
     "trajectory_overview": {
       "file": "trajectory-overview.mp4",
