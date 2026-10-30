@@ -41,7 +41,7 @@ saveReport();
     });
   }
   async function stableMedia(page) {
-    await page.evaluate(async () => {
+    return page.evaluate(async () => {
       const visible = element => {
         if (typeof element.checkVisibility === 'function' && !element.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) return false;
         for (let ancestor = element; ancestor; ancestor = ancestor.parentElement) {
@@ -71,7 +71,8 @@ saveReport();
         if (!image.naturalWidth) throw new Error('Visible image failed to decode: ' + image.src);
       }));
       document.querySelectorAll('video').forEach(video => video.pause());
-      await Promise.all([...document.querySelectorAll('video')].filter(visible).map(async video => {
+      const videos = [...document.querySelectorAll('video')].filter(visible);
+      await Promise.all(videos.map(async video => {
         // Screenshot preparation requests a real decoded frame, without changing
         // controls, layout, playback policy, or any visible page styling.
         video.preload = 'auto';
@@ -97,12 +98,35 @@ saveReport();
           video.currentTime = time;
           await seeked;
         }
+        await new Promise((resolve, reject) => {
+          const ready = () => video.readyState >= 3 && !video.seeking;
+          if (ready()) return resolve();
+          const cleanup = () => {
+            clearTimeout(timer);
+            video.removeEventListener('canplay', check);
+            video.removeEventListener('seeked', check);
+            video.removeEventListener('error', fail);
+          };
+          const check = () => { if (ready()) { cleanup(); resolve(); } };
+          const fail = () => { cleanup(); reject(new Error('Video failed before stable canplay: ' + video.currentSrc)); };
+          const timer = setTimeout(() => {
+            cleanup();
+            reject(new Error('Video did not reach stable canplay after 15s: ' + video.currentSrc + ' readyState=' + video.readyState + ' seeking=' + video.seeking));
+          }, 15000);
+          video.addEventListener('canplay', check);
+          video.addEventListener('seeked', check);
+          video.addEventListener('error', fail, { once: true });
+        });
         video.pause();
       }));
+      // Give native controls time to finish their own loading-state transition.
+      // Nothing is hidden, restyled, or removed from the page for the capture.
+      await new Promise(resolve => setTimeout(resolve, 500));
       await new Promise((resolve, reject) => {
         const timer = setTimeout(() => reject(new Error('Two animation frames did not settle within 5s; visibility=' + document.visibilityState)), 5000);
         requestAnimationFrame(() => requestAnimationFrame(() => { clearTimeout(timer); resolve(); }));
       });
+      return videos.map(video => ({ src: video.currentSrc || video.getAttribute('src'), time: video.currentTime, readyState: video.readyState, seeking: video.seeking }));
     });
   }
   async function layout(page, label) {
@@ -120,11 +144,11 @@ saveReport();
     progress('Capture start: ' + name + ' selector=' + (selector || 'page top'));
     await page.bringToFront();
     await position(page, selector);
-    await stableMedia(page);
+    const visibleVideos = await stableMedia(page);
     await layout(page, name);
     const file = name + '.jpg';
     await page.screenshot({ path: path.join(out, file), type: 'jpeg', quality: 75, fullPage: false, animations: 'disabled' });
-    report.screenshots.push({ file, page: page.url(), viewport: page.viewportSize(), selector: selector || 'page top', scrollY: await page.evaluate(() => scrollY) });
+    report.screenshots.push({ file, page: page.url(), viewport: page.viewportSize(), selector: selector || 'page top', scrollY: await page.evaluate(() => scrollY), visibleVideos });
     saveReport();
     progress('Capture done: ' + name);
   }
