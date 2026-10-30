@@ -1,6 +1,6 @@
 {
-  "ref": "74c7d065eba1dbe4ef69a913a133330f59ea2ae4",
-  "commit": "74c7d065eba1dbe4ef69a913a133330f59ea2ae4",
+  "ref": "570e964bfa8ecaa6511dcb2a8e5d0b9fbf891430",
+  "commit": "570e964bfa8ecaa6511dcb2a8e5d0b9fbf891430",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -13,7 +13,15 @@
         "height": 1000
       },
       "selector": "page top",
-      "scrollY": 0
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/generation-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "desktop-overview.jpg",
@@ -23,7 +31,15 @@
         "height": 1000
       },
       "selector": "[id=\"overview\"]",
-      "scrollY": 0
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/generation-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "desktop-generate.jpg",
@@ -33,7 +49,15 @@
         "height": 1000
       },
       "selector": "[id=\"generate\"]",
-      "scrollY": 1008
+      "scrollY": 1008,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/collection.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "desktop-render.jpg",
@@ -43,7 +67,15 @@
         "height": 1000
       },
       "selector": "[id=\"render\"]",
-      "scrollY": 1993
+      "scrollY": 1993,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "desktop-transfer.jpg",
@@ -53,7 +85,15 @@
         "height": 1000
       },
       "selector": "[id=\"transfer\"]",
-      "scrollY": 2578
+      "scrollY": 2578,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/transfer.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "desktop-results.jpg",
@@ -63,7 +103,8 @@
         "height": 1000
       },
       "selector": "[id=\"results\"]",
-      "scrollY": 3742
+      "scrollY": 3742,
+      "visibleVideos": []
     },
     {
       "file": "desktop-method.jpg",
@@ -73,7 +114,8 @@
         "height": 1000
       },
       "selector": "[id=\"method\"]",
-      "scrollY": 5530
+      "scrollY": 5530,
+      "visibleVideos": []
     },
     {
       "file": "desktop-use.jpg",
@@ -83,7 +125,8 @@
         "height": 1000
       },
       "selector": "[id=\"use\"]",
-      "scrollY": 6074
+      "scrollY": 6074,
+      "visibleVideos": []
     },
     {
       "file": "desktop-transfer-table.jpg",
@@ -93,7 +136,15 @@
         "height": 1000
       },
       "selector": ".transfer-evidence .table-block",
-      "scrollY": 3384
+      "scrollY": 3384,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/transfer.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "desktop-policy-comparison.jpg",
@@ -103,7 +154,8 @@
         "height": 1000
       },
       "selector": ".research-study >> nth=2",
-      "scrollY": 4935
+      "scrollY": 4935,
+      "visibleVideos": []
     },
     {
       "file": "mobile-390-opening.jpg",
@@ -113,7 +165,15 @@
         "height": 844
       },
       "selector": "page top",
-      "scrollY": 0
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-390-overview.jpg",
@@ -123,7 +183,15 @@
         "height": 844
       },
       "selector": "[id=\"overview\"]",
-      "scrollY": 0
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-390-generate.jpg",
@@ -133,7 +201,15 @@
         "height": 844
       },
       "selector": "[id=\"generate\"]",
-      "scrollY": 725
+      "scrollY": 725,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-390-render.jpg",
@@ -143,7 +219,15 @@
         "height": 844
       },
       "selector": "[id=\"render\"]",
-      "scrollY": 1954
+      "scrollY": 1954,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-390-transfer.jpg",
@@ -153,7 +237,21 @@
         "height": 844
       },
       "selector": "[id=\"transfer\"]",
-      "scrollY": 2656
+      "scrollY": 2656,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        },
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/transfer-source.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-390-results.jpg",
@@ -163,7 +261,8 @@
         "height": 844
       },
       "selector": "[id=\"results\"]",
-      "scrollY": 3811
+      "scrollY": 3811,
+      "visibleVideos": []
     },
     {
       "file": "mobile-390-method.jpg",
@@ -173,7 +272,8 @@
         "height": 844
       },
       "selector": "[id=\"method\"]",
-      "scrollY": 6516
+      "scrollY": 6516,
+      "visibleVideos": []
     },
     {
       "file": "mobile-390-use.jpg",
@@ -183,7 +283,8 @@
         "height": 844
       },
       "selector": "[id=\"use\"]",
-      "scrollY": 7348
+      "scrollY": 7348,
+      "visibleVideos": []
     },
     {
       "file": "mobile-390-transfer-table.jpg",
@@ -193,7 +294,8 @@
         "height": 844
       },
       "selector": ".transfer-evidence .table-block",
-      "scrollY": 3460
+      "scrollY": 3460,
+      "visibleVideos": []
     },
     {
       "file": "mobile-390-policy-comparison.jpg",
@@ -203,7 +305,8 @@
         "height": 844
       },
       "selector": ".research-study >> nth=2",
-      "scrollY": 5616
+      "scrollY": 5616,
+      "visibleVideos": []
     },
     {
       "file": "mobile-320-opening.jpg",
@@ -213,7 +316,15 @@
         "height": 844
       },
       "selector": "page top",
-      "scrollY": 0
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-320-overview.jpg",
@@ -223,7 +334,15 @@
         "height": 844
       },
       "selector": "[id=\"overview\"]",
-      "scrollY": 0
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-320-generate.jpg",
@@ -233,7 +352,15 @@
         "height": 844
       },
       "selector": "[id=\"generate\"]",
-      "scrollY": 754
+      "scrollY": 754,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-320-render.jpg",
@@ -243,7 +370,15 @@
         "height": 844
       },
       "selector": "[id=\"render\"]",
-      "scrollY": 2043
+      "scrollY": 2043,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-320-transfer.jpg",
@@ -253,7 +388,15 @@
         "height": 844
       },
       "selector": "[id=\"transfer\"]",
-      "scrollY": 2758
+      "scrollY": 2758,
+      "visibleVideos": [
+        {
+          "src": "http://127.0.0.1:8787/assets/launch/transfer-source.mp4",
+          "time": 0.5,
+          "readyState": 4,
+          "seeking": false
+        }
+      ]
     },
     {
       "file": "mobile-320-results.jpg",
@@ -263,7 +406,8 @@
         "height": 844
       },
       "selector": "[id=\"results\"]",
-      "scrollY": 4004
+      "scrollY": 4004,
+      "visibleVideos": []
     },
     {
       "file": "mobile-320-method.jpg",
@@ -273,7 +417,8 @@
         "height": 844
       },
       "selector": "[id=\"method\"]",
-      "scrollY": 6875
+      "scrollY": 6875,
+      "visibleVideos": []
     },
     {
       "file": "mobile-320-use.jpg",
@@ -283,7 +428,8 @@
         "height": 844
       },
       "selector": "[id=\"use\"]",
-      "scrollY": 7801
+      "scrollY": 7801,
+      "visibleVideos": []
     },
     {
       "file": "mobile-320-transfer-table.jpg",
@@ -293,7 +439,8 @@
         "height": 844
       },
       "selector": ".transfer-evidence .table-block",
-      "scrollY": 3602
+      "scrollY": 3602,
+      "visibleVideos": []
     },
     {
       "file": "mobile-320-policy-comparison.jpg",
@@ -303,7 +450,8 @@
         "height": 844
       },
       "selector": ".research-study >> nth=2",
-      "scrollY": 5919
+      "scrollY": 5919,
+      "visibleVideos": []
     },
     {
       "file": "results-1440-opening.jpg",
@@ -313,7 +461,8 @@
         "height": 1000
       },
       "selector": "page top",
-      "scrollY": 0
+      "scrollY": 0,
+      "visibleVideos": []
     },
     {
       "file": "results-1440-generation-results.jpg",
@@ -323,7 +472,8 @@
         "height": 1000
       },
       "selector": "[id=\"generation-results\"]",
-      "scrollY": 289
+      "scrollY": 289,
+      "visibleVideos": []
     },
     {
       "file": "results-1440-generalization.jpg",
@@ -333,7 +483,8 @@
         "height": 1000
       },
       "selector": "[id=\"generalization\"]",
-      "scrollY": 1368
+      "scrollY": 1368,
+      "visibleVideos": []
     },
     {
       "file": "results-1440-policy-models.jpg",
@@ -343,7 +494,8 @@
         "height": 1000
       },
       "selector": "[id=\"policy-models\"]",
-      "scrollY": 3263
+      "scrollY": 3263,
+      "visibleVideos": []
     },
     {
       "file": "results-1440-outcome-quality.jpg",
@@ -353,7 +505,8 @@
         "height": 1000
       },
       "selector": "[id=\"outcome-quality\"]",
-      "scrollY": 4425
+      "scrollY": 4425,
+      "visibleVideos": []
     },
     {
       "file": "results-1440-task-composition.jpg",
@@ -363,7 +516,8 @@
         "height": 1000
       },
       "selector": "[id=\"task-composition\"]",
-      "scrollY": 5335
+      "scrollY": 5335,
+      "visibleVideos": []
     },
     {
       "file": "results-1440-table.jpg",
@@ -373,7 +527,8 @@
         "height": 1000
       },
       "selector": ".table-block",
-      "scrollY": 826
+      "scrollY": 826,
+      "visibleVideos": []
     },
     {
       "file": "results-390-opening.jpg",
@@ -383,7 +538,8 @@
         "height": 844
       },
       "selector": "page top",
-      "scrollY": 0
+      "scrollY": 0,
+      "visibleVideos": []
     },
     {
       "file": "results-390-generation-results.jpg",
@@ -393,7 +549,8 @@
         "height": 844
       },
       "selector": "[id=\"generation-results\"]",
-      "scrollY": 341
+      "scrollY": 341,
+      "visibleVideos": []
     },
     {
       "file": "results-390-generalization.jpg",
@@ -403,7 +560,8 @@
         "height": 844
       },
       "selector": "[id=\"generalization\"]",
-      "scrollY": 1990
+      "scrollY": 1990,
+      "visibleVideos": []
     },
     {
       "file": "results-390-policy-models.jpg",
@@ -413,7 +571,8 @@
         "height": 844
       },
       "selector": "[id=\"policy-models\"]",
-      "scrollY": 4514
+      "scrollY": 4514,
+      "visibleVideos": []
     },
     {
       "file": "results-390-outcome-quality.jpg",
@@ -423,7 +582,8 @@
         "height": 844
       },
       "selector": "[id=\"outcome-quality\"]",
-      "scrollY": 6191
+      "scrollY": 6191,
+      "visibleVideos": []
     },
     {
       "file": "results-390-task-composition.jpg",
@@ -433,7 +593,8 @@
         "height": 844
       },
       "selector": "[id=\"task-composition\"]",
-      "scrollY": 6924
+      "scrollY": 6924,
+      "visibleVideos": []
     },
     {
       "file": "results-390-table.jpg",
@@ -443,7 +604,8 @@
         "height": 844
       },
       "selector": ".table-block",
-      "scrollY": 1244
+      "scrollY": 1244,
+      "visibleVideos": []
     },
     {
       "file": "results-320-opening.jpg",
@@ -453,7 +615,8 @@
         "height": 844
       },
       "selector": "page top",
-      "scrollY": 0
+      "scrollY": 0,
+      "visibleVideos": []
     },
     {
       "file": "results-320-generation-results.jpg",
@@ -463,7 +626,8 @@
         "height": 844
       },
       "selector": "[id=\"generation-results\"]",
-      "scrollY": 397
+      "scrollY": 397,
+      "visibleVideos": []
     },
     {
       "file": "results-320-generalization.jpg",
@@ -473,7 +637,8 @@
         "height": 844
       },
       "selector": "[id=\"generalization\"]",
-      "scrollY": 2161
+      "scrollY": 2161,
+      "visibleVideos": []
     },
     {
       "file": "results-320-policy-models.jpg",
@@ -483,7 +648,8 @@
         "height": 844
       },
       "selector": "[id=\"policy-models\"]",
-      "scrollY": 4926
+      "scrollY": 4926,
+      "visibleVideos": []
     },
     {
       "file": "results-320-outcome-quality.jpg",
@@ -493,7 +659,8 @@
         "height": 844
       },
       "selector": "[id=\"outcome-quality\"]",
-      "scrollY": 6676
+      "scrollY": 6676,
+      "visibleVideos": []
     },
     {
       "file": "results-320-task-composition.jpg",
@@ -503,7 +670,8 @@
         "height": 844
       },
       "selector": "[id=\"task-composition\"]",
-      "scrollY": 7408
+      "scrollY": 7408,
+      "visibleVideos": []
     },
     {
       "file": "results-320-table.jpg",
@@ -513,7 +681,8 @@
         "height": 844
       },
       "selector": ".table-block",
-      "scrollY": 1326
+      "scrollY": 1326,
+      "visibleVideos": []
     }
   ],
   "layouts": [
@@ -1589,7 +1758,7 @@
     "events": [
       {
         "type": "seeked",
-        "timestamp": 3535.5,
+        "timestamp": 8621.799999999988,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-checkered.mp4",
         "time": 1.25,
         "duration": 5,
@@ -1610,7 +1779,7 @@
       },
       {
         "type": "loadedmetadata",
-        "timestamp": 3610.300000000003,
+        "timestamp": 8695.5,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 0,
         "duration": 5,
@@ -1625,13 +1794,13 @@
         "buffered": [
           [
             0,
-            5
+            2.211
           ]
         ]
       },
       {
         "type": "seeked",
-        "timestamp": 3660.7000000000044,
+        "timestamp": 8779.699999999983,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
@@ -1652,7 +1821,7 @@
       },
       {
         "type": "loadeddata",
-        "timestamp": 3660.7000000000044,
+        "timestamp": 8779.699999999983,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
