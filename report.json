@@ -2593,7 +2593,7 @@
   "hostedRange": {
     "url": "https://clothdojo.github.io/assets/hero.mp4",
     "status": 206,
-    "contentRange": "bytes 0-1023/11599395",
+    "contentRange": "bytes 0-1023/11845109",
     "acceptRanges": "bytes"
   },
   "codec": "probably",
@@ -3285,7 +3285,7 @@
     "events": [
       {
         "type": "seeked",
-        "timestamp": 11859.199999999997,
+        "timestamp": 11813.200000000004,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-checkered.mp4",
         "time": 1.25,
         "duration": 5,
@@ -3306,7 +3306,7 @@
       },
       {
         "type": "loadedmetadata",
-        "timestamp": 11919.699999999997,
+        "timestamp": 11874.599999999999,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 0,
         "duration": 5,
@@ -3321,13 +3321,13 @@
         "buffered": [
           [
             0,
-            2.764
+            4.422
           ]
         ]
       },
       {
         "type": "seeked",
-        "timestamp": 11985.699999999997,
+        "timestamp": 11944.500000000007,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
@@ -3348,7 +3348,7 @@
       },
       {
         "type": "loadeddata",
-        "timestamp": 11985.800000000003,
+        "timestamp": 11944.500000000007,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
