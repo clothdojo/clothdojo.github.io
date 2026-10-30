@@ -39,7 +39,7 @@ jobs:
           ref: ${{ inputs.ref || github.sha }}
       - name: Install pinned browser tooling
         run: |
-          npm install --prefix "$RUNNER_TEMP/browser-tools" playwright@1.56.1
+          npm install --prefix "$RUNNER_TEMP/browser-tools" playwright@1.56.1 http-server@14.1.1
           "$RUNNER_TEMP/browser-tools/node_modules/.bin/playwright" install --with-deps chromium
           google-chrome --version
       - name: Render and exercise the current website
@@ -50,7 +50,7 @@ jobs:
           REVIEW_REF: ${{ inputs.ref || github.sha }}
           REVIEW_PAGE_PATH: ${{ inputs.page_path || 'index.html' }}
         run: |
-          python -m http.server 8787 --bind 127.0.0.1 --directory website > "$RUNNER_TEMP/site-server.log" 2>&1 &
+          "$RUNNER_TEMP/browser-tools/node_modules/.bin/http-server" website -a 127.0.0.1 -p 8787 -c-1 -s > "$RUNNER_TEMP/site-server.log" 2>&1 &
           node .github/scripts/website-visual-review.cjs
       - name: Save review images on the dedicated evidence branch
         if: always()

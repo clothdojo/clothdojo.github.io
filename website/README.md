@@ -12,10 +12,10 @@ Buildless research website. GitHub Pages publishes this directory only; code, te
 - `assets/launch/manifest.json`: provenance for the current demonstration set, including trajectories, frame ranges, cameras, renderer settings and encodings.
 - `design-preview.html` and `scene-preview.html`: retained earlier design studies, outside the current project narrative.
 
-Serve the website locally:
+Serve the website locally with Node.js and a server that supports byte-range video seeking:
 
 ```bash
-python -m http.server 8765 --bind 127.0.0.1 --directory website
+npx --yes http-server@14.1.1 website -a 127.0.0.1 -p 8765 -c-1
 ```
 
 ## Demonstration narrative
@@ -47,6 +47,8 @@ Native controls remain available. Expanded replay loads on explicit request and 
 ## Browser verification
 
 `.github/workflows/website-visual-review.yml` uses Playwright 1.56.1 and the runner's installed Google Chrome for H.264 playback. It accepts a Git ref and page path, and can review `codex/launch-rebuild` before publication on `main`.
+
+The verification server is pinned to `http-server` 14.1.1 and supports HTTP byte ranges for native video seeking. Before browser checks, a 1,024-byte media request must return HTTP 206 and a matching `Content-Range`. Material-switch diagnostics retain duration, seekable/buffered ranges and media events; this distinguishes loading or server problems from replay-time preservation failures.
 
 The review captures 1440 px desktop and 390/320 px mobile viewports, with decoded images and real video frames. It checks source selection, material timestamp preservation, native dialog cleanup, clipboard copying, exclusive playback, mobile defaults, page overflow and shared computed table styles. Results-page screenshots cover all five experiment groups. JPEG screenshots and a report containing the tested commit and browser version are kept on `codex/site-visual-review`.
 
