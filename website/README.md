@@ -13,7 +13,15 @@ python -m http.server 8765 --bind 127.0.0.1 --directory website
 - `explore.html`: 24 selected trajectory replays linked to a zoomable 500-garment atlas. Filters, hover previews, modal navigation, keyboard selection, and garment/replay links live here.
 - `styles.css`: shared styles and full experiment presentation. `home.css`: homepage composition. `app.js`: media dialogs, visibility loading, and matched robot selection. `explore.css` / `explorer.js`: the data explorer.
 
-Arial/Helvetica, white and light-neutral backgrounds, and a shared 1160 px content boundary establish the page frame. Media retains its encoded aspect ratio; the modal fits its natural dimensions. Videos have native controls, load near visibility, and pause offscreen. Reduced-motion preferences disable automatic ambient playback and hover previews; explicit task/robot playback remains available.
+Arial/Helvetica and light-neutral backgrounds establish the page frame. Homepage sections align to a 1240 px maximum boundary; the experiment and explorer pages use a 1160 px boundary. Media retains its encoded aspect ratio; the modal fits its natural dimensions. Videos have native controls, load near visibility, and pause offscreen. Reduced-motion preferences disable automatic ambient playback and hover previews; explicit task/robot playback remains available.
+
+The homepage includes three practical entry points: policy evaluation, trajectory/RGB generation, and RGB training. It distinguishes included code and one-garment fixtures from pending model/data/visual-resource downloads. A CPU-only saved-state scoring example is runnable from the released code without a simulator or checkpoint.
+
+### Playback and delivery
+
+`prepare_previews.py` creates 1280-pixel-wide, 24 fps H.264/yuv420p previews with fast-start metadata. `assets/preview/manifest.json` records source files and actual byte sizes. Full-resolution originals remain separate and load only when an HD replay is requested. The first-screen paired preview is 816,446 bytes, compared with its 3,788,709-byte original; all eight previews total 9,162,791 bytes versus 24,265,657 source bytes.
+
+`app.js` permits one playing video at a time, preserves a manually paused preview until it leaves view, and pauses playback when hidden or offscreen. Reduced-motion and browser data-saver preferences disable ambient autoplay. Explicit playback remains available. This limits downloads and concurrent decoding; it is not a substitute for browser frame-rate or device profiling.
 
 ## Media curation
 

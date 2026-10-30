@@ -1,0 +1,15 @@
+{
+  "reference": "Each full-resolution source resized with Lanczos to the preview dimensions and converted to 24 fps before SSIM comparison",
+  "whole_video_decoded": true,
+  "ssim": {
+    "tasks-paired.mp4": 0.991457,
+    "garment-collection.mp4": 0.985479,
+    "generation-200.mp4": 0.947106,
+    "robot-piper.mp4": 0.993369,
+    "robot-aloha2.mp4": 0.994283,
+    "robot-x5.mp4": 0.993640,
+    "robot-fr3_duo.mp4": 0.992912,
+    "robot-ur5e_2f85.mp4": 0.992534
+  },
+  "scope": "Compression comparison at matched resolution; does not measure resolution loss, perceptual quality, browser FPS, network startup latency, or device performance"
+}
