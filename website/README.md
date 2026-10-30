@@ -18,6 +18,8 @@ Serve the website locally with Node.js and a server that supports byte-range vid
 npx --yes http-server@14.1.1 website -a 127.0.0.1 -p 8765 -c-1
 ```
 
+HTTP byte-range support is required to verify video seeking and time-preserving source switches in the local preview.
+
 ## Demonstration narrative
 
 The primary demonstration shows complete robot workcells, with batch replay on desktop and a readable single workcell on mobile. The source recordings are distinct saved autonomous trajectories. Batch playback illustrates the collection; it is not a live parallel-generation session or proof of complete-task success. Close views are reserved for the observation/material comparison and optional detail inspection.
