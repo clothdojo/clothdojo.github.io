@@ -1758,7 +1758,7 @@
     "events": [
       {
         "type": "seeked",
-        "timestamp": 8621.799999999988,
+        "timestamp": 8552.600000000006,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-checkered.mp4",
         "time": 1.25,
         "duration": 5,
@@ -1779,7 +1779,7 @@
       },
       {
         "type": "loadedmetadata",
-        "timestamp": 8695.5,
+        "timestamp": 8626.200000000012,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 0,
         "duration": 5,
@@ -1794,13 +1794,13 @@
         "buffered": [
           [
             0,
-            2.211
+            1.105
           ]
         ]
       },
       {
         "type": "seeked",
-        "timestamp": 8779.699999999983,
+        "timestamp": 8715.800000000017,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
@@ -1821,7 +1821,7 @@
       },
       {
         "type": "loadeddata",
-        "timestamp": 8779.699999999983,
+        "timestamp": 8715.800000000017,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
