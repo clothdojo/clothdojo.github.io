@@ -1,6 +1,6 @@
 {
-  "ref": "8cd23889e0a2c5b28a1215ecfcfb84abdfa060e1",
-  "commit": "8cd23889e0a2c5b28a1215ecfcfb84abdfa060e1",
+  "ref": "317439a3793dda3eda5c961660a22a8c3da1124f",
+  "commit": "317439a3793dda3eda5c961660a22a8c3da1124f",
   "pagePath": "index.html",
   "passed": false,
   "status": "completed",
@@ -33,7 +33,7 @@
         "height": 1000
       },
       "selector": "[id=\"generate\"]",
-      "scrollY": 916
+      "scrollY": 1008
     },
     {
       "file": "desktop-render.jpg",
@@ -43,7 +43,7 @@
         "height": 1000
       },
       "selector": "[id=\"render\"]",
-      "scrollY": 1901
+      "scrollY": 1993
     },
     {
       "file": "desktop-transfer.jpg",
@@ -53,7 +53,7 @@
         "height": 1000
       },
       "selector": "[id=\"transfer\"]",
-      "scrollY": 2486
+      "scrollY": 2578
     },
     {
       "file": "desktop-results.jpg",
@@ -63,7 +63,7 @@
         "height": 1000
       },
       "selector": "[id=\"results\"]",
-      "scrollY": 3650
+      "scrollY": 3742
     },
     {
       "file": "desktop-method.jpg",
@@ -73,7 +73,7 @@
         "height": 1000
       },
       "selector": "[id=\"method\"]",
-      "scrollY": 5438
+      "scrollY": 5530
     },
     {
       "file": "desktop-use.jpg",
@@ -83,7 +83,7 @@
         "height": 1000
       },
       "selector": "[id=\"use\"]",
-      "scrollY": 5987
+      "scrollY": 6074
     },
     {
       "file": "desktop-transfer-table.jpg",
@@ -92,8 +92,8 @@
         "width": 1440,
         "height": 1000
       },
-      "selector": ".transfer-evidence .table-wrap",
-      "scrollY": 3292
+      "selector": ".transfer-evidence .table-block",
+      "scrollY": 3384
     },
     {
       "file": "desktop-policy-comparison.jpg",
@@ -103,7 +103,7 @@
         "height": 1000
       },
       "selector": ".research-study >> nth=2",
-      "scrollY": 4843
+      "scrollY": 4935
     }
   ],
   "layouts": [
@@ -185,5 +185,32 @@
   "errors": [],
   "browser": "156.0.8078.47",
   "codec": "probably",
-  "failure": "AssertionError [ERR_ASSERTION]: Material selection must preserve replay time\n    at interactions (/home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:179:7)\n    at async /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:223:5"
+  "materialTiming": {
+    "expectedTime": 1.25,
+    "expectedSource": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
+    "tolerance": 0.1,
+    "events": [
+      {
+        "type": "seeked",
+        "timestamp": 18112.9,
+        "source": "http://127.0.0.1:8787/assets/launch/appearance-checkered.mp4",
+        "time": 0,
+        "readyState": 4,
+        "seeking": false
+      }
+    ],
+    "before": {
+      "source": "http://127.0.0.1:8787/assets/launch/appearance-checkered.mp4",
+      "time": 0,
+      "readyState": 4,
+      "seeking": false
+    },
+    "after": {
+      "source": "http://127.0.0.1:8787/assets/launch/appearance-checkered.mp4",
+      "time": 0,
+      "readyState": 4,
+      "seeking": false
+    }
+  },
+  "failure": "page.waitForFunction: Timeout 5000ms exceeded.\n    at interactions (/home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:185:20)\n    at async /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:245:5"
 }
