@@ -1,0 +1,54 @@
+name: Website visual review
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/website-visual-review.yml'
+      - '.github/scripts/website-visual-review.cjs'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: website-visual-review
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Install pinned browser tooling
+        run: |
+          npm install --prefix "$RUNNER_TEMP/browser-tools" playwright@1.56.1
+          "$RUNNER_TEMP/browser-tools/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Render and exercise the current website
+        env:
+          NODE_PATH: ${{ runner.temp }}/browser-tools/node_modules
+          REVIEW_OUTPUT: ${{ runner.temp }}/visual-review
+          REVIEW_SHA: ${{ github.sha }}
+        run: |
+          python -m http.server 8787 --bind 127.0.0.1 --directory website > "$RUNNER_TEMP/site-server.log" 2>&1 &
+          node .github/scripts/website-visual-review.cjs
+      - name: Save review images on the dedicated evidence branch
+        if: always()
+        env:
+          REVIEW_OUTPUT: ${{ runner.temp }}/visual-review
+        run: |
+          test -f "$REVIEW_OUTPUT/report.json"
+          git config user.name 'ClothDojo visual review'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git ls-remote --exit-code --heads origin codex/site-visual-review > /dev/null; then
+            git fetch origin codex/site-visual-review
+            git checkout -B codex/site-visual-review FETCH_HEAD
+          else
+            git checkout --orphan codex/site-visual-review
+            git rm -rf -- .
+          fi
+          cp "$REVIEW_OUTPUT/"* .
+          git add -- '*.png' report.json
+          git commit -m 'Capture rendered website and interaction evidence' || test -z "$(git status --porcelain)"
+          git push origin HEAD:refs/heads/codex/site-visual-review
