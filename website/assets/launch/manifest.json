@@ -491,11 +491,11 @@
       "source_states": {
         "start": 500,
         "stop_exclusive": 700,
-        "step": 4,
-        "count": 50
+        "step": 2,
+        "count": 100
       },
       "source_fps": 50,
-      "encoded_fps": 12.5,
+      "encoded_fps": 25.0,
       "playback_speed": 1,
       "camera_spec": {
         "name": "paper_view",
@@ -563,7 +563,7 @@
       },
       "duration_seconds": 4.0,
       "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
-      "bytes": 234127,
+      "bytes": 284217,
       "render": {
         "engine": "Isaac Sim 5 RTX path tracing",
         "pathtrace_spp": 16,
@@ -575,7 +575,8 @@
       "width": 640,
       "height": 400,
       "codec": "h264",
-      "pixel_format": "yuv420p(progressive)"
+      "pixel_format": "yuv420p(progressive)",
+      "sampling": "Each frame re-renders every second recorded 50Hz state; no duplicated or interpolated motion frames."
     },
     "sample-02": {
       "file": "sample-02.mp4",
@@ -587,11 +588,11 @@
       "source_states": {
         "start": 500,
         "stop_exclusive": 700,
-        "step": 4,
-        "count": 50
+        "step": 2,
+        "count": 100
       },
       "source_fps": 50,
-      "encoded_fps": 12.5,
+      "encoded_fps": 25.0,
       "playback_speed": 1,
       "camera_spec": {
         "name": "paper_view",
@@ -659,7 +660,7 @@
       },
       "duration_seconds": 4.0,
       "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
-      "bytes": 211658,
+      "bytes": 255871,
       "render": {
         "engine": "Isaac Sim 5 RTX path tracing",
         "pathtrace_spp": 16,
@@ -671,7 +672,8 @@
       "width": 640,
       "height": 400,
       "codec": "h264",
-      "pixel_format": "yuv420p(progressive)"
+      "pixel_format": "yuv420p(progressive)",
+      "sampling": "Each frame re-renders every second recorded 50Hz state; no duplicated or interpolated motion frames."
     },
     "sample-03": {
       "file": "sample-03.mp4",
@@ -683,11 +685,11 @@
       "source_states": {
         "start": 500,
         "stop_exclusive": 700,
-        "step": 4,
-        "count": 50
+        "step": 2,
+        "count": 100
       },
       "source_fps": 50,
-      "encoded_fps": 12.5,
+      "encoded_fps": 25.0,
       "playback_speed": 1,
       "camera_spec": {
         "name": "paper_view",
@@ -755,7 +757,7 @@
       },
       "duration_seconds": 4.0,
       "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
-      "bytes": 195744,
+      "bytes": 234077,
       "render": {
         "engine": "Isaac Sim 5 RTX path tracing",
         "pathtrace_spp": 16,
@@ -767,7 +769,8 @@
       "width": 640,
       "height": 400,
       "codec": "h264",
-      "pixel_format": "yuv420p(progressive)"
+      "pixel_format": "yuv420p(progressive)",
+      "sampling": "Each frame re-renders every second recorded 50Hz state; no duplicated or interpolated motion frames."
     },
     "sample-04": {
       "file": "sample-04.mp4",
@@ -779,11 +782,11 @@
       "source_states": {
         "start": 600,
         "stop_exclusive": 800,
-        "step": 4,
-        "count": 50
+        "step": 2,
+        "count": 100
       },
       "source_fps": 50,
-      "encoded_fps": 12.5,
+      "encoded_fps": 25.0,
       "playback_speed": 1,
       "camera_spec": {
         "name": "paper_view",
@@ -851,7 +854,7 @@
       },
       "duration_seconds": 4.0,
       "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
-      "bytes": 199335,
+      "bytes": 237894,
       "render": {
         "engine": "Isaac Sim 5 RTX path tracing",
         "pathtrace_spp": 16,
@@ -863,7 +866,8 @@
       "width": 640,
       "height": 400,
       "codec": "h264",
-      "pixel_format": "yuv420p(progressive)"
+      "pixel_format": "yuv420p(progressive)",
+      "sampling": "Each frame re-renders every second recorded 50Hz state; no duplicated or interpolated motion frames."
     },
     "collection": {
       "file": "collection.mp4",
@@ -881,8 +885,8 @@
       "width": 1280,
       "height": 800,
       "duration_seconds": 4.0,
-      "encoded_fps": 12.5,
-      "bytes": 782778,
+      "encoded_fps": 25.0,
+      "bytes": 923501,
       "playback_speed": 1,
       "codec": "h264",
       "pixel_format": "yuv420p(progressive)"

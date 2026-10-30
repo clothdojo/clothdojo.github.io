@@ -14,7 +14,7 @@ on:
         default: index.html
         type: string
   push:
-    branches: [main, codex/launch-rebuild]
+    branches: [main, codex/launch-rebuild, codex/title-details]
     paths:
       - '.github/workflows/website-visual-review.yml'
       - '.github/scripts/website-visual-review.cjs'

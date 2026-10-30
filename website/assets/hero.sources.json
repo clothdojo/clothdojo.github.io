@@ -1,0 +1,1724 @@
+{
+  "schema": "clothdojo_linked_flatten_fold_25fps_sources_v1",
+  "source_path_base": "ClothDojo project root",
+  "selection_manifest": "outputs/presentation/expert_flatten_fold_web_v2/manifest.json",
+  "selection_manifest_sha256": "f79f1cea9249a60436455dc504fdd869f6098b2963549265f2f841e48a91c637",
+  "selection": {
+    "count": 10,
+    "unique_assets": true,
+    "review_filter": "both episodes have review_status=complete and segments=[]",
+    "link_contract": "fold.metadata.source_episode_id == flatten.episode_id",
+    "source_profile_id": "shirt_flatten_v1",
+    "source_sample_position": "terminal"
+  },
+  "method": "CPU recomposition of the original 50 fps RGB exports; every second real source frame is sampled. No optical-flow interpolation or duplication to fake the frame rate.",
+  "output": {
+    "path": "website/assets/hero.mp4",
+    "poster": "website/assets/hero-poster.jpg",
+    "layout": {
+      "rows": 2,
+      "columns": 5,
+      "gap_pixels": 12,
+      "tile_width": 320,
+      "tile_height": 240
+    },
+    "width": 1648,
+    "height": 492,
+    "fps": 25,
+    "frame_count": 1397,
+    "duration_seconds": 55.88,
+    "flatten_phase_frames": 741,
+    "flatten_phase_seconds": 29.64,
+    "fold_phase_frames": 656,
+    "fold_phase_seconds": 26.24,
+    "fold_first_frame_index": 741,
+    "playback_speed": 1.0,
+    "short_input_behavior": "Hold the actual final source frame until the shared phase boundary; no action acceleration.",
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "faststart": true,
+    "audio": false,
+    "bytes": 11845109,
+    "sha256": "88b67a79c2d449cabe2b9cb6962db576cad7a83369f4002096acb6c6a2fc3e0d"
+  },
+  "samples": [
+    {
+      "position": 1,
+      "asset_id": "rand_13ZRL8YUW9",
+      "flatten_episode_id": "20260818T033603.446482Z",
+      "flatten_terminal_sample": 1408,
+      "fold_episode_id": "20260824T080051.811386Z",
+      "flatten": {
+        "episode_id": "20260818T033603.446482Z",
+        "path": "data/collections/shirt_flatten/reviews/review-20b344d70add20c13cf8bdb23174981eaf89bc9c4b2d0dac8666dc7632810276/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_flatten/reviews/review-20b344d70add20c13cf8bdb23174981eaf89bc9c4b2d0dac8666dc7632810276/meta/newton_cloth_rl.json",
+        "sha256": "918cb6d156d61b0e13599b0f1047f0e88d20ef5a4e60a5349cef829d370c87f2",
+        "fps": 50.0,
+        "frame_count": 1408,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 28.16,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 0,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "d9fe81105a1129ace37250719e343f860b2d9ed886ff7e2d6a8c3362b060c89b"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 1,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "345c8654844d22761877adc9ee07c9c507b655f972e303e588e9f6014a449b43"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 2,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "1df2c3290696f55d021b48a10218c025e981fdee3a0ff914da718870d4b4bc37"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 25,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "e0b72be2e3ff5fd52ec55c2859805334890ad5feced1433be5e106b5f7972184"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 100,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "8eb49ebf584d20a4241a0af450beb83916bce2234f7adb0460bb4d7820e4d853"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 250,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "9d2f1ed6014cdf7964ad3ee920a0e4e6f2f92fbd811d408bb273f6f9a2e89224"
+          },
+          {
+            "phase_output_frame": 704,
+            "global_output_frame": 704,
+            "source_frame_index": 1407,
+            "source_timestamp_seconds": 28.14,
+            "decoded_bgr24_sha256": "3f0752ff98745e6c70f63e33e149d62eace4db790ec5b751b04ace5bd42af536"
+          },
+          {
+            "phase_output_frame": 740,
+            "global_output_frame": 740,
+            "source_frame_index": 1407,
+            "source_timestamp_seconds": 28.14,
+            "decoded_bgr24_sha256": "3f0752ff98745e6c70f63e33e149d62eace4db790ec5b751b04ace5bd42af536"
+          }
+        ],
+        "sampled_distinct_source_indices": 705,
+        "sampled_distinct_decoded_frame_hashes": 705,
+        "last_sampled_source_frame": 1407,
+        "phase_output_frames": 741,
+        "terminal_hold_start_phase_output_frame": 704,
+        "terminal_hold_start_phase_seconds": 28.16,
+        "terminal_hold_frames": 37,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      },
+      "fold": {
+        "episode_id": "20260824T080051.811386Z",
+        "path": "data/collections/shirt_fold/reviews/review-20f427611d5556ca08e5e4bf7add6aac5dcf6d80d6fa2ada9addbe042bdc7ac5/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_fold/reviews/review-20f427611d5556ca08e5e4bf7add6aac5dcf6d80d6fa2ada9addbe042bdc7ac5/meta/newton_cloth_rl.json",
+        "sha256": "20ec3049d31df6d3047853ad23240d6ee4b640da27fee1fe99585b45d2945caf",
+        "fps": 50.0,
+        "frame_count": 1301,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 26.02,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 741,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "d539aa899f0d7cbcb62d93f3a6b572cb677038a603b3ae0388900cedf4890240"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 742,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "0350857fecb9d380f618a4e2b4254fe32bad8515c5ab8e0b45a2aeaaba0f58bf"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 743,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "2fc81c4c6a4573405806e909281042ae886fcb4d13a7dbbd27755b9d6c1b0e2f"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 766,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "e19287281aed4b43ed71d2a3ec6c7c1451e3b25ddcaa0bfb6673fb411339f919"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 841,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "4db426e402e476119887fce56d99e8efbefec5d665c519fb5e437ee7a6f2ee80"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 991,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "a19f565d4b4922839abf4fca05158dd4c1d6513559ef4d4c2a5d3ed76b3e698e"
+          },
+          {
+            "phase_output_frame": 650,
+            "global_output_frame": 1391,
+            "source_frame_index": 1300,
+            "source_timestamp_seconds": 26.0,
+            "decoded_bgr24_sha256": "56dd9e028f296bbafc830317a90a0d801d888c31aea32e584cb1750c07038b4a"
+          },
+          {
+            "phase_output_frame": 655,
+            "global_output_frame": 1396,
+            "source_frame_index": 1300,
+            "source_timestamp_seconds": 26.0,
+            "decoded_bgr24_sha256": "56dd9e028f296bbafc830317a90a0d801d888c31aea32e584cb1750c07038b4a"
+          }
+        ],
+        "sampled_distinct_source_indices": 651,
+        "sampled_distinct_decoded_frame_hashes": 651,
+        "last_sampled_source_frame": 1300,
+        "phase_output_frames": 656,
+        "terminal_hold_start_phase_output_frame": 651,
+        "terminal_hold_start_phase_seconds": 26.04,
+        "terminal_hold_frames": 5,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      }
+    },
+    {
+      "position": 2,
+      "asset_id": "rand_ZZCWITH5HY",
+      "flatten_episode_id": "20260731T074311.007112Z",
+      "flatten_terminal_sample": 1481,
+      "fold_episode_id": "20260814T033006.655872Z",
+      "flatten": {
+        "episode_id": "20260731T074311.007112Z",
+        "path": "data/collections/shirt_flatten/reviews/review-3417f8f9baad0da2493bed0ba76a457e0d07be059cc5cd663138c472adfd3be4/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_flatten/reviews/review-3417f8f9baad0da2493bed0ba76a457e0d07be059cc5cd663138c472adfd3be4/meta/newton_cloth_rl.json",
+        "sha256": "98006933526f7c421d49c3fa2e8cf6123fa7eb45937a08ada31e5c8a33e83170",
+        "fps": 50.0,
+        "frame_count": 1481,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 29.62,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 0,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "9ce05f205d2dd3d5386c6faaccfb7ecc0008b35d14a53adeb8ac2ba7c4c722d8"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 1,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "9a923f3143fc9c8af1a6d117dc0249297de4fdd2f672d45cf1f323846ece0fdc"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 2,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "c37bf0377e6e71926aca7aa1308b1ce439017a9c6fa679cdcb73a4fb9918aaef"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 25,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "86732777302e75baba0e9d2f00ca47da0b73bb3aee0ef74fbc7cec376e320839"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 100,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "5bf2869a12f62aaa66e6085fefd666603517dee24c16fa070b9e0ecedc94684f"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 250,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "4753439461eaec6f0da5480bacf0fe68672abe29a3e07a45f9bda0af813e5e9c"
+          },
+          {
+            "phase_output_frame": 740,
+            "global_output_frame": 740,
+            "source_frame_index": 1480,
+            "source_timestamp_seconds": 29.6,
+            "decoded_bgr24_sha256": "74aeea5f59a90194559370e13878acc9a579ddf95ff512fa3800f25e25d2b518"
+          }
+        ],
+        "sampled_distinct_source_indices": 741,
+        "sampled_distinct_decoded_frame_hashes": 741,
+        "last_sampled_source_frame": 1480,
+        "phase_output_frames": 741,
+        "terminal_hold_start_phase_output_frame": 741,
+        "terminal_hold_start_phase_seconds": 29.64,
+        "terminal_hold_frames": 0,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      },
+      "fold": {
+        "episode_id": "20260814T033006.655872Z",
+        "path": "data/collections/shirt_fold/reviews/review-4bf473a71a22e1574e12839c4bbe85b80ef015f4aff1d2d233b75b9a3e805c6d/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_fold/reviews/review-4bf473a71a22e1574e12839c4bbe85b80ef015f4aff1d2d233b75b9a3e805c6d/meta/newton_cloth_rl.json",
+        "sha256": "3f03da39192c2b0cf3789397acc5a2bc799e2b53cfad2f9b4c58d22112eeebbd",
+        "fps": 50.0,
+        "frame_count": 1164,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 23.28,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 741,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "adc10c3081e6306e1f5095bb66bac782acb9ae3080a822825c090b01e9ee6226"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 742,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "fc65fabaf28e48f3856b0b3418a2cfdc52ab6a5ac2a338cec548d9bcc0680dd7"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 743,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "4e76a3b22951bc2b7084e30d1edd225f5812be5678caed90e825f5bb8ad292f2"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 766,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "11602285195253a9484b51d2f98555bda1054a56f9aa284c6ca6209a7fad4ff6"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 841,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "69eb1efe23490d1877de7696c6da3c208f09ebffb703dd18a5e74d208324a67c"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 991,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "aaf7c606226b2a1141c13fc07733c513739ec4522f4de0010ed13c40afb52684"
+          },
+          {
+            "phase_output_frame": 582,
+            "global_output_frame": 1323,
+            "source_frame_index": 1163,
+            "source_timestamp_seconds": 23.26,
+            "decoded_bgr24_sha256": "af77afc963bbee063c92fe193fc47b94d2b36a92c218d3e71e42cc25b126e54d"
+          },
+          {
+            "phase_output_frame": 655,
+            "global_output_frame": 1396,
+            "source_frame_index": 1163,
+            "source_timestamp_seconds": 23.26,
+            "decoded_bgr24_sha256": "af77afc963bbee063c92fe193fc47b94d2b36a92c218d3e71e42cc25b126e54d"
+          }
+        ],
+        "sampled_distinct_source_indices": 583,
+        "sampled_distinct_decoded_frame_hashes": 583,
+        "last_sampled_source_frame": 1163,
+        "phase_output_frames": 656,
+        "terminal_hold_start_phase_output_frame": 582,
+        "terminal_hold_start_phase_seconds": 23.28,
+        "terminal_hold_frames": 74,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      }
+    },
+    {
+      "position": 3,
+      "asset_id": "rand_0TQEY7VJ0K",
+      "flatten_episode_id": "20260814T095611.636130Z",
+      "flatten_terminal_sample": 1352,
+      "fold_episode_id": "20260825T070406.393643Z",
+      "flatten": {
+        "episode_id": "20260814T095611.636130Z",
+        "path": "data/collections/shirt_flatten/reviews/review-d101b88a3cf1a03a9dfdfcb0dc15703db78f936f5664f438f5758e4c846013e6/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_flatten/reviews/review-d101b88a3cf1a03a9dfdfcb0dc15703db78f936f5664f438f5758e4c846013e6/meta/newton_cloth_rl.json",
+        "sha256": "e8bdfc5261bf46e674179483c8b7805a8d94451a18595d1560b75a275b4c587f",
+        "fps": 50.0,
+        "frame_count": 1352,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 27.04,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 0,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "d9435bc76c918f36eeb0e6978a59e0c0bc4e4f77203e79dd84f9588d94323f17"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 1,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "cd05544c7424fb07ee46bbe60ee423e39cd797529bec3587641a2b66b7746028"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 2,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "f0137fd73feb853099a9e96dbb8bc05a72b1dc8015cc12d960cba5191b8cff75"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 25,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "33781d0d2296cedde16dbae9611b4bee96b09cb45e5660c1af1e8de32f3f04b3"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 100,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "f53b755603e9d598029989e3b47474a4052f46d1e077d89868bbeca65b3c83b6"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 250,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "7f38e99c59561fbf16377f235c750a7280efd094bc1bc571fd2ce96b810bb224"
+          },
+          {
+            "phase_output_frame": 676,
+            "global_output_frame": 676,
+            "source_frame_index": 1351,
+            "source_timestamp_seconds": 27.02,
+            "decoded_bgr24_sha256": "0bfbb3ad830b20f1b18e23ba4c746fa659415f80eaacae5f852113c98e461371"
+          },
+          {
+            "phase_output_frame": 740,
+            "global_output_frame": 740,
+            "source_frame_index": 1351,
+            "source_timestamp_seconds": 27.02,
+            "decoded_bgr24_sha256": "0bfbb3ad830b20f1b18e23ba4c746fa659415f80eaacae5f852113c98e461371"
+          }
+        ],
+        "sampled_distinct_source_indices": 677,
+        "sampled_distinct_decoded_frame_hashes": 677,
+        "last_sampled_source_frame": 1351,
+        "phase_output_frames": 741,
+        "terminal_hold_start_phase_output_frame": 676,
+        "terminal_hold_start_phase_seconds": 27.04,
+        "terminal_hold_frames": 65,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      },
+      "fold": {
+        "episode_id": "20260825T070406.393643Z",
+        "path": "data/collections/shirt_fold/reviews/review-30ce9e5cbf9f02981a607fbcd1e7103995b4921d0402e0ebeda5624193ddc18a/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_fold/reviews/review-30ce9e5cbf9f02981a607fbcd1e7103995b4921d0402e0ebeda5624193ddc18a/meta/newton_cloth_rl.json",
+        "sha256": "446c31bc889941fd7190ddb40adbb6f82114221222f9ce570ace6d8e8177a094",
+        "fps": 50.0,
+        "frame_count": 1275,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 25.5,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 741,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "8a6457f4e814d030877131ed916e81f58a96c7dad8cdc21e5b4397fd7f5c890d"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 742,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "6184413d233368ea406db683e89d651668b0a12ddd8bf27bef9728f4fd57fc1d"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 743,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "12acccced7b8633ef4e86fe6102a4eb0fd9f42737f41822dcd9564ba7f463687"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 766,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "e2e44f673e3e7dd820dccbfca85ad44105a455a90b93ab266d1ac4a98a7ec45b"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 841,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "52da471e520f315ad8226d656954f3bf760b489c542fd13a25371b281c2d7348"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 991,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "adfc3eab66a6f34ea2d01f9c65093002348f1b365ca21b047e2daa6824a05899"
+          },
+          {
+            "phase_output_frame": 637,
+            "global_output_frame": 1378,
+            "source_frame_index": 1274,
+            "source_timestamp_seconds": 25.48,
+            "decoded_bgr24_sha256": "0fb77efd602b22c0e60a60a92c7632b1cdafc00a7dd6f95b93c547803440bc7e"
+          },
+          {
+            "phase_output_frame": 655,
+            "global_output_frame": 1396,
+            "source_frame_index": 1274,
+            "source_timestamp_seconds": 25.48,
+            "decoded_bgr24_sha256": "0fb77efd602b22c0e60a60a92c7632b1cdafc00a7dd6f95b93c547803440bc7e"
+          }
+        ],
+        "sampled_distinct_source_indices": 638,
+        "sampled_distinct_decoded_frame_hashes": 638,
+        "last_sampled_source_frame": 1274,
+        "phase_output_frames": 656,
+        "terminal_hold_start_phase_output_frame": 638,
+        "terminal_hold_start_phase_seconds": 25.52,
+        "terminal_hold_frames": 18,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      }
+    },
+    {
+      "position": 4,
+      "asset_id": "rand_1I2KU288LG",
+      "flatten_episode_id": "20260819T064304.282650Z",
+      "flatten_terminal_sample": 1277,
+      "fold_episode_id": "20260824T075302.757049Z",
+      "flatten": {
+        "episode_id": "20260819T064304.282650Z",
+        "path": "data/collections/shirt_flatten/reviews/review-5b6f8e7394423fabff86e25d8798323bb31f014695024705f3813bec334d465e/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_flatten/reviews/review-5b6f8e7394423fabff86e25d8798323bb31f014695024705f3813bec334d465e/meta/newton_cloth_rl.json",
+        "sha256": "68443c941c3a0cb0ce89a16250027c54a908d6a643bc23b591ded4ce95ec09c1",
+        "fps": 50.0,
+        "frame_count": 1277,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 25.54,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 0,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "7db2182653b5f85983483e72200ab17b9c4273fa3bd85212b55e5480a27a4810"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 1,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "0c6414e2234769632f16be0c6795f49bb22234e42db23c86de350ec5b679c42a"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 2,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "135ab65e6b05fa1785ddc1def545d0f2efb7d2e8f675a78ecb65e6cd27909694"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 25,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "34a6f090d06fca492358c03cdd9369dddd6a474100da1e463cfec91c32f30f51"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 100,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "8bc8cac632d3259c8946f7f03e8ec02084842de11c7752d61d247fdcaf529264"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 250,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "44d57e33cf1e53799e524515dcb0044c004fe23dc8bf1927a9d33116bc47c66c"
+          },
+          {
+            "phase_output_frame": 638,
+            "global_output_frame": 638,
+            "source_frame_index": 1276,
+            "source_timestamp_seconds": 25.52,
+            "decoded_bgr24_sha256": "7b62bc1866fdd5a8086e11d6f94888fe794f0378dc1272a05c32e65f85659f84"
+          },
+          {
+            "phase_output_frame": 740,
+            "global_output_frame": 740,
+            "source_frame_index": 1276,
+            "source_timestamp_seconds": 25.52,
+            "decoded_bgr24_sha256": "7b62bc1866fdd5a8086e11d6f94888fe794f0378dc1272a05c32e65f85659f84"
+          }
+        ],
+        "sampled_distinct_source_indices": 639,
+        "sampled_distinct_decoded_frame_hashes": 639,
+        "last_sampled_source_frame": 1276,
+        "phase_output_frames": 741,
+        "terminal_hold_start_phase_output_frame": 639,
+        "terminal_hold_start_phase_seconds": 25.56,
+        "terminal_hold_frames": 102,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      },
+      "fold": {
+        "episode_id": "20260824T075302.757049Z",
+        "path": "data/collections/shirt_fold/reviews/review-82bf6b4150b2ecb6fb72d89196cf6d29f80906aeda326f426ac975920e477ac0/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_fold/reviews/review-82bf6b4150b2ecb6fb72d89196cf6d29f80906aeda326f426ac975920e477ac0/meta/newton_cloth_rl.json",
+        "sha256": "9f1fd2caebe6a023c12983b57d54d77ebcf62727505d82218fbd63fd56aca48b",
+        "fps": 50.0,
+        "frame_count": 1199,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 23.98,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 741,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "46711e5f4b66f6d140983ac665c8f391668e239977c46c827c91b72c8ebf7672"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 742,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "552ccfda75ff759ce60310504f808e4220c0a2ae32f4e8fef79927173f35c3b2"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 743,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "3127f7dd232d4cf0f906d96e3f7a71cb176db7709a3fcbc3b9e987197f98ab70"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 766,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "f08e82a6bfe47c929bed57568b4bef8a0dde51dec359af92204572976d6d3511"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 841,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "03449ef9ebd4203295a0b197f57f8c5163e7ea45bfaeb5895a7768810c2e5d18"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 991,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "62b686af996bb58ff1473c73f4cf7c21b55651cc4460202457d3490e617b3fd0"
+          },
+          {
+            "phase_output_frame": 599,
+            "global_output_frame": 1340,
+            "source_frame_index": 1198,
+            "source_timestamp_seconds": 23.96,
+            "decoded_bgr24_sha256": "aad44be56ef169806c349d8ff3ee6d238f130fe8a5b689fc5819ea9c07db551f"
+          },
+          {
+            "phase_output_frame": 655,
+            "global_output_frame": 1396,
+            "source_frame_index": 1198,
+            "source_timestamp_seconds": 23.96,
+            "decoded_bgr24_sha256": "aad44be56ef169806c349d8ff3ee6d238f130fe8a5b689fc5819ea9c07db551f"
+          }
+        ],
+        "sampled_distinct_source_indices": 600,
+        "sampled_distinct_decoded_frame_hashes": 600,
+        "last_sampled_source_frame": 1198,
+        "phase_output_frames": 656,
+        "terminal_hold_start_phase_output_frame": 600,
+        "terminal_hold_start_phase_seconds": 24.0,
+        "terminal_hold_frames": 56,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      }
+    },
+    {
+      "position": 5,
+      "asset_id": "rand_1TSMB7S1IE",
+      "flatten_episode_id": "20260819T022050.805250Z",
+      "flatten_terminal_sample": 1461,
+      "fold_episode_id": "20260824T083909.261687Z",
+      "flatten": {
+        "episode_id": "20260819T022050.805250Z",
+        "path": "data/collections/shirt_flatten/reviews/review-f1678ed42352d8ead6aa210565a6cb5ec707d0d9d263bd30e3e203f68013f244/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_flatten/reviews/review-f1678ed42352d8ead6aa210565a6cb5ec707d0d9d263bd30e3e203f68013f244/meta/newton_cloth_rl.json",
+        "sha256": "5be22a652e9d2a7660329c8651e6bf13cfe05098646b3204ad85d144deed4a83",
+        "fps": 50.0,
+        "frame_count": 1461,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 29.22,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 0,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "2f97c15949d8e16a5580b1a34bbde240a8caa2ac4da58d7f1857f58cf59ef08b"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 1,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "fd331fc2a6b4f5c5a6c41c83006c6db4147a0136aa67269cc9ae24d8e4130481"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 2,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "ffadd9feb5a8a960db0b374a7cc4f0f2f4c6a076e7c069064d6ef8e240c1fd18"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 25,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "2a710f10dfe7b1b2b6de860d34bb9eb3d34928f9dcc707bfb6d32b640c7521de"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 100,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "bc533cae4792f1fd23bc3321ebbb2e35005998b9e37f3cfd3ae1777569d88e40"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 250,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "892e67f4197e34ef118844c73e0e4b9151ba55793b5ba1d0ac8883c65301452d"
+          },
+          {
+            "phase_output_frame": 730,
+            "global_output_frame": 730,
+            "source_frame_index": 1460,
+            "source_timestamp_seconds": 29.2,
+            "decoded_bgr24_sha256": "440864719948369077f480be356113951d4cf5443e303b7c4ecc07d907d54f08"
+          },
+          {
+            "phase_output_frame": 740,
+            "global_output_frame": 740,
+            "source_frame_index": 1460,
+            "source_timestamp_seconds": 29.2,
+            "decoded_bgr24_sha256": "440864719948369077f480be356113951d4cf5443e303b7c4ecc07d907d54f08"
+          }
+        ],
+        "sampled_distinct_source_indices": 731,
+        "sampled_distinct_decoded_frame_hashes": 731,
+        "last_sampled_source_frame": 1460,
+        "phase_output_frames": 741,
+        "terminal_hold_start_phase_output_frame": 731,
+        "terminal_hold_start_phase_seconds": 29.24,
+        "terminal_hold_frames": 10,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      },
+      "fold": {
+        "episode_id": "20260824T083909.261687Z",
+        "path": "data/collections/shirt_fold/reviews/review-5ac3c1f6f80ec4146dbf722e1c9e99e7794d6949f3ae6effc814a92f8fc4a8b3/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_fold/reviews/review-5ac3c1f6f80ec4146dbf722e1c9e99e7794d6949f3ae6effc814a92f8fc4a8b3/meta/newton_cloth_rl.json",
+        "sha256": "dbfacc331a2e6785b8863e65ab5fd7204db536b91096dc8a396a6c6f89f703d1",
+        "fps": 50.0,
+        "frame_count": 1265,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 25.3,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 741,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "2be07fb49998e52ef196ed441d6ffb25917d12579aa95148883d1b9a8cd2b990"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 742,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "c1849a8424dca6560ed256b94eb4b2b866299003333ba121884c55aa14c4dd03"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 743,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "9091341fbe1ddc7c40cde83e55f3b96d5f80363a0557aab463ff360139d53995"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 766,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "1cd5f78fb32741ca1e3c1400cfd6776b405316225f022ae4baf8836948d0f6be"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 841,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "f8cb8e2dda75b0e3b15a34d83c114262ccb8aedad4e2c715d3d298364f5c5d4c"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 991,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "b0bbf5a1d6ee4083f862d68a6b31b6ebd8d6c5a2ff59c55a9f856b82ec0bd305"
+          },
+          {
+            "phase_output_frame": 632,
+            "global_output_frame": 1373,
+            "source_frame_index": 1264,
+            "source_timestamp_seconds": 25.28,
+            "decoded_bgr24_sha256": "5b0ffe8a232b41fe0fb778ef520bff07404f4b7339782e7193c7f1d89d12a42a"
+          },
+          {
+            "phase_output_frame": 655,
+            "global_output_frame": 1396,
+            "source_frame_index": 1264,
+            "source_timestamp_seconds": 25.28,
+            "decoded_bgr24_sha256": "5b0ffe8a232b41fe0fb778ef520bff07404f4b7339782e7193c7f1d89d12a42a"
+          }
+        ],
+        "sampled_distinct_source_indices": 633,
+        "sampled_distinct_decoded_frame_hashes": 633,
+        "last_sampled_source_frame": 1264,
+        "phase_output_frames": 656,
+        "terminal_hold_start_phase_output_frame": 633,
+        "terminal_hold_start_phase_seconds": 25.32,
+        "terminal_hold_frames": 23,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      }
+    },
+    {
+      "position": 6,
+      "asset_id": "rand_0VGB1NG35B",
+      "flatten_episode_id": "20260818T032551.064266Z",
+      "flatten_terminal_sample": 1421,
+      "fold_episode_id": "20260824T064933.748231Z",
+      "flatten": {
+        "episode_id": "20260818T032551.064266Z",
+        "path": "data/collections/shirt_flatten/reviews/review-fbee06e71c24be3b69b3819399bc48077db580b368d5c48881a5e2317ec9c9bb/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_flatten/reviews/review-fbee06e71c24be3b69b3819399bc48077db580b368d5c48881a5e2317ec9c9bb/meta/newton_cloth_rl.json",
+        "sha256": "6af48d910a2bb33bb15e992a4ca5f4532003587eda942a1c07722dadcfb679dd",
+        "fps": 50.0,
+        "frame_count": 1421,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 28.42,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 0,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "aa64067e5fd3b0612aba0ed65845c90c898235d0147a166cf20316bed9b4d44c"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 1,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "e57c576ab491f4c70812ea42926ac9e1d908fb7e14819369a2164fa5b3ae0f00"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 2,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "0506452dd1789e15c4b7623e8112e94a53c77de6ab22e8e31164dea51f028872"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 25,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "9994d386463abdc35e3a3ee2b822775d7f966ff1e60b50a22b5c103e977ea964"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 100,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "511d1c38131e99c52128859cdad855722f1b18f91ed7f2581d8541bf28e683d9"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 250,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "0f23f64c8860fb0c1fc1bf3123e4e85a8fe5a96b9dad5251a6ad994274587983"
+          },
+          {
+            "phase_output_frame": 710,
+            "global_output_frame": 710,
+            "source_frame_index": 1420,
+            "source_timestamp_seconds": 28.4,
+            "decoded_bgr24_sha256": "586e3946575d019183d93ccc436853a4ad83f932a3661a56a4556c85518c2ff4"
+          },
+          {
+            "phase_output_frame": 740,
+            "global_output_frame": 740,
+            "source_frame_index": 1420,
+            "source_timestamp_seconds": 28.4,
+            "decoded_bgr24_sha256": "586e3946575d019183d93ccc436853a4ad83f932a3661a56a4556c85518c2ff4"
+          }
+        ],
+        "sampled_distinct_source_indices": 711,
+        "sampled_distinct_decoded_frame_hashes": 711,
+        "last_sampled_source_frame": 1420,
+        "phase_output_frames": 741,
+        "terminal_hold_start_phase_output_frame": 711,
+        "terminal_hold_start_phase_seconds": 28.44,
+        "terminal_hold_frames": 30,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      },
+      "fold": {
+        "episode_id": "20260824T064933.748231Z",
+        "path": "data/collections/shirt_fold/reviews/review-c56d045a539b2bd8aba8774bb74449efc1788cb91c14d64c5fa27343ff9db513/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_fold/reviews/review-c56d045a539b2bd8aba8774bb74449efc1788cb91c14d64c5fa27343ff9db513/meta/newton_cloth_rl.json",
+        "sha256": "7684e45470136198464f278072e115a72d30df47d65416db0e5ce62ae5ff35fb",
+        "fps": 50.0,
+        "frame_count": 1312,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 26.24,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 741,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "ab486d286bba8b64dcbfd776ec5fb3fd32da64a33c28631d451734b5bce0777a"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 742,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "8aa2c9019a530774c25323965532d1342c5a0e6e0512466f22f2bc3452a89a99"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 743,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "77f49ee36e78f2489bd4e4b6b6f02d7e6a895f9cc0db7cf6523c683288724488"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 766,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "c9340a8759f513405dc1d89fb475f18436428adc617012372964e2f7a79e0d8a"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 841,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "52a3d7c15460685694a9f573ab4ce084911882ec9e30f1de584fc22623f57d7b"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 991,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "c0f90703f2c634eec1a45416dcdd96883bd19cd63ceea52f7472377edaf8a7af"
+          },
+          {
+            "phase_output_frame": 655,
+            "global_output_frame": 1396,
+            "source_frame_index": 1310,
+            "source_timestamp_seconds": 26.2,
+            "decoded_bgr24_sha256": "a9bb62221cc38566c723e4643f4c3dd780072b85822c63f673bbe1cfc5b1fccd"
+          }
+        ],
+        "sampled_distinct_source_indices": 656,
+        "sampled_distinct_decoded_frame_hashes": 656,
+        "last_sampled_source_frame": 1310,
+        "phase_output_frames": 656,
+        "terminal_hold_start_phase_output_frame": 656,
+        "terminal_hold_start_phase_seconds": 26.24,
+        "terminal_hold_frames": 0,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      }
+    },
+    {
+      "position": 7,
+      "asset_id": "rand_07SZ5QQ0QP",
+      "flatten_episode_id": "20260806T060342.231205Z",
+      "flatten_terminal_sample": 1308,
+      "fold_episode_id": "20260824T074855.820098Z",
+      "flatten": {
+        "episode_id": "20260806T060342.231205Z",
+        "path": "data/collections/shirt_flatten/reviews/review-54f2a0833a7ecf57bd2605e979f0765ce6fea386523ed554aca0cea7aca5e0c1/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_flatten/reviews/review-54f2a0833a7ecf57bd2605e979f0765ce6fea386523ed554aca0cea7aca5e0c1/meta/newton_cloth_rl.json",
+        "sha256": "512d10eaa77e96c0fc6fb2a3383de0e0f23e7adb996856582f4414a60d47da77",
+        "fps": 50.0,
+        "frame_count": 1308,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 26.16,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 0,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "abed83f798e76fb1bc79dffe7ab8fddaed040ae4c3ce8ad45297f1e099f302d0"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 1,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "935aa5d9703b70059231abd806cdb21b8fdf825712af9c7c306baf318d16316b"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 2,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "eb2e52c5203df97c455b12efb735705580f9b715309d08c6adfe063abebcf53a"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 25,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "77db259fc5f834a0c9170005b378b5e733a40c3146f16f980f3486b10465c9ee"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 100,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "798770fda905b84c9a34870cd8e921650f8cd73d87279a1e66a3c22985d57f5a"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 250,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "63ed1471a651e24888f3be5c471d28b935f16f122c6034dc4540064c6d6a6395"
+          },
+          {
+            "phase_output_frame": 654,
+            "global_output_frame": 654,
+            "source_frame_index": 1307,
+            "source_timestamp_seconds": 26.14,
+            "decoded_bgr24_sha256": "825ae1b983fdfc128d2bb1a49ba50ce14b643864f56f9e886a0672a88daab7c9"
+          },
+          {
+            "phase_output_frame": 740,
+            "global_output_frame": 740,
+            "source_frame_index": 1307,
+            "source_timestamp_seconds": 26.14,
+            "decoded_bgr24_sha256": "825ae1b983fdfc128d2bb1a49ba50ce14b643864f56f9e886a0672a88daab7c9"
+          }
+        ],
+        "sampled_distinct_source_indices": 655,
+        "sampled_distinct_decoded_frame_hashes": 642,
+        "last_sampled_source_frame": 1307,
+        "phase_output_frames": 741,
+        "terminal_hold_start_phase_output_frame": 654,
+        "terminal_hold_start_phase_seconds": 26.16,
+        "terminal_hold_frames": 87,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      },
+      "fold": {
+        "episode_id": "20260824T074855.820098Z",
+        "path": "data/collections/shirt_fold/reviews/review-b835777078315712d70a4ef0f26f09eb44e7651993ba0f916498a9f993e44f30/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_fold/reviews/review-b835777078315712d70a4ef0f26f09eb44e7651993ba0f916498a9f993e44f30/meta/newton_cloth_rl.json",
+        "sha256": "ed507bdec06dd8f2b8a4d973769fd252cc233295102b885c6f92d819bb46bf71",
+        "fps": 50.0,
+        "frame_count": 1253,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 25.06,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 741,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "ce34fe04e9b4b64fbfeda22dcf22e06ded03e445b0898cf3489779eefd39334d"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 742,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "7932c88554983c0cca394484e901246efa9a23f943df92df4767449ad7dc0963"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 743,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "04bfc54feeead71b290118bb727ec7f402948bc0856dcb06059b553d0252e687"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 766,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "ca9e40c295aa4b61568e6a90d06689f57756d33107d91bd79eca620206e60c5f"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 841,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "4f46cff0bc0d8a56009bd557371a0edd3f91498aefd09e720c5d913f1d36362f"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 991,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "174cb55d8be24a3d66fce500ea12fe0379e208e4ab6981778929635a513d92ef"
+          },
+          {
+            "phase_output_frame": 626,
+            "global_output_frame": 1367,
+            "source_frame_index": 1252,
+            "source_timestamp_seconds": 25.04,
+            "decoded_bgr24_sha256": "a42d3c5f754bc1d299f0bc7be6fb91ec321f735794d335d8fbe07efdc89cd48f"
+          },
+          {
+            "phase_output_frame": 655,
+            "global_output_frame": 1396,
+            "source_frame_index": 1252,
+            "source_timestamp_seconds": 25.04,
+            "decoded_bgr24_sha256": "a42d3c5f754bc1d299f0bc7be6fb91ec321f735794d335d8fbe07efdc89cd48f"
+          }
+        ],
+        "sampled_distinct_source_indices": 627,
+        "sampled_distinct_decoded_frame_hashes": 627,
+        "last_sampled_source_frame": 1252,
+        "phase_output_frames": 656,
+        "terminal_hold_start_phase_output_frame": 627,
+        "terminal_hold_start_phase_seconds": 25.08,
+        "terminal_hold_frames": 29,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      }
+    },
+    {
+      "position": 8,
+      "asset_id": "rand_166KJGCYM8",
+      "flatten_episode_id": "20260817T092947.955995Z",
+      "flatten_terminal_sample": 1312,
+      "fold_episode_id": "20260824T073214.971816Z",
+      "flatten": {
+        "episode_id": "20260817T092947.955995Z",
+        "path": "data/collections/shirt_flatten/reviews/review-f3ee1993100f11e2162dbae7da46a8c4ca789069bd804de5bcdf4ddb74e75935/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_flatten/reviews/review-f3ee1993100f11e2162dbae7da46a8c4ca789069bd804de5bcdf4ddb74e75935/meta/newton_cloth_rl.json",
+        "sha256": "18b5c9e3e1f14b14bb5ba5cc2d0d911a5717f9bdfdecb9f31d4f7eb76cf5e317",
+        "fps": 50.0,
+        "frame_count": 1312,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 26.24,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 0,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "97f3c2218f934596a8c8493547e8033fbcba8838fecb984fe6fc6227ef25aa40"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 1,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "deb80c9e6bc0413b1b58a1202f9f3aa9d16d2e3e2a91ebc30773bca72e5c951f"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 2,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "9198578b0c623e4a22f89339f81e7f28a9b5462b485f6d494c89a79e9788a5b6"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 25,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "b5ff69237469e4249ebd1c4939cd9bc333a7e7eba9379d7595003e79f927ebb0"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 100,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "fe4607a032d1a8194c1f7fc7da630aa38a28a2b78cedc502b911001b8afe855d"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 250,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "163b1e67b959372d0aef748bbd38f066e0bd9998e14ff0b7059ea0d472e21ca6"
+          },
+          {
+            "phase_output_frame": 656,
+            "global_output_frame": 656,
+            "source_frame_index": 1311,
+            "source_timestamp_seconds": 26.22,
+            "decoded_bgr24_sha256": "af838e8cd4b66aa34dedc849f991eaadb5d381fac02df06cdca22b91837ae414"
+          },
+          {
+            "phase_output_frame": 740,
+            "global_output_frame": 740,
+            "source_frame_index": 1311,
+            "source_timestamp_seconds": 26.22,
+            "decoded_bgr24_sha256": "af838e8cd4b66aa34dedc849f991eaadb5d381fac02df06cdca22b91837ae414"
+          }
+        ],
+        "sampled_distinct_source_indices": 657,
+        "sampled_distinct_decoded_frame_hashes": 657,
+        "last_sampled_source_frame": 1311,
+        "phase_output_frames": 741,
+        "terminal_hold_start_phase_output_frame": 656,
+        "terminal_hold_start_phase_seconds": 26.24,
+        "terminal_hold_frames": 85,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      },
+      "fold": {
+        "episode_id": "20260824T073214.971816Z",
+        "path": "data/collections/shirt_fold/reviews/review-06363ee9b3b7e58c6474b2e29a173a4a81240a8fda0902888532b11ea7fa509a/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_fold/reviews/review-06363ee9b3b7e58c6474b2e29a173a4a81240a8fda0902888532b11ea7fa509a/meta/newton_cloth_rl.json",
+        "sha256": "2fc833da5ae423d8c9b197267156c250480c4a87433203f570fb82ab55e07d90",
+        "fps": 50.0,
+        "frame_count": 1286,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 25.72,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 741,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "b193f18a90e11a643edaf1749e24ee28fa947b72a3a3531a8dab4befb84fed04"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 742,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "15c8c1657b625ae5313539a9c84026b37686d3463f63645310c5e99c047b68ee"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 743,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "62ea3e9057e21e7056d9173b08f325e71584482384b47871cf929ac867d84fba"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 766,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "1fb572a2836dfa678e9ce0c2f54424cb9b9778638c904697787dd227a10be27a"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 841,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "2ab2867d4f457e12376c71d00106fab5925b75e907ea06bddc3bc24a337d2ff6"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 991,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "64be2ae405624726a073a11986d66c72107d6e2aae1c4789f153b857137d4f31"
+          },
+          {
+            "phase_output_frame": 643,
+            "global_output_frame": 1384,
+            "source_frame_index": 1285,
+            "source_timestamp_seconds": 25.7,
+            "decoded_bgr24_sha256": "9d6feed66e5cbe4d054c74fb3dce109e24ad1231dea370a53c0a2848ab333935"
+          },
+          {
+            "phase_output_frame": 655,
+            "global_output_frame": 1396,
+            "source_frame_index": 1285,
+            "source_timestamp_seconds": 25.7,
+            "decoded_bgr24_sha256": "9d6feed66e5cbe4d054c74fb3dce109e24ad1231dea370a53c0a2848ab333935"
+          }
+        ],
+        "sampled_distinct_source_indices": 644,
+        "sampled_distinct_decoded_frame_hashes": 644,
+        "last_sampled_source_frame": 1285,
+        "phase_output_frames": 656,
+        "terminal_hold_start_phase_output_frame": 643,
+        "terminal_hold_start_phase_seconds": 25.72,
+        "terminal_hold_frames": 13,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      }
+    },
+    {
+      "position": 9,
+      "asset_id": "rand_149K7NJ5CI",
+      "flatten_episode_id": "20260817T092251.003275Z",
+      "flatten_terminal_sample": 1290,
+      "fold_episode_id": "20260825T062611.673047Z",
+      "flatten": {
+        "episode_id": "20260817T092251.003275Z",
+        "path": "data/collections/shirt_flatten/reviews/review-c42f22c9674ee86a2e38ad46e958e08ed0dabfeaefe0adc9484e68e9bfac487d/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_flatten/reviews/review-c42f22c9674ee86a2e38ad46e958e08ed0dabfeaefe0adc9484e68e9bfac487d/meta/newton_cloth_rl.json",
+        "sha256": "705eab940d0cd0357cc1348123eb04d07a66ffcb694b35487804475120a58a3a",
+        "fps": 50.0,
+        "frame_count": 1290,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 25.8,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 0,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "3438539077ac66416279830f6c757b9fc08c7351b5d8df8e37742509304f4ca4"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 1,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "8458eccae427694e362d6935bf766f4329577cb49dec0d9f335953ca63096751"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 2,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "d444f94526f42ad96317844ca66bde836b491092f93a510fcc2d7d1d445322c1"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 25,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "f389dcbb516745874b3017979eeb93c9168fb8b93d2f93c78e6e9f4e31ede327"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 100,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "9fac61722474b02291162aa06fb4fd87e8501ac50273704fb7b60ea01032b928"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 250,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "d48a2b299174280cfa7184016cc0d7be069ae27f4534b73ae6cea0f2b597ac4f"
+          },
+          {
+            "phase_output_frame": 645,
+            "global_output_frame": 645,
+            "source_frame_index": 1289,
+            "source_timestamp_seconds": 25.78,
+            "decoded_bgr24_sha256": "fde3fbe883b9b7fba8c9a359e5e30c757ec1c647f0565f876b8988519dec6293"
+          },
+          {
+            "phase_output_frame": 740,
+            "global_output_frame": 740,
+            "source_frame_index": 1289,
+            "source_timestamp_seconds": 25.78,
+            "decoded_bgr24_sha256": "fde3fbe883b9b7fba8c9a359e5e30c757ec1c647f0565f876b8988519dec6293"
+          }
+        ],
+        "sampled_distinct_source_indices": 646,
+        "sampled_distinct_decoded_frame_hashes": 646,
+        "last_sampled_source_frame": 1289,
+        "phase_output_frames": 741,
+        "terminal_hold_start_phase_output_frame": 645,
+        "terminal_hold_start_phase_seconds": 25.8,
+        "terminal_hold_frames": 96,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      },
+      "fold": {
+        "episode_id": "20260825T062611.673047Z",
+        "path": "data/collections/shirt_fold/reviews/review-8ce9dd55c06d4cbb92740f10f35848987cd0eea0fa9af6a632f9c7149016b32b/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_fold/reviews/review-8ce9dd55c06d4cbb92740f10f35848987cd0eea0fa9af6a632f9c7149016b32b/meta/newton_cloth_rl.json",
+        "sha256": "f61faae65dc3572c45780f5b6a1c29b282f6bf0e1e28a0066554cb1915923f7b",
+        "fps": 50.0,
+        "frame_count": 1296,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 25.92,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 741,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "2d892ea71b51ce10d37b7069a3f00b16d0e1bad942c2a7a68a1f3cb868e3699f"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 742,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "6c1018352d30ec5209ee55b0d96f62799069b29e139d207a9aafd6d034b57ff5"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 743,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "b339a963ae3e271256deabeae897b3ecf7b883327a1eabd9b238a04075289931"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 766,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "e45592a9b8694741ced39b5229b213756eadd5f63e93ca7db1e8546c7f1a4a40"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 841,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "f635e24cad915b3272fb8711e501db59493e8dd014e202aeeca15babacf33504"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 991,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "849c24909e6462fd923e67f093ffc1c7b7436058e9edb497f7a23210b90d5d85"
+          },
+          {
+            "phase_output_frame": 648,
+            "global_output_frame": 1389,
+            "source_frame_index": 1295,
+            "source_timestamp_seconds": 25.9,
+            "decoded_bgr24_sha256": "3edc454cfd3664637c1347662e4fe191307eab5831b6be4dcd03cdf13075d192"
+          },
+          {
+            "phase_output_frame": 655,
+            "global_output_frame": 1396,
+            "source_frame_index": 1295,
+            "source_timestamp_seconds": 25.9,
+            "decoded_bgr24_sha256": "3edc454cfd3664637c1347662e4fe191307eab5831b6be4dcd03cdf13075d192"
+          }
+        ],
+        "sampled_distinct_source_indices": 649,
+        "sampled_distinct_decoded_frame_hashes": 649,
+        "last_sampled_source_frame": 1295,
+        "phase_output_frames": 656,
+        "terminal_hold_start_phase_output_frame": 648,
+        "terminal_hold_start_phase_seconds": 25.92,
+        "terminal_hold_frames": 8,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      }
+    },
+    {
+      "position": 10,
+      "asset_id": "rand_1MBEYFUNQV",
+      "flatten_episode_id": "20260817T094232.743204Z",
+      "flatten_terminal_sample": 1345,
+      "fold_episode_id": "20260824T060903.688737Z",
+      "flatten": {
+        "episode_id": "20260817T094232.743204Z",
+        "path": "data/collections/shirt_flatten/reviews/review-ccc6157ed998a30cd8474cb483745007601fe6dcbe056d01c588591a37a62082/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_flatten/reviews/review-ccc6157ed998a30cd8474cb483745007601fe6dcbe056d01c588591a37a62082/meta/newton_cloth_rl.json",
+        "sha256": "be8fd9a094aee329f72438442036fa7f1a77140bca25e0915d1a352b49af4ef2",
+        "fps": 50.0,
+        "frame_count": 1345,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 26.9,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 0,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "30d233966ca134e31af4036e47a83eaf9e3d5cd85697951f2a6d11d522ce69d0"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 1,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "62a96d4b6532396fc5d102a33f687b7d95754731b88bc9e3bc69a434b35b0e3a"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 2,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "6081322999991e13a7a672b5ac15441a63ceb424b39dc374980f39ec4ea63ac0"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 25,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "ae88919ae77ee44366589bd73ae7fac819200cb8c86aaf9d35983ec8fa462ae6"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 100,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "a8f0e3d7862d8a4cb83b4383d4dfe000f51e9291eb8ec0b312b6c9d8e76c43d2"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 250,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "bcba8f8e493e4311c341368aee0968dbfb0e8f5fd32d9782212c0b5cedf801e0"
+          },
+          {
+            "phase_output_frame": 672,
+            "global_output_frame": 672,
+            "source_frame_index": 1344,
+            "source_timestamp_seconds": 26.88,
+            "decoded_bgr24_sha256": "2f3660b1e79f77a2792e1bd9654c1fca58e0700f3c934fddd0e363008fb9d209"
+          },
+          {
+            "phase_output_frame": 740,
+            "global_output_frame": 740,
+            "source_frame_index": 1344,
+            "source_timestamp_seconds": 26.88,
+            "decoded_bgr24_sha256": "2f3660b1e79f77a2792e1bd9654c1fca58e0700f3c934fddd0e363008fb9d209"
+          }
+        ],
+        "sampled_distinct_source_indices": 673,
+        "sampled_distinct_decoded_frame_hashes": 673,
+        "last_sampled_source_frame": 1344,
+        "phase_output_frames": 741,
+        "terminal_hold_start_phase_output_frame": 673,
+        "terminal_hold_start_phase_seconds": 26.92,
+        "terminal_hold_frames": 68,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      },
+      "fold": {
+        "episode_id": "20260824T060903.688737Z",
+        "path": "data/collections/shirt_fold/reviews/review-283319730a5483eef63c1c04f2b5d02d4573b51586c298a476a70b2d57068383/videos/observation.images.cam_high/chunk-000/file-000.mp4",
+        "export_metadata": "data/collections/shirt_fold/reviews/review-283319730a5483eef63c1c04f2b5d02d4573b51586c298a476a70b2d57068383/meta/newton_cloth_rl.json",
+        "sha256": "eb090bf73d12e828c068cd6be218061943281684ebd44bfdde7a698ac60c8db2",
+        "fps": 50.0,
+        "frame_count": 1020,
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 20.4,
+        "frame_sampling": "min(2 * phase_output_frame, source_frame_count - 1)",
+        "source_time_seconds": "source_frame_index / 50",
+        "sampling_evidence": [
+          {
+            "phase_output_frame": 0,
+            "global_output_frame": 741,
+            "source_frame_index": 0,
+            "source_timestamp_seconds": 0.0,
+            "decoded_bgr24_sha256": "1fc271c0d9616352bd8b6f243cf5ff159e98e4dc2c8a5fc9ffc9e092b33e23b9"
+          },
+          {
+            "phase_output_frame": 1,
+            "global_output_frame": 742,
+            "source_frame_index": 2,
+            "source_timestamp_seconds": 0.04,
+            "decoded_bgr24_sha256": "3308464228752662ae865604633a28737c935faa702739e7016e82d713a15b0a"
+          },
+          {
+            "phase_output_frame": 2,
+            "global_output_frame": 743,
+            "source_frame_index": 4,
+            "source_timestamp_seconds": 0.08,
+            "decoded_bgr24_sha256": "cfd3763c62a29d0b8f67394d80e283094b54765e0cd339a3b1b38465c16d9a84"
+          },
+          {
+            "phase_output_frame": 25,
+            "global_output_frame": 766,
+            "source_frame_index": 50,
+            "source_timestamp_seconds": 1.0,
+            "decoded_bgr24_sha256": "e390b14b0c6ce7ff707dcab04e1a4d198b68fca328238a4c4ffc7b23c0b34e81"
+          },
+          {
+            "phase_output_frame": 100,
+            "global_output_frame": 841,
+            "source_frame_index": 200,
+            "source_timestamp_seconds": 4.0,
+            "decoded_bgr24_sha256": "e4c1db6808a67cb0cad97cbffd183303df727f88ec8453342664e30c52c3c067"
+          },
+          {
+            "phase_output_frame": 250,
+            "global_output_frame": 991,
+            "source_frame_index": 500,
+            "source_timestamp_seconds": 10.0,
+            "decoded_bgr24_sha256": "3b2a462748c8bca6dfc527384244337196077608c7175334fa0b525f0d263594"
+          },
+          {
+            "phase_output_frame": 510,
+            "global_output_frame": 1251,
+            "source_frame_index": 1019,
+            "source_timestamp_seconds": 20.38,
+            "decoded_bgr24_sha256": "faeaf95acbf5cc640d3dcf9dca14f9178d64215960228032f681b217cb08c1e4"
+          },
+          {
+            "phase_output_frame": 655,
+            "global_output_frame": 1396,
+            "source_frame_index": 1019,
+            "source_timestamp_seconds": 20.38,
+            "decoded_bgr24_sha256": "faeaf95acbf5cc640d3dcf9dca14f9178d64215960228032f681b217cb08c1e4"
+          }
+        ],
+        "sampled_distinct_source_indices": 511,
+        "sampled_distinct_decoded_frame_hashes": 511,
+        "last_sampled_source_frame": 1019,
+        "phase_output_frames": 656,
+        "terminal_hold_start_phase_output_frame": 510,
+        "terminal_hold_start_phase_seconds": 20.4,
+        "terminal_hold_frames": 146,
+        "terminal_hold_rule": "Repeated terminal hold starts only after the real source clip ends; the last genuine sample remains part of the original action."
+      }
+    }
+  ],
+  "validation": {
+    "fully_decoded_frame_count": 1397,
+    "ffmpeg_error_only_full_decode_exit_code": 0,
+    "boundary_comparisons": [
+      {
+        "output_frame": 0,
+        "timestamp_seconds": 0.0,
+        "decoded_vs_true_sample_mean_absolute_error_8bit": 1.88049
+      },
+      {
+        "output_frame": 1,
+        "timestamp_seconds": 0.04,
+        "decoded_vs_true_sample_mean_absolute_error_8bit": 1.88145
+      },
+      {
+        "output_frame": 150,
+        "timestamp_seconds": 6.0,
+        "decoded_vs_true_sample_mean_absolute_error_8bit": 2.24683
+      },
+      {
+        "output_frame": 740,
+        "timestamp_seconds": 29.6,
+        "decoded_vs_true_sample_mean_absolute_error_8bit": 2.12743
+      },
+      {
+        "output_frame": 741,
+        "timestamp_seconds": 29.64,
+        "decoded_vs_true_sample_mean_absolute_error_8bit": 2.21803
+      },
+      {
+        "output_frame": 742,
+        "timestamp_seconds": 29.68,
+        "decoded_vs_true_sample_mean_absolute_error_8bit": 2.21133
+      },
+      {
+        "output_frame": 1396,
+        "timestamp_seconds": 55.84,
+        "decoded_vs_true_sample_mean_absolute_error_8bit": 1.75497
+      }
+    ],
+    "moov_precedes_mdat": true
+  }
+}

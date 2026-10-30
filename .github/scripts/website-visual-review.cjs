@@ -162,11 +162,72 @@ saveReport();
   async function captureEvidenceDetails(page, prefix) {
     const table = await page.locator('.transfer-evidence .table-block').count() ? '.transfer-evidence .table-block' : '.transfer-evidence .table-wrap';
     if (await page.locator(table).count()) await capture(page, prefix + '-transfer-table', table);
+    const method = page.locator('#method details.explanation');
+    if (await method.count()) {
+      const wasOpen = await method.evaluate(details => details.open);
+      if (!wasOpen) await method.locator(':scope > summary').click();
+      try {
+        assert(await method.evaluate(details => details.open), 'Method details must be open before checking the table');
+        const methodTable = await method.locator('.table-block').count() ? '#method .table-block' : '#method .table-wrap';
+        assert(await page.locator(methodTable).isVisible(), 'Method table must be rendered for the screenshot');
+        await capture(page, prefix + '-method-table', methodTable);
+      } finally {
+        if (!wasOpen) await method.locator(':scope > summary').click();
+      }
+    }
     const studies = page.locator('.research-study');
     if (await studies.count()) {
       const index = await studies.count() - 1;
       await capture(page, prefix + '-policy-comparison', '.research-study >> nth=' + index);
     }
+  }
+  async function explanations(page, prefix, exercise) {
+    if (pagePath !== 'index.html') return;
+    progress('Explanation defaults: ' + prefix);
+    const details = page.locator('.explanation');
+    const initial = await details.evaluateAll(elements => elements.map(element => ({
+      tag: element.tagName, open: element.open,
+      summary: element.querySelector(':scope > summary')?.textContent.trim()
+    })));
+    const entry = { viewport: page.viewportSize(), initial, interactions: [] };
+    (report.explanations ||= []).push(entry);
+    saveReport();
+    assert.equal(initial.length, 10, 'Homepage must have ten native explanation details');
+    assert(initial.every(item => item.tag === 'DETAILS' && item.open === false && item.summary), 'All ten explanations must be native details, initially closed, with a summary');
+    report.checks.push(prefix + ': all ten native explanation details default closed');
+    if (!exercise) return;
+    for (let index = 0; index < initial.length; index++) {
+      const item = details.nth(index);
+      const summary = item.locator(':scope > summary');
+      const body = item.locator(':scope > .explanation-body');
+      const label = prefix + '-explanation-' + (index + 1);
+      const interaction = { summary: initial[index].summary, actions: [] };
+      entry.interactions.push(interaction);
+      progress('Explanation interactions: ' + label + ' ' + initial[index].summary);
+      assert.equal(await body.isVisible(), false, 'Closed explanation content must be hidden');
+      for (const [action, open] of [['click-open', true], ['click-close', false], ['keyboard-enter-open', true], ['keyboard-space-close', false]]) {
+        if (action.startsWith('click')) await summary.click();
+        else {
+          await summary.focus();
+          assert(await summary.evaluate(element => document.activeElement === element), 'Native summary must receive keyboard focus');
+          await summary.press(open ? 'Enter' : 'Space');
+        }
+        const state = { action, open: await item.evaluate(element => element.open), bodyVisible: await body.isVisible() };
+        interaction.actions.push(state);
+        saveReport();
+        assert.equal(state.open, open, label + ' ' + action + ' must toggle the native details');
+        assert.equal(state.bodyVisible, open, label + ' ' + action + ' must toggle the explanation content');
+        await layout(page, label + '-' + action);
+        if (action === 'click-open') {
+          const section = await item.evaluate(element => element.closest('section')?.id);
+          if (await item.getAttribute('id') === 'about') await capture(page, prefix + '-hero-about-expanded', '#about');
+          else if (section === 'generate') await capture(page, prefix + '-generation-details-expanded', '#generate > details.explanation');
+        }
+      }
+    }
+    assert(await details.evaluateAll(elements => elements.every(element => !element.open)), 'Explanation checks must leave all details closed');
+    report.checks.push(prefix + ': all ten explanations support pointer, Enter and Space toggles without page overflow');
+    saveReport();
   }
   async function mediaSnapshot(locator) {
     return locator.evaluate(video => {
@@ -292,6 +353,7 @@ saveReport();
       await probe.close();
     }
     const desktop = await open({ width: 1440, height: 1000 });
+    await explanations(desktop, 'desktop', true);
     await capture(desktop, 'desktop-opening');
     await captureSections(desktop, 'desktop');
     await captureEvidenceDetails(desktop, 'desktop');
@@ -300,6 +362,7 @@ saveReport();
     report.tableStyles = { homepage: mainTable };
     for (const width of [390, 320]) {
       const mobile = await open({ width, height: 844 });
+      await explanations(mobile, 'mobile-' + width, width === 390);
       if (await mobile.locator('#hero-film').count()) {
         assert((await mobile.locator('#hero-film').getAttribute('data-src')).endsWith('flatten-wide.mp4'), 'Mobile hero must default to one complete workstation');
         assert.equal(await mobile.locator('[data-select="hero-film"][aria-pressed="true"]').getAttribute('data-src'), 'assets/launch/flatten-wide.mp4');
