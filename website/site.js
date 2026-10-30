@@ -41,9 +41,9 @@
     video.load();
   }
   document.querySelectorAll('[data-select]').forEach(button => button.addEventListener('click', () => choose(button)));
-  function mobileCollection() {
+  function mobileSingleViews() {
     if (!narrow.matches) return;
-    for (const id of ['collection-film', 'transfer-film']) {
+    for (const id of ['hero-film', 'collection-film', 'transfer-film']) {
       const options = [...document.querySelectorAll('[data-select="' + id + '"]')];
       const overview = options.find(b => b.classList.contains('desktop-overview'));
       if (overview?.getAttribute('aria-pressed') === 'true') {
@@ -52,8 +52,8 @@
       }
     }
   }
-  mobileCollection();
-  narrow.addEventListener('change', mobileCollection);
+  mobileSingleViews();
+  narrow.addEventListener('change', mobileSingleViews);
   document.addEventListener('play', event => {
     if (event.target.tagName !== 'VIDEO' || event.target.paused) return;
     active = event.target;

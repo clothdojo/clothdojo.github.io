@@ -4,7 +4,7 @@ Buildless research website. GitHub Pages publishes this directory only; code, te
 
 ## Structure
 
-- `index.html`: newly rendered close-up demonstrations, repeatable generation, observation re-rendering, robot transfer, three experimental comparisons, method and practical entry points.
+- `index.html`: complete-workcell demonstrations, repeatable generation, observation re-rendering, robot transfer, three experimental comparisons, method and practical entry points.
 - `site.css` / `site.js`: the shared visual system and homepage media interactions. The homepage does not depend on the archived homepage CSS or player scripts.
 - `results.html` / `results.css`: five complete experiment groups. Homepage research charts and all research tables use these same components.
 - `explore.html` / `explore.css` / `explorer.js`: the 24-trajectory catalog and interactive 500-garment atlas.
@@ -20,7 +20,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory website
 
 ## Demonstration narrative
 
-The primary demonstration is a newly rendered close external view of each task. Flattening and folding share the scene and viewing direction; flattening uses a slightly wider frame to contain the lifted garment. Task selection changes the recorded excerpt. These are autonomous rollout excerpts, not proofs of complete-task success.
+The primary demonstration shows complete robot workcells, with batch replay on desktop and a readable single workcell on mobile. The source recordings are distinct saved autonomous trajectories. Batch playback illustrates the collection; it is not a live parallel-generation session or proof of complete-task success. Close views are reserved for the observation/material comparison and optional detail inspection.
 
 The generated collection uses different garments and recorded trajectories rendered with the same new camera. Desktop visitors can inspect the overview or one trajectory. Mobile starts with a readable single trajectory.
 
