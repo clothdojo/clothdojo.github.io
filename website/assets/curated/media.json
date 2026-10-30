@@ -1,6 +1,15 @@
 {
-  "version": 11,
+  "version": 17,
   "primary_selection": {
+    "trajectory_overview": {
+      "file": "trajectory-overview.mp4",
+      "source_mapping": "trajectory-overview.json",
+      "preview": "../preview/trajectory-overview.mp4",
+      "unique_trajectories": 200,
+      "unique_garments": 169,
+      "composition": "20 columns x 10 rows; flattening above folding; eight-second excerpts at different source offsets, replayed at 1x and sampled at 25 fps. Master 1920x720; preview 1600x600 at 24 fps.",
+      "scope": "Saved RGB rollout montage. Not new or concurrent simulation. Regeneration is explained separately through the executable policy-generation pipeline."
+    },
     "tasks": {
       "file": "tasks-paired.mp4",
       "sources": [
