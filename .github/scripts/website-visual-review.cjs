@@ -40,8 +40,8 @@ saveReport();
       window.scrollTo({ top: targetTop - offset - 16, behavior: 'instant' });
     });
   }
-  async function stableMedia(page) {
-    return page.evaluate(async () => {
+  async function stableMedia(page, frameTime = null, frameSelector = null) {
+    return page.evaluate(async ({ frameTime, frameSelector }) => {
       const visible = element => {
         if (typeof element.checkVisibility === 'function' && !element.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) return false;
         for (let ancestor = element; ancestor; ancestor = ancestor.parentElement) {
@@ -72,6 +72,10 @@ saveReport();
       }));
       document.querySelectorAll('video').forEach(video => video.pause());
       const videos = [...document.querySelectorAll('video')].filter(visible);
+      const sampleVideo = frameTime === null ? null : document.querySelector(frameSelector);
+      if (frameTime !== null && (!(sampleVideo instanceof HTMLVideoElement) || !videos.includes(sampleVideo))) {
+        throw new Error('Timed frame capture requires a visible video: ' + frameSelector);
+      }
       await Promise.all(videos.map(async video => {
         // Screenshot preparation requests a real decoded frame, without changing
         // controls, layout, playback policy, or any visible page styling.
@@ -92,7 +96,10 @@ saveReport();
           video.load();
           await loaded;
         }
-        const time = Math.min(0.5, Number.isFinite(video.duration) ? video.duration / 2 : 0.5);
+        const time = video === sampleVideo ? frameTime : Math.min(0.5, Number.isFinite(video.duration) ? video.duration / 2 : 0.5);
+        if (video === sampleVideo && (!Number.isFinite(video.duration) || time >= video.duration)) {
+          throw new Error('Requested frame ' + time + 's is outside video duration ' + video.duration + 's: ' + video.currentSrc);
+        }
         if (Math.abs(video.currentTime - time) > 0.01) {
           const seeked = wait('seeked', () => false);
           video.currentTime = time;
@@ -126,8 +133,10 @@ saveReport();
         const timer = setTimeout(() => reject(new Error('Two animation frames did not settle within 5s; visibility=' + document.visibilityState)), 5000);
         requestAnimationFrame(() => requestAnimationFrame(() => { clearTimeout(timer); resolve(); }));
       });
-      return videos.map(video => ({ src: video.currentSrc || video.getAttribute('src'), time: video.currentTime, readyState: video.readyState, seeking: video.seeking }));
-    });
+      return videos.map(video => ({ id: video.id, src: video.currentSrc || video.getAttribute('src'), currentSrc: video.currentSrc,
+        time: video.currentTime, duration: video.duration, videoWidth: video.videoWidth, videoHeight: video.videoHeight,
+        readyState: video.readyState, seeking: video.seeking, controls: video.controls, paused: video.paused }));
+    }, { frameTime, frameSelector });
   }
   async function layout(page, label) {
     const result = await page.evaluate(() => ({
@@ -140,17 +149,52 @@ saveReport();
     report.layouts.push({ page: page.url(), label, ...result });
     assert(result.scrollWidth <= result.width + 1, 'Horizontal page overflow: ' + label + ' at ' + result.width);
   }
-  async function capture(page, name, selector) {
-    progress('Capture start: ' + name + ' selector=' + (selector || 'page top'));
+  async function capture(page, name, selector, frameTime = null) {
+    assert(frameTime === null || Number.isFinite(frameTime) && frameTime >= 0, 'Frame capture time must be finite and nonnegative');
+    progress('Capture start: ' + name + ' selector=' + (selector || 'page top') + (frameTime === null ? '' : ' time=' + frameTime));
     await page.bringToFront();
     await position(page, selector);
-    const visibleVideos = await stableMedia(page);
+    const visibleVideos = await stableMedia(page, frameTime, selector);
     await layout(page, name);
     const file = name + '.jpg';
     await page.screenshot({ path: path.join(out, file), type: 'jpeg', quality: 75, fullPage: false, animations: 'disabled' });
-    report.screenshots.push({ file, page: page.url(), viewport: page.viewportSize(), selector: selector || 'page top', scrollY: await page.evaluate(() => scrollY), visibleVideos });
+    const evidence = { file, page: page.url(), viewport: page.viewportSize(), selector: selector || 'page top', frameTime, scrollY: await page.evaluate(() => scrollY), visibleVideos };
+    report.screenshots.push(evidence);
     saveReport();
     progress('Capture done: ' + name);
+    return evidence;
+  }
+  async function heroReveal(page, prefix, captureFrames) {
+    const video = page.locator('#hero-film');
+    if (!await video.count()) return;
+    const source = 'assets/launch/generation-reveal.mp4';
+    const poster = 'assets/launch/generation-reveal-poster.jpg';
+    const firstTab = page.locator('[data-select="hero-film"]').first();
+    assert.equal(await video.getAttribute('data-src'), source, 'Hero must default to the continuous scale-reveal video at every viewport');
+    assert.equal(await video.getAttribute('poster'), poster, 'Hero must show the scale-reveal poster by default');
+    assert.equal(await firstTab.getAttribute('data-src'), source, 'The first hero tab must select the scale-reveal video');
+    assert.equal(await firstTab.getAttribute('aria-pressed'), 'true', 'At scale must be the initially selected hero tab');
+    assert.equal((await firstTab.textContent()).trim(), 'At scale');
+    assert(await firstTab.isVisible(), 'At scale must remain visible on desktop and mobile');
+    report.checks.push(prefix + ': visible At scale tab and reveal video selected by default');
+    if (!captureFrames) return;
+    for (const time of [0.5, 6, 11]) {
+      const shot = await capture(page, prefix + '-hero-reveal-' + String(time).replace('.', 'p') + 's', '#hero-film', time);
+      const state = shot.visibleVideos.find(item => item.id === 'hero-film');
+      const evidence = { viewport: page.viewportSize(), screenshot: shot.file, requestedTime: time, ...state };
+      (report.heroRevealFrames ||= []).push(evidence);
+      saveReport();
+      assert(state, 'Scale-reveal video must be visible in the timed screenshot');
+      assert.equal(state.currentSrc, new URL(source, page.url()).href, 'Timed screenshot must sample the actual scale-reveal source');
+      assert(state.duration > 11, 'Scale-reveal source must include the 11-second frame');
+      assert(Math.abs(state.time - time) < 0.05, 'Scale-reveal screenshot must preserve the requested frame time');
+      assert(state.readyState >= 3 && !state.seeking, 'Scale-reveal screenshot must contain a stable playable frame');
+      assert.equal(state.videoWidth, 1920);
+      assert.equal(state.videoHeight, 1080);
+      assert(state.controls && state.paused, 'Timed screenshots must retain native controls and pause the actual video');
+    }
+    report.checks.push(prefix + ': real scale-reveal frames at 0.5, 6 and 11 seconds, stable native player at 1920x1080');
+    saveReport();
   }
   async function captureSections(page, prefix) {
     const sections = await page.locator('main section[id]').evaluateAll(elements => elements.map(element => element.id));
@@ -404,6 +448,7 @@ saveReport();
     await capture(desktop, 'desktop-opening');
     await captureSections(desktop, 'desktop');
     await captureEvidenceDetails(desktop, 'desktop');
+    await heroReveal(desktop, 'desktop', true);
     await interactions(desktop);
     const mainTable = pagePath === 'index.html' ? await tableStyle(desktop) : null;
     report.tableStyles = { homepage: mainTable };
@@ -411,11 +456,7 @@ saveReport();
       const mobile = await open({ width, height: 844 });
       await formalTitle(mobile, 'mobile-' + width);
       await explanations(mobile, 'mobile-' + width, width === 390);
-      if (await mobile.locator('#hero-film').count()) {
-        assert((await mobile.locator('#hero-film').getAttribute('data-src')).endsWith('flatten-wide.mp4'), 'Mobile hero must default to one complete workstation');
-        assert.equal(await mobile.locator('[data-select="hero-film"][aria-pressed="true"]').getAttribute('data-src'), 'assets/launch/flatten-wide.mp4');
-        assert.equal(await mobile.locator('[data-select="hero-film"].desktop-overview').isVisible(), false, 'Batch hero overview must be hidden on mobile');
-      }
+      await heroReveal(mobile, 'mobile-' + width, width === 390);
       if (await mobile.locator('#collection-film').count()) {
         assert((await mobile.locator('#collection-film').getAttribute('data-src')).endsWith('sample-01.mp4'), 'Mobile collection must default to a readable single replay');
         assert.equal(await mobile.locator('[data-select="collection-film"][aria-pressed="true"]').getAttribute('data-src'), 'assets/launch/sample-01.mp4');

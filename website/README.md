@@ -23,9 +23,9 @@ HTTP byte-range support is required to verify video seeking and time-preserving 
 
 ## Demonstration narrative
 
-The homepage opens with a large ClothDojo wordmark, a one-line premise and the collection counts. Project details and authors, generation steps, replay explanations, experiment protocols, the detailed method and setup requirements use native, default-closed `details` sections. Videos, plots, key tables and entry points remain visible; expanding a section keeps its context on the page.
+The homepage opens with the full paper title, aligned with the demonstration below it. Desktop uses three semantic lines; narrow screens wrap the complete title without removing words. Collection counts and the authors' disclosure follow the video. Project details and authors, generation steps, replay explanations, experiment protocols, the detailed method and setup requirements use native, default-closed `details` sections. Videos, plots, key tables and entry points remain visible; expanding a section keeps its context on the page.
 
-The primary demonstration shows complete robot workcells, with batch replay on desktop and a readable single workcell on mobile. The source recordings are distinct saved autonomous trajectories. Batch playback illustrates the collection; it is not a live parallel-generation session or proof of complete-task success. Close views are reserved for the observation/material comparison and optional detail inspection.
+The primary demonstration opens at an oblique third-person view of a complete robot workcell, then moves through one shared 3D scene to reveal 24 workcells with different garments. All 24 use distinct saved autonomous trajectories, with real camera motion and 1× playback. Desktop and mobile both start with this reveal; separate flattening and folding views remain available. This illustrates the collection, not a live parallel-generation session or proof of complete-task success. Close views are reserved for the observation/material comparison and optional detail inspection.
 
 The generated collection uses different garments and recorded trajectories rendered with the same new camera. Desktop visitors can inspect the overview or one trajectory. Mobile starts with a readable single trajectory.
 
@@ -53,11 +53,11 @@ Native controls remain available. Expanded replay loads on explicit request and 
 
 ## Browser verification
 
-`.github/workflows/website-visual-review.yml` uses Playwright 1.56.1 and the runner's installed Google Chrome for H.264 playback. It accepts a Git ref and page path, and reviews `codex/launch-rebuild` or `codex/title-details` before publication on `main`.
+`.github/workflows/website-visual-review.yml` uses Playwright 1.56.1 and the runner's installed Google Chrome for H.264 playback. It accepts a Git ref and page path, and reviews the website work branches before publication on `main`.
 
 The verification server is pinned to `http-server` 14.1.1 and supports HTTP byte ranges for native video seeking. Before browser checks, a 1,024-byte media request must return HTTP 206 and a matching `Content-Range`. Material-switch diagnostics retain duration, seekable/buffered ranges and media events; this distinguishes loading or server problems from replay-time preservation failures.
 
-The review captures 1440 px desktop and 390/320 px mobile viewports, with decoded images and real video frames. It checks source selection, material timestamp preservation, native dialog cleanup, clipboard copying, exclusive playback, mobile defaults, page overflow, disclosure interactions and shared computed table styles. Results-page screenshots cover all five experiment groups. JPEG screenshots and a report containing the tested commit and browser version are kept on `codex/site-visual-review`.
+The review captures 1440 px desktop and 390/320 px mobile viewports, with decoded images and real video frames. It checks the full title's visibility, source selection, material timestamp preservation, native dialog cleanup, clipboard copying, exclusive playback, mobile defaults, page overflow, disclosure interactions and shared computed table styles. The scale-reveal video is also captured at 0.5, 6 and 11 seconds on desktop and mobile, with its actual playback timestamp and decoded dimensions recorded. Results-page screenshots cover all five experiment groups. JPEG screenshots and a report containing the tested commit and browser version are kept on `codex/site-visual-review`.
 
 Inspect screenshots as well as automated results: passing interaction checks is not a visual-quality assessment.
 

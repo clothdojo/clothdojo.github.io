@@ -1464,6 +1464,715 @@
       ],
       "output_resize": "Lanczos to 1280x720",
       "scope": "Complete robot and tabletop replay from the shared presentation scene, with other workcells hidden."
+    },
+    "generation-reveal": {
+      "file": "generation-reveal.mp4",
+      "poster": "generation-reveal-poster.jpg",
+      "width": 1920,
+      "height": 1080,
+      "duration_seconds": 12.0,
+      "encoded_fps": 25.0,
+      "bytes": 3961087,
+      "sha256": "d784a380fc214001cde454aedcaee0362b71bf5088fd5c5d1a5006563ef4952a",
+      "playback_speed": 1,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "source_fps": 50,
+      "source_state_step": 2,
+      "encoded_frame_count": 300,
+      "unique_decoded_frames": 300,
+      "re_rendered": true,
+      "sources": [
+        {
+          "catalog_id": 0,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00PJYCPW0L__01",
+          "asset_id": "rand_00PJYCPW0L",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1869,
+          "material": "velour_velvet",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            4.949999999999999,
+            -6.0,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 12,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0E362JU16I_000006",
+          "asset_id": "rand_0E362JU16I",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1405,
+          "material": "denim_fabric_03",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -4.949999999999999,
+            -6.0,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 1,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0I3JWVNKOR__09",
+          "asset_id": "rand_0I3JWVNKOR",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1539,
+          "material": "fabric_pattern_07",
+          "color_channel": "col_03",
+          "scene_translation_m": [
+            -4.949999999999999,
+            -3.5999999999999996,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 13,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_244NPT0F0J_000003",
+          "asset_id": "rand_244NPT0F0J",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 2804,
+          "material": "curly_teddy_checkered",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -4.949999999999999,
+            -1.2,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 2,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1GIQSRDLN2__03",
+          "asset_id": "rand_1GIQSRDLN2",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1642,
+          "material": "crepe_satin",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -4.949999999999999,
+            1.2,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 14,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1KMN65OI4O_000003",
+          "asset_id": "rand_1KMN65OI4O",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 386,
+            "stop_exclusive": 986,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 7.72,
+            "stop_exclusive": 19.72
+          },
+          "selected_episode_length": 987,
+          "material": "rough_linen",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -4.949999999999999,
+            3.5999999999999996,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 3,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_02WJ207M8N__04",
+          "asset_id": "rand_02WJ207M8N",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1292,
+          "material": "gingham_check",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -4.949999999999999,
+            6.0,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 15,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1RJ8D5A7EC_000000_r002",
+          "asset_id": "rand_1RJ8D5A7EC",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1999,
+          "material": "fabric_pattern_07",
+          "color_channel": "col_1",
+          "scene_translation_m": [
+            -1.65,
+            -6.0,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 4,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AWWJ9TCB8__00",
+          "asset_id": "rand_1AWWJ9TCB8",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1363,
+          "material": "fabric_pattern_05",
+          "color_channel": "col_02",
+          "scene_translation_m": [
+            -1.65,
+            -3.5999999999999996,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 16,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1UPT0NGFMM_000004",
+          "asset_id": "rand_1UPT0NGFMM",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 308,
+            "stop_exclusive": 908,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 6.16,
+            "stop_exclusive": 18.16
+          },
+          "selected_episode_length": 908,
+          "material": "ribbed_corduroy",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -1.65,
+            -1.2,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 5,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_23MXTAPSYO__05",
+          "asset_id": "rand_23MXTAPSYO",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1169,
+          "material": "faux_fur_geometric",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -1.65,
+            1.2,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 17,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CMB9NKG1_000008",
+          "asset_id": "rand_12CMB9NKG1",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 364,
+            "stop_exclusive": 964,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 7.28,
+            "stop_exclusive": 19.28
+          },
+          "selected_episode_length": 964,
+          "material": "terry_cloth",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -1.65,
+            3.5999999999999996,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 6,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1GX7ZBY2SX__03",
+          "asset_id": "rand_1GX7ZBY2SX",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1826,
+          "material": "velour_velvet",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            -1.65,
+            6.0,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 18,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_117L64AH1R_000002_r000",
+          "asset_id": "rand_117L64AH1R",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 2029,
+          "material": "denim_fabric_03",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            1.65,
+            -6.0,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 7,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2HIUZ3RBD3__06",
+          "asset_id": "rand_2HIUZ3RBD3",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 368,
+            "stop_exclusive": 968,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 7.36,
+            "stop_exclusive": 19.36
+          },
+          "selected_episode_length": 969,
+          "material": "fabric_pattern_07",
+          "color_channel": "col_03",
+          "scene_translation_m": [
+            1.65,
+            -3.5999999999999996,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 19,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2EBUYCB46V_000009",
+          "asset_id": "rand_2EBUYCB46V",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 1100,
+            "stop_exclusive": 1700,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 22.0,
+            "stop_exclusive": 34.0
+          },
+          "selected_episode_length": 2292,
+          "material": "curly_teddy_checkered",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            1.65,
+            -1.2,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 8,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1B862QIZ9S__00",
+          "asset_id": "rand_1B862QIZ9S",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1337,
+          "material": "crepe_satin",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            1.65,
+            1.2,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 20,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1H2L4705WL_000002_r000",
+          "asset_id": "rand_1H2L4705WL",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 440,
+            "stop_exclusive": 1040,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 8.8,
+            "stop_exclusive": 20.8
+          },
+          "selected_episode_length": 1040,
+          "material": "rough_linen",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            1.65,
+            3.5999999999999996,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 9,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_184ZB0LXIR__01",
+          "asset_id": "rand_184ZB0LXIR",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1653,
+          "material": "gingham_check",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            1.65,
+            6.0,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 21,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_27QVZO5VN5_000000",
+          "asset_id": "rand_27QVZO5VN5",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 472,
+            "stop_exclusive": 1072,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 9.44,
+            "stop_exclusive": 21.44
+          },
+          "selected_episode_length": 1072,
+          "material": "fabric_pattern_07",
+          "color_channel": "col_1",
+          "scene_translation_m": [
+            4.949999999999999,
+            -3.5999999999999996,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 10,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ZFJUADVCA__07",
+          "asset_id": "rand_0ZFJUADVCA",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 332,
+            "stop_exclusive": 932,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 6.64,
+            "stop_exclusive": 18.64
+          },
+          "selected_episode_length": 933,
+          "material": "fabric_pattern_05",
+          "color_channel": "col_02",
+          "scene_translation_m": [
+            4.949999999999999,
+            -1.2,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 22,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BBH5VM6IR_000001",
+          "asset_id": "rand_1BBH5VM6IR",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 500,
+            "stop_exclusive": 1100,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 10.0,
+            "stop_exclusive": 22.0
+          },
+          "selected_episode_length": 1134,
+          "material": "ribbed_corduroy",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            4.949999999999999,
+            1.2,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 11,
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1A0BGLIDR1__07",
+          "asset_id": "rand_1A0BGLIDR1",
+          "robot": "piper",
+          "task": "shirt_flatten",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 402,
+            "stop_exclusive": 1002,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 8.04,
+            "stop_exclusive": 20.04
+          },
+          "selected_episode_length": 1003,
+          "material": "faux_fur_geometric",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            4.949999999999999,
+            3.5999999999999996,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        },
+        {
+          "catalog_id": 23,
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_155MRLXVMW_000004",
+          "asset_id": "rand_155MRLXVMW",
+          "robot": "piper",
+          "task": "shirt_fold",
+          "source_fps": 50,
+          "state_indices": {
+            "start": 416,
+            "stop_exclusive": 1016,
+            "step": 2,
+            "count": 300
+          },
+          "source_seconds": {
+            "start": 8.32,
+            "stop_exclusive": 20.32
+          },
+          "selected_episode_length": 1017,
+          "material": "terry_cloth",
+          "color_channel": "Diffuse",
+          "scene_translation_m": [
+            4.949999999999999,
+            6.0,
+            0.0
+          ],
+          "unique_cloth_states": 300
+        }
+      ],
+      "unique_trajectories": 24,
+      "unique_garments": 24,
+      "camera_path": {
+        "fps": 25,
+        "duration_seconds": 12,
+        "grid": [
+          4,
+          6
+        ],
+        "focal_length": 46,
+        "opening_target": [
+          5.6,
+          -6.0,
+          0.82
+        ],
+        "opening_radius": 6.2,
+        "opening_yaw_degrees": -45,
+        "opening_elevation_degrees": 35,
+        "ending_target": [
+          0.65,
+          0.0,
+          0.1
+        ],
+        "ending_radius": 28,
+        "ending_yaw_degrees": -10,
+        "ending_elevation_degrees": 43,
+        "move_start_seconds": 1.2,
+        "move_end_seconds": 9.8,
+        "interpolation": "Quintic smoothstep interpolation of camera position and look-at target; fixed focal length throughout.",
+        "aperture_mm": 36,
+        "motion": "One continuous external camera over the shared 3D scene; no video mosaics or scene cuts."
+      },
+      "renderer": "Isaac Sim 5.0.0.0",
+      "samples_per_pixel": 16,
+      "render_resolution": [
+        1920,
+        1080
+      ],
+      "output_resize": "none",
+      "scope": "Presentation replay of 24 distinct saved garment trajectories in one shared 3D scene. This illustrates a trajectory collection, not real-time parallel generation or measured generation throughput.",
+      "validation": "Every garment uses 300 distinct saved cloth states; every output frame is independently rendered at its recorded 1\u00d7 time. Full H.264 decode and all 300 decoded-frame hashes verified."
     }
   },
   "renderer": {
