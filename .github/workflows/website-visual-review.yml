@@ -2,11 +2,25 @@ name: Website visual review
 
 on:
   workflow_dispatch:
+    inputs:
+      ref:
+        description: Git ref or commit to review
+        required: true
+        default: main
+        type: string
+      page_path:
+        description: Website page path to capture
+        required: false
+        default: index.html
+        type: string
   push:
-    branches: [main]
+    branches: [main, codex/launch-rebuild]
     paths:
       - '.github/workflows/website-visual-review.yml'
       - '.github/scripts/website-visual-review.cjs'
+      - 'website/**/*.html'
+      - 'website/**/*.css'
+      - 'website/**/*.js'
 
 permissions:
   contents: write
@@ -21,6 +35,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ inputs.ref || github.sha }}
       - name: Install pinned browser tooling
         run: |
           npm install --prefix "$RUNNER_TEMP/browser-tools" playwright@1.56.1
@@ -30,7 +46,8 @@ jobs:
         env:
           NODE_PATH: ${{ runner.temp }}/browser-tools/node_modules
           REVIEW_OUTPUT: ${{ runner.temp }}/visual-review
-          REVIEW_SHA: ${{ github.sha }}
+          REVIEW_REF: ${{ inputs.ref || github.sha }}
+          REVIEW_PAGE_PATH: ${{ inputs.page_path || 'index.html' }}
         run: |
           python -m http.server 8787 --bind 127.0.0.1 --directory website > "$RUNNER_TEMP/site-server.log" 2>&1 &
           node .github/scripts/website-visual-review.cjs
@@ -49,7 +66,9 @@ jobs:
             git checkout --orphan codex/site-visual-review
             git rm -rf -- .
           fi
-          cp "$REVIEW_OUTPUT/"* .
-          git add -- '*.png' report.json
+          git ls-files -z -- '*.png' '*.jpg' '*.jpeg' report.json | xargs -0 -r git rm --
+          cp "$REVIEW_OUTPUT/report.json" .
+          find "$REVIEW_OUTPUT" -maxdepth 1 -type f -name '*.jpg' -exec cp '{}' . \;
+          git add -- '*.jpg' report.json
           git commit -m 'Capture rendered website and interaction evidence' || test -z "$(git status --porcelain)"
           git push origin HEAD:refs/heads/codex/site-visual-review
