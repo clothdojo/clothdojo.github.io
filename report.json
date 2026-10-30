@@ -1,6 +1,6 @@
 {
-  "ref": "46760760cffe5269e125828c8462214bab203aab",
-  "commit": "46760760cffe5269e125828c8462214bab203aab",
+  "ref": "986f3f950acf1f11ace2e22b3b04fd89416e8806",
+  "commit": "986f3f950acf1f11ace2e22b3b04fd89416e8806",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -13,13 +13,21 @@
         "height": 1000
       },
       "selector": "#title",
+      "frameTime": null,
       "scrollY": 28,
       "visibleVideos": [
         {
-          "src": "http://127.0.0.1:8787/assets/launch/generation-wide.mp4",
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
           "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -31,13 +39,21 @@
         "height": 1000
       },
       "selector": "#about",
+      "frameTime": null,
       "scrollY": 1043,
       "visibleVideos": [
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/collection.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/collection.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 1280,
+          "videoHeight": 800,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -49,19 +65,34 @@
         "height": 1000
       },
       "selector": "#generate > details.explanation",
+      "frameTime": null,
       "scrollY": 2107,
       "visibleVideos": [
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/collection.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/collection.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 1280,
+          "videoHeight": 800,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         },
         {
+          "id": "appearance-film",
           "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
           "time": 0.5,
+          "duration": 5,
+          "videoWidth": 1280,
+          "videoHeight": 800,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -73,13 +104,21 @@
         "height": 1000
       },
       "selector": "page top",
+      "frameTime": null,
       "scrollY": 0,
       "visibleVideos": [
         {
-          "src": "http://127.0.0.1:8787/assets/launch/generation-wide.mp4",
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
           "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -91,13 +130,21 @@
         "height": 1000
       },
       "selector": "[id=\"overview\"]",
+      "frameTime": null,
       "scrollY": 0,
       "visibleVideos": [
         {
-          "src": "http://127.0.0.1:8787/assets/launch/generation-wide.mp4",
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
           "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -109,13 +156,21 @@
         "height": 1000
       },
       "selector": "[id=\"generate\"]",
+      "frameTime": null,
       "scrollY": 1080,
       "visibleVideos": [
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/collection.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/collection.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 1280,
+          "videoHeight": 800,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -127,13 +182,21 @@
         "height": 1000
       },
       "selector": "[id=\"render\"]",
+      "frameTime": null,
       "scrollY": 2306,
       "visibleVideos": [
         {
+          "id": "appearance-film",
           "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
           "time": 0.5,
+          "duration": 5,
+          "videoWidth": 1280,
+          "videoHeight": 800,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -145,13 +208,21 @@
         "height": 1000
       },
       "selector": "[id=\"transfer\"]",
+      "frameTime": null,
       "scrollY": 3013,
       "visibleVideos": [
         {
+          "id": "transfer-film",
           "src": "http://127.0.0.1:8787/assets/launch/transfer.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/transfer.mp4",
           "time": 0.5,
+          "duration": 5,
+          "videoWidth": 1920,
+          "videoHeight": 600,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -163,6 +234,7 @@
         "height": 1000
       },
       "selector": "[id=\"results\"]",
+      "frameTime": null,
       "scrollY": 4202,
       "visibleVideos": []
     },
@@ -174,6 +246,7 @@
         "height": 1000
       },
       "selector": "[id=\"method\"]",
+      "frameTime": null,
       "scrollY": 5956,
       "visibleVideos": []
     },
@@ -185,6 +258,7 @@
         "height": 1000
       },
       "selector": "[id=\"use\"]",
+      "frameTime": null,
       "scrollY": 6328,
       "visibleVideos": []
     },
@@ -196,6 +270,7 @@
         "height": 1000
       },
       "selector": ".transfer-evidence .table-block",
+      "frameTime": null,
       "scrollY": 3783,
       "visibleVideos": []
     },
@@ -207,6 +282,7 @@
         "height": 1000
       },
       "selector": "#method .table-block",
+      "frameTime": null,
       "scrollY": 6561,
       "visibleVideos": []
     },
@@ -218,8 +294,87 @@
         "height": 1000
       },
       "selector": ".research-study >> nth=2",
+      "frameTime": null,
       "scrollY": 5358,
       "visibleVideos": []
+    },
+    {
+      "file": "desktop-hero-reveal-0p5s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 0.5,
+      "scrollY": 282,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "desktop-hero-reveal-6s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 6,
+      "scrollY": 282,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "time": 6,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "desktop-hero-reveal-11s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 11,
+      "scrollY": 282,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "time": 11,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
     },
     {
       "file": "mobile-390-title.jpg",
@@ -229,19 +384,34 @@
         "height": 844
       },
       "selector": "#title",
+      "frameTime": null,
       "scrollY": 14,
       "visibleVideos": [
         {
-          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
           "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         },
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -253,13 +423,21 @@
         "height": 844
       },
       "selector": "#about",
+      "frameTime": null,
       "scrollY": 529,
       "visibleVideos": [
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -271,13 +449,138 @@
         "height": 844
       },
       "selector": "#generate > details.explanation",
+      "frameTime": null,
       "scrollY": 1016,
       "visibleVideos": [
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-hero-reveal-0p5s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 0.5,
+      "scrollY": 207,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        },
+        {
+          "id": "collection-film",
+          "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-hero-reveal-6s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 6,
+      "scrollY": 207,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "time": 6,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        },
+        {
+          "id": "collection-film",
+          "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-hero-reveal-11s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 11,
+      "scrollY": 207,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "time": 11,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        },
+        {
+          "id": "collection-film",
+          "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -289,19 +592,34 @@
         "height": 844
       },
       "selector": "page top",
+      "frameTime": null,
       "scrollY": 0,
       "visibleVideos": [
         {
-          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
           "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         },
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -313,19 +631,34 @@
         "height": 844
       },
       "selector": "[id=\"overview\"]",
+      "frameTime": null,
       "scrollY": 0,
       "visibleVideos": [
         {
-          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
           "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         },
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -337,13 +670,21 @@
         "height": 844
       },
       "selector": "[id=\"generate\"]",
+      "frameTime": null,
       "scrollY": 564,
       "visibleVideos": [
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -355,13 +696,21 @@
         "height": 844
       },
       "selector": "[id=\"render\"]",
+      "frameTime": null,
       "scrollY": 1212,
       "visibleVideos": [
         {
+          "id": "appearance-film",
           "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
           "time": 0.5,
+          "duration": 5,
+          "videoWidth": 1280,
+          "videoHeight": 800,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -373,13 +722,21 @@
         "height": 844
       },
       "selector": "[id=\"transfer\"]",
+      "frameTime": null,
       "scrollY": 1848,
       "visibleVideos": [
         {
+          "id": "transfer-film",
           "src": "http://127.0.0.1:8787/assets/launch/transfer-source.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/transfer-source.mp4",
           "time": 0.5,
+          "duration": 5,
+          "videoWidth": 960,
+          "videoHeight": 600,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -391,6 +748,7 @@
         "height": 844
       },
       "selector": "[id=\"results\"]",
+      "frameTime": null,
       "scrollY": 2832,
       "visibleVideos": []
     },
@@ -402,6 +760,7 @@
         "height": 844
       },
       "selector": "[id=\"method\"]",
+      "frameTime": null,
       "scrollY": 5193,
       "visibleVideos": []
     },
@@ -413,6 +772,7 @@
         "height": 844
       },
       "selector": "[id=\"use\"]",
+      "frameTime": null,
       "scrollY": 5726,
       "visibleVideos": []
     },
@@ -424,6 +784,7 @@
         "height": 844
       },
       "selector": ".transfer-evidence .table-block",
+      "frameTime": null,
       "scrollY": 2445,
       "visibleVideos": []
     },
@@ -435,6 +796,7 @@
         "height": 844
       },
       "selector": "#method .table-block",
+      "frameTime": null,
       "scrollY": 5990,
       "visibleVideos": []
     },
@@ -446,6 +808,7 @@
         "height": 844
       },
       "selector": ".research-study >> nth=2",
+      "frameTime": null,
       "scrollY": 4395,
       "visibleVideos": []
     },
@@ -457,19 +820,34 @@
         "height": 844
       },
       "selector": "#title",
+      "frameTime": null,
       "scrollY": 14,
       "visibleVideos": [
         {
-          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
           "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         },
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -481,19 +859,34 @@
         "height": 844
       },
       "selector": "page top",
+      "frameTime": null,
       "scrollY": 0,
       "visibleVideos": [
         {
-          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
           "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         },
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -505,19 +898,34 @@
         "height": 844
       },
       "selector": "[id=\"overview\"]",
+      "frameTime": null,
       "scrollY": 0,
       "visibleVideos": [
         {
-          "src": "http://127.0.0.1:8787/assets/launch/flatten-wide.mp4",
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
           "time": 0.5,
+          "duration": 12,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         },
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -529,13 +937,21 @@
         "height": 844
       },
       "selector": "[id=\"generate\"]",
+      "frameTime": null,
       "scrollY": 542,
       "visibleVideos": [
         {
+          "id": "collection-film",
           "src": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/sample-01.mp4",
           "time": 0.5,
+          "duration": 4,
+          "videoWidth": 640,
+          "videoHeight": 400,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -547,13 +963,21 @@
         "height": 844
       },
       "selector": "[id=\"render\"]",
+      "frameTime": null,
       "scrollY": 1181,
       "visibleVideos": [
         {
+          "id": "appearance-film",
           "src": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
           "time": 0.5,
+          "duration": 5,
+          "videoWidth": 1280,
+          "videoHeight": 800,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -565,13 +989,21 @@
         "height": 844
       },
       "selector": "[id=\"transfer\"]",
+      "frameTime": null,
       "scrollY": 1785,
       "visibleVideos": [
         {
+          "id": "transfer-film",
           "src": "http://127.0.0.1:8787/assets/launch/transfer-source.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/launch/transfer-source.mp4",
           "time": 0.5,
+          "duration": 5,
+          "videoWidth": 960,
+          "videoHeight": 600,
           "readyState": 4,
-          "seeking": false
+          "seeking": false,
+          "controls": true,
+          "paused": true
         }
       ]
     },
@@ -583,6 +1015,7 @@
         "height": 844
       },
       "selector": "[id=\"results\"]",
+      "frameTime": null,
       "scrollY": 2757,
       "visibleVideos": []
     },
@@ -594,6 +1027,7 @@
         "height": 844
       },
       "selector": "[id=\"method\"]",
+      "frameTime": null,
       "scrollY": 5214,
       "visibleVideos": []
     },
@@ -605,6 +1039,7 @@
         "height": 844
       },
       "selector": "[id=\"use\"]",
+      "frameTime": null,
       "scrollY": 5747,
       "visibleVideos": []
     },
@@ -616,6 +1051,7 @@
         "height": 844
       },
       "selector": ".transfer-evidence .table-block",
+      "frameTime": null,
       "scrollY": 2338,
       "visibleVideos": []
     },
@@ -627,6 +1063,7 @@
         "height": 844
       },
       "selector": "#method .table-block",
+      "frameTime": null,
       "scrollY": 6036,
       "visibleVideos": []
     },
@@ -638,6 +1075,7 @@
         "height": 844
       },
       "selector": ".research-study >> nth=2",
+      "frameTime": null,
       "scrollY": 4383,
       "visibleVideos": []
     },
@@ -649,6 +1087,7 @@
         "height": 1000
       },
       "selector": "page top",
+      "frameTime": null,
       "scrollY": 0,
       "visibleVideos": []
     },
@@ -660,6 +1099,7 @@
         "height": 1000
       },
       "selector": "[id=\"generation-results\"]",
+      "frameTime": null,
       "scrollY": 289,
       "visibleVideos": []
     },
@@ -671,6 +1111,7 @@
         "height": 1000
       },
       "selector": "[id=\"generalization\"]",
+      "frameTime": null,
       "scrollY": 1368,
       "visibleVideos": []
     },
@@ -682,6 +1123,7 @@
         "height": 1000
       },
       "selector": "[id=\"policy-models\"]",
+      "frameTime": null,
       "scrollY": 3263,
       "visibleVideos": []
     },
@@ -693,6 +1135,7 @@
         "height": 1000
       },
       "selector": "[id=\"outcome-quality\"]",
+      "frameTime": null,
       "scrollY": 4425,
       "visibleVideos": []
     },
@@ -704,6 +1147,7 @@
         "height": 1000
       },
       "selector": "[id=\"task-composition\"]",
+      "frameTime": null,
       "scrollY": 5335,
       "visibleVideos": []
     },
@@ -715,6 +1159,7 @@
         "height": 1000
       },
       "selector": ".table-block",
+      "frameTime": null,
       "scrollY": 826,
       "visibleVideos": []
     },
@@ -726,6 +1171,7 @@
         "height": 844
       },
       "selector": "page top",
+      "frameTime": null,
       "scrollY": 0,
       "visibleVideos": []
     },
@@ -737,6 +1183,7 @@
         "height": 844
       },
       "selector": "[id=\"generation-results\"]",
+      "frameTime": null,
       "scrollY": 341,
       "visibleVideos": []
     },
@@ -748,6 +1195,7 @@
         "height": 844
       },
       "selector": "[id=\"generalization\"]",
+      "frameTime": null,
       "scrollY": 1990,
       "visibleVideos": []
     },
@@ -759,6 +1207,7 @@
         "height": 844
       },
       "selector": "[id=\"policy-models\"]",
+      "frameTime": null,
       "scrollY": 4514,
       "visibleVideos": []
     },
@@ -770,6 +1219,7 @@
         "height": 844
       },
       "selector": "[id=\"outcome-quality\"]",
+      "frameTime": null,
       "scrollY": 6191,
       "visibleVideos": []
     },
@@ -781,6 +1231,7 @@
         "height": 844
       },
       "selector": "[id=\"task-composition\"]",
+      "frameTime": null,
       "scrollY": 6924,
       "visibleVideos": []
     },
@@ -792,6 +1243,7 @@
         "height": 844
       },
       "selector": ".table-block",
+      "frameTime": null,
       "scrollY": 1244,
       "visibleVideos": []
     },
@@ -803,6 +1255,7 @@
         "height": 844
       },
       "selector": "page top",
+      "frameTime": null,
       "scrollY": 0,
       "visibleVideos": []
     },
@@ -814,6 +1267,7 @@
         "height": 844
       },
       "selector": "[id=\"generation-results\"]",
+      "frameTime": null,
       "scrollY": 397,
       "visibleVideos": []
     },
@@ -825,6 +1279,7 @@
         "height": 844
       },
       "selector": "[id=\"generalization\"]",
+      "frameTime": null,
       "scrollY": 2161,
       "visibleVideos": []
     },
@@ -836,6 +1291,7 @@
         "height": 844
       },
       "selector": "[id=\"policy-models\"]",
+      "frameTime": null,
       "scrollY": 4926,
       "visibleVideos": []
     },
@@ -847,6 +1303,7 @@
         "height": 844
       },
       "selector": "[id=\"outcome-quality\"]",
+      "frameTime": null,
       "scrollY": 6676,
       "visibleVideos": []
     },
@@ -858,6 +1315,7 @@
         "height": 844
       },
       "selector": "[id=\"task-composition\"]",
+      "frameTime": null,
       "scrollY": 7408,
       "visibleVideos": []
     },
@@ -869,6 +1327,7 @@
         "height": 844
       },
       "selector": ".table-block",
+      "frameTime": null,
       "scrollY": 1326,
       "visibleVideos": []
     }
@@ -1254,6 +1713,27 @@
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-hero-reveal-0p5s",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-hero-reveal-6s",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-hero-reveal-11s",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
       "label": "mobile-390-title",
       "width": 390,
       "scrollWidth": 390,
@@ -1633,6 +2113,33 @@
     {
       "page": "http://127.0.0.1:8787/index.html",
       "label": "mobile-390-explanation-10-keyboard-space-close",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-hero-reveal-0p5s",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-hero-reveal-6s",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-hero-reveal-11s",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -2655,6 +3162,8 @@
     "desktop: all main navigation entries fit without clipping",
     "desktop: all ten native explanation details default closed",
     "desktop: all ten explanations support pointer, Enter and Space toggles without page overflow",
+    "desktop: visible At scale tab and reveal video selected by default",
+    "desktop: real scale-reveal frames at 0.5, 6 and 11 seconds, stable native player at 1920x1080",
     "all media selections update source/poster/caption/pressed state and remain paused under reduced motion",
     "material switch preserves current physical timestamp",
     "all expanded replays, close button/Escape and media-source cleanup",
@@ -2663,9 +3172,12 @@
     "mobile-390: all main navigation entries fit without clipping",
     "mobile-390: all ten native explanation details default closed",
     "mobile-390: all ten explanations support pointer, Enter and Space toggles without page overflow",
+    "mobile-390: visible At scale tab and reveal video selected by default",
+    "mobile-390: real scale-reveal frames at 0.5, 6 and 11 seconds, stable native player at 1920x1080",
     "mobile-320: full formal H1 title visible outside details and fully covered by the title screenshot",
     "mobile-320: all main navigation entries fit without clipping",
     "mobile-320: all ten native explanation details default closed",
+    "mobile-320: visible At scale tab and reveal video selected by default",
     "real Chromium playback: one active video after task switch and HD open",
     "five results anchors, shared rendered table typography, desktop/mobile results screenshots"
   ],
@@ -3661,6 +4173,122 @@
       "interactions": []
     }
   ],
+  "heroRevealFrames": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "screenshot": "desktop-hero-reveal-0p5s.jpg",
+      "requestedTime": 0.5,
+      "id": "hero-film",
+      "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "time": 0.5,
+      "duration": 12,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "readyState": 4,
+      "seeking": false,
+      "controls": true,
+      "paused": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "screenshot": "desktop-hero-reveal-6s.jpg",
+      "requestedTime": 6,
+      "id": "hero-film",
+      "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "time": 6,
+      "duration": 12,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "readyState": 4,
+      "seeking": false,
+      "controls": true,
+      "paused": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "screenshot": "desktop-hero-reveal-11s.jpg",
+      "requestedTime": 11,
+      "id": "hero-film",
+      "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "time": 11,
+      "duration": 12,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "readyState": 4,
+      "seeking": false,
+      "controls": true,
+      "paused": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "mobile-390-hero-reveal-0p5s.jpg",
+      "requestedTime": 0.5,
+      "id": "hero-film",
+      "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "time": 0.5,
+      "duration": 12,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "readyState": 4,
+      "seeking": false,
+      "controls": true,
+      "paused": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "mobile-390-hero-reveal-6s.jpg",
+      "requestedTime": 6,
+      "id": "hero-film",
+      "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "time": 6,
+      "duration": 12,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "readyState": 4,
+      "seeking": false,
+      "controls": true,
+      "paused": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "mobile-390-hero-reveal-11s.jpg",
+      "requestedTime": 11,
+      "id": "hero-film",
+      "src": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "currentSrc": "http://127.0.0.1:8787/assets/launch/generation-reveal.mp4",
+      "time": 11,
+      "duration": 12,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "readyState": 4,
+      "seeking": false,
+      "controls": true,
+      "paused": true
+    }
+  ],
   "materialTiming": {
     "expectedTime": 1.25,
     "expectedSource": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
@@ -3668,7 +4296,7 @@
     "events": [
       {
         "type": "seeked",
-        "timestamp": 13068.099999999999,
+        "timestamp": 15024.199999999997,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-checkered.mp4",
         "time": 1.25,
         "duration": 5,
@@ -3689,7 +4317,7 @@
       },
       {
         "type": "loadedmetadata",
-        "timestamp": 13141.900000000001,
+        "timestamp": 15091.300000000003,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 0,
         "duration": 5,
@@ -3704,13 +4332,13 @@
         "buffered": [
           [
             0,
-            5
+            1.382
           ]
         ]
       },
       {
         "type": "seeked",
-        "timestamp": 13224.300000000003,
+        "timestamp": 15177.699999999997,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
@@ -3731,7 +4359,7 @@
       },
       {
         "type": "loadeddata",
-        "timestamp": 13224.300000000003,
+        "timestamp": 15177.800000000003,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
