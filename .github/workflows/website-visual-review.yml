@@ -43,11 +43,12 @@ jobs:
           "$RUNNER_TEMP/browser-tools/node_modules/.bin/playwright" install --with-deps chromium
           google-chrome --version
       - name: Render and exercise the current website
+        timeout-minutes: 8
         env:
           NODE_PATH: ${{ runner.temp }}/browser-tools/node_modules
           REVIEW_OUTPUT: ${{ runner.temp }}/visual-review
           REVIEW_REF: ${{ inputs.ref || github.sha }}
-          REVIEW_PAGE_PATH: ${{ inputs.page_path || 'index.html' }}
+          REVIEW_PAGE_PATH: ${{ inputs.page_path || 'results.html' }}
         run: |
           python -m http.server 8787 --bind 127.0.0.1 --directory website > "$RUNNER_TEMP/site-server.log" 2>&1 &
           node .github/scripts/website-visual-review.cjs
