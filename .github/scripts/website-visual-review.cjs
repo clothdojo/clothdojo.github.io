@@ -18,7 +18,7 @@ const report = { commit: process.env.REVIEW_SHA, screenshots: [], layouts: [], c
     return page;
   }
   async function capture(page, name, selector) {
-    if (selector) await page.locator(selector).scrollIntoViewIfNeeded();
+    if (selector) await page.locator(selector).first().scrollIntoViewIfNeeded();
     await page.evaluate(() => document.querySelectorAll('video').forEach(v => v.pause()));
     await page.evaluate(async () => {
       await document.fonts.ready;
