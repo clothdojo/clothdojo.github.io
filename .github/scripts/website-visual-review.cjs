@@ -159,6 +159,43 @@ saveReport();
       await capture(page, prefix + '-' + id.replace(/[^a-zA-Z0-9_-]/g, '-'), selector);
     }
   }
+  async function formalTitle(page, prefix) {
+    if (pagePath !== 'index.html') return;
+    const expected = 'ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding';
+    assert.equal(await page.locator('#title').count(), 1, 'Homepage must have one formal project title');
+    await capture(page, prefix + '-title', '#title');
+    const title = await page.locator('#title').evaluate(element => {
+      const normalize = text => text.replace(/\s+/g, ' ').trim();
+      const bounds = box => ({ top: box.top, right: box.right, bottom: box.bottom, left: box.left, width: box.width, height: box.height });
+      const headerBottom = Math.max(0, ...[...document.querySelectorAll('header')]
+        .filter(header => ['sticky', 'fixed'].includes(getComputedStyle(header).position))
+        .map(header => header.getBoundingClientRect().bottom));
+      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+      const textRuns = [];
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (!node.textContent.trim()) continue;
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        textRuns.push({ text: normalize(node.textContent), visible: node.parentElement.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true }), rects: [...range.getClientRects()].map(bounds) });
+      }
+      return { text: normalize(element.textContent), renderedText: normalize(element.innerText), tag: element.tagName,
+        insideDetails: !!element.closest('details'), visible: element.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true }),
+        bounds: bounds(element.getBoundingClientRect()), width: innerWidth, height: innerHeight, headerBottom,
+        clipped: element.scrollWidth > element.clientWidth + 1 || element.scrollHeight > element.clientHeight + 1, textRuns };
+    });
+    (report.titles ||= []).push({ viewport: page.viewportSize(), screenshot: prefix + '-title.jpg', ...title });
+    saveReport();
+    assert.equal(title.tag, 'H1', 'The formal project title must be the main heading');
+    assert.equal(title.text, expected, 'The main heading must contain the full formal project title');
+    assert.equal(title.renderedText.toLowerCase(), expected.toLowerCase(), 'The full formal project title must be visibly rendered');
+    assert(title.visible && !title.insideDetails && !title.clipped, 'The full project title must be visible outside details, without clipping');
+    assert(title.textRuns.every(run => run.visible && run.rects.length && run.rects.every(box =>
+      box.width > 0 && box.height > 0 && box.left >= -1 && box.right <= title.width + 1 && box.top >= title.headerBottom - 1 && box.bottom <= title.height + 1
+    )), 'Every title line must fit fully in the screenshot below the sticky header: ' + prefix);
+    report.checks.push(prefix + ': full formal H1 title visible outside details and fully covered by the title screenshot');
+    saveReport();
+  }
   async function captureEvidenceDetails(page, prefix) {
     const table = await page.locator('.transfer-evidence .table-block').count() ? '.transfer-evidence .table-block' : '.transfer-evidence .table-wrap';
     if (await page.locator(table).count()) await capture(page, prefix + '-transfer-table', table);
@@ -362,6 +399,7 @@ saveReport();
       await probe.close();
     }
     const desktop = await open({ width: 1440, height: 1000 });
+    await formalTitle(desktop, 'desktop');
     await explanations(desktop, 'desktop', true);
     await capture(desktop, 'desktop-opening');
     await captureSections(desktop, 'desktop');
@@ -371,6 +409,7 @@ saveReport();
     report.tableStyles = { homepage: mainTable };
     for (const width of [390, 320]) {
       const mobile = await open({ width, height: 844 });
+      await formalTitle(mobile, 'mobile-' + width);
       await explanations(mobile, 'mobile-' + width, width === 390);
       if (await mobile.locator('#hero-film').count()) {
         assert((await mobile.locator('#hero-film').getAttribute('data-src')).endsWith('flatten-wide.mp4'), 'Mobile hero must default to one complete workstation');

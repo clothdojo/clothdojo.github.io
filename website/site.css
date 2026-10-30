@@ -154,26 +154,24 @@ sup {
   line-height:1.85
 }
 .hero {
-  padding-top:38px
+  padding-top:44px
 }
 .hero-copy {
-  text-align:center
+  text-align:left
 }
 .hero h1 {
-  font-size:104px;
-  font-weight:700;
-  line-height:1;
-  letter-spacing:-6px
+  font-size:clamp(32px,3.7vw,52px);
+  font-weight:500;
+  line-height:1.16;
+  letter-spacing:-1.7px;
+  text-wrap:balance
 }
-.wordmark-accent {
-  color:var(--accent)
+.title-line {
+  display:block
 }
-.hero-tagline {
-  margin-top:14px;
-  font-size:22px;
-  line-height:1.5;
-  letter-spacing:-.3px;
-  color:var(--text)
+.title-brand {
+  color:var(--accent);
+  font-weight:700
 }
 .action {
   display:inline-flex;
@@ -190,7 +188,7 @@ sup {
 }
 .hero-figure {
   width:100%;
-  margin-top:14px
+  margin-top:30px
 }
 .film-tabs {
   display:flex;
@@ -240,9 +238,9 @@ sup {
 }
 .hero-facts {
   display:flex;
-  justify-content:center;
+  justify-content:flex-start;
   gap:40px;
-  margin-top:25px
+  margin-top:26px
 }
 .hero-facts p {
   display:flex;
@@ -519,11 +517,11 @@ sup {
   margin-top:24px
 }
 .hero-about {
-  margin:12px auto 0;
+  margin:14px 0 0;
   border:0
 }
 .hero-about>summary {
-  justify-content:center;
+  justify-content:flex-start;
   gap:10px;
   padding:8px 0;
   font-size:12px
@@ -533,16 +531,10 @@ sup {
 }
 .hero-about .explanation-body {
   max-width:850px;
-  margin:16px auto 26px;
+  margin:12px 0 0;
   padding:24px;
   background:var(--surface);
   border-radius:4px
-}
-.hero-about .project-title {
-  font-size:20px;
-  font-weight:500;
-  line-height:1.5;
-  color:var(--ink)
 }
 .method-details img {
   width:100%;
@@ -680,10 +672,6 @@ dialog::backdrop {
   margin:auto
 }
 @media(max-width:1000px) {
-  .hero h1 {
-    font-size:88px;
-    letter-spacing:-5px
-  }
   .generation-steps h3 {
     font-size:16px
   }
@@ -732,13 +720,13 @@ dialog::backdrop {
     padding-top:30px
   }
   .hero h1 {
-    font-size:clamp(50px,14vw,80px);
-    letter-spacing:-3.5px
+    font-size:clamp(24px,6.8vw,34px);
+    line-height:1.2;
+    letter-spacing:-.65px;
+    text-wrap:pretty
   }
-  .hero-tagline {
-    font-size:16px;
-    margin-top:13px;
-    letter-spacing:-.2px
+  .title-line {
+    display:inline
   }
   .hero-about {
     margin-top:8px
@@ -746,9 +734,6 @@ dialog::backdrop {
   .hero-about .explanation-body {
     padding:18px;
     margin-top:12px
-  }
-  .hero-about .project-title {
-    font-size:17px
   }
   .explanation>summary {
     font-size:13px;
@@ -762,7 +747,7 @@ dialog::backdrop {
     font-size:13px
   }
   .hero-figure {
-    margin-top:15px
+    margin-top:24px
   }
   .hero-facts {
     gap:25px;
@@ -770,7 +755,7 @@ dialog::backdrop {
   }
   .hero-facts p {
     display:block;
-    text-align:center
+    text-align:left
   }
   .hero-facts strong {
     font-size:19px
