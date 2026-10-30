@@ -2,6 +2,10 @@
 
 ClothDojo is a simulation benchmark for bimanual garment **flattening** and **folding**. It provides fixed initial states, task-specific success criteria, and a common evaluation interface for comparing policies. The repository also includes tools for generating successful trajectories and randomized RGB training data.
 
+[Project website](https://clothdojo.github.io/) · [Source code](https://github.com/clothdojo/clothdojo.github.io)
+
+The project page lives in `website/`; GitHub Pages publishes that directory only. Code, benchmark fixtures, tests, and the website share this repository.
+
 ## Contents
 
 - [1. Benchmark](#1-benchmark)
@@ -45,6 +49,9 @@ This is a code preview. Public download links and end-to-end GPU validation are 
 Use Linux x86_64 with Python 3.11, a CUDA GPU, and [uv](https://docs.astral.sh/uv/). Prepare the main environment once from the repository root:
 
 ```bash
+git clone https://github.com/clothdojo/clothdojo.github.io.git
+cd clothdojo.github.io
+
 # Main environment: Newton simulation, policy serving, training, and LeRobot export.
 # The selected XPolicyLab communication runtime is included in this release.
 uv sync --frozen --extra sim --extra policy --extra export --extra data
@@ -216,7 +223,7 @@ Publication metadata is pending. Until a paper reference is available, cite this
 }
 ```
 
-The public repository URL and maintainer contact are pending. `maintainers@example.com` is a documentation placeholder, not an operational contact address.
+Report issues at https://github.com/clothdojo/clothdojo.github.io/issues. `maintainers@example.com` is a documentation placeholder, not an operational contact address.
 
 ## Release contents
 
