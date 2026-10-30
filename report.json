@@ -1,5 +1,5 @@
 {
-  "commit": "15104e20439bbb193ebdf8f4c626156c18b8a0ad",
+  "commit": "7dadd7c92aec4d539a2d291e5ac40d7248b9f28e",
   "screenshots": [
     "desktop-opening",
     "desktop-generation",
@@ -7,18 +7,12 @@
     "desktop-transfer",
     "desktop-results",
     "desktop-use",
-    "desktop-fold",
-    "mobile-390-opening",
-    "mobile-390-hero",
-    "mobile-390-appearance",
-    "mobile-390-transfer"
+    "desktop-fold"
   ],
   "layouts": [],
-  "checks": [
-    "task selection, HD dialog/Escape/source cleanup, four target robots"
-  ],
+  "checks": [],
   "errors": [],
   "browser": "141.0.7390.37",
-  "failure": "locator.scrollIntoViewIfNeeded: Error: strict mode violation: locator('.experiment-charts') resolved to 2 elements:\n    1) <div class=\"experiment-charts\">…</div> aka locator('div').filter({ hasText: 'FlatteningSuccess rate (%)0' }).first()\n    2) <div class=\"experiment-charts\">…</div> aka locator('div').filter({ hasText: 'FlatteningSuccess rate (%)0' }).nth(2)\n\nCall log:\n  - waiting for locator('.experiment-charts')\n\n    at capture (/home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:21:48)\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:52:15",
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'assets/fold-hq.mp4'\n- null\n\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:42:12",
   "passed": false
 }
