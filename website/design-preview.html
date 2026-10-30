@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex"><meta name="theme-color" content="#f4f3ee">
+  <title>ClothDojo · Trajectory atlas · Design preview</title>
+  <link rel="stylesheet" href="design-preview.css?v=18"><script src="design-preview.js?v=18" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="shell"><a class="brand" href="index.html">ClothDojo<span aria-hidden="true">↗</span></a><nav aria-label="Main navigation"><a href="#collection">Collection</a><a href="#generation">Generation</a><a href="#continue">Research</a></nav><a class="code-link" href="https://github.com/clothdojo/clothdojo.github.io">Code ↗</a></header>
+<main id="main">
+<section class="intro shell">
+  <div class="intro-copy"><p class="eyebrow">BIMANUAL GARMENT MANIPULATION</p><h1>Complex trajectories.<br>A renewable source of data.</h1><p class="lead">ClothDojo learns to flatten and fold garments in simulation, generating training trajectories that can be collected again and transferred to compatible robots.</p></div>
+  <div class="publication"><p class="paper-name">Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding</p><p>Zilong Huang · Zipeng Ye · Caicheng Wang<br>Yuchen Xie · Jiaxiang Luo</p><p>South China University of Technology · Meituan</p><a href="explore.html">Explore saved trajectories <span>↗</span></a><small>Code preview available · Paper & data forthcoming</small></div>
+</section>
+<section class="shell collection" id="collection" aria-labelledby="collection-title">
+  <div class="section-line"><h2 id="collection-title">01 / The trajectory collection</h2><span>Recorded simulation data</span></div>
+  <div class="collection-layout">
+    <div class="viewer">
+      <div class="viewer-toolbar"><div class="view-switch" role="group" aria-label="Choose collection view"><button type="button" data-view="collection" aria-pressed="true">Collection <span>200</span></button><button type="button" data-view="detail" aria-pressed="false">Motion detail</button></div><span class="viewer-status" id="viewer-status">Recorded excerpts · 1×</span></div>
+      <div class="film-surface"><video id="collection-video" controls muted loop playsinline preload="none" data-src="assets/preview/trajectory-overview.mp4" poster="assets/curated/trajectory-overview-poster.jpg" width="1600" height="600" aria-label="200 distinct trajectories, flattening above folding"></video><video id="detail-video" controls muted loop playsinline preload="none" data-src="assets/preview/tasks-paired.mp4" poster="assets/curated/tasks-paired-poster.jpg" width="1280" height="480" aria-label="Matching external-camera flattening and folding excerpts" hidden></video></div>
+      <div class="film-caption"><p id="view-caption">200 distinct saved trajectories, spanning 169 garments.<br>Flattening in the top half; folding in the bottom half.</p><a href="explore.html">Inspect individual replays ↗</a></div>
+    </div>
+    <aside class="collection-notes" aria-label="Dataset scale"><p class="eyebrow">GENERATED TRAINING SET</p><p class="total">7,848<span>trajectories</span></p><dl><div><dt>Flattening</dt><dd>3,992</dd></div><div><dt>Folding</dt><dd>3,856</dd></div><div><dt>Garments / task</dt><dd>400 / 399</dd></div></dl><p class="aside-note">The collection shows recorded executions. It does not depict 200 concurrently running simulations.</p><a href="assets/curated/trajectory-overview.json">Source mapping ↗</a></aside>
+  </div>
+  <div class="collection-index"><span>Garment geometry</span><span>Initial configurations</span><span>Long-horizon motion</span><a href="explore.html#atlas-panel">500-asset pool ↗</a></div>
+</section>
+<section class="generation shell" id="generation" aria-labelledby="generation-title">
+  <div class="section-line"><span>02 / Generate & reuse</span><span>From physical motion to training observations</span></div>
+  <div class="chapter-intro"><h2 id="generation-title">More than a fixed collection.</h2><p>Run the learned policy from new initial states to collect new motion. Reuse saved physical trajectories to render new observations. These are two distinct ways to extend the data.</p></div>
+  <div class="process-map" aria-label="Data generation pipeline"><div><span>01</span><h3>Sample</h3><p>Garment + initial state</p></div><b aria-hidden="true">→</b><div><span>02</span><h3>Execute</h3><p>Closed-loop generation policy</p></div><b aria-hidden="true">→</b><div><span>03</span><h3>Select</h3><p>Task-specific success criteria</p></div><b aria-hidden="true">→</b><div><span>04</span><h3>Render</h3><p>Saved motion → RGB episodes</p></div></div>
+  <div class="specimen">
+    <div class="specimen-heading"><div><p class="eyebrow">ONE TRAJECTORY / FOUR MOMENTS</p><h3>Follow the cloth through time.</h3></div><span>Flattening · 38.08 s · Saved RGB</span></div>
+    <div class="frame-sequence"><button type="button" data-time="0" aria-label="Play trajectory from 0 seconds"><img src="assets/curated/sequence-00.jpg" width="640" height="480" loading="lazy" alt="Garment and arms at the start of the saved trajectory"><span><b>01</b> 00.00 s <i>↗</i></span></button><button type="button" data-time="12" aria-label="Play trajectory from 12 seconds"><img src="assets/curated/sequence-12.jpg" width="640" height="480" loading="lazy" alt="Garment and arms 12 seconds into the saved trajectory"><span><b>02</b> 12.00 s <i>↗</i></span></button><button type="button" data-time="24" aria-label="Play trajectory from 24 seconds"><img src="assets/curated/sequence-24.jpg" width="640" height="480" loading="lazy" alt="Garment and arms 24 seconds into the saved trajectory"><span><b>03</b> 24.00 s <i>↗</i></span></button><button type="button" data-time="36" aria-label="Play trajectory from 36 seconds"><img src="assets/curated/sequence-36.jpg" width="640" height="480" loading="lazy" alt="Garment and arms 36 seconds into the saved trajectory"><span><b>04</b> 36.00 s <i>↗</i></span></button></div>
+    <div class="specimen-foot"><p>Four frames from the same physical execution, in temporal order.<br>Select a frame to replay from that moment.</p><span>Asset / rand_00PJYCPW0L</span></div>
+  </div>
+  <div class="regeneration-notes"><article><span class="note-index">A / NEW MOTION</span><h3>Generate again.</h3><p>Sample another initial configuration and run the learned policy again. Successful executions add new trajectories to the training collection.</p><a href="https://github.com/clothdojo/clothdojo.github.io#4-data-generation">Generation workflow ↗</a></article><article><span class="note-index">B / NEW OBSERVATIONS</span><h3>Render again.</h3><p>Keep recorded physical motion and change visual conditions for RGB export. Re-rendering changes observations; it does not create a new physical execution.</p><a href="https://github.com/clothdojo/clothdojo.github.io#4-data-generation">RGB export workflow ↗</a></article></div>
+</section>
+<section class="next-chapters shell" id="continue"><div class="section-line"><span>Continue exploring</span><span>Existing project content</span></div><div class="continuation"><a href="index.html#transfer"><span>03 / TRANSFER</span><h2>Across robots.</h2><p>Five replay embodiments and separate closed-loop policy evidence.</p><b>↗</b></a><a href="results.html"><span>04 / EVALUATION</span><h2>Measured outcomes.</h2><p>Generation, generalization, model comparisons and task composition.</p><b>↗</b></a><a href="index.html#use"><span>05 / USE</span><h2>Build with the data.</h2><p>Evaluation, data generation, rendering and training entry points.</p><b>↗</b></a></div></section>
+</main>
+<footer class="shell"><a class="brand" href="index.html">ClothDojo</a><p>Design study · Collection and generation chapters<br>Project videos and recorded simulation frames only.</p><a href="index.html">Current homepage ↗</a></footer>
+<dialog id="replay-dialog" aria-labelledby="replay-title"><div class="dialog-toolbar"><h2 id="replay-title">Flattening · rand_00PJYCPW0L</h2><button type="button" id="close-replay">Close ×</button></div><video id="replay-video" controls playsinline muted preload="none" poster="assets/catalog/case-00.jpg" width="640" height="480"></video><p>Full saved RGB trajectory · 1× · 38.08 s</p></dialog>
+</body>
+</html>

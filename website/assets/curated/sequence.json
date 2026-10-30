@@ -1,0 +1,9 @@
+{
+  "source": "assets/catalog/case-00.mp4",
+  "asset_id": "rand_00PJYCPW0L",
+  "task": "flatten",
+  "duration_seconds": 38.08,
+  "frame_timestamps_seconds": [0, 12, 24, 36],
+  "extraction": "ffmpeg 7.0.2, -ss TIMESTAMP -frames:v 1 -q:v 3; original dimensions, no crop",
+  "images": ["sequence-00.jpg", "sequence-12.jpg", "sequence-24.jpg", "sequence-36.jpg"]
+}
