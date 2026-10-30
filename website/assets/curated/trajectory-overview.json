@@ -1,0 +1,1817 @@
+{
+  "schema": "clothdojo_trajectory_overview_v1",
+  "unique_trajectories": 200,
+  "unique_garments": 169,
+  "layout": {
+    "columns": 20,
+    "rows": 10,
+    "tile_width": 96,
+    "tile_height": 72
+  },
+  "fps": 25,
+  "duration_seconds": 8,
+  "playback_speed": 1,
+  "scope": "Saved RGB rollout excerpts at different source offsets. Top five rows flattening; bottom five rows folding.",
+  "records": [
+    {
+      "position": 0,
+      "task": "flatten",
+      "asset_id": "rand_00PJYCPW0L",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000021.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 1,
+      "task": "flatten",
+      "asset_id": "rand_0I3JWVNKOR",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000259.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 2,
+      "task": "flatten",
+      "asset_id": "rand_1GIQSRDLN2",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001610.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 3,
+      "task": "flatten",
+      "asset_id": "rand_02WJ207M8N",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000084.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 4,
+      "task": "flatten",
+      "asset_id": "rand_1AWWJ9TCB8",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001277.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 5,
+      "task": "flatten",
+      "asset_id": "rand_23MXTAPSYO",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002937.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 6,
+      "task": "flatten",
+      "asset_id": "rand_1GX7ZBY2SX",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001649.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 7,
+      "task": "flatten",
+      "asset_id": "rand_2HIUZ3RBD3",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003808.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 8,
+      "task": "flatten",
+      "asset_id": "rand_1B862QIZ9S",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001287.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 9,
+      "task": "flatten",
+      "asset_id": "rand_184ZB0LXIR",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001088.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 10,
+      "task": "flatten",
+      "asset_id": "rand_0ZFJUADVCA",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000687.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 11,
+      "task": "flatten",
+      "asset_id": "rand_1A0BGLIDR1",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001194.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 12,
+      "task": "flatten",
+      "asset_id": "rand_0ME2Z034NN",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000307.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 13,
+      "task": "flatten",
+      "asset_id": "rand_0VBR02U024",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000480.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 14,
+      "task": "flatten",
+      "asset_id": "rand_0XY7VMAT8O",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000630.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 15,
+      "task": "flatten",
+      "asset_id": "rand_29NJ8CPGEY",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003407.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 16,
+      "task": "flatten",
+      "asset_id": "rand_254M1CY1Z9",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003056.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 17,
+      "task": "flatten",
+      "asset_id": "rand_0URVRF4FRO",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000425.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 18,
+      "task": "flatten",
+      "asset_id": "rand_1UPT0NGFMM",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002464.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 19,
+      "task": "flatten",
+      "asset_id": "rand_1X7Y4QEECH",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002603.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 20,
+      "task": "flatten",
+      "asset_id": "rand_1YHCYZE5OK",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002666.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 21,
+      "task": "flatten",
+      "asset_id": "rand_2C5OWHIMT4",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003520.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 22,
+      "task": "flatten",
+      "asset_id": "rand_1YGWDNTUBA",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002655.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 23,
+      "task": "flatten",
+      "asset_id": "rand_20JUZJXU1F",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002741.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 24,
+      "task": "flatten",
+      "asset_id": "rand_28ZDYGSR2I",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003325.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 25,
+      "task": "flatten",
+      "asset_id": "rand_04OU2IZ2GV",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000127.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 26,
+      "task": "flatten",
+      "asset_id": "rand_2FCM9GRUJ9",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003735.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 27,
+      "task": "flatten",
+      "asset_id": "rand_0FGHC5MNWV",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000242.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 28,
+      "task": "flatten",
+      "asset_id": "rand_1I7PJ11DEK",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001716.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 29,
+      "task": "flatten",
+      "asset_id": "rand_1F7UUHFTTF",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001509.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 30,
+      "task": "flatten",
+      "asset_id": "rand_1LN4VU7300",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001933.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 31,
+      "task": "flatten",
+      "asset_id": "rand_2CQDA76VSP",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003576.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 32,
+      "task": "flatten",
+      "asset_id": "rand_1Q7SCGVCYH",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002261.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 33,
+      "task": "flatten",
+      "asset_id": "rand_15E6R5W9TL",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000987.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 34,
+      "task": "flatten",
+      "asset_id": "rand_1E69F9VRN4",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001470.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 35,
+      "task": "flatten",
+      "asset_id": "rand_1CD8JAPAP2",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001421.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 36,
+      "task": "flatten",
+      "asset_id": "rand_211Y4IO94C",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002772.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 37,
+      "task": "flatten",
+      "asset_id": "rand_28KPAW3DEX",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003257.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 38,
+      "task": "flatten",
+      "asset_id": "rand_26L07UTNT4",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003154.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 39,
+      "task": "flatten",
+      "asset_id": "rand_2AWJYE6PF6",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003466.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 40,
+      "task": "flatten",
+      "asset_id": "rand_0X2J5FX39U",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000543.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 41,
+      "task": "flatten",
+      "asset_id": "rand_01Q78IXCLW",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000041.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 42,
+      "task": "flatten",
+      "asset_id": "rand_225EQHMJP5",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002845.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 43,
+      "task": "flatten",
+      "asset_id": "rand_1XGYTK3QMJ",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002624.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 44,
+      "task": "flatten",
+      "asset_id": "rand_24XNTUDUZ1",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003019.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 45,
+      "task": "flatten",
+      "asset_id": "rand_1CW9M7X6EY",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001447.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 46,
+      "task": "flatten",
+      "asset_id": "rand_0VI0BDUCV4",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000502.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 47,
+      "task": "flatten",
+      "asset_id": "rand_25QY0N1WEZ",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003084.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 48,
+      "task": "flatten",
+      "asset_id": "rand_1U12KRBTWC",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002449.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 49,
+      "task": "flatten",
+      "asset_id": "rand_2J2W2VDRRO",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003854.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 50,
+      "task": "flatten",
+      "asset_id": "rand_28N56YOZXC",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003283.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 51,
+      "task": "flatten",
+      "asset_id": "rand_117L64AH1R",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000746.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 52,
+      "task": "flatten",
+      "asset_id": "rand_13AAK4PO2O",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000876.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 53,
+      "task": "flatten",
+      "asset_id": "rand_0X6SZC14TF",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000568.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 54,
+      "task": "flatten",
+      "asset_id": "rand_2EHRZQL8Y6",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003685.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 55,
+      "task": "flatten",
+      "asset_id": "rand_0Y83K1TKNT",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000640.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 56,
+      "task": "flatten",
+      "asset_id": "rand_1OCQNTE24T",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002127.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 57,
+      "task": "flatten",
+      "asset_id": "rand_0TKY8IYX0W",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000375.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 58,
+      "task": "flatten",
+      "asset_id": "rand_18TWRPGQIS",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001135.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 59,
+      "task": "flatten",
+      "asset_id": "rand_26WRBYAPUY",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003172.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 60,
+      "task": "flatten",
+      "asset_id": "rand_1VKRDNWFKE",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002515.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 61,
+      "task": "flatten",
+      "asset_id": "rand_24Z3FYN9F5",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003051.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 62,
+      "task": "flatten",
+      "asset_id": "rand_17V8IC2JIT",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001083.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 63,
+      "task": "flatten",
+      "asset_id": "rand_1JY83CS1BA",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001841.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 64,
+      "task": "flatten",
+      "asset_id": "rand_2CE9RSYSM8",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003535.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 65,
+      "task": "flatten",
+      "asset_id": "rand_1M4MU8KSIY",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001973.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 66,
+      "task": "flatten",
+      "asset_id": "rand_20K0H65GUU",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002747.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 67,
+      "task": "flatten",
+      "asset_id": "rand_1U0UUO457V",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002434.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 68,
+      "task": "flatten",
+      "asset_id": "rand_004NVCOKV7",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000001.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 69,
+      "task": "flatten",
+      "asset_id": "rand_16W8ARYM6G",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001044.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 70,
+      "task": "flatten",
+      "asset_id": "rand_1GN0K5NA2V",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001619.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 71,
+      "task": "flatten",
+      "asset_id": "rand_2GLQYGBEU5",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003786.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 72,
+      "task": "flatten",
+      "asset_id": "rand_2712IUKDND",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003200.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 73,
+      "task": "flatten",
+      "asset_id": "rand_12FL0PZP12",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000849.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 74,
+      "task": "flatten",
+      "asset_id": "rand_1BBH5VM6IR",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001322.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 75,
+      "task": "flatten",
+      "asset_id": "rand_0Z5CXF4ZQP",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000677.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 76,
+      "task": "flatten",
+      "asset_id": "rand_1G0SYPVGVT",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001561.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 77,
+      "task": "flatten",
+      "asset_id": "rand_1LPWCNA3ER",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001940.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 78,
+      "task": "flatten",
+      "asset_id": "rand_2DSGBFQM2L",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003656.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 79,
+      "task": "flatten",
+      "asset_id": "rand_1BIF7BVRJ4",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001354.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 80,
+      "task": "flatten",
+      "asset_id": "rand_1FVJ238UE7",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001542.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 81,
+      "task": "flatten",
+      "asset_id": "rand_265ZXGNG1J",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003108.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 82,
+      "task": "flatten",
+      "asset_id": "rand_1VW0ZFXD17",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002550.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 83,
+      "task": "flatten",
+      "asset_id": "rand_1BEWWU2K6Q",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001343.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 84,
+      "task": "flatten",
+      "asset_id": "rand_1CSHS4LKIJ",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001439.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 85,
+      "task": "flatten",
+      "asset_id": "rand_1RUXCWNZMC",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002302.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 86,
+      "task": "flatten",
+      "asset_id": "rand_296QU3RR8Q",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003361.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 87,
+      "task": "flatten",
+      "asset_id": "rand_22UTWB66S8",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002889.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 88,
+      "task": "flatten",
+      "asset_id": "rand_0JL0G525XH",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000281.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 89,
+      "task": "flatten",
+      "asset_id": "rand_1A2P58J9VK",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001199.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 90,
+      "task": "flatten",
+      "asset_id": "rand_1JB634CLNN",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001827.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 91,
+      "task": "flatten",
+      "asset_id": "rand_0VGB1NG35B",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000494.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 92,
+      "task": "flatten",
+      "asset_id": "rand_2LN9D9BZBV",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003957.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 93,
+      "task": "flatten",
+      "asset_id": "rand_1ONEJHCOVS",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002142.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 94,
+      "task": "flatten",
+      "asset_id": "rand_22VKISLY30",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002901.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 95,
+      "task": "flatten",
+      "asset_id": "rand_1EDHTQFUNP",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001481.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 96,
+      "task": "flatten",
+      "asset_id": "rand_2D6SERJ1DO",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003604.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 97,
+      "task": "flatten",
+      "asset_id": "rand_19U2D4IL4V",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001160.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 98,
+      "task": "flatten",
+      "asset_id": "rand_21QA5FKS58",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002818.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 99,
+      "task": "flatten",
+      "asset_id": "rand_27ULACQ3RP",
+      "source_video": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003227.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 100,
+      "task": "fold",
+      "asset_id": "rand_0E362JU16I",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000228.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 101,
+      "task": "fold",
+      "asset_id": "rand_244NPT0F0J",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002863.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 102,
+      "task": "fold",
+      "asset_id": "rand_1KMN65OI4O",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001795.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 103,
+      "task": "fold",
+      "asset_id": "rand_1RJ8D5A7EC",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002200.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 104,
+      "task": "fold",
+      "asset_id": "rand_1UPT0NGFMM",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002376.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 105,
+      "task": "fold",
+      "asset_id": "rand_12CMB9NKG1",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000799.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 106,
+      "task": "fold",
+      "asset_id": "rand_117L64AH1R",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000728.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 107,
+      "task": "fold",
+      "asset_id": "rand_2EBUYCB46V",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003545.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 108,
+      "task": "fold",
+      "asset_id": "rand_1H2L4705WL",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001617.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 109,
+      "task": "fold",
+      "asset_id": "rand_27QVZO5VN5",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003100.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 110,
+      "task": "fold",
+      "asset_id": "rand_1BBH5VM6IR",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001281.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 111,
+      "task": "fold",
+      "asset_id": "rand_155MRLXVMW",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000930.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 112,
+      "task": "fold",
+      "asset_id": "rand_24R3ZE960E",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002895.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 113,
+      "task": "fold",
+      "asset_id": "rand_1OCQNTE24T",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002051.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 114,
+      "task": "fold",
+      "asset_id": "rand_1GIQSRDLN2",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001555.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 115,
+      "task": "fold",
+      "asset_id": "rand_1YQ82NEHKT",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002570.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 116,
+      "task": "fold",
+      "asset_id": "rand_2DQCL6CL8T",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003520.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 117,
+      "task": "fold",
+      "asset_id": "rand_2F80FLJVIL",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003594.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 118,
+      "task": "fold",
+      "asset_id": "rand_2DSGBFQM2L",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003531.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 119,
+      "task": "fold",
+      "asset_id": "rand_14L6VNJRF9",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000908.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 120,
+      "task": "fold",
+      "asset_id": "rand_1MO2JOL3Z7",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001939.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 121,
+      "task": "fold",
+      "asset_id": "rand_0VBR02U024",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000475.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 122,
+      "task": "fold",
+      "asset_id": "rand_1EDHTQFUNP",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001434.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 123,
+      "task": "fold",
+      "asset_id": "rand_2968QV5JF1",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003230.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 124,
+      "task": "fold",
+      "asset_id": "rand_0ME2Z034NN",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000297.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 125,
+      "task": "fold",
+      "asset_id": "rand_13Q8PAC94Q",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000878.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 126,
+      "task": "fold",
+      "asset_id": "rand_0Z5CXF4ZQP",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000658.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 127,
+      "task": "fold",
+      "asset_id": "rand_26L07UTNT4",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003044.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 128,
+      "task": "fold",
+      "asset_id": "rand_2CE9RSYSM8",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003409.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 129,
+      "task": "fold",
+      "asset_id": "rand_2CN2KHC0C0",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003435.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 130,
+      "task": "fold",
+      "asset_id": "rand_12CR1HRKKE",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000806.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 131,
+      "task": "fold",
+      "asset_id": "rand_1XGYTK3QMJ",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002531.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 132,
+      "task": "fold",
+      "asset_id": "rand_0AYSPSNK8T",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000219.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 133,
+      "task": "fold",
+      "asset_id": "rand_2CBVS72PJD",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003404.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 134,
+      "task": "fold",
+      "asset_id": "rand_1FVJ238UE7",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001497.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 135,
+      "task": "fold",
+      "asset_id": "rand_28R28NJ9TT",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003187.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 136,
+      "task": "fold",
+      "asset_id": "rand_1C5J5MGWB5",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001378.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 137,
+      "task": "fold",
+      "asset_id": "rand_1E69F9VRN4",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001420.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 138,
+      "task": "fold",
+      "asset_id": "rand_0IX189WGFR",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000263.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 139,
+      "task": "fold",
+      "asset_id": "rand_1TSMB7S1IE",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002321.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 140,
+      "task": "fold",
+      "asset_id": "rand_1PWPVI9OXJ",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002142.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 141,
+      "task": "fold",
+      "asset_id": "rand_28Y9ZV7P4R",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003205.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 142,
+      "task": "fold",
+      "asset_id": "rand_26MEH085GX",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003052.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 143,
+      "task": "fold",
+      "asset_id": "rand_249RUXCM75",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002879.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 144,
+      "task": "fold",
+      "asset_id": "rand_1F9YNONW4N",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001478.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 145,
+      "task": "fold",
+      "asset_id": "rand_11SEFBSFKK",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000774.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 146,
+      "task": "fold",
+      "asset_id": "rand_1Q7ETFUCKR",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002151.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 147,
+      "task": "fold",
+      "asset_id": "rand_1UEV2E1PJ2",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002370.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 148,
+      "task": "fold",
+      "asset_id": "rand_1ALD8ZQDU4",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001195.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 149,
+      "task": "fold",
+      "asset_id": "rand_11J8S4NHQ9",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000754.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 150,
+      "task": "fold",
+      "asset_id": "rand_21SL3KXM69",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002711.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 151,
+      "task": "fold",
+      "asset_id": "rand_21GKNQCZ4B",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002681.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 152,
+      "task": "fold",
+      "asset_id": "rand_1AWWJ9TCB8",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001245.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 153,
+      "task": "fold",
+      "asset_id": "rand_29Y6R278T5",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003308.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 154,
+      "task": "fold",
+      "asset_id": "rand_288NETYWUM",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003135.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 155,
+      "task": "fold",
+      "asset_id": "rand_1I1LBRHDZL",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001645.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 156,
+      "task": "fold",
+      "asset_id": "rand_2J9L12THIB",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003752.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 157,
+      "task": "fold",
+      "asset_id": "rand_24Y512G41S",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002929.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 158,
+      "task": "fold",
+      "asset_id": "rand_1IS9ZV2NCW",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001722.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 159,
+      "task": "fold",
+      "asset_id": "rand_1X249KBY3Y",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002491.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 160,
+      "task": "fold",
+      "asset_id": "rand_0FGHC5MNWV",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000233.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 161,
+      "task": "fold",
+      "asset_id": "rand_19VLXSSFLD",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001132.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 162,
+      "task": "fold",
+      "asset_id": "rand_232X14D5PP",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002801.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 163,
+      "task": "fold",
+      "asset_id": "rand_11L6QS0SAZ",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000768.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 164,
+      "task": "fold",
+      "asset_id": "rand_265ZXGNG1J",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002999.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 165,
+      "task": "fold",
+      "asset_id": "rand_18TWRPGQIS",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001098.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 166,
+      "task": "fold",
+      "asset_id": "rand_0V15754TTS",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000451.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 167,
+      "task": "fold",
+      "asset_id": "rand_296QU3RR8Q",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003246.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 168,
+      "task": "fold",
+      "asset_id": "rand_1CSHS4LKIJ",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001401.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 169,
+      "task": "fold",
+      "asset_id": "rand_1VKTA3O4NL",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002434.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 170,
+      "task": "fold",
+      "asset_id": "rand_28N56YOZXC",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003175.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 171,
+      "task": "fold",
+      "asset_id": "rand_1LN4VU7300",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001863.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 172,
+      "task": "fold",
+      "asset_id": "rand_16V49KL0R9",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001000.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 173,
+      "task": "fold",
+      "asset_id": "rand_0VGB1NG35B",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000488.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 174,
+      "task": "fold",
+      "asset_id": "rand_19ZIM30DGZ",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001144.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 175,
+      "task": "fold",
+      "asset_id": "rand_0T6A7W6QY9",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000352.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 176,
+      "task": "fold",
+      "asset_id": "rand_0X2J5FX39U",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000539.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 177,
+      "task": "fold",
+      "asset_id": "rand_1M8PJ2BE57",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001921.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 178,
+      "task": "fold",
+      "asset_id": "rand_1G0SYPVGVT",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001515.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 179,
+      "task": "fold",
+      "asset_id": "rand_2LFN8HW5AG",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003814.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 180,
+      "task": "fold",
+      "asset_id": "rand_2C3IQKWMNQ",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003385.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 181,
+      "task": "fold",
+      "asset_id": "rand_24Z3FYN9F5",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002937.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 182,
+      "task": "fold",
+      "asset_id": "rand_1Y31BR25CA",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002540.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 183,
+      "task": "fold",
+      "asset_id": "rand_1JY83CS1BA",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001775.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 184,
+      "task": "fold",
+      "asset_id": "rand_2HA52Y4C1D",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003667.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 185,
+      "task": "fold",
+      "asset_id": "rand_29DC1LGB9H",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003261.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 186,
+      "task": "fold",
+      "asset_id": "rand_0UYXAJYKTZ",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000436.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 187,
+      "task": "fold",
+      "asset_id": "rand_041L4IHB7W",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000106.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 188,
+      "task": "fold",
+      "asset_id": "rand_128O8MCE0P",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000787.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 189,
+      "task": "fold",
+      "asset_id": "rand_0Z3TA1FA1C",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000638.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 190,
+      "task": "fold",
+      "asset_id": "rand_225EQHMJP5",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002737.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 191,
+      "task": "fold",
+      "asset_id": "rand_1MRNMN7QY0",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001949.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 192,
+      "task": "fold",
+      "asset_id": "rand_0V7RGHZ8JM",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000455.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 193,
+      "task": "fold",
+      "asset_id": "rand_28L0FM4KOI",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003150.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 194,
+      "task": "fold",
+      "asset_id": "rand_0Y83K1TKNT",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000629.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 195,
+      "task": "fold",
+      "asset_id": "rand_0XQT1WCCJN",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000618.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    },
+    {
+      "position": 196,
+      "task": "fold",
+      "asset_id": "rand_1GX7ZBY2SX",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001597.mp4",
+      "source_start_seconds": 0,
+      "source_end_seconds": 8,
+      "source_fps": 50.0
+    },
+    {
+      "position": 197,
+      "task": "fold",
+      "asset_id": "rand_2CQX7CIBKN",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-003/observation.images.cam_high/episode_003467.mp4",
+      "source_start_seconds": 3,
+      "source_end_seconds": 11,
+      "source_fps": 50.0
+    },
+    {
+      "position": 198,
+      "task": "fold",
+      "asset_id": "rand_089NYY0BW7",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000187.mp4",
+      "source_start_seconds": 6,
+      "source_end_seconds": 14,
+      "source_fps": 50.0
+    },
+    {
+      "position": 199,
+      "task": "fold",
+      "asset_id": "rand_0UVZH267ZC",
+      "source_video": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000423.mp4",
+      "source_start_seconds": 9,
+      "source_end_seconds": 17,
+      "source_fps": 50.0
+    }
+  ]
+}

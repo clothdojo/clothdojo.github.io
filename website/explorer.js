@@ -311,6 +311,7 @@ fetch('assets/catalog/catalog.json').then(response => {
     hits.append(button);
   });
   selectAsset(data.atlas.assets.findIndex(asset => byAsset.has(asset.asset_id)));
+  if (window.location.hash === '#atlas-panel') showExplorer('atlas');
   if (!document.getElementById('atlas-panel').hidden) requestDetailedAtlas();
 }).catch(() => {
   document.getElementById('catalog-status').textContent = 'The catalog could not load. Refresh the page to retry.';

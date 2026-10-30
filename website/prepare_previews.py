@@ -14,6 +14,8 @@ CURATED = ROOT / "assets" / "curated"
 OUTPUT = ROOT / "assets" / "preview"
 
 SOURCES = [
+    ("trajectory-overview", CURATED / "trajectory-overview.mp4", 1600, 600),
+    ("robots-overview", CURATED / "robots-overview.mp4", 1600, 480),
     ("tasks-paired", CURATED / "tasks-paired.mp4", 1280, 480),
     ("garment-collection", ROOT / "assets" / "garment-collection-web.mp4", 1280, 720),
     ("generation-200", CURATED / "generation-200.mp4", 1280, 480),
@@ -30,11 +32,12 @@ def main():
     records = []
     for name, source, width, height in SOURCES:
         target = OUTPUT / f"{name}.mp4"
+        crf, maxrate, bufsize = ("24", "2200k", "4400k") if width > 1280 else ("25", "1600k", "3200k")
         subprocess.run([
             ffmpeg, "-v", "error", "-y", "-i", str(source), "-an",
             "-vf", f"scale={width}:{height}:flags=lanczos,fps=24",
             "-c:v", "libx264", "-threads", "4", "-preset", "slow",
-            "-crf", "25", "-maxrate", "1600k", "-bufsize", "3200k",
+            "-crf", crf, "-maxrate", maxrate, "-bufsize", bufsize,
             "-g", "48", "-pix_fmt", "yuv420p", "-profile:v", "high",
             "-level:v", "4.0", "-movflags", "+faststart", str(target),
         ], check=True)

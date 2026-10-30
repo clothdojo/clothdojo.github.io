@@ -3,6 +3,26 @@
   "purpose": "Lightweight ambient playback; full-resolution replay loads on explicit request.",
   "records": [
     {
+      "file": "assets/preview/trajectory-overview.mp4",
+      "source": "assets/curated/trajectory-overview.mp4",
+      "width": 1600,
+      "height": 600,
+      "fps": 24,
+      "playback_speed": 1,
+      "source_bytes": 8927727,
+      "preview_bytes": 2410651
+    },
+    {
+      "file": "assets/preview/robots-overview.mp4",
+      "source": "assets/curated/robots-overview.mp4",
+      "width": 1600,
+      "height": 480,
+      "fps": 24,
+      "playback_speed": 1,
+      "source_bytes": 3064366,
+      "preview_bytes": 1432074
+    },
+    {
       "file": "assets/preview/tasks-paired.mp4",
       "source": "assets/curated/tasks-paired.mp4",
       "width": 1280,
@@ -30,7 +50,7 @@
       "fps": 24,
       "playback_speed": 1,
       "source_bytes": 11612400,
-      "preview_bytes": 2546701
+      "preview_bytes": 2540604
     },
     {
       "file": "assets/preview/robot-piper.mp4",
