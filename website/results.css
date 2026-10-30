@@ -34,12 +34,14 @@
 .protocol p+p { margin-top:12px; }
 
 /* A single table treatment, including homepage transfer results. */
-.table-wrap { min-width:0; max-width:100%; overflow-x:auto; margin-block:24px; border:1px solid #dce5e7; border-radius:4px; background:#fff; }
-.table-wrap:focus-visible { outline:2px solid #287a87; outline-offset:4px; }
+.table-block { min-width:0; max-width:100%; margin-block:24px; border:1px solid #dce5e7; border-radius:4px; overflow:hidden; background:#fff; }
+.table-block>.table-caption { text-align:left; margin:0; padding:14px 18px; font:12px/1.7 Arial,Helvetica,sans-serif; color:#5f7075; background:#fff; }
+.table-block>.table-scroll-hint { display:none; margin:0; padding:0 18px 12px; font:12px/1.6 Arial,Helvetica,sans-serif; color:#287a87; }
+.table-wrap { min-width:0; max-width:100%; overflow-x:auto; margin:0; background:#fff; }
+.table-wrap:focus-visible { outline:2px solid #287a87; outline-offset:-2px; }
 .data-table { width:100%; border-collapse:collapse; font:14px/1.5 Arial,Helvetica,sans-serif; color:#203138; font-variant-numeric:tabular-nums; }
-.data-table caption { text-align:left; padding:14px 18px; font:12px/1.7 Arial,Helvetica,sans-serif; color:#5f7075; background:#fff; caption-side:top; }
 .data-table th,.data-table td { padding:13px 18px; border:0; border-bottom:1px solid #e5ebed; text-align:right; white-space:nowrap; }
-.data-table th:first-child { text-align:left; }
+.data-table thead>tr:first-child>th:first-child,.data-table tbody th { text-align:left; }
 .data-table thead { background:#f6f8f8; }
 .data-table thead th { font-weight:500; font-size:12px; vertical-align:middle; white-space:normal; min-width:80px; }
 .data-table thead th[colspan] { text-align:center; border-bottom:1px solid #dce5e7; }
@@ -110,13 +112,18 @@
   .metric-row { font-size:14px; }
   .metric-chart h4 { margin-bottom:26px; }
   .chart-axis { font-size:12px; }
-  .table-wrap { margin-block:20px; }
+  .table-block { margin-block:20px; }
+  .table-block>.table-caption { padding:12px 14px; }
+  .table-block>.table-scroll-hint { padding-inline:14px; }
+  .table-block--wide>.table-scroll-hint { display:block; }
   .data-table th,.data-table td { padding:12px 14px; }
-  .data-table caption { padding:12px 14px; }
   .protocol { padding-left:15px; }
   .research-results { padding-block:42px; }
   .research-heading h2 { font-size:27px; }
   .research-study-heading { gap:12px; grid-template-columns:24px minmax(0,1fr); }
   .research-study-heading h3 { font-size:21px; }
   .research-more { flex-wrap:wrap; gap:12px 25px; }
+}
+@media(max-width:360px) {
+  .table-block--medium>.table-scroll-hint { display:block; }
 }

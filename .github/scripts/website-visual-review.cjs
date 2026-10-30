@@ -34,10 +34,10 @@ saveReport();
   async function position(page, selector) {
     if (!selector) { await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); return; }
     await page.locator(selector).first().evaluate(element => {
-      element.scrollIntoView({ block: 'start', behavior: 'instant' });
+      const targetTop = element.getBoundingClientRect().top + window.scrollY;
       const headers = [...document.querySelectorAll('header')].filter(header => ['sticky', 'fixed'].includes(getComputedStyle(header).position));
       const offset = Math.max(0, ...headers.map(header => header.getBoundingClientRect().height));
-      window.scrollBy({ top: -offset - 16, behavior: 'instant' });
+      window.scrollTo({ top: targetTop - offset - 16, behavior: 'instant' });
     });
   }
   async function stableMedia(page) {
@@ -136,7 +136,7 @@ saveReport();
     }
   }
   async function captureEvidenceDetails(page, prefix) {
-    const table = '.transfer-evidence .table-wrap';
+    const table = await page.locator('.transfer-evidence .table-block').count() ? '.transfer-evidence .table-block' : '.transfer-evidence .table-wrap';
     if (await page.locator(table).count()) await capture(page, prefix + '-transfer-table', table);
     const studies = page.locator('.research-study');
     if (await studies.count()) {
@@ -167,16 +167,38 @@ saveReport();
     const appearance = page.locator('#appearance-film[data-sync-time]');
     if (await appearance.count()) {
       progress('Interactions: material timestamp preservation');
-      await appearance.evaluate(video => { video.currentTime = 1.25; });
-      await page.waitForFunction(() => !document.getElementById('appearance-film').seeking);
       const button = page.locator('[data-select="appearance-film"]').first();
       const source = await button.getAttribute('data-src');
-      await button.click();
-      await page.waitForFunction(src => {
-        const video = document.getElementById('appearance-film');
-        return video.getAttribute('src') === src && video.readyState >= 2 && !video.seeking;
-      }, source);
-      assert(Math.abs(await appearance.evaluate(video => video.currentTime) - 1.25) < 0.1, 'Material selection must preserve replay time');
+      const expectedSource = new URL(source, page.url()).href;
+      report.materialTiming = { expectedTime: 1.25, expectedSource, tolerance: 0.1, events: [] };
+      await appearance.evaluate(video => {
+        const state = () => ({ source: video.currentSrc, time: video.currentTime, readyState: video.readyState, seeking: video.seeking });
+        window.__reviewMaterialEvents = [];
+        for (const type of ['loadedmetadata', 'loadeddata', 'seeked']) {
+          video.addEventListener(type, () => window.__reviewMaterialEvents.push({ type, timestamp: performance.now(), ...state() }));
+        }
+        video.currentTime = 1.25;
+      });
+      report.materialTiming.before = await appearance.evaluate(video => ({ source: video.currentSrc, time: video.currentTime, readyState: video.readyState, seeking: video.seeking }));
+      saveReport();
+      try {
+        await page.waitForFunction(() => {
+          const video = document.getElementById('appearance-film');
+          return Math.abs(video.currentTime - 1.25) < 0.1 && !video.seeking;
+        }, null, { timeout: 5000 });
+        report.materialTiming.before = await appearance.evaluate(video => ({ source: video.currentSrc, time: video.currentTime, readyState: video.readyState, seeking: video.seeking }));
+        saveReport();
+        await button.click();
+        await page.waitForFunction(src => {
+          const video = document.getElementById('appearance-film');
+          return video.currentSrc === src && video.readyState >= 2 && !video.seeking && Math.abs(video.currentTime - 1.25) < 0.1;
+        }, expectedSource, { timeout: 5000 });
+        assert(Math.abs(await appearance.evaluate(video => video.currentTime) - 1.25) < 0.1, 'Material selection must preserve replay time');
+      } finally {
+        report.materialTiming.after = await appearance.evaluate(video => ({ source: video.currentSrc, time: video.currentTime, readyState: video.readyState, seeking: video.seeking }));
+        report.materialTiming.events = await page.evaluate(() => window.__reviewMaterialEvents);
+        saveReport();
+      }
       report.checks.push('material switch preserves current physical timestamp');
     }
     const expand = page.locator('[data-expand]');
@@ -273,7 +295,8 @@ saveReport();
       }
       await capture(results, 'results-' + width + '-opening');
       await captureSections(results, 'results-' + width);
-      await capture(results, 'results-' + width + '-table', '.data-table');
+      const tableSelector = await results.locator('.table-block').count() ? '.table-block' : '.table-wrap';
+      await capture(results, 'results-' + width + '-table', tableSelector);
       await results.context().close();
     }
     report.checks.push('five results anchors, shared rendered table typography, desktop/mobile results screenshots');
