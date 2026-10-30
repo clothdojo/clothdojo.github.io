@@ -1,6 +1,6 @@
 {
-  "ref": "657102e3950dc8ca3b66804b9c22989950c65f0e",
-  "commit": "657102e3950dc8ca3b66804b9c22989950c65f0e",
+  "ref": "33c9d317c4ba9504eee51d8e5e22c163c33db591",
+  "commit": "33c9d317c4ba9504eee51d8e5e22c163c33db591",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -1680,7 +1680,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -1701,7 +1700,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -1722,7 +1720,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -1743,7 +1740,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -1764,7 +1760,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -1785,7 +1780,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -1806,7 +1800,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -1827,7 +1820,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -1848,7 +1840,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -1869,7 +1860,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -1890,7 +1880,6 @@
       "width": 320,
       "scrollWidth": 320,
       "overflow": [
-        "A.",
         "TABLE.data-table",
         "THEAD.",
         "TR.",
@@ -2578,14 +2567,17 @@
   ],
   "checks": [
     "HTTP 206 byte-range media serving",
+    "desktop: all main navigation entries fit without clipping",
     "desktop: all ten native explanation details default closed",
     "desktop: all ten explanations support pointer, Enter and Space toggles without page overflow",
     "all media selections update source/poster/caption/pressed state and remain paused under reduced motion",
     "material switch preserves current physical timestamp",
     "all expanded replays, close button/Escape and media-source cleanup",
     "CPU quickstart clipboard copy",
+    "mobile-390: all main navigation entries fit without clipping",
     "mobile-390: all ten native explanation details default closed",
     "mobile-390: all ten explanations support pointer, Enter and Space toggles without page overflow",
+    "mobile-320: all main navigation entries fit without clipping",
     "mobile-320: all ten native explanation details default closed",
     "real Chromium playback: one active video after task switch and HD open",
     "five results anchors, shared rendered table typography, desktop/mobile results screenshots"
@@ -3293,7 +3285,7 @@
     "events": [
       {
         "type": "seeked",
-        "timestamp": 11483.700000000012,
+        "timestamp": 11859.199999999997,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-checkered.mp4",
         "time": 1.25,
         "duration": 5,
@@ -3314,7 +3306,7 @@
       },
       {
         "type": "loadedmetadata",
-        "timestamp": 11558.399999999994,
+        "timestamp": 11919.699999999997,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 0,
         "duration": 5,
@@ -3329,13 +3321,13 @@
         "buffered": [
           [
             0,
-            5
+            2.764
           ]
         ]
       },
       {
         "type": "seeked",
-        "timestamp": 11626.200000000012,
+        "timestamp": 11985.699999999997,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
@@ -3356,7 +3348,7 @@
       },
       {
         "type": "loadeddata",
-        "timestamp": 11626.200000000012,
+        "timestamp": 11985.800000000003,
         "source": "http://127.0.0.1:8787/assets/launch/appearance-pattern.mp4",
         "time": 1.25,
         "duration": 5,
