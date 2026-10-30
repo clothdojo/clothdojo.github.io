@@ -1,0 +1,61 @@
+{
+  "schema": "clothdojo_same_motion_appearances_v1",
+  "trajectory": "data/collections/shirt_fold/rollouts/fold_clean30k_standard2000_rtc30s_20260906/trajectories/rand_0TKY8IYX0W_000003",
+  "recorded_state_rate_hz": 50,
+  "source_state_indices": {
+    "start": 700,
+    "stop_exclusive": 950,
+    "step": 2
+  },
+  "source_time_seconds": [
+    14,
+    19
+  ],
+  "encoded_fps": 25,
+  "duration_seconds": 5,
+  "render": {
+    "engine": "Isaac Sim 5",
+    "width": 960,
+    "height": 720,
+    "pathtrace_spp": 16
+  },
+  "master": {
+    "file": "appearance-triptych.mp4",
+    "width": 2880,
+    "height": 720
+  },
+  "preview": {
+    "file": "../preview/appearance-triptych.mp4",
+    "width": 1440,
+    "height": 360
+  },
+  "columns": [
+    {
+      "name": "pattern",
+      "material": "fabric_pattern_07"
+    },
+    {
+      "name": "velvet",
+      "material": "velour_velvet"
+    },
+    {
+      "name": "checkered",
+      "material": "curly_teddy_checkered"
+    }
+  ],
+  "camera": {
+    "camera": "paper_view",
+    "camera_eye": [
+      2.2,
+      -1.4,
+      2.25
+    ],
+    "camera_target": [
+      0.65,
+      0,
+      1.1
+    ],
+    "camera_focal_length": 50
+  },
+  "scope": "One saved autonomous folding trajectory, re-rendered three times with fixed camera, room, table and motion. Only garment appearance changes. Excerpt, not whole-task success evidence."
+}

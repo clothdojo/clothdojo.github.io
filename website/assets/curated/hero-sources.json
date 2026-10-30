@@ -1,0 +1,107 @@
+{
+  "schema": "clothdojo_hero_composite_v1",
+  "production": "CPU composition of existing recorded videos. No new simulation or Isaac rendering.",
+  "width": 1440,
+  "height": 810,
+  "duration_seconds": 10,
+  "fps": 24,
+  "playback_speed": 1,
+  "layout": {
+    "main": [0, 0, 1080, 810],
+    "top_right": [1080, 0, 360, 270],
+    "middle_right": [1080, 270, 360, 270],
+    "bottom_right": [1080, 540, 360, 270]
+  },
+  "transform": "Full-frame 4:3 scaling with Lanczos; no cropping, overlays, synthetic imagery, or temporal speed changes. Sources are sampled at 24 fps and composed into one H.264 stream.",
+  "encoding": "H.264 libx264, slow, CRF 24, maxrate 2200k, bufsize 4400k, yuv420p, faststart. No audio.",
+  "poster_timestamp_seconds": 0.5,
+  "scope": "Four separate trajectories shown together. Panels are independent recorded executions, not synchronized versions of the same action or concurrent simulations. The high-quality main panels are autonomous rollout excerpts and do not establish whole-task success.",
+  "films": [
+    {
+      "task": "flatten",
+      "video": "hero-flatten.mp4",
+      "poster": "hero-flatten-poster.jpg",
+      "sources": [
+        {
+          "slot": "main",
+          "file": "../flatten-hq.mp4",
+          "source_provenance": "../flatten-hq.sources.json",
+          "clip_start_seconds": 0,
+          "clip_end_seconds_exclusive": 10,
+          "physical_rollout_start_seconds": 10,
+          "physical_rollout_end_seconds_exclusive": 20
+        },
+        {
+          "slot": "top_right",
+          "file": "../catalog/case-00.mp4",
+          "asset_id": "rand_00PJYCPW0L",
+          "source_duration_seconds": 38.08,
+          "clip_start_seconds": 0,
+          "clip_end_seconds_exclusive": 10,
+          "source": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000021.mp4"
+        },
+        {
+          "slot": "middle_right",
+          "file": "../catalog/case-02.mp4",
+          "asset_id": "rand_1GIQSRDLN2",
+          "source_duration_seconds": 33.56,
+          "clip_start_seconds": 0,
+          "clip_end_seconds_exclusive": 10,
+          "source": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001610.mp4"
+        },
+        {
+          "slot": "bottom_right",
+          "file": "../catalog/case-04.mp4",
+          "asset_id": "rand_1AWWJ9TCB8",
+          "source_duration_seconds": 27.96,
+          "clip_start_seconds": 0,
+          "clip_end_seconds_exclusive": 10,
+          "source": "data/datasets/rgb_flatten_success_release_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001277.mp4"
+        }
+      ]
+    },
+    {
+      "task": "fold",
+      "video": "hero-fold.mp4",
+      "poster": "hero-fold-poster.jpg",
+      "sources": [
+        {
+          "slot": "main",
+          "file": "../fold-hq.mp4",
+          "source_provenance": "../fold-hq.sources.json",
+          "clip_start_seconds": 0,
+          "clip_end_seconds_exclusive": 10,
+          "physical_rollout_start_seconds": 12,
+          "physical_rollout_end_seconds_exclusive": 22
+        },
+        {
+          "slot": "top_right",
+          "file": "../catalog/case-12.mp4",
+          "asset_id": "rand_0E362JU16I",
+          "source_duration_seconds": 28.16,
+          "clip_start_seconds": 0,
+          "clip_end_seconds_exclusive": 10,
+          "source": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-000/observation.images.cam_high/episode_000228.mp4"
+        },
+        {
+          "slot": "middle_right",
+          "file": "../catalog/case-14.mp4",
+          "asset_id": "rand_1KMN65OI4O",
+          "source_duration_seconds": 19.8,
+          "clip_start_seconds": 0,
+          "clip_end_seconds_exclusive": 10,
+          "source": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-001/observation.images.cam_high/episode_001795.mp4"
+        },
+        {
+          "slot": "bottom_right",
+          "file": "../catalog/case-16.mp4",
+          "asset_id": "rand_1UPT0NGFMM",
+          "source_duration_seconds": 18.24,
+          "clip_start_seconds": 0,
+          "clip_end_seconds_exclusive": 10,
+          "source": "data/datasets/rgb_fold_generated_best_released_train400_v1_20260911/videos/chunk-002/observation.images.cam_high/episode_002376.mp4"
+        }
+      ]
+    }
+  ]
+}
