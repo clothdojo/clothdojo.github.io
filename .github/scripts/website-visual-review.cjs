@@ -1,74 +1,250 @@
 const { chromium } = require('playwright');
 const fs = require('node:fs');
 const path = require('node:path');
+const { execFileSync } = require('node:child_process');
 const assert = require('node:assert/strict');
 const out = process.env.REVIEW_OUTPUT;
+const pagePath = process.env.REVIEW_PAGE_PATH || 'index.html';
+const origin = 'http://127.0.0.1:8787/';
+assert(!pagePath.startsWith('/') && !pagePath.includes('..') && !pagePath.includes(':'), 'Expected a relative website page path');
 fs.mkdirSync(out, { recursive: true });
-const report = { commit: process.env.REVIEW_SHA, screenshots: [], layouts: [], checks: [], errors: [] };
+const report = {
+  ref: process.env.REVIEW_REF,
+  commit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
+  pagePath, screenshots: [], layouts: [], pages: [], checks: [], errors: []
+};
 
 (async () => {
-  const browser = await chromium.launch({ channel: 'chrome', args: ['--disable-gpu'] });
-  report.browser = browser.version();
-  async function open(viewport, reducedMotion = 'reduce') {
+  let browser;
+  async function open(viewport, reducedMotion = 'reduce', target = pagePath) {
     const context = await browser.newContext({ viewport, deviceScaleFactor: 1, reducedMotion });
     const page = await context.newPage();
-    page.on('pageerror', e => report.errors.push(e.message));
-    page.on('response', r => { if (r.status() >= 400) report.errors.push(r.status() + ' ' + r.url()); });
-    await page.goto('http://127.0.0.1:8787/', { waitUntil: 'networkidle' });
+    page.on('pageerror', error => report.errors.push({ page: target, error: error.message }));
+    page.on('response', response => {
+      if (response.status() >= 400) report.errors.push({ page: target, status: response.status(), url: response.url() });
+    });
+    await page.goto(new URL(target, origin).href, { waitUntil: 'networkidle' });
     report.codec = await page.evaluate(() => document.createElement('video').canPlayType('video/mp4; codecs="avc1.640028"'));
     return page;
   }
-  async function capture(page, name, selector) {
-    if (selector) await page.locator(selector).first().scrollIntoViewIfNeeded();
-    await page.evaluate(() => document.querySelectorAll('video').forEach(v => v.pause()));
-    await page.evaluate(async () => {
-      await document.fonts.ready;
-      await Promise.all([...document.images].filter(i => i.complete).map(i => i.decode().catch(() => {})));
+  async function position(page, selector) {
+    if (!selector) { await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); return; }
+    await page.locator(selector).first().evaluate(element => {
+      element.scrollIntoView({ block: 'start', behavior: 'instant' });
+      const headers = [...document.querySelectorAll('header')].filter(header => ['sticky', 'fixed'].includes(getComputedStyle(header).position));
+      const offset = Math.max(0, ...headers.map(header => header.getBoundingClientRect().height));
+      window.scrollBy({ top: -offset - 16, behavior: 'instant' });
     });
-    await page.screenshot({ path: path.join(out, name + '.png'), fullPage: false, animations: 'disabled' });
-    report.screenshots.push(name);
+  }
+  async function stableMedia(page) {
+    await page.evaluate(async () => {
+      const visible = element => {
+        const box = element.getBoundingClientRect();
+        return box.width > 0 && box.height > 0 && box.top < innerHeight && box.bottom > 0 && box.left < innerWidth && box.right > 0;
+      };
+      await document.fonts.ready;
+      await Promise.all([...document.images].filter(visible).map(async image => {
+        await image.decode();
+        if (!image.naturalWidth) throw new Error('Visible image failed to decode: ' + image.src);
+      }));
+      document.querySelectorAll('video').forEach(video => video.pause());
+      await Promise.all([...document.querySelectorAll('video')].filter(visible).map(async video => {
+        // Screenshot preparation requests a real decoded frame, without changing
+        // controls, layout, playback policy, or any visible page styling.
+        video.preload = 'auto';
+        const wait = (event, ready) => new Promise((resolve, reject) => {
+          if (ready()) return resolve();
+          const timer = setTimeout(() => { cleanup(); reject(new Error('Video timed out waiting for ' + event + ': ' + video.currentSrc)); }, 15000);
+          const done = () => { cleanup(); resolve(); };
+          const fail = () => { cleanup(); reject(new Error('Video media error: ' + video.currentSrc)); };
+          const cleanup = () => { clearTimeout(timer); video.removeEventListener(event, done); video.removeEventListener('error', fail); };
+          video.addEventListener(event, done, { once: true });
+          video.addEventListener('error', fail, { once: true });
+        });
+        if (!video.getAttribute('src') && video.dataset.src) video.src = video.dataset.src;
+        if (!video.getAttribute('src') && !video.querySelector('source')) return;
+        if (video.readyState < 2) {
+          const loaded = wait('loadeddata', () => video.readyState >= 2);
+          video.load();
+          await loaded;
+        }
+        const time = Math.min(0.5, Number.isFinite(video.duration) ? video.duration / 2 : 0.5);
+        if (Math.abs(video.currentTime - time) > 0.01) {
+          const seeked = wait('seeked', () => false);
+          video.currentTime = time;
+          await seeked;
+        }
+        video.pause();
+      }));
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    });
+  }
+  async function layout(page, label) {
+    const result = await page.evaluate(() => ({
+      width: innerWidth, scrollWidth: document.documentElement.scrollWidth,
+      overflow: [...document.querySelectorAll('body *')].filter(element => {
+        const box = element.getBoundingClientRect();
+        return box.width && (box.right > innerWidth + 1 || box.left < -1) && getComputedStyle(element).position !== 'fixed';
+      }).slice(0, 20).map(element => element.tagName + '.' + element.className)
+    }));
+    report.layouts.push({ page: page.url(), label, ...result });
+    assert(result.scrollWidth <= result.width + 1, 'Horizontal page overflow: ' + label + ' at ' + result.width);
+  }
+  async function capture(page, name, selector) {
+    await position(page, selector);
+    await stableMedia(page);
+    await layout(page, name);
+    const file = name + '.jpg';
+    await page.screenshot({ path: path.join(out, file), type: 'jpeg', quality: 75, fullPage: false, animations: 'disabled' });
+    report.screenshots.push({ file, page: page.url(), viewport: page.viewportSize(), selector: selector || 'page top', scrollY: await page.evaluate(() => scrollY) });
+  }
+  async function captureSections(page, prefix) {
+    const sections = await page.locator('main section[id]').evaluateAll(elements => elements.map(element => element.id));
+    for (const id of sections) {
+      const selector = '[id=' + JSON.stringify(id) + ']';
+      await capture(page, prefix + '-' + id.replace(/[^a-zA-Z0-9_-]/g, '-'), selector);
+    }
+  }
+  async function captureEvidenceDetails(page, prefix) {
+    const table = '.transfer-evidence .table-wrap';
+    if (await page.locator(table).count()) await capture(page, prefix + '-transfer-table', table);
+    const studies = page.locator('.research-study');
+    if (await studies.count()) {
+      const index = await studies.count() - 1;
+      await capture(page, prefix + '-policy-comparison', '.research-study >> nth=' + index);
+    }
+  }
+  async function interactions(page) {
+    const options = page.locator('[data-select]');
+    for (let index = 0; index < await options.count(); index++) {
+      const button = options.nth(index);
+      const option = await button.evaluate(element => ({ ...element.dataset }));
+      await page.locator('#' + option.select).evaluate(video => { video.preload = 'auto'; });
+      await button.click();
+      await page.waitForFunction(({ select, src }) => {
+        const video = document.getElementById(select);
+        return video.getAttribute('src') === src && video.readyState >= 2;
+      }, option);
+      assert.equal(await button.getAttribute('aria-pressed'), 'true');
+      assert.equal(await page.locator('#' + option.select).getAttribute('poster'), option.poster);
+      assert.equal(await page.locator('#' + option.select + '-caption').textContent(), option.caption);
+      if (option.layout) assert.equal(await page.locator('#' + option.select).getAttribute('data-layout'), option.layout);
+      assert(await page.locator('#' + option.select).evaluate(video => video.paused), 'Reduced-motion selection must remain paused');
+    }
+    if (await options.count()) report.checks.push('all media selections update source/poster/caption/pressed state and remain paused under reduced motion');
+    const appearance = page.locator('#appearance-film[data-sync-time]');
+    if (await appearance.count()) {
+      await appearance.evaluate(video => { video.currentTime = 1.25; });
+      await page.waitForFunction(() => !document.getElementById('appearance-film').seeking);
+      const button = page.locator('[data-select="appearance-film"]').first();
+      const source = await button.getAttribute('data-src');
+      await button.click();
+      await page.waitForFunction(src => {
+        const video = document.getElementById('appearance-film');
+        return video.getAttribute('src') === src && video.readyState >= 2 && !video.seeking;
+      }, source);
+      assert(Math.abs(await appearance.evaluate(video => video.currentTime) - 1.25) < 0.1, 'Material selection must preserve replay time');
+      report.checks.push('material switch preserves current physical timestamp');
+    }
+    const expand = page.locator('[data-expand]');
+    for (let index = 0; index < await expand.count(); index++) {
+      const button = expand.nth(index);
+      const id = await button.getAttribute('data-expand');
+      const source = await page.locator('#' + id).evaluate(video => video.currentSrc || video.dataset.src);
+      await button.click();
+      assert(await page.locator('#media-dialog').evaluate(dialog => dialog.open));
+      await page.waitForFunction(() => document.getElementById('expanded-film').readyState >= 2);
+      assert.equal(await page.locator('#expanded-film').evaluate(video => video.currentSrc), new URL(source, origin).href);
+      if (index % 2) await page.locator('#close-media').click();
+      else await page.keyboard.press('Escape');
+      await page.waitForFunction(() => !document.getElementById('expanded-film').hasAttribute('src'));
+      assert(await page.locator('#expanded-film').evaluate(video => video.paused));
+    }
+    if (await expand.count()) report.checks.push('all expanded replays, close button/Escape and media-source cleanup');
+    if (await page.locator('#copy-commands').count()) {
+      await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
+      await page.locator('#copy-commands').click();
+      await page.waitForFunction(async () => await navigator.clipboard.readText() === document.getElementById('commands').textContent);
+      assert.equal(await page.evaluate(() => navigator.clipboard.readText()), await page.locator('#commands').textContent());
+      report.checks.push('CPU quickstart clipboard copy');
+    }
+  }
+
+  async function tableStyle(page) {
+    assert.equal(await page.locator('table:not(.data-table)').count(), 0, 'All research tables must use shared data-table styling');
+    return page.locator('.data-table th').first().evaluate(header => {
+      const style = getComputedStyle(header);
+      return Object.fromEntries(['fontFamily', 'fontSize', 'color', 'paddingTop', 'paddingBottom', 'borderBottomColor'].map(key => [key, style[key]]));
+    });
   }
   try {
+    browser = await chromium.launch({ channel: 'chrome', args: ['--disable-gpu'] });
+    report.browser = browser.version();
     const desktop = await open({ width: 1440, height: 1000 });
     await capture(desktop, 'desktop-opening');
-    for (const [name, selector] of [['generation', '#generation'], ['appearance', '.appearance-figure'], ['transfer', '.robot-comparison'], ['results', '#results'], ['use', '#use']]) {
-      await capture(desktop, 'desktop-' + name, selector);
-    }
-    await desktop.locator('[data-task="fold"]').click();
-    assert.equal(await desktop.locator('#hero-video').getAttribute('src'), 'assets/curated/hero-fold.mp4');
-    await capture(desktop, 'desktop-fold', '.showcase');
-    await desktop.locator('#hero-hd').click();
-    assert(await desktop.locator('#film-dialog').evaluate(d => d.open));
-    await desktop.keyboard.press('Escape');
-    await desktop.waitForFunction(() => !document.getElementById('film-video').hasAttribute('src'));
-    assert.equal(await desktop.locator('#film-video').getAttribute('src'), null);
-    for (const target of ['aloha2', 'x5', 'fr3_duo', 'ur5e_2f85']) {
-      await desktop.locator('[data-compare="' + target + '"]').click();
-      assert.equal(await desktop.locator('#embodiment-video').getAttribute('src'), 'assets/curated/compare-' + target + '.mp4');
-    }
-    report.checks.push('task selection, HD dialog/Escape/source cleanup, four target robots');
+    await captureSections(desktop, 'desktop');
+    await captureEvidenceDetails(desktop, 'desktop');
+    await interactions(desktop);
+    const mainTable = pagePath === 'index.html' ? await tableStyle(desktop) : null;
+    report.tableStyles = { homepage: mainTable };
     for (const width of [390, 320]) {
       const mobile = await open({ width, height: 844 });
-      await capture(mobile, 'mobile-' + width + '-opening');
-      for (const [name, selector] of [['hero', '.showcase'], ['appearance', '.appearance-figure'], ['transfer', '.transfer-evidence'], ['results', '.experiment-charts'], ['use', '.use-start']]) {
-        await capture(mobile, 'mobile-' + width + '-' + name, selector);
+      if (await mobile.locator('#collection-film').count()) {
+        assert((await mobile.locator('#collection-film').getAttribute('data-src')).endsWith('sample-01.mp4'), 'Mobile collection must default to a readable single replay');
+        assert.equal(await mobile.locator('[data-select="collection-film"][aria-pressed="true"]').getAttribute('data-src'), 'assets/launch/sample-01.mp4');
+        assert.equal(await mobile.locator('[data-select="collection-film"].desktop-overview').isVisible(), false, 'Collection overview must be hidden on mobile');
       }
-      const layout = await mobile.evaluate(() => ({ width: innerWidth, scrollWidth: document.documentElement.scrollWidth,
-        overflow: [...document.querySelectorAll('body *')].filter(e => { const r = e.getBoundingClientRect(); return r.width && r.right > innerWidth + 1 && getComputedStyle(e).position !== 'fixed'; }).slice(0, 20).map(e => e.tagName + '.' + e.className) }));
-      report.layouts.push(layout);
-      assert(layout.scrollWidth <= width + 1, 'Horizontal page overflow at ' + width);
+      if (await mobile.locator('#transfer-film').count()) {
+        assert((await mobile.locator('#transfer-film').getAttribute('data-src')).endsWith('transfer-source.mp4'), 'Mobile transfer must default to a readable single source replay');
+        assert.equal(await mobile.locator('#transfer-film').getAttribute('data-layout'), 'single');
+        assert.equal(await mobile.locator('[data-select="transfer-film"][aria-pressed="true"]').getAttribute('data-src'), 'assets/launch/transfer-source.mp4');
+        assert.equal(await mobile.locator('[data-select="transfer-film"].desktop-overview').isVisible(), false, 'Side-by-side transfer must be hidden on mobile');
+      }
+      await capture(mobile, 'mobile-' + width + '-opening');
+      await captureSections(mobile, 'mobile-' + width);
+      await captureEvidenceDetails(mobile, 'mobile-' + width);
+      await mobile.context().close();
     }
     const active = await open({ width: 1440, height: 1000 }, 'no-preference');
-    await active.locator('#hero-video').scrollIntoViewIfNeeded();
-    await active.waitForFunction(() => document.getElementById('hero-video').hasAttribute('src'));
-    await active.locator('#hero-video').evaluate(async v => { await v.play(); });
-    await active.locator('[data-task="fold"]').click();
-    await active.waitForFunction(() => !document.getElementById('hero-video').paused);
-    assert.equal(await active.locator('video').evaluateAll(vs => vs.filter(v => !v.paused).length), 1);
-    await active.locator('#hero-hd').click();
-    await active.waitForFunction(() => !document.getElementById('film-video').paused);
-    assert.equal(await active.locator('video').evaluateAll(vs => vs.filter(v => !v.paused).length), 1);
-    report.checks.push('real Chromium playback: one active video after task switch and HD open');
+    if (await active.locator('#hero-film').count()) {
+      await position(active, '#hero-film');
+      await active.waitForFunction(() => document.getElementById('hero-film').hasAttribute('src'));
+      await active.locator('#hero-film').evaluate(async video => { await video.play(); });
+      await active.locator('[data-select="hero-film"]').last().click();
+      await active.waitForFunction(() => !document.getElementById('hero-film').paused);
+      assert.equal(await active.locator('video').evaluateAll(videos => videos.filter(video => !video.paused).length), 1);
+      await active.locator('[data-expand="hero-film"]').click();
+      await active.waitForFunction(() => !document.getElementById('expanded-film').paused);
+      assert.equal(await active.locator('video').evaluateAll(videos => videos.filter(video => !video.paused).length), 1);
+      report.checks.push('real Chromium playback: one active video after task switch and HD open');
+    }
+    await active.context().close();
+    for (const width of [1440, 390, 320]) {
+      const results = await open({ width, height: width === 1440 ? 1000 : 844 }, 'reduce', 'results.html');
+      const anchors = ['generation-results', 'generalization', 'policy-models', 'outcome-quality', 'task-composition'];
+      for (const id of anchors) assert.equal(await results.locator('#' + id).count(), 1, 'Missing results anchor ' + id);
+      const style = await tableStyle(results);
+      if (width === 1440) {
+        report.tableStyles.results = style;
+        if (mainTable) assert.deepEqual(style, mainTable, 'Homepage and results table styles differ');
+      }
+      await capture(results, 'results-' + width + '-opening');
+      await captureSections(results, 'results-' + width);
+      await capture(results, 'results-' + width + '-table', '.data-table');
+      await results.context().close();
+    }
+    report.checks.push('five results anchors, shared rendered table typography, desktop/mobile results screenshots');
+    const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
+    for (const target of pages) {
+      for (const width of [1440, 390]) {
+        const page = await open({ width, height: 1000 }, 'reduce', target);
+        const css = await page.evaluate(() => [...document.querySelectorAll('link[rel="stylesheet"]')].map(link => ({ href: link.href, loaded: !!link.sheet })));
+        assert(css.every(sheet => sheet.loaded), 'A stylesheet failed to load: ' + target);
+        if (!target.includes('preview')) await layout(page, 'smoke-' + target);
+        report.pages.push({ path: target, viewport: page.viewportSize(), stylesheets: css });
+        await page.context().close();
+      }
+    }
     assert.equal(report.errors.length, 0, 'Browser or HTTP errors');
     report.passed = true;
   } catch (error) {
@@ -77,6 +253,6 @@ const report = { commit: process.env.REVIEW_SHA, screenshots: [], layouts: [], c
     process.exitCode = 1;
   } finally {
     fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify(report, null, 2));
-    await browser.close();
+    if (browser) await browser.close();
   }
 })();

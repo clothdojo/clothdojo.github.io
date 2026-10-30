@@ -1,0 +1,1108 @@
+{
+  "schema": "clothdojo_launch_media_v1",
+  "media": {
+    "flatten": {
+      "file": "flatten.mp4",
+      "poster": "flatten-poster.jpg",
+      "trajectory": "data/rollouts/hil_sft40k_rtc_n5_h10_w5_exp_200assets_4states_20260902/trajectories/rand_24XNTUDUZ1_000001",
+      "asset_id": "rand_24XNTUDUZ1",
+      "robot": "piper",
+      "task": "shirt_flatten",
+      "source_states": {
+        "start": 500,
+        "stop_exclusive": 900,
+        "step": 2,
+        "count": 200
+      },
+      "source_fps": 50,
+      "encoded_fps": 25.0,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6391656583478544,
+            0.5782714349234225,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.37597979902814965,
+            -0.3401596676020132,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.670899733128212,
+            0.7415480753723888,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 36.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "velour_velvet",
+          "color_channel": "Diffuse"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 8.0,
+      "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
+      "bytes": 1342256,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          1280,
+          800
+        ]
+      },
+      "width": 1280,
+      "height": 800,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "fold": {
+      "file": "fold.mp4",
+      "poster": "fold-poster.jpg",
+      "trajectory": "data/collections/shirt_fold/rollouts/fold_clean30k_standard2000_rtc30s_20260906/trajectories/rand_0TKY8IYX0W_000003",
+      "asset_id": "rand_0TKY8IYX0W",
+      "robot": "piper",
+      "task": "shirt_fold",
+      "source_states": {
+        "start": 600,
+        "stop_exclusive": 1000,
+        "step": 2,
+        "count": 200
+      },
+      "source_fps": 50,
+      "encoded_fps": 25.0,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6724826517026559,
+            0.5391638660171921,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.39557803041332695,
+            -0.31715521530423063,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.6255278611007487,
+            0.7802018296484075,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 48.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "velour_velvet",
+          "color_channel": "Diffuse"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 8.0,
+      "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
+      "bytes": 1362829,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          1280,
+          800
+        ]
+      },
+      "width": 1280,
+      "height": 800,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "appearance-velvet": {
+      "file": "appearance-velvet.mp4",
+      "poster": "appearance-velvet-poster.jpg",
+      "trajectory": "data/collections/shirt_fold/rollouts/fold_clean30k_standard2000_rtc30s_20260906/trajectories/rand_0TKY8IYX0W_000003",
+      "asset_id": "rand_0TKY8IYX0W",
+      "robot": "piper",
+      "task": "shirt_fold",
+      "source_states": {
+        "start": 700,
+        "stop_exclusive": 950,
+        "step": 2,
+        "count": 125
+      },
+      "source_fps": 50,
+      "encoded_fps": 25.0,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6724826517026559,
+            0.5391638660171921,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.39557803041332695,
+            -0.31715521530423063,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.6255278611007487,
+            0.7802018296484075,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 48.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "velour_velvet",
+          "color_channel": "Diffuse"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 5.0,
+      "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
+      "bytes": 981512,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          1280,
+          800
+        ]
+      },
+      "width": 1280,
+      "height": 800,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "appearance-pattern": {
+      "file": "appearance-pattern.mp4",
+      "poster": "appearance-pattern-poster.jpg",
+      "trajectory": "data/collections/shirt_fold/rollouts/fold_clean30k_standard2000_rtc30s_20260906/trajectories/rand_0TKY8IYX0W_000003",
+      "asset_id": "rand_0TKY8IYX0W",
+      "robot": "piper",
+      "task": "shirt_fold",
+      "source_states": {
+        "start": 700,
+        "stop_exclusive": 950,
+        "step": 2,
+        "count": 125
+      },
+      "source_fps": 50,
+      "encoded_fps": 25.0,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6724826517026559,
+            0.5391638660171921,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.39557803041332695,
+            -0.31715521530423063,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.6255278611007487,
+            0.7802018296484075,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 48.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "fabric_pattern_07",
+          "color_channel": "col_03"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 5.0,
+      "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
+      "bytes": 1185499,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          1280,
+          800
+        ]
+      },
+      "width": 1280,
+      "height": 800,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "appearance-checkered": {
+      "file": "appearance-checkered.mp4",
+      "poster": "appearance-checkered-poster.jpg",
+      "trajectory": "data/collections/shirt_fold/rollouts/fold_clean30k_standard2000_rtc30s_20260906/trajectories/rand_0TKY8IYX0W_000003",
+      "asset_id": "rand_0TKY8IYX0W",
+      "robot": "piper",
+      "task": "shirt_fold",
+      "source_states": {
+        "start": 700,
+        "stop_exclusive": 950,
+        "step": 2,
+        "count": 125
+      },
+      "source_fps": 50,
+      "encoded_fps": 25.0,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6724826517026559,
+            0.5391638660171921,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.39557803041332695,
+            -0.31715521530423063,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.6255278611007487,
+            0.7802018296484075,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 48.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "curly_teddy_checkered",
+          "color_channel": "Diffuse"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 5.0,
+      "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
+      "bytes": 905784,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          1280,
+          800
+        ]
+      },
+      "width": 1280,
+      "height": 800,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "sample-01": {
+      "file": "sample-01.mp4",
+      "poster": "sample-01-poster.jpg",
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00PJYCPW0L__01",
+      "asset_id": "rand_00PJYCPW0L",
+      "robot": "piper",
+      "task": "shirt_flatten",
+      "source_states": {
+        "start": 500,
+        "stop_exclusive": 700,
+        "step": 4,
+        "count": 50
+      },
+      "source_fps": 50,
+      "encoded_fps": 12.5,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6724826517026559,
+            0.5391638660171921,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.39557803041332695,
+            -0.31715521530423063,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.6255278611007487,
+            0.7802018296484075,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 48.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "velour_velvet",
+          "color_channel": "Diffuse"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 4.0,
+      "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
+      "bytes": 234127,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          640,
+          400
+        ]
+      },
+      "width": 640,
+      "height": 400,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "sample-02": {
+      "file": "sample-02.mp4",
+      "poster": "sample-02-poster.jpg",
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1GIQSRDLN2__03",
+      "asset_id": "rand_1GIQSRDLN2",
+      "robot": "piper",
+      "task": "shirt_flatten",
+      "source_states": {
+        "start": 500,
+        "stop_exclusive": 700,
+        "step": 4,
+        "count": 50
+      },
+      "source_fps": 50,
+      "encoded_fps": 12.5,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6724826517026559,
+            0.5391638660171921,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.39557803041332695,
+            -0.31715521530423063,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.6255278611007487,
+            0.7802018296484075,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 48.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "velour_velvet",
+          "color_channel": "Diffuse"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 4.0,
+      "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
+      "bytes": 211658,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          640,
+          400
+        ]
+      },
+      "width": 640,
+      "height": 400,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "sample-03": {
+      "file": "sample-03.mp4",
+      "poster": "sample-03-poster.jpg",
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0E362JU16I_000006",
+      "asset_id": "rand_0E362JU16I",
+      "robot": "piper",
+      "task": "shirt_fold",
+      "source_states": {
+        "start": 500,
+        "stop_exclusive": 700,
+        "step": 4,
+        "count": 50
+      },
+      "source_fps": 50,
+      "encoded_fps": 12.5,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6724826517026559,
+            0.5391638660171921,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.39557803041332695,
+            -0.31715521530423063,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.6255278611007487,
+            0.7802018296484075,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 48.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "velour_velvet",
+          "color_channel": "Diffuse"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 4.0,
+      "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
+      "bytes": 195744,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          640,
+          400
+        ]
+      },
+      "width": 640,
+      "height": 400,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "sample-04": {
+      "file": "sample-04.mp4",
+      "poster": "sample-04-poster.jpg",
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_041L4IHB7W_000000",
+      "asset_id": "rand_041L4IHB7W",
+      "robot": "piper",
+      "task": "shirt_fold",
+      "source_states": {
+        "start": 600,
+        "stop_exclusive": 800,
+        "step": 4,
+        "count": 50
+      },
+      "source_fps": 50,
+      "encoded_fps": 12.5,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6724826517026559,
+            0.5391638660171921,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.39557803041332695,
+            -0.31715521530423063,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.6255278611007487,
+            0.7802018296484075,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 48.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "velour_velvet",
+          "color_channel": "Diffuse"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 4.0,
+      "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
+      "bytes": 199335,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          640,
+          400
+        ]
+      },
+      "width": 640,
+      "height": 400,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "collection": {
+      "file": "collection.mp4",
+      "poster": "collection-poster.jpg",
+      "layout": "2x2; flatten above, fold below",
+      "sources": [
+        "sample-01",
+        "sample-02",
+        "sample-03",
+        "sample-04"
+      ],
+      "unique_trajectories": 4,
+      "unique_garments": 4,
+      "scope": "Four distinct saved generated trajectories, newly re-rendered with matching camera and studio.",
+      "width": 1280,
+      "height": 800,
+      "duration_seconds": 4.0,
+      "encoded_fps": 12.5,
+      "bytes": 782778,
+      "playback_speed": 1,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "transfer-source": {
+      "file": "transfer-source.mp4",
+      "poster": "transfer-source-poster.jpg",
+      "trajectory": "data/collections/shirt_fold/trajectories/20260825T090358.144233Z",
+      "asset_id": "rand_079HTTNCTJ",
+      "robot": "piper",
+      "task": "shirt_fold",
+      "source_states": {
+        "start": 0,
+        "stop_exclusive": 250,
+        "step": 2,
+        "count": 125
+      },
+      "source_fps": 50,
+      "encoded_fps": 25.0,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6724826517026559,
+            0.5391638660171921,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.39557803041332695,
+            -0.31715521530423063,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.6255278611007487,
+            0.7802018296484075,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 48.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "velour_velvet",
+          "color_channel": "Diffuse"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 5.0,
+      "scope": "New external-camera RTX replay of saved motion. Excerpt only.",
+      "bytes": 368942,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          960,
+          600
+        ]
+      },
+      "width": 960,
+      "height": 600,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "transfer-target": {
+      "file": "transfer-target.mp4",
+      "poster": "transfer-target-poster.jpg",
+      "trajectory": "outputs/paper/figure1_paired_preview/retarget_v3/ur5e_2f85/fold",
+      "asset_id": "rand_079HTTNCTJ",
+      "robot": "ur5e_2f85",
+      "task": "shirt_fold",
+      "source_states": {
+        "start": 0,
+        "stop_exclusive": 250,
+        "step": 2,
+        "count": 125
+      },
+      "source_fps": 50,
+      "encoded_fps": 25.0,
+      "playback_speed": 1,
+      "camera_spec": {
+        "name": "paper_view",
+        "parent_body": null,
+        "parent_from_camera": [
+          [
+            0.5070201265633938,
+            -0.6724826517026559,
+            0.5391638660171921,
+            1.5
+          ],
+          [
+            0.8619342151577695,
+            0.39557803041332695,
+            -0.31715521530423063,
+            -0.5
+          ],
+          [
+            -0.0,
+            0.6255278611007487,
+            0.7802018296484075,
+            2.15
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "focal_length": 48.0,
+        "horizontal_aperture": 36.0,
+        "vertical_aperture": 36.0,
+        "near_clip": 0.01
+      },
+      "appearance": {
+        "episode_index": 0,
+        "source_episode_id": "fold_behavior_shared_studio_20260907",
+        "seed": 3567328251,
+        "cloth": {
+          "material": "velour_velvet",
+          "color_channel": "Diffuse"
+        },
+        "table": {
+          "material": "plywood",
+          "color_channel": "Diffuse"
+        },
+        "ground": {
+          "material": "brown_floor_tiles",
+          "color_channel": "Diffuse"
+        },
+        "lighting": {
+          "condition": "neutral",
+          "position": [
+            1.113854,
+            0.100422,
+            1.898408
+          ],
+          "intensity": 17485.494652,
+          "temperature": 5100.0
+        },
+        "room": "Simple_Room_azure",
+        "background": null,
+        "visual_profile": null
+      },
+      "duration_seconds": 5.0,
+      "scope": "Retargeted kinematic reference replay of source motion; not closed-loop policy evaluation.",
+      "bytes": 329210,
+      "render": {
+        "engine": "Isaac Sim 5 RTX path tracing",
+        "pathtrace_spp": 16,
+        "resolution": [
+          960,
+          600
+        ]
+      },
+      "width": 960,
+      "height": 600,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    },
+    "transfer": {
+      "file": "transfer.mp4",
+      "poster": "transfer-poster.jpg",
+      "layout": "PIPER source left, UR5e retargeted kinematic reference right",
+      "sources": [
+        "transfer-source",
+        "transfer-target"
+      ],
+      "scope": "Matched source motion and time. Kinematic reference replay, not closed-loop policy evaluation.",
+      "width": 1920,
+      "height": 600,
+      "duration_seconds": 5.0,
+      "encoded_fps": 25.0,
+      "bytes": 651676,
+      "playback_speed": 1,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)"
+    }
+  },
+  "renderer": {
+    "name": "Isaac Sim",
+    "version": "5.0.0.0",
+    "mode": "RTX path tracing",
+    "samples_per_pixel": 16,
+    "scope": "All source films were rendered anew with external closeup cameras. Combined films are synchronized CPU compositions of these new films."
+  }
+}
