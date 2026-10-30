@@ -1,5 +1,5 @@
 {
-  "commit": "7dadd7c92aec4d539a2d291e5ac40d7248b9f28e",
+  "commit": "b93ee0ad58329a9c6ff74a6433e36b934621aa5a",
   "screenshots": [
     "desktop-opening",
     "desktop-generation",
@@ -7,12 +7,60 @@
     "desktop-transfer",
     "desktop-results",
     "desktop-use",
-    "desktop-fold"
+    "desktop-fold",
+    "mobile-390-opening",
+    "mobile-390-hero",
+    "mobile-390-appearance",
+    "mobile-390-transfer",
+    "mobile-390-results",
+    "mobile-390-use",
+    "mobile-320-opening",
+    "mobile-320-hero",
+    "mobile-320-appearance",
+    "mobile-320-transfer",
+    "mobile-320-results",
+    "mobile-320-use"
   ],
-  "layouts": [],
-  "checks": [],
+  "layouts": [
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.",
+        "CAPTION.",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TABLE.",
+        "CAPTION.",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD."
+      ]
+    }
+  ],
+  "checks": [
+    "task selection, HD dialog/Escape/source cleanup, four target robots"
+  ],
   "errors": [],
   "browser": "141.0.7390.37",
-  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'assets/fold-hq.mp4'\n- null\n\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:42:12",
+  "failure": "locator.evaluate: NotSupportedError: The element has no supported sources.\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:61:41",
   "passed": false
 }
