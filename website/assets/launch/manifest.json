@@ -30426,6 +30426,188 @@
       "output_resize": "none",
       "scope": "Synchronized replay of independently generated successful trajectories. Every source begins at s0, reaches its verified successful released terminal state, and holds that exact terminal state after completion. This is recorded replay at 4\u00d7 speed, not measured live parallel generation throughput.",
       "validation": "425 frames at 25fps, full H.264 decode and exact per-source sampling indices verified. Repeated terminal states occur only after completion, with at least two seconds of final completed-state display."
+    },
+    "rerender-comparison-mobile": {
+      "file": "rerender-comparison-mobile.mp4",
+      "poster": "rerender-comparison-mobile-poster.jpg",
+      "width": 960,
+      "height": 1328,
+      "duration_seconds": 5.0,
+      "encoded_fps": 25.0,
+      "encoded_frame_count": 125,
+      "unique_decoded_frames": 125,
+      "playback_speed": 1,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "bytes": 1209895,
+      "sha256": "59eb4cfc2f872da9f683cf47f05ca6310e918df941d83f53f9ab68a6f05b906d",
+      "desktop_pair": "rerender-comparison",
+      "desktop_pair_sha256": "4432c36432d20acd47ada114ccb30f348c0c0c2cc4ba3281a2b3972b65de0e32",
+      "rows": [
+        {
+          "label": "Reference appearance",
+          "source": "appearance-velvet",
+          "source_file": "appearance-velvet.mp4",
+          "source_sha256": "8d7f3f4d153b7613f7a950c8e8c77f70954db8c2141174f4591411eeff8f4b29",
+          "trajectory": "data/collections/shirt_fold/rollouts/fold_clean30k_standard2000_rtc30s_20260906/trajectories/rand_0TKY8IYX0W_000003",
+          "asset_id": "rand_0TKY8IYX0W",
+          "robot": "piper",
+          "source_states": {
+            "start": 700,
+            "stop_exclusive": 950,
+            "step": 2,
+            "count": 125
+          },
+          "source_fps": 50,
+          "source_timestamp_rule": "(start + 2 * output_frame) / 50",
+          "output_timestamps": "output_frame / 25",
+          "label_band": [
+            0,
+            0,
+            960,
+            64
+          ],
+          "image_rect": [
+            0,
+            64,
+            960,
+            600
+          ]
+        },
+        {
+          "label": "Re-rendered appearance",
+          "source": "appearance-checkered",
+          "source_file": "appearance-checkered.mp4",
+          "source_sha256": "dc3f19c89c3407c480156a8d3cab90b9fc2b4929662fcb686f740e66b90f1adc",
+          "trajectory": "data/collections/shirt_fold/rollouts/fold_clean30k_standard2000_rtc30s_20260906/trajectories/rand_0TKY8IYX0W_000003",
+          "asset_id": "rand_0TKY8IYX0W",
+          "robot": "piper",
+          "source_states": {
+            "start": 700,
+            "stop_exclusive": 950,
+            "step": 2,
+            "count": 125
+          },
+          "source_fps": 50,
+          "source_timestamp_rule": "(start + 2 * output_frame) / 50",
+          "output_timestamps": "output_frame / 25",
+          "label_band": [
+            0,
+            664,
+            960,
+            64
+          ],
+          "image_rect": [
+            0,
+            728,
+            960,
+            600
+          ]
+        }
+      ],
+      "layout": "Two full 960x600 views stacked vertically; each has a 64px white label band above it. Identity labels are burned only into these bands so native fullscreen preserves each view identity.",
+      "label_annotation": {
+        "burned_in": true,
+        "font": "DejaVu Sans",
+        "font_size_px": 40,
+        "color": "#53686e",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center"
+      },
+      "composition": "CPU composition from the exact same two 25fps source films as the desktop pair. Lanczos scaling and title-band annotation only; no cropping, dropped frames, duplicated frames, interpolation, or source-time changes.",
+      "scope": "Matched 5-second excerpt of the same saved folding trajectory. Only cloth material changes; camera, lighting, room, table, geometry and source-state indices match. Both views are re-rendered RGB observations, not complete-task success evidence.",
+      "validation": "All 125 frames fully decoded; each image region compared with the corresponding same-time desktop view, source index ranges verified, title-band annotation and faststart verified. Desktop files and source films unchanged."
+    },
+    "transfer-mobile": {
+      "file": "transfer-mobile.mp4",
+      "poster": "transfer-mobile-poster.jpg",
+      "width": 960,
+      "height": 1328,
+      "duration_seconds": 5.0,
+      "encoded_fps": 25.0,
+      "encoded_frame_count": 125,
+      "unique_decoded_frames": 125,
+      "playback_speed": 1,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "bytes": 748171,
+      "sha256": "221200bb7c0b86adc9c09be245b24eed853ccc129d9e117564cf761536d71973",
+      "desktop_pair": "transfer",
+      "desktop_pair_sha256": "ae3f9ed5c67c0b83e147ec80b6a53ea4498576a247a52cb065df131a0d3356f4",
+      "rows": [
+        {
+          "label": "PIPER \u00b7 Source motion",
+          "source": "transfer-source",
+          "source_file": "transfer-source.mp4",
+          "source_sha256": "07ca3d434f6e750ea0eb2029c1639d654d799aa050af0cdfcc3ac7caed6787fa",
+          "trajectory": "data/collections/shirt_fold/trajectories/20260825T090358.144233Z",
+          "asset_id": "rand_079HTTNCTJ",
+          "robot": "piper",
+          "source_states": {
+            "start": 0,
+            "stop_exclusive": 250,
+            "step": 2,
+            "count": 125
+          },
+          "source_fps": 50,
+          "source_timestamp_rule": "(start + 2 * output_frame) / 50",
+          "output_timestamps": "output_frame / 25",
+          "label_band": [
+            0,
+            0,
+            960,
+            64
+          ],
+          "image_rect": [
+            0,
+            64,
+            960,
+            600
+          ]
+        },
+        {
+          "label": "UR5e + 2F-85 \u00b7 Retargeted motion",
+          "source": "transfer-target",
+          "source_file": "transfer-target.mp4",
+          "source_sha256": "c7e29e8e354079b43fe58ff66809f4ec66665406b9a767e55191960801ec0c5c",
+          "trajectory": "outputs/paper/figure1_paired_preview/retarget_v3/ur5e_2f85/fold",
+          "asset_id": "rand_079HTTNCTJ",
+          "robot": "ur5e_2f85",
+          "source_states": {
+            "start": 0,
+            "stop_exclusive": 250,
+            "step": 2,
+            "count": 125
+          },
+          "source_fps": 50,
+          "source_timestamp_rule": "(start + 2 * output_frame) / 50",
+          "output_timestamps": "output_frame / 25",
+          "label_band": [
+            0,
+            664,
+            960,
+            64
+          ],
+          "image_rect": [
+            0,
+            728,
+            960,
+            600
+          ]
+        }
+      ],
+      "layout": "Two full 960x600 views stacked vertically; each has a 64px white label band above it. Identity labels are burned only into these bands so native fullscreen preserves each view identity.",
+      "label_annotation": {
+        "burned_in": true,
+        "font": "DejaVu Sans",
+        "font_size_px": 40,
+        "color": "#53686e",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center"
+      },
+      "composition": "CPU composition from the exact same two 25fps source films as the desktop pair. Lanczos scaling and title-band annotation only; no cropping, dropped frames, duplicated frames, interpolation, or source-time changes.",
+      "scope": "Matched source motion and time. Kinematic reference replay, not closed-loop policy evaluation.",
+      "validation": "All 125 frames fully decoded; each image region compared with the corresponding same-time desktop view, source index ranges verified, title-band annotation and faststart verified. Desktop files and source films unchanged."
     }
   },
   "renderer": {

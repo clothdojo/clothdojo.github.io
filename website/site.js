@@ -1,9 +1,15 @@
 (() => {
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const narrow = matchMedia('(max-width: 700px)');
   const films = [...document.querySelectorAll('video[data-src]')];
   const visible = new Map();
   let active;
   const versions = new WeakMap();
+  const variantLoading = new WeakMap();
+  const resizePaused = new WeakSet();
+  const comparisons = films.filter(video => video.dataset.mobileSrc).map(video => ({
+    video, desktopSrc: video.dataset.src, desktopPoster: video.poster
+  }));
   function attach(video) {
     if (!video.hasAttribute('src')) { video.src = video.dataset.src; video.load(); }
   }
@@ -15,7 +21,7 @@
   }
   function ambient() {
     if (active || document.hidden || motion.matches || navigator.connection?.saveData || document.getElementById('media-dialog').open) return;
-    const selected = [...visible].filter(([v]) => v.hasAttribute('data-auto')).sort((a,b) => b[1]-a[1])[0]?.[0];
+    const selected = [...visible].filter(([v]) => v.hasAttribute('data-auto') && !variantLoading.has(v) && !resizePaused.has(v)).sort((a,b) => b[1]-a[1])[0]?.[0];
     if (selected) play(selected);
   }
   function choose(button) {
@@ -37,15 +43,46 @@
     video.load();
   }
   document.querySelectorAll('[data-select]').forEach(button => button.addEventListener('click', () => choose(button)));
+  function comparisonVariants() {
+    for (const { video, desktopSrc, desktopPoster } of comparisons) {
+      const src = narrow.matches ? video.dataset.mobileSrc : desktopSrc;
+      const poster = narrow.matches ? video.dataset.mobilePoster : desktopPoster;
+      if (video.dataset.src === src) continue;
+      const pending = variantLoading.get(video);
+      const wasPlaying = pending?.wasPlaying ?? !video.paused;
+      const position = pending?.position ?? video.currentTime;
+      const attached = video.hasAttribute('src');
+      video.dataset.src = src;
+      video.poster = poster;
+      if (!attached) continue;
+      const version = (versions.get(video) || 0) + 1;
+      versions.set(video, version);
+      variantLoading.set(video, { position, wasPlaying });
+      if (!wasPlaying) resizePaused.add(video);
+      video.pause();
+      video.addEventListener('loadedmetadata', () => {
+        if (versions.get(video) !== version) return;
+        variantLoading.delete(video);
+        if (Number.isFinite(video.duration)) video.currentTime = Math.min(position, Math.max(0, video.duration - .05));
+        if (wasPlaying && visible.has(video) && !motion.matches && !navigator.connection?.saveData &&
+            !document.hidden && !document.getElementById('media-dialog').open && (!active || active === video)) play(video);
+      }, { once: true });
+      video.src = src;
+      video.load();
+    }
+  }
+  comparisonVariants();
+  narrow.addEventListener('change', comparisonVariants);
   document.addEventListener('play', event => {
     if (event.target.tagName !== 'VIDEO' || event.target.paused) return;
     active = event.target;
+    resizePaused.delete(active);
     document.querySelectorAll('video').forEach(v => { if (v !== active) v.pause(); });
   }, true);
   const observer = new IntersectionObserver(entries => {
     for (const { target, isIntersecting, intersectionRatio } of entries) {
       if (isIntersecting && intersectionRatio >= .2) { visible.set(target, intersectionRatio); attach(target); }
-      else { visible.delete(target); target.pause(); if (active === target) active = undefined; }
+      else { visible.delete(target); resizePaused.delete(target); target.pause(); if (active === target) active = undefined; }
     }
     ambient();
   }, { threshold: [0,.2,.5,1] });

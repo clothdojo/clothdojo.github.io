@@ -76,7 +76,7 @@ saveReport();
       if (frameTime !== null && (!(sampleVideo instanceof HTMLVideoElement) || !videos.includes(sampleVideo))) {
         throw new Error('Timed frame capture requires a visible video: ' + frameSelector);
       }
-      await Promise.all(videos.map(async video => {
+      for (const video of videos) {
         // Screenshot preparation requests a real decoded frame, without changing
         // controls, layout, playback policy, or any visible page styling.
         video.preload = 'auto';
@@ -90,12 +90,21 @@ saveReport();
           video.addEventListener('error', fail, { once: true });
         });
         if (!video.getAttribute('src') && video.dataset.src) video.src = video.dataset.src;
-        if (!video.getAttribute('src') && !video.querySelector('source')) return;
+        if (!video.getAttribute('src') && !video.querySelector('source')) continue;
         if (video.readyState < 2) {
           const loaded = wait('loadeddata', () => video.readyState >= 2);
           video.load();
           await loaded;
         }
+        // Present an actual playback frame before seeking a paused screenshot.
+        // Native loading controls are never hidden or restyled for the review.
+        const presented = new Promise((resolve, reject) => {
+          const timer = setTimeout(() => reject(new Error('No presented video frame after explicit playback: ' + video.currentSrc)), 5000);
+          video.requestVideoFrameCallback(() => { clearTimeout(timer); resolve(); });
+        });
+        await video.play();
+        await presented;
+        video.pause();
         const time = video === sampleVideo ? frameTime : Math.min(0.5, Number.isFinite(video.duration) ? video.duration / 2 : 0.5);
         if (video === sampleVideo && (!Number.isFinite(video.duration) || time >= video.duration)) {
           throw new Error('Requested frame ' + time + 's is outside video duration ' + video.duration + 's: ' + video.currentSrc);
@@ -125,7 +134,7 @@ saveReport();
           video.addEventListener('error', fail, { once: true });
         });
         video.pause();
-      }));
+      }
       // Give native controls time to finish their own loading-state transition.
       // Nothing is hidden, restyled, or removed from the page for the capture.
       await new Promise(resolve => setTimeout(resolve, 500));
@@ -216,11 +225,30 @@ saveReport();
     assert.equal(await page.locator('[data-select="appearance-film"]').count(), 0, 'Re-rendering must be visible as a direct comparison');
     const shot = await capture(page, prefix + '-matched-rerender', '#appearance-film', 2.5);
     const state = shot.visibleVideos.find(item => item.id === 'appearance-film');
-    assert(state && state.currentSrc.endsWith('/rerender-comparison.mp4'));
-    assert.equal(state.videoWidth, 1920);
-    assert.equal(state.videoHeight, 600);
+    const mobile = page.viewportSize().width <= 700;
+    assert(state && state.currentSrc.endsWith(mobile ? '/rerender-comparison-mobile.mp4' : '/rerender-comparison.mp4'));
+    assert.equal(state.videoWidth, mobile ? 960 : 1920);
+    assert.equal(state.videoHeight, mobile ? 1328 : 600);
     assert(Math.abs(state.time - 2.5) < 0.05 && state.readyState >= 3 && !state.seeking);
     report.checks.push(prefix + ': direct frame-matched re-rendering pair in one native player');
+  }
+  async function responsivePairs(page) {
+    if (pagePath !== 'index.html') return;
+    const viewport = page.viewportSize();
+    for (const [id, name] of [['appearance-film', 'rerender-comparison'], ['transfer-film', 'transfer']]) {
+      await position(page, '#' + id);
+      await stableMedia(page, 2.5, '#' + id);
+      for (const width of [1440, viewport.width]) {
+        await page.setViewportSize({ width, height: viewport.height });
+        const source = new URL('assets/launch/' + name + (width <= 700 ? '-mobile' : '') + '.mp4', origin).href;
+        await page.waitForFunction(({ id, source }) => {
+          const video = document.getElementById(id);
+          return video.currentSrc === source && video.readyState >= 3 && !video.seeking && Math.abs(video.currentTime - 2.5) < 0.1;
+        }, { id, source });
+        assert(await page.locator('#' + id).evaluate(video => video.paused), 'Resizing a paused comparison must keep it paused');
+      }
+    }
+    report.checks.push('mobile comparison pairs switch to readable vertical films and preserve paused replay time when resized');
   }
   async function formalTitle(page, prefix) {
     if (pagePath !== 'index.html') return;
@@ -476,7 +504,7 @@ saveReport();
       await explanations(mobile, 'mobile-' + width, width === 390);
       await heroReveal(mobile, 'mobile-' + width, width === 390);
       if (await mobile.locator('#transfer-film').count()) {
-        assert((await mobile.locator('#transfer-film').getAttribute('data-src')).endsWith('/transfer.mp4'), 'Both robots must be visible in the synchronized comparison');
+        assert((await mobile.locator('#transfer-film').getAttribute('data-src')).endsWith('/transfer-mobile.mp4'), 'Mobile must use a readable vertical synchronized comparison');
         assert.equal(await mobile.locator('#transfer .media-labels p').count(), 2, 'Both robots need visible source/target labels');
         assert(await mobile.locator('[data-expand="transfer-film"]').isVisible(), 'The mobile pair needs a larger-view entry');
       }
@@ -484,6 +512,7 @@ saveReport();
       await captureSections(mobile, 'mobile-' + width);
       await captureEvidenceDetails(mobile, 'mobile-' + width);
       await rerenderComparison(mobile, 'mobile-' + width);
+      if (width === 390) await responsivePairs(mobile);
       await mobile.context().close();
     }
     const active = await open({ width: 1440, height: 1000 }, 'no-preference');
