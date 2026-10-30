@@ -184,6 +184,15 @@ saveReport();
   async function explanations(page, prefix, exercise) {
     if (pagePath !== 'index.html') return;
     progress('Explanation defaults: ' + prefix);
+    const navigation = await page.locator('.nav-links').evaluate(container => {
+      const bounds = container.getBoundingClientRect();
+      return [...container.querySelectorAll('a')].map(link => {
+        const box = link.getBoundingClientRect();
+        return { text: link.textContent, visible: box.left >= bounds.left - 1 && box.right <= bounds.right + 1 };
+      });
+    });
+    assert(navigation.every(link => link.visible), 'All main navigation entries must fit without clipping: ' + prefix);
+    report.checks.push(prefix + ': all main navigation entries fit without clipping');
     const details = page.locator('.explanation');
     const initial = await details.evaluateAll(elements => elements.map(element => ({
       tag: element.tagName, open: element.open,
