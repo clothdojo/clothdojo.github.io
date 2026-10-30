@@ -11,12 +11,16 @@ fs.mkdirSync(out, { recursive: true });
 const report = {
   ref: process.env.REVIEW_REF,
   commit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
-  pagePath, screenshots: [], layouts: [], pages: [], checks: [], errors: []
+  pagePath, passed: false, status: 'running', screenshots: [], layouts: [], pages: [], checks: [], errors: []
 };
+const saveReport = () => fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify(report, null, 2));
+saveReport();
 
 (async () => {
   let browser;
+  const progress = message => console.log(new Date().toISOString() + ' ' + message);
   async function open(viewport, reducedMotion = 'reduce', target = pagePath) {
+    progress('Open ' + target + ' ' + viewport.width + 'x' + viewport.height + ' motion=' + reducedMotion);
     const context = await browser.newContext({ viewport, deviceScaleFactor: 1, reducedMotion });
     const page = await context.newPage();
     page.on('pageerror', error => report.errors.push({ page: target, error: error.message }));
@@ -39,12 +43,31 @@ const report = {
   async function stableMedia(page) {
     await page.evaluate(async () => {
       const visible = element => {
+        if (typeof element.checkVisibility === 'function' && !element.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) return false;
+        for (let ancestor = element; ancestor; ancestor = ancestor.parentElement) {
+          const style = getComputedStyle(ancestor);
+          if (ancestor.hidden || style.display === 'none' || style.visibility === 'hidden' || style.visibility === 'collapse' || Number(style.opacity) === 0) return false;
+          if (ancestor.tagName === 'DETAILS' && !ancestor.open) {
+            const summary = [...ancestor.children].find(child => child.tagName === 'SUMMARY');
+            if (!summary?.contains(element)) return false;
+          }
+        }
         const box = element.getBoundingClientRect();
         return box.width > 0 && box.height > 0 && box.top < innerHeight && box.bottom > 0 && box.left < innerWidth && box.right > 0;
       };
       await document.fonts.ready;
       await Promise.all([...document.images].filter(visible).map(async image => {
-        await image.decode();
+        await new Promise((resolve, reject) => {
+          const source = image.currentSrc || image.src || '<missing image source>';
+          const timer = setTimeout(() => reject(new Error('Visible image decode timed out after 15s: ' + source)), 15000);
+          image.decode().then(() => {
+            clearTimeout(timer);
+            resolve();
+          }, error => {
+            clearTimeout(timer);
+            reject(new Error('Visible image decode failed: ' + source + ': ' + error.message));
+          });
+        });
         if (!image.naturalWidth) throw new Error('Visible image failed to decode: ' + image.src);
       }));
       document.querySelectorAll('video').forEach(video => video.pause());
@@ -76,7 +99,10 @@ const report = {
         }
         video.pause();
       }));
-      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      await new Promise((resolve, reject) => {
+        const timer = setTimeout(() => reject(new Error('Two animation frames did not settle within 5s; visibility=' + document.visibilityState)), 5000);
+        requestAnimationFrame(() => requestAnimationFrame(() => { clearTimeout(timer); resolve(); }));
+      });
     });
   }
   async function layout(page, label) {
@@ -91,12 +117,16 @@ const report = {
     assert(result.scrollWidth <= result.width + 1, 'Horizontal page overflow: ' + label + ' at ' + result.width);
   }
   async function capture(page, name, selector) {
+    progress('Capture start: ' + name + ' selector=' + (selector || 'page top'));
+    await page.bringToFront();
     await position(page, selector);
     await stableMedia(page);
     await layout(page, name);
     const file = name + '.jpg';
     await page.screenshot({ path: path.join(out, file), type: 'jpeg', quality: 75, fullPage: false, animations: 'disabled' });
     report.screenshots.push({ file, page: page.url(), viewport: page.viewportSize(), selector: selector || 'page top', scrollY: await page.evaluate(() => scrollY) });
+    saveReport();
+    progress('Capture done: ' + name);
   }
   async function captureSections(page, prefix) {
     const sections = await page.locator('main section[id]').evaluateAll(elements => elements.map(element => element.id));
@@ -115,10 +145,12 @@ const report = {
     }
   }
   async function interactions(page) {
+    progress('Interactions start: media selections');
     const options = page.locator('[data-select]');
     for (let index = 0; index < await options.count(); index++) {
       const button = options.nth(index);
       const option = await button.evaluate(element => ({ ...element.dataset }));
+      progress('Select ' + option.select + ': ' + option.src);
       await page.locator('#' + option.select).evaluate(video => { video.preload = 'auto'; });
       await button.click();
       await page.waitForFunction(({ select, src }) => {
@@ -134,6 +166,7 @@ const report = {
     if (await options.count()) report.checks.push('all media selections update source/poster/caption/pressed state and remain paused under reduced motion');
     const appearance = page.locator('#appearance-film[data-sync-time]');
     if (await appearance.count()) {
+      progress('Interactions: material timestamp preservation');
       await appearance.evaluate(video => { video.currentTime = 1.25; });
       await page.waitForFunction(() => !document.getElementById('appearance-film').seeking);
       const button = page.locator('[data-select="appearance-film"]').first();
@@ -150,6 +183,7 @@ const report = {
     for (let index = 0; index < await expand.count(); index++) {
       const button = expand.nth(index);
       const id = await button.getAttribute('data-expand');
+      progress('Interactions: expand and close ' + id);
       const source = await page.locator('#' + id).evaluate(video => video.currentSrc || video.dataset.src);
       await button.click();
       assert(await page.locator('#media-dialog').evaluate(dialog => dialog.open));
@@ -162,12 +196,14 @@ const report = {
     }
     if (await expand.count()) report.checks.push('all expanded replays, close button/Escape and media-source cleanup');
     if (await page.locator('#copy-commands').count()) {
+      progress('Interactions: clipboard copy');
       await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
       await page.locator('#copy-commands').click();
       await page.waitForFunction(async () => await navigator.clipboard.readText() === document.getElementById('commands').textContent);
       assert.equal(await page.evaluate(() => navigator.clipboard.readText()), await page.locator('#commands').textContent());
       report.checks.push('CPU quickstart clipboard copy');
     }
+    progress('Interactions done');
   }
 
   async function tableStyle(page) {
@@ -189,6 +225,11 @@ const report = {
     report.tableStyles = { homepage: mainTable };
     for (const width of [390, 320]) {
       const mobile = await open({ width, height: 844 });
+      if (await mobile.locator('#hero-film').count()) {
+        assert((await mobile.locator('#hero-film').getAttribute('data-src')).endsWith('flatten-wide.mp4'), 'Mobile hero must default to one complete workstation');
+        assert.equal(await mobile.locator('[data-select="hero-film"][aria-pressed="true"]').getAttribute('data-src'), 'assets/launch/flatten-wide.mp4');
+        assert.equal(await mobile.locator('[data-select="hero-film"].desktop-overview').isVisible(), false, 'Batch hero overview must be hidden on mobile');
+      }
       if (await mobile.locator('#collection-film').count()) {
         assert((await mobile.locator('#collection-film').getAttribute('data-src')).endsWith('sample-01.mp4'), 'Mobile collection must default to a readable single replay');
         assert.equal(await mobile.locator('[data-select="collection-film"][aria-pressed="true"]').getAttribute('data-src'), 'assets/launch/sample-01.mp4');
@@ -206,6 +247,7 @@ const report = {
       await mobile.context().close();
     }
     const active = await open({ width: 1440, height: 1000 }, 'no-preference');
+    progress('Playback checks start');
     if (await active.locator('#hero-film').count()) {
       await position(active, '#hero-film');
       await active.waitForFunction(() => document.getElementById('hero-film').hasAttribute('src'));
@@ -219,6 +261,7 @@ const report = {
       report.checks.push('real Chromium playback: one active video after task switch and HD open');
     }
     await active.context().close();
+    progress('Playback checks done');
     for (const width of [1440, 390, 320]) {
       const results = await open({ width, height: width === 1440 ? 1000 : 844 }, 'reduce', 'results.html');
       const anchors = ['generation-results', 'generalization', 'policy-models', 'outcome-quality', 'task-composition'];
@@ -237,6 +280,7 @@ const report = {
     const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
     for (const target of pages) {
       for (const width of [1440, 390]) {
+        progress('Smoke page: ' + target + ' width=' + width);
         const page = await open({ width, height: 1000 }, 'reduce', target);
         const css = await page.evaluate(() => [...document.querySelectorAll('link[rel="stylesheet"]')].map(link => ({ href: link.href, loaded: !!link.sheet })));
         assert(css.every(sheet => sheet.loaded), 'A stylesheet failed to load: ' + target);
@@ -247,12 +291,16 @@ const report = {
     }
     assert.equal(report.errors.length, 0, 'Browser or HTTP errors');
     report.passed = true;
+    progress('Visual review passed');
   } catch (error) {
+    progress('Visual review failed: ' + error.message);
     report.failure = error.stack;
     report.passed = false;
     process.exitCode = 1;
   } finally {
-    fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify(report, null, 2));
+    report.status = 'completed';
+    saveReport();
+    progress('Report written: ' + path.join(out, 'report.json'));
     if (browser) await browser.close();
   }
 })();
