@@ -313,6 +313,9 @@ sup {
   color:var(--text);
   line-height:1.8
 }
+.generation-steps+p {
+  margin-top:16px
+}
 .section-links {
   display:flex;
   justify-content:space-between;
@@ -545,6 +548,11 @@ sup {
   width:100%;
   background:white;
   margin-top:20px
+}
+.method-figure-link {
+  display:inline-block;
+  margin-top:10px;
+  font-size:12px
 }
 .quickstart {
   display:grid;
