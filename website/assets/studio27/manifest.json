@@ -1,0 +1,6243 @@
+{
+  "schema": "clothdojo_inpage_scene_study_v27",
+  "scope": "Selected real-trajectory stills and a 2.4-second moving handoff excerpt in the full homepage layout. Not the finished 32-second hero.",
+  "trajectory_count": 384,
+  "unique_asset_count": 202,
+  "task_banks": {
+    "left": "192 flattening trajectories",
+    "right": "192 folding trajectories"
+  },
+  "source_identities": [
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11F1D3WU17__04",
+      "asset_id": "rand_11F1D3WU17",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1501419,
+        0.3059713,
+        0.1101546
+      ],
+      "terminal_state": 2254
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ZFJUADVCA__05",
+      "asset_id": "rand_0ZFJUADVCA",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1560472,
+        0.3642762,
+        0.0457055
+      ],
+      "terminal_state": 840
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XKZV2GIHN__02",
+      "asset_id": "rand_0XKZV2GIHN",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.0430902,
+        0.1772818,
+        0.4632868
+      ],
+      "terminal_state": 952
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0WYOH8KDV2__05",
+      "asset_id": "rand_0WYOH8KDV2",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.1848893,
+        0.2550072,
+        0.4165563
+      ],
+      "terminal_state": 2918
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0V15754TTS__05",
+      "asset_id": "rand_0V15754TTS",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3643381,
+        0.2146111,
+        0.3158345
+      ],
+      "terminal_state": 922
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0TMR6NDPHP__04",
+      "asset_id": "rand_0TMR6NDPHP",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2508567,
+        0.0629217,
+        0.0834043
+      ],
+      "terminal_state": 886
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ME2Z034NN__07",
+      "asset_id": "rand_0ME2Z034NN",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.1817552,
+        0.1096105,
+        0.3860961
+      ],
+      "terminal_state": 1114
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0AYSPSNK8T__04",
+      "asset_id": "rand_0AYSPSNK8T",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.5075861,
+        0.1856384,
+        0.03494
+      ],
+      "terminal_state": 673
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_079HTTNCTJ__00",
+      "asset_id": "rand_079HTTNCTJ",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0322444,
+        0.2166869,
+        0.190739
+      ],
+      "terminal_state": 723
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_02AR55C8T1__07",
+      "asset_id": "rand_02AR55C8T1",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.2697094,
+        0.1899079,
+        0.0362038
+      ],
+      "terminal_state": 1492
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_004NVCOKV7__03",
+      "asset_id": "rand_004NVCOKV7",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0772872,
+        0.2327778,
+        0.4735214
+      ],
+      "terminal_state": 965
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_21GKNQCZ4B__08",
+      "asset_id": "rand_21GKNQCZ4B",
+      "task": "flatten",
+      "translation": [
+        -0.0,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.031183,
+        0.2755552,
+        0.3700498
+      ],
+      "terminal_state": 673
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_21GKNQCZ4B_000008",
+      "asset_id": "rand_21GKNQCZ4B",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.031183,
+        0.2755552,
+        0.3700498
+      ],
+      "terminal_state": 874
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_079HTTNCTJ_000003",
+      "asset_id": "rand_079HTTNCTJ",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0322444,
+        0.2166869,
+        0.190739
+      ],
+      "terminal_state": 609
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0AYSPSNK8T_000009",
+      "asset_id": "rand_0AYSPSNK8T",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.5075861,
+        0.1856384,
+        0.03494
+      ],
+      "terminal_state": 1164
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ME2Z034NN_000004",
+      "asset_id": "rand_0ME2Z034NN",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1817552,
+        0.1096105,
+        0.3860961
+      ],
+      "terminal_state": 980
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0TMR6NDPHP_000006",
+      "asset_id": "rand_0TMR6NDPHP",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.2508567,
+        0.0629217,
+        0.0834043
+      ],
+      "terminal_state": 1965
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0V15754TTS_000001",
+      "asset_id": "rand_0V15754TTS",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.3643381,
+        0.2146111,
+        0.3158345
+      ],
+      "terminal_state": 920
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0WYOH8KDV2_000009_r000",
+      "asset_id": "rand_0WYOH8KDV2",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1848893,
+        0.2550072,
+        0.4165563
+      ],
+      "terminal_state": 2060
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XKZV2GIHN_000001_r003",
+      "asset_id": "rand_0XKZV2GIHN",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0430902,
+        0.1772818,
+        0.4632868
+      ],
+      "terminal_state": 1718
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ZFJUADVCA_000001",
+      "asset_id": "rand_0ZFJUADVCA",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.1560472,
+        0.3642762,
+        0.0457055
+      ],
+      "terminal_state": 885
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11F1D3WU17_000000_r000",
+      "asset_id": "rand_11F1D3WU17",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.1501419,
+        0.3059713,
+        0.1101546
+      ],
+      "terminal_state": 922
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CSX4HLLP_000009",
+      "asset_id": "rand_12CSX4HLLP",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0308945,
+        0.1851804,
+        0.0697224
+      ],
+      "terminal_state": 1286
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13S5ONA77Z_000009_r000",
+      "asset_id": "rand_13S5ONA77Z",
+      "task": "fold",
+      "translation": [
+        -0.0,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.5173993,
+        0.1043606,
+        0.1732232
+      ],
+      "terminal_state": 1267
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1HHW0GGKMF__00",
+      "asset_id": "rand_1HHW0GGKMF",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0706978,
+        0.2544138,
+        0.2163418
+      ],
+      "terminal_state": 647
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1GGZFP6PYZ__03",
+      "asset_id": "rand_1GGZFP6PYZ",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0945148,
+        0.0821588,
+        0.2902847
+      ],
+      "terminal_state": 1462
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1FL5UDP4YQ__07",
+      "asset_id": "rand_1FL5UDP4YQ",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.239293,
+        0.0799905,
+        0.142987
+      ],
+      "terminal_state": 954
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CW9M7X6EY__09",
+      "asset_id": "rand_1CW9M7X6EY",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.0358765,
+        0.2414224,
+        0.2827723
+      ],
+      "terminal_state": 1623
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BSZCNY1LV__01",
+      "asset_id": "rand_1BSZCNY1LV",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3289448,
+        0.0628448,
+        0.0511354
+      ],
+      "terminal_state": 655
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BB06QD3IC__00",
+      "asset_id": "rand_1BB06QD3IC",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3055959,
+        0.1811894,
+        0.0844822
+      ],
+      "terminal_state": 1454
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AEZQ9GNEL__00",
+      "asset_id": "rand_1AEZQ9GNEL",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.1749097,
+        0.2048062,
+        0.0283894
+      ],
+      "terminal_state": 2211
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_196ZJ6KG0I__02",
+      "asset_id": "rand_196ZJ6KG0I",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.2282836,
+        0.1363712,
+        0.2653073
+      ],
+      "terminal_state": 1015
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_17UY5SOHZ2__02",
+      "asset_id": "rand_17UY5SOHZ2",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.507732,
+        0.2764822,
+        0.2376748
+      ],
+      "terminal_state": 668
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_15MZM8JINR__02",
+      "asset_id": "rand_15MZM8JINR",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.1367169,
+        0.4215744,
+        0.2408735
+      ],
+      "terminal_state": 656
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13Q8PAC94Q__05",
+      "asset_id": "rand_13Q8PAC94Q",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.129419,
+        0.0915443,
+        0.4421404
+      ],
+      "terminal_state": 1286
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12CSX4HLLP__06",
+      "asset_id": "rand_12CSX4HLLP",
+      "task": "flatten",
+      "translation": [
+        -3.3,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0308945,
+        0.1851804,
+        0.0697224
+      ],
+      "terminal_state": 900
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_160VBHVRPV_000003",
+      "asset_id": "rand_160VBHVRPV",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1726546,
+        0.1499032,
+        0.3712009
+      ],
+      "terminal_state": 1096
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_17UY5SOHZ2_000000",
+      "asset_id": "rand_17UY5SOHZ2",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.507732,
+        0.2764822,
+        0.2376748
+      ],
+      "terminal_state": 1005
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19ODP894JR_000003_r000",
+      "asset_id": "rand_19ODP894JR",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.3493854,
+        0.3035095,
+        0.0263413
+      ],
+      "terminal_state": 1106
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ALD8ZQDU4_000002",
+      "asset_id": "rand_1ALD8ZQDU4",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2183905,
+        0.3058351,
+        0.4879728
+      ],
+      "terminal_state": 925
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BB06QD3IC_000005_r001",
+      "asset_id": "rand_1BB06QD3IC",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.3055959,
+        0.1811894,
+        0.0844822
+      ],
+      "terminal_state": 2718
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BU52I9LRX_000000_r000",
+      "asset_id": "rand_1BU52I9LRX",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.4252804,
+        0.1378574,
+        0.1587471
+      ],
+      "terminal_state": 1646
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1DGYFK46D0_000004_r000",
+      "asset_id": "rand_1DGYFK46D0",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3010998,
+        0.1731443,
+        0.2681352
+      ],
+      "terminal_state": 843
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1FL5UDP4YQ_000005",
+      "asset_id": "rand_1FL5UDP4YQ",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.239293,
+        0.0799905,
+        0.142987
+      ],
+      "terminal_state": 1042
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1GIQSRDLN2_000007",
+      "asset_id": "rand_1GIQSRDLN2",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.3947764,
+        0.1020159,
+        0.1607828
+      ],
+      "terminal_state": 1310
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1HHW0GGKMF_000005",
+      "asset_id": "rand_1HHW0GGKMF",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.0706978,
+        0.2544138,
+        0.2163418
+      ],
+      "terminal_state": 1072
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1IOKVF7VZ2_000009_r001",
+      "asset_id": "rand_1IOKVF7VZ2",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0629431,
+        0.1031124,
+        0.2766724
+      ],
+      "terminal_state": 1758
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1JY83CS1BA_000005_r000",
+      "asset_id": "rand_1JY83CS1BA",
+      "task": "fold",
+      "translation": [
+        -3.3,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2063705,
+        0.3641678,
+        0.5187183
+      ],
+      "terminal_state": 2071
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1X5Z0QHKP8__09",
+      "asset_id": "rand_1X5Z0QHKP8",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.4847741,
+        0.2152211,
+        0.3421744
+      ],
+      "terminal_state": 1397
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1VKRDNWFKE__06",
+      "asset_id": "rand_1VKRDNWFKE",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1628515,
+        0.1182549,
+        0.0378234
+      ],
+      "terminal_state": 632
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1U0UUO457V__00",
+      "asset_id": "rand_1U0UUO457V",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.3167788,
+        0.0474204,
+        0.1212458
+      ],
+      "terminal_state": 883
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1T6IM4B3AE__09",
+      "asset_id": "rand_1T6IM4B3AE",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.203092,
+        0.0943405,
+        0.0554821
+      ],
+      "terminal_state": 851
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1RJ8D5A7EC__09",
+      "asset_id": "rand_1RJ8D5A7EC",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1350848,
+        0.3460498,
+        0.3384652
+      ],
+      "terminal_state": 1186
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1PSXI9D50T__01",
+      "asset_id": "rand_1PSXI9D50T",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2744276,
+        0.2641204,
+        0.1271964
+      ],
+      "terminal_state": 2647
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ONEJHCOVS__03",
+      "asset_id": "rand_1ONEJHCOVS",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.0268307,
+        0.2416271,
+        0.4173454
+      ],
+      "terminal_state": 913
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1NKG6I69HH__09",
+      "asset_id": "rand_1NKG6I69HH",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.2707297,
+        0.2277825,
+        0.3968433
+      ],
+      "terminal_state": 662
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1M8PJ2BE57__02",
+      "asset_id": "rand_1M8PJ2BE57",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1521133,
+        0.217897,
+        0.4840904
+      ],
+      "terminal_state": 1326
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1LGZ20AJA1__07",
+      "asset_id": "rand_1LGZ20AJA1",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.3873122,
+        0.1195904,
+        0.3130466
+      ],
+      "terminal_state": 1017
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1JB634CLNN__08",
+      "asset_id": "rand_1JB634CLNN",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2499625,
+        0.1498993,
+        0.0326532
+      ],
+      "terminal_state": 737
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1IOKVF7VZ2__05",
+      "asset_id": "rand_1IOKVF7VZ2",
+      "task": "flatten",
+      "translation": [
+        -6.6,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0629431,
+        0.1031124,
+        0.2766724
+      ],
+      "terminal_state": 2326
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1LGZ20AJA1_000004",
+      "asset_id": "rand_1LGZ20AJA1",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.3873122,
+        0.1195904,
+        0.3130466
+      ],
+      "terminal_state": 1176
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1M8PJ2BE57_000001_r000",
+      "asset_id": "rand_1M8PJ2BE57",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1521133,
+        0.217897,
+        0.4840904
+      ],
+      "terminal_state": 632
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1NMOEFSF0W_000008_r001",
+      "asset_id": "rand_1NMOEFSF0W",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.1379892,
+        0.2278559,
+        0.0851816
+      ],
+      "terminal_state": 2929
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ONEJHCOVS_000001_r001",
+      "asset_id": "rand_1ONEJHCOVS",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0268307,
+        0.2416271,
+        0.4173454
+      ],
+      "terminal_state": 934
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1PVUZVFU2U_000005_r000",
+      "asset_id": "rand_1PVUZVFU2U",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.2822993,
+        0.1290975,
+        0.1080347
+      ],
+      "terminal_state": 889
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1RUXCWNZMC_000008",
+      "asset_id": "rand_1RUXCWNZMC",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.0585925,
+        0.1939183,
+        0.0338687
+      ],
+      "terminal_state": 1961
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1T6IM4B3AE_000008",
+      "asset_id": "rand_1T6IM4B3AE",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.203092,
+        0.0943405,
+        0.0554821
+      ],
+      "terminal_state": 760
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1U12KRBTWC_000001",
+      "asset_id": "rand_1U12KRBTWC",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1279608,
+        0.0693565,
+        0.3590223
+      ],
+      "terminal_state": 1122
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1VKRDNWFKE_000005",
+      "asset_id": "rand_1VKRDNWFKE",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.1628515,
+        0.1182549,
+        0.0378234
+      ],
+      "terminal_state": 656
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1X5Z0QHKP8_000001",
+      "asset_id": "rand_1X5Z0QHKP8",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.4847741,
+        0.2152211,
+        0.3421744
+      ],
+      "terminal_state": 2635
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1YQ82NEHKT_000007",
+      "asset_id": "rand_1YQ82NEHKT",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1274829,
+        0.3013994,
+        0.2569716
+      ],
+      "terminal_state": 1309
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_20K0H65GUU_000000_r000",
+      "asset_id": "rand_20K0H65GUU",
+      "task": "fold",
+      "translation": [
+        -6.6,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0334295,
+        0.2151443,
+        0.1133993
+      ],
+      "terminal_state": 1952
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2CBVS72PJD__01",
+      "asset_id": "rand_2CBVS72PJD",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.4392104,
+        0.1037394,
+        0.2276322
+      ],
+      "terminal_state": 845
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2ABUSKI9UP__00",
+      "asset_id": "rand_2ABUSKI9UP",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.2886142,
+        0.1505988,
+        0.3154055
+      ],
+      "terminal_state": 1472
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_299AM1LG5I__06",
+      "asset_id": "rand_299AM1LG5I",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.221302,
+        0.3137393,
+        0.1375892
+      ],
+      "terminal_state": 805
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_28R28NJ9TT__01",
+      "asset_id": "rand_28R28NJ9TT",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.3193794,
+        0.2172557,
+        0.068385
+      ],
+      "terminal_state": 1305
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_27QVZO5VN5__07",
+      "asset_id": "rand_27QVZO5VN5",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1420783,
+        0.3941605,
+        0.4545635
+      ],
+      "terminal_state": 1987
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_26CDT8GJDW__03",
+      "asset_id": "rand_26CDT8GJDW",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0711203,
+        0.1879938,
+        0.3584291
+      ],
+      "terminal_state": 1074
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_25KFCLZ8JD__08",
+      "asset_id": "rand_25KFCLZ8JD",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.1314276,
+        0.1289452,
+        0.3503063
+      ],
+      "terminal_state": 733
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_249RUXCM75__00",
+      "asset_id": "rand_249RUXCM75",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.4104399,
+        0.2591819,
+        0.1551933
+      ],
+      "terminal_state": 717
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_22W6XQ2A2U__04",
+      "asset_id": "rand_22W6XQ2A2U",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1656554,
+        0.0945975,
+        0.1845192
+      ],
+      "terminal_state": 1140
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_21TFVULETA__05",
+      "asset_id": "rand_21TFVULETA",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.3177983,
+        0.1834782,
+        0.3733761
+      ],
+      "terminal_state": 2134
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_20K0H65GUU__09",
+      "asset_id": "rand_20K0H65GUU",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0334295,
+        0.2151443,
+        0.1133993
+      ],
+      "terminal_state": 1087
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1YHCYZE5OK__06",
+      "asset_id": "rand_1YHCYZE5OK",
+      "task": "flatten",
+      "translation": [
+        -9.899999999999999,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1156654,
+        0.3036818,
+        0.1789819
+      ],
+      "terminal_state": 1792
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_21TFVULETA_000004_r000",
+      "asset_id": "rand_21TFVULETA",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.3177983,
+        0.1834782,
+        0.3733761
+      ],
+      "terminal_state": 1945
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_232X14D5PP_000004",
+      "asset_id": "rand_232X14D5PP",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.4623238,
+        0.1364088,
+        0.0737388
+      ],
+      "terminal_state": 1989
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_249RUXCM75_000007_r000",
+      "asset_id": "rand_249RUXCM75",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.4104399,
+        0.2591819,
+        0.1551933
+      ],
+      "terminal_state": 1113
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_25KFCLZ8JD_000007",
+      "asset_id": "rand_25KFCLZ8JD",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1314276,
+        0.1289452,
+        0.3503063
+      ],
+      "terminal_state": 1106
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_26KG2BKFRL_000003_r003",
+      "asset_id": "rand_26KG2BKFRL",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.161655,
+        0.0710235,
+        0.1776554
+      ],
+      "terminal_state": 1566
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_27QVZO5VN5_000003",
+      "asset_id": "rand_27QVZO5VN5",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.1420783,
+        0.3941605,
+        0.4545635
+      ],
+      "terminal_state": 1480
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_28R28NJ9TT_000000",
+      "asset_id": "rand_28R28NJ9TT",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3193794,
+        0.2172557,
+        0.068385
+      ],
+      "terminal_state": 1032
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_299AM1LG5I_000008",
+      "asset_id": "rand_299AM1LG5I",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.221302,
+        0.3137393,
+        0.1375892
+      ],
+      "terminal_state": 1041
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2ABUSKI9UP_000005",
+      "asset_id": "rand_2ABUSKI9UP",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.2886142,
+        0.1505988,
+        0.3154055
+      ],
+      "terminal_state": 764
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2CBVS72PJD_000002_r000",
+      "asset_id": "rand_2CBVS72PJD",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.4392104,
+        0.1037394,
+        0.2276322
+      ],
+      "terminal_state": 1335
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2D47UXG6QS_000007_r003",
+      "asset_id": "rand_2D47UXG6QS",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.087154,
+        0.1948608,
+        0.4828417
+      ],
+      "terminal_state": 2030
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2EBUYCB46V_000005_r005",
+      "asset_id": "rand_2EBUYCB46V",
+      "task": "fold",
+      "translation": [
+        -9.899999999999999,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1534175,
+        0.4170647,
+        0.1191229
+      ],
+      "terminal_state": 2042
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_025I3DAPE6__05",
+      "asset_id": "rand_025I3DAPE6",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.028883,
+        0.4579546,
+        0.392508
+      ],
+      "terminal_state": 734
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_01R50NZJVR__07",
+      "asset_id": "rand_01R50NZJVR",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.5162082,
+        0.1752823,
+        0.2034454
+      ],
+      "terminal_state": 1707
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_01Q78IXCLW__02",
+      "asset_id": "rand_01Q78IXCLW",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.1634989,
+        0.0527292,
+        0.305094
+      ],
+      "terminal_state": 666
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00ZT6MGWR3__01",
+      "asset_id": "rand_00ZT6MGWR3",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.0368603,
+        0.1451656,
+        0.0297976
+      ],
+      "terminal_state": 951
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00PJYCPW0L__04",
+      "asset_id": "rand_00PJYCPW0L",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3735405,
+        0.3750479,
+        0.0259565
+      ],
+      "terminal_state": 1083
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00GEDVLKJJ__02",
+      "asset_id": "rand_00GEDVLKJJ",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3363928,
+        0.0301678,
+        0.0264373
+      ],
+      "terminal_state": 823
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_ZZCWITH5HY__01",
+      "asset_id": "rand_ZZCWITH5HY",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.1885066,
+        0.2739173,
+        0.1424031
+      ],
+      "terminal_state": 921
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2JKK2F2K5Q__05",
+      "asset_id": "rand_2JKK2F2K5Q",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.0710227,
+        0.3294769,
+        0.1485668
+      ],
+      "terminal_state": 838
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2I95TCYIFO__05",
+      "asset_id": "rand_2I95TCYIFO",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0359717,
+        0.1330728,
+        0.1654944
+      ],
+      "terminal_state": 2530
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2FHE0HFZK7__01",
+      "asset_id": "rand_2FHE0HFZK7",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.4325207,
+        0.2861298,
+        0.4436145
+      ],
+      "terminal_state": 1117
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2EBUYCB46V__03",
+      "asset_id": "rand_2EBUYCB46V",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1534175,
+        0.4170647,
+        0.1191229
+      ],
+      "terminal_state": 1490
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2D47UXG6QS__03",
+      "asset_id": "rand_2D47UXG6QS",
+      "task": "flatten",
+      "translation": [
+        -13.2,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.087154,
+        0.1948608,
+        0.4828417
+      ],
+      "terminal_state": 663
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2FHE0HFZK7_000006",
+      "asset_id": "rand_2FHE0HFZK7",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.4325207,
+        0.2861298,
+        0.4436145
+      ],
+      "terminal_state": 801
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2I95TCYIFO_000003",
+      "asset_id": "rand_2I95TCYIFO",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0359717,
+        0.1330728,
+        0.1654944
+      ],
+      "terminal_state": 2278
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2JKK2F2K5Q_000008",
+      "asset_id": "rand_2JKK2F2K5Q",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.0710227,
+        0.3294769,
+        0.1485668
+      ],
+      "terminal_state": 1017
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_ZZCWITH5HY_000009",
+      "asset_id": "rand_ZZCWITH5HY",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1885066,
+        0.2739173,
+        0.1424031
+      ],
+      "terminal_state": 1306
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_004NVCOKV7_000003",
+      "asset_id": "rand_004NVCOKV7",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.0772872,
+        0.2327778,
+        0.4735214
+      ],
+      "terminal_state": 1308
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_00GEDVLKJJ_000004_r001",
+      "asset_id": "rand_00GEDVLKJJ",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.3363928,
+        0.0301678,
+        0.0264373
+      ],
+      "terminal_state": 2454
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_00PJYCPW0L_000006",
+      "asset_id": "rand_00PJYCPW0L",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3735405,
+        0.3750479,
+        0.0259565
+      ],
+      "terminal_state": 1267
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_00ZT6MGWR3_000003",
+      "asset_id": "rand_00ZT6MGWR3",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0368603,
+        0.1451656,
+        0.0297976
+      ],
+      "terminal_state": 1030
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_01Q78IXCLW_000004",
+      "asset_id": "rand_01Q78IXCLW",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.1634989,
+        0.0527292,
+        0.305094
+      ],
+      "terminal_state": 958
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_01R50NZJVR_000002",
+      "asset_id": "rand_01R50NZJVR",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.5162082,
+        0.1752823,
+        0.2034454
+      ],
+      "terminal_state": 978
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_025I3DAPE6_000004",
+      "asset_id": "rand_025I3DAPE6",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.028883,
+        0.4579546,
+        0.392508
+      ],
+      "terminal_state": 922
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_02AR55C8T1_000003_r000",
+      "asset_id": "rand_02AR55C8T1",
+      "task": "fold",
+      "translation": [
+        -13.2,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2697094,
+        0.1899079,
+        0.0362038
+      ],
+      "terminal_state": 1540
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_09G2VZ0SDX__06",
+      "asset_id": "rand_09G2VZ0SDX",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1811721,
+        0.3203122,
+        0.2087305
+      ],
+      "terminal_state": 1433
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_08KYYZ0POQ__02",
+      "asset_id": "rand_08KYYZ0POQ",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.2918676,
+        0.0323707,
+        0.1400495
+      ],
+      "terminal_state": 733
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_089NYY0BW7__00",
+      "asset_id": "rand_089NYY0BW7",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.4619082,
+        0.0688614,
+        0.1612442
+      ],
+      "terminal_state": 1192
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_07SZ5QQ0QP__02",
+      "asset_id": "rand_07SZ5QQ0QP",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.4666082,
+        0.3073162,
+        0.1672708
+      ],
+      "terminal_state": 1028
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_07FDM3U88E__06",
+      "asset_id": "rand_07FDM3U88E",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0658667,
+        0.1213668,
+        0.502312
+      ],
+      "terminal_state": 1025
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_061TOSXC5W__03",
+      "asset_id": "rand_061TOSXC5W",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1717414,
+        0.0900842,
+        0.027529
+      ],
+      "terminal_state": 1319
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_058QFFSWAQ__02",
+      "asset_id": "rand_058QFFSWAQ",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.4786502,
+        0.0942195,
+        0.0270564
+      ],
+      "terminal_state": 1595
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_04OU2IZ2GV__00",
+      "asset_id": "rand_04OU2IZ2GV",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.3287449,
+        0.2841415,
+        0.5049172
+      ],
+      "terminal_state": 605
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_04NKS685SH__01",
+      "asset_id": "rand_04NKS685SH",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2292707,
+        0.1106389,
+        0.1692674
+      ],
+      "terminal_state": 1821
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_041L4IHB7W__01",
+      "asset_id": "rand_041L4IHB7W",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.0351837,
+        0.314735,
+        0.0839974
+      ],
+      "terminal_state": 1935
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_038ROZC0KR__05",
+      "asset_id": "rand_038ROZC0KR",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.3500464,
+        0.1299266,
+        0.4929088
+      ],
+      "terminal_state": 687
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_02WJ207M8N__08",
+      "asset_id": "rand_02WJ207M8N",
+      "task": "flatten",
+      "translation": [
+        -16.5,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0279589,
+        0.1210089,
+        0.2196162
+      ],
+      "terminal_state": 1632
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_02WJ207M8N_000007",
+      "asset_id": "rand_02WJ207M8N",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0279589,
+        0.1210089,
+        0.2196162
+      ],
+      "terminal_state": 974
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_038ROZC0KR_000008",
+      "asset_id": "rand_038ROZC0KR",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.3500464,
+        0.1299266,
+        0.4929088
+      ],
+      "terminal_state": 885
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_041L4IHB7W_000008",
+      "asset_id": "rand_041L4IHB7W",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.0351837,
+        0.314735,
+        0.0839974
+      ],
+      "terminal_state": 1203
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_04NKS685SH_000009",
+      "asset_id": "rand_04NKS685SH",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2292707,
+        0.1106389,
+        0.1692674
+      ],
+      "terminal_state": 789
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_04OU2IZ2GV_000002_r001",
+      "asset_id": "rand_04OU2IZ2GV",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.3287449,
+        0.2841415,
+        0.5049172
+      ],
+      "terminal_state": 1612
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_058QFFSWAQ_000006",
+      "asset_id": "rand_058QFFSWAQ",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.4786502,
+        0.0942195,
+        0.0270564
+      ],
+      "terminal_state": 1379
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_061TOSXC5W_000001",
+      "asset_id": "rand_061TOSXC5W",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1717414,
+        0.0900842,
+        0.027529
+      ],
+      "terminal_state": 1201
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_07FDM3U88E_000002_r005",
+      "asset_id": "rand_07FDM3U88E",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0658667,
+        0.1213668,
+        0.502312
+      ],
+      "terminal_state": 1105
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_07SZ5QQ0QP_000000_r000",
+      "asset_id": "rand_07SZ5QQ0QP",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.4666082,
+        0.3073162,
+        0.1672708
+      ],
+      "terminal_state": 934
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_089NYY0BW7_000001_r001",
+      "asset_id": "rand_089NYY0BW7",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.4619082,
+        0.0688614,
+        0.1612442
+      ],
+      "terminal_state": 715
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_08KYYZ0POQ_000009",
+      "asset_id": "rand_08KYYZ0POQ",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.2918676,
+        0.0323707,
+        0.1400495
+      ],
+      "terminal_state": 1094
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_09G2VZ0SDX_000009_r000",
+      "asset_id": "rand_09G2VZ0SDX",
+      "task": "fold",
+      "translation": [
+        -16.5,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1811721,
+        0.3203122,
+        0.2087305
+      ],
+      "terminal_state": 1214
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0T071CSSTD__06",
+      "asset_id": "rand_0T071CSSTD",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3037457,
+        0.0882708,
+        0.0361686
+      ],
+      "terminal_state": 1282
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0RJMGOA8IW__09",
+      "asset_id": "rand_0RJMGOA8IW",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0498104,
+        0.2971233,
+        0.2973507
+      ],
+      "terminal_state": 1297
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0QEFS4I9VY__03",
+      "asset_id": "rand_0QEFS4I9VY",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.0954902,
+        0.1543698,
+        0.3135385
+      ],
+      "terminal_state": 667
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0OXVTOY8BQ__01",
+      "asset_id": "rand_0OXVTOY8BQ",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.2375429,
+        0.2913644,
+        0.0332588
+      ],
+      "terminal_state": 617
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0MBY846ZGF__04",
+      "asset_id": "rand_0MBY846ZGF",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1190018,
+        0.0856934,
+        0.1999078
+      ],
+      "terminal_state": 1136
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0JL0G525XH__00",
+      "asset_id": "rand_0JL0G525XH",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3242965,
+        0.1577626,
+        0.1246384
+      ],
+      "terminal_state": 1730
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0IX189WGFR__01",
+      "asset_id": "rand_0IX189WGFR",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.0938464,
+        0.2080396,
+        0.0584629
+      ],
+      "terminal_state": 2344
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ILSNHSPQ7__03",
+      "asset_id": "rand_0ILSNHSPQ7",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.321727,
+        0.0728719,
+        0.294057
+      ],
+      "terminal_state": 942
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0I3JWVNKOR__00",
+      "asset_id": "rand_0I3JWVNKOR",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.5119128,
+        0.1857044,
+        0.4557968
+      ],
+      "terminal_state": 645
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0FGHC5MNWV__08",
+      "asset_id": "rand_0FGHC5MNWV",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.1181539,
+        0.3490888,
+        0.4801529
+      ],
+      "terminal_state": 672
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0E362JU16I__07",
+      "asset_id": "rand_0E362JU16I",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2273595,
+        0.178439,
+        0.3358887
+      ],
+      "terminal_state": 1203
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0A1ZQT230R__06",
+      "asset_id": "rand_0A1ZQT230R",
+      "task": "flatten",
+      "translation": [
+        -19.799999999999997,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0820583,
+        0.4651832,
+        0.1510002
+      ],
+      "terminal_state": 773
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0A1ZQT230R_000002_r000",
+      "asset_id": "rand_0A1ZQT230R",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0820583,
+        0.4651832,
+        0.1510002
+      ],
+      "terminal_state": 1020
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0E362JU16I_000003_r000",
+      "asset_id": "rand_0E362JU16I",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2273595,
+        0.178439,
+        0.3358887
+      ],
+      "terminal_state": 939
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0FGHC5MNWV_000000",
+      "asset_id": "rand_0FGHC5MNWV",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.1181539,
+        0.3490888,
+        0.4801529
+      ],
+      "terminal_state": 1266
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0I3JWVNKOR_000004",
+      "asset_id": "rand_0I3JWVNKOR",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.5119128,
+        0.1857044,
+        0.4557968
+      ],
+      "terminal_state": 1214
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ILSNHSPQ7_000000_r004",
+      "asset_id": "rand_0ILSNHSPQ7",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.321727,
+        0.0728719,
+        0.294057
+      ],
+      "terminal_state": 1533
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0IX189WGFR_000009",
+      "asset_id": "rand_0IX189WGFR",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.0938464,
+        0.2080396,
+        0.0584629
+      ],
+      "terminal_state": 1551
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0JL0G525XH_000005_r000",
+      "asset_id": "rand_0JL0G525XH",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3242965,
+        0.1577626,
+        0.1246384
+      ],
+      "terminal_state": 1206
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0MBY846ZGF_000001",
+      "asset_id": "rand_0MBY846ZGF",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1190018,
+        0.0856934,
+        0.1999078
+      ],
+      "terminal_state": 1094
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0OXVTOY8BQ_000002_r000",
+      "asset_id": "rand_0OXVTOY8BQ",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.2375429,
+        0.2913644,
+        0.0332588
+      ],
+      "terminal_state": 1205
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0QEFS4I9VY_000003",
+      "asset_id": "rand_0QEFS4I9VY",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.0954902,
+        0.1543698,
+        0.3135385
+      ],
+      "terminal_state": 954
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0RJMGOA8IW_000009",
+      "asset_id": "rand_0RJMGOA8IW",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0498104,
+        0.2971233,
+        0.2973507
+      ],
+      "terminal_state": 977
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0T071CSSTD_000006",
+      "asset_id": "rand_0T071CSSTD",
+      "task": "fold",
+      "translation": [
+        -19.799999999999997,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3037457,
+        0.0882708,
+        0.0361686
+      ],
+      "terminal_state": 894
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VBR02U024__04",
+      "asset_id": "rand_0VBR02U024",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.5020584,
+        0.1044585,
+        0.3012693
+      ],
+      "terminal_state": 829
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0V99E6MZAM__04",
+      "asset_id": "rand_0V99E6MZAM",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.120257,
+        0.2515346,
+        0.1521948
+      ],
+      "terminal_state": 1143
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0V7RGHZ8JM__09",
+      "asset_id": "rand_0V7RGHZ8JM",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.1684128,
+        0.1807464,
+        0.5195792
+      ],
+      "terminal_state": 1801
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UYXAJYKTZ__01",
+      "asset_id": "rand_0UYXAJYKTZ",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.0429902,
+        0.3795028,
+        0.1963097
+      ],
+      "terminal_state": 2495
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UVZH267ZC__00",
+      "asset_id": "rand_0UVZH267ZC",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0817098,
+        0.0751887,
+        0.3770465
+      ],
+      "terminal_state": 918
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0URVRF4FRO__05",
+      "asset_id": "rand_0URVRF4FRO",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1725402,
+        0.1484104,
+        0.0275572
+      ],
+      "terminal_state": 2330
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UOA081DQE__08",
+      "asset_id": "rand_0UOA081DQE",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.241308,
+        0.4032439,
+        0.1554612
+      ],
+      "terminal_state": 703
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UKD4QKBTS__07",
+      "asset_id": "rand_0UKD4QKBTS",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.3510138,
+        0.2302416,
+        0.119254
+      ],
+      "terminal_state": 794
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0U237S7AQZ__05",
+      "asset_id": "rand_0U237S7AQZ",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.4685503,
+        0.272702,
+        0.028104
+      ],
+      "terminal_state": 868
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0TKY8IYX0W__04",
+      "asset_id": "rand_0TKY8IYX0W",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.5059761,
+        0.268644,
+        0.3524612
+      ],
+      "terminal_state": 2409
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0T6WA8FT8T__01",
+      "asset_id": "rand_0T6WA8FT8T",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.3707887,
+        0.1349417,
+        0.2385535
+      ],
+      "terminal_state": 840
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0T6A7W6QY9__04",
+      "asset_id": "rand_0T6A7W6QY9",
+      "task": "flatten",
+      "translation": [
+        -23.099999999999998,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0275525,
+        0.1391115,
+        0.1080413
+      ],
+      "terminal_state": 1320
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0T6A7W6QY9_000001",
+      "asset_id": "rand_0T6A7W6QY9",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0275525,
+        0.1391115,
+        0.1080413
+      ],
+      "terminal_state": 1029
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0T6WA8FT8T_000000_r000",
+      "asset_id": "rand_0T6WA8FT8T",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.3707887,
+        0.1349417,
+        0.2385535
+      ],
+      "terminal_state": 1284
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0TKY8IYX0W_000008",
+      "asset_id": "rand_0TKY8IYX0W",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.5059761,
+        0.268644,
+        0.3524612
+      ],
+      "terminal_state": 1006
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0U237S7AQZ_000005",
+      "asset_id": "rand_0U237S7AQZ",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.4685503,
+        0.272702,
+        0.028104
+      ],
+      "terminal_state": 1636
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UKD4QKBTS_000004",
+      "asset_id": "rand_0UKD4QKBTS",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.3510138,
+        0.2302416,
+        0.119254
+      ],
+      "terminal_state": 901
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UOA081DQE_000002",
+      "asset_id": "rand_0UOA081DQE",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.241308,
+        0.4032439,
+        0.1554612
+      ],
+      "terminal_state": 719
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0URVRF4FRO_000002_r009",
+      "asset_id": "rand_0URVRF4FRO",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1725402,
+        0.1484104,
+        0.0275572
+      ],
+      "terminal_state": 783
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UVZH267ZC_000005",
+      "asset_id": "rand_0UVZH267ZC",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0817098,
+        0.0751887,
+        0.3770465
+      ],
+      "terminal_state": 995
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UYXAJYKTZ_000008",
+      "asset_id": "rand_0UYXAJYKTZ",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.0429902,
+        0.3795028,
+        0.1963097
+      ],
+      "terminal_state": 618
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0V7RGHZ8JM_000002_r003",
+      "asset_id": "rand_0V7RGHZ8JM",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.1684128,
+        0.1807464,
+        0.5195792
+      ],
+      "terminal_state": 1078
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0V99E6MZAM_000001_r000",
+      "asset_id": "rand_0V99E6MZAM",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.120257,
+        0.2515346,
+        0.1521948
+      ],
+      "terminal_state": 858
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VBR02U024_000005_r000",
+      "asset_id": "rand_0VBR02U024",
+      "task": "fold",
+      "translation": [
+        -23.099999999999998,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.5020584,
+        0.1044585,
+        0.3012693
+      ],
+      "terminal_state": 865
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XQT1WCCJN__08",
+      "asset_id": "rand_0XQT1WCCJN",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0280599,
+        0.3031622,
+        0.4776781
+      ],
+      "terminal_state": 672
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XEAOKSSSD__01",
+      "asset_id": "rand_0XEAOKSSSD",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1680257,
+        0.3951943,
+        0.3391232
+      ],
+      "terminal_state": 1350
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XDIJIZSS1__00",
+      "asset_id": "rand_0XDIJIZSS1",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.0264278,
+        0.2444205,
+        0.0399137
+      ],
+      "terminal_state": 1161
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XC05H210D__08",
+      "asset_id": "rand_0XC05H210D",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.0865989,
+        0.1625146,
+        0.0885546
+      ],
+      "terminal_state": 2384
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X7SATI5R6__07",
+      "asset_id": "rand_0X7SATI5R6",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.4214262,
+        0.0563184,
+        0.036106
+      ],
+      "terminal_state": 1111
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X6SZC14TF__09",
+      "asset_id": "rand_0X6SZC14TF",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0253385,
+        0.1306333,
+        0.3607102
+      ],
+      "terminal_state": 1171
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X68PQMHZM__04",
+      "asset_id": "rand_0X68PQMHZM",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.514666,
+        0.1198087,
+        0.1059349
+      ],
+      "terminal_state": 721
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X2J5FX39U__01",
+      "asset_id": "rand_0X2J5FX39U",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.3640703,
+        0.1367579,
+        0.0252219
+      ],
+      "terminal_state": 1764
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VVJGBK29H__09",
+      "asset_id": "rand_0VVJGBK29H",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0253828,
+        0.2066208,
+        0.3198215
+      ],
+      "terminal_state": 1715
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VOF58UCB8__03",
+      "asset_id": "rand_0VOF58UCB8",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.350889,
+        0.0877737,
+        0.1070888
+      ],
+      "terminal_state": 1436
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VI0BDUCV4__00",
+      "asset_id": "rand_0VI0BDUCV4",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2159578,
+        0.0673148,
+        0.2151686
+      ],
+      "terminal_state": 1864
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VGB1NG35B__05",
+      "asset_id": "rand_0VGB1NG35B",
+      "task": "flatten",
+      "translation": [
+        -26.4,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.3155875,
+        0.2015428,
+        0.4896784
+      ],
+      "terminal_state": 1283
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VGB1NG35B_000002",
+      "asset_id": "rand_0VGB1NG35B",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.3155875,
+        0.2015428,
+        0.4896784
+      ],
+      "terminal_state": 1416
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VI0BDUCV4_000008",
+      "asset_id": "rand_0VI0BDUCV4",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2159578,
+        0.0673148,
+        0.2151686
+      ],
+      "terminal_state": 967
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VOF58UCB8_000001_r000",
+      "asset_id": "rand_0VOF58UCB8",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.350889,
+        0.0877737,
+        0.1070888
+      ],
+      "terminal_state": 1381
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VVJGBK29H_000004_r001",
+      "asset_id": "rand_0VVJGBK29H",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0253828,
+        0.2066208,
+        0.3198215
+      ],
+      "terminal_state": 1033
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X2J5FX39U_000002",
+      "asset_id": "rand_0X2J5FX39U",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.3640703,
+        0.1367579,
+        0.0252219
+      ],
+      "terminal_state": 696
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X68PQMHZM_000000",
+      "asset_id": "rand_0X68PQMHZM",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.514666,
+        0.1198087,
+        0.1059349
+      ],
+      "terminal_state": 1055
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X6SZC14TF_000001_r002",
+      "asset_id": "rand_0X6SZC14TF",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0253385,
+        0.1306333,
+        0.3607102
+      ],
+      "terminal_state": 931
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X7SATI5R6_000008",
+      "asset_id": "rand_0X7SATI5R6",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.4214262,
+        0.0563184,
+        0.036106
+      ],
+      "terminal_state": 1315
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XC05H210D_000002_r009",
+      "asset_id": "rand_0XC05H210D",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.0865989,
+        0.1625146,
+        0.0885546
+      ],
+      "terminal_state": 2485
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XDIJIZSS1_000000",
+      "asset_id": "rand_0XDIJIZSS1",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.0264278,
+        0.2444205,
+        0.0399137
+      ],
+      "terminal_state": 986
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XEAOKSSSD_000002_r003",
+      "asset_id": "rand_0XEAOKSSSD",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1680257,
+        0.3951943,
+        0.3391232
+      ],
+      "terminal_state": 751
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XQT1WCCJN_000003_r000",
+      "asset_id": "rand_0XQT1WCCJN",
+      "task": "fold",
+      "translation": [
+        -26.4,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0280599,
+        0.3031622,
+        0.4776781
+      ],
+      "terminal_state": 1265
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11CBEZVPAK__04",
+      "asset_id": "rand_11CBEZVPAK",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1738824,
+        0.0778907,
+        0.1280368
+      ],
+      "terminal_state": 648
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_117L64AH1R__01",
+      "asset_id": "rand_117L64AH1R",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0947225,
+        0.1099786,
+        0.3407368
+      ],
+      "terminal_state": 890
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_111P95CVJW__07",
+      "asset_id": "rand_111P95CVJW",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.0316081,
+        0.161368,
+        0.2031034
+      ],
+      "terminal_state": 1022
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_10WJYTHZPM__00",
+      "asset_id": "rand_10WJYTHZPM",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.1116923,
+        0.1194456,
+        0.0305467
+      ],
+      "terminal_state": 2474
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_10LIHEWSXB__04",
+      "asset_id": "rand_10LIHEWSXB",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.49643,
+        0.2250162,
+        0.1468471
+      ],
+      "terminal_state": 1408
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_10J8E452FG__09",
+      "asset_id": "rand_10J8E452FG",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3193979,
+        0.0766903,
+        0.1818258
+      ],
+      "terminal_state": 2599
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ZN4M0TNAD__09",
+      "asset_id": "rand_0ZN4M0TNAD",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.2572361,
+        0.1352888,
+        0.0643979
+      ],
+      "terminal_state": 668
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Z5CXF4ZQP__09",
+      "asset_id": "rand_0Z5CXF4ZQP",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.0294039,
+        0.2559607,
+        0.1238656
+      ],
+      "terminal_state": 1101
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Z4SKWV6AF__07",
+      "asset_id": "rand_0Z4SKWV6AF",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2755887,
+        0.1230465,
+        0.3441934
+      ],
+      "terminal_state": 1104
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Z3TA1FA1C__07",
+      "asset_id": "rand_0Z3TA1FA1C",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.3135062,
+        0.3012665,
+        0.0977081
+      ],
+      "terminal_state": 965
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Y83K1TKNT__01",
+      "asset_id": "rand_0Y83K1TKNT",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1340262,
+        0.2480252,
+        0.0251091
+      ],
+      "terminal_state": 982
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XY7VMAT8O__06",
+      "asset_id": "rand_0XY7VMAT8O",
+      "task": "flatten",
+      "translation": [
+        -29.7,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.3897579,
+        0.0421993,
+        0.0835468
+      ],
+      "terminal_state": 1361
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XY7VMAT8O_000001_r000",
+      "asset_id": "rand_0XY7VMAT8O",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.3897579,
+        0.0421993,
+        0.0835468
+      ],
+      "terminal_state": 742
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Y83K1TKNT_000001_r000",
+      "asset_id": "rand_0Y83K1TKNT",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1340262,
+        0.2480252,
+        0.0251091
+      ],
+      "terminal_state": 1316
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Z3TA1FA1C_000000_r001",
+      "asset_id": "rand_0Z3TA1FA1C",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.3135062,
+        0.3012665,
+        0.0977081
+      ],
+      "terminal_state": 980
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Z4SKWV6AF_000005",
+      "asset_id": "rand_0Z4SKWV6AF",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2755887,
+        0.1230465,
+        0.3441934
+      ],
+      "terminal_state": 1308
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Z5CXF4ZQP_000003",
+      "asset_id": "rand_0Z5CXF4ZQP",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.0294039,
+        0.2559607,
+        0.1238656
+      ],
+      "terminal_state": 698
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ZN4M0TNAD_000004",
+      "asset_id": "rand_0ZN4M0TNAD",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.2572361,
+        0.1352888,
+        0.0643979
+      ],
+      "terminal_state": 1536
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_10J8E452FG_000002",
+      "asset_id": "rand_10J8E452FG",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3193979,
+        0.0766903,
+        0.1818258
+      ],
+      "terminal_state": 1332
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_10LIHEWSXB_000006_r007",
+      "asset_id": "rand_10LIHEWSXB",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.49643,
+        0.2250162,
+        0.1468471
+      ],
+      "terminal_state": 2052
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_10WJYTHZPM_000009",
+      "asset_id": "rand_10WJYTHZPM",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.1116923,
+        0.1194456,
+        0.0305467
+      ],
+      "terminal_state": 1081
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_111P95CVJW_000009_r002",
+      "asset_id": "rand_111P95CVJW",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.0316081,
+        0.161368,
+        0.2031034
+      ],
+      "terminal_state": 1601
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_117L64AH1R_000001",
+      "asset_id": "rand_117L64AH1R",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0947225,
+        0.1099786,
+        0.3407368
+      ],
+      "terminal_state": 1357
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11CBEZVPAK_000001_r000",
+      "asset_id": "rand_11CBEZVPAK",
+      "task": "fold",
+      "translation": [
+        -29.7,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1738824,
+        0.0778907,
+        0.1280368
+      ],
+      "terminal_state": 1867
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13GMJ3LRZZ__02",
+      "asset_id": "rand_13GMJ3LRZZ",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3363907,
+        0.3571801,
+        0.1933878
+      ],
+      "terminal_state": 1042
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13CJX80V5K__05",
+      "asset_id": "rand_13CJX80V5K",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.4323318,
+        0.1768614,
+        0.0929727
+      ],
+      "terminal_state": 1166
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13AAK4PO2O__09",
+      "asset_id": "rand_13AAK4PO2O",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.1366368,
+        0.1305898,
+        0.5150878
+      ],
+      "terminal_state": 1745
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12KXNKIIP0__04",
+      "asset_id": "rand_12KXNKIIP0",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.3719999,
+        0.2300969,
+        0.0317989
+      ],
+      "terminal_state": 775
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12FL0PZP12__08",
+      "asset_id": "rand_12FL0PZP12",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2351003,
+        0.0667357,
+        0.0269522
+      ],
+      "terminal_state": 1071
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12CR1HRKKE__00",
+      "asset_id": "rand_12CR1HRKKE",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2223711,
+        0.2439302,
+        0.0859177
+      ],
+      "terminal_state": 804
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12CMB9NKG1__02",
+      "asset_id": "rand_12CMB9NKG1",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.0384271,
+        0.3746541,
+        0.3661978
+      ],
+      "terminal_state": 1174
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_128O8MCE0P__08",
+      "asset_id": "rand_128O8MCE0P",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.2242569,
+        0.0694686,
+        0.3543427
+      ],
+      "terminal_state": 1505
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11TS48IS8W__01",
+      "asset_id": "rand_11TS48IS8W",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.3865444,
+        0.1555761,
+        0.380728
+      ],
+      "terminal_state": 2145
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11SEFBSFKK__00",
+      "asset_id": "rand_11SEFBSFKK",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.169907,
+        0.1900534,
+        0.0818941
+      ],
+      "terminal_state": 1226
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11L6QS0SAZ__01",
+      "asset_id": "rand_11L6QS0SAZ",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1655195,
+        0.1114973,
+        0.2531595
+      ],
+      "terminal_state": 1982
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11J8S4NHQ9__03",
+      "asset_id": "rand_11J8S4NHQ9",
+      "task": "flatten",
+      "translation": [
+        -33.0,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0936744,
+        0.2430525,
+        0.3290256
+      ],
+      "terminal_state": 2484
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11J8S4NHQ9_000002",
+      "asset_id": "rand_11J8S4NHQ9",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0936744,
+        0.2430525,
+        0.3290256
+      ],
+      "terminal_state": 1367
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11L6QS0SAZ_000007",
+      "asset_id": "rand_11L6QS0SAZ",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1655195,
+        0.1114973,
+        0.2531595
+      ],
+      "terminal_state": 1271
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11SEFBSFKK_000008",
+      "asset_id": "rand_11SEFBSFKK",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.169907,
+        0.1900534,
+        0.0818941
+      ],
+      "terminal_state": 1630
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_128O8MCE0P_000003",
+      "asset_id": "rand_128O8MCE0P",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2242569,
+        0.0694686,
+        0.3543427
+      ],
+      "terminal_state": 837
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CMB9NKG1_000001",
+      "asset_id": "rand_12CMB9NKG1",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.0384271,
+        0.3746541,
+        0.3661978
+      ],
+      "terminal_state": 742
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CR1HRKKE_000007_r000",
+      "asset_id": "rand_12CR1HRKKE",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.2223711,
+        0.2439302,
+        0.0859177
+      ],
+      "terminal_state": 738
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12FL0PZP12_000009_r009",
+      "asset_id": "rand_12FL0PZP12",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2351003,
+        0.0667357,
+        0.0269522
+      ],
+      "terminal_state": 1052
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12KXNKIIP0_000004_r001",
+      "asset_id": "rand_12KXNKIIP0",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3719999,
+        0.2300969,
+        0.0317989
+      ],
+      "terminal_state": 1881
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13AAK4PO2O_000001",
+      "asset_id": "rand_13AAK4PO2O",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.1366368,
+        0.1305898,
+        0.5150878
+      ],
+      "terminal_state": 729
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13CJX80V5K_000006",
+      "asset_id": "rand_13CJX80V5K",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.4323318,
+        0.1768614,
+        0.0929727
+      ],
+      "terminal_state": 1109
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13GMJ3LRZZ_000009_r000",
+      "asset_id": "rand_13GMJ3LRZZ",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.3363907,
+        0.3571801,
+        0.1933878
+      ],
+      "terminal_state": 1498
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13O1F9D78S_000002",
+      "asset_id": "rand_13O1F9D78S",
+      "task": "fold",
+      "translation": [
+        -33.0,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0270217,
+        0.3163075,
+        0.1997874
+      ],
+      "terminal_state": 1078
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16V49KL0R9__01",
+      "asset_id": "rand_16V49KL0R9",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1563575,
+        0.0828814,
+        0.2994348
+      ],
+      "terminal_state": 1863
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16R640YUSC__02",
+      "asset_id": "rand_16R640YUSC",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.4644522,
+        0.1665683,
+        0.2952092
+      ],
+      "terminal_state": 1541
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16AC0MKLJL__06",
+      "asset_id": "rand_16AC0MKLJL",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.3757168,
+        0.1154345,
+        0.0796089
+      ],
+      "terminal_state": 701
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_160VBHVRPV__06",
+      "asset_id": "rand_160VBHVRPV",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.1726546,
+        0.1499032,
+        0.3712009
+      ],
+      "terminal_state": 633
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_15E6R5W9TL__09",
+      "asset_id": "rand_15E6R5W9TL",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2504094,
+        0.0992341,
+        0.0864699
+      ],
+      "terminal_state": 1156
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_15BA9G04GP__01",
+      "asset_id": "rand_15BA9G04GP",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0969156,
+        0.1627308,
+        0.0268464
+      ],
+      "terminal_state": 936
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_155MRLXVMW__01",
+      "asset_id": "rand_155MRLXVMW",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.384991,
+        0.0959479,
+        0.3713321
+      ],
+      "terminal_state": 648
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1545L6O32O__00",
+      "asset_id": "rand_1545L6O32O",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.0855826,
+        0.11801,
+        0.2215099
+      ],
+      "terminal_state": 954
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_14L6VNJRF9__05",
+      "asset_id": "rand_14L6VNJRF9",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2317388,
+        0.0407249,
+        0.2409164
+      ],
+      "terminal_state": 1041
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13ZRL8YUW9__01",
+      "asset_id": "rand_13ZRL8YUW9",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.0331884,
+        0.4206736,
+        0.5164648
+      ],
+      "terminal_state": 1422
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13S5ONA77Z__05",
+      "asset_id": "rand_13S5ONA77Z",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.5173993,
+        0.1043606,
+        0.1732232
+      ],
+      "terminal_state": 1149
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13O1F9D78S__08",
+      "asset_id": "rand_13O1F9D78S",
+      "task": "flatten",
+      "translation": [
+        -36.3,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0270217,
+        0.3163075,
+        0.1997874
+      ],
+      "terminal_state": 902
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13Q8PAC94Q_000003_r000",
+      "asset_id": "rand_13Q8PAC94Q",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.129419,
+        0.0915443,
+        0.4421404
+      ],
+      "terminal_state": 1739
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13ZRL8YUW9_000008",
+      "asset_id": "rand_13ZRL8YUW9",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0331884,
+        0.4206736,
+        0.5164648
+      ],
+      "terminal_state": 1175
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_14L6VNJRF9_000006",
+      "asset_id": "rand_14L6VNJRF9",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.2317388,
+        0.0407249,
+        0.2409164
+      ],
+      "terminal_state": 1257
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1545L6O32O_000006",
+      "asset_id": "rand_1545L6O32O",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0855826,
+        0.11801,
+        0.2215099
+      ],
+      "terminal_state": 1757
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_155MRLXVMW_000006",
+      "asset_id": "rand_155MRLXVMW",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.384991,
+        0.0959479,
+        0.3713321
+      ],
+      "terminal_state": 1090
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_15BA9G04GP_000002_r000",
+      "asset_id": "rand_15BA9G04GP",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.0969156,
+        0.1627308,
+        0.0268464
+      ],
+      "terminal_state": 1131
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_15E6R5W9TL_000007",
+      "asset_id": "rand_15E6R5W9TL",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2504094,
+        0.0992341,
+        0.0864699
+      ],
+      "terminal_state": 877
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_15MZM8JINR_000006",
+      "asset_id": "rand_15MZM8JINR",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1367169,
+        0.4215744,
+        0.2408735
+      ],
+      "terminal_state": 1415
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16AC0MKLJL_000008",
+      "asset_id": "rand_16AC0MKLJL",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.3757168,
+        0.1154345,
+        0.0796089
+      ],
+      "terminal_state": 1935
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16R640YUSC_000000_r000",
+      "asset_id": "rand_16R640YUSC",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.4644522,
+        0.1665683,
+        0.2952092
+      ],
+      "terminal_state": 2560
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16V49KL0R9_000002",
+      "asset_id": "rand_16V49KL0R9",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1563575,
+        0.0828814,
+        0.2994348
+      ],
+      "terminal_state": 1014
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16W8ARYM6G_000005_r000",
+      "asset_id": "rand_16W8ARYM6G",
+      "task": "fold",
+      "translation": [
+        -36.3,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2234103,
+        0.4176275,
+        0.0628559
+      ],
+      "terminal_state": 1573
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19VLXSSFLD__00",
+      "asset_id": "rand_19VLXSSFLD",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0673833,
+        0.3905153,
+        0.1134807
+      ],
+      "terminal_state": 1442
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19U2D4IL4V__00",
+      "asset_id": "rand_19U2D4IL4V",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.2932051,
+        0.1348732,
+        0.1784657
+      ],
+      "terminal_state": 858
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19ODP894JR__00",
+      "asset_id": "rand_19ODP894JR",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.3493854,
+        0.3035095,
+        0.0263413
+      ],
+      "terminal_state": 1009
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18TWRPGQIS__06",
+      "asset_id": "rand_18TWRPGQIS",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.2313476,
+        0.0537117,
+        0.1290012
+      ],
+      "terminal_state": 1403
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18HU0R37B7__01",
+      "asset_id": "rand_18HU0R37B7",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2671536,
+        0.1586203,
+        0.4638948
+      ],
+      "terminal_state": 1086
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18DVTRFDE8__06",
+      "asset_id": "rand_18DVTRFDE8",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.4329641,
+        0.2352214,
+        0.4489168
+      ],
+      "terminal_state": 603
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18BM337LOW__07",
+      "asset_id": "rand_18BM337LOW",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.3095386,
+        0.0317119,
+        0.0749656
+      ],
+      "terminal_state": 615
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_184ZB0LXIR__08",
+      "asset_id": "rand_184ZB0LXIR",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.4931684,
+        0.2442647,
+        0.0769749
+      ],
+      "terminal_state": 997
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_17V8IC2JIT__04",
+      "asset_id": "rand_17V8IC2JIT",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1382489,
+        0.1980792,
+        0.3678087
+      ],
+      "terminal_state": 1082
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_176L9DT8YW__00",
+      "asset_id": "rand_176L9DT8YW",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.2602176,
+        0.0955742,
+        0.4357246
+      ],
+      "terminal_state": 2215
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_172N6T24NM__08",
+      "asset_id": "rand_172N6T24NM",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.4060326,
+        0.082947,
+        0.2530613
+      ],
+      "terminal_state": 622
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16W8ARYM6G__06",
+      "asset_id": "rand_16W8ARYM6G",
+      "task": "flatten",
+      "translation": [
+        -39.599999999999994,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.2234103,
+        0.4176275,
+        0.0628559
+      ],
+      "terminal_state": 1469
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_172N6T24NM_000003_r001",
+      "asset_id": "rand_172N6T24NM",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.4060326,
+        0.082947,
+        0.2530613
+      ],
+      "terminal_state": 934
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_176L9DT8YW_000001_r000",
+      "asset_id": "rand_176L9DT8YW",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2602176,
+        0.0955742,
+        0.4357246
+      ],
+      "terminal_state": 712
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_17V8IC2JIT_000005",
+      "asset_id": "rand_17V8IC2JIT",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.1382489,
+        0.1980792,
+        0.3678087
+      ],
+      "terminal_state": 953
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_184ZB0LXIR_000007_r000",
+      "asset_id": "rand_184ZB0LXIR",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.4931684,
+        0.2442647,
+        0.0769749
+      ],
+      "terminal_state": 2265
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18BM337LOW_000001_r000",
+      "asset_id": "rand_18BM337LOW",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.3095386,
+        0.0317119,
+        0.0749656
+      ],
+      "terminal_state": 1266
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18DVTRFDE8_000000",
+      "asset_id": "rand_18DVTRFDE8",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.4329641,
+        0.2352214,
+        0.4489168
+      ],
+      "terminal_state": 1140
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18HU0R37B7_000005_r000",
+      "asset_id": "rand_18HU0R37B7",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2671536,
+        0.1586203,
+        0.4638948
+      ],
+      "terminal_state": 1342
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18TWRPGQIS_000006",
+      "asset_id": "rand_18TWRPGQIS",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2313476,
+        0.0537117,
+        0.1290012
+      ],
+      "terminal_state": 1146
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_196ZJ6KG0I_000007",
+      "asset_id": "rand_196ZJ6KG0I",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.2282836,
+        0.1363712,
+        0.2653073
+      ],
+      "terminal_state": 643
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19U2D4IL4V_000005_r000",
+      "asset_id": "rand_19U2D4IL4V",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.2932051,
+        0.1348732,
+        0.1784657
+      ],
+      "terminal_state": 1288
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19VLXSSFLD_000007",
+      "asset_id": "rand_19VLXSSFLD",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0673833,
+        0.3905153,
+        0.1134807
+      ],
+      "terminal_state": 1810
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19ZIM30DGZ_000008",
+      "asset_id": "rand_19ZIM30DGZ",
+      "task": "fold",
+      "translation": [
+        -39.599999999999994,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3644292,
+        0.3601612,
+        0.1035231
+      ],
+      "terminal_state": 1112
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BB8QEIHOS__08",
+      "asset_id": "rand_1BB8QEIHOS",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1410995,
+        0.3001059,
+        0.0274724
+      ],
+      "terminal_state": 971
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1B862QIZ9S__03",
+      "asset_id": "rand_1B862QIZ9S",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.3870527,
+        0.0505972,
+        0.1466842
+      ],
+      "terminal_state": 2062
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AWWJ9TCB8__06",
+      "asset_id": "rand_1AWWJ9TCB8",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.4534095,
+        0.0881893,
+        0.0855238
+      ],
+      "terminal_state": 888
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AUTDNAW0L__01",
+      "asset_id": "rand_1AUTDNAW0L",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.0845516,
+        0.2114112,
+        0.1292846
+      ],
+      "terminal_state": 764
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AREF49CK1__03",
+      "asset_id": "rand_1AREF49CK1",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2302502,
+        0.1055664,
+        0.0290768
+      ],
+      "terminal_state": 2049
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AQJGG2YQ9__05",
+      "asset_id": "rand_1AQJGG2YQ9",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0256818,
+        0.1665952,
+        0.3314193
+      ],
+      "terminal_state": 1321
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ANEU0APNF__06",
+      "asset_id": "rand_1ANEU0APNF",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.2143052,
+        0.1298726,
+        0.5186899
+      ],
+      "terminal_state": 1491
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ALD8ZQDU4__06",
+      "asset_id": "rand_1ALD8ZQDU4",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.2183905,
+        0.3058351,
+        0.4879728
+      ],
+      "terminal_state": 1716
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ABU7HKRR9__02",
+      "asset_id": "rand_1ABU7HKRR9",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2491329,
+        0.0967069,
+        0.259309
+      ],
+      "terminal_state": 857
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1A2P58J9VK__09",
+      "asset_id": "rand_1A2P58J9VK",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.3646206,
+        0.1836679,
+        0.196265
+      ],
+      "terminal_state": 1422
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1A0BGLIDR1__04",
+      "asset_id": "rand_1A0BGLIDR1",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1205353,
+        0.3005948,
+        0.3576032
+      ],
+      "terminal_state": 769
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19ZIM30DGZ__07",
+      "asset_id": "rand_19ZIM30DGZ",
+      "task": "flatten",
+      "translation": [
+        -42.9,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.3644292,
+        0.3601612,
+        0.1035231
+      ],
+      "terminal_state": 1750
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1A0BGLIDR1_000001",
+      "asset_id": "rand_1A0BGLIDR1",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1205353,
+        0.3005948,
+        0.3576032
+      ],
+      "terminal_state": 699
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1A2P58J9VK_000000",
+      "asset_id": "rand_1A2P58J9VK",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.3646206,
+        0.1836679,
+        0.196265
+      ],
+      "terminal_state": 713
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ABU7HKRR9_000006_r004",
+      "asset_id": "rand_1ABU7HKRR9",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.2491329,
+        0.0967069,
+        0.259309
+      ],
+      "terminal_state": 1092
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AEZQ9GNEL_000000_r000",
+      "asset_id": "rand_1AEZQ9GNEL",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1749097,
+        0.2048062,
+        0.0283894
+      ],
+      "terminal_state": 1369
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ANEU0APNF_000007",
+      "asset_id": "rand_1ANEU0APNF",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.2143052,
+        0.1298726,
+        0.5186899
+      ],
+      "terminal_state": 698
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AQJGG2YQ9_000007",
+      "asset_id": "rand_1AQJGG2YQ9",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.0256818,
+        0.1665952,
+        0.3314193
+      ],
+      "terminal_state": 936
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AREF49CK1_000006",
+      "asset_id": "rand_1AREF49CK1",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2302502,
+        0.1055664,
+        0.0290768
+      ],
+      "terminal_state": 974
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AUTDNAW0L_000002_r000",
+      "asset_id": "rand_1AUTDNAW0L",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0845516,
+        0.2114112,
+        0.1292846
+      ],
+      "terminal_state": 2427
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AWWJ9TCB8_000009_r003",
+      "asset_id": "rand_1AWWJ9TCB8",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.4534095,
+        0.0881893,
+        0.0855238
+      ],
+      "terminal_state": 1075
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1B862QIZ9S_000006",
+      "asset_id": "rand_1B862QIZ9S",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.3870527,
+        0.0505972,
+        0.1466842
+      ],
+      "terminal_state": 1084
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BB8QEIHOS_000009_r006",
+      "asset_id": "rand_1BB8QEIHOS",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1410995,
+        0.3001059,
+        0.0274724
+      ],
+      "terminal_state": 2464
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BBH5VM6IR_000002",
+      "asset_id": "rand_1BBH5VM6IR",
+      "task": "fold",
+      "translation": [
+        -42.9,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.4405379,
+        0.2218245,
+        0.2360128
+      ],
+      "terminal_state": 837
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CSHS4LKIJ__08",
+      "asset_id": "rand_1CSHS4LKIJ",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0743346,
+        0.1764245,
+        0.2574001
+      ],
+      "terminal_state": 758
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CJ9S3DEOE__04",
+      "asset_id": "rand_1CJ9S3DEOE",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.4768845,
+        0.3194927,
+        0.0867416
+      ],
+      "terminal_state": 1454
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CD8JAPAP2__04",
+      "asset_id": "rand_1CD8JAPAP2",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.0358425,
+        0.4457918,
+        0.2492172
+      ],
+      "terminal_state": 1005
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1C5J5MGWB5__06",
+      "asset_id": "rand_1C5J5MGWB5",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.1060769,
+        0.1561925,
+        0.4244475
+      ],
+      "terminal_state": 804
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1C2XLTNKGM__09",
+      "asset_id": "rand_1C2XLTNKGM",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0604436,
+        0.1319295,
+        0.0618414
+      ],
+      "terminal_state": 1181
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BYN9OGP8S__04",
+      "asset_id": "rand_1BYN9OGP8S",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.5113569,
+        0.1399382,
+        0.0333954
+      ],
+      "terminal_state": 1414
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BU52I9LRX__01",
+      "asset_id": "rand_1BU52I9LRX",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.4252804,
+        0.1378574,
+        0.1587471
+      ],
+      "terminal_state": 732
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BKOCG69L9__08",
+      "asset_id": "rand_1BKOCG69L9",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.0810239,
+        0.3436736,
+        0.2533705
+      ],
+      "terminal_state": 1065
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BIF7BVRJ4__09",
+      "asset_id": "rand_1BIF7BVRJ4",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.3105713,
+        0.0505996,
+        0.1992036
+      ],
+      "terminal_state": 1221
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BEWWU2K6Q__04",
+      "asset_id": "rand_1BEWWU2K6Q",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.2343642,
+        0.2435149,
+        0.5169354
+      ],
+      "terminal_state": 689
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BBQV0MXA4__00",
+      "asset_id": "rand_1BBQV0MXA4",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0381175,
+        0.0978014,
+        0.3531276
+      ],
+      "terminal_state": 898
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BBH5VM6IR__02",
+      "asset_id": "rand_1BBH5VM6IR",
+      "task": "flatten",
+      "translation": [
+        -46.199999999999996,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.4405379,
+        0.2218245,
+        0.2360128
+      ],
+      "terminal_state": 934
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BBQV0MXA4_000002_r000",
+      "asset_id": "rand_1BBQV0MXA4",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0381175,
+        0.0978014,
+        0.3531276
+      ],
+      "terminal_state": 1090
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BEWWU2K6Q_000005",
+      "asset_id": "rand_1BEWWU2K6Q",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.2343642,
+        0.2435149,
+        0.5169354
+      ],
+      "terminal_state": 1072
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BIF7BVRJ4_000006_r000",
+      "asset_id": "rand_1BIF7BVRJ4",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.3105713,
+        0.0505996,
+        0.1992036
+      ],
+      "terminal_state": 1755
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BKOCG69L9_000004_r000",
+      "asset_id": "rand_1BKOCG69L9",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0810239,
+        0.3436736,
+        0.2533705
+      ],
+      "terminal_state": 1145
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BSZCNY1LV_000002_r000",
+      "asset_id": "rand_1BSZCNY1LV",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.3289448,
+        0.0628448,
+        0.0511354
+      ],
+      "terminal_state": 1626
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BYN9OGP8S_000000_r000",
+      "asset_id": "rand_1BYN9OGP8S",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.5113569,
+        0.1399382,
+        0.0333954
+      ],
+      "terminal_state": 714
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1C2XLTNKGM_000005",
+      "asset_id": "rand_1C2XLTNKGM",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0604436,
+        0.1319295,
+        0.0618414
+      ],
+      "terminal_state": 1270
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1C5J5MGWB5_000006",
+      "asset_id": "rand_1C5J5MGWB5",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1060769,
+        0.1561925,
+        0.4244475
+      ],
+      "terminal_state": 1128
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CD8JAPAP2_000000_r000",
+      "asset_id": "rand_1CD8JAPAP2",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.0358425,
+        0.4457918,
+        0.2492172
+      ],
+      "terminal_state": 1028
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CJ9S3DEOE_000003_r001",
+      "asset_id": "rand_1CJ9S3DEOE",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.4768845,
+        0.3194927,
+        0.0867416
+      ],
+      "terminal_state": 2059
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CSHS4LKIJ_000007",
+      "asset_id": "rand_1CSHS4LKIJ",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0743346,
+        0.1764245,
+        0.2574001
+      ],
+      "terminal_state": 1297
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CW9M7X6EY_000004",
+      "asset_id": "rand_1CW9M7X6EY",
+      "task": "fold",
+      "translation": [
+        -46.199999999999996,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.0358765,
+        0.2414224,
+        0.2827723
+      ],
+      "terminal_state": 1136
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1G753QQF8L__00",
+      "asset_id": "rand_1G753QQF8L",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.1997563,
+        0.082709,
+        0.0851905
+      ],
+      "terminal_state": 1989
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1G5NLOGYKY__08",
+      "asset_id": "rand_1G5NLOGYKY",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.4937797,
+        0.142709,
+        0.3826187
+      ],
+      "terminal_state": 635
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1G0SYPVGVT__06",
+      "asset_id": "rand_1G0SYPVGVT",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.2094373,
+        0.3437738,
+        0.0799618
+      ],
+      "terminal_state": 1061
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1FYRV0NHSK__02",
+      "asset_id": "rand_1FYRV0NHSK",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.2253768,
+        0.3771933,
+        0.2229935
+      ],
+      "terminal_state": 1023
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1FVJ238UE7__00",
+      "asset_id": "rand_1FVJ238UE7",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3191387,
+        0.107447,
+        0.2290566
+      ],
+      "terminal_state": 600
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1F9YNONW4N__07",
+      "asset_id": "rand_1F9YNONW4N",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2635989,
+        0.2395018,
+        0.0275769
+      ],
+      "terminal_state": 651
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1F7UUHFTTF__03",
+      "asset_id": "rand_1F7UUHFTTF",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.1669782,
+        0.3655006,
+        0.1569691
+      ],
+      "terminal_state": 1411
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EHUSGYR73__09",
+      "asset_id": "rand_1EHUSGYR73",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.0832353,
+        0.2781524,
+        0.1076309
+      ],
+      "terminal_state": 669
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EEIEEXOHT__06",
+      "asset_id": "rand_1EEIEEXOHT",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.4315427,
+        0.156381,
+        0.4962234
+      ],
+      "terminal_state": 656
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EDHTQFUNP__01",
+      "asset_id": "rand_1EDHTQFUNP",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.1028436,
+        0.2969576,
+        0.5119581
+      ],
+      "terminal_state": 824
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1E69F9VRN4__00",
+      "asset_id": "rand_1E69F9VRN4",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0315066,
+        0.177634,
+        0.1213646
+      ],
+      "terminal_state": 767
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1DGYFK46D0__03",
+      "asset_id": "rand_1DGYFK46D0",
+      "task": "flatten",
+      "translation": [
+        -49.5,
+        -2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.3010998,
+        0.1731443,
+        0.2681352
+      ],
+      "terminal_state": 862
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1E69F9VRN4_000003_r000",
+      "asset_id": "rand_1E69F9VRN4",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        2.1,
+        0.0
+      ],
+      "color_channel": [
+        0.0315066,
+        0.177634,
+        0.1213646
+      ],
+      "terminal_state": 1075
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EDHTQFUNP_000001",
+      "asset_id": "rand_1EDHTQFUNP",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        4.800000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.1028436,
+        0.2969576,
+        0.5119581
+      ],
+      "terminal_state": 827
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EEIEEXOHT_000009_r001",
+      "asset_id": "rand_1EEIEEXOHT",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        7.5,
+        0.0
+      ],
+      "color_channel": [
+        0.4315427,
+        0.156381,
+        0.4962234
+      ],
+      "terminal_state": 737
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EHUSGYR73_000006",
+      "asset_id": "rand_1EHUSGYR73",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        10.200000000000001,
+        0.0
+      ],
+      "color_channel": [
+        0.0832353,
+        0.2781524,
+        0.1076309
+      ],
+      "terminal_state": 898
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1F7UUHFTTF_000002_r000",
+      "asset_id": "rand_1F7UUHFTTF",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        12.9,
+        0.0
+      ],
+      "color_channel": [
+        0.1669782,
+        0.3655006,
+        0.1569691
+      ],
+      "terminal_state": 1151
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1F9YNONW4N_000003",
+      "asset_id": "rand_1F9YNONW4N",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        15.6,
+        0.0
+      ],
+      "color_channel": [
+        0.2635989,
+        0.2395018,
+        0.0275769
+      ],
+      "terminal_state": 1218
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1FVJ238UE7_000005",
+      "asset_id": "rand_1FVJ238UE7",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        18.300000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3191387,
+        0.107447,
+        0.2290566
+      ],
+      "terminal_state": 1002
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1FYRV0NHSK_000006",
+      "asset_id": "rand_1FYRV0NHSK",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        21.000000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.2253768,
+        0.3771933,
+        0.2229935
+      ],
+      "terminal_state": 1121
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1G0SYPVGVT_000003_r000",
+      "asset_id": "rand_1G0SYPVGVT",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        23.700000000000003,
+        0.0
+      ],
+      "color_channel": [
+        0.2094373,
+        0.3437738,
+        0.0799618
+      ],
+      "terminal_state": 1173
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1G5NLOGYKY_000003_r000",
+      "asset_id": "rand_1G5NLOGYKY",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        26.400000000000002,
+        0.0
+      ],
+      "color_channel": [
+        0.4937797,
+        0.142709,
+        0.3826187
+      ],
+      "terminal_state": 1554
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1G753QQF8L_000007_r000",
+      "asset_id": "rand_1G753QQF8L",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        29.1,
+        0.0
+      ],
+      "color_channel": [
+        0.1997563,
+        0.082709,
+        0.0851905
+      ],
+      "terminal_state": 1335
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1GDCM6208E_000006",
+      "asset_id": "rand_1GDCM6208E",
+      "task": "fold",
+      "translation": [
+        -49.5,
+        31.800000000000004,
+        0.0
+      ],
+      "color_channel": [
+        0.3715558,
+        0.1790222,
+        0.0402736
+      ],
+      "terminal_state": 1406
+    }
+  ],
+  "environments": {
+    "dark": {
+      "name": "dark-toplights",
+      "floor_linear_rgb": [
+        0.018,
+        0.018,
+        0.018
+      ],
+      "overhead_rect_lights": 384,
+      "overhead_intensity": 12000,
+      "global_lights": 0
+    },
+    "white": {
+      "name": "white",
+      "floor_linear_rgb": [
+        0.85,
+        0.85,
+        0.85
+      ],
+      "overhead_rect_lights": 0,
+      "overhead_intensity": null,
+      "global_lights": 2
+    }
+  },
+  "cloth_finish": {
+    "resource": "cotton_jersey",
+    "identity_tint": "Base-color texture normalized by mean linear RGB then tinted per asset.",
+    "roughness": "0.70 + 0.25 * cotton roughness map",
+    "specular_rgb": [
+      0.015,
+      0.015,
+      0.015
+    ],
+    "normal_xy_strength": 0.35,
+    "scope": "Designed studio material, not the paper randomization sampler."
+  },
+  "provenance": {
+    "matched_camera_and_source_states": true,
+    "all_384_clocks_close_at_frame_800": true,
+    "dark_authored_lights": 384,
+    "dark_only_workcell_rect_lights": true,
+    "original_manifests": {
+      "dark-top-only": "aef6c857c10ebc115af09bfc70c98f55e00490c780abbe2f4341568755fc6d9e",
+      "white-motion": "def852931b40e3082f6c64c1d8998af2d694b63296d4d047f7892376714d4a04",
+      "white-cotton": "c197d019085b2d5a13402b2ae923111fd0a2e99fa6128080cb772e3b62f249d4"
+    }
+  },
+  "clips": {
+    "dark": {
+      "src": "dark-handoff.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 25,
+      "frames": 60,
+      "duration_seconds": 2.4,
+      "source_frame_interval": [
+        170,
+        230
+      ],
+      "source_time_interval_seconds": [
+        6.8,
+        9.2
+      ],
+      "bytes": 2054476,
+      "sha256": "b3609bba453d8d0d331a04c841dccaf5039907218e864ac9b3861282216c9a35"
+    },
+    "white": {
+      "src": "white-handoff.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 25,
+      "frames": 60,
+      "duration_seconds": 2.4,
+      "source_frame_interval": [
+        170,
+        230
+      ],
+      "source_time_interval_seconds": [
+        6.8,
+        9.2
+      ],
+      "bytes": 1462846,
+      "sha256": "d748d856f7c0d44b71173b967b2be402cb99f8a05ba0b5e91ab5f9e6c6ba77a0"
+    }
+  },
+  "playback_scope": "2x exact saved task replay. Released-arm home returns are separately scripted kinematic presentation; this excerpt is not live generation or policy evaluation. No duplicated low-rate frames.",
+  "appearance_scope": "Cotton asset-identity presentation and designed studio lighting; not paper-sampled appearance randomization. Paper Office/Warehouse film remains unchanged."
+}

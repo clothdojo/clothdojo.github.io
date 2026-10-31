@@ -10,6 +10,8 @@ Buildless research website. GitHub Pages publishes this directory only; code, te
 - `explore.html` / `explore.css` / `explorer.js`: the 24-trajectory catalog and interactive 500-garment atlas.
 - `assets/experiment-results.json`: machine-readable source metrics.
 - `assets/studio26/manifest.json`: provenance for the current demonstration set, including trajectories, frame ranges, cameras, renderer settings and encodings.
+- `scene-preview-v27.html` / `scene-study.css` / `scene-study.js`: the complete homepage layout with a separate scene study. It compares pure-white ground and a dark studio lit only by 384 workcell overhead lights, using matched stills and a 2.4-second, 25 fps moving excerpt. `?scene=dark&theme=dark` opens the dark comparison; environment and page theme can be changed independently. The study does not replace the homepage's full hero film.
+- `assets/studio27/manifest.json`: source identities, cotton appearance, exact lighting scope and motion-excerpt audit for that study; 384 independent trajectories on 202 assets, arranged as 192 flattening workspaces on the left and 192 folding workspaces on the right.
 - `assets/hero.sources.json`: source frames and timing for the linked expert demonstration montage in the explorer.
 - `design-directions.html`: three labeled concept compositions. Its AI-generated environment board is a design study, never manipulation evidence. Earlier `design-preview.html` and `scene-preview.html` remain archived.
 

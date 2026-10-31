@@ -608,6 +608,40 @@ saveReport();
       }
       report.checks.push('Same-content light/dark study on desktop/mobile: media time preserved, charts styled, themes reversible');
     }
+    if (pagePath === 'index.html') {
+      const previewManifest = await (await desktop.request.get(new URL('assets/studio27/manifest.json', origin))).json();
+      assert.equal(previewManifest.environments.dark.global_lights, 0);
+      assert.equal(previewManifest.environments.dark.overhead_rect_lights, 384);
+      for (const width of [1440, 390]) {
+        const scene = await open({width, height:1000}, 'reduce', 'scene-preview-v27.html?scene=dark&theme=dark');
+        assert.equal(await scene.locator('main > section[id]').count(), 6);
+        for (const environment of ['white', 'dark']) {
+          await scene.locator('[data-scene-choice="' + environment + '"]').click();
+          await scene.locator('[data-theme-choice="' + (environment === 'white' ? 'light' : 'dark') + '"]').click();
+          for (const view of ['near', 'bridge', 'scale']) {
+            await scene.locator('[data-scene-view="' + view + '"]').click();
+            await scene.waitForFunction(expected => {
+              const image = document.getElementById('scene-frame');
+              return image.currentSrc.endsWith(expected) && image.complete && image.naturalWidth === 2560;
+            }, '/assets/studio27/' + environment + '-' + view + '.jpg');
+            await capture(scene, 'scene-' + width + '-' + environment + '-' + view, '.scene-study');
+          }
+        }
+        await scene.locator('[data-scene-view="motion"]').click();
+        await scene.waitForFunction(() => {const v=document.getElementById('hero-film');return v.readyState>=3 && !v.paused && v.currentTime>.15;});
+        await capture(scene, 'scene-' + width + '-dark-motion', '#hero-film', 1.1);
+        await scene.locator('[data-scene-choice="white"]').click();
+        await scene.waitForFunction(() => {const v=document.getElementById('hero-film');return v.currentSrc.endsWith('/white-handoff.mp4') && v.readyState>=3 && Math.abs(v.currentTime-1.1)<.1 && v.paused;});
+        const excerpt = await scene.locator('#hero-film').evaluate(v=>({width:v.videoWidth,height:v.videoHeight,duration:v.duration}));
+        assert.equal(excerpt.width,1920);assert.equal(excerpt.height,1080);assert(Math.abs(excerpt.duration-2.4)<.05);
+        await capture(scene, 'scene-' + width + '-white-motion', '#hero-film', 1.1);
+        await scene.locator('[data-scene-view="near"]').click();
+        assert(await scene.locator('#hero-film').isHidden());
+        assert(await scene.locator('#scene-frame').isVisible());
+        await scene.context().close();
+      }
+      report.checks.push('In-page scene study: full homepage context, three uncropped views, top lights only, real 25fps excerpt, matched paused time and desktop/mobile layout');
+    }
     const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
     for (const target of pages) {
       for (const width of [1440, 390]) {
