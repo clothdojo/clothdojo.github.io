@@ -1,8 +1,8 @@
 {
-  "ref": "c5932a71f4b36d4f5e06d3a9da26cc77d57b2881",
-  "commit": "c5932a71f4b36d4f5e06d3a9da26cc77d57b2881",
+  "ref": "e18120d0f5b26179c44aedd81a45e9630bf6ecc3",
+  "commit": "e18120d0f5b26179c44aedd81a45e9630bf6ecc3",
   "pagePath": "index.html",
-  "passed": false,
+  "passed": true,
   "status": "completed",
   "screenshots": [
     {
@@ -84,7 +84,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
-          "time": 0.5,
+          "time": 0.5085,
           "duration": 32,
           "videoWidth": 2560,
           "videoHeight": 1440,
@@ -492,7 +492,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
-          "time": 0.5033,
+          "time": 0.5067,
           "duration": 32,
           "videoWidth": 2560,
           "videoHeight": 1440,
@@ -738,7 +738,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5,
+          "time": 0.5019,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
@@ -990,7 +990,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5016,
+          "time": 0.5043,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
@@ -1782,6 +1782,302 @@
       "frameTime": null,
       "scrollY": 4739,
       "visibleVideos": []
+    },
+    {
+      "file": "scene-1440-white-near.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 238,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-1440-white-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-1440-white-bridge.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 238,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-1440-white-scale.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 238,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-1440-dark-near.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 238,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-1440-dark-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-1440-dark-bridge.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 238,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-1440-dark-scale.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 238,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-1440-dark-motion.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 1.1,
+      "scrollY": 319,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio27/dark-handoff.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio27/dark-handoff.mp4",
+          "time": 1.1,
+          "duration": 2.4,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "scene-1440-white-motion.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 1.1,
+      "scrollY": 319,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
+          "time": 1.1064,
+          "duration": 2.4,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "scene-390-white-near.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 277,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-390-white-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-390-white-bridge.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 277,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-390-white-scale.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 277,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-390-dark-near.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 277,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-390-dark-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-390-dark-bridge.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 277,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-390-dark-scale.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": ".scene-study",
+      "frameTime": null,
+      "scrollY": 277,
+      "visibleVideos": []
+    },
+    {
+      "file": "scene-390-dark-motion.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 1.1,
+      "scrollY": 395,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio27/dark-handoff.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio27/dark-handoff.mp4",
+          "time": 1.1,
+          "duration": 2.4,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "scene-390-white-motion.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=dark",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 1.1,
+      "scrollY": 395,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
+          "time": 1.1048,
+          "duration": 2.4,
+          "videoWidth": 1920,
+          "videoHeight": 1080,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
     }
   ],
   "layouts": [
@@ -3541,9 +3837,526 @@
         "IMG.",
         "CODE."
       ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "label": "scene-1440-white-near",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "label": "scene-1440-white-opening",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "label": "scene-1440-white-bridge",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "label": "scene-1440-white-scale",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "label": "scene-1440-dark-near",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "label": "scene-1440-dark-opening",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "label": "scene-1440-dark-bridge",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "label": "scene-1440-dark-scale",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "label": "scene-1440-dark-motion",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=dark",
+      "label": "scene-1440-white-motion",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "label": "scene-390-white-near",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "label": "scene-390-white-opening",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "label": "scene-390-white-bridge",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=light",
+      "label": "scene-390-white-scale",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "label": "scene-390-dark-near",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "label": "scene-390-dark-opening",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "label": "scene-390-dark-bridge",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "label": "scene-390-dark-scale",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=dark&theme=dark",
+      "label": "scene-390-dark-motion",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v27.html?scene=white&theme=dark",
+      "label": "scene-390-white-motion",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/design-directions.html",
+      "label": "smoke-design-directions.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/design-directions.html",
+      "label": "smoke-design-directions.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "IMG.",
+        "IMG."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/explore.html",
+      "label": "smoke-explore.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/explore.html",
+      "label": "smoke-explore.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "smoke-index.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "smoke-index.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "smoke-results.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "smoke-results.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
     }
   ],
-  "pages": [],
+  "pages": [
+    {
+      "path": "design-directions.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-directions.css",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "design-directions.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-directions.css",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "design-preview.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "design-preview.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "explore.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/explore.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "explore.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/explore.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "index.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "results.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=21",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=21",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "results.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=21",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=21",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview-v27.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview-v27.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=19",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=19",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
+          "loaded": true
+        }
+      ]
+    }
+  ],
   "checks": [
     "HTTP 206 byte-range media serving",
     "Model benchmark → method → generation scale reading order",
@@ -3574,7 +4387,8 @@
     "five results anchors, shared rendered table typography, desktop/mobile results screenshots",
     "Paper train-profile scene identities, seeds and protocol hashes recorded",
     "Neutral 500-asset atlas: first/last pointer selections and zoom work on desktop/mobile",
-    "Same-content light/dark study on desktop/mobile: media time preserved, charts styled, themes reversible"
+    "Same-content light/dark study on desktop/mobile: media time preserved, charts styled, themes reversible",
+    "In-page scene study: full homepage context, three uncropped views, top lights only, real 25fps excerpt, matched paused time and desktop/mobile layout"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
@@ -4368,6 +5182,5 @@
       "paddingBottom": "13px",
       "borderBottomColor": "rgb(229, 235, 237)"
     }
-  },
-  "failure": "apiRequestContext.get: options.request.url is not a function\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:612:60"
+  }
 }
