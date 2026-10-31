@@ -4,6 +4,8 @@ Buildless research website. GitHub Pages publishes this directory only; code, te
 
 ## Structure
 
+- `research-preview-v30.html` / `research30.css`: white centred-title research UI study, referencing SuperMimic; includes a separate full-width RGB dataset ribbon after model results.
+- `assets/rgb30/manifest.json`: original `cam_high` source episodes, hashes, 2× replay timing and periodic 72-second ribbon composition. Desktop shows 24 trajectories; mobile shows 12 with larger panels. Resets happen outside the viewport.
 - `index.html`: an automatic task demonstration, model evaluations, method, generation scale, combined domain/robot comparison and practical entry points.
 - `site.css` / `studio.css` / `site.js`: the shared visual system and homepage media interactions. The homepage does not depend on the archived homepage CSS or player scripts.
 - `results.html` / `results.css`: five complete experiment groups. Homepage research charts and all research tables use these same components.

@@ -14,7 +14,7 @@ on:
         default: index.html
         type: string
   push:
-    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal]
+    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal, codex/rgb-ribbon-homepage]
     paths:
       - '.github/workflows/website-visual-review.yml'
       - '.github/scripts/website-visual-review.cjs'
@@ -29,6 +29,7 @@ on:
       - 'website/assets/studio27/**'
       - 'website/assets/studio28/**'
       - 'website/assets/studio29/**'
+      - 'website/assets/rgb30/**'
 
 permissions:
   contents: write
