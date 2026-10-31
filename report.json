@@ -1,6 +1,6 @@
 {
-  "ref": "429d0aab4b9ee1f3339a347b8f14df083fa7ad10",
-  "commit": "429d0aab4b9ee1f3339a347b8f14df083fa7ad10",
+  "ref": "a5bda5f13ec1fb14e6f7ed2ed51a77b16de00039",
+  "commit": "a5bda5f13ec1fb14e6f7ed2ed51a77b16de00039",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -492,7 +492,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
-          "time": 0.5026,
+          "time": 0.5,
           "duration": 32,
           "videoWidth": 2560,
           "videoHeight": 1440,
@@ -1501,6 +1501,262 @@
       "selector": "#atlas-panel",
       "frameTime": null,
       "scrollY": 259,
+      "visibleVideos": []
+    },
+    {
+      "file": "theme-light-1440-title.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "time": 0.5,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "theme-light-1440-scale.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 26,
+      "scrollY": 282,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "time": 26,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "theme-dark-1440-scale.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 26,
+      "scrollY": 282,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "time": 26,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "theme-dark-1440-title.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "time": 0.5,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "theme-dark-1440-results.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#results",
+      "frameTime": null,
+      "scrollY": 1108,
+      "visibleVideos": []
+    },
+    {
+      "file": "theme-dark-1440-method.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#method",
+      "frameTime": null,
+      "scrollY": 2434,
+      "visibleVideos": []
+    },
+    {
+      "file": "theme-light-390-title.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=light",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 0.5,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "theme-light-390-scale.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=light",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 26,
+      "scrollY": 344,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 26,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "theme-dark-390-scale.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "#hero-film",
+      "frameTime": 26,
+      "scrollY": 344,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 26,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "theme-dark-390-title.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 0.5,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "theme-dark-390-results.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "#results",
+      "frameTime": null,
+      "scrollY": 858,
+      "visibleVideos": []
+    },
+    {
+      "file": "theme-dark-390-method.jpg",
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "#method",
+      "frameTime": null,
+      "scrollY": 2437,
       "visibleVideos": []
     }
   ],
@@ -3144,6 +3400,108 @@
       "overflow": []
     },
     {
+      "page": "http://127.0.0.1:8787/index.html?theme=light",
+      "label": "theme-light-1440-title",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=light",
+      "label": "theme-light-1440-scale",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "label": "theme-dark-1440-scale",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "label": "theme-dark-1440-title",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "label": "theme-dark-1440-results",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "label": "theme-dark-1440-method",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=light",
+      "label": "theme-light-390-title",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=light",
+      "label": "theme-light-390-scale",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "label": "theme-dark-390-scale",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "label": "theme-dark-390-title",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "label": "theme-dark-390-results",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html?theme=dark",
+      "label": "theme-dark-390-method",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
       "page": "http://127.0.0.1:8787/design-directions.html",
       "label": "smoke-design-directions.html",
       "width": 1440,
@@ -3333,6 +3691,10 @@
         {
           "href": "http://127.0.0.1:8787/studio.css?v=26",
           "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
+          "loaded": true
         }
       ]
     },
@@ -3353,6 +3715,10 @@
         },
         {
           "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
           "loaded": true
         }
       ]
@@ -3455,7 +3821,8 @@
     "real Chromium playback: one active video after task switch and HD open",
     "five results anchors, shared rendered table typography, desktop/mobile results screenshots",
     "Paper train-profile scene identities, seeds and protocol hashes recorded",
-    "Neutral 500-asset atlas: first/last pointer selections and zoom work on desktop/mobile"
+    "Neutral 500-asset atlas: first/last pointer selections and zoom work on desktop/mobile",
+    "Same-content light/dark study on desktop/mobile: media time preserved, charts styled, themes reversible"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
