@@ -1,8 +1,8 @@
 {
-  "ref": "922e7fe79ab7d92081ad1b002e4cdd680ebae15d",
-  "commit": "922e7fe79ab7d92081ad1b002e4cdd680ebae15d",
+  "ref": "429d0aab4b9ee1f3339a347b8f14df083fa7ad10",
+  "commit": "429d0aab4b9ee1f3339a347b8f14df083fa7ad10",
   "pagePath": "index.html",
-  "passed": false,
+  "passed": true,
   "status": "completed",
   "screenshots": [
     {
@@ -492,7 +492,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
-          "time": 0.5069,
+          "time": 0.5026,
           "duration": 32,
           "videoWidth": 2560,
           "videoHeight": 1440,
@@ -566,6 +566,942 @@
           "paused": true
         }
       ]
+    },
+    {
+      "file": "mobile-390-hero-8p1s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 8.1,
+      "scrollY": 344,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 8.1,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-hero-13s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 13,
+      "scrollY": 344,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 13,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-hero-19p2s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 19.2,
+      "scrollY": 344,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 19.2,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-hero-26s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 26,
+      "scrollY": 344,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 26,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-hero-31p8s.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 31.8,
+      "scrollY": 344,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 31.8,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-opening.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 0.5,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-overview.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"overview\"]",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 0.5,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-results.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"results\"]",
+      "frameTime": null,
+      "scrollY": 858,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-390-method.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"method\"]",
+      "frameTime": null,
+      "scrollY": 2437,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-390-generation.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"generation\"]",
+      "frameTime": null,
+      "scrollY": 2983,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-390-diversity.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"diversity\"]",
+      "frameTime": null,
+      "scrollY": 3428,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-390-render.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"render\"]",
+      "frameTime": null,
+      "scrollY": 4086,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "time": 0.5,
+          "duration": 24,
+          "videoWidth": 1440,
+          "videoHeight": 810,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-use.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"use\"]",
+      "frameTime": null,
+      "scrollY": 4739,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-390-transfer-table.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": ".transfer-evidence .table-block",
+      "frameTime": null,
+      "scrollY": 1952,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-390-method-table.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#method .table-block",
+      "frameTime": null,
+      "scrollY": 3244,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-390-transfer-evaluation.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": ".research-study >> nth=1",
+      "frameTime": null,
+      "scrollY": 1791,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-390-paper-appearance-2p5.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#transfer-film",
+      "frameTime": 2.5,
+      "scrollY": 4384,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "time": 2.5,
+          "duration": 24,
+          "videoWidth": 1440,
+          "videoHeight": 810,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-paper-appearance-14p5.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#transfer-film",
+      "frameTime": 14.5,
+      "scrollY": 4384,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "time": 14.5,
+          "duration": 24,
+          "videoWidth": 1440,
+          "videoHeight": 810,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-390-paper-appearance-23p8.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#transfer-film",
+      "frameTime": 23.8,
+      "scrollY": 4384,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "time": 23.8,
+          "duration": 24,
+          "videoWidth": 1440,
+          "videoHeight": 810,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-320-title.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "#title",
+      "frameTime": null,
+      "scrollY": 10,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 0.5,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-320-opening.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 0.5,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-320-overview.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"overview\"]",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "time": 0.5,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-320-results.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"results\"]",
+      "frameTime": null,
+      "scrollY": 832,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-320-method.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"method\"]",
+      "frameTime": null,
+      "scrollY": 2510,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-320-generation.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"generation\"]",
+      "frameTime": null,
+      "scrollY": 3090,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-320-diversity.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"diversity\"]",
+      "frameTime": null,
+      "scrollY": 3571,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-320-render.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"render\"]",
+      "frameTime": null,
+      "scrollY": 4263,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "time": 0.5,
+          "duration": 24,
+          "videoWidth": 1440,
+          "videoHeight": 810,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-320-use.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"use\"]",
+      "frameTime": null,
+      "scrollY": 4934,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-320-transfer-table.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": ".transfer-evidence .table-block",
+      "frameTime": null,
+      "scrollY": 1961,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-320-method-table.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "#method .table-block",
+      "frameTime": null,
+      "scrollY": 3376,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-320-transfer-evaluation.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": ".research-study >> nth=1",
+      "frameTime": null,
+      "scrollY": 1800,
+      "visibleVideos": []
+    },
+    {
+      "file": "mobile-320-paper-appearance-2p5.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "#transfer-film",
+      "frameTime": 2.5,
+      "scrollY": 4602,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "time": 2.5,
+          "duration": 24,
+          "videoWidth": 1440,
+          "videoHeight": 810,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-320-paper-appearance-14p5.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "#transfer-film",
+      "frameTime": 14.5,
+      "scrollY": 4602,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "time": 14.5,
+          "duration": 24,
+          "videoWidth": 1440,
+          "videoHeight": 810,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "mobile-320-paper-appearance-23p8.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "#transfer-film",
+      "frameTime": 23.8,
+      "scrollY": 4602,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "time": 23.8,
+          "duration": 24,
+          "videoWidth": 1440,
+          "videoHeight": 810,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "results-1440-opening.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-1440-generation-results.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "[id=\"generation-results\"]",
+      "frameTime": null,
+      "scrollY": 289,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-1440-generalization.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "[id=\"generalization\"]",
+      "frameTime": null,
+      "scrollY": 1368,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-1440-policy-models.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "[id=\"policy-models\"]",
+      "frameTime": null,
+      "scrollY": 3263,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-1440-outcome-quality.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "[id=\"outcome-quality\"]",
+      "frameTime": null,
+      "scrollY": 4425,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-1440-task-composition.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "[id=\"task-composition\"]",
+      "frameTime": null,
+      "scrollY": 5335,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-1440-table.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": ".table-block",
+      "frameTime": null,
+      "scrollY": 826,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-390-opening.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-390-generation-results.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"generation-results\"]",
+      "frameTime": null,
+      "scrollY": 341,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-390-generalization.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"generalization\"]",
+      "frameTime": null,
+      "scrollY": 1990,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-390-policy-models.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"policy-models\"]",
+      "frameTime": null,
+      "scrollY": 4514,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-390-outcome-quality.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"outcome-quality\"]",
+      "frameTime": null,
+      "scrollY": 6191,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-390-task-composition.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "[id=\"task-composition\"]",
+      "frameTime": null,
+      "scrollY": 6924,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-390-table.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": ".table-block",
+      "frameTime": null,
+      "scrollY": 1244,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-320-opening.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-320-generation-results.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"generation-results\"]",
+      "frameTime": null,
+      "scrollY": 397,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-320-generalization.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"generalization\"]",
+      "frameTime": null,
+      "scrollY": 2161,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-320-policy-models.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"policy-models\"]",
+      "frameTime": null,
+      "scrollY": 4926,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-320-outcome-quality.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"outcome-quality\"]",
+      "frameTime": null,
+      "scrollY": 6676,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-320-task-composition.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": "[id=\"task-composition\"]",
+      "frameTime": null,
+      "scrollY": 7408,
+      "visibleVideos": []
+    },
+    {
+      "file": "results-320-table.jpg",
+      "page": "http://127.0.0.1:8787/results.html",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "selector": ".table-block",
+      "frameTime": null,
+      "scrollY": 1326,
+      "visibleVideos": []
+    },
+    {
+      "file": "atlas-1440-neutral.jpg",
+      "page": "http://127.0.0.1:8787/explore.html#atlas-panel",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#atlas-panel",
+      "frameTime": null,
+      "scrollY": 257,
+      "visibleVideos": []
+    },
+    {
+      "file": "atlas-390-neutral.jpg",
+      "page": "http://127.0.0.1:8787/explore.html#atlas-panel",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "selector": "#atlas-panel",
+      "frameTime": null,
+      "scrollY": 259,
+      "visibleVideos": []
     }
   ],
   "layouts": [
@@ -1246,9 +2182,1250 @@
         "IMG.",
         "CODE."
       ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-hero-8p1s",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-hero-13s",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-hero-19p2s",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-hero-26s",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-hero-31p8s",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-opening",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-overview",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-results",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-method",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-generation",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-diversity",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-render",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-use",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-transfer-table",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-method-table",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-transfer-evaluation",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-paper-appearance-2p5",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-paper-appearance-14p5",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-paper-appearance-23p8",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-title",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-opening",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-overview",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-results",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-method",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-generation",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-diversity",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-render",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-use",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-transfer-table",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-method-table",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-transfer-evaluation",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-paper-appearance-2p5",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-paper-appearance-14p5",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-320-paper-appearance-23p8",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-1440-opening",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-1440-generation-results",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-1440-generalization",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-1440-policy-models",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-1440-outcome-quality",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-1440-task-composition",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-1440-table",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-390-opening",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-390-generation-results",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-390-generalization",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-390-policy-models",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-390-outcome-quality",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-390-task-composition",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-390-table",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-320-opening",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "A.",
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-320-generation-results",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "A.",
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-320-generalization",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "A.",
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-320-policy-models",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "A.",
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-320-outcome-quality",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "A.",
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-320-task-composition",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "A.",
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "results-320-table",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "A.",
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/explore.html#atlas-panel",
+      "label": "atlas-1440-neutral",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/explore.html#atlas-panel",
+      "label": "atlas-390-neutral",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/design-directions.html",
+      "label": "smoke-design-directions.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/design-directions.html",
+      "label": "smoke-design-directions.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "IMG.",
+        "IMG."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/explore.html",
+      "label": "smoke-explore.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/explore.html",
+      "label": "smoke-explore.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "smoke-index.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "smoke-index.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "smoke-results.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "smoke-results.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
     }
   ],
-  "pages": [],
+  "pages": [
+    {
+      "path": "design-directions.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-directions.css",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "design-directions.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-directions.css",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "design-preview.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "design-preview.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "explore.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/explore.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "explore.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/explore.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "index.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "results.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=21",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=21",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "results.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=21",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=21",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=19",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=19",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
+          "loaded": true
+        }
+      ]
+    }
+  ],
   "checks": [
     "HTTP 206 byte-range media serving",
     "Model benchmark → method → generation scale reading order",
@@ -1266,7 +3443,19 @@
     "mobile-390: all main navigation entries fit without clipping",
     "mobile-390: all 7 native explanation details default closed",
     "mobile-390: all 7 explanations support pointer, Enter and Space toggles without page overflow",
-    "mobile-390: one automatic flattening/folding/scale film, with chapter seeking"
+    "mobile-390: one automatic flattening/folding/scale film, with chapter seeking",
+    "mobile-390: both paper-sampled appearances and the final home return decoded",
+    "Responsive domain/robot scenes preserve paused timestamp",
+    "mobile-320: full formal H1 title visible outside details and fully covered by the title screenshot",
+    "mobile-320: all main navigation entries fit without clipping",
+    "mobile-320: all 7 native explanation details default closed",
+    "mobile-320: one automatic flattening/folding/scale film, with chapter seeking",
+    "mobile-320: both paper-sampled appearances and the final home return decoded",
+    "Automatic playback reaches the folding chapter without a task switch",
+    "real Chromium playback: one active video after task switch and HD open",
+    "five results anchors, shared rendered table typography, desktop/mobile results screenshots",
+    "Paper train-profile scene identities, seeds and protocol hashes recorded",
+    "Neutral 500-asset atlas: first/last pointer selections and zoom work on desktop/mobile"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
@@ -1473,6 +3662,84 @@
               "left": 20,
               "width": 207.8125,
               "height": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "screenshot": "mobile-320-title.jpg",
+      "text": "ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding",
+      "renderedText": "ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding",
+      "tag": "H1",
+      "insideDetails": false,
+      "visible": true,
+      "bounds": {
+        "top": 77,
+        "right": 300,
+        "bottom": 244.796875,
+        "left": 20,
+        "width": 280,
+        "height": 167.796875
+      },
+      "width": 320,
+      "height": 844,
+      "headerBottom": 61,
+      "clipped": false,
+      "textRuns": [
+        {
+          "text": "ClothDojo:",
+          "visible": true,
+          "rects": [
+            {
+              "top": 76,
+              "right": 244.109375,
+              "bottom": 129,
+              "left": 20,
+              "width": 224.109375,
+              "height": 53
+            }
+          ]
+        },
+        {
+          "text": "Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding",
+          "visible": true,
+          "rects": [
+            {
+              "top": 145.796875,
+              "right": 284.640625,
+              "bottom": 167.796875,
+              "left": 20,
+              "width": 264.640625,
+              "height": 22
+            },
+            {
+              "top": 170.796875,
+              "right": 265.6875,
+              "bottom": 192.796875,
+              "left": 20,
+              "width": 245.6875,
+              "height": 22
+            },
+            {
+              "top": 195.796875,
+              "right": 230.125,
+              "bottom": 217.796875,
+              "left": 20,
+              "width": 210.125,
+              "height": 22
+            },
+            {
+              "top": 220.796875,
+              "right": 85.609375,
+              "bottom": 242.796875,
+              "left": 20,
+              "width": 65.609375,
+              "height": 22
             }
           ]
         }
@@ -1919,6 +4186,50 @@
           ]
         }
       ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "initial": [
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Authors & affiliations"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Evaluation protocol & model differences"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Protocol & interpretation"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Training supervision & method"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Generation & replay details"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "What changes, and what stays the same?"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "Requirements & expected output"
+        }
+      ],
+      "interactions": []
     }
   ],
   "tableStyles": {
@@ -1929,7 +4240,14 @@
       "paddingTop": "13px",
       "paddingBottom": "13px",
       "borderBottomColor": "rgb(229, 235, 237)"
+    },
+    "results": {
+      "fontFamily": "Arial, Helvetica, sans-serif",
+      "fontSize": "12px",
+      "color": "rgb(32, 49, 56)",
+      "paddingTop": "13px",
+      "paddingBottom": "13px",
+      "borderBottomColor": "rgb(229, 235, 237)"
     }
-  },
-  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1080 !== 1440\n\n    at heroReveal (/home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:189:14)\n    at async /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:505:7"
+  }
 }
