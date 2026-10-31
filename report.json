@@ -1,6 +1,6 @@
 {
-  "ref": "6a22c9e9a3af79dcd5ce13f0432fb0ae1f648d5b",
-  "commit": "6a22c9e9a3af79dcd5ce13f0432fb0ae1f648d5b",
+  "ref": "926eb259e4367ea115aabd0c6d07891355ae2573",
+  "commit": "926eb259e4367ea115aabd0c6d07891355ae2573",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -2486,6 +2486,270 @@
       "frameTime": null,
       "scrollY": 0,
       "visibleVideos": []
+    },
+    {
+      "file": "research30-1440-opening.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "research30-1440-results.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#results",
+      "frameTime": null,
+      "scrollY": 810,
+      "visibleVideos": []
+    },
+    {
+      "file": "research30-1440-rgb.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#rgb-film",
+      "frameTime": 24,
+      "scrollY": 2560,
+      "visibleVideos": [
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb30/ribbon.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb30/ribbon.mp4",
+          "time": 24,
+          "duration": 72,
+          "videoWidth": 1920,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "research30-rgb-first.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#rgb-film",
+      "frameTime": 0,
+      "scrollY": 2560,
+      "visibleVideos": [
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb30/ribbon.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb30/ribbon.mp4",
+          "time": 0,
+          "duration": 72,
+          "videoWidth": 1920,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "research30-rgb-last.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#rgb-film",
+      "frameTime": 71.96,
+      "scrollY": 2560,
+      "visibleVideos": [
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb30/ribbon.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb30/ribbon.mp4",
+          "time": 71.96,
+          "duration": 72,
+          "videoWidth": 1920,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "research30-method.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#method",
+      "frameTime": null,
+      "scrollY": 3303,
+      "visibleVideos": []
+    },
+    {
+      "file": "research30-1280-opening.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "research30-1280-results.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "selector": "#results",
+      "frameTime": null,
+      "scrollY": 630,
+      "visibleVideos": []
+    },
+    {
+      "file": "research30-1280-rgb.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "selector": "#rgb-film",
+      "frameTime": 24,
+      "scrollY": 2380,
+      "visibleVideos": [
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb30/ribbon.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb30/ribbon.mp4",
+          "time": 24,
+          "duration": 72,
+          "videoWidth": 1920,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "research30-390-opening.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "research30-390-results.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#results",
+      "frameTime": null,
+      "scrollY": 766,
+      "visibleVideos": []
+    },
+    {
+      "file": "research30-390-rgb.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#rgb-film",
+      "frameTime": 24,
+      "scrollY": 2711,
+      "visibleVideos": [
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb30/ribbon-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb30/ribbon-mobile.mp4",
+          "time": 24,
+          "duration": 72,
+          "videoWidth": 960,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "research30-320-opening.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "research30-320-results.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "selector": "#results",
+      "frameTime": null,
+      "scrollY": 562,
+      "visibleVideos": []
+    },
+    {
+      "file": "research30-320-rgb.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "selector": "#rgb-film",
+      "frameTime": 24,
+      "scrollY": 2638,
+      "visibleVideos": [
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb30/ribbon-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb30/ribbon-mobile.mp4",
+          "time": 24,
+          "duration": 72,
+          "videoWidth": 960,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
     }
   ],
   "layouts": [
@@ -5010,6 +5274,162 @@
       ]
     },
     {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-1440-opening",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-1440-results",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-1440-rgb",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-rgb-first",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-rgb-last",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-method",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-1280-opening",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-1280-results",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-1280-rgb",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-390-opening",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-390-results",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-390-rgb",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-320-opening",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-320-results",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v30.html",
+      "label": "research30-320-rgb",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
       "page": "http://127.0.0.1:8787/design-directions.html",
       "label": "smoke-design-directions.html",
       "width": 1440,
@@ -5227,6 +5647,72 @@
         },
         {
           "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "research-preview-v30.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/research30.css?v=30",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "research-preview-v30.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/research30.css?v=30",
           "loaded": true
         }
       ]
@@ -5507,7 +5993,8 @@
     "Same-content light/dark study on desktop/mobile: media time preserved, charts styled, themes reversible",
     "In-page scene study: full homepage context, three uncropped views, top lights only, real 25fps excerpt, matched paused time and desktop/mobile layout",
     "White panoramic banner: entire closed hero fits seven viewport sizes, full width, uncropped source, pure-white page and real desktop/mobile motion",
-    "Finite-workcell study: centred two-task opening, 48/384 complete-group views, one-screen desktop/mobile and a real whole-group reveal excerpt"
+    "Finite-workcell study: centred two-task opening, 48/384 complete-group views, one-screen desktop/mobile and a real whole-group reveal excerpt",
+    "Research UI and original cam_high ribbon: one-screen title, consistent evidence sections, matched mobile clock, autoplay/reduced-motion, dialog and 72-second media loop"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
