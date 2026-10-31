@@ -609,7 +609,7 @@ saveReport();
       report.checks.push('Same-content light/dark study on desktop/mobile: media time preserved, charts styled, themes reversible');
     }
     if (pagePath === 'index.html') {
-      const previewManifest = await (await desktop.request.get(new URL('assets/studio27/manifest.json', origin))).json();
+      const previewManifest = await (await desktop.request.get(new URL('assets/studio27/manifest.json', origin).href)).json();
       assert.equal(previewManifest.environments.dark.global_lights, 0);
       assert.equal(previewManifest.environments.dark.overhead_rect_lights, 384);
       for (const width of [1440, 390]) {
