@@ -14,7 +14,7 @@ on:
         default: index.html
         type: string
   push:
-    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow]
+    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview]
     paths:
       - '.github/workflows/website-visual-review.yml'
       - '.github/scripts/website-visual-review.cjs'
@@ -26,6 +26,7 @@ on:
       - 'website/assets/launch/manifest.json'
       - 'website/assets/studio/**'
       - 'website/assets/studio26/**'
+      - 'website/assets/studio27/**'
 
 permissions:
   contents: write
