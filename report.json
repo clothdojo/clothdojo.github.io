@@ -492,7 +492,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
-          "time": 0.5036,
+          "time": 0.5,
           "duration": 32,
           "videoWidth": 2560,
           "videoHeight": 1440,
