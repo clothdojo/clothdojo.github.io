@@ -4531,6 +4531,7 @@
       }
     ],
     "appearance_scope": "The stable asset-ID palette and studio communicate motion and asset diversity; the paper-sampled RGB randomization is a separate demonstration.",
+    "studio_environment": "Open neutral studio with a ground plane and soft shadows; no background wall, columns or window panels. Paper-sampled background scenes in the separate film remain unchanged.",
     "camera_keyframes": [
       {
         "frame": 0,
@@ -4755,7 +4756,7 @@
         }
       }
     ],
-    "retained_render_frames": 579
+    "retained_render_frames": 0
   },
   "films": {
     "hero": {
@@ -4767,8 +4768,8 @@
       "frames": 800,
       "duration_seconds": 32.0,
       "crf": 18,
-      "bytes": 26111095,
-      "sha256": "4f04a94b520c86e494ba0f3485d5db8ffb9069301e6679c797a995fdf09ef4f1",
+      "bytes": 25785972,
+      "sha256": "5dc887e46c486e9e8186a0954ef81f4611fd3b60fc95c097fa7a34a457481e81",
       "codec": "H.264/yuv420p/faststart",
       "spatial_transform": null
     },
@@ -4781,8 +4782,8 @@
       "frames": 800,
       "duration_seconds": 32.0,
       "crf": 18,
-      "bytes": 11913183,
-      "sha256": "304bf6a15605a3fa0119aaeb12a28ed88e44572a5a5aa7c8499684c1b20bb93f",
+      "bytes": 11685430,
+      "sha256": "f1b612500dfdd06c5a26a117f48728653cac3a59c394133dca4ba0739c832094",
       "codec": "H.264/yuv420p/faststart",
       "spatial_transform": "Center crop of independently rendered 2K frames"
     },
