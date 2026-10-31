@@ -18,6 +18,11 @@ html[data-theme=dark] { color-scheme:dark; --ink:#eef2ed; --text:#bdc9c0; --mute
 [data-theme=dark] .film-tabs button[aria-pressed=true] { color:#e0eee0; background:var(--chapter-surface); }
 [data-theme=dark] .hero-figure video { background:#242c27; }
 [data-theme=dark] .usage-links>a { border-color:var(--line); }
+[data-theme=dark] .usage-links h3 { color:#b9d6c1; }
+[data-theme=dark] .code-panel { background:#222e27; border-color:var(--line); }
+[data-theme=dark] .code-heading { color:var(--text); }
+[data-theme=dark] .method-flow { border-color:var(--line); }
+[data-theme=dark] dialog { background:#202923; }
 [data-theme=dark] .research-results { --result-ink:#edf2ee; --result-muted:#b9c6c0; --result-line:#39453d; --result-accent:#8ec9d0; --flatten:#73bbc6; --fold:#d4ab8b; color:var(--result-ink); }
 [data-theme=dark] .chart-pair,
 [data-theme=dark] .table-block,
