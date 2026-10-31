@@ -186,7 +186,7 @@ saveReport();
       const shot=await capture(page,prefix+'-hero-'+String(time).replace('.','p')+'s','#hero-film',time);
       const state=shot.visibleVideos.find(item=>item.id==='hero-film');
       assert(state && Math.abs(state.duration-32)<.05 && Math.abs(state.time-time)<.05);
-      assert.equal(state.videoWidth,mobile?1440:2560);assert.equal(state.videoHeight,mobile?810:1440);
+      assert.equal(state.videoWidth,mobile?1080:2560);assert.equal(state.videoHeight,mobile?1350:1440);
       assert(state.readyState>=3 && !state.seeking && state.paused);
       const index=time<9.25?0:time<19.5?1:2;
       assert.equal(await page.locator('[data-seek]').nth(index).getAttribute('aria-pressed'),'true');
