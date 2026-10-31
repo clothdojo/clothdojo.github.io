@@ -643,6 +643,44 @@ saveReport();
       }
       report.checks.push('In-page scene study: full homepage context, three uncropped views, top lights only, real 25fps excerpt, matched paused time and desktop/mobile layout');
     }
+    if (pagePath === 'index.html') {
+      const fitManifest=await (await desktop.request.get(new URL('assets/studio28/manifest.json',origin).href)).json();
+      for (const [width,height] of [[1920,1080],[1440,900],[1366,768],[1280,720],[768,1024],[390,844],[320,640]]) {
+        const fit=await open({width,height},'reduce','scene-preview-v28.html');
+        await fit.locator('#scene-frame').evaluate(image=>image.decode());
+        const bounds=await fit.evaluate(()=>{
+          const box=selector=>{const r=document.querySelector(selector).getBoundingClientRect();return {top:r.top,bottom:r.bottom,width:r.width,height:r.height};};
+          return {viewportWidth:document.documentElement.clientWidth,header:box('.site-header'),hero:box('#overview'),title:box('h1'),caption:box('.hero-figure figcaption'),authors:box('#authors>summary'),frame:box('#scene-frame'),background:getComputedStyle(document.body).backgroundColor,fit:getComputedStyle(document.getElementById('scene-frame')).objectFit};
+        });
+        assert(bounds.hero.bottom<=height+1 && bounds.authors.bottom<=height+1 && bounds.caption.bottom<=height+1,'Whole hero must fit one viewport at '+width+'x'+height);
+        assert(bounds.title.bottom<bounds.frame.top && bounds.frame.height>100,'Headline and media must remain separate and visible');
+        assert(Math.abs(bounds.frame.width-bounds.viewportWidth)<1,'Banner spans full available viewport width');
+        assert.equal(bounds.fit,'contain');assert.equal(bounds.background,'rgb(255, 255, 255)');
+        const whitePatch=fitManifest.images[(width<=700?'mobile':'wide')+'-near'].white_patch;
+        const pixel=await fit.locator('#scene-frame').evaluate((image,point)=>{const c=document.createElement('canvas');c.width=image.naturalWidth;c.height=image.naturalHeight;const context=c.getContext('2d');context.drawImage(image,0,0);return [...context.getImageData(point[0],point[1],1,1).data].slice(0,3);},whitePatch);
+        assert(pixel.every(channel=>channel>=253),'Unshadowed image background must match the white page');
+        report.layouts.push({label:'one-screen-white-banner',viewport:{width,height},...bounds});
+        await capture(fit,'fit-'+width+'x'+height+'-opening');
+        if (width===1280 || width===390) {
+          await fit.locator('[data-scene-view="scale"]').click();
+          await fit.waitForFunction(()=>document.getElementById('scene-frame').currentSrc.endsWith('/wide-scale.jpg') && document.getElementById('scene-frame').complete);
+          await capture(fit,'fit-'+width+'-scale');
+          await fit.locator('[data-scene-view="motion"]').click();
+          await fit.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.readyState>=3 && !v.paused && v.currentTime>.15;});
+          await capture(fit,'fit-'+width+'-motion','#hero-film',1);
+          const size=await fit.locator('#hero-film').evaluate(v=>[v.videoWidth,v.videoHeight]);
+          assert.deepEqual(size,width<=700?[1080,810]:[2400,720]);
+          if(width===1280){
+            await fit.setViewportSize({width:390,height:844});
+            await fit.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.currentSrc.endsWith('/mobile-handoff.mp4') && v.readyState>=3 && v.paused && Math.abs(v.currentTime-1)<.1;});
+            await fit.setViewportSize({width,height});
+            await fit.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.currentSrc.endsWith('/wide-handoff.mp4') && v.readyState>=3 && v.paused && Math.abs(v.currentTime-1)<.1;});
+          }
+        }
+        await fit.context().close();
+      }
+      report.checks.push('White panoramic banner: entire closed hero fits seven viewport sizes, full width, uncropped source, pure-white page and real desktop/mobile motion');
+    }
     const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
     for (const target of pages) {
       for (const width of [1440, 390]) {

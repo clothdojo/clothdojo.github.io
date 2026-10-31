@@ -1,0 +1,144 @@
+{
+  "schema": "clothdojo_white_one_screen_banner_v28",
+  "scope": "Selected panoramic/mobile stills and a 2.4-second real camera-handoff excerpt; not the finished 32-second film.",
+  "trajectory_count": 384,
+  "unique_asset_count": 202,
+  "grid": [
+    12,
+    32
+  ],
+  "task_banks": {
+    "left": "192 flattening trajectories",
+    "right": "192 folding trajectories"
+  },
+  "page_background_rgb": [
+    255,
+    255,
+    255
+  ],
+  "compositing": {
+    "method": "RTX matte/shadow catcher with depth-derived ground mask and uniform clean-ground reference; ground RGB normalized onto white.",
+    "subject_pixels": "Unmodified from the raw RTX render",
+    "page_background_rgb": [
+      255,
+      255,
+      255
+    ],
+    "ground_z": 7.450580569168253e-10
+  },
+  "audits": {
+    "wide": {
+      "subject_pixels_unchanged": true,
+      "reference_uniform_range": 0.0,
+      "minimum_pure_white_fraction": 0.18200633359053497,
+      "frame_count": 62
+    },
+    "mobile": {
+      "subject_pixels_unchanged": true,
+      "reference_uniform_range": 0.0,
+      "minimum_pure_white_fraction": 0.21579561042524006,
+      "frame_count": 61
+    }
+  },
+  "images": {
+    "wide-near": {
+      "src": "wide-near.jpg",
+      "size": [
+        2880,
+        864
+      ],
+      "white_patch": [
+        2253,
+        504
+      ]
+    },
+    "wide-bridge": {
+      "src": "wide-bridge.jpg",
+      "size": [
+        2880,
+        864
+      ],
+      "white_patch": [
+        2596,
+        695
+      ]
+    },
+    "wide-scale": {
+      "src": "wide-scale.jpg",
+      "size": [
+        2880,
+        864
+      ],
+      "white_patch": [
+        2512,
+        197
+      ]
+    },
+    "mobile-near": {
+      "src": "mobile-near.jpg",
+      "size": [
+        1080,
+        810
+      ],
+      "white_patch": [
+        856,
+        546
+      ]
+    },
+    "mobile-bridge": {
+      "src": "mobile-bridge.jpg",
+      "size": [
+        1080,
+        810
+      ],
+      "white_patch": [
+        1046,
+        664
+      ]
+    }
+  },
+  "clips": {
+    "wide": {
+      "src": "wide-handoff.mp4",
+      "width": 2400,
+      "height": 720,
+      "fps": 25,
+      "frames": 60,
+      "duration_seconds": 2.4,
+      "bytes": 1570631,
+      "sha256": "d0eed68657c442680467dd3c32166da1e193c218ffc20ae4846d13ff0987ff21"
+    },
+    "mobile": {
+      "src": "mobile-handoff.mp4",
+      "width": 1080,
+      "height": 810,
+      "fps": 25,
+      "frames": 60,
+      "duration_seconds": 2.4,
+      "bytes": 1479317,
+      "sha256": "84478bd423a5691356165ae6574dcbaa86d137fefaed26fd3e3c19e69cdbb2cd"
+    }
+  },
+  "cloth_finish": {
+    "resource": "cotton_jersey",
+    "identity_tint": "Base-color texture normalized by mean linear RGB then tinted per asset.",
+    "roughness": "0.70 + 0.25 * cotton roughness map",
+    "specular_rgb": [
+      0.015,
+      0.015,
+      0.015
+    ],
+    "normal_xy_strength": 0.35,
+    "scope": "Designed studio material, not the paper randomization sampler."
+  },
+  "source_plan_sha256": "cb42b8f391bf7fc25cce38a0588de66ba8bdc5a24b6ac9d93632a5a6e94c4054",
+  "source_interval": [
+    170,
+    230
+  ],
+  "source_time_interval_seconds": [
+    6.8,
+    9.2
+  ],
+  "presentation": "Exact saved task states at 2x. Scripted kinematic released-arm home tails are distinct from policy/physics evaluation. White studio material/lighting is presentation design, not paper randomization."
+}
