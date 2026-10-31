@@ -5,13 +5,13 @@ Buildless research website. GitHub Pages publishes this directory only; code, te
 ## Structure
 
 - `index.html`: complete-task generation across distinct garments, observation re-rendering, robot transfer, generation/learning/transfer evaluations, method and practical entry points.
-- `site.css` / `site.js`: the shared visual system and homepage media interactions. The homepage does not depend on the archived homepage CSS or player scripts.
+- `site.css` / `studio.css` / `site.js`: the shared visual system and homepage media interactions. The homepage does not depend on the archived homepage CSS or player scripts.
 - `results.html` / `results.css`: five complete experiment groups. Homepage research charts and all research tables use these same components.
 - `explore.html` / `explore.css` / `explorer.js`: the 24-trajectory catalog and interactive 500-garment atlas.
 - `assets/experiment-results.json`: machine-readable source metrics.
-- `assets/launch/manifest.json`: provenance for the current demonstration set, including trajectories, frame ranges, cameras, renderer settings and encodings.
+- `assets/studio/manifest.json`: provenance for the current demonstration set, including trajectories, frame ranges, cameras, renderer settings and encodings.
 - `assets/hero.sources.json`: source frames and timing for the linked expert demonstration montage in the explorer.
-- `design-preview.html` and `scene-preview.html`: retained earlier design studies, outside the current project narrative.
+- `design-directions.html`: three labeled concept compositions. Its AI-generated environment board is a design study, never manipulation evidence. Earlier `design-preview.html` and `scene-preview.html` remain archived.
 
 Serve the website locally with Node.js and a server that supports byte-range video seeking:
 
@@ -23,15 +23,13 @@ HTTP byte-range support is required to verify native video seeking and expanded 
 
 ## Demonstration narrative
 
-The homepage opens with the full paper title, aligned with the demonstration below it. Desktop uses three semantic lines; narrow screens wrap the complete title without removing words. Collection counts and the authors' disclosure follow the video. Project details and authors, replay explanations, experiment protocols, the detailed method and setup requirements use native, default-closed `details` sections. Videos, plots, key tables and entry points remain visible; expanding a section keeps its context on the page.
+The homepage places a large project wordmark beside the complete paper title. It follows a continuous studio scene with garment diversity, controlled observation re-rendering, robot transfer, experiments, method and practical entry points. Explanations and authors remain in default-closed native disclosures.
 
-The primary demonstration has two task choices: 400 distinct garments for flattening and 399 for folding. Each starts at an oblique third-person view of one complete robot workcell, then reveals the task's larger collection in one shared 3D scene. Cloth material and environment are uniform so shape and motion carry the comparison. Every workcell replays a different saved autonomous trajectory from its initial state through its selected successful, released terminal state. Shorter executions retain that actual terminal state while others finish. These presentation replays illustrate the saved collection; they do not measure simultaneous generation throughput.
+The primary demonstration separates flattening and folding. Flattening shows 54 independent trajectories on 54 garments; folding shows 54 trajectories on 52 garments, including three saved initial configurations of one garment. Different configurations do not establish multiple solutions from an identical state. Uniform cloth material makes geometry and motion legible; the separate asset-pool atlas illustrates the broader garment collection.
 
-Both task films run for 17 seconds at 25 fps and explicitly use 4× playback. With source states recorded at 50 Hz, output frame `i` reads state `min(8*i, T)`, where `T` is the exported episode's successful terminal index. The maximum selected execution lasts less than 59 seconds, leaving more than two seconds with every garment at its completed state. Desktop and mobile use the same task choices. The earlier four-sample excerpt collage is no longer part of the homepage.
+Both task films run for 34 seconds at 25 actual rendered fps and explicitly use 2× playback. Output frame `i` in workspace `j` reads state `min(4*((i+phase_j)%850), T_j)`, where `T_j` is the selected successful, released endpoint. The foreground case begins at its actual initial state and completes while the camera holds for 13 seconds; the camera then moves laterally through the studio and returns to its opening pose. Shorter actions retain their actual terminal state. Staggered cycles are saved replays, not live generation or a generation-throughput measurement.
 
-Observation re-rendering directly pairs two appearances of the same saved motion. Both views use matching physical states, robot motion, camera, environment, lighting and frame times; only cloth material changes. A single 25 fps video keeps the views synchronized and needs only one decoder. Desktop places them side by side; mobile stacks them vertically with dedicated label space so native player controls do not cover most of the content. This five-second, 1× excerpt demonstrates observation reuse rather than complete-task success. Both views are rendered RGB observations; “Reference appearance” does not imply an original camera recording.
-
-Robot transfer pairs a source replay with a retargeted kinematic reference at matching timestamps. Both robot identities are labeled, with horizontal desktop and vertical mobile presentations. Changing viewport preserves the comparison time and paused state. The closed-loop policy table is in the evaluation section, separate from replay evidence. Full downstream policy comparisons remain on the results page.
+Observation re-rendering shows two full workspaces in one continuous 3D scene and one camera. They replay matching physical states; the second garment uses a different material. Robot transfer similarly shows PIPER and UR5e + 2F85 together in one 3D scene at matching timestamps. These are real state replays, not composited video panels. Both clips run for 12 seconds at 25 fps, with 2× replay and a terminal hold. Desktop uses 1920×1080; a separately rendered 1080×1350 camera and spatial arrangement serves narrow screens. Changing viewport preserves replay time and paused state. Kinematic retargeted reference replay is distinct from closed-loop policy evaluation in the results section.
 
 The generated training set has 7,848 trajectories: 3,992 flattening and 3,856 folding, covering 400 and 399 garments respectively. These counts differ from the 500-asset pool and selected demonstration subsets.
 
@@ -57,7 +55,7 @@ Native controls remain available. Expanded replay loads on explicit request and 
 
 The verification server is pinned to `http-server` 14.1.1 and supports HTTP byte ranges for native video seeking. Before browser checks, a 1,024-byte media request must return HTTP 206 and a matching `Content-Range`.
 
-The review captures 1440 px desktop and 390/320 px mobile viewports, with decoded images and real video frames. It checks the full title's visibility, task selection, synchronized re-rendering presentation, native dialog cleanup, clipboard copying, exclusive playback, mobile defaults, page overflow, disclosure interactions and shared computed table styles. Each generation film is also captured at 0, 4.75, 8 and 16 seconds on desktop and mobile, covering initial state, the near workcell's completed task, camera movement and the completed collection. Actual timestamps and decoded dimensions are recorded. Results-page screenshots cover all five experiment groups. JPEG screenshots and a report containing the tested commit and browser version are kept on `codex/site-visual-review`.
+The review captures 1440 px desktop and 390/320 px mobile viewports, with decoded images and real video frames. It checks the full title's visibility, task selection, synchronized re-rendering presentation, native dialog cleanup, clipboard copying, exclusive playback, mobile defaults, page overflow, disclosure interactions and shared computed table styles. Each generation film is also captured at 0, 12.8, 22 and 33.8 seconds on desktop and mobile, covering initial state, the near workcell's completed task, camera movement and the loop boundary. Actual timestamps and decoded dimensions are recorded. Results-page screenshots cover all five experiment groups. JPEG screenshots and a report containing the tested commit and browser version are kept on `codex/site-visual-review`.
 
 Inspect screenshots as well as automated results: passing interaction checks is not a visual-quality assessment.
 

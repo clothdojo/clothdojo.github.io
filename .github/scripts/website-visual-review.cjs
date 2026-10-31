@@ -176,10 +176,10 @@ saveReport();
   async function heroReveal(page, prefix, captureFrames) {
     const video = page.locator('#hero-film');
     if (!await video.count()) return;
-    const tasks = [{ task: 'flatten', label: 'Flattening', count: 400 }, { task: 'fold', label: 'Folding', count: 399 }];
+    const tasks = [{ task: 'flatten', label: 'Flattening', count: 54 }, { task: 'fold', label: 'Folding', count: 52 }];
     const tabs = page.locator('[data-select="hero-film"]');
     assert.equal(await tabs.count(), 2, 'Generation must separate the two task objectives');
-    assert.equal(await video.getAttribute('data-src'), 'assets/launch/generation-flatten.mp4');
+    assert.equal(await video.getAttribute('data-src'), 'assets/studio/flatten-loop.mp4');
     assert.equal(await tabs.first().getAttribute('aria-pressed'), 'true');
     assert.equal(await page.locator('#collection-film').count(), 0, 'The redundant four-sample collage must be removed');
     for (let index = 0; index < tasks.length; index++) {
@@ -189,18 +189,18 @@ saveReport();
     report.checks.push(prefix + ': two explicit task choices, Flattening selected by default, no duplicate collage');
     if (!captureFrames) return;
     for (const [index, task] of tasks.entries()) {
-      const source = 'assets/launch/generation-' + task.task + '.mp4';
+      const source = 'assets/studio/' + task.task + '-loop.mp4';
       await tabs.nth(index).click();
       assert.equal(await video.getAttribute('poster'), source.replace('.mp4', '-poster.jpg'));
       assert.match(await page.locator('#hero-film-caption').textContent(), new RegExp(task.count + ' garments'));
-      for (const time of [0, 4.75, 8, 16]) {
+      for (const time of [0, 12.8, 22, 33.8]) {
         const shot = await capture(page, prefix + '-hero-' + task.task + '-' + String(time).replace('.', 'p') + 's', '#hero-film', time);
         const state = shot.visibleVideos.find(item => item.id === 'hero-film');
         (report.heroRevealFrames ||= []).push({ task: task.task, viewport: page.viewportSize(), screenshot: shot.file, requestedTime: time, ...state });
         saveReport();
         assert(state, 'Generation video must be visible in the timed screenshot');
         assert.equal(state.currentSrc, new URL(source, page.url()).href);
-        assert(Math.abs(state.duration - 17) < 0.05, 'Complete-task film must include its final hold');
+        assert(Math.abs(state.duration - 34) < 0.05, 'Complete-task film must include its final hold');
         assert(Math.abs(state.time - time) < 0.05, 'Screenshot must preserve the requested frame time');
         assert(state.readyState >= 3 && !state.seeking, 'Screenshot must contain a stable playable frame');
         assert.equal(state.videoWidth, 1920);
@@ -226,21 +226,21 @@ saveReport();
     const shot = await capture(page, prefix + '-matched-rerender', '#appearance-film', 2.5);
     const state = shot.visibleVideos.find(item => item.id === 'appearance-film');
     const mobile = page.viewportSize().width <= 700;
-    assert(state && state.currentSrc.endsWith(mobile ? '/rerender-comparison-mobile.mp4' : '/rerender-comparison.mp4'));
-    assert.equal(state.videoWidth, mobile ? 960 : 1920);
-    assert.equal(state.videoHeight, mobile ? 1328 : 600);
+    assert(state && state.currentSrc.endsWith(mobile ? '/appearance-portrait.mp4' : '/appearance-shared.mp4'));
+    assert.equal(state.videoWidth, mobile ? 1080 : 1920);
+    assert.equal(state.videoHeight, mobile ? 1350 : 1080);
     assert(Math.abs(state.time - 2.5) < 0.05 && state.readyState >= 3 && !state.seeking);
     report.checks.push(prefix + ': direct frame-matched re-rendering pair in one native player');
   }
   async function responsivePairs(page) {
     if (pagePath !== 'index.html') return;
     const viewport = page.viewportSize();
-    for (const [id, name] of [['appearance-film', 'rerender-comparison'], ['transfer-film', 'transfer']]) {
+    for (const [id, name] of [['appearance-film', 'appearance'], ['transfer-film', 'transfer']]) {
       await position(page, '#' + id);
       await stableMedia(page, 2.5, '#' + id);
       for (const width of [1440, viewport.width]) {
         await page.setViewportSize({ width, height: viewport.height });
-        const source = new URL('assets/launch/' + name + (width <= 700 ? '-mobile' : '') + '.mp4', origin).href;
+        const source = new URL('assets/studio/' + name + (width <= 700 ? '-portrait' : '-shared') + '.mp4', origin).href;
         await page.waitForFunction(({ id, source }) => {
           const video = document.getElementById(id);
           return video.currentSrc === source && video.readyState >= 3 && !video.seeking && Math.abs(video.currentTime - 2.5) < 0.1;
@@ -498,14 +498,21 @@ saveReport();
     await interactions(desktop);
     const mainTable = pagePath === 'index.html' ? await tableStyle(desktop) : null;
     report.tableStyles = { homepage: mainTable };
+    if (pagePath === 'index.html') {
+      const tablet = await open({ width: 768, height: 1000 });
+      await formalTitle(tablet, 'tablet-768');
+      await heroReveal(tablet, 'tablet-768', false);
+      await capture(tablet, 'tablet-768-opening');
+      await tablet.context().close();
+    }
     for (const width of [390, 320]) {
       const mobile = await open({ width, height: 844 });
       await formalTitle(mobile, 'mobile-' + width);
       await explanations(mobile, 'mobile-' + width, width === 390);
       await heroReveal(mobile, 'mobile-' + width, width === 390);
       if (await mobile.locator('#transfer-film').count()) {
-        assert((await mobile.locator('#transfer-film').getAttribute('data-src')).endsWith('/transfer-mobile.mp4'), 'Mobile must use a readable vertical synchronized comparison');
-        assert.equal(await mobile.locator('#transfer .media-labels p').count(), 2, 'Both robots need visible source/target labels');
+        assert((await mobile.locator('#transfer-film').getAttribute('data-src')).endsWith('/transfer-portrait.mp4'), 'Mobile must use a readable vertical synchronized comparison');
+        assert.match(await mobile.locator('#transfer figcaption').textContent(), /PIPER.*UR5e/, 'Both robots need visible source/target labels');
         assert(await mobile.locator('[data-expand="transfer-film"]').isVisible(), 'The mobile pair needs a larger-view entry');
       }
       await capture(mobile, 'mobile-' + width + '-opening');
@@ -522,7 +529,7 @@ saveReport();
       await active.waitForFunction(() => document.getElementById('hero-film').hasAttribute('src'));
       await active.locator('#hero-film').evaluate(async video => { await video.play(); });
       await active.locator('[data-select="hero-film"]').last().click();
-      const expectedSource = new URL('assets/launch/generation-fold.mp4', origin).href;
+      const expectedSource = new URL('assets/studio/fold-loop.mp4', origin).href;
       await active.waitForFunction(source => {
         const video = document.getElementById('hero-film');
         return video.currentSrc === source && video.readyState >= 3 && !video.paused && video.currentTime > 0.1;
