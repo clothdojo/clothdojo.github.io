@@ -1,8 +1,8 @@
 {
-  "ref": "c8e725a113c8af85932c3edefb2045af1135c867",
-  "commit": "c8e725a113c8af85932c3edefb2045af1135c867",
+  "ref": "1192b8eca1941cc796e365a0bf7a9ea4b30ae095",
+  "commit": "1192b8eca1941cc796e365a0bf7a9ea4b30ae095",
   "pagePath": "index.html",
-  "passed": true,
+  "passed": false,
   "status": "completed",
   "screenshots": [
     {
@@ -492,7 +492,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
-          "time": 0.5,
+          "time": 0.5098,
           "duration": 32,
           "videoWidth": 2560,
           "videoHeight": 1440,
@@ -3541,298 +3541,9 @@
         "IMG.",
         "CODE."
       ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/design-directions.html",
-      "label": "smoke-design-directions.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/design-directions.html",
-      "label": "smoke-design-directions.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "IMG.",
-        "IMG."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/explore.html",
-      "label": "smoke-explore.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/explore.html",
-      "label": "smoke-explore.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "smoke-index.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "smoke-index.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "smoke-results.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "smoke-results.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
     }
   ],
-  "pages": [
-    {
-      "path": "design-directions.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-directions.css",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "design-directions.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-directions.css",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "design-preview.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "design-preview.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "explore.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/explore.css?v=26",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "explore.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/explore.css?v=26",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "index.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "index.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "results.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=21",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=21",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "results.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=21",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=21",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=19",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=19",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
-          "loaded": true
-        }
-      ]
-    }
-  ],
+  "pages": [],
   "checks": [
     "HTTP 206 byte-range media serving",
     "Model benchmark → method → generation scale reading order",
@@ -4657,5 +4368,6 @@
       "paddingBottom": "13px",
       "borderBottomColor": "rgb(229, 235, 237)"
     }
-  }
+  },
+  "failure": "apiRequestContext.get: options.request.url is not a function\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:612:60"
 }
