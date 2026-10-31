@@ -681,6 +681,33 @@ saveReport();
       }
       report.checks.push('White panoramic banner: entire closed hero fits seven viewport sizes, full width, uncropped source, pure-white page and real desktop/mobile motion');
     }
+    if(pagePath==='index.html'){
+      const islands=await(await desktop.request.get(new URL('assets/studio29/manifest.json',origin).href)).json();
+      assert.deepEqual(islands.stages,[2,8,48,384]);
+      assert.equal(islands.audit.subject_border_intersections,0);
+      assert.equal(islands.images.pair.visible_trajectories,2);
+      for(const [width,height] of [[1440,900],[1280,720],[390,844],[320,640]]){
+        const scene=await open({width,height},'reduce','scene-preview-v29.html');
+        await scene.locator('#scene-frame').evaluate(image=>image.decode());
+        assert.match(await scene.locator('#hero-film-caption').textContent(),/Left: Flattening.*Right: Folding/);
+        const box=await scene.locator('#overview').boundingBox();assert(box.y+box.height<=height+1);
+        await capture(scene,'islands-'+width+'-opening');
+        for(const [view,file] of [['bridge','broader.jpg'],['scale','scale.jpg']]){
+          await scene.locator('[data-scene-view="'+view+'"]').click();
+          await scene.waitForFunction(expected=>{const image=document.getElementById('scene-frame');return image.currentSrc.endsWith(expected)&&image.complete;},'/assets/studio29/'+file);
+          await capture(scene,'islands-'+width+'-'+view);
+        }
+        if(width===1440 || width===390){
+          await scene.locator('[data-scene-view="motion"]').click();
+          await scene.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.readyState>=3&&!v.paused&&v.currentTime>.1;});
+          for(const time of [.1,1.8])await capture(scene,'islands-'+width+'-reveal-'+String(time).replace('.','p'),'#hero-film',time);
+          const media=await scene.locator('#hero-film').evaluate(v=>({duration:v.duration,loop:v.loop}));
+          assert(Math.abs(media.duration-2.8)<.01);assert.equal(media.loop,false,'Partial reveal sample must not advertise a seamless full loop');
+        }
+        await scene.context().close();
+      }
+      report.checks.push('Finite-workcell study: centred two-task opening, 48/384 complete-group views, one-screen desktop/mobile and a real whole-group reveal excerpt');
+    }
     const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
     for (const target of pages) {
       for (const width of [1440, 390]) {
