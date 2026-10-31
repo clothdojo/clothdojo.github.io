@@ -1,6 +1,6 @@
 {
-  "ref": "08f9896ed06c0765988027112e83391c1bed04ff",
-  "commit": "08f9896ed06c0765988027112e83391c1bed04ff",
+  "ref": "6a22c9e9a3af79dcd5ce13f0432fb0ae1f648d5b",
+  "commit": "6a22c9e9a3af79dcd5ce13f0432fb0ae1f648d5b",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -738,7 +738,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5027,
+          "time": 0.5,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
@@ -990,7 +990,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5059,
+          "time": 0.5,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
@@ -1920,7 +1920,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
-          "time": 1.1072,
+          "time": 1.1,
           "duration": 2.4,
           "videoWidth": 1920,
           "videoHeight": 1080,
@@ -2068,7 +2068,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
-          "time": 1.1059,
+          "time": 1.1033,
           "duration": 2.4,
           "videoWidth": 1920,
           "videoHeight": 1080,
@@ -2230,6 +2230,254 @@
     {
       "file": "fit-320x640-opening.jpg",
       "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-1440-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-1440-bridge.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-1440-scale.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-1440-reveal-0p1.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 0.1,
+      "scrollY": 176,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio29/reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio29/reveal.mp4",
+          "time": 0.1,
+          "duration": 2.8,
+          "videoWidth": 2400,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "islands-1440-reveal-1p8.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 1.8,
+      "scrollY": 176,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio29/reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio29/reveal.mp4",
+          "time": 1.8,
+          "duration": 2.8,
+          "videoWidth": 2400,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "islands-1280-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-1280-bridge.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-1280-scale.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-390-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-390-bridge.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-390-scale.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-390-reveal-0p1.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 0.1,
+      "scrollY": 224,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio29/reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio29/reveal.mp4",
+          "time": 0.1,
+          "duration": 2.8,
+          "videoWidth": 2400,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "islands-390-reveal-1p8.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 1.8,
+      "scrollY": 224,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio29/reveal.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio29/reveal.mp4",
+          "time": 1.8,
+          "duration": 2.8,
+          "videoWidth": 2400,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "islands-320-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-320-bridge.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "islands-320-scale.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
       "viewport": {
         "width": 320,
         "height": 640
@@ -4593,6 +4841,175 @@
       ]
     },
     {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-1440-opening",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-1440-bridge",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-1440-scale",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-1440-reveal-0p1",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-1440-reveal-1p8",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-1280-opening",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-1280-bridge",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-1280-scale",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-390-opening",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-390-bridge",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-390-scale",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-390-reveal-0p1",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-390-reveal-1p8",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-320-opening",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-320-bridge",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v29.html",
+      "label": "islands-320-scale",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
       "page": "http://127.0.0.1:8787/design-directions.html",
       "label": "smoke-design-directions.html",
       "width": 1440,
@@ -4965,6 +5382,64 @@
       ]
     },
     {
+      "path": "scene-preview-v29.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview-v29.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        }
+      ]
+    },
+    {
       "path": "scene-preview.html",
       "viewport": {
         "width": 1440,
@@ -5031,7 +5506,8 @@
     "Neutral 500-asset atlas: first/last pointer selections and zoom work on desktop/mobile",
     "Same-content light/dark study on desktop/mobile: media time preserved, charts styled, themes reversible",
     "In-page scene study: full homepage context, three uncropped views, top lights only, real 25fps excerpt, matched paused time and desktop/mobile layout",
-    "White panoramic banner: entire closed hero fits seven viewport sizes, full width, uncropped source, pure-white page and real desktop/mobile motion"
+    "White panoramic banner: entire closed hero fits seven viewport sizes, full width, uncropped source, pure-white page and real desktop/mobile motion",
+    "Finite-workcell study: centred two-task opening, 48/384 complete-group views, one-screen desktop/mobile and a real whole-group reveal excerpt"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
