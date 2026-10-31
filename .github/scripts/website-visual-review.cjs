@@ -174,43 +174,30 @@ saveReport();
     return evidence;
   }
   async function heroReveal(page, prefix, captureFrames) {
+    if (pagePath !== 'index.html') return;
     const video = page.locator('#hero-film');
-    if (!await video.count()) return;
-    const tasks = [{ task: 'flatten', label: 'Flattening', count: 54 }, { task: 'fold', label: 'Folding', count: 52 }];
-    const tabs = page.locator('[data-select="hero-film"]');
-    assert.equal(await tabs.count(), 2, 'Generation must separate the two task objectives');
-    assert.equal(await video.getAttribute('data-src'), 'assets/studio/flatten-loop.mp4');
-    assert.equal(await tabs.first().getAttribute('aria-pressed'), 'true');
-    assert.equal(await page.locator('#collection-film').count(), 0, 'The redundant four-sample collage must be removed');
-    for (let index = 0; index < tasks.length; index++) {
-      assert.equal((await tabs.nth(index).textContent()).trim(), tasks[index].label);
-      assert(await tabs.nth(index).isVisible(), 'Both task choices must be visible at every viewport');
-    }
-    report.checks.push(prefix + ': two explicit task choices, Flattening selected by default, no duplicate collage');
+    assert.equal(await page.locator('[data-select="hero-film"]').count(),0,'Both tasks must be in the automatic film');
+    assert.equal(await page.locator('[data-seek]').count(),3);
+    const mobile=page.viewportSize().width<=700;
+    assert.equal(await video.getAttribute('data-src'),'assets/studio26/experience-loop'+(mobile?'-portrait':'')+'.mp4');
+    report.checks.push(prefix + ': one automatic flattening/folding/scale film, with chapter seeking');
     if (!captureFrames) return;
-    for (const [index, task] of tasks.entries()) {
-      const source = 'assets/studio/' + task.task + '-loop.mp4';
-      await tabs.nth(index).click();
-      assert.equal(await video.getAttribute('poster'), source.replace('.mp4', '-poster.jpg'));
-      assert.match(await page.locator('#hero-film-caption').textContent(), new RegExp(task.count + ' garments'));
-      for (const time of [0, 12.8, 22, 33.8]) {
-        const shot = await capture(page, prefix + '-hero-' + task.task + '-' + String(time).replace('.', 'p') + 's', '#hero-film', time);
-        const state = shot.visibleVideos.find(item => item.id === 'hero-film');
-        (report.heroRevealFrames ||= []).push({ task: task.task, viewport: page.viewportSize(), screenshot: shot.file, requestedTime: time, ...state });
-        saveReport();
-        assert(state, 'Generation video must be visible in the timed screenshot');
-        assert.equal(state.currentSrc, new URL(source, page.url()).href);
-        assert(Math.abs(state.duration - 34) < 0.05, 'Complete-task film must include its final hold');
-        assert(Math.abs(state.time - time) < 0.05, 'Screenshot must preserve the requested frame time');
-        assert(state.readyState >= 3 && !state.seeking, 'Screenshot must contain a stable playable frame');
-        assert.equal(state.videoWidth, 1920);
-        assert.equal(state.videoHeight, 1080);
-        assert(state.controls && state.paused, 'Keep native controls in the screenshot');
-      }
+    for (const time of [0,8.1,13,19.2,26,31.8]) {
+      const shot=await capture(page,prefix+'-hero-'+String(time).replace('.','p')+'s','#hero-film',time);
+      const state=shot.visibleVideos.find(item=>item.id==='hero-film');
+      assert(state && Math.abs(state.duration-32)<.05 && Math.abs(state.time-time)<.05);
+      assert.equal(state.videoWidth,mobile?1440:2560);assert.equal(state.videoHeight,mobile?810:1440);
+      assert(state.readyState>=3 && !state.seeking && state.paused);
+      const index=time<9.25?0:time<19.5?1:2;
+      assert.equal(await page.locator('[data-seek]').nth(index).getAttribute('aria-pressed'),'true');
     }
-    await tabs.first().click();
-    report.checks.push(prefix + ': both complete-task films decoded at initial, near, moving-camera and all-completed times');
-    saveReport();
+    for (const index of [1,0,2]) {
+      const button=page.locator('[data-seek]').nth(index);
+      const expected=Number(await button.getAttribute('data-seek'));
+      await button.click();
+      await page.waitForFunction(t=>Math.abs(document.getElementById('hero-film').currentTime-t)<.3,expected);
+      await video.evaluate(v=>v.pause());
+    }
   }
   async function captureSections(page, prefix) {
     const sections = await page.locator('main section[id]').evaluateAll(elements => elements.map(element => element.id));
@@ -219,36 +206,36 @@ saveReport();
       await capture(page, prefix + '-' + id.replace(/[^a-zA-Z0-9_-]/g, '-'), selector);
     }
   }
-  async function rerenderComparison(page, prefix) {
-    if (pagePath !== 'index.html') return;
-    assert.equal(await page.locator('#render video').count(), 1, 'Matched re-renders must use one synchronized video');
-    assert.equal(await page.locator('[data-select="appearance-film"]').count(), 0, 'Re-rendering must be visible as a direct comparison');
-    const shot = await capture(page, prefix + '-matched-rerender', '#appearance-film', 2.5);
-    const state = shot.visibleVideos.find(item => item.id === 'appearance-film');
-    const mobile = page.viewportSize().width <= 700;
-    assert(state && state.currentSrc.endsWith(mobile ? '/appearance-portrait.mp4' : '/appearance-shared.mp4'));
-    assert.equal(state.videoWidth, mobile ? 1080 : 1920);
-    assert.equal(state.videoHeight, mobile ? 1350 : 1080);
-    assert(Math.abs(state.time - 2.5) < 0.05 && state.readyState >= 3 && !state.seeking);
-    report.checks.push(prefix + ': direct frame-matched re-rendering pair in one native player');
+  async function rerenderComparison(page,prefix) {
+    if(pagePath!=='index.html')return;
+    assert.equal(await page.locator('#render video').count(),1,'Randomization and retargeting share one scene and decoder');
+    const mobile=page.viewportSize().width<=700;
+    for(const time of [2.5,14.5,23.8]) {
+      const shot=await capture(page,prefix+'-paper-appearance-'+String(time).replace('.','p'),'#transfer-film',time);
+      const state=shot.visibleVideos.find(item=>item.id==='transfer-film');
+      assert(state && state.currentSrc.endsWith(mobile?'/domains-robots-mobile.mp4':'/domains-robots.mp4'));
+      assert.equal(state.videoWidth,mobile?1440:2560);
+      assert.equal(state.videoHeight,mobile?810:1440);
+      assert(Math.abs(state.duration-24)<.05 && Math.abs(state.time-time)<.05 && state.readyState>=3 && !state.seeking);
+      assert.match(await page.locator('#domain-scene-caption').textContent(),time<12?/Office/:/Warehouse/);
+    }
+    report.checks.push(prefix+': both paper-sampled appearances and the final home return decoded');
   }
   async function responsivePairs(page) {
-    if (pagePath !== 'index.html') return;
-    const viewport = page.viewportSize();
-    for (const [id, name] of [['appearance-film', 'appearance'], ['transfer-film', 'transfer']]) {
-      await position(page, '#' + id);
-      await stableMedia(page, 2.5, '#' + id);
-      for (const width of [1440, viewport.width]) {
-        await page.setViewportSize({ width, height: viewport.height });
-        const source = new URL('assets/studio/' + name + (width <= 700 ? '-portrait' : '-shared') + '.mp4', origin).href;
-        await page.waitForFunction(({ id, source }) => {
-          const video = document.getElementById(id);
-          return video.currentSrc === source && video.readyState >= 3 && !video.seeking && Math.abs(video.currentTime - 2.5) < 0.1;
-        }, { id, source });
-        assert(await page.locator('#' + id).evaluate(video => video.paused), 'Resizing a paused comparison must keep it paused');
-      }
+    if(pagePath!=='index.html')return;
+    const viewport=page.viewportSize();
+    await position(page,'#transfer-film');
+    await stableMedia(page,2.5,'#transfer-film');
+    for(const width of [1440,viewport.width]) {
+      await page.setViewportSize({width,height:viewport.height});
+      const source=new URL('assets/studio26/domains-robots'+(width<=700?'-mobile':'')+'.mp4',origin).href;
+      await page.waitForFunction(source=>{
+        const v=document.getElementById('transfer-film');
+        return v.currentSrc===source && v.readyState>=3 && !v.seeking && Math.abs(v.currentTime-2.5)<.1;
+      },source);
+      assert(await page.locator('#transfer-film').evaluate(v=>v.paused));
     }
-    report.checks.push('mobile comparison pairs switch to readable vertical films and preserve paused replay time when resized');
+    report.checks.push('Responsive domain/robot scenes preserve paused timestamp');
   }
   async function formalTitle(page, prefix) {
     if (pagePath !== 'index.html') return;
@@ -329,7 +316,7 @@ saveReport();
     const entry = { viewport: page.viewportSize(), initial, interactions: [] };
     (report.explanations ||= []).push(entry);
     saveReport();
-    assert.equal(initial.length, 8, 'Homepage must retain all eight explanations for the project, media, evidence, method and usage');
+    assert.equal(initial.length, 7, 'Homepage must retain author, benchmark, transfer, method, generation, randomization and usage explanations');
     assert(initial.every(item => item.tag === 'DETAILS' && item.open === false && item.summary), 'Explanations must be native details, initially closed, with a summary');
     report.checks.push(prefix + ': all ' + initial.length + ' native explanation details default closed');
     if (!exercise) return;
@@ -488,6 +475,12 @@ saveReport();
       await probe.close();
     }
     const desktop = await open({ width: 1440, height: 1000 });
+    if (pagePath === 'index.html') {
+      assert.deepEqual(await desktop.locator('main > section[id]').evaluateAll(nodes => nodes.map(node => node.id)),
+        ['overview','results','method','generation','render','use'], 'Model evaluations must precede method and generation scale');
+      assert.match(await desktop.locator('#results').textContent(), /Four models/);
+      report.checks.push('Model benchmark → method → generation scale reading order');
+    }
     await formalTitle(desktop, 'desktop');
     await explanations(desktop, 'desktop', true);
     await capture(desktop, 'desktop-opening');
@@ -511,7 +504,7 @@ saveReport();
       await explanations(mobile, 'mobile-' + width, width === 390);
       await heroReveal(mobile, 'mobile-' + width, width === 390);
       if (await mobile.locator('#transfer-film').count()) {
-        assert((await mobile.locator('#transfer-film').getAttribute('data-src')).endsWith('/transfer-portrait.mp4'), 'Mobile must use a readable vertical synchronized comparison');
+        assert((await mobile.locator('#transfer-film').getAttribute('data-src')).endsWith('/domains-robots-mobile.mp4'), 'Mobile must use a readable vertical synchronized comparison');
         assert.match(await mobile.locator('#transfer figcaption').textContent(), /PIPER.*UR5e/, 'Both robots need visible source/target labels');
         assert(await mobile.locator('[data-expand="transfer-film"]').isVisible(), 'The mobile pair needs a larger-view entry');
       }
@@ -528,8 +521,10 @@ saveReport();
       await position(active, '#hero-film');
       await active.waitForFunction(() => document.getElementById('hero-film').hasAttribute('src'));
       await active.locator('#hero-film').evaluate(async video => { await video.play(); });
-      await active.locator('[data-select="hero-film"]').last().click();
-      const expectedSource = new URL('assets/studio/fold-loop.mp4', origin).href;
+      await active.locator('#hero-film').evaluate(video => { video.currentTime = 8.95; });
+      await active.waitForFunction(() => document.querySelector('[data-seek="9.25"]').getAttribute('aria-pressed') === 'true' && document.getElementById('hero-film').currentTime > 9.5);
+      report.checks.push('Automatic playback reaches the folding chapter without a task switch');
+      const expectedSource = new URL('assets/studio26/experience-loop.mp4', origin).href;
       await active.waitForFunction(source => {
         const video = document.getElementById('hero-film');
         return video.currentSrc === source && video.readyState >= 3 && !video.paused && video.currentTime > 0.1;
@@ -561,6 +556,30 @@ saveReport();
       await results.context().close();
     }
     report.checks.push('five results anchors, shared rendered table typography, desktop/mobile results screenshots');
+    if(pagePath==='index.html') {
+      const manifest=await (await desktop.request.get(new URL('assets/studio26/manifest.json',origin).href)).json();
+      const conditions=manifest.films['domains-robots'].evidence.conditions;
+      assert.equal(conditions.length,2);
+      assert.deepEqual(conditions.map(c=>c.layout.background),['isaac_office','isaac_warehouse']);
+      assert(conditions.every(c=>c.layout.visual_profile==='train' && c.base_seed===20260911 && c.protocol_identity.protocol_sha256));
+      report.checks.push('Paper train-profile scene identities, seeds and protocol hashes recorded');
+      for(const width of [1440,390]) {
+        const atlas=await open({width,height:1000},'reduce','explore.html#atlas-panel');
+        await atlas.waitForFunction(()=>document.querySelectorAll('.atlas-hit').length===500 && document.getElementById('atlas-image').naturalWidth===6400);
+        const catalog=await (await atlas.request.get(new URL('assets/catalog/catalog.json?v=26',origin).href)).json();
+        for(const index of [0,499]) {
+          await atlas.locator('.atlas-hit').nth(index).click();
+          assert.equal((await atlas.locator('#atlas-asset-id').textContent()).trim(),catalog.atlas.assets[index].asset_id);
+          assert.equal(await atlas.locator('.atlas-hit').nth(index).getAttribute('aria-pressed'),'true');
+        }
+        await capture(atlas,'atlas-'+width+'-neutral','#atlas-panel');
+        await atlas.locator('#atlas-zoom-in').click();
+        assert.match(await atlas.locator('#atlas-zoom-label').textContent(),/1.5/);
+        await atlas.locator('#atlas-reset').click();
+        await atlas.context().close();
+      }
+      report.checks.push('Neutral 500-asset atlas: first/last pointer selections and zoom work on desktop/mobile');
+    }
     const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
     for (const target of pages) {
       for (const width of [1440, 390]) {

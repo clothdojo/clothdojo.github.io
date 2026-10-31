@@ -43,6 +43,30 @@
     video.load();
   }
   document.querySelectorAll('[data-select]').forEach(button => button.addEventListener('click', () => choose(button)));
+  const hero = document.getElementById('hero-film');
+  const chapters = [...document.querySelectorAll('[data-seek]')];
+  const domainFilm = document.getElementById('transfer-film');
+  const domainCaption = document.getElementById('domain-scene-caption');
+  if (domainFilm && domainCaption) domainFilm.addEventListener('timeupdate', () => {
+    domainCaption.textContent = (domainFilm.currentTime < 12 ? 'Office · Sampled training appearance 1 / 2' : 'Warehouse · Sampled training appearance 2 / 2') + ' · PIPER ↔ UR5e · 2×';
+  });
+  if (hero && chapters.length) {
+    function chapterLabel() {
+      const time = hero.currentTime;
+      const chapter = time < 9.25 ? 0 : time < 19.5 ? 1 : 2;
+      chapters.forEach((button, index) => button.setAttribute('aria-pressed', String(index === chapter)));
+      const label = time < 6.76 ? 'Flattening · 2× task replay' : time < 8.25 ? 'Return to home · Kinematic presentation' :
+        time < 9.25 ? 'Moving to folding' : time < 18.01 ? 'Folding · 2× task replay' : time < 19.5 ?
+        'Return to home · Kinematic presentation' : '96 independent trajectories · 63 garments · 2× replay';
+      document.getElementById('hero-film-caption').textContent = label;
+    }
+    hero.addEventListener('timeupdate', chapterLabel);
+    chapters.forEach(button => button.addEventListener('click', () => {
+      const seek = () => { hero.currentTime = Number(button.dataset.seek); chapterLabel(); play(hero); };
+      if (hero.readyState) seek();
+      else { hero.addEventListener('loadedmetadata', seek, { once: true }); attach(hero); }
+    }));
+  }
   function comparisonVariants() {
     for (const { video, desktopSrc, desktopPoster } of comparisons) {
       const src = narrow.matches ? video.dataset.mobileSrc : desktopSrc;
