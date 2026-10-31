@@ -1,8 +1,8 @@
 {
-  "ref": "4a8999def8f6b619d5385e1f99a810724cd44125",
-  "commit": "4a8999def8f6b619d5385e1f99a810724cd44125",
+  "ref": "922e7fe79ab7d92081ad1b002e4cdd680ebae15d",
+  "commit": "922e7fe79ab7d92081ad1b002e4cdd680ebae15d",
   "pagePath": "index.html",
-  "passed": true,
+  "passed": false,
   "status": "completed",
   "screenshots": [
     {
@@ -18,12 +18,12 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "time": 0.5,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -40,7 +40,7 @@
       },
       "selector": "#about",
       "frameTime": null,
-      "scrollY": 1071,
+      "scrollY": 3256,
       "visibleVideos": []
     },
     {
@@ -56,12 +56,12 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "time": 0.5,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -82,76 +82,12 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "time": 0.5,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "desktop-diversity.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "[id=\"diversity\"]",
-      "frameTime": null,
-      "scrollY": 1164,
-      "visibleVideos": []
-    },
-    {
-      "file": "desktop-render.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "[id=\"render\"]",
-      "frameTime": null,
-      "scrollY": 2245,
-      "visibleVideos": [
-        {
-          "id": "appearance-film",
-          "src": "http://127.0.0.1:8787/assets/studio/appearance-shared.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/appearance-shared.mp4",
-          "time": 0.5,
-          "duration": 12,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "desktop-transfer.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "[id=\"transfer\"]",
-      "frameTime": null,
-      "scrollY": 3352,
-      "visibleVideos": [
-        {
-          "id": "transfer-film",
-          "src": "http://127.0.0.1:8787/assets/studio/transfer-shared.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/transfer-shared.mp4",
-          "time": 0.5,
-          "duration": 12,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -168,7 +104,7 @@
       },
       "selector": "[id=\"results\"]",
       "frameTime": null,
-      "scrollY": 4497,
+      "scrollY": 1108,
       "visibleVideos": []
     },
     {
@@ -180,8 +116,58 @@
       },
       "selector": "[id=\"method\"]",
       "frameTime": null,
-      "scrollY": 6287,
+      "scrollY": 2434,
       "visibleVideos": []
+    },
+    {
+      "file": "desktop-generation.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "[id=\"generation\"]",
+      "frameTime": null,
+      "scrollY": 2925,
+      "visibleVideos": []
+    },
+    {
+      "file": "desktop-diversity.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "[id=\"diversity\"]",
+      "frameTime": null,
+      "scrollY": 3324,
+      "visibleVideos": []
+    },
+    {
+      "file": "desktop-render.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "[id=\"render\"]",
+      "frameTime": null,
+      "scrollY": 4398,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots.mp4",
+          "time": 0.5,
+          "duration": 24,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
     },
     {
       "file": "desktop-use.jpg",
@@ -192,7 +178,7 @@
       },
       "selector": "[id=\"use\"]",
       "frameTime": null,
-      "scrollY": 6716,
+      "scrollY": 5518,
       "visibleVideos": []
     },
     {
@@ -204,7 +190,7 @@
       },
       "selector": ".transfer-evidence .table-block",
       "frameTime": null,
-      "scrollY": 5803,
+      "scrollY": 1950,
       "visibleVideos": []
     },
     {
@@ -216,7 +202,7 @@
       },
       "selector": "#method .table-block",
       "frameTime": null,
-      "scrollY": 6900,
+      "scrollY": 3047,
       "visibleVideos": []
     },
     {
@@ -226,13 +212,13 @@
         "width": 1440,
         "height": 1000
       },
-      "selector": ".research-study >> nth=2",
+      "selector": ".research-study >> nth=1",
       "frameTime": null,
-      "scrollY": 5671,
+      "scrollY": 1818,
       "visibleVideos": []
     },
     {
-      "file": "desktop-hero-flatten-0s.jpg",
+      "file": "desktop-hero-0s.jpg",
       "page": "http://127.0.0.1:8787/index.html",
       "viewport": {
         "width": 1440,
@@ -240,16 +226,16 @@
       },
       "selector": "#hero-film",
       "frameTime": 0,
-      "scrollY": 285,
+      "scrollY": 282,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "time": 0,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -258,24 +244,24 @@
       ]
     },
     {
-      "file": "desktop-hero-flatten-12p8s.jpg",
+      "file": "desktop-hero-8p1s.jpg",
       "page": "http://127.0.0.1:8787/index.html",
       "viewport": {
         "width": 1440,
         "height": 1000
       },
       "selector": "#hero-film",
-      "frameTime": 12.8,
-      "scrollY": 285,
+      "frameTime": 8.1,
+      "scrollY": 282,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 12.8,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "time": 8.1,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -284,24 +270,24 @@
       ]
     },
     {
-      "file": "desktop-hero-flatten-22s.jpg",
+      "file": "desktop-hero-13s.jpg",
       "page": "http://127.0.0.1:8787/index.html",
       "viewport": {
         "width": 1440,
         "height": 1000
       },
       "selector": "#hero-film",
-      "frameTime": 22,
-      "scrollY": 285,
+      "frameTime": 13,
+      "scrollY": 282,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 22,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "time": 13,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -310,24 +296,24 @@
       ]
     },
     {
-      "file": "desktop-hero-flatten-33p8s.jpg",
+      "file": "desktop-hero-19p2s.jpg",
       "page": "http://127.0.0.1:8787/index.html",
       "viewport": {
         "width": 1440,
         "height": 1000
       },
       "selector": "#hero-film",
-      "frameTime": 33.8,
-      "scrollY": 285,
+      "frameTime": 19.2,
+      "scrollY": 282,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 33.8,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "time": 19.2,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -336,24 +322,24 @@
       ]
     },
     {
-      "file": "desktop-hero-fold-0s.jpg",
+      "file": "desktop-hero-26s.jpg",
       "page": "http://127.0.0.1:8787/index.html",
       "viewport": {
         "width": 1440,
         "height": 1000
       },
       "selector": "#hero-film",
-      "frameTime": 0,
-      "scrollY": 285,
+      "frameTime": 26,
+      "scrollY": 282,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "time": 0,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "time": 26,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -362,24 +348,24 @@
       ]
     },
     {
-      "file": "desktop-hero-fold-12p8s.jpg",
+      "file": "desktop-hero-31p8s.jpg",
       "page": "http://127.0.0.1:8787/index.html",
       "viewport": {
         "width": 1440,
         "height": 1000
       },
       "selector": "#hero-film",
-      "frameTime": 12.8,
-      "scrollY": 285,
+      "frameTime": 31.8,
+      "scrollY": 282,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "time": 12.8,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "time": 31.8,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -388,76 +374,76 @@
       ]
     },
     {
-      "file": "desktop-hero-fold-22s.jpg",
+      "file": "desktop-paper-appearance-2p5.jpg",
       "page": "http://127.0.0.1:8787/index.html",
       "viewport": {
         "width": 1440,
         "height": 1000
       },
-      "selector": "#hero-film",
-      "frameTime": 22,
-      "scrollY": 285,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "time": 22,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "desktop-hero-fold-33p8s.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "#hero-film",
-      "frameTime": 33.8,
-      "scrollY": 285,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "time": 33.8,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "desktop-matched-rerender.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "#appearance-film",
+      "selector": "#transfer-film",
       "frameTime": 2.5,
-      "scrollY": 2439,
+      "scrollY": 4667,
       "visibleVideos": [
         {
-          "id": "appearance-film",
-          "src": "http://127.0.0.1:8787/assets/studio/appearance-shared.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/appearance-shared.mp4",
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots.mp4",
           "time": 2.5,
-          "duration": 12,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "duration": 24,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "desktop-paper-appearance-14p5.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#transfer-film",
+      "frameTime": 14.5,
+      "scrollY": 4667,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots.mp4",
+          "time": 14.5,
+          "duration": 24,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "desktop-paper-appearance-23p8.jpg",
+      "page": "http://127.0.0.1:8787/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "selector": "#transfer-film",
+      "frameTime": 23.8,
+      "scrollY": 4667,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots.mp4",
+          "time": 23.8,
+          "duration": 24,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -478,12 +464,12 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "time": 0.5,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -504,12 +490,12 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 0.5024,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
+          "time": 0.5069,
+          "duration": 32,
+          "videoWidth": 2560,
+          "videoHeight": 1440,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -530,12 +516,12 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "time": 0.5,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
+          "duration": 32,
+          "videoWidth": 1080,
+          "videoHeight": 1350,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -552,11 +538,11 @@
       },
       "selector": "#about",
       "frameTime": null,
-      "scrollY": 829,
+      "scrollY": 3367,
       "visibleVideos": []
     },
     {
-      "file": "mobile-390-hero-flatten-0s.jpg",
+      "file": "mobile-390-hero-0s.jpg",
       "page": "http://127.0.0.1:8787/index.html",
       "viewport": {
         "width": 390,
@@ -564,286 +550,14 @@
       },
       "selector": "#hero-film",
       "frameTime": 0,
-      "scrollY": 320,
+      "scrollY": 344,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "time": 0,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-hero-flatten-12p8s.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 12.8,
-      "scrollY": 320,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 12.8,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-hero-flatten-22s.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 22,
-      "scrollY": 320,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 22,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-hero-flatten-33p8s.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 33.8,
-      "scrollY": 320,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 33.8,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-hero-fold-0s.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 0,
-      "scrollY": 320,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "time": 0,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-hero-fold-12p8s.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 12.8,
-      "scrollY": 320,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "time": 12.8,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-hero-fold-22s.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 22,
-      "scrollY": 320,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "time": 22,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-hero-fold-33p8s.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 33.8,
-      "scrollY": 320,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-          "time": 33.8,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-opening.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "page top",
-      "frameTime": null,
-      "scrollY": 0,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 0.5,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-overview.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"overview\"]",
-      "frameTime": null,
-      "scrollY": 0,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 0.5,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-diversity.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"diversity\"]",
-      "frameTime": null,
-      "scrollY": 901,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-390-render.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"render\"]",
-      "frameTime": null,
-      "scrollY": 1560,
-      "visibleVideos": [
-        {
-          "id": "appearance-film",
-          "src": "http://127.0.0.1:8787/assets/studio/appearance-portrait.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/appearance-portrait.mp4",
-          "time": 0.5,
-          "duration": 12,
+          "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
           "readyState": 4,
@@ -852,648 +566,6 @@
           "paused": true
         }
       ]
-    },
-    {
-      "file": "mobile-390-transfer.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"transfer\"]",
-      "frameTime": null,
-      "scrollY": 2399,
-      "visibleVideos": [
-        {
-          "id": "transfer-film",
-          "src": "http://127.0.0.1:8787/assets/studio/transfer-portrait.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/transfer-portrait.mp4",
-          "time": 0.5,
-          "duration": 12,
-          "videoWidth": 1080,
-          "videoHeight": 1350,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-390-results.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"results\"]",
-      "frameTime": null,
-      "scrollY": 3171,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-390-method.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"method\"]",
-      "frameTime": null,
-      "scrollY": 5349,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-390-use.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"use\"]",
-      "frameTime": null,
-      "scrollY": 5895,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-390-transfer-table.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": ".transfer-evidence .table-block",
-      "frameTime": null,
-      "scrollY": 4898,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-390-method-table.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#method .table-block",
-      "frameTime": null,
-      "scrollY": 6156,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-390-transfer-evaluation.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": ".research-study >> nth=2",
-      "frameTime": null,
-      "scrollY": 4737,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-390-matched-rerender.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#appearance-film",
-      "frameTime": 2.5,
-      "scrollY": 1803,
-      "visibleVideos": [
-        {
-          "id": "appearance-film",
-          "src": "http://127.0.0.1:8787/assets/studio/appearance-portrait.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/appearance-portrait.mp4",
-          "time": 2.5,
-          "duration": 12,
-          "videoWidth": 1080,
-          "videoHeight": 1350,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        },
-        {
-          "id": "transfer-film",
-          "src": "http://127.0.0.1:8787/assets/studio/transfer-portrait.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/transfer-portrait.mp4",
-          "time": 0.5,
-          "duration": 12,
-          "videoWidth": 1080,
-          "videoHeight": 1350,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-320-title.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "#title",
-      "frameTime": null,
-      "scrollY": 10,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 0.5,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-320-opening.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "page top",
-      "frameTime": null,
-      "scrollY": 0,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 0.5,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-320-overview.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"overview\"]",
-      "frameTime": null,
-      "scrollY": 0,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-          "time": 0.5,
-          "duration": 34,
-          "videoWidth": 1920,
-          "videoHeight": 1080,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-320-diversity.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"diversity\"]",
-      "frameTime": null,
-      "scrollY": 892,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-320-render.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"render\"]",
-      "frameTime": null,
-      "scrollY": 1586,
-      "visibleVideos": [
-        {
-          "id": "appearance-film",
-          "src": "http://127.0.0.1:8787/assets/studio/appearance-portrait.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/appearance-portrait.mp4",
-          "time": 0.5,
-          "duration": 12,
-          "videoWidth": 1080,
-          "videoHeight": 1350,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-320-transfer.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"transfer\"]",
-      "frameTime": null,
-      "scrollY": 2353,
-      "visibleVideos": [
-        {
-          "id": "transfer-film",
-          "src": "http://127.0.0.1:8787/assets/studio/transfer-portrait.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/transfer-portrait.mp4",
-          "time": 0.5,
-          "duration": 12,
-          "videoWidth": 1080,
-          "videoHeight": 1350,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "mobile-320-results.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"results\"]",
-      "frameTime": null,
-      "scrollY": 3088,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-320-method.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"method\"]",
-      "frameTime": null,
-      "scrollY": 5394,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-320-use.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"use\"]",
-      "frameTime": null,
-      "scrollY": 5974,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-320-transfer-table.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": ".transfer-evidence .table-block",
-      "frameTime": null,
-      "scrollY": 4878,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-320-method-table.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "#method .table-block",
-      "frameTime": null,
-      "scrollY": 6260,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-320-transfer-evaluation.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": ".research-study >> nth=2",
-      "frameTime": null,
-      "scrollY": 4717,
-      "visibleVideos": []
-    },
-    {
-      "file": "mobile-320-matched-rerender.jpg",
-      "page": "http://127.0.0.1:8787/index.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "#appearance-film",
-      "frameTime": 2.5,
-      "scrollY": 1828,
-      "visibleVideos": [
-        {
-          "id": "appearance-film",
-          "src": "http://127.0.0.1:8787/assets/studio/appearance-portrait.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/appearance-portrait.mp4",
-          "time": 2.5,
-          "duration": 12,
-          "videoWidth": 1080,
-          "videoHeight": 1350,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        },
-        {
-          "id": "transfer-film",
-          "src": "http://127.0.0.1:8787/assets/studio/transfer-portrait.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio/transfer-portrait.mp4",
-          "time": 0.5,
-          "duration": 12,
-          "videoWidth": 1080,
-          "videoHeight": 1350,
-          "readyState": 4,
-          "seeking": false,
-          "controls": true,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "results-1440-opening.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "page top",
-      "frameTime": null,
-      "scrollY": 0,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-1440-generation-results.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "[id=\"generation-results\"]",
-      "frameTime": null,
-      "scrollY": 289,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-1440-generalization.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "[id=\"generalization\"]",
-      "frameTime": null,
-      "scrollY": 1368,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-1440-policy-models.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "[id=\"policy-models\"]",
-      "frameTime": null,
-      "scrollY": 3263,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-1440-outcome-quality.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "[id=\"outcome-quality\"]",
-      "frameTime": null,
-      "scrollY": 4425,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-1440-task-composition.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": "[id=\"task-composition\"]",
-      "frameTime": null,
-      "scrollY": 5335,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-1440-table.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "selector": ".table-block",
-      "frameTime": null,
-      "scrollY": 826,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-390-opening.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "page top",
-      "frameTime": null,
-      "scrollY": 0,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-390-generation-results.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"generation-results\"]",
-      "frameTime": null,
-      "scrollY": 341,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-390-generalization.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"generalization\"]",
-      "frameTime": null,
-      "scrollY": 1990,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-390-policy-models.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"policy-models\"]",
-      "frameTime": null,
-      "scrollY": 4514,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-390-outcome-quality.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"outcome-quality\"]",
-      "frameTime": null,
-      "scrollY": 6191,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-390-task-composition.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "[id=\"task-composition\"]",
-      "frameTime": null,
-      "scrollY": 6924,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-390-table.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": ".table-block",
-      "frameTime": null,
-      "scrollY": 1244,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-320-opening.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "page top",
-      "frameTime": null,
-      "scrollY": 0,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-320-generation-results.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"generation-results\"]",
-      "frameTime": null,
-      "scrollY": 397,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-320-generalization.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"generalization\"]",
-      "frameTime": null,
-      "scrollY": 2161,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-320-policy-models.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"policy-models\"]",
-      "frameTime": null,
-      "scrollY": 4926,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-320-outcome-quality.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"outcome-quality\"]",
-      "frameTime": null,
-      "scrollY": 6676,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-320-task-composition.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": "[id=\"task-composition\"]",
-      "frameTime": null,
-      "scrollY": 7408,
-      "visibleVideos": []
-    },
-    {
-      "file": "results-320-table.jpg",
-      "page": "http://127.0.0.1:8787/results.html",
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "selector": ".table-block",
-      "frameTime": null,
-      "scrollY": 1326,
-      "visibleVideos": []
     }
   ],
   "layouts": [
@@ -1507,13 +579,6 @@
     {
       "page": "http://127.0.0.1:8787/index.html",
       "label": "desktop-explanation-1-click-open",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-hero-about-expanded",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
@@ -1632,6 +697,13 @@
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-hero-about-expanded",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
       "label": "desktop-explanation-5-click-close",
       "width": 1440,
       "scrollWidth": 1440,
@@ -1709,34 +781,6 @@
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-explanation-8-click-open",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-explanation-8-click-close",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-explanation-8-keyboard-enter-open",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-explanation-8-keyboard-space-close",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
       "label": "desktop-opening",
       "width": 1440,
       "scrollWidth": 1440,
@@ -1751,27 +795,6 @@
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-diversity",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-render",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-transfer",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
       "label": "desktop-results",
       "width": 1440,
       "scrollWidth": 1440,
@@ -1780,6 +803,27 @@
     {
       "page": "http://127.0.0.1:8787/index.html",
       "label": "desktop-method",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-generation",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-diversity",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "desktop-render",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
@@ -1814,63 +858,63 @@
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-hero-flatten-0s",
+      "label": "desktop-hero-0s",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-hero-flatten-12p8s",
+      "label": "desktop-hero-8p1s",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-hero-flatten-22s",
+      "label": "desktop-hero-13s",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-hero-flatten-33p8s",
+      "label": "desktop-hero-19p2s",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-hero-fold-0s",
+      "label": "desktop-hero-26s",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-hero-fold-12p8s",
+      "label": "desktop-hero-31p8s",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-hero-fold-22s",
+      "label": "desktop-paper-appearance-2p5",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-hero-fold-33p8s",
+      "label": "desktop-paper-appearance-14p5",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "desktop-matched-rerender",
+      "label": "desktop-paper-appearance-23p8",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
@@ -1906,16 +950,6 @@
     {
       "page": "http://127.0.0.1:8787/index.html",
       "label": "mobile-390-explanation-1-click-open",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-hero-about-expanded",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -2085,6 +1119,16 @@
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
+      "label": "mobile-390-hero-about-expanded",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
       "label": "mobile-390-explanation-5-click-close",
       "width": 390,
       "scrollWidth": 390,
@@ -2195,1270 +1239,34 @@
     },
     {
       "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-explanation-8-click-open",
+      "label": "mobile-390-hero-0s",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
         "IMG.",
         "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-explanation-8-click-close",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-explanation-8-keyboard-enter-open",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-explanation-8-keyboard-space-close",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-hero-flatten-0s",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-hero-flatten-12p8s",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-hero-flatten-22s",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-hero-flatten-33p8s",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-hero-fold-0s",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-hero-fold-12p8s",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-hero-fold-22s",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-hero-fold-33p8s",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-opening",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-overview",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-diversity",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-render",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-transfer",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-results",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-method",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-use",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-transfer-table",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-method-table",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-transfer-evaluation",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-390-matched-rerender",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-title",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-opening",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-overview",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-diversity",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-render",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-transfer",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-results",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-method",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-use",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-transfer-table",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-method-table",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-transfer-evaluation",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "mobile-320-matched-rerender",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "IMG.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-1440-opening",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-1440-generation-results",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-1440-generalization",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-1440-policy-models",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-1440-outcome-quality",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-1440-task-composition",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-1440-table",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-390-opening",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-390-generation-results",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-390-generalization",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-390-policy-models",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-390-outcome-quality",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-390-task-composition",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-390-table",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-320-opening",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "A.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-320-generation-results",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "A.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-320-generalization",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "A.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-320-policy-models",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "A.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-320-outcome-quality",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "A.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-320-task-composition",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "A.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "results-320-table",
-      "width": 320,
-      "scrollWidth": 320,
-      "overflow": [
-        "A.",
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/design-directions.html",
-      "label": "smoke-design-directions.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/design-directions.html",
-      "label": "smoke-design-directions.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "IMG.",
-        "IMG."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/explore.html",
-      "label": "smoke-explore.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/explore.html",
-      "label": "smoke-explore.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "smoke-index.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "smoke-index.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "smoke-results.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "smoke-results.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
       ]
     }
   ],
-  "pages": [
-    {
-      "path": "design-directions.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-directions.css",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "design-directions.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-directions.css",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "design-preview.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "design-preview.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "explore.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=11",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/explore.css?v=11",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "explore.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=11",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/explore.css?v=11",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "index.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=25",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=25",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=25",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "index.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=25",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=25",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=25",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "results.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=21",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=21",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "results.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=21",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=21",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=19",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=19",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
-          "loaded": true
-        }
-      ]
-    }
-  ],
+  "pages": [],
   "checks": [
     "HTTP 206 byte-range media serving",
+    "Model benchmark → method → generation scale reading order",
     "desktop: full formal H1 title visible outside details and fully covered by the title screenshot",
     "desktop: all main navigation entries fit without clipping",
-    "desktop: all 8 native explanation details default closed",
-    "desktop: all 8 explanations support pointer, Enter and Space toggles without page overflow",
-    "desktop: two explicit task choices, Flattening selected by default, no duplicate collage",
-    "desktop: both complete-task films decoded at initial, near, moving-camera and all-completed times",
-    "desktop: direct frame-matched re-rendering pair in one native player",
-    "all media selections update source/poster/caption/pressed state and remain paused under reduced motion",
+    "desktop: all 7 native explanation details default closed",
+    "desktop: all 7 explanations support pointer, Enter and Space toggles without page overflow",
+    "desktop: one automatic flattening/folding/scale film, with chapter seeking",
+    "desktop: both paper-sampled appearances and the final home return decoded",
     "all expanded replays, close button/Escape and media-source cleanup",
     "CPU quickstart clipboard copy",
     "tablet-768: full formal H1 title visible outside details and fully covered by the title screenshot",
-    "tablet-768: two explicit task choices, Flattening selected by default, no duplicate collage",
+    "tablet-768: one automatic flattening/folding/scale film, with chapter seeking",
     "mobile-390: full formal H1 title visible outside details and fully covered by the title screenshot",
     "mobile-390: all main navigation entries fit without clipping",
-    "mobile-390: all 8 native explanation details default closed",
-    "mobile-390: all 8 explanations support pointer, Enter and Space toggles without page overflow",
-    "mobile-390: two explicit task choices, Flattening selected by default, no duplicate collage",
-    "mobile-390: both complete-task films decoded at initial, near, moving-camera and all-completed times",
-    "mobile-390: direct frame-matched re-rendering pair in one native player",
-    "mobile comparison pairs switch to readable vertical films and preserve paused replay time when resized",
-    "mobile-320: full formal H1 title visible outside details and fully covered by the title screenshot",
-    "mobile-320: all main navigation entries fit without clipping",
-    "mobile-320: all 8 native explanation details default closed",
-    "mobile-320: two explicit task choices, Flattening selected by default, no duplicate collage",
-    "mobile-320: direct frame-matched re-rendering pair in one native player",
-    "real Chromium playback: one active video after task switch and HD open",
-    "five results anchors, shared rendered table typography, desktop/mobile results screenshots"
+    "mobile-390: all 7 native explanation details default closed",
+    "mobile-390: all 7 explanations support pointer, Enter and Space toggles without page overflow",
+    "mobile-390: one automatic flattening/folding/scale film, with chapter seeking"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
@@ -3669,84 +1477,6 @@
           ]
         }
       ]
-    },
-    {
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "screenshot": "mobile-320-title.jpg",
-      "text": "ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding",
-      "renderedText": "ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding",
-      "tag": "H1",
-      "insideDetails": false,
-      "visible": true,
-      "bounds": {
-        "top": 77,
-        "right": 300,
-        "bottom": 244.796875,
-        "left": 20,
-        "width": 280,
-        "height": 167.796875
-      },
-      "width": 320,
-      "height": 844,
-      "headerBottom": 61,
-      "clipped": false,
-      "textRuns": [
-        {
-          "text": "ClothDojo:",
-          "visible": true,
-          "rects": [
-            {
-              "top": 76,
-              "right": 244.109375,
-              "bottom": 129,
-              "left": 20,
-              "width": 224.109375,
-              "height": 53
-            }
-          ]
-        },
-        {
-          "text": "Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding",
-          "visible": true,
-          "rects": [
-            {
-              "top": 145.796875,
-              "right": 284.640625,
-              "bottom": 167.796875,
-              "left": 20,
-              "width": 264.640625,
-              "height": 22
-            },
-            {
-              "top": 170.796875,
-              "right": 265.6875,
-              "bottom": 192.796875,
-              "left": 20,
-              "width": 245.6875,
-              "height": 22
-            },
-            {
-              "top": 195.796875,
-              "right": 230.125,
-              "bottom": 217.796875,
-              "left": 20,
-              "width": 210.125,
-              "height": 22
-            },
-            {
-              "top": 220.796875,
-              "right": 85.609375,
-              "bottom": 242.796875,
-              "left": 20,
-              "width": 65.609375,
-              "height": 22
-            }
-          ]
-        }
-      ]
     }
   ],
   "explanations": [
@@ -3759,27 +1489,12 @@
         {
           "tag": "DETAILS",
           "open": false,
-          "summary": "Generation details & authors"
+          "summary": "Authors & affiliations"
         },
         {
           "tag": "DETAILS",
           "open": false,
-          "summary": "What changes in a re-render?"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "How trajectory transfer works"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "Protocol & interpretation"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "Protocol & interpretation"
+          "summary": "Evaluation protocol & model differences"
         },
         {
           "tag": "DETAILS",
@@ -3794,12 +1509,22 @@
         {
           "tag": "DETAILS",
           "open": false,
+          "summary": "Generation & replay details"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "What changes, and what stays the same?"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
           "summary": "Requirements & expected output"
         }
       ],
       "interactions": [
         {
-          "summary": "Generation details & authors",
+          "summary": "Authors & affiliations",
           "actions": [
             {
               "action": "click-open",
@@ -3824,82 +1549,7 @@
           ]
         },
         {
-          "summary": "What changes in a re-render?",
-          "actions": [
-            {
-              "action": "click-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "click-close",
-              "open": false,
-              "bodyVisible": false
-            },
-            {
-              "action": "keyboard-enter-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "keyboard-space-close",
-              "open": false,
-              "bodyVisible": false
-            }
-          ]
-        },
-        {
-          "summary": "How trajectory transfer works",
-          "actions": [
-            {
-              "action": "click-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "click-close",
-              "open": false,
-              "bodyVisible": false
-            },
-            {
-              "action": "keyboard-enter-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "keyboard-space-close",
-              "open": false,
-              "bodyVisible": false
-            }
-          ]
-        },
-        {
-          "summary": "Protocol & interpretation",
-          "actions": [
-            {
-              "action": "click-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "click-close",
-              "open": false,
-              "bodyVisible": false
-            },
-            {
-              "action": "keyboard-enter-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "keyboard-space-close",
-              "open": false,
-              "bodyVisible": false
-            }
-          ]
-        },
-        {
-          "summary": "Protocol & interpretation",
+          "summary": "Evaluation protocol & model differences",
           "actions": [
             {
               "action": "click-open",
@@ -3974,6 +1624,56 @@
           ]
         },
         {
+          "summary": "Generation & replay details",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "What changes, and what stays the same?",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
           "summary": "Requirements & expected output",
           "actions": [
             {
@@ -4009,27 +1709,12 @@
         {
           "tag": "DETAILS",
           "open": false,
-          "summary": "Generation details & authors"
+          "summary": "Authors & affiliations"
         },
         {
           "tag": "DETAILS",
           "open": false,
-          "summary": "What changes in a re-render?"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "How trajectory transfer works"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "Protocol & interpretation"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "Protocol & interpretation"
+          "summary": "Evaluation protocol & model differences"
         },
         {
           "tag": "DETAILS",
@@ -4044,12 +1729,22 @@
         {
           "tag": "DETAILS",
           "open": false,
+          "summary": "Generation & replay details"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
+          "summary": "What changes, and what stays the same?"
+        },
+        {
+          "tag": "DETAILS",
+          "open": false,
           "summary": "Requirements & expected output"
         }
       ],
       "interactions": [
         {
-          "summary": "Generation details & authors",
+          "summary": "Authors & affiliations",
           "actions": [
             {
               "action": "click-open",
@@ -4074,82 +1769,7 @@
           ]
         },
         {
-          "summary": "What changes in a re-render?",
-          "actions": [
-            {
-              "action": "click-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "click-close",
-              "open": false,
-              "bodyVisible": false
-            },
-            {
-              "action": "keyboard-enter-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "keyboard-space-close",
-              "open": false,
-              "bodyVisible": false
-            }
-          ]
-        },
-        {
-          "summary": "How trajectory transfer works",
-          "actions": [
-            {
-              "action": "click-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "click-close",
-              "open": false,
-              "bodyVisible": false
-            },
-            {
-              "action": "keyboard-enter-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "keyboard-space-close",
-              "open": false,
-              "bodyVisible": false
-            }
-          ]
-        },
-        {
-          "summary": "Protocol & interpretation",
-          "actions": [
-            {
-              "action": "click-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "click-close",
-              "open": false,
-              "bodyVisible": false
-            },
-            {
-              "action": "keyboard-enter-open",
-              "open": true,
-              "bodyVisible": true
-            },
-            {
-              "action": "keyboard-space-close",
-              "open": false,
-              "bodyVisible": false
-            }
-          ]
-        },
-        {
-          "summary": "Protocol & interpretation",
+          "summary": "Evaluation protocol & model differences",
           "actions": [
             {
               "action": "click-open",
@@ -4224,6 +1844,56 @@
           ]
         },
         {
+          "summary": "Generation & replay details",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
+          "summary": "What changes, and what stays the same?",
+          "actions": [
+            {
+              "action": "click-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "click-close",
+              "open": false,
+              "bodyVisible": false
+            },
+            {
+              "action": "keyboard-enter-open",
+              "open": true,
+              "bodyVisible": true
+            },
+            {
+              "action": "keyboard-space-close",
+              "open": false,
+              "bodyVisible": false
+            }
+          ]
+        },
+        {
           "summary": "Requirements & expected output",
           "actions": [
             {
@@ -4249,377 +1919,6 @@
           ]
         }
       ]
-    },
-    {
-      "viewport": {
-        "width": 320,
-        "height": 844
-      },
-      "initial": [
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "Generation details & authors"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "What changes in a re-render?"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "How trajectory transfer works"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "Protocol & interpretation"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "Protocol & interpretation"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "Protocol & interpretation"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "Training supervision & method"
-        },
-        {
-          "tag": "DETAILS",
-          "open": false,
-          "summary": "Requirements & expected output"
-        }
-      ],
-      "interactions": []
-    }
-  ],
-  "heroRevealFrames": [
-    {
-      "task": "flatten",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "screenshot": "desktop-hero-flatten-0s.jpg",
-      "requestedTime": 0,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "time": 0,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "flatten",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "screenshot": "desktop-hero-flatten-12p8s.jpg",
-      "requestedTime": 12.8,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "time": 12.8,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "flatten",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "screenshot": "desktop-hero-flatten-22s.jpg",
-      "requestedTime": 22,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "time": 22,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "flatten",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "screenshot": "desktop-hero-flatten-33p8s.jpg",
-      "requestedTime": 33.8,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "time": 33.8,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "fold",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "screenshot": "desktop-hero-fold-0s.jpg",
-      "requestedTime": 0,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "time": 0,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "fold",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "screenshot": "desktop-hero-fold-12p8s.jpg",
-      "requestedTime": 12.8,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "time": 12.8,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "fold",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "screenshot": "desktop-hero-fold-22s.jpg",
-      "requestedTime": 22,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "time": 22,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "fold",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "screenshot": "desktop-hero-fold-33p8s.jpg",
-      "requestedTime": 33.8,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "time": 33.8,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "flatten",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "screenshot": "mobile-390-hero-flatten-0s.jpg",
-      "requestedTime": 0,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "time": 0,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "flatten",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "screenshot": "mobile-390-hero-flatten-12p8s.jpg",
-      "requestedTime": 12.8,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "time": 12.8,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "flatten",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "screenshot": "mobile-390-hero-flatten-22s.jpg",
-      "requestedTime": 22,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "time": 22,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "flatten",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "screenshot": "mobile-390-hero-flatten-33p8s.jpg",
-      "requestedTime": 33.8,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/flatten-loop.mp4",
-      "time": 33.8,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "fold",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "screenshot": "mobile-390-hero-fold-0s.jpg",
-      "requestedTime": 0,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "time": 0,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "fold",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "screenshot": "mobile-390-hero-fold-12p8s.jpg",
-      "requestedTime": 12.8,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "time": 12.8,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "fold",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "screenshot": "mobile-390-hero-fold-22s.jpg",
-      "requestedTime": 22,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "time": 22,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
-    },
-    {
-      "task": "fold",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "screenshot": "mobile-390-hero-fold-33p8s.jpg",
-      "requestedTime": 33.8,
-      "id": "hero-film",
-      "src": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "currentSrc": "http://127.0.0.1:8787/assets/studio/fold-loop.mp4",
-      "time": 33.8,
-      "duration": 34,
-      "videoWidth": 1920,
-      "videoHeight": 1080,
-      "readyState": 4,
-      "seeking": false,
-      "controls": true,
-      "paused": true
     }
   ],
   "tableStyles": {
@@ -4630,14 +1929,7 @@
       "paddingTop": "13px",
       "paddingBottom": "13px",
       "borderBottomColor": "rgb(229, 235, 237)"
-    },
-    "results": {
-      "fontFamily": "Arial, Helvetica, sans-serif",
-      "fontSize": "12px",
-      "color": "rgb(32, 49, 56)",
-      "paddingTop": "13px",
-      "paddingBottom": "13px",
-      "borderBottomColor": "rgb(229, 235, 237)"
     }
-  }
+  },
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1080 !== 1440\n\n    at heroReveal (/home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:189:14)\n    at async /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:505:7"
 }
