@@ -280,7 +280,7 @@ atlasViewport.addEventListener('pointerup', event => {
 atlasViewport.addEventListener('pointercancel', () => { drag = undefined; });
 new ResizeObserver(drawAtlas).observe(atlasViewport);
 
-fetch('assets/catalog/catalog.json').then(response => {
+fetch('assets/catalog/catalog.json?v=26').then(response => {
   if (!response.ok) throw new Error('Catalog could not load');
   return response.json();
 }).then(data => {

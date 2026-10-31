@@ -272,16 +272,16 @@
     }
   ],
   "atlas": {
-    "width": 8000,
-    "height": 4500,
+    "width": 6400,
+    "height": 3600,
     "columns": 25,
     "rows": 20,
-    "margin_x": 200,
-    "margin_y": 112,
-    "cell_width": 304,
-    "cell_height": 213,
-    "preview": "assets/catalog/garment-atlas-preview.jpg",
-    "image": "assets/catalog/garment-atlas.png",
+    "margin_x": 141.1764705882353,
+    "margin_y": 105.88235294117646,
+    "cell_width": 244.7058823529412,
+    "cell_height": 169.41176470588235,
+    "preview": "assets/studio26/garment-atlas.jpg",
+    "image": "assets/studio26/garment-atlas-detail.jpg",
     "assets": [
       {
         "asset_id": "rand_1BSZCNY1LV",
