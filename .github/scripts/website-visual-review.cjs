@@ -708,6 +708,37 @@ saveReport();
       }
       report.checks.push('Finite-workcell study: centred two-task opening, 48/384 complete-group views, one-screen desktop/mobile and a real whole-group reveal excerpt');
     }
+    if(pagePath==='index.html'){
+      for(const [width,height] of [[1440,900],[1280,720],[390,844],[320,640]]){
+        const page=await open({width,height},'reduce','research-preview-v30.html');
+        await page.locator('#scene-frame').evaluate(image=>image.decode());
+        const hero=await page.locator('#overview').boundingBox();assert(hero.y+hero.height<=height+1,'Centred title and hero must fit the viewport');
+        await capture(page,'research30-'+width+'-opening');
+        await capture(page,'research30-'+width+'-results','#results');
+        await capture(page,'research30-'+width+'-rgb','#rgb-film',24);
+        const video=page.locator('#rgb-film');
+        const state=await video.evaluate(v=>({src:v.currentSrc,width:v.videoWidth,height:v.videoHeight,duration:v.duration,loop:v.loop,paused:v.paused}));
+        assert.equal(state.width,width<=700?960:1920);assert.equal(state.height,720);assert.equal(state.duration,72);assert(state.loop&&state.paused);
+        if(width===1440){
+          await capture(page,'research30-rgb-first','#rgb-film',0);
+          await capture(page,'research30-rgb-last','#rgb-film',71.96);
+          await capture(page,'research30-method','#method');
+          await page.locator('[data-expand="rgb-film"]').click();
+          await page.waitForFunction(()=>document.getElementById('expanded-film').readyState>=3);
+          assert.match(await page.locator('#media-title').textContent(),/RGB dataset cam_high/);
+          await page.locator('#close-media').click();
+        }
+        await page.context().close();
+      }
+      const moving=await open({width:1440,height:900},'no-preference','research-preview-v30.html');
+      await position(moving,'#rgb-film');
+      await moving.waitForFunction(()=>{const v=document.getElementById('rgb-film');return !v.paused&&v.currentTime>.2;});
+      await moving.locator('#rgb-film').evaluate(v=>v.currentTime=10);
+      await moving.setViewportSize({width:390,height:844});
+      await moving.waitForFunction(()=>{const v=document.getElementById('rgb-film');return v.videoWidth===960&&!v.paused&&v.currentTime>=9.9;});
+      await moving.context().close();
+      report.checks.push('Research UI and original cam_high ribbon: one-screen title, consistent evidence sections, matched mobile clock, autoplay/reduced-motion, dialog and 72-second media loop');
+    }
     const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
     for (const target of pages) {
       for (const width of [1440, 390]) {
