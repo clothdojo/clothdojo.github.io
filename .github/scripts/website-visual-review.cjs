@@ -601,6 +601,7 @@ saveReport();
         assert.equal(resultColors.text, 'rgb(237, 242, 238)');
         assert.equal(resultColors.panel, 'rgb(29, 39, 33)');
         await capture(study, 'theme-dark-' + width + '-method', '#method');
+        await capture(study, 'theme-dark-' + width + '-code', '#use');
         await study.locator('[data-theme-choice="light"]').click();
         assert.equal(await study.locator('html').getAttribute('data-theme'), 'light');
         await study.context().close();
