@@ -1,6 +1,6 @@
 {
-  "ref": "e18120d0f5b26179c44aedd81a45e9630bf6ecc3",
-  "commit": "e18120d0f5b26179c44aedd81a45e9630bf6ecc3",
+  "ref": "08f9896ed06c0765988027112e83391c1bed04ff",
+  "commit": "08f9896ed06c0765988027112e83391c1bed04ff",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -738,7 +738,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5,
+          "time": 0.5017,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
@@ -1920,7 +1920,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
-          "time": 1.1,
+          "time": 1.1078,
           "duration": 2.4,
           "videoWidth": 1920,
           "videoHeight": 1080,
@@ -2078,6 +2078,166 @@
           "paused": true
         }
       ]
+    },
+    {
+      "file": "fit-1920x1080-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "fit-1440x900-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "fit-1366x768-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "fit-1280x720-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "fit-1280-scale.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "fit-1280-motion.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "selector": "#hero-film",
+      "frameTime": 1,
+      "scrollY": 143,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio28/wide-handoff.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio28/wide-handoff.mp4",
+          "time": 1,
+          "duration": 2.4,
+          "videoWidth": 2400,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "fit-768x1024-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "fit-390x844-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "fit-390-scale.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
+    },
+    {
+      "file": "fit-390-motion.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 1,
+      "scrollY": 224,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio28/mobile-handoff.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio28/mobile-handoff.mp4",
+          "time": 1,
+          "duration": 2.4,
+          "videoWidth": 1080,
+          "videoHeight": 810,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "fit-320x640-opening.jpg",
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": []
     }
   ],
   "layouts": [
@@ -4009,6 +4169,430 @@
       ]
     },
     {
+      "label": "one-screen-white-banner",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "viewportWidth": 1920,
+      "header": {
+        "top": 0,
+        "bottom": 60,
+        "width": 1920,
+        "height": 60
+      },
+      "hero": {
+        "top": 60,
+        "bottom": 1080,
+        "width": 1920,
+        "height": 1020
+      },
+      "title": {
+        "top": 80,
+        "bottom": 172,
+        "width": 1280,
+        "height": 92
+      },
+      "caption": {
+        "top": 1024.5,
+        "bottom": 1040.5,
+        "width": 1280,
+        "height": 16
+      },
+      "authors": {
+        "top": 1044.5,
+        "bottom": 1070,
+        "width": 1280,
+        "height": 25.5
+      },
+      "frame": {
+        "top": 251.5,
+        "bottom": 1019.5,
+        "width": 1920,
+        "height": 768
+      },
+      "background": "rgb(255, 255, 255)",
+      "fit": "contain"
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-1920x1080-opening",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "overflow": []
+    },
+    {
+      "label": "one-screen-white-banner",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "viewportWidth": 1440,
+      "header": {
+        "top": 0,
+        "bottom": 60,
+        "width": 1440,
+        "height": 60
+      },
+      "hero": {
+        "top": 60,
+        "bottom": 900,
+        "width": 1440,
+        "height": 840
+      },
+      "title": {
+        "top": 80,
+        "bottom": 172,
+        "width": 1280,
+        "height": 92
+      },
+      "caption": {
+        "top": 844.5,
+        "bottom": 860.5,
+        "width": 1280,
+        "height": 16
+      },
+      "authors": {
+        "top": 864.5,
+        "bottom": 890,
+        "width": 1280,
+        "height": 25.5
+      },
+      "frame": {
+        "top": 251.5,
+        "bottom": 839.5,
+        "width": 1440,
+        "height": 588
+      },
+      "background": "rgb(255, 255, 255)",
+      "fit": "contain"
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-1440x900-opening",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "label": "one-screen-white-banner",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "viewportWidth": 1366,
+      "header": {
+        "top": 0,
+        "bottom": 60,
+        "width": 1366,
+        "height": 60
+      },
+      "hero": {
+        "top": 60,
+        "bottom": 768,
+        "width": 1366,
+        "height": 708
+      },
+      "title": {
+        "top": 74,
+        "bottom": 147.59375,
+        "width": 1270,
+        "height": 73.59375
+      },
+      "caption": {
+        "top": 716.5,
+        "bottom": 732.5,
+        "width": 1270,
+        "height": 16
+      },
+      "authors": {
+        "top": 736.5,
+        "bottom": 762,
+        "width": 1270,
+        "height": 25.5
+      },
+      "frame": {
+        "top": 219.09375,
+        "bottom": 711.5,
+        "width": 1366,
+        "height": 492.40625
+      },
+      "background": "rgb(255, 255, 255)",
+      "fit": "contain"
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-1366x768-opening",
+      "width": 1366,
+      "scrollWidth": 1366,
+      "overflow": []
+    },
+    {
+      "label": "one-screen-white-banner",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "viewportWidth": 1280,
+      "header": {
+        "top": 0,
+        "bottom": 60,
+        "width": 1280,
+        "height": 60
+      },
+      "hero": {
+        "top": 60,
+        "bottom": 720,
+        "width": 1280,
+        "height": 660
+      },
+      "title": {
+        "top": 74,
+        "bottom": 147.59375,
+        "width": 1184,
+        "height": 73.59375
+      },
+      "caption": {
+        "top": 668.5,
+        "bottom": 684.5,
+        "width": 1184,
+        "height": 16
+      },
+      "authors": {
+        "top": 688.5,
+        "bottom": 714,
+        "width": 1184,
+        "height": 25.5
+      },
+      "frame": {
+        "top": 219.09375,
+        "bottom": 663.5,
+        "width": 1280,
+        "height": 444.40625
+      },
+      "background": "rgb(255, 255, 255)",
+      "fit": "contain"
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-1280x720-opening",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-1280-scale",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-1280-motion",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": []
+    },
+    {
+      "label": "one-screen-white-banner",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "viewportWidth": 768,
+      "header": {
+        "top": 0,
+        "bottom": 60,
+        "width": 768,
+        "height": 60
+      },
+      "hero": {
+        "top": 60,
+        "bottom": 1024,
+        "width": 768,
+        "height": 964
+      },
+      "title": {
+        "top": 80,
+        "bottom": 216.78125,
+        "width": 672,
+        "height": 136.78125
+      },
+      "caption": {
+        "top": 968.5,
+        "bottom": 984.5,
+        "width": 672,
+        "height": 16
+      },
+      "authors": {
+        "top": 988.5,
+        "bottom": 1014,
+        "width": 672,
+        "height": 25.5
+      },
+      "frame": {
+        "top": 293.28125,
+        "bottom": 963.5,
+        "width": 768,
+        "height": 670.21875
+      },
+      "background": "rgb(255, 255, 255)",
+      "fit": "contain"
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-768x1024-opening",
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "label": "one-screen-white-banner",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "header": {
+        "top": 0,
+        "bottom": 60,
+        "width": 390,
+        "height": 60
+      },
+      "hero": {
+        "top": 60,
+        "bottom": 844,
+        "width": 390,
+        "height": 784
+      },
+      "title": {
+        "top": 75,
+        "bottom": 205.1875,
+        "width": 350,
+        "height": 130.1875
+      },
+      "caption": {
+        "top": 791.5,
+        "bottom": 807.5,
+        "width": 350,
+        "height": 16
+      },
+      "authors": {
+        "top": 811.5,
+        "bottom": 837,
+        "width": 350,
+        "height": 25.5
+      },
+      "frame": {
+        "top": 299.9375,
+        "bottom": 786.5,
+        "width": 390,
+        "height": 486.5625
+      },
+      "background": "rgb(255, 255, 255)",
+      "fit": "contain"
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-390x844-opening",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-390-scale",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-390-motion",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "label": "one-screen-white-banner",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "viewportWidth": 320,
+      "header": {
+        "top": 0,
+        "bottom": 60,
+        "width": 320,
+        "height": 60
+      },
+      "hero": {
+        "top": 60,
+        "bottom": 640,
+        "width": 320,
+        "height": 580
+      },
+      "title": {
+        "top": 75,
+        "bottom": 192.46875,
+        "width": 280,
+        "height": 117.46875
+      },
+      "caption": {
+        "top": 578.3125,
+        "bottom": 603.5,
+        "width": 280,
+        "height": 25.1875
+      },
+      "authors": {
+        "top": 607.5,
+        "bottom": 633,
+        "width": 280,
+        "height": 25.5
+      },
+      "frame": {
+        "top": 318.71875,
+        "bottom": 573.3125,
+        "width": 320,
+        "height": 254.59375
+      },
+      "background": "rgb(255, 255, 255)",
+      "fit": "contain"
+    },
+    {
+      "page": "http://127.0.0.1:8787/scene-preview-v28.html",
+      "label": "fit-320x640-opening",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
       "page": "http://127.0.0.1:8787/design-directions.html",
       "label": "smoke-design-directions.html",
       "width": 1440,
@@ -4323,6 +4907,64 @@
       ]
     },
     {
+      "path": "scene-preview-v28.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview-v28.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        }
+      ]
+    },
+    {
       "path": "scene-preview.html",
       "viewport": {
         "width": 1440,
@@ -4388,7 +5030,8 @@
     "Paper train-profile scene identities, seeds and protocol hashes recorded",
     "Neutral 500-asset atlas: first/last pointer selections and zoom work on desktop/mobile",
     "Same-content light/dark study on desktop/mobile: media time preserved, charts styled, themes reversible",
-    "In-page scene study: full homepage context, three uncropped views, top lights only, real 25fps excerpt, matched paused time and desktop/mobile layout"
+    "In-page scene study: full homepage context, three uncropped views, top lights only, real 25fps excerpt, matched paused time and desktop/mobile layout",
+    "White panoramic banner: entire closed hero fits seven viewport sizes, full width, uncropped source, pure-white page and real desktop/mobile motion"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
