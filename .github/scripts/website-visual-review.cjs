@@ -580,6 +580,33 @@ saveReport();
       }
       report.checks.push('Neutral 500-asset atlas: first/last pointer selections and zoom work on desktop/mobile');
     }
+    if (pagePath === 'index.html') {
+      for (const width of [1440, 390]) {
+        const study = await open({width, height:1000}, 'reduce', 'index.html?theme=light');
+        const title = await study.locator('h1').innerText();
+        await capture(study, 'theme-light-' + width + '-title');
+        await capture(study, 'theme-light-' + width + '-scale', '#hero-film', 26);
+        const source = await study.locator('#hero-film').evaluate(video => video.currentSrc);
+        await study.locator('[data-theme-choice="dark"]').click();
+        assert.equal(await study.locator('html').getAttribute('data-theme'), 'dark');
+        assert.equal(await study.locator('[data-theme-choice="dark"]').getAttribute('aria-pressed'), 'true');
+        assert.equal(await study.locator('h1').innerText(), title);
+        const media = await study.locator('#hero-film').evaluate(video => ({source:video.currentSrc,time:video.currentTime,paused:video.paused}));
+        assert.equal(media.source, source);
+        assert(Math.abs(media.time - 26) < 0.15 && media.paused, 'Theme choice must preserve paused media');
+        await capture(study, 'theme-dark-' + width + '-scale', '#hero-film', 26);
+        await capture(study, 'theme-dark-' + width + '-title');
+        await capture(study, 'theme-dark-' + width + '-results', '#results');
+        const resultColors = await study.locator('.metric-name').first().evaluate(element => ({text:getComputedStyle(element).color,panel:getComputedStyle(element.closest('.chart-pair')).backgroundColor}));
+        assert.equal(resultColors.text, 'rgb(237, 242, 238)');
+        assert.equal(resultColors.panel, 'rgb(29, 39, 33)');
+        await capture(study, 'theme-dark-' + width + '-method', '#method');
+        await study.locator('[data-theme-choice="light"]').click();
+        assert.equal(await study.locator('html').getAttribute('data-theme'), 'light');
+        await study.context().close();
+      }
+      report.checks.push('Same-content light/dark study on desktop/mobile: media time preserved, charts styled, themes reversible');
+    }
     const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
     for (const target of pages) {
       for (const width of [1440, 390]) {
