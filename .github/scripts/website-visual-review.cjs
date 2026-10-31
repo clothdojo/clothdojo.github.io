@@ -625,6 +625,7 @@ saveReport();
               return image.currentSrc.endsWith(expected) && image.complete && image.naturalWidth === 2560;
             }, '/assets/studio27/' + environment + '-' + view + '.jpg');
             await capture(scene, 'scene-' + width + '-' + environment + '-' + view, '.scene-study');
+            if (view === 'near') await capture(scene, 'scene-' + width + '-' + environment + '-opening');
           }
         }
         await scene.locator('[data-scene-view="motion"]').click();
