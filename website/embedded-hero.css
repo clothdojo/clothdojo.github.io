@@ -1,4 +1,6 @@
-.research30 .embedded-generation{grid-template-rows:minmax(0,1fr) auto;margin-top:16px}
-.research30 .embedded-generation .scene-media{grid-row:1}
-.research30 .embedded-generation figcaption{grid-row:2}
-.research30 #hero-toggle{border:1px solid var(--line);border-radius:50px;background:#fff;color:var(--text);font-size:11px;padding:5px 14px;min-width:62px}
+.research30 .hero{height:auto;min-height:0;padding-bottom:8px}
+.research30 .embedded-generation{display:block;flex:none;margin-top:12px}
+.research30 .embedded-generation .scene-media{width:100%;height:auto;max-height:none;aspect-ratio:10/3;object-fit:contain}
+.research30 .embedded-generation figcaption{margin-top:4px}
+.research30 [data-ambient-toggle]{border:1px solid var(--line);border-radius:50px;background:#fff;color:var(--text);font-size:11px;padding:5px 14px;min-width:62px}
+@media(max-width:700px){.research30 .embedded-generation .scene-media{aspect-ratio:4/3}.research30 .rgb-ribbon video{aspect-ratio:8/9}}
