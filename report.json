@@ -3442,7 +3442,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5041,
+          "time": 0.5,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
