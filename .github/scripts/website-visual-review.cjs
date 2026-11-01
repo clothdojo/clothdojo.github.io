@@ -27,7 +27,10 @@ saveReport();
     page.on('response', response => {
       if (response.status() >= 400) report.errors.push({ page: target, status: response.status(), url: response.url() });
     });
-    await page.goto(new URL(target, origin).href, { waitUntil: 'networkidle' });
+    // Ambient video can keep range requests active. Media readiness is checked
+    // explicitly below instead of treating an idle network as page readiness.
+    await page.goto(new URL(target, origin).href, { waitUntil: 'domcontentloaded' });
+    await page.evaluate(() => document.fonts.ready);
     report.codec = await page.evaluate(() => document.createElement('video').canPlayType('video/mp4; codecs="avc1.640028"'));
     return page;
   }
