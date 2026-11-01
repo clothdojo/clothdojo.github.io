@@ -119,7 +119,7 @@ function draw(stamp){
   drawnCells=0;
   for(let i=0;i<cells.length;i++)animateCell(cells[i],i,a,b,t);
   for(const body of bodies)if(body){body.count=drawnCells;body.instanceMatrix.needsUpdate=true;body.geometry.getAttribute('cellAlpha').needsUpdate=true;}
-  canvas.style.opacity=String(Math.min(1,motion/.16,(10-motion)/.16));
+  canvas.style.opacity=String(running?Math.min(1,motion/.16,(10-motion)/.16):1);
   renderer.render(scene,camera);frames++;
   if(lastInput){inputToFrame=performance.now()-lastInput;lastInput=0;}
 }
