@@ -20,9 +20,10 @@
     video.play().catch(() => {});
   }
   function ambient() {
-    if (active || document.hidden || motion.matches || navigator.connection?.saveData || document.getElementById('media-dialog').open) return;
+    if (document.hidden || motion.matches || navigator.connection?.saveData || document.getElementById('media-dialog').open) return;
+    if (active && !active.paused && !active.hasAttribute('data-auto') && visible.has(active)) return;
     const selected = [...visible].filter(([v]) => v.hasAttribute('data-auto') && !variantLoading.has(v) && !resizePaused.has(v)).sort((a,b) => b[1]-a[1])[0]?.[0];
-    if (selected) play(selected);
+    if (selected && (active !== selected || selected.paused)) play(selected);
   }
   function choose(button) {
     const video = document.getElementById(button.dataset.select);

@@ -1,0 +1,27 @@
+.research30 .rgb-task-labels,
+.research30 .rgb-ribbon {
+  width: min(1120px, calc(100% - var(--gutter) * 2));
+  margin-inline: auto;
+}
+.research30 .rgb-task-labels {
+  border: 0;
+  padding: 0 0 12px;
+  text-align: left;
+  font-size: 13px;
+  color: var(--muted);
+}
+.research30 .rgb-task-labels > span + span {
+  border: 0;
+  padding-left: 12px;
+}
+.research30 .rgb-ribbon video {
+  display: block;
+  border-radius: 12px;
+}
+.research30 .rgb-ribbon figcaption.container {
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .research30 .rgb-task-labels { font-size: 12px; }
+  .research30 .rgb-ribbon video { border-radius: 8px; }
+}
