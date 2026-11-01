@@ -1,6 +1,6 @@
 {
-  "ref": "0f75813f0a8c07a61e999bd9953bbd8466b66e84",
-  "commit": "0f75813f0a8c07a61e999bd9953bbd8466b66e84",
+  "ref": "4af27296b57207e34cd650f4b68e29b20861ef49",
+  "commit": "4af27296b57207e34cd650f4b68e29b20861ef49",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -58,7 +58,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
-          "time": 0.5,
+          "time": 0.5046,
           "duration": 32,
           "videoWidth": 2560,
           "videoHeight": 1440,
@@ -1920,7 +1920,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
-          "time": 1.1043,
+          "time": 1.1,
           "duration": 2.4,
           "videoWidth": 1920,
           "videoHeight": 1080,
@@ -3286,7 +3286,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5,
+          "time": 0.5091,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3325,7 +3325,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5016,
+          "time": 0.5,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3364,7 +3364,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5,
+          "time": 0.5055,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3403,7 +3403,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5074,
+          "time": 0.5,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3481,7 +3481,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5041,
+          "time": 0.5,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3605,7 +3605,7 @@
       },
       "selector": "#diversity",
       "frameTime": null,
-      "scrollY": 1825,
+      "scrollY": 1885,
       "visibleVideos": []
     },
     {
@@ -3617,7 +3617,7 @@
       },
       "selector": ".atlas-overview",
       "frameTime": null,
-      "scrollY": 2088,
+      "scrollY": 2148,
       "visibleVideos": []
     },
     {
@@ -6995,7 +6995,7 @@
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/rgb-collection.css?v=1",
+          "href": "http://127.0.0.1:8787/rgb-collection.css?v=2",
           "loaded": true
         }
       ]
@@ -7040,7 +7040,7 @@
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/rgb-collection.css?v=1",
+          "href": "http://127.0.0.1:8787/rgb-collection.css?v=2",
           "loaded": true
         }
       ]
