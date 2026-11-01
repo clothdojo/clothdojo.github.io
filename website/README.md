@@ -4,6 +4,7 @@ Buildless research website. GitHub Pages publishes this directory only; code, te
 
 ## Structure
 
+- `research-preview-v31.html` / `generation-loop.js`: the approved v30 UI with a complete 32-second first studio film; shared RGB ribbon and evidence sections retained. Film provenance lives in `assets/studio31/manifest.json`.
 - `research-preview-v30.html` / `research30.css`: white centred-title research UI study, referencing SuperMimic; includes a separate full-width RGB dataset ribbon after model results.
 - `assets/rgb30/manifest.json`: original `cam_high` source episodes, hashes, 2× replay timing and periodic 72-second ribbon composition. Desktop shows 24 trajectories; mobile shows 12 with larger panels. Resets happen outside the viewport.
 - `index.html`: an automatic task demonstration, model evaluations, method, generation scale, combined domain/robot comparison and practical entry points.
