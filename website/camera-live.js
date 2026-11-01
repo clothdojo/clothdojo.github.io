@@ -86,7 +86,7 @@ function visibility(cell){
   return smooth(Math.max(0,Math.min(1,(edge-Math.max(6,22*w/1600))/Math.max(3,8*w/1600))));
 }
 function animateCell(cell,i,a,b,mix){
-  const alpha=cell.ready?visibility(cell):0;const visible=alpha>.001;
+  const alpha=cell.ready?(i===0||i===24?1:visibility(cell)):0;const visible=alpha>.001;
   cell.mesh.visible=visible;cell.mesh.material.userData.fade.value=alpha;
   if(!visible)return;
   const slot=drawnCells++;
