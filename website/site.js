@@ -83,7 +83,7 @@
       const version = (versions.get(video) || 0) + 1;
       versions.set(video, version);
       variantLoading.set(video, { position, wasPlaying });
-      if (!wasPlaying) resizePaused.add(video);
+      if (!wasPlaying && visible.has(video)) resizePaused.add(video);
       video.pause();
       video.addEventListener('loadedmetadata', () => {
         if (versions.get(video) !== version) return;
@@ -91,6 +91,7 @@
         if (Number.isFinite(video.duration)) video.currentTime = Math.min(position, Math.max(0, video.duration - .05));
         if (wasPlaying && visible.has(video) && !motion.matches && !navigator.connection?.saveData &&
             !document.hidden && !document.getElementById('media-dialog').open && (!active || active === video)) play(video);
+        else ambient();
       }, { once: true });
       video.src = src;
       video.load();
