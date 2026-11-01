@@ -766,6 +766,28 @@ saveReport();
       await live.context().close();
       report.checks.push('Complete generation film: desktop/mobile 32s playback, chapter seeking, native loop crossing and exclusive handoff to the RGB dataset ribbon');
     }
+    if(pagePath==='index.html'){
+      const atlas=await(await desktop.request.get(new URL('assets/atlas32/manifest.json',origin).href)).json();
+      assert.equal(atlas.asset_count,500);assert(atlas.audit.subject_pixels_unchanged&&atlas.audit.pure_white_border);
+      for(const [width,height] of [[1440,900],[390,844]]){
+        const page=await open({width,height},'reduce','research-preview-v31.html');
+        const image=page.locator('.atlas-overview img');
+        await image.scrollIntoViewIfNeeded();await image.evaluate(img=>img.decode());
+        const style=await image.evaluate(img=>{
+          const box=img.getBoundingClientRect(),parent=img.parentElement.getBoundingClientRect(),s=getComputedStyle(img.parentElement);
+          const canvas=document.createElement('canvas');canvas.width=img.naturalWidth;canvas.height=1;
+          const ctx=canvas.getContext('2d');ctx.drawImage(img,0,0);
+          return {src:img.currentSrc,naturalWidth:img.naturalWidth,width:box.width,height:box.height,parentWidth:parent.width,parentHeight:parent.height,background:s.backgroundColor,radius:s.borderRadius,whiteEdge:[...ctx.getImageData(0,0,canvas.width,1).data].every(n=>n===255)};
+        });
+        assert(style.src.endsWith('/assets/atlas32/garment-atlas.webp'));assert.equal(style.naturalWidth,3200);assert(style.whiteEdge);
+        assert.equal(style.background,'rgb(255, 255, 255)');assert.equal(style.radius,'0px');assert(Math.abs(style.width/style.height-16/9)<.001);
+        assert(Math.abs(style.width-style.parentWidth)<1&&Math.abs(style.height-style.parentHeight)<1);
+        await capture(page,'atlas32-'+width+'-section','#diversity');
+        await capture(page,'atlas32-'+width+'-image','.atlas-overview');
+        await page.context().close();
+      }
+      report.checks.push('White asset atlas: 500 real assets, retained subject pixels/contact shadows, decoded pure-white edge, no card border or mobile crop');
+    }
     const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
     for (const target of pages) {
       for (const width of [1440, 390]) {
