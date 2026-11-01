@@ -1,0 +1,4 @@
+.research30 .embedded-generation{grid-template-rows:minmax(0,1fr) auto;margin-top:16px}
+.research30 .embedded-generation .scene-media{grid-row:1}
+.research30 .embedded-generation figcaption{grid-row:2}
+.research30 #hero-toggle{border:1px solid var(--line);border-radius:50px;background:#fff;color:var(--text);font-size:11px;padding:5px 14px;min-width:62px}
