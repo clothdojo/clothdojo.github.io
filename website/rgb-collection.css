@@ -1,6 +1,6 @@
 .research30 .rgb-task-labels,
 .research30 .rgb-ribbon {
-  width: min(1120px, calc(100% - var(--gutter) * 2));
+  width: min(var(--width), calc(100% - var(--gutter) * 2));
   margin-inline: auto;
 }
 .research30 .rgb-task-labels {
