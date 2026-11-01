@@ -743,6 +743,7 @@ saveReport();
       for(const [width,height] of [[1440,900],[1280,720],[390,844],[320,640]]){
         const page=await open({width,height},'reduce','research-preview-v31.html');
         const hero=await page.locator('#overview').boundingBox();assert(hero.y+hero.height<=height+1);
+        assert.deepEqual(await page.locator('main > section').evaluateAll(nodes=>nodes.slice(0,5).map(n=>n.id)),['overview','rgb','diversity','results','method']);
         await capture(page,'generation31-'+width+'-opening');
         const times=width===1440?[0,6.7,8.8,10,16.5,23,24.2,24.44]:width===390?[0,11,23,24.44]:[0];
         for(const time of times)await capture(page,'generation31-'+width+'-'+String(time).replace('.','p'),'#hero-film',time);
@@ -765,7 +766,7 @@ saveReport();
       await position(live,'#rgb-film');
       await live.waitForFunction(()=>!document.getElementById('rgb-film').paused&&document.getElementById('hero-film').paused);
       await live.context().close();
-      report.checks.push('Embedded generation film: desktop/mobile 24.48s automatic loop with direct scale-to-pair transition, no seek controls, play/pause and exclusive handoff to the RGB ribbon');
+      report.checks.push('Ambient hero: compact intrinsic-height layout, direct scale-to-pair loop, no seek controls, play/pause and immediate handoff to RGB');
     }
     if(pagePath==='index.html'){
       const atlas=await(await desktop.request.get(new URL('assets/atlas32/manifest.json',origin).href)).json();
@@ -773,6 +774,7 @@ saveReport();
       for(const [width,height] of [[1440,900],[390,844]]){
         const page=await open({width,height},'reduce','research-preview-v31.html');
         const image=page.locator('.atlas-overview img');
+        assert.equal(await page.locator('#diversity a').count(),0,'Asset visualization is presentation-only');
         await image.scrollIntoViewIfNeeded();await image.evaluate(img=>img.decode());
         const style=await image.evaluate(img=>{
           const box=img.getBoundingClientRect(),parent=img.parentElement.getBoundingClientRect(),s=getComputedStyle(img.parentElement);
@@ -788,6 +790,21 @@ saveReport();
         await page.context().close();
       }
       report.checks.push('White asset atlas: 500 real assets, retained subject pixels/contact shadows, decoded pure-white edge, no card border or mobile crop');
+    }
+    if(pagePath==='index.html'){
+      for(const width of [1440,390]){
+        const page=await open({width,height:900},'reduce','research-preview-v31.html');
+        await capture(page,'rgb34-'+width+'-collection','#rgb-film',16);
+        const state=await page.locator('#rgb-film').evaluate(v=>({width:v.videoWidth,height:v.videoHeight,duration:v.duration,controls:v.controls,loop:v.loop}));
+        assert.equal(state.width,width<=700?640:1920);assert.equal(state.height,720);assert.equal(state.duration,64);assert(state.loop&&!state.controls);
+        assert.equal(await page.locator('[data-expand]').count(),0,'Showcase media has no expand/scrub interface');
+        await page.locator('[data-ambient-toggle="rgb-film"]').click();
+        await page.waitForFunction(()=>!document.getElementById('rgb-film').paused);
+        await page.locator('[data-ambient-toggle="rgb-film"]').click();
+        assert(await page.locator('#rgb-film').evaluate(v=>v.paused));
+        await page.context().close();
+      }
+      report.checks.push('Larger RGB collection: 96 source episodes, 18 desktop/6 mobile panels, 64s loop, pause-only controls and noninteractive asset display before results');
     }
     const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
     for (const target of pages) {
