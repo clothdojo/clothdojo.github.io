@@ -747,21 +747,20 @@ saveReport();
         const page=await open({width,height},'reduce','research-preview-v31.html');
         const hero=await page.locator('#overview').boundingBox();assert(hero.y+hero.height<=height+1);
         if(width===1440){
-          const source=await(await page.request.get(new URL('assets/studio37/manifest.json',origin).href)).json();
+          const source=await(await page.request.get(new URL('assets/studio40/manifest.json',origin).href)).json();
           assert.equal(source.workspaces,384);assert.equal(source.unique_trajectories,386);assert.equal(source.cases_per_workspace,2);
           assert(source.audit.foreground_does_not_reset_within_a_case&&source.audit.every_workspace_changes_episode&&source.audit.matched_layer_camera_and_state_hashes);
-          assert(source.audit.continuous_camera_without_intermediate_stops&&source.audit.first_six_new_workcells_revealed_as_three_pairs&&source.audit.arriving_workspaces_have_measured_manipulation&&source.audit.visible_workspaces_do_not_reset_within_case);
-          assert.equal(source.arrival_windows.workspaces.length,764);
-          assert(source.audit.manipulation_remains_active_at_half_and_full_visibility&&source.readable_arrival_audit.all_before_terminal);
-          assert.equal(source.readable_arrival_audit.checks,3056);
-          for(const first of Object.values(source.arrival_windows.first_visible_frame))assert(first['4']<first['6']&&first['6']<first['8']);
+          assert(source.audit.fade_starts_with_camera_departure&&source.audit.camera_holds_keep_task_motion_running&&source.audit.complete_groups_during_camera_holds&&source.audit.white_output_edges);
+          assert.equal(source.active_hold_windows.workspaces.length,764);
+          assert.equal(source.active_hold_windows.checks,2292);
+          assert(source.active_hold_windows.minimum_motion_score>1e-4&&source.active_hold_windows.fade_begins_at_departure);
         }
         assert.deepEqual(await page.locator('main > section').evaluateAll(nodes=>nodes.slice(0,5).map(n=>n.id)),['overview','rgb','diversity','results','method']);
         await capture(page,'generation31-'+width+'-opening');
-        const times=width===1440?[0,9,11.4,11.8,12.2,12.6,13,13.4,14.4,15.8,17.2,19,20.8,22.5,24.5,35.8,36.6,46,47.96]:width===390?[0,9,11.8,12.6,13.2,16.6,20.6,22.5,24.5,34,46,47.96]:[0];
+        const times=width===1440?[0,9,10.4,10.8,11.8,13.4,14.5,15.8,16.4,17.4,19.4,20.5,22.4,24,26.5,28,29.8,30.5,40.4,44.5,59.96]:width===390?[0,10.4,11.2,13.8,14.8,17.4,20.5,24,28,30.5,43.8,59.96]:[0];
         for(const time of times)await capture(page,'generation31-'+width+'-'+String(time).replace('.','p'),'#hero-film',time);
         const state=await page.locator('#hero-film').evaluate(v=>({width:v.videoWidth,height:v.videoHeight,duration:v.duration,loop:v.loop,paused:v.paused}));
-        assert.equal(state.width,width<=700?1200:2400);assert.equal(state.height,width<=700?900:840);assert.equal(state.duration,48);assert(state.loop&&state.paused);
+        assert.equal(state.width,width<=700?1200:2400);assert.equal(state.height,width<=700?900:840);assert.equal(state.duration,60);assert(state.loop&&state.paused);
         assert.equal(await page.locator('#hero-film').evaluate(v=>v.controls),false);
         assert.equal(await page.locator('[data-gen-seek], [data-expand="hero-film"], #overview input[type="range"]').count(),0);
         await page.locator('#hero-toggle').click();
@@ -770,14 +769,14 @@ saveReport();
         assert(await page.locator('#hero-film').evaluate(v=>v.paused));
         await page.context().close();
       }
-      for(const [width,height] of [[1920,1080],[1366,768]]){
+      for(const [width,height] of [[1920,1080],[1366,768],[1724,756],[3448,1512]]){
         const page=await open({width,height},'reduce','research-preview-v31.html');
         const hero=await page.locator('#overview').boundingBox();assert(hero.y+hero.height<=height+1);
         await capture(page,'generation35-'+width+'-opening');await page.context().close();
       }
       const live=await open({width:1440,height:900},'no-preference','research-preview-v31.html');
       await live.waitForFunction(()=>{const v=document.getElementById('hero-film');return !v.paused&&v.currentTime>.3;});
-      await live.locator('#hero-film').evaluate(v=>v.currentTime=47.8);
+      await live.locator('#hero-film').evaluate(v=>v.currentTime=59.8);
       await live.waitForFunction(()=>{const v=document.getElementById('hero-film');return !v.paused&&v.currentTime<1;});
       await position(live,'#rgb-film');
       await live.waitForFunction(()=>{const v=document.getElementById('rgb-film');return !v.paused&&v.currentTime>.3&&document.getElementById('hero-film').paused;});
@@ -792,7 +791,7 @@ saveReport();
       const mobileRgbStart=await live.locator('#rgb-film').evaluate(v=>v.currentTime);
       await live.waitForFunction(start=>document.getElementById('rgb-film').currentTime>start+.5,mobileRgbStart);
       await live.context().close();
-      report.checks.push('Two-case ambient hero: 48s loop, 20:7 desktop framing, direct case transitions, no seek controls, play/pause and immediate handoff to RGB');
+      report.checks.push('Two-case ambient hero: 60s loop, departure-driven fades, active camera holds, soft white edges, direct case transitions, passive controls and RGB handoff');
     }
     if(pagePath==='index.html'){
       const atlas=await(await desktop.request.get(new URL('assets/atlas32/manifest.json',origin).href)).json();
