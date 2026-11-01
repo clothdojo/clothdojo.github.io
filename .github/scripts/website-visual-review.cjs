@@ -453,7 +453,7 @@ saveReport();
     });
   }
   try {
-    browser = await chromium.launch({ channel: 'chrome', args: ['--disable-gpu'] });
+    browser = await chromium.launch({ channel: 'chrome', args: ['--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader'] });
     report.browser = browser.version();
     progress('Verify HTTP byte-range serving');
     const probe = await browser.newContext();
@@ -849,7 +849,7 @@ saveReport();
       }
       report.checks.push('Larger RGB collection: 96 source episodes, 18 desktop/6 mobile panels, 64s loop, pause-only controls and noninteractive asset display before results');
     }
-    if(pagePath==='index.html'||pagePath==='camera-study.html'){
+    if(pagePath==='index.html'||pagePath==='camera-study-video.html'){
       const shot=async(page,name)=>{
         await layout(page,name);
         await page.locator('video[data-active="true"]').evaluate(v=>new Promise((resolve,reject)=>{
@@ -863,7 +863,7 @@ saveReport();
         report.screenshots.push({file,page:page.url(),viewport:page.viewportSize(),cameraStudy:await page.evaluate(()=>window.cameraStudy.state)});saveReport();
       };
       const ready=async(page,view)=>page.waitForFunction(v=>window.cameraStudy?.state.ready&&window.cameraStudy.state.view===v&&!window.cameraStudy.state.pending&&!window.cameraStudy.state.lastError,view);
-      const page=await open({width:1440,height:900},'no-preference','camera-study.html');
+      const page=await open({width:1440,height:900},'no-preference','camera-study-video.html');
       await ready(page,'auto');
       await page.waitForFunction(()=>window.cameraStudy.state.phase>.4&&window.cameraStudy.state.playing===1);
       const media=await(await page.request.get(new URL('assets/camera45/manifest.json',origin).href)).json();
@@ -920,7 +920,7 @@ saveReport();
       await shot(page,'camera45-desktop-loop');
       assert(await page.locator('video').evaluateAll(videos=>videos.every(v=>!v.controls)));
       await page.context().close();
-      const phone=await open({width:390,height:844},'reduce','camera-study.html');await ready(phone,'auto');
+      const phone=await open({width:390,height:844},'reduce','camera-study-video.html');await ready(phone,'auto');
       state=await phone.evaluate(()=>window.cameraStudy.state);assert.equal(state.playing,0);assert.equal(state.running,false);
       await shot(phone,'camera45-mobile-auto');
       await phone.locator('#camera-distance').focus();await phone.keyboard.press('End');await ready(phone,'far');
