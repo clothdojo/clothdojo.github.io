@@ -747,13 +747,18 @@ saveReport();
         const page=await open({width,height},'reduce','research-preview-v31.html');
         const hero=await page.locator('#overview').boundingBox();assert(hero.y+hero.height<=height+1);
         if(width===1440){
-          const source=await(await page.request.get(new URL('assets/studio35/manifest.json',origin).href)).json();
+          const source=await(await page.request.get(new URL('assets/studio37/manifest.json',origin).href)).json();
           assert.equal(source.workspaces,384);assert.equal(source.unique_trajectories,386);assert.equal(source.cases_per_workspace,2);
           assert(source.audit.foreground_does_not_reset_within_a_case&&source.audit.every_workspace_changes_episode&&source.audit.matched_layer_camera_and_state_hashes);
+          assert(source.audit.continuous_camera_without_intermediate_stops&&source.audit.first_six_new_workcells_revealed_as_three_pairs&&source.audit.arriving_workspaces_have_measured_manipulation&&source.audit.visible_workspaces_do_not_reset_within_case);
+          assert.equal(source.arrival_windows.workspaces.length,764);
+          assert(source.audit.manipulation_remains_active_at_half_and_full_visibility&&source.readable_arrival_audit.all_before_terminal);
+          assert.equal(source.readable_arrival_audit.checks,3056);
+          for(const first of Object.values(source.arrival_windows.first_visible_frame))assert(first['4']<first['6']&&first['6']<first['8']);
         }
         assert.deepEqual(await page.locator('main > section').evaluateAll(nodes=>nodes.slice(0,5).map(n=>n.id)),['overview','rgb','diversity','results','method']);
         await capture(page,'generation31-'+width+'-opening');
-        const times=width===1440?[0,7,9,11.5,15,19,22.5,23.8,24.5,31,34,36,46,47.96]:width===390?[0,9,22.5,24.5,34,46,47.96]:[0];
+        const times=width===1440?[0,9,11.4,11.8,12.2,12.6,13,13.4,14.4,15.8,17.2,19,20.8,22.5,24.5,35.8,36.6,46,47.96]:width===390?[0,9,11.8,12.6,13.2,16.6,20.6,22.5,24.5,34,46,47.96]:[0];
         for(const time of times)await capture(page,'generation31-'+width+'-'+String(time).replace('.','p'),'#hero-film',time);
         const state=await page.locator('#hero-film').evaluate(v=>({width:v.videoWidth,height:v.videoHeight,duration:v.duration,loop:v.loop,paused:v.paused}));
         assert.equal(state.width,width<=700?1200:2400);assert.equal(state.height,width<=700?900:840);assert.equal(state.duration,48);assert(state.loop&&state.paused);
