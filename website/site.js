@@ -49,7 +49,7 @@
   const domainFilm = document.getElementById('transfer-film');
   const domainCaption = document.getElementById('domain-scene-caption');
   if (domainFilm && domainCaption) domainFilm.addEventListener('timeupdate', () => {
-    domainCaption.textContent = (domainFilm.currentTime < 12 ? 'Office · Sampled training appearance 1 / 2' : 'Warehouse · Sampled training appearance 2 / 2') + ' · PIPER ↔ UR5e · 2×';
+    domainCaption.textContent = (domainFilm.currentTime < 12 ? 'Office' : 'Warehouse') + ' · PIPER ↔ UR5e · 2× replay';
   });
   if (hero && chapters.length) {
     function chapterLabel() {
