@@ -1,6 +1,6 @@
 {
-  "ref": "6b568ce7fc4c2b78a98490f5cbfceaa316569ca4",
-  "commit": "6b568ce7fc4c2b78a98490f5cbfceaa316569ca4",
+  "ref": "7a7cdb48dce16cbeffc566757ddff95252f5d5a4",
+  "commit": "7a7cdb48dce16cbeffc566757ddff95252f5d5a4",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -990,7 +990,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5,
+          "time": 0.5085,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
@@ -3212,6 +3212,68 @@
           "duration": 32,
           "videoWidth": 1200,
           "videoHeight": 900,
+          "readyState": 4,
+          "seeking": false,
+          "controls": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "atlas32-1440-section.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#diversity",
+      "frameTime": null,
+      "scrollY": 4260,
+      "visibleVideos": []
+    },
+    {
+      "file": "atlas32-1440-image.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": ".atlas-overview",
+      "frameTime": null,
+      "scrollY": 4517,
+      "visibleVideos": []
+    },
+    {
+      "file": "atlas32-390-section.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#diversity",
+      "frameTime": null,
+      "scrollY": 4296,
+      "visibleVideos": []
+    },
+    {
+      "file": "atlas32-390-image.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": ".atlas-overview",
+      "frameTime": null,
+      "scrollY": 4602,
+      "visibleVideos": [
+        {
+          "id": "transfer-film",
+          "src": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio26/domains-robots-mobile.mp4",
+          "time": 0.5,
+          "duration": 24,
+          "videoWidth": 1440,
+          "videoHeight": 810,
           "readyState": 4,
           "seeking": false,
           "controls": true,
@@ -5980,7 +6042,6 @@
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
-        "IMG.",
         "CODE."
       ]
     },
@@ -5990,7 +6051,6 @@
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
-        "IMG.",
         "CODE."
       ]
     },
@@ -6000,7 +6060,6 @@
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
-        "IMG.",
         "CODE."
       ]
     },
@@ -6010,7 +6069,6 @@
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
-        "IMG.",
         "CODE."
       ]
     },
@@ -6020,7 +6078,6 @@
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
-        "IMG.",
         "CODE."
       ]
     },
@@ -6041,7 +6098,6 @@
         "TD.",
         "TR.",
         "TD.",
-        "IMG.",
         "CODE."
       ]
     },
@@ -6062,7 +6118,38 @@
         "TD.",
         "TR.",
         "TD.",
-        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "atlas32-1440-section",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "atlas32-1440-image",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "atlas32-390-section",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "atlas32-390-image",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
         "CODE."
       ]
     },
@@ -6384,6 +6471,10 @@
         {
           "href": "http://127.0.0.1:8787/research30.css?v=30",
           "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/atlas-white.css?v=32",
+          "loaded": true
         }
       ]
     },
@@ -6416,6 +6507,10 @@
         },
         {
           "href": "http://127.0.0.1:8787/research30.css?v=30",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/atlas-white.css?v=32",
           "loaded": true
         }
       ]
@@ -6698,7 +6793,8 @@
     "White panoramic banner: entire closed hero fits seven viewport sizes, full width, uncropped source, pure-white page and real desktop/mobile motion",
     "Finite-workcell study: centred two-task opening, 48/384 complete-group views, one-screen desktop/mobile and a real whole-group reveal excerpt",
     "Research UI and original cam_high ribbon: one-screen title, consistent evidence sections, matched mobile clock, autoplay/reduced-motion, dialog and 72-second media loop",
-    "Complete generation film: desktop/mobile 32s playback, chapter seeking, native loop crossing and exclusive handoff to the RGB dataset ribbon"
+    "Complete generation film: desktop/mobile 32s playback, chapter seeking, native loop crossing and exclusive handoff to the RGB dataset ribbon",
+    "White asset atlas: 500 real assets, retained subject pixels/contact shadows, decoded pure-white edge, no card border or mobile crop"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
