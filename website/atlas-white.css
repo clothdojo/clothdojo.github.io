@@ -1,0 +1,4 @@
+/* The atlas shares the page's white; shadows are in the real render. */
+.research30 .atlas-overview{border-radius:0;background:#fff;overflow:visible;height:auto;box-shadow:none}
+.research30 .atlas-overview img{width:100%;height:auto;min-width:0;max-width:100%;transition:none}
+.research30 .atlas-overview:hover img{transform:none}
