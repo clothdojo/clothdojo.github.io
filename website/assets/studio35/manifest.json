@@ -1,0 +1,5441 @@
+{
+  "schema": "clothdojo_two_case_film_v35",
+  "videos": {
+    "wide": {
+      "src": "generation-loop.mp4",
+      "width": 2400,
+      "height": 840,
+      "fps": 25,
+      "frames": 1200,
+      "duration_seconds": 48,
+      "bytes": 11945193,
+      "sha256": "c6d9c14dc55d2cd60f82c73064410dd6525701ec7d35b1ddd92aede98e56eced",
+      "loop_step_mean_rgb": 0.7369160052910053,
+      "previous_step_mean_rgb": 1.1518568121693122
+    },
+    "mobile": {
+      "src": "generation-loop-mobile.mp4",
+      "width": 1200,
+      "height": 900,
+      "fps": 25,
+      "frames": 1200,
+      "duration_seconds": 48,
+      "bytes": 4825023,
+      "sha256": "a23f84b822bb6ad5e28919befb410290775c09ae0c9810f3e8af91c67017de4c",
+      "loop_step_mean_rgb": 0.5436956790123457,
+      "previous_step_mean_rgb": 0.6889966049382716
+    }
+  },
+  "workspaces": 384,
+  "unique_trajectories": 386,
+  "garment_assets": 202,
+  "cases_per_workspace": 2,
+  "audit": {
+    "every_workspace_changes_episode": true,
+    "foreground_does_not_reset_within_a_case": true,
+    "foreground_success_and_home_complete_before_group_reveal": true,
+    "subject_border_intersections": 0,
+    "matched_layer_camera_and_state_hashes": true
+  },
+  "presentation": "Two outward cycles. Each foreground task reaches its successful released endpoint and scripted kinematic home, then holds until a common editorial case transition. Every workspace gets a different real episode in cycleB. Same-garment foreground initial states differ; no identical-state multi-solution claim. Saved-state motion at2x,25 independently rendered fps. Direct0.48s linear-light editorial dissolves bridge the maximum scale to the next initial pair; final caseA source11 continues to opening source12. White ground normalization retains real shadows and raw subject pixels before presentation compositing. Not live generation or a throughput measurement.",
+  "plan_sha256": {
+    "a": "997c3548f4b9c865f7ed35056dc210e41d2ffed11fd603ee135d2071cc3c29f7",
+    "b": "0cadccf0207ccf838082ea806a8a152eaf4e9192f4bf020519d130ed89966a77"
+  },
+  "render_manifest_sha256": {
+    "wide-a-2": "a438d85d23a854ded85b9d0a57cba94ad9fbfe8f91dc939d7796c150300227f5",
+    "wide-a-8": "423b8fdd2f8bcc2eb5a1c383b09c3420c8c21007cde52148c6c2f56283296a70",
+    "wide-a-48": "27c43b99da887a572c7d251886d115522bebf8fc69eb81816b3edfd9607dd94f",
+    "wide-a-384": "6588436eef2a07ca0b2cc183b9f0e5c5215685e4b6ba885e83bd7c32fc0dfc08",
+    "wide-b-2": "f0e3eba64eb1b2d8b3ac39c9dcb13ec6eb9c6760ad3ca103dcb4d463b294de8f",
+    "wide-b-8": "4a047e3e3f55068fbc3b3aecf7724987ea3533852270dcbf79607a6933f7f983",
+    "wide-b-48": "ade45d6f101110b50315273f63633f090dd63b146dce619e78614e2e89bfc63e",
+    "wide-b-384": "d7788e22ea12108ca3990acdad30c4300be187fdbf42020a2170a0e086bd5eb6",
+    "mobile-a-2": "412d16b71fd78abe9849e97df085091ef7de788c376e0f8cb477b7193aa3d56d",
+    "mobile-a-8": "8bc52c11245aa5c5473460bb48f62f071723529aa0636cf062c5d7d77c29583f",
+    "mobile-a-48": "1c1249b6ecc5b6396869096bdd28b2cf6a8d224e3181db69941bea463c6f140f",
+    "mobile-a-384": "0eb83a35a1746c607c5cf8d42d621e6694acf88db5622cf31107209859d5d594",
+    "mobile-b-2": "db429abda8972e24c73357660017d5b01cf4fb9f2a7417bf4906bf0bae27dd2b",
+    "mobile-b-8": "9267e1fb1ec7f8a22ffc8fad005bc36ebe28d1c6069b327fe229b5f47ded2b4e",
+    "mobile-b-48": "e8ac168daeef3fad6c497c99319dcfc3a3582f8d721a63a80d906b6fe2297137",
+    "mobile-b-384": "845508fb2bbce138943de419b9b6f650c9bf1a8b66d1dc649e954dcd3b6b68fd"
+  },
+  "sources": [
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_21GKNQCZ4B__08",
+      "asset_id": "rand_21GKNQCZ4B",
+      "task": "flatten",
+      "terminal_state": 673,
+      "featured": true
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CW9M7X6EY__09",
+      "asset_id": "rand_1CW9M7X6EY",
+      "task": "flatten",
+      "terminal_state": 1623,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1FL5UDP4YQ__07",
+      "asset_id": "rand_1FL5UDP4YQ",
+      "task": "flatten",
+      "terminal_state": 954,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1GGZFP6PYZ__03",
+      "asset_id": "rand_1GGZFP6PYZ",
+      "task": "flatten",
+      "terminal_state": 1462,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1HHW0GGKMF__00",
+      "asset_id": "rand_1HHW0GGKMF",
+      "task": "flatten",
+      "terminal_state": 647,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_004NVCOKV7__03",
+      "asset_id": "rand_004NVCOKV7",
+      "task": "flatten",
+      "terminal_state": 965,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_02AR55C8T1__07",
+      "asset_id": "rand_02AR55C8T1",
+      "task": "flatten",
+      "terminal_state": 1492,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_079HTTNCTJ__00",
+      "asset_id": "rand_079HTTNCTJ",
+      "task": "flatten",
+      "terminal_state": 723,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0AYSPSNK8T__04",
+      "asset_id": "rand_0AYSPSNK8T",
+      "task": "flatten",
+      "terminal_state": 673,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ME2Z034NN__07",
+      "asset_id": "rand_0ME2Z034NN",
+      "task": "flatten",
+      "terminal_state": 1114,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0TMR6NDPHP__04",
+      "asset_id": "rand_0TMR6NDPHP",
+      "task": "flatten",
+      "terminal_state": 886,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0V15754TTS__05",
+      "asset_id": "rand_0V15754TTS",
+      "task": "flatten",
+      "terminal_state": 922,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0WYOH8KDV2__05",
+      "asset_id": "rand_0WYOH8KDV2",
+      "task": "flatten",
+      "terminal_state": 2918,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XKZV2GIHN__02",
+      "asset_id": "rand_0XKZV2GIHN",
+      "task": "flatten",
+      "terminal_state": 952,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ZFJUADVCA__05",
+      "asset_id": "rand_0ZFJUADVCA",
+      "task": "flatten",
+      "terminal_state": 840,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11F1D3WU17__04",
+      "asset_id": "rand_11F1D3WU17",
+      "task": "flatten",
+      "terminal_state": 2254,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1NKG6I69HH__09",
+      "asset_id": "rand_1NKG6I69HH",
+      "task": "flatten",
+      "terminal_state": 662,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ONEJHCOVS__03",
+      "asset_id": "rand_1ONEJHCOVS",
+      "task": "flatten",
+      "terminal_state": 913,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1PSXI9D50T__01",
+      "asset_id": "rand_1PSXI9D50T",
+      "task": "flatten",
+      "terminal_state": 2647,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1RJ8D5A7EC__09",
+      "asset_id": "rand_1RJ8D5A7EC",
+      "task": "flatten",
+      "terminal_state": 1186,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1T6IM4B3AE__09",
+      "asset_id": "rand_1T6IM4B3AE",
+      "task": "flatten",
+      "terminal_state": 851,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1U0UUO457V__00",
+      "asset_id": "rand_1U0UUO457V",
+      "task": "flatten",
+      "terminal_state": 883,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1VKRDNWFKE__06",
+      "asset_id": "rand_1VKRDNWFKE",
+      "task": "flatten",
+      "terminal_state": 632,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1X5Z0QHKP8__09",
+      "asset_id": "rand_1X5Z0QHKP8",
+      "task": "flatten",
+      "terminal_state": 1397,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12CSX4HLLP__06",
+      "asset_id": "rand_12CSX4HLLP",
+      "task": "flatten",
+      "terminal_state": 900,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13Q8PAC94Q__05",
+      "asset_id": "rand_13Q8PAC94Q",
+      "task": "flatten",
+      "terminal_state": 1286,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_15MZM8JINR__02",
+      "asset_id": "rand_15MZM8JINR",
+      "task": "flatten",
+      "terminal_state": 656,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_17UY5SOHZ2__02",
+      "asset_id": "rand_17UY5SOHZ2",
+      "task": "flatten",
+      "terminal_state": 668,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_196ZJ6KG0I__02",
+      "asset_id": "rand_196ZJ6KG0I",
+      "task": "flatten",
+      "terminal_state": 1015,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AEZQ9GNEL__00",
+      "asset_id": "rand_1AEZQ9GNEL",
+      "task": "flatten",
+      "terminal_state": 2211,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BB06QD3IC__00",
+      "asset_id": "rand_1BB06QD3IC",
+      "task": "flatten",
+      "terminal_state": 1454,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BSZCNY1LV__01",
+      "asset_id": "rand_1BSZCNY1LV",
+      "task": "flatten",
+      "terminal_state": 655,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1YHCYZE5OK__06",
+      "asset_id": "rand_1YHCYZE5OK",
+      "task": "flatten",
+      "terminal_state": 1792,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_20K0H65GUU__09",
+      "asset_id": "rand_20K0H65GUU",
+      "task": "flatten",
+      "terminal_state": 1087,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_21TFVULETA__05",
+      "asset_id": "rand_21TFVULETA",
+      "task": "flatten",
+      "terminal_state": 2134,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_22W6XQ2A2U__04",
+      "asset_id": "rand_22W6XQ2A2U",
+      "task": "flatten",
+      "terminal_state": 1140,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_249RUXCM75__00",
+      "asset_id": "rand_249RUXCM75",
+      "task": "flatten",
+      "terminal_state": 717,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_25KFCLZ8JD__08",
+      "asset_id": "rand_25KFCLZ8JD",
+      "task": "flatten",
+      "terminal_state": 733,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_26CDT8GJDW__03",
+      "asset_id": "rand_26CDT8GJDW",
+      "task": "flatten",
+      "terminal_state": 1074,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_27QVZO5VN5__07",
+      "asset_id": "rand_27QVZO5VN5",
+      "task": "flatten",
+      "terminal_state": 1987,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_28R28NJ9TT__01",
+      "asset_id": "rand_28R28NJ9TT",
+      "task": "flatten",
+      "terminal_state": 1305,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_299AM1LG5I__06",
+      "asset_id": "rand_299AM1LG5I",
+      "task": "flatten",
+      "terminal_state": 805,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2ABUSKI9UP__00",
+      "asset_id": "rand_2ABUSKI9UP",
+      "task": "flatten",
+      "terminal_state": 1472,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2CBVS72PJD__01",
+      "asset_id": "rand_2CBVS72PJD",
+      "task": "flatten",
+      "terminal_state": 845,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1IOKVF7VZ2__05",
+      "asset_id": "rand_1IOKVF7VZ2",
+      "task": "flatten",
+      "terminal_state": 2326,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1JB634CLNN__08",
+      "asset_id": "rand_1JB634CLNN",
+      "task": "flatten",
+      "terminal_state": 737,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1LGZ20AJA1__07",
+      "asset_id": "rand_1LGZ20AJA1",
+      "task": "flatten",
+      "terminal_state": 1017,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1M8PJ2BE57__02",
+      "asset_id": "rand_1M8PJ2BE57",
+      "task": "flatten",
+      "terminal_state": 1326,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_07SZ5QQ0QP__02",
+      "asset_id": "rand_07SZ5QQ0QP",
+      "task": "flatten",
+      "terminal_state": 1028,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_089NYY0BW7__00",
+      "asset_id": "rand_089NYY0BW7",
+      "task": "flatten",
+      "terminal_state": 1192,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_08KYYZ0POQ__02",
+      "asset_id": "rand_08KYYZ0POQ",
+      "task": "flatten",
+      "terminal_state": 733,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_09G2VZ0SDX__06",
+      "asset_id": "rand_09G2VZ0SDX",
+      "task": "flatten",
+      "terminal_state": 1433,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2D47UXG6QS__03",
+      "asset_id": "rand_2D47UXG6QS",
+      "task": "flatten",
+      "terminal_state": 663,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2EBUYCB46V__03",
+      "asset_id": "rand_2EBUYCB46V",
+      "task": "flatten",
+      "terminal_state": 1490,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2FHE0HFZK7__01",
+      "asset_id": "rand_2FHE0HFZK7",
+      "task": "flatten",
+      "terminal_state": 1117,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2I95TCYIFO__05",
+      "asset_id": "rand_2I95TCYIFO",
+      "task": "flatten",
+      "terminal_state": 2530,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2JKK2F2K5Q__05",
+      "asset_id": "rand_2JKK2F2K5Q",
+      "task": "flatten",
+      "terminal_state": 838,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_ZZCWITH5HY__01",
+      "asset_id": "rand_ZZCWITH5HY",
+      "task": "flatten",
+      "terminal_state": 921,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00GEDVLKJJ__02",
+      "asset_id": "rand_00GEDVLKJJ",
+      "task": "flatten",
+      "terminal_state": 823,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00PJYCPW0L__04",
+      "asset_id": "rand_00PJYCPW0L",
+      "task": "flatten",
+      "terminal_state": 1083,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00ZT6MGWR3__01",
+      "asset_id": "rand_00ZT6MGWR3",
+      "task": "flatten",
+      "terminal_state": 951,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_01Q78IXCLW__02",
+      "asset_id": "rand_01Q78IXCLW",
+      "task": "flatten",
+      "terminal_state": 666,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_01R50NZJVR__07",
+      "asset_id": "rand_01R50NZJVR",
+      "task": "flatten",
+      "terminal_state": 1707,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_025I3DAPE6__05",
+      "asset_id": "rand_025I3DAPE6",
+      "task": "flatten",
+      "terminal_state": 734,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ILSNHSPQ7__03",
+      "asset_id": "rand_0ILSNHSPQ7",
+      "task": "flatten",
+      "terminal_state": 942,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0IX189WGFR__01",
+      "asset_id": "rand_0IX189WGFR",
+      "task": "flatten",
+      "terminal_state": 2344,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0JL0G525XH__00",
+      "asset_id": "rand_0JL0G525XH",
+      "task": "flatten",
+      "terminal_state": 1730,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0MBY846ZGF__04",
+      "asset_id": "rand_0MBY846ZGF",
+      "task": "flatten",
+      "terminal_state": 1136,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0OXVTOY8BQ__01",
+      "asset_id": "rand_0OXVTOY8BQ",
+      "task": "flatten",
+      "terminal_state": 617,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0QEFS4I9VY__03",
+      "asset_id": "rand_0QEFS4I9VY",
+      "task": "flatten",
+      "terminal_state": 667,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0RJMGOA8IW__09",
+      "asset_id": "rand_0RJMGOA8IW",
+      "task": "flatten",
+      "terminal_state": 1297,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0T071CSSTD__06",
+      "asset_id": "rand_0T071CSSTD",
+      "task": "flatten",
+      "terminal_state": 1282,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_02WJ207M8N__08",
+      "asset_id": "rand_02WJ207M8N",
+      "task": "flatten",
+      "terminal_state": 1632,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_038ROZC0KR__05",
+      "asset_id": "rand_038ROZC0KR",
+      "task": "flatten",
+      "terminal_state": 687,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_041L4IHB7W__01",
+      "asset_id": "rand_041L4IHB7W",
+      "task": "flatten",
+      "terminal_state": 1935,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_04NKS685SH__01",
+      "asset_id": "rand_04NKS685SH",
+      "task": "flatten",
+      "terminal_state": 1821,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_04OU2IZ2GV__00",
+      "asset_id": "rand_04OU2IZ2GV",
+      "task": "flatten",
+      "terminal_state": 605,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_058QFFSWAQ__02",
+      "asset_id": "rand_058QFFSWAQ",
+      "task": "flatten",
+      "terminal_state": 1595,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_061TOSXC5W__03",
+      "asset_id": "rand_061TOSXC5W",
+      "task": "flatten",
+      "terminal_state": 1319,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_07FDM3U88E__06",
+      "asset_id": "rand_07FDM3U88E",
+      "task": "flatten",
+      "terminal_state": 1025,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0T6A7W6QY9__04",
+      "asset_id": "rand_0T6A7W6QY9",
+      "task": "flatten",
+      "terminal_state": 1320,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0T6WA8FT8T__01",
+      "asset_id": "rand_0T6WA8FT8T",
+      "task": "flatten",
+      "terminal_state": 840,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0TKY8IYX0W__04",
+      "asset_id": "rand_0TKY8IYX0W",
+      "task": "flatten",
+      "terminal_state": 2409,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0U237S7AQZ__05",
+      "asset_id": "rand_0U237S7AQZ",
+      "task": "flatten",
+      "terminal_state": 868,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UKD4QKBTS__07",
+      "asset_id": "rand_0UKD4QKBTS",
+      "task": "flatten",
+      "terminal_state": 794,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UOA081DQE__08",
+      "asset_id": "rand_0UOA081DQE",
+      "task": "flatten",
+      "terminal_state": 703,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0URVRF4FRO__05",
+      "asset_id": "rand_0URVRF4FRO",
+      "task": "flatten",
+      "terminal_state": 2330,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UVZH267ZC__00",
+      "asset_id": "rand_0UVZH267ZC",
+      "task": "flatten",
+      "terminal_state": 918,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UYXAJYKTZ__01",
+      "asset_id": "rand_0UYXAJYKTZ",
+      "task": "flatten",
+      "terminal_state": 2495,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0V7RGHZ8JM__09",
+      "asset_id": "rand_0V7RGHZ8JM",
+      "task": "flatten",
+      "terminal_state": 1801,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0V99E6MZAM__04",
+      "asset_id": "rand_0V99E6MZAM",
+      "task": "flatten",
+      "terminal_state": 1143,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VBR02U024__04",
+      "asset_id": "rand_0VBR02U024",
+      "task": "flatten",
+      "terminal_state": 829,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0A1ZQT230R__06",
+      "asset_id": "rand_0A1ZQT230R",
+      "task": "flatten",
+      "terminal_state": 773,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0E362JU16I__07",
+      "asset_id": "rand_0E362JU16I",
+      "task": "flatten",
+      "terminal_state": 1203,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0FGHC5MNWV__08",
+      "asset_id": "rand_0FGHC5MNWV",
+      "task": "flatten",
+      "terminal_state": 672,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0I3JWVNKOR__00",
+      "asset_id": "rand_0I3JWVNKOR",
+      "task": "flatten",
+      "terminal_state": 645,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_10WJYTHZPM__00",
+      "asset_id": "rand_10WJYTHZPM",
+      "task": "flatten",
+      "terminal_state": 2474,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_111P95CVJW__07",
+      "asset_id": "rand_111P95CVJW",
+      "task": "flatten",
+      "terminal_state": 1022,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_117L64AH1R__01",
+      "asset_id": "rand_117L64AH1R",
+      "task": "flatten",
+      "terminal_state": 890,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11CBEZVPAK__04",
+      "asset_id": "rand_11CBEZVPAK",
+      "task": "flatten",
+      "terminal_state": 648,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VGB1NG35B__05",
+      "asset_id": "rand_0VGB1NG35B",
+      "task": "flatten",
+      "terminal_state": 1283,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VI0BDUCV4__00",
+      "asset_id": "rand_0VI0BDUCV4",
+      "task": "flatten",
+      "terminal_state": 1864,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VOF58UCB8__03",
+      "asset_id": "rand_0VOF58UCB8",
+      "task": "flatten",
+      "terminal_state": 1436,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VVJGBK29H__09",
+      "asset_id": "rand_0VVJGBK29H",
+      "task": "flatten",
+      "terminal_state": 1715,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X2J5FX39U__01",
+      "asset_id": "rand_0X2J5FX39U",
+      "task": "flatten",
+      "terminal_state": 1764,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X68PQMHZM__04",
+      "asset_id": "rand_0X68PQMHZM",
+      "task": "flatten",
+      "terminal_state": 721,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X6SZC14TF__09",
+      "asset_id": "rand_0X6SZC14TF",
+      "task": "flatten",
+      "terminal_state": 1171,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X7SATI5R6__07",
+      "asset_id": "rand_0X7SATI5R6",
+      "task": "flatten",
+      "terminal_state": 1111,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XC05H210D__08",
+      "asset_id": "rand_0XC05H210D",
+      "task": "flatten",
+      "terminal_state": 2384,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XDIJIZSS1__00",
+      "asset_id": "rand_0XDIJIZSS1",
+      "task": "flatten",
+      "terminal_state": 1161,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XEAOKSSSD__01",
+      "asset_id": "rand_0XEAOKSSSD",
+      "task": "flatten",
+      "terminal_state": 1350,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XQT1WCCJN__08",
+      "asset_id": "rand_0XQT1WCCJN",
+      "task": "flatten",
+      "terminal_state": 672,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_128O8MCE0P__08",
+      "asset_id": "rand_128O8MCE0P",
+      "task": "flatten",
+      "terminal_state": 1505,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12CMB9NKG1__02",
+      "asset_id": "rand_12CMB9NKG1",
+      "task": "flatten",
+      "terminal_state": 1174,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12CR1HRKKE__00",
+      "asset_id": "rand_12CR1HRKKE",
+      "task": "flatten",
+      "terminal_state": 804,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12FL0PZP12__08",
+      "asset_id": "rand_12FL0PZP12",
+      "task": "flatten",
+      "terminal_state": 1071,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12KXNKIIP0__04",
+      "asset_id": "rand_12KXNKIIP0",
+      "task": "flatten",
+      "terminal_state": 775,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13AAK4PO2O__09",
+      "asset_id": "rand_13AAK4PO2O",
+      "task": "flatten",
+      "terminal_state": 1745,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13CJX80V5K__05",
+      "asset_id": "rand_13CJX80V5K",
+      "task": "flatten",
+      "terminal_state": 1166,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13GMJ3LRZZ__02",
+      "asset_id": "rand_13GMJ3LRZZ",
+      "task": "flatten",
+      "terminal_state": 1042,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XY7VMAT8O__06",
+      "asset_id": "rand_0XY7VMAT8O",
+      "task": "flatten",
+      "terminal_state": 1361,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Y83K1TKNT__01",
+      "asset_id": "rand_0Y83K1TKNT",
+      "task": "flatten",
+      "terminal_state": 982,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Z3TA1FA1C__07",
+      "asset_id": "rand_0Z3TA1FA1C",
+      "task": "flatten",
+      "terminal_state": 965,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Z4SKWV6AF__07",
+      "asset_id": "rand_0Z4SKWV6AF",
+      "task": "flatten",
+      "terminal_state": 1104,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Z5CXF4ZQP__09",
+      "asset_id": "rand_0Z5CXF4ZQP",
+      "task": "flatten",
+      "terminal_state": 1101,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ZN4M0TNAD__09",
+      "asset_id": "rand_0ZN4M0TNAD",
+      "task": "flatten",
+      "terminal_state": 668,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_10J8E452FG__09",
+      "asset_id": "rand_10J8E452FG",
+      "task": "flatten",
+      "terminal_state": 2599,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_10LIHEWSXB__04",
+      "asset_id": "rand_10LIHEWSXB",
+      "task": "flatten",
+      "terminal_state": 1408,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13O1F9D78S__08",
+      "asset_id": "rand_13O1F9D78S",
+      "task": "flatten",
+      "terminal_state": 902,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13S5ONA77Z__05",
+      "asset_id": "rand_13S5ONA77Z",
+      "task": "flatten",
+      "terminal_state": 1149,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13ZRL8YUW9__01",
+      "asset_id": "rand_13ZRL8YUW9",
+      "task": "flatten",
+      "terminal_state": 1422,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_14L6VNJRF9__05",
+      "asset_id": "rand_14L6VNJRF9",
+      "task": "flatten",
+      "terminal_state": 1041,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1545L6O32O__00",
+      "asset_id": "rand_1545L6O32O",
+      "task": "flatten",
+      "terminal_state": 954,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_155MRLXVMW__01",
+      "asset_id": "rand_155MRLXVMW",
+      "task": "flatten",
+      "terminal_state": 648,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_15BA9G04GP__01",
+      "asset_id": "rand_15BA9G04GP",
+      "task": "flatten",
+      "terminal_state": 936,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_15E6R5W9TL__09",
+      "asset_id": "rand_15E6R5W9TL",
+      "task": "flatten",
+      "terminal_state": 1156,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_160VBHVRPV__06",
+      "asset_id": "rand_160VBHVRPV",
+      "task": "flatten",
+      "terminal_state": 633,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16AC0MKLJL__06",
+      "asset_id": "rand_16AC0MKLJL",
+      "task": "flatten",
+      "terminal_state": 701,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16R640YUSC__02",
+      "asset_id": "rand_16R640YUSC",
+      "task": "flatten",
+      "terminal_state": 1541,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16V49KL0R9__01",
+      "asset_id": "rand_16V49KL0R9",
+      "task": "flatten",
+      "terminal_state": 1863,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11J8S4NHQ9__03",
+      "asset_id": "rand_11J8S4NHQ9",
+      "task": "flatten",
+      "terminal_state": 2484,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11L6QS0SAZ__01",
+      "asset_id": "rand_11L6QS0SAZ",
+      "task": "flatten",
+      "terminal_state": 1982,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11SEFBSFKK__00",
+      "asset_id": "rand_11SEFBSFKK",
+      "task": "flatten",
+      "terminal_state": 1226,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11TS48IS8W__01",
+      "asset_id": "rand_11TS48IS8W",
+      "task": "flatten",
+      "terminal_state": 2145,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AUTDNAW0L__01",
+      "asset_id": "rand_1AUTDNAW0L",
+      "task": "flatten",
+      "terminal_state": 764,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AWWJ9TCB8__06",
+      "asset_id": "rand_1AWWJ9TCB8",
+      "task": "flatten",
+      "terminal_state": 888,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1B862QIZ9S__03",
+      "asset_id": "rand_1B862QIZ9S",
+      "task": "flatten",
+      "terminal_state": 2062,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BB8QEIHOS__08",
+      "asset_id": "rand_1BB8QEIHOS",
+      "task": "flatten",
+      "terminal_state": 971,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16W8ARYM6G__06",
+      "asset_id": "rand_16W8ARYM6G",
+      "task": "flatten",
+      "terminal_state": 1469,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_172N6T24NM__08",
+      "asset_id": "rand_172N6T24NM",
+      "task": "flatten",
+      "terminal_state": 622,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_176L9DT8YW__00",
+      "asset_id": "rand_176L9DT8YW",
+      "task": "flatten",
+      "terminal_state": 2215,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_17V8IC2JIT__04",
+      "asset_id": "rand_17V8IC2JIT",
+      "task": "flatten",
+      "terminal_state": 1082,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_184ZB0LXIR__08",
+      "asset_id": "rand_184ZB0LXIR",
+      "task": "flatten",
+      "terminal_state": 997,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18BM337LOW__07",
+      "asset_id": "rand_18BM337LOW",
+      "task": "flatten",
+      "terminal_state": 615,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18DVTRFDE8__06",
+      "asset_id": "rand_18DVTRFDE8",
+      "task": "flatten",
+      "terminal_state": 603,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18HU0R37B7__01",
+      "asset_id": "rand_18HU0R37B7",
+      "task": "flatten",
+      "terminal_state": 1086,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18TWRPGQIS__06",
+      "asset_id": "rand_18TWRPGQIS",
+      "task": "flatten",
+      "terminal_state": 1403,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19ODP894JR__00",
+      "asset_id": "rand_19ODP894JR",
+      "task": "flatten",
+      "terminal_state": 1009,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19U2D4IL4V__00",
+      "asset_id": "rand_19U2D4IL4V",
+      "task": "flatten",
+      "terminal_state": 858,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19VLXSSFLD__00",
+      "asset_id": "rand_19VLXSSFLD",
+      "task": "flatten",
+      "terminal_state": 1442,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BKOCG69L9__08",
+      "asset_id": "rand_1BKOCG69L9",
+      "task": "flatten",
+      "terminal_state": 1065,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BU52I9LRX__01",
+      "asset_id": "rand_1BU52I9LRX",
+      "task": "flatten",
+      "terminal_state": 732,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BYN9OGP8S__04",
+      "asset_id": "rand_1BYN9OGP8S",
+      "task": "flatten",
+      "terminal_state": 1414,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1C2XLTNKGM__09",
+      "asset_id": "rand_1C2XLTNKGM",
+      "task": "flatten",
+      "terminal_state": 1181,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1C5J5MGWB5__06",
+      "asset_id": "rand_1C5J5MGWB5",
+      "task": "flatten",
+      "terminal_state": 804,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CD8JAPAP2__04",
+      "asset_id": "rand_1CD8JAPAP2",
+      "task": "flatten",
+      "terminal_state": 1005,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CJ9S3DEOE__04",
+      "asset_id": "rand_1CJ9S3DEOE",
+      "task": "flatten",
+      "terminal_state": 1454,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CSHS4LKIJ__08",
+      "asset_id": "rand_1CSHS4LKIJ",
+      "task": "flatten",
+      "terminal_state": 758,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19ZIM30DGZ__07",
+      "asset_id": "rand_19ZIM30DGZ",
+      "task": "flatten",
+      "terminal_state": 1750,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1A0BGLIDR1__04",
+      "asset_id": "rand_1A0BGLIDR1",
+      "task": "flatten",
+      "terminal_state": 769,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1A2P58J9VK__09",
+      "asset_id": "rand_1A2P58J9VK",
+      "task": "flatten",
+      "terminal_state": 1422,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ABU7HKRR9__02",
+      "asset_id": "rand_1ABU7HKRR9",
+      "task": "flatten",
+      "terminal_state": 857,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ALD8ZQDU4__06",
+      "asset_id": "rand_1ALD8ZQDU4",
+      "task": "flatten",
+      "terminal_state": 1716,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ANEU0APNF__06",
+      "asset_id": "rand_1ANEU0APNF",
+      "task": "flatten",
+      "terminal_state": 1491,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AQJGG2YQ9__05",
+      "asset_id": "rand_1AQJGG2YQ9",
+      "task": "flatten",
+      "terminal_state": 1321,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AREF49CK1__03",
+      "asset_id": "rand_1AREF49CK1",
+      "task": "flatten",
+      "terminal_state": 2049,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1DGYFK46D0__03",
+      "asset_id": "rand_1DGYFK46D0",
+      "task": "flatten",
+      "terminal_state": 862,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1E69F9VRN4__00",
+      "asset_id": "rand_1E69F9VRN4",
+      "task": "flatten",
+      "terminal_state": 767,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EDHTQFUNP__01",
+      "asset_id": "rand_1EDHTQFUNP",
+      "task": "flatten",
+      "terminal_state": 824,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EEIEEXOHT__06",
+      "asset_id": "rand_1EEIEEXOHT",
+      "task": "flatten",
+      "terminal_state": 656,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EHUSGYR73__09",
+      "asset_id": "rand_1EHUSGYR73",
+      "task": "flatten",
+      "terminal_state": 669,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1F7UUHFTTF__03",
+      "asset_id": "rand_1F7UUHFTTF",
+      "task": "flatten",
+      "terminal_state": 1411,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1F9YNONW4N__07",
+      "asset_id": "rand_1F9YNONW4N",
+      "task": "flatten",
+      "terminal_state": 651,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1FVJ238UE7__00",
+      "asset_id": "rand_1FVJ238UE7",
+      "task": "flatten",
+      "terminal_state": 600,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1FYRV0NHSK__02",
+      "asset_id": "rand_1FYRV0NHSK",
+      "task": "flatten",
+      "terminal_state": 1023,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1G0SYPVGVT__06",
+      "asset_id": "rand_1G0SYPVGVT",
+      "task": "flatten",
+      "terminal_state": 1061,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1G5NLOGYKY__08",
+      "asset_id": "rand_1G5NLOGYKY",
+      "task": "flatten",
+      "terminal_state": 635,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1G753QQF8L__00",
+      "asset_id": "rand_1G753QQF8L",
+      "task": "flatten",
+      "terminal_state": 1989,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BBH5VM6IR__02",
+      "asset_id": "rand_1BBH5VM6IR",
+      "task": "flatten",
+      "terminal_state": 934,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BBQV0MXA4__00",
+      "asset_id": "rand_1BBQV0MXA4",
+      "task": "flatten",
+      "terminal_state": 898,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BEWWU2K6Q__04",
+      "asset_id": "rand_1BEWWU2K6Q",
+      "task": "flatten",
+      "terminal_state": 689,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BIF7BVRJ4__09",
+      "asset_id": "rand_1BIF7BVRJ4",
+      "task": "flatten",
+      "terminal_state": 1221,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_21GKNQCZ4B_000008",
+      "asset_id": "rand_21GKNQCZ4B",
+      "task": "fold",
+      "terminal_state": 874,
+      "featured": true
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_079HTTNCTJ_000003",
+      "asset_id": "rand_079HTTNCTJ",
+      "task": "fold",
+      "terminal_state": 609,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0AYSPSNK8T_000009",
+      "asset_id": "rand_0AYSPSNK8T",
+      "task": "fold",
+      "terminal_state": 1164,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ME2Z034NN_000004",
+      "asset_id": "rand_0ME2Z034NN",
+      "task": "fold",
+      "terminal_state": 980,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0TMR6NDPHP_000006",
+      "asset_id": "rand_0TMR6NDPHP",
+      "task": "fold",
+      "terminal_state": 1965,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0V15754TTS_000001",
+      "asset_id": "rand_0V15754TTS",
+      "task": "fold",
+      "terminal_state": 920,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0WYOH8KDV2_000009_r000",
+      "asset_id": "rand_0WYOH8KDV2",
+      "task": "fold",
+      "terminal_state": 2060,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XKZV2GIHN_000001_r003",
+      "asset_id": "rand_0XKZV2GIHN",
+      "task": "fold",
+      "terminal_state": 1718,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ZFJUADVCA_000001",
+      "asset_id": "rand_0ZFJUADVCA",
+      "task": "fold",
+      "terminal_state": 885,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11F1D3WU17_000000_r000",
+      "asset_id": "rand_11F1D3WU17",
+      "task": "fold",
+      "terminal_state": 922,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CSX4HLLP_000009",
+      "asset_id": "rand_12CSX4HLLP",
+      "task": "fold",
+      "terminal_state": 1286,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13S5ONA77Z_000009_r000",
+      "asset_id": "rand_13S5ONA77Z",
+      "task": "fold",
+      "terminal_state": 1267,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_160VBHVRPV_000003",
+      "asset_id": "rand_160VBHVRPV",
+      "task": "fold",
+      "terminal_state": 1096,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_17UY5SOHZ2_000000",
+      "asset_id": "rand_17UY5SOHZ2",
+      "task": "fold",
+      "terminal_state": 1005,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19ODP894JR_000003_r000",
+      "asset_id": "rand_19ODP894JR",
+      "task": "fold",
+      "terminal_state": 1106,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ALD8ZQDU4_000002",
+      "asset_id": "rand_1ALD8ZQDU4",
+      "task": "fold",
+      "terminal_state": 925,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BB06QD3IC_000005_r001",
+      "asset_id": "rand_1BB06QD3IC",
+      "task": "fold",
+      "terminal_state": 2718,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BU52I9LRX_000000_r000",
+      "asset_id": "rand_1BU52I9LRX",
+      "task": "fold",
+      "terminal_state": 1646,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1DGYFK46D0_000004_r000",
+      "asset_id": "rand_1DGYFK46D0",
+      "task": "fold",
+      "terminal_state": 843,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1FL5UDP4YQ_000005",
+      "asset_id": "rand_1FL5UDP4YQ",
+      "task": "fold",
+      "terminal_state": 1042,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1GIQSRDLN2_000007",
+      "asset_id": "rand_1GIQSRDLN2",
+      "task": "fold",
+      "terminal_state": 1310,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1HHW0GGKMF_000005",
+      "asset_id": "rand_1HHW0GGKMF",
+      "task": "fold",
+      "terminal_state": 1072,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1IOKVF7VZ2_000009_r001",
+      "asset_id": "rand_1IOKVF7VZ2",
+      "task": "fold",
+      "terminal_state": 1758,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1JY83CS1BA_000005_r000",
+      "asset_id": "rand_1JY83CS1BA",
+      "task": "fold",
+      "terminal_state": 2071,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1LGZ20AJA1_000004",
+      "asset_id": "rand_1LGZ20AJA1",
+      "task": "fold",
+      "terminal_state": 1176,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1M8PJ2BE57_000001_r000",
+      "asset_id": "rand_1M8PJ2BE57",
+      "task": "fold",
+      "terminal_state": 632,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1NMOEFSF0W_000008_r001",
+      "asset_id": "rand_1NMOEFSF0W",
+      "task": "fold",
+      "terminal_state": 2929,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ONEJHCOVS_000001_r001",
+      "asset_id": "rand_1ONEJHCOVS",
+      "task": "fold",
+      "terminal_state": 934,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1PVUZVFU2U_000005_r000",
+      "asset_id": "rand_1PVUZVFU2U",
+      "task": "fold",
+      "terminal_state": 889,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1RUXCWNZMC_000008",
+      "asset_id": "rand_1RUXCWNZMC",
+      "task": "fold",
+      "terminal_state": 1961,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1T6IM4B3AE_000008",
+      "asset_id": "rand_1T6IM4B3AE",
+      "task": "fold",
+      "terminal_state": 760,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1U12KRBTWC_000001",
+      "asset_id": "rand_1U12KRBTWC",
+      "task": "fold",
+      "terminal_state": 1122,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1VKRDNWFKE_000005",
+      "asset_id": "rand_1VKRDNWFKE",
+      "task": "fold",
+      "terminal_state": 656,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1X5Z0QHKP8_000001",
+      "asset_id": "rand_1X5Z0QHKP8",
+      "task": "fold",
+      "terminal_state": 2635,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1YQ82NEHKT_000007",
+      "asset_id": "rand_1YQ82NEHKT",
+      "task": "fold",
+      "terminal_state": 1309,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_20K0H65GUU_000000_r000",
+      "asset_id": "rand_20K0H65GUU",
+      "task": "fold",
+      "terminal_state": 1952,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_21TFVULETA_000004_r000",
+      "asset_id": "rand_21TFVULETA",
+      "task": "fold",
+      "terminal_state": 1945,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_232X14D5PP_000004",
+      "asset_id": "rand_232X14D5PP",
+      "task": "fold",
+      "terminal_state": 1989,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_249RUXCM75_000007_r000",
+      "asset_id": "rand_249RUXCM75",
+      "task": "fold",
+      "terminal_state": 1113,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_25KFCLZ8JD_000007",
+      "asset_id": "rand_25KFCLZ8JD",
+      "task": "fold",
+      "terminal_state": 1106,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_26KG2BKFRL_000003_r003",
+      "asset_id": "rand_26KG2BKFRL",
+      "task": "fold",
+      "terminal_state": 1566,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_27QVZO5VN5_000003",
+      "asset_id": "rand_27QVZO5VN5",
+      "task": "fold",
+      "terminal_state": 1480,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_28R28NJ9TT_000000",
+      "asset_id": "rand_28R28NJ9TT",
+      "task": "fold",
+      "terminal_state": 1032,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_299AM1LG5I_000008",
+      "asset_id": "rand_299AM1LG5I",
+      "task": "fold",
+      "terminal_state": 1041,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2ABUSKI9UP_000005",
+      "asset_id": "rand_2ABUSKI9UP",
+      "task": "fold",
+      "terminal_state": 764,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2CBVS72PJD_000002_r000",
+      "asset_id": "rand_2CBVS72PJD",
+      "task": "fold",
+      "terminal_state": 1335,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2D47UXG6QS_000007_r003",
+      "asset_id": "rand_2D47UXG6QS",
+      "task": "fold",
+      "terminal_state": 2030,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2EBUYCB46V_000005_r005",
+      "asset_id": "rand_2EBUYCB46V",
+      "task": "fold",
+      "terminal_state": 2042,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2FHE0HFZK7_000006",
+      "asset_id": "rand_2FHE0HFZK7",
+      "task": "fold",
+      "terminal_state": 801,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2I95TCYIFO_000003",
+      "asset_id": "rand_2I95TCYIFO",
+      "task": "fold",
+      "terminal_state": 2278,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2JKK2F2K5Q_000008",
+      "asset_id": "rand_2JKK2F2K5Q",
+      "task": "fold",
+      "terminal_state": 1017,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_ZZCWITH5HY_000009",
+      "asset_id": "rand_ZZCWITH5HY",
+      "task": "fold",
+      "terminal_state": 1306,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_004NVCOKV7_000003",
+      "asset_id": "rand_004NVCOKV7",
+      "task": "fold",
+      "terminal_state": 1308,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_00GEDVLKJJ_000004_r001",
+      "asset_id": "rand_00GEDVLKJJ",
+      "task": "fold",
+      "terminal_state": 2454,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_00PJYCPW0L_000006",
+      "asset_id": "rand_00PJYCPW0L",
+      "task": "fold",
+      "terminal_state": 1267,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_00ZT6MGWR3_000003",
+      "asset_id": "rand_00ZT6MGWR3",
+      "task": "fold",
+      "terminal_state": 1030,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_01Q78IXCLW_000004",
+      "asset_id": "rand_01Q78IXCLW",
+      "task": "fold",
+      "terminal_state": 958,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_01R50NZJVR_000002",
+      "asset_id": "rand_01R50NZJVR",
+      "task": "fold",
+      "terminal_state": 978,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_025I3DAPE6_000004",
+      "asset_id": "rand_025I3DAPE6",
+      "task": "fold",
+      "terminal_state": 922,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_02AR55C8T1_000003_r000",
+      "asset_id": "rand_02AR55C8T1",
+      "task": "fold",
+      "terminal_state": 1540,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_02WJ207M8N_000007",
+      "asset_id": "rand_02WJ207M8N",
+      "task": "fold",
+      "terminal_state": 974,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_038ROZC0KR_000008",
+      "asset_id": "rand_038ROZC0KR",
+      "task": "fold",
+      "terminal_state": 885,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_041L4IHB7W_000008",
+      "asset_id": "rand_041L4IHB7W",
+      "task": "fold",
+      "terminal_state": 1203,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_04NKS685SH_000009",
+      "asset_id": "rand_04NKS685SH",
+      "task": "fold",
+      "terminal_state": 789,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_04OU2IZ2GV_000002_r001",
+      "asset_id": "rand_04OU2IZ2GV",
+      "task": "fold",
+      "terminal_state": 1612,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_058QFFSWAQ_000006",
+      "asset_id": "rand_058QFFSWAQ",
+      "task": "fold",
+      "terminal_state": 1379,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_061TOSXC5W_000001",
+      "asset_id": "rand_061TOSXC5W",
+      "task": "fold",
+      "terminal_state": 1201,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_07FDM3U88E_000002_r005",
+      "asset_id": "rand_07FDM3U88E",
+      "task": "fold",
+      "terminal_state": 1105,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_07SZ5QQ0QP_000000_r000",
+      "asset_id": "rand_07SZ5QQ0QP",
+      "task": "fold",
+      "terminal_state": 934,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_089NYY0BW7_000001_r001",
+      "asset_id": "rand_089NYY0BW7",
+      "task": "fold",
+      "terminal_state": 715,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_08KYYZ0POQ_000009",
+      "asset_id": "rand_08KYYZ0POQ",
+      "task": "fold",
+      "terminal_state": 1094,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_09G2VZ0SDX_000009_r000",
+      "asset_id": "rand_09G2VZ0SDX",
+      "task": "fold",
+      "terminal_state": 1214,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0A1ZQT230R_000002_r000",
+      "asset_id": "rand_0A1ZQT230R",
+      "task": "fold",
+      "terminal_state": 1020,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0E362JU16I_000003_r000",
+      "asset_id": "rand_0E362JU16I",
+      "task": "fold",
+      "terminal_state": 939,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0FGHC5MNWV_000000",
+      "asset_id": "rand_0FGHC5MNWV",
+      "task": "fold",
+      "terminal_state": 1266,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0I3JWVNKOR_000004",
+      "asset_id": "rand_0I3JWVNKOR",
+      "task": "fold",
+      "terminal_state": 1214,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ILSNHSPQ7_000000_r004",
+      "asset_id": "rand_0ILSNHSPQ7",
+      "task": "fold",
+      "terminal_state": 1533,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0IX189WGFR_000009",
+      "asset_id": "rand_0IX189WGFR",
+      "task": "fold",
+      "terminal_state": 1551,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0JL0G525XH_000005_r000",
+      "asset_id": "rand_0JL0G525XH",
+      "task": "fold",
+      "terminal_state": 1206,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0MBY846ZGF_000001",
+      "asset_id": "rand_0MBY846ZGF",
+      "task": "fold",
+      "terminal_state": 1094,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0OXVTOY8BQ_000002_r000",
+      "asset_id": "rand_0OXVTOY8BQ",
+      "task": "fold",
+      "terminal_state": 1205,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0QEFS4I9VY_000003",
+      "asset_id": "rand_0QEFS4I9VY",
+      "task": "fold",
+      "terminal_state": 954,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0RJMGOA8IW_000009",
+      "asset_id": "rand_0RJMGOA8IW",
+      "task": "fold",
+      "terminal_state": 977,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0T071CSSTD_000006",
+      "asset_id": "rand_0T071CSSTD",
+      "task": "fold",
+      "terminal_state": 894,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0T6A7W6QY9_000001",
+      "asset_id": "rand_0T6A7W6QY9",
+      "task": "fold",
+      "terminal_state": 1029,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0T6WA8FT8T_000000_r000",
+      "asset_id": "rand_0T6WA8FT8T",
+      "task": "fold",
+      "terminal_state": 1284,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0TKY8IYX0W_000008",
+      "asset_id": "rand_0TKY8IYX0W",
+      "task": "fold",
+      "terminal_state": 1006,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0U237S7AQZ_000005",
+      "asset_id": "rand_0U237S7AQZ",
+      "task": "fold",
+      "terminal_state": 1636,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UKD4QKBTS_000004",
+      "asset_id": "rand_0UKD4QKBTS",
+      "task": "fold",
+      "terminal_state": 901,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UOA081DQE_000002",
+      "asset_id": "rand_0UOA081DQE",
+      "task": "fold",
+      "terminal_state": 719,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0URVRF4FRO_000002_r009",
+      "asset_id": "rand_0URVRF4FRO",
+      "task": "fold",
+      "terminal_state": 783,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UVZH267ZC_000005",
+      "asset_id": "rand_0UVZH267ZC",
+      "task": "fold",
+      "terminal_state": 995,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UYXAJYKTZ_000008",
+      "asset_id": "rand_0UYXAJYKTZ",
+      "task": "fold",
+      "terminal_state": 618,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0V7RGHZ8JM_000002_r003",
+      "asset_id": "rand_0V7RGHZ8JM",
+      "task": "fold",
+      "terminal_state": 1078,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0V99E6MZAM_000001_r000",
+      "asset_id": "rand_0V99E6MZAM",
+      "task": "fold",
+      "terminal_state": 858,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VBR02U024_000005_r000",
+      "asset_id": "rand_0VBR02U024",
+      "task": "fold",
+      "terminal_state": 865,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VGB1NG35B_000002",
+      "asset_id": "rand_0VGB1NG35B",
+      "task": "fold",
+      "terminal_state": 1416,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VI0BDUCV4_000008",
+      "asset_id": "rand_0VI0BDUCV4",
+      "task": "fold",
+      "terminal_state": 967,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VOF58UCB8_000001_r000",
+      "asset_id": "rand_0VOF58UCB8",
+      "task": "fold",
+      "terminal_state": 1381,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VVJGBK29H_000004_r001",
+      "asset_id": "rand_0VVJGBK29H",
+      "task": "fold",
+      "terminal_state": 1033,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X2J5FX39U_000002",
+      "asset_id": "rand_0X2J5FX39U",
+      "task": "fold",
+      "terminal_state": 696,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X68PQMHZM_000000",
+      "asset_id": "rand_0X68PQMHZM",
+      "task": "fold",
+      "terminal_state": 1055,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X6SZC14TF_000001_r002",
+      "asset_id": "rand_0X6SZC14TF",
+      "task": "fold",
+      "terminal_state": 931,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X7SATI5R6_000008",
+      "asset_id": "rand_0X7SATI5R6",
+      "task": "fold",
+      "terminal_state": 1315,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XC05H210D_000002_r009",
+      "asset_id": "rand_0XC05H210D",
+      "task": "fold",
+      "terminal_state": 2485,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XDIJIZSS1_000000",
+      "asset_id": "rand_0XDIJIZSS1",
+      "task": "fold",
+      "terminal_state": 986,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XEAOKSSSD_000002_r003",
+      "asset_id": "rand_0XEAOKSSSD",
+      "task": "fold",
+      "terminal_state": 751,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XQT1WCCJN_000003_r000",
+      "asset_id": "rand_0XQT1WCCJN",
+      "task": "fold",
+      "terminal_state": 1265,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XY7VMAT8O_000001_r000",
+      "asset_id": "rand_0XY7VMAT8O",
+      "task": "fold",
+      "terminal_state": 742,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Y83K1TKNT_000001_r000",
+      "asset_id": "rand_0Y83K1TKNT",
+      "task": "fold",
+      "terminal_state": 1316,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Z3TA1FA1C_000000_r001",
+      "asset_id": "rand_0Z3TA1FA1C",
+      "task": "fold",
+      "terminal_state": 980,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Z4SKWV6AF_000005",
+      "asset_id": "rand_0Z4SKWV6AF",
+      "task": "fold",
+      "terminal_state": 1308,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Z5CXF4ZQP_000003",
+      "asset_id": "rand_0Z5CXF4ZQP",
+      "task": "fold",
+      "terminal_state": 698,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ZN4M0TNAD_000004",
+      "asset_id": "rand_0ZN4M0TNAD",
+      "task": "fold",
+      "terminal_state": 1536,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_10J8E452FG_000002",
+      "asset_id": "rand_10J8E452FG",
+      "task": "fold",
+      "terminal_state": 1332,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_10LIHEWSXB_000006_r007",
+      "asset_id": "rand_10LIHEWSXB",
+      "task": "fold",
+      "terminal_state": 2052,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_10WJYTHZPM_000009",
+      "asset_id": "rand_10WJYTHZPM",
+      "task": "fold",
+      "terminal_state": 1081,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_111P95CVJW_000009_r002",
+      "asset_id": "rand_111P95CVJW",
+      "task": "fold",
+      "terminal_state": 1601,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_117L64AH1R_000001",
+      "asset_id": "rand_117L64AH1R",
+      "task": "fold",
+      "terminal_state": 1357,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11CBEZVPAK_000001_r000",
+      "asset_id": "rand_11CBEZVPAK",
+      "task": "fold",
+      "terminal_state": 1867,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11J8S4NHQ9_000002",
+      "asset_id": "rand_11J8S4NHQ9",
+      "task": "fold",
+      "terminal_state": 1367,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11L6QS0SAZ_000007",
+      "asset_id": "rand_11L6QS0SAZ",
+      "task": "fold",
+      "terminal_state": 1271,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11SEFBSFKK_000008",
+      "asset_id": "rand_11SEFBSFKK",
+      "task": "fold",
+      "terminal_state": 1630,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_128O8MCE0P_000003",
+      "asset_id": "rand_128O8MCE0P",
+      "task": "fold",
+      "terminal_state": 837,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CMB9NKG1_000001",
+      "asset_id": "rand_12CMB9NKG1",
+      "task": "fold",
+      "terminal_state": 742,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CR1HRKKE_000007_r000",
+      "asset_id": "rand_12CR1HRKKE",
+      "task": "fold",
+      "terminal_state": 738,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12FL0PZP12_000009_r009",
+      "asset_id": "rand_12FL0PZP12",
+      "task": "fold",
+      "terminal_state": 1052,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12KXNKIIP0_000004_r001",
+      "asset_id": "rand_12KXNKIIP0",
+      "task": "fold",
+      "terminal_state": 1881,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13AAK4PO2O_000001",
+      "asset_id": "rand_13AAK4PO2O",
+      "task": "fold",
+      "terminal_state": 729,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13CJX80V5K_000006",
+      "asset_id": "rand_13CJX80V5K",
+      "task": "fold",
+      "terminal_state": 1109,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13GMJ3LRZZ_000009_r000",
+      "asset_id": "rand_13GMJ3LRZZ",
+      "task": "fold",
+      "terminal_state": 1498,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13O1F9D78S_000002",
+      "asset_id": "rand_13O1F9D78S",
+      "task": "fold",
+      "terminal_state": 1078,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13Q8PAC94Q_000003_r000",
+      "asset_id": "rand_13Q8PAC94Q",
+      "task": "fold",
+      "terminal_state": 1739,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13ZRL8YUW9_000008",
+      "asset_id": "rand_13ZRL8YUW9",
+      "task": "fold",
+      "terminal_state": 1175,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_14L6VNJRF9_000006",
+      "asset_id": "rand_14L6VNJRF9",
+      "task": "fold",
+      "terminal_state": 1257,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1545L6O32O_000006",
+      "asset_id": "rand_1545L6O32O",
+      "task": "fold",
+      "terminal_state": 1757,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_155MRLXVMW_000006",
+      "asset_id": "rand_155MRLXVMW",
+      "task": "fold",
+      "terminal_state": 1090,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_15BA9G04GP_000002_r000",
+      "asset_id": "rand_15BA9G04GP",
+      "task": "fold",
+      "terminal_state": 1131,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_15E6R5W9TL_000007",
+      "asset_id": "rand_15E6R5W9TL",
+      "task": "fold",
+      "terminal_state": 877,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_15MZM8JINR_000006",
+      "asset_id": "rand_15MZM8JINR",
+      "task": "fold",
+      "terminal_state": 1415,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16AC0MKLJL_000008",
+      "asset_id": "rand_16AC0MKLJL",
+      "task": "fold",
+      "terminal_state": 1935,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16R640YUSC_000000_r000",
+      "asset_id": "rand_16R640YUSC",
+      "task": "fold",
+      "terminal_state": 2560,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16V49KL0R9_000002",
+      "asset_id": "rand_16V49KL0R9",
+      "task": "fold",
+      "terminal_state": 1014,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16W8ARYM6G_000005_r000",
+      "asset_id": "rand_16W8ARYM6G",
+      "task": "fold",
+      "terminal_state": 1573,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_172N6T24NM_000003_r001",
+      "asset_id": "rand_172N6T24NM",
+      "task": "fold",
+      "terminal_state": 934,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_176L9DT8YW_000001_r000",
+      "asset_id": "rand_176L9DT8YW",
+      "task": "fold",
+      "terminal_state": 712,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_17V8IC2JIT_000005",
+      "asset_id": "rand_17V8IC2JIT",
+      "task": "fold",
+      "terminal_state": 953,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_184ZB0LXIR_000007_r000",
+      "asset_id": "rand_184ZB0LXIR",
+      "task": "fold",
+      "terminal_state": 2265,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18BM337LOW_000001_r000",
+      "asset_id": "rand_18BM337LOW",
+      "task": "fold",
+      "terminal_state": 1266,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18DVTRFDE8_000000",
+      "asset_id": "rand_18DVTRFDE8",
+      "task": "fold",
+      "terminal_state": 1140,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18HU0R37B7_000005_r000",
+      "asset_id": "rand_18HU0R37B7",
+      "task": "fold",
+      "terminal_state": 1342,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18TWRPGQIS_000006",
+      "asset_id": "rand_18TWRPGQIS",
+      "task": "fold",
+      "terminal_state": 1146,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_196ZJ6KG0I_000007",
+      "asset_id": "rand_196ZJ6KG0I",
+      "task": "fold",
+      "terminal_state": 643,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19U2D4IL4V_000005_r000",
+      "asset_id": "rand_19U2D4IL4V",
+      "task": "fold",
+      "terminal_state": 1288,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19VLXSSFLD_000007",
+      "asset_id": "rand_19VLXSSFLD",
+      "task": "fold",
+      "terminal_state": 1810,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19ZIM30DGZ_000008",
+      "asset_id": "rand_19ZIM30DGZ",
+      "task": "fold",
+      "terminal_state": 1112,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1A0BGLIDR1_000001",
+      "asset_id": "rand_1A0BGLIDR1",
+      "task": "fold",
+      "terminal_state": 699,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1A2P58J9VK_000000",
+      "asset_id": "rand_1A2P58J9VK",
+      "task": "fold",
+      "terminal_state": 713,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ABU7HKRR9_000006_r004",
+      "asset_id": "rand_1ABU7HKRR9",
+      "task": "fold",
+      "terminal_state": 1092,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AEZQ9GNEL_000000_r000",
+      "asset_id": "rand_1AEZQ9GNEL",
+      "task": "fold",
+      "terminal_state": 1369,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ANEU0APNF_000007",
+      "asset_id": "rand_1ANEU0APNF",
+      "task": "fold",
+      "terminal_state": 698,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AQJGG2YQ9_000007",
+      "asset_id": "rand_1AQJGG2YQ9",
+      "task": "fold",
+      "terminal_state": 936,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AREF49CK1_000006",
+      "asset_id": "rand_1AREF49CK1",
+      "task": "fold",
+      "terminal_state": 974,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AUTDNAW0L_000002_r000",
+      "asset_id": "rand_1AUTDNAW0L",
+      "task": "fold",
+      "terminal_state": 2427,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AWWJ9TCB8_000009_r003",
+      "asset_id": "rand_1AWWJ9TCB8",
+      "task": "fold",
+      "terminal_state": 1075,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1B862QIZ9S_000006",
+      "asset_id": "rand_1B862QIZ9S",
+      "task": "fold",
+      "terminal_state": 1084,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BB8QEIHOS_000009_r006",
+      "asset_id": "rand_1BB8QEIHOS",
+      "task": "fold",
+      "terminal_state": 2464,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BBH5VM6IR_000002",
+      "asset_id": "rand_1BBH5VM6IR",
+      "task": "fold",
+      "terminal_state": 837,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BBQV0MXA4_000002_r000",
+      "asset_id": "rand_1BBQV0MXA4",
+      "task": "fold",
+      "terminal_state": 1090,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BEWWU2K6Q_000005",
+      "asset_id": "rand_1BEWWU2K6Q",
+      "task": "fold",
+      "terminal_state": 1072,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BIF7BVRJ4_000006_r000",
+      "asset_id": "rand_1BIF7BVRJ4",
+      "task": "fold",
+      "terminal_state": 1755,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BKOCG69L9_000004_r000",
+      "asset_id": "rand_1BKOCG69L9",
+      "task": "fold",
+      "terminal_state": 1145,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BSZCNY1LV_000002_r000",
+      "asset_id": "rand_1BSZCNY1LV",
+      "task": "fold",
+      "terminal_state": 1626,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BYN9OGP8S_000000_r000",
+      "asset_id": "rand_1BYN9OGP8S",
+      "task": "fold",
+      "terminal_state": 714,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1C2XLTNKGM_000005",
+      "asset_id": "rand_1C2XLTNKGM",
+      "task": "fold",
+      "terminal_state": 1270,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1C5J5MGWB5_000006",
+      "asset_id": "rand_1C5J5MGWB5",
+      "task": "fold",
+      "terminal_state": 1128,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CD8JAPAP2_000000_r000",
+      "asset_id": "rand_1CD8JAPAP2",
+      "task": "fold",
+      "terminal_state": 1028,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CJ9S3DEOE_000003_r001",
+      "asset_id": "rand_1CJ9S3DEOE",
+      "task": "fold",
+      "terminal_state": 2059,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CSHS4LKIJ_000007",
+      "asset_id": "rand_1CSHS4LKIJ",
+      "task": "fold",
+      "terminal_state": 1297,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CW9M7X6EY_000004",
+      "asset_id": "rand_1CW9M7X6EY",
+      "task": "fold",
+      "terminal_state": 1136,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1E69F9VRN4_000003_r000",
+      "asset_id": "rand_1E69F9VRN4",
+      "task": "fold",
+      "terminal_state": 1075,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EDHTQFUNP_000001",
+      "asset_id": "rand_1EDHTQFUNP",
+      "task": "fold",
+      "terminal_state": 827,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EEIEEXOHT_000009_r001",
+      "asset_id": "rand_1EEIEEXOHT",
+      "task": "fold",
+      "terminal_state": 737,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EHUSGYR73_000006",
+      "asset_id": "rand_1EHUSGYR73",
+      "task": "fold",
+      "terminal_state": 898,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1F7UUHFTTF_000002_r000",
+      "asset_id": "rand_1F7UUHFTTF",
+      "task": "fold",
+      "terminal_state": 1151,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1F9YNONW4N_000003",
+      "asset_id": "rand_1F9YNONW4N",
+      "task": "fold",
+      "terminal_state": 1218,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1FVJ238UE7_000005",
+      "asset_id": "rand_1FVJ238UE7",
+      "task": "fold",
+      "terminal_state": 1002,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1FYRV0NHSK_000006",
+      "asset_id": "rand_1FYRV0NHSK",
+      "task": "fold",
+      "terminal_state": 1121,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1G0SYPVGVT_000003_r000",
+      "asset_id": "rand_1G0SYPVGVT",
+      "task": "fold",
+      "terminal_state": 1173,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1G5NLOGYKY_000003_r000",
+      "asset_id": "rand_1G5NLOGYKY",
+      "task": "fold",
+      "terminal_state": 1554,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1G753QQF8L_000007_r000",
+      "asset_id": "rand_1G753QQF8L",
+      "task": "fold",
+      "terminal_state": 1335,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1GDCM6208E_000006",
+      "asset_id": "rand_1GDCM6208E",
+      "task": "fold",
+      "terminal_state": 1406,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_21GKNQCZ4B__00",
+      "asset_id": "rand_21GKNQCZ4B",
+      "task": "flatten",
+      "terminal_state": 728,
+      "featured": true
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1YHCYZE5OK__06",
+      "asset_id": "rand_1YHCYZE5OK",
+      "task": "flatten",
+      "terminal_state": 1792,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_20K0H65GUU__09",
+      "asset_id": "rand_20K0H65GUU",
+      "task": "flatten",
+      "terminal_state": 1087,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_21TFVULETA__05",
+      "asset_id": "rand_21TFVULETA",
+      "task": "flatten",
+      "terminal_state": 2134,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_22W6XQ2A2U__04",
+      "asset_id": "rand_22W6XQ2A2U",
+      "task": "flatten",
+      "terminal_state": 1140,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_249RUXCM75__00",
+      "asset_id": "rand_249RUXCM75",
+      "task": "flatten",
+      "terminal_state": 717,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_25KFCLZ8JD__08",
+      "asset_id": "rand_25KFCLZ8JD",
+      "task": "flatten",
+      "terminal_state": 733,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_26CDT8GJDW__03",
+      "asset_id": "rand_26CDT8GJDW",
+      "task": "flatten",
+      "terminal_state": 1074,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_27QVZO5VN5__07",
+      "asset_id": "rand_27QVZO5VN5",
+      "task": "flatten",
+      "terminal_state": 1987,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_28R28NJ9TT__01",
+      "asset_id": "rand_28R28NJ9TT",
+      "task": "flatten",
+      "terminal_state": 1305,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_299AM1LG5I__06",
+      "asset_id": "rand_299AM1LG5I",
+      "task": "flatten",
+      "terminal_state": 805,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2ABUSKI9UP__00",
+      "asset_id": "rand_2ABUSKI9UP",
+      "task": "flatten",
+      "terminal_state": 1472,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2CBVS72PJD__01",
+      "asset_id": "rand_2CBVS72PJD",
+      "task": "flatten",
+      "terminal_state": 845,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1IOKVF7VZ2__05",
+      "asset_id": "rand_1IOKVF7VZ2",
+      "task": "flatten",
+      "terminal_state": 2326,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1JB634CLNN__08",
+      "asset_id": "rand_1JB634CLNN",
+      "task": "flatten",
+      "terminal_state": 737,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1LGZ20AJA1__07",
+      "asset_id": "rand_1LGZ20AJA1",
+      "task": "flatten",
+      "terminal_state": 1017,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1M8PJ2BE57__02",
+      "asset_id": "rand_1M8PJ2BE57",
+      "task": "flatten",
+      "terminal_state": 1326,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_07SZ5QQ0QP__02",
+      "asset_id": "rand_07SZ5QQ0QP",
+      "task": "flatten",
+      "terminal_state": 1028,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_089NYY0BW7__00",
+      "asset_id": "rand_089NYY0BW7",
+      "task": "flatten",
+      "terminal_state": 1192,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_08KYYZ0POQ__02",
+      "asset_id": "rand_08KYYZ0POQ",
+      "task": "flatten",
+      "terminal_state": 733,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_09G2VZ0SDX__06",
+      "asset_id": "rand_09G2VZ0SDX",
+      "task": "flatten",
+      "terminal_state": 1433,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2D47UXG6QS__03",
+      "asset_id": "rand_2D47UXG6QS",
+      "task": "flatten",
+      "terminal_state": 663,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2EBUYCB46V__03",
+      "asset_id": "rand_2EBUYCB46V",
+      "task": "flatten",
+      "terminal_state": 1490,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2FHE0HFZK7__01",
+      "asset_id": "rand_2FHE0HFZK7",
+      "task": "flatten",
+      "terminal_state": 1117,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2I95TCYIFO__05",
+      "asset_id": "rand_2I95TCYIFO",
+      "task": "flatten",
+      "terminal_state": 2530,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2JKK2F2K5Q__05",
+      "asset_id": "rand_2JKK2F2K5Q",
+      "task": "flatten",
+      "terminal_state": 838,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_ZZCWITH5HY__01",
+      "asset_id": "rand_ZZCWITH5HY",
+      "task": "flatten",
+      "terminal_state": 921,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00GEDVLKJJ__02",
+      "asset_id": "rand_00GEDVLKJJ",
+      "task": "flatten",
+      "terminal_state": 823,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00PJYCPW0L__04",
+      "asset_id": "rand_00PJYCPW0L",
+      "task": "flatten",
+      "terminal_state": 1083,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_00ZT6MGWR3__01",
+      "asset_id": "rand_00ZT6MGWR3",
+      "task": "flatten",
+      "terminal_state": 951,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_01Q78IXCLW__02",
+      "asset_id": "rand_01Q78IXCLW",
+      "task": "flatten",
+      "terminal_state": 666,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_01R50NZJVR__07",
+      "asset_id": "rand_01R50NZJVR",
+      "task": "flatten",
+      "terminal_state": 1707,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_025I3DAPE6__05",
+      "asset_id": "rand_025I3DAPE6",
+      "task": "flatten",
+      "terminal_state": 734,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ILSNHSPQ7__03",
+      "asset_id": "rand_0ILSNHSPQ7",
+      "task": "flatten",
+      "terminal_state": 942,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0IX189WGFR__01",
+      "asset_id": "rand_0IX189WGFR",
+      "task": "flatten",
+      "terminal_state": 2344,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0JL0G525XH__00",
+      "asset_id": "rand_0JL0G525XH",
+      "task": "flatten",
+      "terminal_state": 1730,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0MBY846ZGF__04",
+      "asset_id": "rand_0MBY846ZGF",
+      "task": "flatten",
+      "terminal_state": 1136,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0OXVTOY8BQ__01",
+      "asset_id": "rand_0OXVTOY8BQ",
+      "task": "flatten",
+      "terminal_state": 617,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0QEFS4I9VY__03",
+      "asset_id": "rand_0QEFS4I9VY",
+      "task": "flatten",
+      "terminal_state": 667,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0RJMGOA8IW__09",
+      "asset_id": "rand_0RJMGOA8IW",
+      "task": "flatten",
+      "terminal_state": 1297,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0T071CSSTD__06",
+      "asset_id": "rand_0T071CSSTD",
+      "task": "flatten",
+      "terminal_state": 1282,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_02WJ207M8N__08",
+      "asset_id": "rand_02WJ207M8N",
+      "task": "flatten",
+      "terminal_state": 1632,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_038ROZC0KR__05",
+      "asset_id": "rand_038ROZC0KR",
+      "task": "flatten",
+      "terminal_state": 687,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_041L4IHB7W__01",
+      "asset_id": "rand_041L4IHB7W",
+      "task": "flatten",
+      "terminal_state": 1935,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_04NKS685SH__01",
+      "asset_id": "rand_04NKS685SH",
+      "task": "flatten",
+      "terminal_state": 1821,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_04OU2IZ2GV__00",
+      "asset_id": "rand_04OU2IZ2GV",
+      "task": "flatten",
+      "terminal_state": 605,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_058QFFSWAQ__02",
+      "asset_id": "rand_058QFFSWAQ",
+      "task": "flatten",
+      "terminal_state": 1595,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_061TOSXC5W__03",
+      "asset_id": "rand_061TOSXC5W",
+      "task": "flatten",
+      "terminal_state": 1319,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_07FDM3U88E__06",
+      "asset_id": "rand_07FDM3U88E",
+      "task": "flatten",
+      "terminal_state": 1025,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0T6A7W6QY9__04",
+      "asset_id": "rand_0T6A7W6QY9",
+      "task": "flatten",
+      "terminal_state": 1320,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0T6WA8FT8T__01",
+      "asset_id": "rand_0T6WA8FT8T",
+      "task": "flatten",
+      "terminal_state": 840,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0TKY8IYX0W__04",
+      "asset_id": "rand_0TKY8IYX0W",
+      "task": "flatten",
+      "terminal_state": 2409,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0U237S7AQZ__05",
+      "asset_id": "rand_0U237S7AQZ",
+      "task": "flatten",
+      "terminal_state": 868,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UKD4QKBTS__07",
+      "asset_id": "rand_0UKD4QKBTS",
+      "task": "flatten",
+      "terminal_state": 794,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UOA081DQE__08",
+      "asset_id": "rand_0UOA081DQE",
+      "task": "flatten",
+      "terminal_state": 703,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0URVRF4FRO__05",
+      "asset_id": "rand_0URVRF4FRO",
+      "task": "flatten",
+      "terminal_state": 2330,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UVZH267ZC__00",
+      "asset_id": "rand_0UVZH267ZC",
+      "task": "flatten",
+      "terminal_state": 918,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UYXAJYKTZ__01",
+      "asset_id": "rand_0UYXAJYKTZ",
+      "task": "flatten",
+      "terminal_state": 2495,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0V7RGHZ8JM__09",
+      "asset_id": "rand_0V7RGHZ8JM",
+      "task": "flatten",
+      "terminal_state": 1801,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0V99E6MZAM__04",
+      "asset_id": "rand_0V99E6MZAM",
+      "task": "flatten",
+      "terminal_state": 1143,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VBR02U024__04",
+      "asset_id": "rand_0VBR02U024",
+      "task": "flatten",
+      "terminal_state": 829,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0A1ZQT230R__06",
+      "asset_id": "rand_0A1ZQT230R",
+      "task": "flatten",
+      "terminal_state": 773,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0E362JU16I__07",
+      "asset_id": "rand_0E362JU16I",
+      "task": "flatten",
+      "terminal_state": 1203,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0FGHC5MNWV__08",
+      "asset_id": "rand_0FGHC5MNWV",
+      "task": "flatten",
+      "terminal_state": 672,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0I3JWVNKOR__00",
+      "asset_id": "rand_0I3JWVNKOR",
+      "task": "flatten",
+      "terminal_state": 645,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_10WJYTHZPM__00",
+      "asset_id": "rand_10WJYTHZPM",
+      "task": "flatten",
+      "terminal_state": 2474,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_111P95CVJW__07",
+      "asset_id": "rand_111P95CVJW",
+      "task": "flatten",
+      "terminal_state": 1022,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_117L64AH1R__01",
+      "asset_id": "rand_117L64AH1R",
+      "task": "flatten",
+      "terminal_state": 890,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11CBEZVPAK__04",
+      "asset_id": "rand_11CBEZVPAK",
+      "task": "flatten",
+      "terminal_state": 648,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VGB1NG35B__05",
+      "asset_id": "rand_0VGB1NG35B",
+      "task": "flatten",
+      "terminal_state": 1283,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VI0BDUCV4__00",
+      "asset_id": "rand_0VI0BDUCV4",
+      "task": "flatten",
+      "terminal_state": 1864,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VOF58UCB8__03",
+      "asset_id": "rand_0VOF58UCB8",
+      "task": "flatten",
+      "terminal_state": 1436,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0VVJGBK29H__09",
+      "asset_id": "rand_0VVJGBK29H",
+      "task": "flatten",
+      "terminal_state": 1715,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X2J5FX39U__01",
+      "asset_id": "rand_0X2J5FX39U",
+      "task": "flatten",
+      "terminal_state": 1764,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X68PQMHZM__04",
+      "asset_id": "rand_0X68PQMHZM",
+      "task": "flatten",
+      "terminal_state": 721,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X6SZC14TF__09",
+      "asset_id": "rand_0X6SZC14TF",
+      "task": "flatten",
+      "terminal_state": 1171,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X7SATI5R6__07",
+      "asset_id": "rand_0X7SATI5R6",
+      "task": "flatten",
+      "terminal_state": 1111,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XC05H210D__08",
+      "asset_id": "rand_0XC05H210D",
+      "task": "flatten",
+      "terminal_state": 2384,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XDIJIZSS1__00",
+      "asset_id": "rand_0XDIJIZSS1",
+      "task": "flatten",
+      "terminal_state": 1161,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XEAOKSSSD__01",
+      "asset_id": "rand_0XEAOKSSSD",
+      "task": "flatten",
+      "terminal_state": 1350,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XQT1WCCJN__08",
+      "asset_id": "rand_0XQT1WCCJN",
+      "task": "flatten",
+      "terminal_state": 672,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_128O8MCE0P__08",
+      "asset_id": "rand_128O8MCE0P",
+      "task": "flatten",
+      "terminal_state": 1505,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12CMB9NKG1__02",
+      "asset_id": "rand_12CMB9NKG1",
+      "task": "flatten",
+      "terminal_state": 1174,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12CR1HRKKE__00",
+      "asset_id": "rand_12CR1HRKKE",
+      "task": "flatten",
+      "terminal_state": 804,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12FL0PZP12__08",
+      "asset_id": "rand_12FL0PZP12",
+      "task": "flatten",
+      "terminal_state": 1071,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12KXNKIIP0__04",
+      "asset_id": "rand_12KXNKIIP0",
+      "task": "flatten",
+      "terminal_state": 775,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13AAK4PO2O__09",
+      "asset_id": "rand_13AAK4PO2O",
+      "task": "flatten",
+      "terminal_state": 1745,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13CJX80V5K__05",
+      "asset_id": "rand_13CJX80V5K",
+      "task": "flatten",
+      "terminal_state": 1166,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13GMJ3LRZZ__02",
+      "asset_id": "rand_13GMJ3LRZZ",
+      "task": "flatten",
+      "terminal_state": 1042,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XY7VMAT8O__06",
+      "asset_id": "rand_0XY7VMAT8O",
+      "task": "flatten",
+      "terminal_state": 1361,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Y83K1TKNT__01",
+      "asset_id": "rand_0Y83K1TKNT",
+      "task": "flatten",
+      "terminal_state": 982,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Z3TA1FA1C__07",
+      "asset_id": "rand_0Z3TA1FA1C",
+      "task": "flatten",
+      "terminal_state": 965,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Z4SKWV6AF__07",
+      "asset_id": "rand_0Z4SKWV6AF",
+      "task": "flatten",
+      "terminal_state": 1104,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0Z5CXF4ZQP__09",
+      "asset_id": "rand_0Z5CXF4ZQP",
+      "task": "flatten",
+      "terminal_state": 1101,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ZN4M0TNAD__09",
+      "asset_id": "rand_0ZN4M0TNAD",
+      "task": "flatten",
+      "terminal_state": 668,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_10J8E452FG__09",
+      "asset_id": "rand_10J8E452FG",
+      "task": "flatten",
+      "terminal_state": 2599,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_10LIHEWSXB__04",
+      "asset_id": "rand_10LIHEWSXB",
+      "task": "flatten",
+      "terminal_state": 1408,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13O1F9D78S__08",
+      "asset_id": "rand_13O1F9D78S",
+      "task": "flatten",
+      "terminal_state": 902,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13S5ONA77Z__05",
+      "asset_id": "rand_13S5ONA77Z",
+      "task": "flatten",
+      "terminal_state": 1149,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13ZRL8YUW9__01",
+      "asset_id": "rand_13ZRL8YUW9",
+      "task": "flatten",
+      "terminal_state": 1422,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_14L6VNJRF9__05",
+      "asset_id": "rand_14L6VNJRF9",
+      "task": "flatten",
+      "terminal_state": 1041,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1545L6O32O__00",
+      "asset_id": "rand_1545L6O32O",
+      "task": "flatten",
+      "terminal_state": 954,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_155MRLXVMW__01",
+      "asset_id": "rand_155MRLXVMW",
+      "task": "flatten",
+      "terminal_state": 648,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_15BA9G04GP__01",
+      "asset_id": "rand_15BA9G04GP",
+      "task": "flatten",
+      "terminal_state": 936,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_15E6R5W9TL__09",
+      "asset_id": "rand_15E6R5W9TL",
+      "task": "flatten",
+      "terminal_state": 1156,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_160VBHVRPV__06",
+      "asset_id": "rand_160VBHVRPV",
+      "task": "flatten",
+      "terminal_state": 633,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16AC0MKLJL__06",
+      "asset_id": "rand_16AC0MKLJL",
+      "task": "flatten",
+      "terminal_state": 701,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16R640YUSC__02",
+      "asset_id": "rand_16R640YUSC",
+      "task": "flatten",
+      "terminal_state": 1541,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16V49KL0R9__01",
+      "asset_id": "rand_16V49KL0R9",
+      "task": "flatten",
+      "terminal_state": 1863,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11J8S4NHQ9__03",
+      "asset_id": "rand_11J8S4NHQ9",
+      "task": "flatten",
+      "terminal_state": 2484,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11L6QS0SAZ__01",
+      "asset_id": "rand_11L6QS0SAZ",
+      "task": "flatten",
+      "terminal_state": 1982,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11SEFBSFKK__00",
+      "asset_id": "rand_11SEFBSFKK",
+      "task": "flatten",
+      "terminal_state": 1226,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11TS48IS8W__01",
+      "asset_id": "rand_11TS48IS8W",
+      "task": "flatten",
+      "terminal_state": 2145,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AUTDNAW0L__01",
+      "asset_id": "rand_1AUTDNAW0L",
+      "task": "flatten",
+      "terminal_state": 764,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AWWJ9TCB8__06",
+      "asset_id": "rand_1AWWJ9TCB8",
+      "task": "flatten",
+      "terminal_state": 888,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1B862QIZ9S__03",
+      "asset_id": "rand_1B862QIZ9S",
+      "task": "flatten",
+      "terminal_state": 2062,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BB8QEIHOS__08",
+      "asset_id": "rand_1BB8QEIHOS",
+      "task": "flatten",
+      "terminal_state": 971,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16W8ARYM6G__06",
+      "asset_id": "rand_16W8ARYM6G",
+      "task": "flatten",
+      "terminal_state": 1469,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_172N6T24NM__08",
+      "asset_id": "rand_172N6T24NM",
+      "task": "flatten",
+      "terminal_state": 622,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_176L9DT8YW__00",
+      "asset_id": "rand_176L9DT8YW",
+      "task": "flatten",
+      "terminal_state": 2215,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_17V8IC2JIT__04",
+      "asset_id": "rand_17V8IC2JIT",
+      "task": "flatten",
+      "terminal_state": 1082,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_184ZB0LXIR__08",
+      "asset_id": "rand_184ZB0LXIR",
+      "task": "flatten",
+      "terminal_state": 997,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18BM337LOW__07",
+      "asset_id": "rand_18BM337LOW",
+      "task": "flatten",
+      "terminal_state": 615,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18DVTRFDE8__06",
+      "asset_id": "rand_18DVTRFDE8",
+      "task": "flatten",
+      "terminal_state": 603,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18HU0R37B7__01",
+      "asset_id": "rand_18HU0R37B7",
+      "task": "flatten",
+      "terminal_state": 1086,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_18TWRPGQIS__06",
+      "asset_id": "rand_18TWRPGQIS",
+      "task": "flatten",
+      "terminal_state": 1403,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19ODP894JR__00",
+      "asset_id": "rand_19ODP894JR",
+      "task": "flatten",
+      "terminal_state": 1009,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19U2D4IL4V__00",
+      "asset_id": "rand_19U2D4IL4V",
+      "task": "flatten",
+      "terminal_state": 858,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19VLXSSFLD__00",
+      "asset_id": "rand_19VLXSSFLD",
+      "task": "flatten",
+      "terminal_state": 1442,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BKOCG69L9__08",
+      "asset_id": "rand_1BKOCG69L9",
+      "task": "flatten",
+      "terminal_state": 1065,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BU52I9LRX__01",
+      "asset_id": "rand_1BU52I9LRX",
+      "task": "flatten",
+      "terminal_state": 732,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BYN9OGP8S__04",
+      "asset_id": "rand_1BYN9OGP8S",
+      "task": "flatten",
+      "terminal_state": 1414,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1C2XLTNKGM__09",
+      "asset_id": "rand_1C2XLTNKGM",
+      "task": "flatten",
+      "terminal_state": 1181,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1C5J5MGWB5__06",
+      "asset_id": "rand_1C5J5MGWB5",
+      "task": "flatten",
+      "terminal_state": 804,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CD8JAPAP2__04",
+      "asset_id": "rand_1CD8JAPAP2",
+      "task": "flatten",
+      "terminal_state": 1005,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CJ9S3DEOE__04",
+      "asset_id": "rand_1CJ9S3DEOE",
+      "task": "flatten",
+      "terminal_state": 1454,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CSHS4LKIJ__08",
+      "asset_id": "rand_1CSHS4LKIJ",
+      "task": "flatten",
+      "terminal_state": 758,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_19ZIM30DGZ__07",
+      "asset_id": "rand_19ZIM30DGZ",
+      "task": "flatten",
+      "terminal_state": 1750,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1A0BGLIDR1__04",
+      "asset_id": "rand_1A0BGLIDR1",
+      "task": "flatten",
+      "terminal_state": 769,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1A2P58J9VK__09",
+      "asset_id": "rand_1A2P58J9VK",
+      "task": "flatten",
+      "terminal_state": 1422,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ABU7HKRR9__02",
+      "asset_id": "rand_1ABU7HKRR9",
+      "task": "flatten",
+      "terminal_state": 857,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ALD8ZQDU4__06",
+      "asset_id": "rand_1ALD8ZQDU4",
+      "task": "flatten",
+      "terminal_state": 1716,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ANEU0APNF__06",
+      "asset_id": "rand_1ANEU0APNF",
+      "task": "flatten",
+      "terminal_state": 1491,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AQJGG2YQ9__05",
+      "asset_id": "rand_1AQJGG2YQ9",
+      "task": "flatten",
+      "terminal_state": 1321,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AREF49CK1__03",
+      "asset_id": "rand_1AREF49CK1",
+      "task": "flatten",
+      "terminal_state": 2049,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1DGYFK46D0__03",
+      "asset_id": "rand_1DGYFK46D0",
+      "task": "flatten",
+      "terminal_state": 862,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1E69F9VRN4__00",
+      "asset_id": "rand_1E69F9VRN4",
+      "task": "flatten",
+      "terminal_state": 767,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EDHTQFUNP__01",
+      "asset_id": "rand_1EDHTQFUNP",
+      "task": "flatten",
+      "terminal_state": 824,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EEIEEXOHT__06",
+      "asset_id": "rand_1EEIEEXOHT",
+      "task": "flatten",
+      "terminal_state": 656,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EHUSGYR73__09",
+      "asset_id": "rand_1EHUSGYR73",
+      "task": "flatten",
+      "terminal_state": 669,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1F7UUHFTTF__03",
+      "asset_id": "rand_1F7UUHFTTF",
+      "task": "flatten",
+      "terminal_state": 1411,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1F9YNONW4N__07",
+      "asset_id": "rand_1F9YNONW4N",
+      "task": "flatten",
+      "terminal_state": 651,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1FVJ238UE7__00",
+      "asset_id": "rand_1FVJ238UE7",
+      "task": "flatten",
+      "terminal_state": 600,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1FYRV0NHSK__02",
+      "asset_id": "rand_1FYRV0NHSK",
+      "task": "flatten",
+      "terminal_state": 1023,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1G0SYPVGVT__06",
+      "asset_id": "rand_1G0SYPVGVT",
+      "task": "flatten",
+      "terminal_state": 1061,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1G5NLOGYKY__08",
+      "asset_id": "rand_1G5NLOGYKY",
+      "task": "flatten",
+      "terminal_state": 635,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1G753QQF8L__00",
+      "asset_id": "rand_1G753QQF8L",
+      "task": "flatten",
+      "terminal_state": 1989,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BBH5VM6IR__02",
+      "asset_id": "rand_1BBH5VM6IR",
+      "task": "flatten",
+      "terminal_state": 934,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BBQV0MXA4__00",
+      "asset_id": "rand_1BBQV0MXA4",
+      "task": "flatten",
+      "terminal_state": 898,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BEWWU2K6Q__04",
+      "asset_id": "rand_1BEWWU2K6Q",
+      "task": "flatten",
+      "terminal_state": 689,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BIF7BVRJ4__09",
+      "asset_id": "rand_1BIF7BVRJ4",
+      "task": "flatten",
+      "terminal_state": 1221,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CW9M7X6EY__09",
+      "asset_id": "rand_1CW9M7X6EY",
+      "task": "flatten",
+      "terminal_state": 1623,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1FL5UDP4YQ__07",
+      "asset_id": "rand_1FL5UDP4YQ",
+      "task": "flatten",
+      "terminal_state": 954,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1GGZFP6PYZ__03",
+      "asset_id": "rand_1GGZFP6PYZ",
+      "task": "flatten",
+      "terminal_state": 1462,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1HHW0GGKMF__00",
+      "asset_id": "rand_1HHW0GGKMF",
+      "task": "flatten",
+      "terminal_state": 647,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_004NVCOKV7__03",
+      "asset_id": "rand_004NVCOKV7",
+      "task": "flatten",
+      "terminal_state": 965,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_02AR55C8T1__07",
+      "asset_id": "rand_02AR55C8T1",
+      "task": "flatten",
+      "terminal_state": 1492,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_079HTTNCTJ__00",
+      "asset_id": "rand_079HTTNCTJ",
+      "task": "flatten",
+      "terminal_state": 723,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0AYSPSNK8T__04",
+      "asset_id": "rand_0AYSPSNK8T",
+      "task": "flatten",
+      "terminal_state": 673,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ME2Z034NN__07",
+      "asset_id": "rand_0ME2Z034NN",
+      "task": "flatten",
+      "terminal_state": 1114,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0TMR6NDPHP__04",
+      "asset_id": "rand_0TMR6NDPHP",
+      "task": "flatten",
+      "terminal_state": 886,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0V15754TTS__05",
+      "asset_id": "rand_0V15754TTS",
+      "task": "flatten",
+      "terminal_state": 922,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0WYOH8KDV2__05",
+      "asset_id": "rand_0WYOH8KDV2",
+      "task": "flatten",
+      "terminal_state": 2918,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XKZV2GIHN__02",
+      "asset_id": "rand_0XKZV2GIHN",
+      "task": "flatten",
+      "terminal_state": 952,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0ZFJUADVCA__05",
+      "asset_id": "rand_0ZFJUADVCA",
+      "task": "flatten",
+      "terminal_state": 840,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_11F1D3WU17__04",
+      "asset_id": "rand_11F1D3WU17",
+      "task": "flatten",
+      "terminal_state": 2254,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1NKG6I69HH__09",
+      "asset_id": "rand_1NKG6I69HH",
+      "task": "flatten",
+      "terminal_state": 662,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ONEJHCOVS__03",
+      "asset_id": "rand_1ONEJHCOVS",
+      "task": "flatten",
+      "terminal_state": 913,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1PSXI9D50T__01",
+      "asset_id": "rand_1PSXI9D50T",
+      "task": "flatten",
+      "terminal_state": 2647,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1RJ8D5A7EC__09",
+      "asset_id": "rand_1RJ8D5A7EC",
+      "task": "flatten",
+      "terminal_state": 1186,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1T6IM4B3AE__09",
+      "asset_id": "rand_1T6IM4B3AE",
+      "task": "flatten",
+      "terminal_state": 851,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1U0UUO457V__00",
+      "asset_id": "rand_1U0UUO457V",
+      "task": "flatten",
+      "terminal_state": 883,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1VKRDNWFKE__06",
+      "asset_id": "rand_1VKRDNWFKE",
+      "task": "flatten",
+      "terminal_state": 632,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1X5Z0QHKP8__09",
+      "asset_id": "rand_1X5Z0QHKP8",
+      "task": "flatten",
+      "terminal_state": 1397,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12CSX4HLLP__06",
+      "asset_id": "rand_12CSX4HLLP",
+      "task": "flatten",
+      "terminal_state": 900,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_13Q8PAC94Q__05",
+      "asset_id": "rand_13Q8PAC94Q",
+      "task": "flatten",
+      "terminal_state": 1286,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_15MZM8JINR__02",
+      "asset_id": "rand_15MZM8JINR",
+      "task": "flatten",
+      "terminal_state": 656,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_17UY5SOHZ2__02",
+      "asset_id": "rand_17UY5SOHZ2",
+      "task": "flatten",
+      "terminal_state": 668,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_196ZJ6KG0I__02",
+      "asset_id": "rand_196ZJ6KG0I",
+      "task": "flatten",
+      "terminal_state": 1015,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AEZQ9GNEL__00",
+      "asset_id": "rand_1AEZQ9GNEL",
+      "task": "flatten",
+      "terminal_state": 2211,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BB06QD3IC__00",
+      "asset_id": "rand_1BB06QD3IC",
+      "task": "flatten",
+      "terminal_state": 1454,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BSZCNY1LV__01",
+      "asset_id": "rand_1BSZCNY1LV",
+      "task": "flatten",
+      "terminal_state": 655,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_21GKNQCZ4B_000003",
+      "asset_id": "rand_21GKNQCZ4B",
+      "task": "fold",
+      "terminal_state": 1020,
+      "featured": true
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1VKRDNWFKE_000005",
+      "asset_id": "rand_1VKRDNWFKE",
+      "task": "fold",
+      "terminal_state": 656,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1X5Z0QHKP8_000001",
+      "asset_id": "rand_1X5Z0QHKP8",
+      "task": "fold",
+      "terminal_state": 2635,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1YQ82NEHKT_000007",
+      "asset_id": "rand_1YQ82NEHKT",
+      "task": "fold",
+      "terminal_state": 1309,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_20K0H65GUU_000000_r000",
+      "asset_id": "rand_20K0H65GUU",
+      "task": "fold",
+      "terminal_state": 1952,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_21TFVULETA_000004_r000",
+      "asset_id": "rand_21TFVULETA",
+      "task": "fold",
+      "terminal_state": 1945,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_232X14D5PP_000004",
+      "asset_id": "rand_232X14D5PP",
+      "task": "fold",
+      "terminal_state": 1989,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_249RUXCM75_000007_r000",
+      "asset_id": "rand_249RUXCM75",
+      "task": "fold",
+      "terminal_state": 1113,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_25KFCLZ8JD_000007",
+      "asset_id": "rand_25KFCLZ8JD",
+      "task": "fold",
+      "terminal_state": 1106,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_26KG2BKFRL_000003_r003",
+      "asset_id": "rand_26KG2BKFRL",
+      "task": "fold",
+      "terminal_state": 1566,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_27QVZO5VN5_000003",
+      "asset_id": "rand_27QVZO5VN5",
+      "task": "fold",
+      "terminal_state": 1480,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_28R28NJ9TT_000000",
+      "asset_id": "rand_28R28NJ9TT",
+      "task": "fold",
+      "terminal_state": 1032,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_299AM1LG5I_000008",
+      "asset_id": "rand_299AM1LG5I",
+      "task": "fold",
+      "terminal_state": 1041,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2ABUSKI9UP_000005",
+      "asset_id": "rand_2ABUSKI9UP",
+      "task": "fold",
+      "terminal_state": 764,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2CBVS72PJD_000002_r000",
+      "asset_id": "rand_2CBVS72PJD",
+      "task": "fold",
+      "terminal_state": 1335,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2D47UXG6QS_000007_r003",
+      "asset_id": "rand_2D47UXG6QS",
+      "task": "fold",
+      "terminal_state": 2030,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2EBUYCB46V_000005_r005",
+      "asset_id": "rand_2EBUYCB46V",
+      "task": "fold",
+      "terminal_state": 2042,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2FHE0HFZK7_000006",
+      "asset_id": "rand_2FHE0HFZK7",
+      "task": "fold",
+      "terminal_state": 801,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2I95TCYIFO_000003",
+      "asset_id": "rand_2I95TCYIFO",
+      "task": "fold",
+      "terminal_state": 2278,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2JKK2F2K5Q_000008",
+      "asset_id": "rand_2JKK2F2K5Q",
+      "task": "fold",
+      "terminal_state": 1017,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_ZZCWITH5HY_000009",
+      "asset_id": "rand_ZZCWITH5HY",
+      "task": "fold",
+      "terminal_state": 1306,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_004NVCOKV7_000003",
+      "asset_id": "rand_004NVCOKV7",
+      "task": "fold",
+      "terminal_state": 1308,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_00GEDVLKJJ_000004_r001",
+      "asset_id": "rand_00GEDVLKJJ",
+      "task": "fold",
+      "terminal_state": 2454,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_00PJYCPW0L_000006",
+      "asset_id": "rand_00PJYCPW0L",
+      "task": "fold",
+      "terminal_state": 1267,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_00ZT6MGWR3_000003",
+      "asset_id": "rand_00ZT6MGWR3",
+      "task": "fold",
+      "terminal_state": 1030,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_01Q78IXCLW_000004",
+      "asset_id": "rand_01Q78IXCLW",
+      "task": "fold",
+      "terminal_state": 958,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_01R50NZJVR_000002",
+      "asset_id": "rand_01R50NZJVR",
+      "task": "fold",
+      "terminal_state": 978,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_025I3DAPE6_000004",
+      "asset_id": "rand_025I3DAPE6",
+      "task": "fold",
+      "terminal_state": 922,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_02AR55C8T1_000003_r000",
+      "asset_id": "rand_02AR55C8T1",
+      "task": "fold",
+      "terminal_state": 1540,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_02WJ207M8N_000007",
+      "asset_id": "rand_02WJ207M8N",
+      "task": "fold",
+      "terminal_state": 974,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_038ROZC0KR_000008",
+      "asset_id": "rand_038ROZC0KR",
+      "task": "fold",
+      "terminal_state": 885,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_041L4IHB7W_000008",
+      "asset_id": "rand_041L4IHB7W",
+      "task": "fold",
+      "terminal_state": 1203,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_04NKS685SH_000009",
+      "asset_id": "rand_04NKS685SH",
+      "task": "fold",
+      "terminal_state": 789,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_04OU2IZ2GV_000002_r001",
+      "asset_id": "rand_04OU2IZ2GV",
+      "task": "fold",
+      "terminal_state": 1612,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_058QFFSWAQ_000006",
+      "asset_id": "rand_058QFFSWAQ",
+      "task": "fold",
+      "terminal_state": 1379,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_061TOSXC5W_000001",
+      "asset_id": "rand_061TOSXC5W",
+      "task": "fold",
+      "terminal_state": 1201,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_07FDM3U88E_000002_r005",
+      "asset_id": "rand_07FDM3U88E",
+      "task": "fold",
+      "terminal_state": 1105,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_07SZ5QQ0QP_000000_r000",
+      "asset_id": "rand_07SZ5QQ0QP",
+      "task": "fold",
+      "terminal_state": 934,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_089NYY0BW7_000001_r001",
+      "asset_id": "rand_089NYY0BW7",
+      "task": "fold",
+      "terminal_state": 715,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_08KYYZ0POQ_000009",
+      "asset_id": "rand_08KYYZ0POQ",
+      "task": "fold",
+      "terminal_state": 1094,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_09G2VZ0SDX_000009_r000",
+      "asset_id": "rand_09G2VZ0SDX",
+      "task": "fold",
+      "terminal_state": 1214,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0A1ZQT230R_000002_r000",
+      "asset_id": "rand_0A1ZQT230R",
+      "task": "fold",
+      "terminal_state": 1020,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0E362JU16I_000003_r000",
+      "asset_id": "rand_0E362JU16I",
+      "task": "fold",
+      "terminal_state": 939,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0FGHC5MNWV_000000",
+      "asset_id": "rand_0FGHC5MNWV",
+      "task": "fold",
+      "terminal_state": 1266,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0I3JWVNKOR_000004",
+      "asset_id": "rand_0I3JWVNKOR",
+      "task": "fold",
+      "terminal_state": 1214,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ILSNHSPQ7_000000_r004",
+      "asset_id": "rand_0ILSNHSPQ7",
+      "task": "fold",
+      "terminal_state": 1533,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0IX189WGFR_000009",
+      "asset_id": "rand_0IX189WGFR",
+      "task": "fold",
+      "terminal_state": 1551,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0JL0G525XH_000005_r000",
+      "asset_id": "rand_0JL0G525XH",
+      "task": "fold",
+      "terminal_state": 1206,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0MBY846ZGF_000001",
+      "asset_id": "rand_0MBY846ZGF",
+      "task": "fold",
+      "terminal_state": 1094,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0OXVTOY8BQ_000002_r000",
+      "asset_id": "rand_0OXVTOY8BQ",
+      "task": "fold",
+      "terminal_state": 1205,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0QEFS4I9VY_000003",
+      "asset_id": "rand_0QEFS4I9VY",
+      "task": "fold",
+      "terminal_state": 954,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0RJMGOA8IW_000009",
+      "asset_id": "rand_0RJMGOA8IW",
+      "task": "fold",
+      "terminal_state": 977,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0T071CSSTD_000006",
+      "asset_id": "rand_0T071CSSTD",
+      "task": "fold",
+      "terminal_state": 894,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0T6A7W6QY9_000001",
+      "asset_id": "rand_0T6A7W6QY9",
+      "task": "fold",
+      "terminal_state": 1029,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0T6WA8FT8T_000000_r000",
+      "asset_id": "rand_0T6WA8FT8T",
+      "task": "fold",
+      "terminal_state": 1284,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0TKY8IYX0W_000008",
+      "asset_id": "rand_0TKY8IYX0W",
+      "task": "fold",
+      "terminal_state": 1006,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0U237S7AQZ_000005",
+      "asset_id": "rand_0U237S7AQZ",
+      "task": "fold",
+      "terminal_state": 1636,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UKD4QKBTS_000004",
+      "asset_id": "rand_0UKD4QKBTS",
+      "task": "fold",
+      "terminal_state": 901,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UOA081DQE_000002",
+      "asset_id": "rand_0UOA081DQE",
+      "task": "fold",
+      "terminal_state": 719,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0URVRF4FRO_000002_r009",
+      "asset_id": "rand_0URVRF4FRO",
+      "task": "fold",
+      "terminal_state": 783,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UVZH267ZC_000005",
+      "asset_id": "rand_0UVZH267ZC",
+      "task": "fold",
+      "terminal_state": 995,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UYXAJYKTZ_000008",
+      "asset_id": "rand_0UYXAJYKTZ",
+      "task": "fold",
+      "terminal_state": 618,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0V7RGHZ8JM_000002_r003",
+      "asset_id": "rand_0V7RGHZ8JM",
+      "task": "fold",
+      "terminal_state": 1078,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0V99E6MZAM_000001_r000",
+      "asset_id": "rand_0V99E6MZAM",
+      "task": "fold",
+      "terminal_state": 858,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VBR02U024_000005_r000",
+      "asset_id": "rand_0VBR02U024",
+      "task": "fold",
+      "terminal_state": 865,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VGB1NG35B_000002",
+      "asset_id": "rand_0VGB1NG35B",
+      "task": "fold",
+      "terminal_state": 1416,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VI0BDUCV4_000008",
+      "asset_id": "rand_0VI0BDUCV4",
+      "task": "fold",
+      "terminal_state": 967,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VOF58UCB8_000001_r000",
+      "asset_id": "rand_0VOF58UCB8",
+      "task": "fold",
+      "terminal_state": 1381,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0VVJGBK29H_000004_r001",
+      "asset_id": "rand_0VVJGBK29H",
+      "task": "fold",
+      "terminal_state": 1033,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X2J5FX39U_000002",
+      "asset_id": "rand_0X2J5FX39U",
+      "task": "fold",
+      "terminal_state": 696,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X68PQMHZM_000000",
+      "asset_id": "rand_0X68PQMHZM",
+      "task": "fold",
+      "terminal_state": 1055,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X6SZC14TF_000001_r002",
+      "asset_id": "rand_0X6SZC14TF",
+      "task": "fold",
+      "terminal_state": 931,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X7SATI5R6_000008",
+      "asset_id": "rand_0X7SATI5R6",
+      "task": "fold",
+      "terminal_state": 1315,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XC05H210D_000002_r009",
+      "asset_id": "rand_0XC05H210D",
+      "task": "fold",
+      "terminal_state": 2485,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XDIJIZSS1_000000",
+      "asset_id": "rand_0XDIJIZSS1",
+      "task": "fold",
+      "terminal_state": 986,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XEAOKSSSD_000002_r003",
+      "asset_id": "rand_0XEAOKSSSD",
+      "task": "fold",
+      "terminal_state": 751,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XQT1WCCJN_000003_r000",
+      "asset_id": "rand_0XQT1WCCJN",
+      "task": "fold",
+      "terminal_state": 1265,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XY7VMAT8O_000001_r000",
+      "asset_id": "rand_0XY7VMAT8O",
+      "task": "fold",
+      "terminal_state": 742,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Y83K1TKNT_000001_r000",
+      "asset_id": "rand_0Y83K1TKNT",
+      "task": "fold",
+      "terminal_state": 1316,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Z3TA1FA1C_000000_r001",
+      "asset_id": "rand_0Z3TA1FA1C",
+      "task": "fold",
+      "terminal_state": 980,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Z4SKWV6AF_000005",
+      "asset_id": "rand_0Z4SKWV6AF",
+      "task": "fold",
+      "terminal_state": 1308,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Z5CXF4ZQP_000003",
+      "asset_id": "rand_0Z5CXF4ZQP",
+      "task": "fold",
+      "terminal_state": 698,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ZN4M0TNAD_000004",
+      "asset_id": "rand_0ZN4M0TNAD",
+      "task": "fold",
+      "terminal_state": 1536,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_10J8E452FG_000002",
+      "asset_id": "rand_10J8E452FG",
+      "task": "fold",
+      "terminal_state": 1332,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_10LIHEWSXB_000006_r007",
+      "asset_id": "rand_10LIHEWSXB",
+      "task": "fold",
+      "terminal_state": 2052,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_10WJYTHZPM_000009",
+      "asset_id": "rand_10WJYTHZPM",
+      "task": "fold",
+      "terminal_state": 1081,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_111P95CVJW_000009_r002",
+      "asset_id": "rand_111P95CVJW",
+      "task": "fold",
+      "terminal_state": 1601,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_117L64AH1R_000001",
+      "asset_id": "rand_117L64AH1R",
+      "task": "fold",
+      "terminal_state": 1357,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11CBEZVPAK_000001_r000",
+      "asset_id": "rand_11CBEZVPAK",
+      "task": "fold",
+      "terminal_state": 1867,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11J8S4NHQ9_000002",
+      "asset_id": "rand_11J8S4NHQ9",
+      "task": "fold",
+      "terminal_state": 1367,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11L6QS0SAZ_000007",
+      "asset_id": "rand_11L6QS0SAZ",
+      "task": "fold",
+      "terminal_state": 1271,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11SEFBSFKK_000008",
+      "asset_id": "rand_11SEFBSFKK",
+      "task": "fold",
+      "terminal_state": 1630,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_128O8MCE0P_000003",
+      "asset_id": "rand_128O8MCE0P",
+      "task": "fold",
+      "terminal_state": 837,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CMB9NKG1_000001",
+      "asset_id": "rand_12CMB9NKG1",
+      "task": "fold",
+      "terminal_state": 742,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CR1HRKKE_000007_r000",
+      "asset_id": "rand_12CR1HRKKE",
+      "task": "fold",
+      "terminal_state": 738,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12FL0PZP12_000009_r009",
+      "asset_id": "rand_12FL0PZP12",
+      "task": "fold",
+      "terminal_state": 1052,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12KXNKIIP0_000004_r001",
+      "asset_id": "rand_12KXNKIIP0",
+      "task": "fold",
+      "terminal_state": 1881,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13AAK4PO2O_000001",
+      "asset_id": "rand_13AAK4PO2O",
+      "task": "fold",
+      "terminal_state": 729,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13CJX80V5K_000006",
+      "asset_id": "rand_13CJX80V5K",
+      "task": "fold",
+      "terminal_state": 1109,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13GMJ3LRZZ_000009_r000",
+      "asset_id": "rand_13GMJ3LRZZ",
+      "task": "fold",
+      "terminal_state": 1498,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13O1F9D78S_000002",
+      "asset_id": "rand_13O1F9D78S",
+      "task": "fold",
+      "terminal_state": 1078,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13Q8PAC94Q_000003_r000",
+      "asset_id": "rand_13Q8PAC94Q",
+      "task": "fold",
+      "terminal_state": 1739,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13ZRL8YUW9_000008",
+      "asset_id": "rand_13ZRL8YUW9",
+      "task": "fold",
+      "terminal_state": 1175,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_14L6VNJRF9_000006",
+      "asset_id": "rand_14L6VNJRF9",
+      "task": "fold",
+      "terminal_state": 1257,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1545L6O32O_000006",
+      "asset_id": "rand_1545L6O32O",
+      "task": "fold",
+      "terminal_state": 1757,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_155MRLXVMW_000006",
+      "asset_id": "rand_155MRLXVMW",
+      "task": "fold",
+      "terminal_state": 1090,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_15BA9G04GP_000002_r000",
+      "asset_id": "rand_15BA9G04GP",
+      "task": "fold",
+      "terminal_state": 1131,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_15E6R5W9TL_000007",
+      "asset_id": "rand_15E6R5W9TL",
+      "task": "fold",
+      "terminal_state": 877,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_15MZM8JINR_000006",
+      "asset_id": "rand_15MZM8JINR",
+      "task": "fold",
+      "terminal_state": 1415,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16AC0MKLJL_000008",
+      "asset_id": "rand_16AC0MKLJL",
+      "task": "fold",
+      "terminal_state": 1935,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16R640YUSC_000000_r000",
+      "asset_id": "rand_16R640YUSC",
+      "task": "fold",
+      "terminal_state": 2560,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16V49KL0R9_000002",
+      "asset_id": "rand_16V49KL0R9",
+      "task": "fold",
+      "terminal_state": 1014,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_16W8ARYM6G_000005_r000",
+      "asset_id": "rand_16W8ARYM6G",
+      "task": "fold",
+      "terminal_state": 1573,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_172N6T24NM_000003_r001",
+      "asset_id": "rand_172N6T24NM",
+      "task": "fold",
+      "terminal_state": 934,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_176L9DT8YW_000001_r000",
+      "asset_id": "rand_176L9DT8YW",
+      "task": "fold",
+      "terminal_state": 712,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_17V8IC2JIT_000005",
+      "asset_id": "rand_17V8IC2JIT",
+      "task": "fold",
+      "terminal_state": 953,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_184ZB0LXIR_000007_r000",
+      "asset_id": "rand_184ZB0LXIR",
+      "task": "fold",
+      "terminal_state": 2265,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18BM337LOW_000001_r000",
+      "asset_id": "rand_18BM337LOW",
+      "task": "fold",
+      "terminal_state": 1266,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18DVTRFDE8_000000",
+      "asset_id": "rand_18DVTRFDE8",
+      "task": "fold",
+      "terminal_state": 1140,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18HU0R37B7_000005_r000",
+      "asset_id": "rand_18HU0R37B7",
+      "task": "fold",
+      "terminal_state": 1342,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_18TWRPGQIS_000006",
+      "asset_id": "rand_18TWRPGQIS",
+      "task": "fold",
+      "terminal_state": 1146,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_196ZJ6KG0I_000007",
+      "asset_id": "rand_196ZJ6KG0I",
+      "task": "fold",
+      "terminal_state": 643,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19U2D4IL4V_000005_r000",
+      "asset_id": "rand_19U2D4IL4V",
+      "task": "fold",
+      "terminal_state": 1288,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19VLXSSFLD_000007",
+      "asset_id": "rand_19VLXSSFLD",
+      "task": "fold",
+      "terminal_state": 1810,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19ZIM30DGZ_000008",
+      "asset_id": "rand_19ZIM30DGZ",
+      "task": "fold",
+      "terminal_state": 1112,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1A0BGLIDR1_000001",
+      "asset_id": "rand_1A0BGLIDR1",
+      "task": "fold",
+      "terminal_state": 699,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1A2P58J9VK_000000",
+      "asset_id": "rand_1A2P58J9VK",
+      "task": "fold",
+      "terminal_state": 713,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ABU7HKRR9_000006_r004",
+      "asset_id": "rand_1ABU7HKRR9",
+      "task": "fold",
+      "terminal_state": 1092,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AEZQ9GNEL_000000_r000",
+      "asset_id": "rand_1AEZQ9GNEL",
+      "task": "fold",
+      "terminal_state": 1369,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ANEU0APNF_000007",
+      "asset_id": "rand_1ANEU0APNF",
+      "task": "fold",
+      "terminal_state": 698,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AQJGG2YQ9_000007",
+      "asset_id": "rand_1AQJGG2YQ9",
+      "task": "fold",
+      "terminal_state": 936,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AREF49CK1_000006",
+      "asset_id": "rand_1AREF49CK1",
+      "task": "fold",
+      "terminal_state": 974,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AUTDNAW0L_000002_r000",
+      "asset_id": "rand_1AUTDNAW0L",
+      "task": "fold",
+      "terminal_state": 2427,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1AWWJ9TCB8_000009_r003",
+      "asset_id": "rand_1AWWJ9TCB8",
+      "task": "fold",
+      "terminal_state": 1075,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1B862QIZ9S_000006",
+      "asset_id": "rand_1B862QIZ9S",
+      "task": "fold",
+      "terminal_state": 1084,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BB8QEIHOS_000009_r006",
+      "asset_id": "rand_1BB8QEIHOS",
+      "task": "fold",
+      "terminal_state": 2464,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BBH5VM6IR_000002",
+      "asset_id": "rand_1BBH5VM6IR",
+      "task": "fold",
+      "terminal_state": 837,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BBQV0MXA4_000002_r000",
+      "asset_id": "rand_1BBQV0MXA4",
+      "task": "fold",
+      "terminal_state": 1090,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BEWWU2K6Q_000005",
+      "asset_id": "rand_1BEWWU2K6Q",
+      "task": "fold",
+      "terminal_state": 1072,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BIF7BVRJ4_000006_r000",
+      "asset_id": "rand_1BIF7BVRJ4",
+      "task": "fold",
+      "terminal_state": 1755,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BKOCG69L9_000004_r000",
+      "asset_id": "rand_1BKOCG69L9",
+      "task": "fold",
+      "terminal_state": 1145,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BSZCNY1LV_000002_r000",
+      "asset_id": "rand_1BSZCNY1LV",
+      "task": "fold",
+      "terminal_state": 1626,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BYN9OGP8S_000000_r000",
+      "asset_id": "rand_1BYN9OGP8S",
+      "task": "fold",
+      "terminal_state": 714,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1C2XLTNKGM_000005",
+      "asset_id": "rand_1C2XLTNKGM",
+      "task": "fold",
+      "terminal_state": 1270,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1C5J5MGWB5_000006",
+      "asset_id": "rand_1C5J5MGWB5",
+      "task": "fold",
+      "terminal_state": 1128,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CD8JAPAP2_000000_r000",
+      "asset_id": "rand_1CD8JAPAP2",
+      "task": "fold",
+      "terminal_state": 1028,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CJ9S3DEOE_000003_r001",
+      "asset_id": "rand_1CJ9S3DEOE",
+      "task": "fold",
+      "terminal_state": 2059,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CSHS4LKIJ_000007",
+      "asset_id": "rand_1CSHS4LKIJ",
+      "task": "fold",
+      "terminal_state": 1297,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1CW9M7X6EY_000004",
+      "asset_id": "rand_1CW9M7X6EY",
+      "task": "fold",
+      "terminal_state": 1136,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1E69F9VRN4_000003_r000",
+      "asset_id": "rand_1E69F9VRN4",
+      "task": "fold",
+      "terminal_state": 1075,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EDHTQFUNP_000001",
+      "asset_id": "rand_1EDHTQFUNP",
+      "task": "fold",
+      "terminal_state": 827,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EEIEEXOHT_000009_r001",
+      "asset_id": "rand_1EEIEEXOHT",
+      "task": "fold",
+      "terminal_state": 737,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EHUSGYR73_000006",
+      "asset_id": "rand_1EHUSGYR73",
+      "task": "fold",
+      "terminal_state": 898,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1F7UUHFTTF_000002_r000",
+      "asset_id": "rand_1F7UUHFTTF",
+      "task": "fold",
+      "terminal_state": 1151,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1F9YNONW4N_000003",
+      "asset_id": "rand_1F9YNONW4N",
+      "task": "fold",
+      "terminal_state": 1218,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1FVJ238UE7_000005",
+      "asset_id": "rand_1FVJ238UE7",
+      "task": "fold",
+      "terminal_state": 1002,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1FYRV0NHSK_000006",
+      "asset_id": "rand_1FYRV0NHSK",
+      "task": "fold",
+      "terminal_state": 1121,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1G0SYPVGVT_000003_r000",
+      "asset_id": "rand_1G0SYPVGVT",
+      "task": "fold",
+      "terminal_state": 1173,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1G5NLOGYKY_000003_r000",
+      "asset_id": "rand_1G5NLOGYKY",
+      "task": "fold",
+      "terminal_state": 1554,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1G753QQF8L_000007_r000",
+      "asset_id": "rand_1G753QQF8L",
+      "task": "fold",
+      "terminal_state": 1335,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1GDCM6208E_000006",
+      "asset_id": "rand_1GDCM6208E",
+      "task": "fold",
+      "terminal_state": 1406,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_079HTTNCTJ_000003",
+      "asset_id": "rand_079HTTNCTJ",
+      "task": "fold",
+      "terminal_state": 609,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0AYSPSNK8T_000009",
+      "asset_id": "rand_0AYSPSNK8T",
+      "task": "fold",
+      "terminal_state": 1164,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ME2Z034NN_000004",
+      "asset_id": "rand_0ME2Z034NN",
+      "task": "fold",
+      "terminal_state": 980,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0TMR6NDPHP_000006",
+      "asset_id": "rand_0TMR6NDPHP",
+      "task": "fold",
+      "terminal_state": 1965,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0V15754TTS_000001",
+      "asset_id": "rand_0V15754TTS",
+      "task": "fold",
+      "terminal_state": 920,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0WYOH8KDV2_000009_r000",
+      "asset_id": "rand_0WYOH8KDV2",
+      "task": "fold",
+      "terminal_state": 2060,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XKZV2GIHN_000001_r003",
+      "asset_id": "rand_0XKZV2GIHN",
+      "task": "fold",
+      "terminal_state": 1718,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0ZFJUADVCA_000001",
+      "asset_id": "rand_0ZFJUADVCA",
+      "task": "fold",
+      "terminal_state": 885,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_11F1D3WU17_000000_r000",
+      "asset_id": "rand_11F1D3WU17",
+      "task": "fold",
+      "terminal_state": 922,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CSX4HLLP_000009",
+      "asset_id": "rand_12CSX4HLLP",
+      "task": "fold",
+      "terminal_state": 1286,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13S5ONA77Z_000009_r000",
+      "asset_id": "rand_13S5ONA77Z",
+      "task": "fold",
+      "terminal_state": 1267,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_160VBHVRPV_000003",
+      "asset_id": "rand_160VBHVRPV",
+      "task": "fold",
+      "terminal_state": 1096,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_17UY5SOHZ2_000000",
+      "asset_id": "rand_17UY5SOHZ2",
+      "task": "fold",
+      "terminal_state": 1005,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_19ODP894JR_000003_r000",
+      "asset_id": "rand_19ODP894JR",
+      "task": "fold",
+      "terminal_state": 1106,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ALD8ZQDU4_000002",
+      "asset_id": "rand_1ALD8ZQDU4",
+      "task": "fold",
+      "terminal_state": 925,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BB06QD3IC_000005_r001",
+      "asset_id": "rand_1BB06QD3IC",
+      "task": "fold",
+      "terminal_state": 2718,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BU52I9LRX_000000_r000",
+      "asset_id": "rand_1BU52I9LRX",
+      "task": "fold",
+      "terminal_state": 1646,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1DGYFK46D0_000004_r000",
+      "asset_id": "rand_1DGYFK46D0",
+      "task": "fold",
+      "terminal_state": 843,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1FL5UDP4YQ_000005",
+      "asset_id": "rand_1FL5UDP4YQ",
+      "task": "fold",
+      "terminal_state": 1042,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1GIQSRDLN2_000007",
+      "asset_id": "rand_1GIQSRDLN2",
+      "task": "fold",
+      "terminal_state": 1310,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1HHW0GGKMF_000005",
+      "asset_id": "rand_1HHW0GGKMF",
+      "task": "fold",
+      "terminal_state": 1072,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1IOKVF7VZ2_000009_r001",
+      "asset_id": "rand_1IOKVF7VZ2",
+      "task": "fold",
+      "terminal_state": 1758,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1JY83CS1BA_000005_r000",
+      "asset_id": "rand_1JY83CS1BA",
+      "task": "fold",
+      "terminal_state": 2071,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1LGZ20AJA1_000004",
+      "asset_id": "rand_1LGZ20AJA1",
+      "task": "fold",
+      "terminal_state": 1176,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1M8PJ2BE57_000001_r000",
+      "asset_id": "rand_1M8PJ2BE57",
+      "task": "fold",
+      "terminal_state": 632,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1NMOEFSF0W_000008_r001",
+      "asset_id": "rand_1NMOEFSF0W",
+      "task": "fold",
+      "terminal_state": 2929,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ONEJHCOVS_000001_r001",
+      "asset_id": "rand_1ONEJHCOVS",
+      "task": "fold",
+      "terminal_state": 934,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1PVUZVFU2U_000005_r000",
+      "asset_id": "rand_1PVUZVFU2U",
+      "task": "fold",
+      "terminal_state": 889,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1RUXCWNZMC_000008",
+      "asset_id": "rand_1RUXCWNZMC",
+      "task": "fold",
+      "terminal_state": 1961,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1T6IM4B3AE_000008",
+      "asset_id": "rand_1T6IM4B3AE",
+      "task": "fold",
+      "terminal_state": 760,
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1U12KRBTWC_000001",
+      "asset_id": "rand_1U12KRBTWC",
+      "task": "fold",
+      "terminal_state": 1122,
+      "featured": false
+    }
+  ]
+}
