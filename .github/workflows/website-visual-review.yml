@@ -14,7 +14,7 @@ on:
         default: index.html
         type: string
   push:
-    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal, codex/rgb-ribbon-homepage, codex/complete-generation-loop, codex/white-asset-atlas, codex/direct-embedded-loop, codex/synchronized-case-film, codex/rgb-playback-release, codex/in-motion-reveal, codex/departure-reveal-holds, codex/full-perspective-loop]
+    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal, codex/rgb-ribbon-homepage, codex/complete-generation-loop, codex/white-asset-atlas, codex/direct-embedded-loop, codex/synchronized-case-film, codex/rgb-playback-release, codex/in-motion-reveal, codex/departure-reveal-holds, codex/full-perspective-loop, codex/camera-control-study]
     paths:
       - '.github/workflows/website-visual-review.yml'
       - '.github/scripts/website-visual-review.cjs'
@@ -36,6 +36,7 @@ on:
       - 'website/assets/studio37/**'
       - 'website/assets/studio40/**'
       - 'website/assets/studio44/**'
+      - 'website/assets/camera45/**'
       - 'website/assets/atlas32/**'
 
 permissions:

@@ -849,6 +849,84 @@ saveReport();
       }
       report.checks.push('Larger RGB collection: 96 source episodes, 18 desktop/6 mobile panels, 64s loop, pause-only controls and noninteractive asset display before results');
     }
+    if(pagePath==='index.html'||pagePath==='camera-study.html'){
+      const shot=async(page,name)=>{
+        await layout(page,name);
+        await page.locator('video[data-active="true"]').evaluate(v=>new Promise((resolve,reject)=>{
+          if(v.paused){if(v.readyState>=2)return resolve();return reject(new Error('Paused camera view has no decoded frame'));}
+          const timer=setTimeout(()=>reject(new Error('No presented camera frame')),4000);
+          v.requestVideoFrameCallback(()=>{clearTimeout(timer);resolve();});
+        }));
+        assert.equal(await page.locator('.viewer video').evaluateAll(videos=>videos.filter(v=>getComputedStyle(v).opacity==='1').length),1,'Only one camera is visible; no crossfade ghosting');
+        const file=name+'.jpg';
+        await page.screenshot({path:path.join(out,file),type:'jpeg',quality:85,fullPage:false,animations:'disabled'});
+        report.screenshots.push({file,page:page.url(),viewport:page.viewportSize(),cameraStudy:await page.evaluate(()=>window.cameraStudy.state)});saveReport();
+      };
+      const ready=async(page,view)=>page.waitForFunction(v=>window.cameraStudy?.state.ready&&window.cameraStudy.state.view===v&&!window.cameraStudy.state.pending&&!window.cameraStudy.state.lastError,view);
+      const page=await open({width:1440,height:900},'no-preference','camera-study.html');
+      await ready(page,'auto');
+      await page.waitForFunction(()=>window.cameraStudy.state.phase>.4&&window.cameraStudy.state.playing===1);
+      const media=await(await page.request.get(new URL('assets/camera45/manifest.json',origin).href)).json();
+      assert.equal(media.duration_seconds,10);assert.equal(media.workspaces,48);
+      assert(media.audit.all_views_match_source_states&&media.audit.complete_actions_and_home&&media.audit.zero_subject_border_intersections);
+      for(const v of Object.values(media.views)){assert.equal(v.fps,25);assert.equal(v.frames,250);assert.equal(v.width,1600);assert.equal(v.height,560);}
+      await shot(page,'camera45-desktop-auto');
+      let delayed=false;
+      await page.route('**/assets/camera45/far.mp4',async route=>{if(!delayed){delayed=true;await new Promise(r=>setTimeout(r,500));}await route.continue();});
+      const before=await page.evaluate(()=>window.cameraStudy.state.phase);
+      const range=await page.locator('#camera-distance').boundingBox();
+      await page.mouse.move(range.x+range.width*.99,range.y+range.height*.5);await page.mouse.down();await page.mouse.up();
+      await page.waitForFunction(()=>window.cameraStudy.state.pending==='far');
+      await page.waitForTimeout(180);
+      const loading=await page.evaluate(()=>window.cameraStudy.state);
+      assert.equal(loading.view,'auto');assert(loading.phase>before+.1,'Old scene keeps playing during delayed load');assert(loading.loadedSources<=2&&loading.playing<=2);
+      await ready(page,'far');
+      let state=await page.evaluate(()=>window.cameraStudy.state);
+      assert.equal(state.mode,'manual');assert.equal(state.playing,1);assert.equal(state.loadedSources,1);assert(state.lastChange.skew<.12);assert(state.lastChange.latencyMs>=400);
+      const atFar=state.phase;
+      await page.waitForFunction(start=>window.cameraStudy.state.phase>start+.5,atFar);
+      assert.equal(await page.evaluate(()=>window.cameraStudy.state.view),'far');
+      await shot(page,'camera45-desktop-far');
+      assert((await page.evaluate(()=>window.cameraStudy.state.lastChange.firstPresentedSkew))<.16,'Native presented frame stays on the shared action clock');
+      await page.evaluate(()=>{
+        const input=document.getElementById('camera-distance');
+        for(const value of [0,1,2,0]){input.value=String(value);input.dispatchEvent(new Event('input',{bubbles:true}));}
+      });
+      await ready(page,'near');
+      state=await page.evaluate(()=>window.cameraStudy.state);assert.equal(state.playing,1);assert.equal(state.loadedSources,1);assert(state.lastChange.skew<.12);
+      const nearTime=state.phase;
+      await page.waitForFunction(start=>window.cameraStudy.state.phase>start+.6,nearTime);
+      assert.equal(await page.evaluate(()=>window.cameraStudy.state.view),'near');
+      await shot(page,'camera45-desktop-near');
+      await page.locator('#motion-toggle').click();
+      const paused=await page.evaluate(()=>window.cameraStudy.state.phase);await page.waitForTimeout(350);
+      assert(Math.abs(await page.evaluate(()=>window.cameraStudy.state.phase)-paused)<.03);
+      await page.locator('#camera-distance').focus();await page.keyboard.press('End');await ready(page,'far');
+      state=await page.evaluate(()=>window.cameraStudy.state);assert.equal(state.playing,0);assert(state.lastChange.skew<.08);
+      await page.locator('#motion-toggle').click();await page.waitForFunction(()=>window.cameraStudy.state.playing===1);
+      await page.locator('#resume-auto').click();await ready(page,'auto');
+      state=await page.evaluate(()=>window.cameraStudy.state);assert.equal(state.mode,'auto');assert.equal(state.playing,1);assert(state.lastChange.skew<.12);
+      await shot(page,'camera45-desktop-resume');
+      await page.locator('#camera-distance').focus();await page.keyboard.press('End');await ready(page,'far');
+      await page.locator('video[data-active="true"]').evaluate(v=>v.currentTime=9.8);
+      await page.waitForFunction(()=>window.cameraStudy.state.phase<.8&&window.cameraStudy.state.playing===1);
+      assert.equal(await page.evaluate(()=>window.cameraStudy.state.view),'far');
+      await shot(page,'camera45-desktop-loop');
+      assert(await page.locator('video').evaluateAll(videos=>videos.every(v=>!v.controls)));
+      await page.context().close();
+      const phone=await open({width:390,height:844},'reduce','camera-study.html');await ready(phone,'auto');
+      state=await phone.evaluate(()=>window.cameraStudy.state);assert.equal(state.playing,0);assert.equal(state.running,false);
+      await shot(phone,'camera45-mobile-auto');
+      await phone.locator('#camera-distance').focus();await phone.keyboard.press('End');await ready(phone,'far');
+      state=await phone.evaluate(()=>window.cameraStudy.state);assert.equal(state.playing,0);assert(state.lastChange.skew<.08);
+      await shot(phone,'camera45-mobile-far');
+      await phone.locator('#motion-toggle').click();await phone.waitForFunction(()=>window.cameraStudy.state.phase>.4&&window.cameraStudy.state.playing===1);
+      await phone.locator('#resume-auto').click();await ready(phone,'auto');
+      assert.equal(await phone.evaluate(()=>window.cameraStudy.state.mode),'auto');
+      await shot(phone,'camera45-mobile-resume');
+      await phone.context().close();
+      report.checks.push('Camera study: native synchronized sources, actual pointer/keyboard control, old motion during slow loading, fixed manual view with continuing actions, latest rapid selection, frame-time alignment, pause, resume-auto without rewind, natural loop, reduced-motion and mobile layout');
+    }
     const pages = fs.readdirSync('website').filter(file => file.endsWith('.html'));
     for (const target of pages) {
       for (const width of [1440, 390]) {
