@@ -1,8 +1,8 @@
 {
-  "ref": "29d6c79c65223a3dacebf6c20b4a690c7ec361a0",
-  "commit": "29d6c79c65223a3dacebf6c20b4a690c7ec361a0",
+  "ref": "c856ea11b84e02929b39797dfe98d03dbf853194",
+  "commit": "c856ea11b84e02929b39797dfe98d03dbf853194",
   "pagePath": "index.html",
-  "passed": true,
+  "passed": false,
   "status": "completed",
   "screenshots": [
     {
@@ -2764,12 +2764,12 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
           "time": 0.5,
-          "duration": 24.48,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -2790,12 +2790,12 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
           "time": 0,
-          "duration": 24.48,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -2804,24 +2804,24 @@
       ]
     },
     {
-      "file": "generation31-1440-6p7.jpg",
+      "file": "generation31-1440-7.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 6.7,
+      "frameTime": 7,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "time": 6.7,
-          "duration": 24.48,
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 7,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -2830,24 +2830,24 @@
       ]
     },
     {
-      "file": "generation31-1440-8p8.jpg",
+      "file": "generation31-1440-9.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 8.8,
+      "frameTime": 9,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "time": 8.8,
-          "duration": 24.48,
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 9,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -2856,24 +2856,24 @@
       ]
     },
     {
-      "file": "generation31-1440-10.jpg",
+      "file": "generation31-1440-11p5.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 10,
+      "frameTime": 11.5,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "time": 10,
-          "duration": 24.48,
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 11.5,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -2882,24 +2882,24 @@
       ]
     },
     {
-      "file": "generation31-1440-16p5.jpg",
+      "file": "generation31-1440-15.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 16.5,
+      "frameTime": 15,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "time": 16.5,
-          "duration": 24.48,
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 15,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -2908,24 +2908,24 @@
       ]
     },
     {
-      "file": "generation31-1440-23.jpg",
+      "file": "generation31-1440-19.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 23,
+      "frameTime": 19,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "time": 23,
-          "duration": 24.48,
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 19,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -2934,24 +2934,24 @@
       ]
     },
     {
-      "file": "generation31-1440-24p2.jpg",
+      "file": "generation31-1440-22p5.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 24.2,
+      "frameTime": 22.5,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "time": 24.2,
-          "duration": 24.48,
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 22.5,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -2960,24 +2960,180 @@
       ]
     },
     {
-      "file": "generation31-1440-24p44.jpg",
+      "file": "generation31-1440-23p8.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 24.44,
+      "frameTime": 23.8,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "time": 24.44,
-          "duration": 24.48,
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 23.8,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-24p5.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 24.5,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 24.5,
+          "duration": 48,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-31.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 31,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 31,
+          "duration": 48,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-34.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 34,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 34,
+          "duration": 48,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-36.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 36,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 36,
+          "duration": 48,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-46.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 46,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 46,
+          "duration": 48,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-47p96.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 47.96,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 47.96,
+          "duration": 48,
+          "videoWidth": 2400,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -2998,12 +3154,12 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
           "time": 0.5,
-          "duration": 24.48,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -3020,16 +3176,16 @@
       },
       "selector": "#hero-film",
       "frameTime": 0,
-      "scrollY": 184,
+      "scrollY": 112,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
           "time": 0,
-          "duration": 24.48,
+          "duration": 48,
           "videoWidth": 2400,
-          "videoHeight": 720,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -3050,10 +3206,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
           "time": 0.5,
-          "duration": 24.48,
+          "duration": 48,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3076,10 +3232,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
           "time": 0,
-          "duration": 24.48,
+          "duration": 48,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3103,22 +3259,22 @@
       ]
     },
     {
-      "file": "generation31-390-11.jpg",
+      "file": "generation31-390-9.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 11,
+      "frameTime": 9,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
-          "time": 11,
-          "duration": 24.48,
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "time": 9,
+          "duration": 48,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3142,22 +3298,22 @@
       ]
     },
     {
-      "file": "generation31-390-23.jpg",
+      "file": "generation31-390-22p5.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 23,
+      "frameTime": 22.5,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
-          "time": 23,
-          "duration": 24.48,
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "time": 22.5,
+          "duration": 48,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3181,22 +3337,139 @@
       ]
     },
     {
-      "file": "generation31-390-24p44.jpg",
+      "file": "generation31-390-24p5.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 24.44,
+      "frameTime": 24.5,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
-          "time": 24.44,
-          "duration": 24.48,
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "time": 24.5,
+          "duration": 48,
+          "videoWidth": 1200,
+          "videoHeight": 900,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        },
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "time": 0.5,
+          "duration": 64,
+          "videoWidth": 640,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-390-34.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 34,
+      "scrollY": 194,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "time": 34,
+          "duration": 48,
+          "videoWidth": 1200,
+          "videoHeight": 900,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        },
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "time": 0.5061,
+          "duration": 64,
+          "videoWidth": 640,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-390-46.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 46,
+      "scrollY": 194,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "time": 46,
+          "duration": 48,
+          "videoWidth": 1200,
+          "videoHeight": 900,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        },
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "time": 0.5,
+          "duration": 64,
+          "videoWidth": 640,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-390-47p96.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 47.96,
+      "scrollY": 194,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "time": 47.96,
+          "duration": 48,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3232,10 +3505,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
           "time": 0.5,
-          "duration": 24.48,
+          "duration": 48,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3258,10 +3531,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio33/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop-mobile.mp4",
           "time": 0,
-          "duration": 24.48,
+          "duration": 48,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3272,72 +3545,24 @@
       ]
     },
     {
-      "file": "atlas32-1440-section.jpg",
+      "file": "generation35-1920-opening.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
-        "width": 1440,
-        "height": 900
+        "width": 1920,
+        "height": 1080
       },
-      "selector": "#diversity",
+      "selector": "page top",
       "frameTime": null,
-      "scrollY": 1866,
-      "visibleVideos": []
-    },
-    {
-      "file": "atlas32-1440-image.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 1440,
-        "height": 900
-      },
-      "selector": ".atlas-overview",
-      "frameTime": null,
-      "scrollY": 2130,
-      "visibleVideos": []
-    },
-    {
-      "file": "atlas32-390-section.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#diversity",
-      "frameTime": null,
-      "scrollY": 1509,
-      "visibleVideos": []
-    },
-    {
-      "file": "atlas32-390-image.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": ".atlas-overview",
-      "frameTime": null,
-      "scrollY": 1786,
-      "visibleVideos": []
-    },
-    {
-      "file": "rgb34-1440-collection.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 1440,
-        "height": 900
-      },
-      "selector": "#rgb-film",
-      "frameTime": 16,
-      "scrollY": 1111,
+      "scrollY": 0,
       "visibleVideos": [
         {
-          "id": "rgb-film",
-          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon.mp4",
-          "time": 16,
-          "duration": 64,
-          "videoWidth": 1920,
-          "videoHeight": 720,
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 0.5,
+          "duration": 48,
+          "videoWidth": 2400,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -3346,24 +3571,24 @@
       ]
     },
     {
-      "file": "rgb34-390-collection.jpg",
+      "file": "generation35-1366-opening.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
-        "width": 390,
-        "height": 900
+        "width": 1366,
+        "height": 768
       },
-      "selector": "#rgb-film",
-      "frameTime": 16,
-      "scrollY": 891,
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
       "visibleVideos": [
         {
-          "id": "rgb-film",
-          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 16,
-          "duration": 64,
-          "videoWidth": 640,
-          "videoHeight": 720,
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio35/generation-loop.mp4",
+          "time": 0.5,
+          "duration": 48,
+          "videoWidth": 2400,
+          "videoHeight": 840,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -6065,49 +6290,91 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-6p7",
+      "label": "generation31-1440-7",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-8p8",
+      "label": "generation31-1440-9",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-10",
+      "label": "generation31-1440-11p5",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-16p5",
+      "label": "generation31-1440-15",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-23",
+      "label": "generation31-1440-19",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-24p2",
+      "label": "generation31-1440-22p5",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-24p44",
+      "label": "generation31-1440-23p8",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-24p5",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-31",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-34",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-36",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-46",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-47p96",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
@@ -6146,7 +6413,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-11",
+      "label": "generation31-390-9",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6155,7 +6422,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-23",
+      "label": "generation31-390-22p5",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6164,7 +6431,34 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-24p44",
+      "label": "generation31-390-24p5",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-390-34",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-390-46",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-390-47p96",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6213,665 +6507,20 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "atlas32-1440-section",
-      "width": 1440,
-      "scrollWidth": 1440,
+      "label": "generation35-1920-opening",
+      "width": 1920,
+      "scrollWidth": 1920,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "atlas32-1440-image",
-      "width": 1440,
-      "scrollWidth": 1440,
+      "label": "generation35-1366-opening",
+      "width": 1366,
+      "scrollWidth": 1366,
       "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "atlas32-390-section",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "atlas32-390-image",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "rgb34-1440-collection",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "rgb34-390-collection",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/design-directions.html",
-      "label": "smoke-design-directions.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/design-directions.html",
-      "label": "smoke-design-directions.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "IMG.",
-        "IMG."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/explore.html",
-      "label": "smoke-explore.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/explore.html",
-      "label": "smoke-explore.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "smoke-index.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/index.html",
-      "label": "smoke-index.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "IMG.",
-        "CODE."
-      ]
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "smoke-results.html",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/results.html",
-      "label": "smoke-results.html",
-      "width": 390,
-      "scrollWidth": 390,
-      "overflow": [
-        "TABLE.data-table",
-        "THEAD.",
-        "TR.",
-        "TH.",
-        "TR.",
-        "TH.",
-        "TH.",
-        "TH.",
-        "TBODY.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD.",
-        "TD.",
-        "TR.",
-        "TD.",
-        "TD."
-      ]
     }
   ],
-  "pages": [
-    {
-      "path": "design-directions.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-directions.css",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "design-directions.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-directions.css",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "design-preview.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "design-preview.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "explore.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/explore.css?v=26",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "explore.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/explore.css?v=26",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "index.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "index.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "research-preview-v30.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/research30.css?v=30",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "research-preview-v30.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/research30.css?v=30",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "research-preview-v31.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/research30.css?v=30",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/atlas-white.css?v=32",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/embedded-hero.css?v=34",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "research-preview-v31.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/research30.css?v=30",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/atlas-white.css?v=32",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/embedded-hero.css?v=34",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "results.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=21",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=21",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "results.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=21",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=21",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview-v27.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview-v27.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview-v28.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview-v28.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview-v29.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview-v29.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/site.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/results.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/studio.css?v=26",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview.html",
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=19",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
-          "loaded": true
-        }
-      ]
-    },
-    {
-      "path": "scene-preview.html",
-      "viewport": {
-        "width": 390,
-        "height": 1000
-      },
-      "stylesheets": [
-        {
-          "href": "http://127.0.0.1:8787/styles.css?v=19",
-          "loaded": true
-        },
-        {
-          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
-          "loaded": true
-        }
-      ]
-    }
-  ],
+  "pages": [],
   "checks": [
     "HTTP 206 byte-range media serving",
     "Model benchmark → method → generation scale reading order",
@@ -6906,10 +6555,7 @@
     "In-page scene study: full homepage context, three uncropped views, top lights only, real 25fps excerpt, matched paused time and desktop/mobile layout",
     "White panoramic banner: entire closed hero fits seven viewport sizes, full width, uncropped source, pure-white page and real desktop/mobile motion",
     "Finite-workcell study: centred two-task opening, 48/384 complete-group views, one-screen desktop/mobile and a real whole-group reveal excerpt",
-    "Research UI and original cam_high ribbon: one-screen title, consistent evidence sections, matched mobile clock, autoplay/reduced-motion, dialog and 72-second media loop",
-    "Ambient hero: compact intrinsic-height layout, direct scale-to-pair loop, no seek controls, play/pause and immediate handoff to RGB",
-    "White asset atlas: 500 real assets, retained subject pixels/contact shadows, decoded pure-white edge, no card border or mobile crop",
-    "Larger RGB collection: 96 source episodes, 18 desktop/6 mobile panels, 64s loop, pause-only controls and noninteractive asset display before results"
+    "Research UI and original cam_high ribbon: one-screen title, consistent evidence sections, matched mobile clock, autoplay/reduced-motion, dialog and 72-second media loop"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
@@ -7703,5 +7349,6 @@
       "paddingBottom": "13px",
       "borderBottomColor": "rgb(229, 235, 237)"
     }
-  }
+  },
+  "failure": "page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:8787/research-preview-v31.html\", waiting until \"networkidle\"\n\n    at open (/home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:30:16)\n    at async /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:770:18"
 }
