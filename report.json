@@ -1,8 +1,8 @@
 {
-  "ref": "11029fb646b7186abddca4fa3656b2bb00e2cef2",
-  "commit": "11029fb646b7186abddca4fa3656b2bb00e2cef2",
+  "ref": "0f75813f0a8c07a61e999bd9953bbd8466b66e84",
+  "commit": "0f75813f0a8c07a61e999bd9953bbd8466b66e84",
   "pagePath": "index.html",
-  "passed": false,
+  "passed": true,
   "status": "completed",
   "screenshots": [
     {
@@ -492,7 +492,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
-          "time": 0.5027,
+          "time": 0.508,
           "duration": 32,
           "videoWidth": 2560,
           "videoHeight": 1440,
@@ -1920,7 +1920,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
-          "time": 1.1068,
+          "time": 1.1,
           "duration": 2.4,
           "videoWidth": 1920,
           "videoHeight": 1080,
@@ -2068,7 +2068,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
-          "time": 1.1052,
+          "time": 1.1,
           "duration": 2.4,
           "videoWidth": 1920,
           "videoHeight": 1080,
@@ -3286,7 +3286,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5,
+          "time": 0.5044,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3403,7 +3403,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5044,
+          "time": 0.5036,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3481,7 +3481,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5099,
+          "time": 0.5066,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3589,6 +3589,106 @@
           "duration": 48,
           "videoWidth": 2400,
           "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "atlas32-1440-section.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#diversity",
+      "frameTime": null,
+      "scrollY": 1825,
+      "visibleVideos": []
+    },
+    {
+      "file": "atlas32-1440-image.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": ".atlas-overview",
+      "frameTime": null,
+      "scrollY": 2088,
+      "visibleVideos": []
+    },
+    {
+      "file": "atlas32-390-section.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#diversity",
+      "frameTime": null,
+      "scrollY": 1450,
+      "visibleVideos": []
+    },
+    {
+      "file": "atlas32-390-image.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": ".atlas-overview",
+      "frameTime": null,
+      "scrollY": 1727,
+      "visibleVideos": []
+    },
+    {
+      "file": "rgb34-1440-collection.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#rgb-film",
+      "frameTime": 16,
+      "scrollY": 1189,
+      "visibleVideos": [
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon.mp4",
+          "time": 16,
+          "duration": 64,
+          "videoWidth": 1920,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "rgb34-390-collection.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "selector": "#rgb-film",
+      "frameTime": 16,
+      "scrollY": 877,
+      "visibleVideos": [
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "time": 16,
+          "duration": 64,
+          "videoWidth": 640,
+          "videoHeight": 720,
           "readyState": 4,
           "seeking": false,
           "controls": false,
@@ -6518,9 +6618,676 @@
       "width": 1366,
       "scrollWidth": 1366,
       "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "atlas32-1440-section",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "atlas32-1440-image",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "atlas32-390-section",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "atlas32-390-image",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "rgb34-1440-collection",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "rgb34-390-collection",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/design-directions.html",
+      "label": "smoke-design-directions.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/design-directions.html",
+      "label": "smoke-design-directions.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "IMG.",
+        "IMG."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/explore.html",
+      "label": "smoke-explore.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/explore.html",
+      "label": "smoke-explore.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "smoke-index.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/index.html",
+      "label": "smoke-index.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "IMG.",
+        "CODE."
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "smoke-results.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/results.html",
+      "label": "smoke-results.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [
+        "TABLE.data-table",
+        "THEAD.",
+        "TR.",
+        "TH.",
+        "TR.",
+        "TH.",
+        "TH.",
+        "TH.",
+        "TBODY.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD.",
+        "TD.",
+        "TR.",
+        "TD.",
+        "TD."
+      ]
     }
   ],
-  "pages": [],
+  "pages": [
+    {
+      "path": "design-directions.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-directions.css",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "design-directions.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-directions.css",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "design-preview.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "design-preview.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/design-preview.css?v=18",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "explore.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/explore.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "explore.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/explore.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "index.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "research-preview-v30.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/research30.css?v=30",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "research-preview-v30.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/research30.css?v=30",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/research30.css?v=30",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/atlas-white.css?v=32",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/embedded-hero.css?v=35",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/rgb-collection.css?v=1",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/research30.css?v=30",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/atlas-white.css?v=32",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/embedded-hero.css?v=35",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/rgb-collection.css?v=1",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "results.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=21",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=21",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "results.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=21",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=21",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview-v27.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview-v27.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/theme-preview.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview-v28.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview-v28.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview-v29.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview-v29.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/site.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/results.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/studio.css?v=26",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-study.css?v=27",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/fold-fit.css?v=28",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=19",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "scene-preview.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/styles.css?v=19",
+          "loaded": true
+        },
+        {
+          "href": "http://127.0.0.1:8787/scene-preview.css?v=19",
+          "loaded": true
+        }
+      ]
+    }
+  ],
   "checks": [
     "HTTP 206 byte-range media serving",
     "Model benchmark → method → generation scale reading order",
@@ -6555,7 +7322,10 @@
     "In-page scene study: full homepage context, three uncropped views, top lights only, real 25fps excerpt, matched paused time and desktop/mobile layout",
     "White panoramic banner: entire closed hero fits seven viewport sizes, full width, uncropped source, pure-white page and real desktop/mobile motion",
     "Finite-workcell study: centred two-task opening, 48/384 complete-group views, one-screen desktop/mobile and a real whole-group reveal excerpt",
-    "Research UI and original cam_high ribbon: one-screen title, consistent evidence sections, matched mobile clock, autoplay/reduced-motion, dialog and 72-second media loop"
+    "Research UI and original cam_high ribbon: one-screen title, consistent evidence sections, matched mobile clock, autoplay/reduced-motion, dialog and 72-second media loop",
+    "Two-case ambient hero: 48s loop, 20:7 desktop framing, direct case transitions, no seek controls, play/pause and immediate handoff to RGB",
+    "White asset atlas: 500 real assets, retained subject pixels/contact shadows, decoded pure-white edge, no card border or mobile crop",
+    "Larger RGB collection: 96 source episodes, 18 desktop/6 mobile panels, 64s loop, pause-only controls and noninteractive asset display before results"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
@@ -7349,6 +8119,5 @@
       "paddingBottom": "13px",
       "borderBottomColor": "rgb(229, 235, 237)"
     }
-  },
-  "failure": "page.waitForFunction: Timeout 30000ms exceeded.\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/website-visual-review.cjs:786:18"
+  }
 }
