@@ -747,20 +747,34 @@ saveReport();
         const page=await open({width,height},'reduce','research-preview-v31.html');
         const hero=await page.locator('#overview').boundingBox();assert(hero.y+hero.height<=height+1);
         if(width===1440){
-          const source=await(await page.request.get(new URL('assets/studio40/manifest.json',origin).href)).json();
+          const source=await(await page.request.get(new URL('assets/studio44/manifest.json',origin).href)).json();
           assert.equal(source.workspaces,384);assert.equal(source.unique_trajectories,386);assert.equal(source.cases_per_workspace,2);
           assert(source.audit.foreground_does_not_reset_within_a_case&&source.audit.every_workspace_changes_episode&&source.audit.matched_layer_camera_and_state_hashes);
           assert(source.audit.fade_starts_with_camera_departure&&source.audit.camera_holds_keep_task_motion_running&&source.audit.complete_groups_during_camera_holds&&source.audit.white_output_edges);
-          assert.equal(source.active_hold_windows.workspaces.length,764);
-          assert.equal(source.active_hold_windows.checks,2292);
+          assert(source.audit.simultaneous_peripheral_fade&&source.audit.perspective_fitted_all_scales&&source.audit.no_crop_or_resize);
+          assert.equal(source.active_hold_windows.workspaces.length,1528);
+          assert.equal(source.active_hold_windows.checks,4584);
           assert(source.active_hold_windows.minimum_motion_score>1e-4&&source.active_hold_windows.fade_begins_at_departure);
+          for(const variant of ['wide','mobile']){
+            const fit=source.camera_fit[variant];
+            for(const count of [2,8,48,384]){
+              const {bounds_px:b,safety_px:pad}=fit.audit[count];
+              assert(Math.min(b[0],b[1],fit.width-b[2],fit.height-b[3])>=pad-1e-4);
+            }
+            for(const trial of ['a','b']){
+              const holds=source.complete_active_camera_holds[variant+'-'+trial];
+              assert.deepEqual(holds.map(h=>h.workspaces),[8,48,384]);
+              assert(holds.every(h=>h.complete&&h.active_source_clocks>=2&&h.active_motion_workspaces>=2));
+            }
+          }
         }
         assert.deepEqual(await page.locator('main > section').evaluateAll(nodes=>nodes.slice(0,5).map(n=>n.id)),['overview','rgb','diversity','results','method']);
         await capture(page,'generation31-'+width+'-opening');
         const times=width===1440?[0,9,10.4,10.8,11.8,13.4,14.5,15.8,16.4,17.4,19.4,20.5,22.4,24,26.5,28,29.8,30.5,40.4,44.5,59.96]:width===390?[0,10.4,11.2,13.8,14.8,17.4,20.5,24,28,30.5,43.8,59.96]:[0];
         for(const time of times)await capture(page,'generation31-'+width+'-'+String(time).replace('.','p'),'#hero-film',time);
-        const state=await page.locator('#hero-film').evaluate(v=>({width:v.videoWidth,height:v.videoHeight,duration:v.duration,loop:v.loop,paused:v.paused}));
+        const state=await page.locator('#hero-film').evaluate(v=>({width:v.videoWidth,height:v.videoHeight,duration:v.duration,loop:v.loop,paused:v.paused,src:v.currentSrc}));
         assert.equal(state.width,width<=700?1200:2400);assert.equal(state.height,width<=700?900:840);assert.equal(state.duration,60);assert(state.loop&&state.paused);
+        assert(state.src.includes('/assets/studio44/'));
         assert.equal(await page.locator('#hero-film').evaluate(v=>v.controls),false);
         assert.equal(await page.locator('[data-gen-seek], [data-expand="hero-film"], #overview input[type="range"]').count(),0);
         await page.locator('#hero-toggle').click();
