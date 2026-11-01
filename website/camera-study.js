@@ -83,6 +83,7 @@
         if(ticket!==version)return;
       }
       const master=phase();
+      if(initialized&&Math.abs(difference(next.currentTime,master))>.10)throw new Error('新视角尚未追上当前动作');
       slots[active].removeAttribute('data-active');slots[active].setAttribute('aria-hidden','true');
       if(initialized)slots[active].pause();
       active=index;initialized=true;displayed=view;
@@ -94,7 +95,8 @@
       const old=slots[1-active];old.pause();old.removeAttribute('src');old.load();
       root.dispatchEvent(new CustomEvent('camerachange',{detail:lastChange}));
     }catch(error){
-      if(ticket!==version||error.name==='AbortError')return;
+      if(ticket!==version||signal.aborted)return;
+      if(error.name==='AbortError'&&!running){pending=null;change(view);return;}
       pending=null;lastError=error.message;
       next.pause();status.textContent='换景暂未完成，保留当前画面。请再次拖动或点击继续动作。';text();
     }
