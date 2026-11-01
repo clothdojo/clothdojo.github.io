@@ -784,6 +784,8 @@ saveReport();
       await live.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.videoWidth===1200&&!v.paused;});
       await position(live,'#rgb-film');
       await live.waitForFunction(()=>!document.getElementById('rgb-film').paused&&document.getElementById('hero-film').paused);
+      const mobileRgbStart=await live.locator('#rgb-film').evaluate(v=>v.currentTime);
+      await live.waitForFunction(start=>document.getElementById('rgb-film').currentTime>start+.5,mobileRgbStart);
       await live.context().close();
       report.checks.push('Two-case ambient hero: 48s loop, 20:7 desktop framing, direct case transitions, no seek controls, play/pause and immediate handoff to RGB');
     }
