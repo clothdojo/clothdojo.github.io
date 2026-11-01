@@ -40,7 +40,7 @@ function attribute(buffer,spec){
 function geometry(buffer,spec){
   const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(attribute(buffer,spec.position).slice(),3));
   g.setIndex(new T.BufferAttribute(attribute(buffer,spec.index).slice(),1));
-  if(spec.color)g.setAttribute('color',new T.BufferAttribute(attribute(buffer,spec.color).slice(),3,true));
+  if(spec.color?.type)g.setAttribute('color',new T.BufferAttribute(attribute(buffer,spec.color).slice(),3,true));
   g.computeVertexNormals();return g;
 }
 function fadeMaterial(material,instanced){
