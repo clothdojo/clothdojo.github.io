@@ -1,6 +1,6 @@
 {
-  "ref": "8475b9d6ef7ded059637d15bc84945166848a11f",
-  "commit": "8475b9d6ef7ded059637d15bc84945166848a11f",
+  "ref": "865e0d8e8fe26eba045c5e3caa8c7a11e4a533e1",
+  "commit": "865e0d8e8fe26eba045c5e3caa8c7a11e4a533e1",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -3546,7 +3546,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5037,
+          "time": 0.5047,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3663,7 +3663,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5,
+          "time": 0.5027,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3741,7 +3741,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5042,
+          "time": 0.5,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3819,7 +3819,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5042,
+          "time": 0.5,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -4124,6 +4124,245 @@
           "paused": true
         }
       ]
+    },
+    {
+      "file": "camera45-desktop-auto.jpg",
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "cameraStudy": {
+        "ready": true,
+        "mode": "auto",
+        "view": "auto",
+        "wanted": "auto",
+        "running": true,
+        "pending": null,
+        "phase": 0.4876,
+        "lastChange": {
+          "view": "auto",
+          "fromPhase": 0,
+          "masterPhase": 0,
+          "presentedPhase": 0.0002,
+          "skew": 0.00019999999999953388,
+          "latencyMs": 65.39999999999418,
+          "switchedAt": 141.80000000001746,
+          "firstPresentedSkew": 0.0028999999999950177
+        },
+        "lastError": "",
+        "playing": 1,
+        "loadedSources": 1
+      }
+    },
+    {
+      "file": "camera45-desktop-far.jpg",
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "cameraStudy": {
+        "ready": true,
+        "mode": "manual",
+        "view": "far",
+        "wanted": "far",
+        "running": true,
+        "pending": null,
+        "phase": 1.6629,
+        "lastChange": {
+          "view": "far",
+          "fromPhase": 0.5124,
+          "masterPhase": 1.0861,
+          "presentedPhase": 1.0607,
+          "skew": 0.025399999999999423,
+          "latencyMs": 573.7999999999884,
+          "switchedAt": 1227.7000000000116,
+          "firstPresentedSkew": 0.05320000000000569
+        },
+        "lastError": "",
+        "playing": 1,
+        "loadedSources": 1
+      }
+    },
+    {
+      "file": "camera45-desktop-near.jpg",
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "cameraStudy": {
+        "ready": true,
+        "mode": "manual",
+        "view": "near",
+        "wanted": "near",
+        "running": true,
+        "pending": null,
+        "phase": 2.3808,
+        "lastChange": {
+          "view": "near",
+          "fromPhase": 1.6667,
+          "masterPhase": 1.7181,
+          "presentedPhase": 1.688,
+          "skew": 0.030100000000000904,
+          "latencyMs": 50.19999999998254,
+          "switchedAt": 1885.1000000000058,
+          "firstPresentedSkew": 0.03870000000000573
+        },
+        "lastError": "",
+        "playing": 1,
+        "loadedSources": 1
+      }
+    },
+    {
+      "file": "camera45-desktop-resume.jpg",
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "cameraStudy": {
+        "ready": true,
+        "mode": "auto",
+        "view": "auto",
+        "wanted": "auto",
+        "running": true,
+        "pending": null,
+        "phase": 2.5582,
+        "lastChange": {
+          "view": "auto",
+          "fromPhase": 2.4411,
+          "masterPhase": 2.5167,
+          "presentedPhase": 2.478799,
+          "skew": 0.03790099999999974,
+          "latencyMs": 75.60000000000582,
+          "switchedAt": 3196.7000000000116,
+          "firstPresentedSkew": 0.04209999999999425
+        },
+        "lastError": "",
+        "playing": 1,
+        "loadedSources": 1
+      }
+    },
+    {
+      "file": "camera45-desktop-loop.jpg",
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "cameraStudy": {
+        "ready": true,
+        "mode": "manual",
+        "view": "far",
+        "wanted": "far",
+        "running": true,
+        "pending": null,
+        "phase": 0.0568,
+        "lastChange": {
+          "view": "far",
+          "fromPhase": 2.5665,
+          "masterPhase": 2.6516,
+          "presentedPhase": 2.6111,
+          "skew": 0.04049999999999976,
+          "latencyMs": 85.19999999998254,
+          "switchedAt": 3373.5,
+          "firstPresentedSkew": 0.026000000000022894
+        },
+        "lastError": "",
+        "playing": 1,
+        "loadedSources": 1
+      }
+    },
+    {
+      "file": "camera45-mobile-auto.jpg",
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cameraStudy": {
+        "ready": true,
+        "mode": "auto",
+        "view": "auto",
+        "wanted": "auto",
+        "running": false,
+        "pending": null,
+        "phase": 0,
+        "lastChange": {
+          "view": "auto",
+          "fromPhase": 0,
+          "masterPhase": 0,
+          "presentedPhase": 0,
+          "skew": 0,
+          "latencyMs": 58,
+          "switchedAt": 115
+        },
+        "lastError": "",
+        "playing": 0,
+        "loadedSources": 1
+      }
+    },
+    {
+      "file": "camera45-mobile-far.jpg",
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cameraStudy": {
+        "ready": true,
+        "mode": "manual",
+        "view": "far",
+        "wanted": "far",
+        "running": false,
+        "pending": null,
+        "phase": 0,
+        "lastChange": {
+          "view": "far",
+          "fromPhase": 0,
+          "masterPhase": 0,
+          "presentedPhase": 0,
+          "skew": 0,
+          "latencyMs": 51.89999999999418,
+          "switchedAt": 273.3999999999942,
+          "firstPresentedSkew": 0
+        },
+        "lastError": "",
+        "playing": 0,
+        "loadedSources": 1
+      }
+    },
+    {
+      "file": "camera45-mobile-resume.jpg",
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cameraStudy": {
+        "ready": true,
+        "mode": "auto",
+        "view": "auto",
+        "wanted": "auto",
+        "running": true,
+        "pending": null,
+        "phase": 0.5454,
+        "lastChange": {
+          "view": "auto",
+          "fromPhase": 0.447,
+          "masterPhase": 0.5055,
+          "presentedPhase": 0.4816,
+          "skew": 0.023899999999999366,
+          "latencyMs": 58.70000000001164,
+          "switchedAt": 861.1000000000058,
+          "firstPresentedSkew": 0.03160000000000629
+        },
+        "lastError": "",
+        "playing": 1,
+        "loadedSources": 1
+      }
     }
   ],
   "layouts": [
@@ -7205,6 +7444,76 @@
       ]
     },
     {
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "label": "camera45-desktop-auto",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "label": "camera45-desktop-far",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "label": "camera45-desktop-near",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "label": "camera45-desktop-resume",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "label": "camera45-desktop-loop",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "label": "camera45-mobile-auto",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "label": "camera45-mobile-far",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "label": "camera45-mobile-resume",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "label": "smoke-camera-study.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/camera-study.html",
+      "label": "smoke-camera-study.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": []
+    },
+    {
       "page": "http://127.0.0.1:8787/design-directions.html",
       "label": "smoke-design-directions.html",
       "width": 1440,
@@ -7290,6 +7599,32 @@
     }
   ],
   "pages": [
+    {
+      "path": "camera-study.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/camera-study.css?v=45",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "camera-study.html",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "stylesheets": [
+        {
+          "href": "http://127.0.0.1:8787/camera-study.css?v=45",
+          "loaded": true
+        }
+      ]
+    },
     {
       "path": "design-directions.html",
       "viewport": {
@@ -7862,7 +8197,8 @@
     "Research UI and original cam_high ribbon: one-screen title, consistent evidence sections, matched mobile clock, autoplay/reduced-motion, dialog and 72-second media loop",
     "Two-case ambient hero: 60s loop, departure-driven fades, active camera holds, soft white edges, direct case transitions, passive controls and RGB handoff",
     "White asset atlas: 500 real assets, retained subject pixels/contact shadows, decoded pure-white edge, no card border or mobile crop",
-    "Larger RGB collection: 96 source episodes, 18 desktop/6 mobile panels, 64s loop, pause-only controls and noninteractive asset display before results"
+    "Larger RGB collection: 96 source episodes, 18 desktop/6 mobile panels, 64s loop, pause-only controls and noninteractive asset display before results",
+    "Camera study: native synchronized sources, actual pointer/keyboard control, old motion during slow loading, fixed manual view with continuing actions, latest rapid selection, frame-time alignment, pause, resume-auto without rewind, natural loop, reduced-motion and mobile layout"
   ],
   "errors": [],
   "browser": "156.0.8078.47",
