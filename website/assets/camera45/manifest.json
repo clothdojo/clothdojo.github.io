@@ -1,0 +1,753 @@
+{
+  "schema": "clothdojo_camera_control_study_v1",
+  "duration_seconds": 10,
+  "fps": 25,
+  "workspaces": 48,
+  "unique_trajectories": 48,
+  "garment_assets": 45,
+  "views": {
+    "auto": {
+      "src": "auto.mp4",
+      "poster": "auto-poster.jpg",
+      "width": 1600,
+      "height": 560,
+      "fps": 25,
+      "frames": 250,
+      "duration_seconds": 10,
+      "bytes": 2832873,
+      "sha256": "7a66368bb625d8bacf704b5e92f514c030c43d6650b0ec24b32b77fa4665ea08"
+    },
+    "near": {
+      "src": "near.mp4",
+      "poster": "near-poster.jpg",
+      "width": 1600,
+      "height": 560,
+      "fps": 25,
+      "frames": 250,
+      "duration_seconds": 10,
+      "bytes": 844316,
+      "sha256": "267ee518e03b0f9a02e40e048e0676b1fed2cd0b120e07d397337730c6a1294c"
+    },
+    "middle": {
+      "src": "middle.mp4",
+      "poster": "middle-poster.jpg",
+      "width": 1600,
+      "height": 560,
+      "fps": 25,
+      "frames": 250,
+      "duration_seconds": 10,
+      "bytes": 1631404,
+      "sha256": "88ec5ddedb883de36fc6ab88c94a03a078b2baaef8d8ad2bf3b6516eb86887ef"
+    },
+    "far": {
+      "src": "far.mp4",
+      "poster": "far-poster.jpg",
+      "width": 1600,
+      "height": 560,
+      "fps": 25,
+      "frames": 250,
+      "duration_seconds": 10,
+      "bytes": 2775408,
+      "sha256": "75acbc01f799415b60e2afff10b6b5e1d0ee501122652f58cee3a5426f5cc57b"
+    }
+  },
+  "audit": {
+    "all_views_match_source_states": true,
+    "native_rendered_frames": true,
+    "complete_actions_and_home": true,
+    "full_decode": true,
+    "zero_subject_border_intersections": true
+  },
+  "camera_fit": {
+    "width": 1600,
+    "height": 560,
+    "cameras": {
+      "2": {
+        "camera_eye": [
+          6.38365294754986,
+          -2.2127890672420253e-16,
+          4.752811792455092
+        ],
+        "camera_target": [
+          0.3715529063491559,
+          -2.2127890672420253e-16,
+          0.5560726905242586
+        ],
+        "camera_focal_length": 35.0
+      },
+      "8": {
+        "camera_eye": [
+          9.108991262310314,
+          -0.00960545233290011,
+          7.382368161720283
+        ],
+        "camera_target": [
+          -1.0688269275412219,
+          -0.00960545233290011,
+          0.2777545862678185
+        ],
+        "camera_focal_length": 35.0
+      },
+      "48": {
+        "camera_eye": [
+          19.226081535955245,
+          0.0,
+          16.700388549401797
+        ],
+        "camera_target": [
+          -4.66030321641774,
+          0.0,
+          0.02652680274533381
+        ],
+        "camera_focal_length": 35.0
+      }
+    },
+    "audit": {
+      "2": {
+        "subjects": 2,
+        "padding_px": 32.0
+      },
+      "8": {
+        "subjects": 8,
+        "padding_px": 32.0
+      },
+      "48": {
+        "subjects": 48,
+        "padding_px": 32.0
+      }
+    }
+  },
+  "render_manifest_sha256": {
+    "auto": "c7724a13967ab21f3e73a41005c232150db6b02166de7abe980141f5752279cf",
+    "near": "c555f44f259fea095502674a472b1e6b05434e2d9f6047dda873811760308e3b",
+    "middle": "4c3650a9af606fc6d5e9f936578f68cfdb49dc704b4ea8885e369397dc08f343",
+    "far": "7257934954cfad1bc06d7653a3afd62c9fda3553140e752919605b1e292af584"
+  },
+  "presentation": "Interaction prototype, not the replacement homepage. Automatic camera route plus three fixed views. All views share exact recorded states at each source frame. Output uses source12\u2013261, last12frames dissolve to source0\u201311; source11 continues to nextsource12.10s loop at2x saved-state replay/25 native fps. Every episode completes and released arms return to home before the transition. Fixed-view switches are direct cuts, not continuous3D camera movement. Browser frame-level seek alignment must be tested separately. Designed studio material, not paper domain randomization.",
+  "sources": [
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UKD4QKBTS__07",
+      "asset_id": "rand_0UKD4QKBTS",
+      "task": "flatten",
+      "terminal_state": 794,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/0d1455e3612163ac",
+      "translation": [
+        -0.0,
+        -1.15,
+        0.0
+      ],
+      "featured": true
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12KXNKIIP0__04",
+      "asset_id": "rand_12KXNKIIP0",
+      "task": "flatten",
+      "terminal_state": 775,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/4d0b19ec7026501d",
+      "translation": [
+        -0.0,
+        -3.55,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0A1ZQT230R__06",
+      "asset_id": "rand_0A1ZQT230R",
+      "task": "flatten",
+      "terminal_state": 773,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/e648bf820abb66ec",
+      "translation": [
+        -0.0,
+        -5.949999999999999,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1A0BGLIDR1__04",
+      "asset_id": "rand_1A0BGLIDR1",
+      "task": "flatten",
+      "terminal_state": 769,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/953ce52f6a2704d4",
+      "translation": [
+        -0.0,
+        -8.35,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1E69F9VRN4__00",
+      "asset_id": "rand_1E69F9VRN4",
+      "task": "flatten",
+      "terminal_state": 767,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/351153b0cd73c0e8",
+      "translation": [
+        -0.0,
+        -10.75,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1AUTDNAW0L__01",
+      "asset_id": "rand_1AUTDNAW0L",
+      "task": "flatten",
+      "terminal_state": 764,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/a171c43f3dd7084c",
+      "translation": [
+        -2.7,
+        -5.949999999999999,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1CSHS4LKIJ__08",
+      "asset_id": "rand_1CSHS4LKIJ",
+      "task": "flatten",
+      "terminal_state": 758,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/3386da9c3724624f",
+      "translation": [
+        -2.7,
+        -1.15,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1JB634CLNN__08",
+      "asset_id": "rand_1JB634CLNN",
+      "task": "flatten",
+      "terminal_state": 737,
+      "cache_dir": "outputs/website_media_20261030/studio-v25/cache-2x/9472f0d2f573c83f",
+      "translation": [
+        -2.7,
+        -3.55,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_025I3DAPE6__05",
+      "asset_id": "rand_025I3DAPE6",
+      "task": "flatten",
+      "terminal_state": 734,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/899d4f0ba177339b",
+      "translation": [
+        -2.7,
+        -8.35,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_25KFCLZ8JD__08",
+      "asset_id": "rand_25KFCLZ8JD",
+      "task": "flatten",
+      "terminal_state": 733,
+      "cache_dir": "outputs/website_media_20261030/studio-v25/cache-2x/ce5cbb1879193422",
+      "translation": [
+        -2.7,
+        -10.75,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_08KYYZ0POQ__02",
+      "asset_id": "rand_08KYYZ0POQ",
+      "task": "flatten",
+      "terminal_state": 733,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/f1ce8ba87e57f639",
+      "translation": [
+        -5.4,
+        -1.15,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BU52I9LRX__01",
+      "asset_id": "rand_1BU52I9LRX",
+      "task": "flatten",
+      "terminal_state": 732,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/36f59952a35febb6",
+      "translation": [
+        -5.4,
+        -3.55,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_21GKNQCZ4B__00",
+      "asset_id": "rand_21GKNQCZ4B",
+      "task": "flatten",
+      "terminal_state": 728,
+      "cache_dir": "outputs/website_media_20261030/showcase-v34/flatten-case-b",
+      "translation": [
+        -5.4,
+        -5.949999999999999,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_079HTTNCTJ__00",
+      "asset_id": "rand_079HTTNCTJ",
+      "task": "flatten",
+      "terminal_state": 723,
+      "cache_dir": "outputs/website_media_20261030/studio-v25/cache-2x/a82dda162d15b854",
+      "translation": [
+        -5.4,
+        -8.35,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X68PQMHZM__04",
+      "asset_id": "rand_0X68PQMHZM",
+      "task": "flatten",
+      "terminal_state": 721,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/9efef98bdd52cb5d",
+      "translation": [
+        -5.4,
+        -10.75,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_249RUXCM75__00",
+      "asset_id": "rand_249RUXCM75",
+      "task": "flatten",
+      "terminal_state": 717,
+      "cache_dir": "outputs/website_media_20261030/studio-v25/cache-2x/2e8a3e8608cdd435",
+      "translation": [
+        -8.100000000000001,
+        -1.15,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UOA081DQE__08",
+      "asset_id": "rand_0UOA081DQE",
+      "task": "flatten",
+      "terminal_state": 703,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/3ff842101397d94b",
+      "translation": [
+        -8.100000000000001,
+        -3.55,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_16AC0MKLJL__06",
+      "asset_id": "rand_16AC0MKLJL",
+      "task": "flatten",
+      "terminal_state": 701,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/330b485c6e93036a",
+      "translation": [
+        -8.100000000000001,
+        -5.949999999999999,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1BEWWU2K6Q__04",
+      "asset_id": "rand_1BEWWU2K6Q",
+      "task": "flatten",
+      "terminal_state": 689,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/675515da57ba5444",
+      "translation": [
+        -8.100000000000001,
+        -8.35,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_038ROZC0KR__05",
+      "asset_id": "rand_038ROZC0KR",
+      "task": "flatten",
+      "terminal_state": 687,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/114f153f4d096b3c",
+      "translation": [
+        -8.100000000000001,
+        -10.75,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0AYSPSNK8T__04",
+      "asset_id": "rand_0AYSPSNK8T",
+      "task": "flatten",
+      "terminal_state": 673,
+      "cache_dir": "outputs/website_media_20261030/studio-v25/cache-2x/4c890025327ed4b4",
+      "translation": [
+        -10.8,
+        -1.15,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0FGHC5MNWV__08",
+      "asset_id": "rand_0FGHC5MNWV",
+      "task": "flatten",
+      "terminal_state": 672,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/02d4e4128df3eb13",
+      "translation": [
+        -10.8,
+        -3.55,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0XQT1WCCJN__08",
+      "asset_id": "rand_0XQT1WCCJN",
+      "task": "flatten",
+      "terminal_state": 672,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/cb59cf6a87dae7b5",
+      "translation": [
+        -10.8,
+        -5.949999999999999,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EHUSGYR73__09",
+      "asset_id": "rand_1EHUSGYR73",
+      "task": "flatten",
+      "terminal_state": 669,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/71044545616186bb",
+      "translation": [
+        -10.8,
+        -8.35,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_04NKS685SH_000009",
+      "asset_id": "rand_04NKS685SH",
+      "task": "fold",
+      "terminal_state": 789,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/063e564f4ee9fbcb",
+      "translation": [
+        -0.0,
+        1.15,
+        0.0
+      ],
+      "featured": true
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0URVRF4FRO_000002_r009",
+      "asset_id": "rand_0URVRF4FRO",
+      "task": "fold",
+      "terminal_state": 783,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/f720fe811ad75e66",
+      "translation": [
+        -0.0,
+        3.55,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2ABUSKI9UP_000005",
+      "asset_id": "rand_2ABUSKI9UP",
+      "task": "fold",
+      "terminal_state": 764,
+      "cache_dir": "outputs/website_media_20261030/studio-v25/cache-2x/c7251f72c66e408b",
+      "translation": [
+        -0.0,
+        5.949999999999999,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1T6IM4B3AE_000008",
+      "asset_id": "rand_1T6IM4B3AE",
+      "task": "fold",
+      "terminal_state": 760,
+      "cache_dir": "outputs/website_media_20261030/studio-v25/cache-2x/f07f5d1ed140db5c",
+      "translation": [
+        -0.0,
+        8.35,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XEAOKSSSD_000002_r003",
+      "asset_id": "rand_0XEAOKSSSD",
+      "task": "fold",
+      "terminal_state": 751,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/242634ee6f78c0b2",
+      "translation": [
+        -0.0,
+        10.75,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0XY7VMAT8O_000001_r000",
+      "asset_id": "rand_0XY7VMAT8O",
+      "task": "fold",
+      "terminal_state": 742,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/0823e66214f276fa",
+      "translation": [
+        -2.7,
+        5.949999999999999,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CMB9NKG1_000001",
+      "asset_id": "rand_12CMB9NKG1",
+      "task": "fold",
+      "terminal_state": 742,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/1c65af5bc6731386",
+      "translation": [
+        -2.7,
+        1.15,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CR1HRKKE_000007_r000",
+      "asset_id": "rand_12CR1HRKKE",
+      "task": "fold",
+      "terminal_state": 738,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/64ee051717a56930",
+      "translation": [
+        -2.7,
+        3.55,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EEIEEXOHT_000009_r001",
+      "asset_id": "rand_1EEIEEXOHT",
+      "task": "fold",
+      "terminal_state": 737,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/ac7c334ca964746e",
+      "translation": [
+        -2.7,
+        8.35,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_13AAK4PO2O_000001",
+      "asset_id": "rand_13AAK4PO2O",
+      "task": "fold",
+      "terminal_state": 729,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/cafd6cc00c86d623",
+      "translation": [
+        -2.7,
+        10.75,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UOA081DQE_000002",
+      "asset_id": "rand_0UOA081DQE",
+      "task": "fold",
+      "terminal_state": 719,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/a841cf7469e890cc",
+      "translation": [
+        -5.4,
+        1.15,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_089NYY0BW7_000001_r001",
+      "asset_id": "rand_089NYY0BW7",
+      "task": "fold",
+      "terminal_state": 715,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/1e26ebbd367d16b3",
+      "translation": [
+        -5.4,
+        3.55,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1BYN9OGP8S_000000_r000",
+      "asset_id": "rand_1BYN9OGP8S",
+      "task": "fold",
+      "terminal_state": 714,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/79237a5d050bab1f",
+      "translation": [
+        -5.4,
+        5.949999999999999,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1A2P58J9VK_000000",
+      "asset_id": "rand_1A2P58J9VK",
+      "task": "fold",
+      "terminal_state": 713,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/f06591d6e23d9e34",
+      "translation": [
+        -5.4,
+        8.35,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_176L9DT8YW_000001_r000",
+      "asset_id": "rand_176L9DT8YW",
+      "task": "fold",
+      "terminal_state": 712,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/a36b9a971b37dc72",
+      "translation": [
+        -5.4,
+        10.75,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1A0BGLIDR1_000001",
+      "asset_id": "rand_1A0BGLIDR1",
+      "task": "fold",
+      "terminal_state": 699,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/9f28ec96ccfee35f",
+      "translation": [
+        -8.100000000000001,
+        1.15,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0Z5CXF4ZQP_000003",
+      "asset_id": "rand_0Z5CXF4ZQP",
+      "task": "fold",
+      "terminal_state": 698,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/a6fd8a354e55e628",
+      "translation": [
+        -8.100000000000001,
+        3.55,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ANEU0APNF_000007",
+      "asset_id": "rand_1ANEU0APNF",
+      "task": "fold",
+      "terminal_state": 698,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/562137c32212fd30",
+      "translation": [
+        -8.100000000000001,
+        5.949999999999999,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X2J5FX39U_000002",
+      "asset_id": "rand_0X2J5FX39U",
+      "task": "fold",
+      "terminal_state": 696,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/d306d150fc544adf",
+      "translation": [
+        -8.100000000000001,
+        8.35,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1VKRDNWFKE_000005",
+      "asset_id": "rand_1VKRDNWFKE",
+      "task": "fold",
+      "terminal_state": 656,
+      "cache_dir": "outputs/website_media_20261030/studio-v25/cache-2x/fdec2455d970e432",
+      "translation": [
+        -8.100000000000001,
+        10.75,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_196ZJ6KG0I_000007",
+      "asset_id": "rand_196ZJ6KG0I",
+      "task": "fold",
+      "terminal_state": 643,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/5e23a119cdbbabcb",
+      "translation": [
+        -10.8,
+        1.15,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1M8PJ2BE57_000001_r000",
+      "asset_id": "rand_1M8PJ2BE57",
+      "task": "fold",
+      "terminal_state": 632,
+      "cache_dir": "outputs/website_media_20261030/studio-v25/cache-2x/ec04bd4d02f5c7b9",
+      "translation": [
+        -10.8,
+        3.55,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UYXAJYKTZ_000008",
+      "asset_id": "rand_0UYXAJYKTZ",
+      "task": "fold",
+      "terminal_state": 618,
+      "cache_dir": "/cfs/mlp/training/docker/user/hadoop-aipnlp/huangzilong09/repos/ClothDojo/outputs/website_media_20261030/showcase-v44-replay-cache/c996fc5db2122b49",
+      "translation": [
+        -10.8,
+        5.949999999999999,
+        0.0
+      ],
+      "featured": false
+    },
+    {
+      "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_079HTTNCTJ_000003",
+      "asset_id": "rand_079HTTNCTJ",
+      "task": "fold",
+      "terminal_state": 609,
+      "cache_dir": "outputs/website_media_20261030/studio-v25/cache-2x/dbcd116e979c5fd4",
+      "translation": [
+        -10.8,
+        8.35,
+        0.0
+      ],
+      "featured": false
+    }
+  ]
+}

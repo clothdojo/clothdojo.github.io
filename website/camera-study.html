@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ClothDojo · 镜头交互样例</title>
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="camera-study.css?v=45"><script src="camera-study.js?v=45" defer></script>
+</head>
+<body>
+<header><a class="brand" href="research-preview-v31.html?v=perspective-loop">ClothDojo</a><span>Camera study</span><a href="research-preview-v31.html?v=perspective-loop">返回项目主页 ↗</a></header>
+<main>
+<div class="intro"><p class="eyebrow">INTERACTION PROTOTYPE</p><h1>镜头交给你，动作继续。</h1><p>默认自动运镜。拖动选择观察距离，轨迹仍沿同一个时间继续播放。</p></div>
+<div id="camera-viewer" class="viewer" role="group" data-mode="auto" data-view="auto" aria-label="真实轨迹多视角同步展示" aria-busy="true">
+<video id="camera-slot-a" muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" poster="assets/camera45/auto-poster.jpg" aria-label="展平与折叠轨迹"></video>
+<video id="camera-slot-b" muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" aria-hidden="true"></video>
+<p id="camera-status" role="status">正在准备自动展示…</p>
+</div>
+<div class="control-area">
+<div class="control-heading"><span id="camera-label">自动运镜</span><button id="motion-toggle" type="button" disabled>暂停动作</button></div>
+<div class="camera-control"><label class="sr-only" for="camera-distance">镜头距离</label><input id="camera-distance" type="range" min="0" max="2" step="0.01" value="0" aria-valuetext="自动运镜" disabled><div class="marks" aria-hidden="true"><span>近景 · 动作细节</span><span>中景 · 多样性</span><span>远景 · 规模</span></div></div>
+<button id="resume-auto" type="button" disabled>自动运镜中</button>
+</div>
+<p class="note">手动部分为三个固定视角的同步回放，采用直接切换，先验证交互手感；尚非连续 3D 运镜。</p>
+<details><summary>这个样例在验证什么？</summary><p>48 个工作区使用真实保存的展平、折叠轨迹，完成后机械臂回到 home。自动运镜和三个固定视角共用相同动作帧，每 10 秒循环。拖动只改变观察视角，不拖动动作时间；恢复自动也接续当前动作时刻。</p><p>切换时保留当前画面，等新视角就绪再显示，避免空白与两个工作台叠加。这个小样用于判断固定视角切换是否足够自然，完整主页保持原版。</p><a href="assets/camera45/manifest.json">查看素材与同步检查记录 ↗</a></details>
+</main>
+</body>
+</html>
