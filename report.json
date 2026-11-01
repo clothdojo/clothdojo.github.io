@@ -1,6 +1,6 @@
 {
-  "ref": "4af27296b57207e34cd650f4b68e29b20861ef49",
-  "commit": "4af27296b57207e34cd650f4b68e29b20861ef49",
+  "ref": "8c51b1e8d65bd8ba773c936ebe74af268a3458c8",
+  "commit": "8c51b1e8d65bd8ba773c936ebe74af268a3458c8",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -492,7 +492,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
-          "time": 0.5044,
+          "time": 0.5,
           "duration": 32,
           "videoWidth": 2560,
           "videoHeight": 1440,
@@ -738,7 +738,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5024,
+          "time": 0.5,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
@@ -990,7 +990,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5021,
+          "time": 0.5,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
@@ -1920,7 +1920,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
-          "time": 1.1048,
+          "time": 1.1044,
           "duration": 2.4,
           "videoWidth": 1920,
           "videoHeight": 1080,
@@ -3286,7 +3286,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5019,
+          "time": 0.5034,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3403,7 +3403,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5,
+          "time": 0.5015,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3481,7 +3481,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5,
+          "time": 0.506,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3605,7 +3605,7 @@
       },
       "selector": "#diversity",
       "frameTime": null,
-      "scrollY": 1885,
+      "scrollY": 1850,
       "visibleVideos": []
     },
     {
@@ -3617,7 +3617,7 @@
       },
       "selector": ".atlas-overview",
       "frameTime": null,
-      "scrollY": 2148,
+      "scrollY": 2114,
       "visibleVideos": []
     },
     {
@@ -3629,7 +3629,7 @@
       },
       "selector": "#diversity",
       "frameTime": null,
-      "scrollY": 1450,
+      "scrollY": 1417,
       "visibleVideos": []
     },
     {
@@ -3641,7 +3641,7 @@
       },
       "selector": ".atlas-overview",
       "frameTime": null,
-      "scrollY": 1727,
+      "scrollY": 1694,
       "visibleVideos": []
     },
     {
@@ -3653,7 +3653,7 @@
       },
       "selector": "#rgb-film",
       "frameTime": 16,
-      "scrollY": 1189,
+      "scrollY": 1154,
       "visibleVideos": [
         {
           "id": "rgb-film",
@@ -3679,7 +3679,7 @@
       },
       "selector": "#rgb-film",
       "frameTime": 16,
-      "scrollY": 877,
+      "scrollY": 844,
       "visibleVideos": [
         {
           "id": "rgb-film",
@@ -6991,11 +6991,11 @@
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/embedded-hero.css?v=35",
+          "href": "http://127.0.0.1:8787/embedded-hero.css?v=39",
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/rgb-collection.css?v=2",
+          "href": "http://127.0.0.1:8787/rgb-collection.css?v=3",
           "loaded": true
         }
       ]
@@ -7036,11 +7036,11 @@
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/embedded-hero.css?v=35",
+          "href": "http://127.0.0.1:8787/embedded-hero.css?v=39",
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/rgb-collection.css?v=2",
+          "href": "http://127.0.0.1:8787/rgb-collection.css?v=3",
           "loaded": true
         }
       ]
