@@ -1,9 +1,7 @@
 {
-  "commit": "298525fc2cf53632c215601ce7977871c97c37f1",
-  "passed": false,
-  "errors": [
-    "Failed to load resource: the server responded with a status of 404 (Not Found)"
-  ],
+  "commit": "ffd917c534e475bbfc9bd30e72684fa1aaf66f2b",
+  "passed": true,
+  "errors": [],
   "screenshots": [
     {
       "file": "live46-1440-auto.jpg",
@@ -42,10 +40,10 @@
         "mode": "manual",
         "zoom": 0.123,
         "renderedZoom": 0.123,
-        "phase": 2.049999999999982,
+        "phase": 2.149999999999982,
         "running": true,
-        "frames": 126,
-        "inputToFrameMs": 4.399999999965075,
+        "frames": 127,
+        "inputToFrameMs": 3.8999999999941792,
         "error": "",
         "camera": [
           6.860570330916161,
@@ -67,10 +65,10 @@
         "mode": "manual",
         "zoom": 0.124,
         "renderedZoom": 0.124,
-        "phase": 3.6499999999999835,
+        "phase": 3.7499999999999836,
         "running": true,
-        "frames": 142,
-        "inputToFrameMs": 2.6000000000349246,
+        "frames": 143,
+        "inputToFrameMs": 1.7000000000116415,
         "error": "",
         "camera": [
           6.864898545728725,
@@ -92,10 +90,10 @@
         "mode": "manual",
         "zoom": 0.381,
         "renderedZoom": 0.381,
-        "phase": 5.24999999999998,
+        "phase": 5.349999999999979,
         "running": true,
-        "frames": 158,
-        "inputToFrameMs": 2.400000000023283,
+        "frames": 159,
+        "inputToFrameMs": 3.1000000000058208,
         "error": "",
         "camera": [
           8.253255072153895,
@@ -120,7 +118,7 @@
         "phase": 6.849999999999974,
         "running": true,
         "frames": 174,
-        "inputToFrameMs": 7.7000000000116415,
+        "inputToFrameMs": 8.799999999988358,
         "error": "",
         "camera": [
           11.344843124980283,
@@ -145,7 +143,7 @@
         "phase": 8.449999999999969,
         "running": true,
         "frames": 190,
-        "inputToFrameMs": 13.900000000023283,
+        "inputToFrameMs": 14.200000000011642,
         "error": "",
         "camera": [
           19.19254438463071,
@@ -167,10 +165,10 @@
         "mode": "manual",
         "zoom": 0.401,
         "renderedZoom": 0.401,
-        "phase": 9.249999999999966,
+        "phase": 9.349999999999966,
         "running": false,
-        "frames": 217,
-        "inputToFrameMs": 2.5,
+        "frames": 218,
+        "inputToFrameMs": 3.2000000000116415,
         "error": "",
         "camera": [
           8.386725377346446,
@@ -190,17 +188,17 @@
         "ready": true,
         "loaded": 48,
         "mode": "auto",
-        "zoom": 0.4896574235757424,
-        "renderedZoom": 0.4896574235757424,
-        "phase": 0.24999999999996342,
+        "zoom": 0.4938438923438056,
+        "renderedZoom": 0.4938438923438056,
+        "phase": 0.44999999999996343,
         "running": true,
-        "frames": 249,
-        "inputToFrameMs": 2.5,
+        "frames": 251,
+        "inputToFrameMs": 3.2000000000116415,
         "error": "",
         "camera": [
-          9.028556452427095,
-          -0.00940676208321495,
-          7.311179794947752
+          9.060970310384436,
+          -0.00948718793560456,
+          7.339894524010078
         ],
         "triangles": 197566
       }
@@ -245,7 +243,7 @@
         "phase": 0,
         "running": false,
         "frames": 127,
-        "inputToFrameMs": 2.3999999999068677,
+        "inputToFrameMs": 6.7999999999883585,
         "error": "",
         "camera": [
           8.540074022740962,
@@ -270,7 +268,7 @@
         "phase": 0,
         "running": false,
         "frames": 143,
-        "inputToFrameMs": 1.8999999999068677,
+        "inputToFrameMs": 1.6999999999825377,
         "error": "",
         "camera": [
           8.5461714730487,
@@ -295,7 +293,7 @@
         "phase": 0,
         "running": false,
         "frames": 159,
-        "inputToFrameMs": 5.400000000023283,
+        "inputToFrameMs": 5.399999999994179,
         "error": "",
         "camera": [
           10.456959091012346,
@@ -320,7 +318,7 @@
         "phase": 0,
         "running": false,
         "frames": 175,
-        "inputToFrameMs": 6.299999999930151,
+        "inputToFrameMs": 6.600000000005821,
         "error": "",
         "camera": [
           14.694631546317158,
@@ -345,7 +343,7 @@
         "phase": 0,
         "running": false,
         "frames": 191,
-        "inputToFrameMs": 12.699999999953434,
+        "inputToFrameMs": 12.5,
         "error": "",
         "camera": [
           25.044777100555752,
@@ -370,7 +368,7 @@
         "phase": 0,
         "running": false,
         "frames": 208,
-        "inputToFrameMs": 4.299999999930151,
+        "inputToFrameMs": 4.7999999999883585,
         "error": "",
         "camera": [
           10.637325837240526,
@@ -395,7 +393,7 @@
         "phase": 1.0999999999999999,
         "running": true,
         "frames": 241,
-        "inputToFrameMs": 4.299999999930151,
+        "inputToFrameMs": 4.7999999999883585,
         "error": "",
         "camera": [
           11.54268539857383,
@@ -406,7 +404,8 @@
       }
     }
   ],
-  "checks": [],
-  "pagePath": "camera-study.html",
-  "failure": "AssertionError [ERR_ASSERTION]: [\"Failed to load resource: the server responded with a status of 404 (Not Found)\"]\n\n1 !== 0\n\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/camera-live-review.cjs:53:12"
+  "checks": [
+    "Real WebGL renderer;48 actual source episodes; arbitrary neighboring camera positions; no network on drag; independent action/camera clocks; paused camera navigation; continuous auto resume; desktop/mobile/reduced motion"
+  ],
+  "pagePath": "camera-study.html"
 }
