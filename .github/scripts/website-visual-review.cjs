@@ -744,27 +744,28 @@ saveReport();
         const page=await open({width,height},'reduce','research-preview-v31.html');
         const hero=await page.locator('#overview').boundingBox();assert(hero.y+hero.height<=height+1);
         await capture(page,'generation31-'+width+'-opening');
-        const times=width===1440?[0,6.7,8.8,10,16.5,23,28,31.96]:width===390?[0,11,23,31.96]:[0];
+        const times=width===1440?[0,6.7,8.8,10,16.5,23,24.2,24.44]:width===390?[0,11,23,24.44]:[0];
         for(const time of times)await capture(page,'generation31-'+width+'-'+String(time).replace('.','p'),'#hero-film',time);
         const state=await page.locator('#hero-film').evaluate(v=>({width:v.videoWidth,height:v.videoHeight,duration:v.duration,loop:v.loop,paused:v.paused}));
-        assert.equal(state.width,width<=700?1200:2400);assert.equal(state.height,width<=700?900:720);assert.equal(state.duration,32);assert(state.loop&&state.paused);
-        for(const chapter of [11,23,0]){
-          await page.locator('[data-gen-seek="'+chapter+'"]').click();
-          await page.waitForFunction(time=>{const v=document.getElementById('hero-film');return !v.paused&&v.currentTime>=time&&v.currentTime<time+2;},chapter);
-          await page.locator('#hero-film').evaluate(v=>v.pause());
-        }
+        assert.equal(state.width,width<=700?1200:2400);assert.equal(state.height,width<=700?900:720);assert.equal(state.duration,24.48);assert(state.loop&&state.paused);
+        assert.equal(await page.locator('#hero-film').evaluate(v=>v.controls),false);
+        assert.equal(await page.locator('[data-gen-seek], [data-expand="hero-film"], #overview input[type="range"]').count(),0);
+        await page.locator('#hero-toggle').click();
+        await page.waitForFunction(()=>!document.getElementById('hero-film').paused);
+        await page.locator('#hero-toggle').click();
+        assert(await page.locator('#hero-film').evaluate(v=>v.paused));
         await page.context().close();
       }
       const live=await open({width:1440,height:900},'no-preference','research-preview-v31.html');
       await live.waitForFunction(()=>{const v=document.getElementById('hero-film');return !v.paused&&v.currentTime>.3;});
-      await live.locator('#hero-film').evaluate(v=>v.currentTime=31.8);
+      await live.locator('#hero-film').evaluate(v=>v.currentTime=24.3);
       await live.waitForFunction(()=>{const v=document.getElementById('hero-film');return !v.paused&&v.currentTime<1;});
       await live.setViewportSize({width:390,height:844});
       await live.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.videoWidth===1200&&!v.paused;});
       await position(live,'#rgb-film');
       await live.waitForFunction(()=>!document.getElementById('rgb-film').paused&&document.getElementById('hero-film').paused);
       await live.context().close();
-      report.checks.push('Complete generation film: desktop/mobile 32s playback, chapter seeking, native loop crossing and exclusive handoff to the RGB dataset ribbon');
+      report.checks.push('Embedded generation film: desktop/mobile 24.48s automatic loop with direct scale-to-pair transition, no seek controls, play/pause and exclusive handoff to the RGB ribbon');
     }
     if(pagePath==='index.html'){
       const atlas=await(await desktop.request.get(new URL('assets/atlas32/manifest.json',origin).href)).json();

@@ -1,0 +1,46 @@
+{
+  "schema": "clothdojo_direct_generation_loop_v33",
+  "videos": {
+    "wide": {
+      "src": "generation-loop.mp4",
+      "width": 2400,
+      "height": 720,
+      "fps": 25,
+      "frames": 612,
+      "duration_seconds": 24.48,
+      "bytes": 6103229,
+      "sha256": "dcf62f8c3244dc828b3245594c2483170d43bf3ac8e5623c4063e8085a3f00cd",
+      "loop_step_mean_rgb": 0.8362197145061728,
+      "previous_step_mean_rgb": 1.5220266203703703
+    },
+    "mobile": {
+      "src": "generation-loop-mobile.mp4",
+      "width": 1200,
+      "height": 900,
+      "fps": 25,
+      "frames": 612,
+      "duration_seconds": 24.48,
+      "bytes": 2570264,
+      "sha256": "92b6d013d13cc9f80a915d852f5df575fdf23ceaf6df529dc78a2054b1be6258",
+      "loop_step_mean_rgb": 0.5580657407407408,
+      "previous_step_mean_rgb": 0.8733978395061729
+    }
+  },
+  "trajectory_count": 384,
+  "garment_asset_count": 202,
+  "source_manifest": "assets/studio31/manifest.json",
+  "source_manifest_sha256": "e306f381d1b67b0d5746ae71e717e9f0f6bf2b17b313fa0727bdfd42f53acdbf",
+  "edit": {
+    "outward_reveal_source_frames": [
+      0,
+      599
+    ],
+    "transition_output_frames": [
+      600,
+      611
+    ],
+    "transition": "0.48-second linear-light smoothstep dissolve from the fully visible 384-workcell source frames600\u2013611 to two-workcell source frames788\u2013799. No stepped return camera. This is editorial presentation, not uninterrupted physical time.",
+    "loop_boundary": "Last frame uses original source799; first uses source0, preserving the verified original camera and replay-state loop boundary."
+  },
+  "presentation": "25 actual rendered frames per second; saved task replay at2x with scripted released-arm home tails. Whole-group outward reveals unchanged. Studio footage is separate from the RGB dataset ribbon."
+}
