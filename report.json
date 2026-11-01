@@ -1,6 +1,6 @@
 {
-  "ref": "bf888471fee77f38686fbde17647ff9aefa2f6ea",
-  "commit": "bf888471fee77f38686fbde17647ff9aefa2f6ea",
+  "ref": "8475b9d6ef7ded059637d15bc84945166848a11f",
+  "commit": "8475b9d6ef7ded059637d15bc84945166848a11f",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -1920,7 +1920,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
-          "time": 1.1029,
+          "time": 1.1,
           "duration": 2.4,
           "videoWidth": 1920,
           "videoHeight": 1080,
@@ -2764,8 +2764,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 0.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -2790,8 +2790,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 0,
           "duration": 60,
           "videoWidth": 2400,
@@ -2816,8 +2816,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 9,
           "duration": 60,
           "videoWidth": 2400,
@@ -2842,8 +2842,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 10.4,
           "duration": 60,
           "videoWidth": 2400,
@@ -2868,8 +2868,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 10.8,
           "duration": 60,
           "videoWidth": 2400,
@@ -2894,8 +2894,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 11.8,
           "duration": 60,
           "videoWidth": 2400,
@@ -2920,8 +2920,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 13.4,
           "duration": 60,
           "videoWidth": 2400,
@@ -2946,8 +2946,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 14.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -2972,8 +2972,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 15.8,
           "duration": 60,
           "videoWidth": 2400,
@@ -2998,8 +2998,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 16.399999,
           "duration": 60,
           "videoWidth": 2400,
@@ -3024,8 +3024,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 17.4,
           "duration": 60,
           "videoWidth": 2400,
@@ -3050,8 +3050,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 19.4,
           "duration": 60,
           "videoWidth": 2400,
@@ -3076,8 +3076,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 20.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -3102,8 +3102,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 22.4,
           "duration": 60,
           "videoWidth": 2400,
@@ -3128,8 +3128,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 24,
           "duration": 60,
           "videoWidth": 2400,
@@ -3154,8 +3154,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 26.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -3180,8 +3180,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 28,
           "duration": 60,
           "videoWidth": 2400,
@@ -3206,8 +3206,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 29.8,
           "duration": 60,
           "videoWidth": 2400,
@@ -3232,8 +3232,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 30.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -3258,8 +3258,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 40.4,
           "duration": 60,
           "videoWidth": 2400,
@@ -3284,8 +3284,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 44.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -3310,8 +3310,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 59.96,
           "duration": 60,
           "videoWidth": 2400,
@@ -3336,8 +3336,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 0.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -3362,8 +3362,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 0,
           "duration": 60,
           "videoWidth": 2400,
@@ -3388,8 +3388,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 0.5,
           "duration": 60,
           "videoWidth": 1200,
@@ -3414,8 +3414,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 0,
           "duration": 60,
           "videoWidth": 1200,
@@ -3453,8 +3453,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 10.4,
           "duration": 60,
           "videoWidth": 1200,
@@ -3492,8 +3492,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 11.2,
           "duration": 60,
           "videoWidth": 1200,
@@ -3507,7 +3507,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5,
+          "time": 0.5028,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3531,8 +3531,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 13.8,
           "duration": 60,
           "videoWidth": 1200,
@@ -3570,9 +3570,48 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 14.8,
+          "duration": 60,
+          "videoWidth": 1200,
+          "videoHeight": 900,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        },
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "time": 0.5076,
+          "duration": 64,
+          "videoWidth": 640,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-390-17p4.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 17.4,
+      "scrollY": 194,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "time": 17.4,
           "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
@@ -3597,45 +3636,6 @@
       ]
     },
     {
-      "file": "generation31-390-17p4.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 17.4,
-      "scrollY": 194,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "time": 17.4,
-          "duration": 60,
-          "videoWidth": 1200,
-          "videoHeight": 900,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        },
-        {
-          "id": "rgb-film",
-          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5062,
-          "duration": 64,
-          "videoWidth": 640,
-          "videoHeight": 720,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        }
-      ]
-    },
-    {
       "file": "generation31-390-20p5.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
@@ -3648,8 +3648,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 20.5,
           "duration": 60,
           "videoWidth": 1200,
@@ -3687,8 +3687,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 24,
           "duration": 60,
           "videoWidth": 1200,
@@ -3702,7 +3702,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.501,
+          "time": 0.5,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3726,8 +3726,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 28,
           "duration": 60,
           "videoWidth": 1200,
@@ -3765,8 +3765,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 30.5,
           "duration": 60,
           "videoWidth": 1200,
@@ -3804,8 +3804,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 43.8,
           "duration": 60,
           "videoWidth": 1200,
@@ -3819,7 +3819,7 @@
           "id": "rgb-film",
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5099,
+          "time": 0.5065,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3843,8 +3843,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 59.96,
           "duration": 60,
           "videoWidth": 1200,
@@ -3882,8 +3882,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 0.5,
           "duration": 60,
           "videoWidth": 1200,
@@ -3908,8 +3908,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop-mobile.mp4",
           "time": 0,
           "duration": 60,
           "videoWidth": 1200,
@@ -3934,8 +3934,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 0.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -3960,8 +3960,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 0.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -3986,8 +3986,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 0.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -4012,8 +4012,8 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio44/generation-loop.mp4",
           "time": 0.5,
           "duration": 60,
           "videoWidth": 2400,
@@ -7528,7 +7528,7 @@
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/embedded-hero.css?v=40",
+          "href": "http://127.0.0.1:8787/embedded-hero.css?v=44",
           "loaded": true
         },
         {
@@ -7573,7 +7573,7 @@
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/embedded-hero.css?v=40",
+          "href": "http://127.0.0.1:8787/embedded-hero.css?v=44",
           "loaded": true
         },
         {
