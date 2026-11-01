@@ -1,6 +1,6 @@
 {
-  "ref": "e5aa4f8db722d75e205eb891b8897b802d5ae862",
-  "commit": "e5aa4f8db722d75e205eb891b8897b802d5ae862",
+  "ref": "bf888471fee77f38686fbde17647ff9aefa2f6ea",
+  "commit": "bf888471fee77f38686fbde17647ff9aefa2f6ea",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -492,7 +492,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop.mp4",
-          "time": 0.5,
+          "time": 0.5086,
           "duration": 32,
           "videoWidth": 2560,
           "videoHeight": 1440,
@@ -738,7 +738,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5,
+          "time": 0.5044,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
@@ -990,7 +990,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5,
+          "time": 0.5067,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
@@ -1920,7 +1920,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
-          "time": 1.1,
+          "time": 1.106,
           "duration": 2.4,
           "videoWidth": 1920,
           "videoHeight": 1080,
@@ -2068,7 +2068,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio27/white-handoff.mp4",
-          "time": 1.1,
+          "time": 1.1077,
           "duration": 2.4,
           "videoWidth": 1920,
           "videoHeight": 1080,
@@ -2764,10 +2764,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
           "time": 0.5,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -2790,10 +2790,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
           "time": 0,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -2816,10 +2816,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
           "time": 9,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -2830,22 +2830,48 @@
       ]
     },
     {
-      "file": "generation31-1440-11p4.jpg",
+      "file": "generation31-1440-10p4.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 11.4,
+      "frameTime": 10.4,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 11.4,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 10.4,
+          "duration": 60,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-10p8.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 10.8,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 10.8,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -2868,88 +2894,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
           "time": 11.8,
-          "duration": 48,
-          "videoWidth": 2400,
-          "videoHeight": 840,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "generation31-1440-12p2.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 1440,
-        "height": 900
-      },
-      "selector": "#hero-film",
-      "frameTime": 12.2,
-      "scrollY": 234,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 12.2,
-          "duration": 48,
-          "videoWidth": 2400,
-          "videoHeight": 840,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "generation31-1440-12p6.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 1440,
-        "height": 900
-      },
-      "selector": "#hero-film",
-      "frameTime": 12.6,
-      "scrollY": 234,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 12.6,
-          "duration": 48,
-          "videoWidth": 2400,
-          "videoHeight": 840,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "generation31-1440-13.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 1440,
-        "height": 900
-      },
-      "selector": "#hero-film",
-      "frameTime": 13,
-      "scrollY": 234,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 13,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -2972,10 +2920,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
           "time": 13.4,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -2986,22 +2934,22 @@
       ]
     },
     {
-      "file": "generation31-1440-14p4.jpg",
+      "file": "generation31-1440-14p5.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 14.4,
+      "frameTime": 14.5,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 14.4,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 14.5,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3024,10 +2972,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
           "time": 15.8,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3038,22 +2986,22 @@
       ]
     },
     {
-      "file": "generation31-1440-17p2.jpg",
+      "file": "generation31-1440-16p4.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 17.2,
+      "frameTime": 16.4,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 17.2,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 16.399999,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3064,22 +3012,22 @@
       ]
     },
     {
-      "file": "generation31-1440-19.jpg",
+      "file": "generation31-1440-17p4.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 19,
+      "frameTime": 17.4,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 19,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 17.4,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3090,22 +3038,22 @@
       ]
     },
     {
-      "file": "generation31-1440-20p8.jpg",
+      "file": "generation31-1440-19p4.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 20.8,
+      "frameTime": 19.4,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 20.8,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 19.4,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3116,22 +3064,22 @@
       ]
     },
     {
-      "file": "generation31-1440-22p5.jpg",
+      "file": "generation31-1440-20p5.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 22.5,
+      "frameTime": 20.5,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 22.5,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 20.5,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3142,22 +3090,22 @@
       ]
     },
     {
-      "file": "generation31-1440-24p5.jpg",
+      "file": "generation31-1440-22p4.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 24.5,
+      "frameTime": 22.4,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 24.5,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 22.4,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3168,22 +3116,22 @@
       ]
     },
     {
-      "file": "generation31-1440-35p8.jpg",
+      "file": "generation31-1440-24.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 35.8,
+      "frameTime": 24,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 35.8,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 24,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3194,22 +3142,22 @@
       ]
     },
     {
-      "file": "generation31-1440-36p6.jpg",
+      "file": "generation31-1440-26p5.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 36.6,
+      "frameTime": 26.5,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 36.6,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 26.5,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3220,22 +3168,22 @@
       ]
     },
     {
-      "file": "generation31-1440-46.jpg",
+      "file": "generation31-1440-28.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 46,
+      "frameTime": 28,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 46,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 28,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3246,22 +3194,126 @@
       ]
     },
     {
-      "file": "generation31-1440-47p96.jpg",
+      "file": "generation31-1440-29p8.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 1440,
         "height": 900
       },
       "selector": "#hero-film",
-      "frameTime": 47.96,
+      "frameTime": 29.8,
       "scrollY": 234,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "time": 47.96,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 29.8,
+          "duration": 60,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-30p5.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 30.5,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 30.5,
+          "duration": 60,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-40p4.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 40.4,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 40.4,
+          "duration": 60,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-44p5.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 44.5,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 44.5,
+          "duration": 60,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-1440-59p96.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "selector": "#hero-film",
+      "frameTime": 59.96,
+      "scrollY": 234,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 59.96,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3284,10 +3336,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
           "time": 0.5,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3310,10 +3362,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
           "time": 0,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3336,10 +3388,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
           "time": 0.5,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3362,10 +3414,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
           "time": 0,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3389,22 +3441,22 @@
       ]
     },
     {
-      "file": "generation31-390-9.jpg",
+      "file": "generation31-390-10p4.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 9,
+      "frameTime": 10.4,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 9,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 10.4,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3428,22 +3480,22 @@
       ]
     },
     {
-      "file": "generation31-390-11p8.jpg",
+      "file": "generation31-390-11p2.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 11.8,
+      "frameTime": 11.2,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 11.8,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 11.2,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3467,61 +3519,22 @@
       ]
     },
     {
-      "file": "generation31-390-12p6.jpg",
+      "file": "generation31-390-13p8.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 12.6,
+      "frameTime": 13.8,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 12.6,
-          "duration": 48,
-          "videoWidth": 1200,
-          "videoHeight": 900,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        },
-        {
-          "id": "rgb-film",
-          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.503,
-          "duration": 64,
-          "videoWidth": 640,
-          "videoHeight": 720,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "generation31-390-13p2.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 13.2,
-      "scrollY": 194,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 13.2,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 13.8,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3545,22 +3558,22 @@
       ]
     },
     {
-      "file": "generation31-390-16p6.jpg",
+      "file": "generation31-390-14p8.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 16.6,
+      "frameTime": 14.8,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 16.6,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 14.8,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3584,22 +3597,22 @@
       ]
     },
     {
-      "file": "generation31-390-20p6.jpg",
+      "file": "generation31-390-17p4.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 20.6,
+      "frameTime": 17.4,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 20.6,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 17.4,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3623,61 +3636,22 @@
       ]
     },
     {
-      "file": "generation31-390-22p5.jpg",
+      "file": "generation31-390-20p5.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 22.5,
+      "frameTime": 20.5,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 22.5,
-          "duration": 48,
-          "videoWidth": 1200,
-          "videoHeight": 900,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        },
-        {
-          "id": "rgb-film",
-          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5027,
-          "duration": 64,
-          "videoWidth": 640,
-          "videoHeight": 720,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "generation31-390-24p5.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 24.5,
-      "scrollY": 194,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 24.5,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 20.5,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3701,22 +3675,61 @@
       ]
     },
     {
-      "file": "generation31-390-34.jpg",
+      "file": "generation31-390-24.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 34,
+      "frameTime": 24,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 34,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 24,
+          "duration": 60,
+          "videoWidth": 1200,
+          "videoHeight": 900,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        },
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "time": 0.509,
+          "duration": 64,
+          "videoWidth": 640,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-390-28.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 28,
+      "scrollY": 194,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 28,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3740,61 +3753,22 @@
       ]
     },
     {
-      "file": "generation31-390-46.jpg",
+      "file": "generation31-390-30p5.jpg",
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "selector": "#hero-film",
-      "frameTime": 46,
+      "frameTime": 30.5,
       "scrollY": 194,
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 46,
-          "duration": 48,
-          "videoWidth": 1200,
-          "videoHeight": 900,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        },
-        {
-          "id": "rgb-film",
-          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
-          "time": 0.5014,
-          "duration": 64,
-          "videoWidth": 640,
-          "videoHeight": 720,
-          "readyState": 4,
-          "seeking": false,
-          "controls": false,
-          "paused": true
-        }
-      ]
-    },
-    {
-      "file": "generation31-390-47p96.jpg",
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "selector": "#hero-film",
-      "frameTime": 47.96,
-      "scrollY": 194,
-      "visibleVideos": [
-        {
-          "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "time": 47.96,
-          "duration": 48,
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 30.5,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3807,6 +3781,84 @@
           "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
           "time": 0.5,
+          "duration": 64,
+          "videoWidth": 640,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-390-43p8.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 43.8,
+      "scrollY": 194,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 43.8,
+          "duration": 60,
+          "videoWidth": 1200,
+          "videoHeight": 900,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        },
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "time": 0.5,
+          "duration": 64,
+          "videoWidth": 640,
+          "videoHeight": 720,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation31-390-59p96.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "selector": "#hero-film",
+      "frameTime": 59.96,
+      "scrollY": 194,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "time": 59.96,
+          "duration": 60,
+          "videoWidth": 1200,
+          "videoHeight": 900,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        },
+        {
+          "id": "rgb-film",
+          "src": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/rgb34/ribbon-mobile.mp4",
+          "time": 0.502,
           "duration": 64,
           "videoWidth": 640,
           "videoHeight": 720,
@@ -3830,10 +3882,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
           "time": 0.5,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3856,10 +3908,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop-mobile.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop-mobile.mp4",
           "time": 0,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 1200,
           "videoHeight": 900,
           "readyState": 4,
@@ -3882,10 +3934,10 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
           "time": 0.5,
-          "duration": 48,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -3908,10 +3960,62 @@
       "visibleVideos": [
         {
           "id": "hero-film",
-          "src": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
-          "currentSrc": "http://127.0.0.1:8787/assets/studio37/generation-loop.mp4",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
           "time": 0.5,
-          "duration": 48,
+          "duration": 60,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation35-1724-opening.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 1724,
+        "height": 756
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 0.5,
+          "duration": 60,
+          "videoWidth": 2400,
+          "videoHeight": 840,
+          "readyState": 4,
+          "seeking": false,
+          "controls": false,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "file": "generation35-3448-opening.jpg",
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "viewport": {
+        "width": 3448,
+        "height": 1512
+      },
+      "selector": "page top",
+      "frameTime": null,
+      "scrollY": 0,
+      "visibleVideos": [
+        {
+          "id": "hero-film",
+          "src": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "currentSrc": "http://127.0.0.1:8787/assets/studio40/generation-loop.mp4",
+          "time": 0.5,
+          "duration": 60,
           "videoWidth": 2400,
           "videoHeight": 840,
           "readyState": 4,
@@ -6722,7 +6826,14 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-11p4",
+      "label": "generation31-1440-10p4",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-10p8",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
@@ -6736,27 +6847,6 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-12p2",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-12p6",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-13",
-      "width": 1440,
-      "scrollWidth": 1440,
-      "overflow": []
-    },
-    {
-      "page": "http://127.0.0.1:8787/research-preview-v31.html",
       "label": "generation31-1440-13p4",
       "width": 1440,
       "scrollWidth": 1440,
@@ -6764,7 +6854,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-14p4",
+      "label": "generation31-1440-14p5",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
@@ -6778,63 +6868,91 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-17p2",
+      "label": "generation31-1440-16p4",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-19",
+      "label": "generation31-1440-17p4",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-20p8",
+      "label": "generation31-1440-19p4",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-22p5",
+      "label": "generation31-1440-20p5",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-24p5",
+      "label": "generation31-1440-22p4",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-35p8",
+      "label": "generation31-1440-24",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-36p6",
+      "label": "generation31-1440-26p5",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-46",
+      "label": "generation31-1440-28",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-1440-47p96",
+      "label": "generation31-1440-29p8",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-30p5",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-40p4",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-44p5",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation31-1440-59p96",
       "width": 1440,
       "scrollWidth": 1440,
       "overflow": []
@@ -6873,7 +6991,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-9",
+      "label": "generation31-390-10p4",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6882,7 +7000,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-11p8",
+      "label": "generation31-390-11p2",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6891,7 +7009,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-12p6",
+      "label": "generation31-390-13p8",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6900,7 +7018,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-13p2",
+      "label": "generation31-390-14p8",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6909,7 +7027,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-16p6",
+      "label": "generation31-390-17p4",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6918,7 +7036,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-20p6",
+      "label": "generation31-390-20p5",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6927,7 +7045,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-22p5",
+      "label": "generation31-390-24",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6936,7 +7054,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-24p5",
+      "label": "generation31-390-28",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6945,7 +7063,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-34",
+      "label": "generation31-390-30p5",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6954,7 +7072,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-46",
+      "label": "generation31-390-43p8",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -6963,7 +7081,7 @@
     },
     {
       "page": "http://127.0.0.1:8787/research-preview-v31.html",
-      "label": "generation31-390-47p96",
+      "label": "generation31-390-59p96",
       "width": 390,
       "scrollWidth": 390,
       "overflow": [
@@ -7022,6 +7140,20 @@
       "label": "generation35-1366-opening",
       "width": 1366,
       "scrollWidth": 1366,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation35-1724-opening",
+      "width": 1724,
+      "scrollWidth": 1724,
+      "overflow": []
+    },
+    {
+      "page": "http://127.0.0.1:8787/research-preview-v31.html",
+      "label": "generation35-3448-opening",
+      "width": 3448,
+      "scrollWidth": 3448,
       "overflow": []
     },
     {
@@ -7396,7 +7528,7 @@
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/embedded-hero.css?v=39",
+          "href": "http://127.0.0.1:8787/embedded-hero.css?v=40",
           "loaded": true
         },
         {
@@ -7441,7 +7573,7 @@
           "loaded": true
         },
         {
-          "href": "http://127.0.0.1:8787/embedded-hero.css?v=39",
+          "href": "http://127.0.0.1:8787/embedded-hero.css?v=40",
           "loaded": true
         },
         {
@@ -7728,7 +7860,7 @@
     "White panoramic banner: entire closed hero fits seven viewport sizes, full width, uncropped source, pure-white page and real desktop/mobile motion",
     "Finite-workcell study: centred two-task opening, 48/384 complete-group views, one-screen desktop/mobile and a real whole-group reveal excerpt",
     "Research UI and original cam_high ribbon: one-screen title, consistent evidence sections, matched mobile clock, autoplay/reduced-motion, dialog and 72-second media loop",
-    "Two-case ambient hero: 48s loop, 20:7 desktop framing, direct case transitions, no seek controls, play/pause and immediate handoff to RGB",
+    "Two-case ambient hero: 60s loop, departure-driven fades, active camera holds, soft white edges, direct case transitions, passive controls and RGB handoff",
     "White asset atlas: 500 real assets, retained subject pixels/contact shadows, decoded pure-white edge, no card border or mobile crop",
     "Larger RGB collection: 96 source episodes, 18 desktop/6 mobile panels, 64s loop, pause-only controls and noninteractive asset display before results"
   ],
