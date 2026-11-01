@@ -2,6 +2,7 @@
 .research30 .embedded-generation{display:block;flex:none;margin-top:12px}
 .research30 .embedded-generation .scene-media{width:100%;height:auto;max-height:none;aspect-ratio:20/7;object-fit:contain}
 .research30 .embedded-generation figcaption{margin-top:4px}
+.research30 .embedded-generation figcaption,.research30 .rgb-ribbon figcaption,.research30 .transfer-film figcaption{display:flex;justify-content:flex-end;align-items:center}
 .research30 [data-ambient-toggle]{border:1px solid var(--line);border-radius:50px;background:#fff;color:var(--text);font-size:11px;padding:5px 14px;min-width:62px}
 @media(min-width:1101px) and (max-height:800px){.research30 .hero{padding-top:6px;padding-bottom:4px}.research30 .studio-wordmark{font-size:48px}.research30 .studio-paper-title{font-size:21px;line-height:1.15;margin-top:5px}.research30 .hero-intro{margin-top:5px}.research30 .hero-intro p{font-size:12px}.research30 .embedded-generation{margin-top:8px}.research30 #hero-toggle{font-size:10px;line-height:1.4;padding:3px 12px}.research30 .hero-about>summary{font-size:9px;line-height:1.4;padding-block:0}}
 @media(max-width:700px){.research30 .embedded-generation .scene-media{aspect-ratio:4/3}.research30 .rgb-ribbon video{aspect-ratio:8/9}}
