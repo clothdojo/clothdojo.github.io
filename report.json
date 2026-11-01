@@ -1,6 +1,6 @@
 {
-  "ref": "7a7cdb48dce16cbeffc566757ddff95252f5d5a4",
-  "commit": "7a7cdb48dce16cbeffc566757ddff95252f5d5a4",
+  "ref": "fdcf910d0953d555abc5a1109f69bfd05d7fe21a",
+  "commit": "fdcf910d0953d555abc5a1109f69bfd05d7fe21a",
   "pagePath": "index.html",
   "passed": true,
   "status": "completed",
@@ -990,7 +990,7 @@
           "id": "hero-film",
           "src": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
           "currentSrc": "http://127.0.0.1:8787/assets/studio26/experience-loop-portrait.mp4",
-          "time": 0.5085,
+          "time": 0.5,
           "duration": 32,
           "videoWidth": 1080,
           "videoHeight": 1350,
