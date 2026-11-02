@@ -82,12 +82,13 @@
   try{
    // The destination was already decoded during prepare(); do not seek again
    // at the handoff and stall the final camera frame.
+   let firstFrame=destination.currentTime;
    if(running&&!document.hidden){
-    const presented=new Promise(resolve=>destination.requestVideoFrameCallback(resolve));
-    await destination.play();await presented;
+    const presented=new Promise(resolve=>destination.requestVideoFrameCallback((_now,frame)=>resolve(frame.mediaTime)));
+    await destination.play();firstFrame=await presented;
    }
    bridge.pause();show(destination);current=flight.to;stage='loop';elapsed=0;lastTime=destination.currentTime;
-   lastTransition.landedPhase=destination.currentTime;lastTransition.expectedPhase=flight.record.end_phase;lastTransition.landingSkew=Math.abs(diff(destination.currentTime,flight.record.end_phase));lastTransition.landedAt=performance.now();
+   lastTransition.landedPhase=destination.currentTime;lastTransition.destinationFirstFrame=firstFrame;lastTransition.expectedPhase=flight.record.end_phase;lastTransition.landingSkew=Math.abs(diff(firstFrame,flight.record.end_phase));lastTransition.landedAt=performance.now();
    transitions.push({...lastTransition});if(transitions.length>30)transitions.shift();inFlight=null;
    if(!running||document.hidden)destination.pause();
    bridge.removeAttribute('src');bridge.load();ui();
