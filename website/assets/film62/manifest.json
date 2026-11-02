@@ -24,7 +24,7 @@
       -2.22460584200135e-16,
       0.7043540966787896
     ],
-    "camera_focal_length": 35.0
+    "camera_focal_length": 35
   },
   "cases": [
     {
@@ -420,5 +420,21 @@
       "render_manifest_sha256": "e1904f32eb383a8603bb83b1020e5ce186853ab391deaebd7421ea752ee8d043"
     }
   ],
-  "presentation": "Fixed camera and two fixed worktables throughout. Each round compares flattening on the left and folding on the right of the same garment identity and colour. Six garment identities, twelve unique recorded trajectories. Each real successful released endpoint is retained, followed by38 native frames of scripted robot home and12frames of stationary home hold. Only the last12home frames dissolve to the next asset initial state; final frame equals next case native frame0, followed by native frame1. Original cloth meshes/cotton,1600x560,25fps native Isaac rendering. No camera animation, scale reveal, geometry simplification, per-case retiming or image resizing. Film uses2x source replay; resets, home and asset dissolves are presentation, not claims of live generation."
+  "presentation": "Fixed camera and two fixed worktables throughout. Each round compares flattening on the left and folding on the right of the same garment identity and colour. Six garment identities, twelve unique recorded trajectories. Each real successful released endpoint is retained, followed by38 native frames of scripted robot home and12frames of stationary home hold. Only the last12home frames dissolve to the next asset initial state; final frame equals next case native frame0, followed by native frame1. Original cloth meshes/cotton,1600x560,25fps native Isaac rendering. No camera animation, scale reveal, geometry simplification, per-case retiming or image resizing. Film uses2x source replay; resets, home and asset dissolves are presentation, not claims of live generation.",
+  "generation": {
+    "kind": "learned_policy_rollout",
+    "observation": "NOCS",
+    "policies": {
+      "flatten": {
+        "checkpoint_sha256": "b54e8fe54f025a9d3a7196b79be080ee3afc2ada8f2de4c57a7e5b3b5cd187b0",
+        "backend": "rlinf-sft"
+      },
+      "fold": {
+        "checkpoint_sha256": "85f439da84ee971be6b0ea5e04fc6e7eec4dc563628e70089a6468173afcfbe3",
+        "backend": "rlinf-sft"
+      }
+    },
+    "training": "Policies trained using human demonstrations and corrections; displayed task actions are generated policy rollouts.",
+    "presentation": "Isaac re-rendering of saved successful policy trajectories; home returns and asset dissolves are scripted presentation."
+  }
 }

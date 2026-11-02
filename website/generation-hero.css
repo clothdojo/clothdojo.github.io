@@ -1,0 +1,13 @@
+/* The approved fixed-camera film shares the white page ground. */
+.launch{background:#fff}
+.launch .site-header{background:#fffffff5}
+.launch .hero{height:auto;min-height:0;padding:18px 0 14px;display:block}
+.launch .hero .studio-wordmark{font-size:clamp(48px,5.5vw,80px);line-height:1.1}
+.launch .hero .studio-paper-title{font-size:clamp(19px,1.7vw,25px);line-height:1.2}
+.launch .hero-intro{margin-top:12px;align-items:center}
+.launch .hero-intro p{font-size:13px;line-height:1.5}
+.launch .hero .embedded-generation{display:block;margin-top:14px}
+.hero-task-labels{display:grid;grid-template-columns:1fr 1fr;width:min(66.6667%,calc(max(160px,calc(100svh - 400px))*1.9047619));margin:0 auto 4px;text-align:center;color:var(--muted);font-size:11px;line-height:1.5}
+#hero-film{display:block;width:100%;height:auto;min-height:0;max-height:max(160px,calc(100svh - 400px));aspect-ratio:20/7;object-fit:contain;object-position:center;background:#fff;border-radius:0;pointer-events:none}
+.launch .hero-about{margin-top:8px}
+@media(max-width:700px){.launch .hero{padding-top:18px}.launch .hero-intro p{font-size:12px}.hero-task-labels{font-size:10px}.launch .hero .embedded-generation{margin-top:16px}}
