@@ -9,7 +9,7 @@
  const wrap=t=>((t%10)+10)%10,diff=(a,b)=>wrap(a-b+5)-5;
  function ui(){
   root.setAttribute('aria-busy',String(!ready));root.dataset.stage=stage;root.dataset.distance=current;
-  document.querySelectorAll('[data-distance]').forEach(b=>{b.disabled=!ready;b.setAttribute('aria-pressed',String(b.dataset.distance===wanted));});
+  document.querySelectorAll('button[data-distance]').forEach(b=>{b.disabled=!ready;b.setAttribute('aria-pressed',String(b.dataset.distance===wanted));});
   autoButton.disabled=!ready;playButton.disabled=!ready;autoButton.setAttribute('aria-pressed',String(mode==='auto'));
   playButton.textContent=running?'暂停动作':'继续动作';
   label.textContent=stage==='bridge'?names[inFlight.from]+' → '+names[inFlight.to]:(mode==='manual'?'已固定':'自动 · ')+names[current]+' · 动作循环';
@@ -99,7 +99,7 @@
    video.requestVideoFrameCallback(presented);
   };video.requestVideoFrameCallback(presented);
  }
- document.querySelectorAll('[data-distance]').forEach(b=>b.addEventListener('click',()=>request(b.dataset.distance,true)));
+ document.querySelectorAll('button[data-distance]').forEach(b=>b.addEventListener('click',()=>request(b.dataset.distance,true)));
  autoButton.addEventListener('click',()=>{mode=mode==='auto'?'manual':'auto';elapsed=0;wanted=current;if(stage==='loop')cancelPending();ui();});
  playButton.addEventListener('click',async()=>{
   running=!running;ui();if(!running){all.forEach(v=>v.pause());return;}
