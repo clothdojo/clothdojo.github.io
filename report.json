@@ -1,8 +1,8 @@
 {
-  "commit": "89613074c5b9390d2c7dcfb3a42876389c436ee9",
+  "commit": "05f0bae074a4380ef9e5f57813d8a97fd0462ca6",
   "passed": false,
   "errors": [
-    "page.waitForFunction: Timeout 15000ms exceeded.\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/homepage-film-review.cjs:38:15"
+    "page.waitForFunction: Timeout 30000ms exceeded.\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/homepage-film-review.cjs:65:66"
   ],
   "screenshots": [
     {
@@ -178,6 +178,56 @@
       "file": "card-1440-5.jpg",
       "width": 1440,
       "card": 5
+    },
+    {
+      "file": "card-1440-6.jpg",
+      "width": 1440,
+      "card": 6
+    },
+    {
+      "file": "card-1440-7.jpg",
+      "width": 1440,
+      "card": 7
+    },
+    {
+      "file": "card-390-0.jpg",
+      "width": 390,
+      "card": 0
+    },
+    {
+      "file": "card-390-1.jpg",
+      "width": 390,
+      "card": 1
+    },
+    {
+      "file": "card-390-2.jpg",
+      "width": 390,
+      "card": 2
+    },
+    {
+      "file": "card-390-3.jpg",
+      "width": 390,
+      "card": 3
+    },
+    {
+      "file": "card-390-4.jpg",
+      "width": 390,
+      "card": 4
+    },
+    {
+      "file": "card-390-5.jpg",
+      "width": 390,
+      "card": 5
+    },
+    {
+      "file": "card-390-6.jpg",
+      "width": 390,
+      "card": 6
+    },
+    {
+      "file": "card-390-7.jpg",
+      "width": 390,
+      "card": 7
     }
   ],
   "checks": [
@@ -288,7 +338,34 @@
       "noHeroControls": true,
       "whiteGround": true,
       "reducedMotion": true
+    },
+    {
+      "width": 1440,
+      "horizontalCards": 8,
+      "arrows": true,
+      "dots": true,
+      "keyboard": true,
+      "deepLinks": true,
+      "noDocumentOverflow": true
+    },
+    {
+      "width": 390,
+      "horizontalCards": 8,
+      "arrows": true,
+      "dots": true,
+      "keyboard": true,
+      "deepLinks": true,
+      "noDocumentOverflow": true
+    },
+    {
+      "width": 1440,
+      "fullLoop": true,
+      "seamMeanRgbDifference": 0.16666666666666666,
+      "maxFrameGap": 0.08000000000000007,
+      "exclusiveAmbientPlayback": true
     }
   ],
-  "recordings": []
+  "recordings": [
+    "homepage-loop-1440.webm"
+  ]
 }
