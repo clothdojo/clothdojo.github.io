@@ -35,7 +35,7 @@
   await update(()=>buffer.appendBuffer(data));timeline.push({...entry,start:end,end:end+entry.frames/25});end+=entry.frames/25;
  }
  function at(time){return timeline.find(e=>time>=e.start-.0001&&time<e.end-.0001)||timeline[timeline.length-1];}
- function phaseAt(time){const e=at(time);return e?((e.phase+time-e.start)%10+10)%10:0;}
+ function phaseAt(time){const e=at(time);if(!e)return 0;const phase=((e.phase+time-e.start)%10+10)%10;return phase>10-.00001?0:phase;}
  async function fill(){
   if(busy||!buffer||error)return;busy=true;
   try{
