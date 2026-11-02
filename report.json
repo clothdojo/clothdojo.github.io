@@ -1,5 +1,5 @@
 {
-  "commit": "b15d6d05cf6f0cc37af0cd15eb00bcf2217bd0a3",
+  "commit": "8adec72a59c453d54e7185f7943ab1fdccc26d80",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -12,7 +12,7 @@
         "x": 0,
         "y": 74,
         "width": 1440,
-        "height": 728.484375
+        "height": 747.984375
       }
     },
     {
@@ -24,7 +24,7 @@
         "x": 0,
         "y": 74,
         "width": 1280,
-        "height": 526.546875
+        "height": 546.046875
       }
     },
     {
@@ -36,7 +36,7 @@
         "x": 0,
         "y": 74,
         "width": 1920,
-        "height": 902
+        "height": 921.5
       }
     },
     {
@@ -48,7 +48,7 @@
         "x": 0,
         "y": 74,
         "width": 1724,
-        "height": 607
+        "height": 626.5
       }
     },
     {
@@ -60,7 +60,7 @@
         "x": 0,
         "y": 62,
         "width": 390,
-        "height": 366.6875
+        "height": 384.6875
       }
     },
     {
@@ -72,7 +72,7 @@
         "x": 0,
         "y": 62,
         "width": 320,
-        "height": 342.1875
+        "height": 360.1875
       }
     },
     {
@@ -84,7 +84,7 @@
         "x": 0,
         "y": 74,
         "width": 1440,
-        "height": 728.484375
+        "height": 747.984375
       }
     },
     {
@@ -96,7 +96,7 @@
         "x": 0,
         "y": 74,
         "width": 1280,
-        "height": 526.546875
+        "height": 546.046875
       }
     },
     {
@@ -108,7 +108,7 @@
         "x": 0,
         "y": 74,
         "width": 1920,
-        "height": 902
+        "height": 921.5
       }
     },
     {
@@ -120,7 +120,7 @@
         "x": 0,
         "y": 74,
         "width": 1724,
-        "height": 607
+        "height": 626.5
       }
     },
     {
@@ -132,7 +132,7 @@
         "x": 0,
         "y": 62,
         "width": 390,
-        "height": 366.6875
+        "height": 384.6875
       }
     },
     {
@@ -144,7 +144,7 @@
         "x": 0,
         "y": 62,
         "width": 320,
-        "height": 342.1875
+        "height": 360.1875
       }
     },
     {
@@ -161,11 +161,6 @@
       "file": "card-1440-2.jpg",
       "width": 1440,
       "card": 2
-    },
-    {
-      "file": "card-1440-3.jpg",
-      "width": 1440,
-      "card": 3
     },
     {
       "file": "code-1440.jpg",
@@ -186,11 +181,6 @@
       "file": "card-390-2.jpg",
       "width": 390,
       "card": 2
-    },
-    {
-      "file": "card-390-3.jpg",
-      "width": 390,
-      "card": 3
     },
     {
       "file": "code-390.jpg",
@@ -309,7 +299,7 @@
     },
     {
       "width": 1440,
-      "horizontalCards": 4,
+      "horizontalCards": 3,
       "staticCode": true,
       "arrows": true,
       "dots": true,
@@ -319,7 +309,7 @@
     },
     {
       "width": 390,
-      "horizontalCards": 4,
+      "horizontalCards": 3,
       "staticCode": true,
       "arrows": true,
       "dots": true,
@@ -331,7 +321,7 @@
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.08000000000000002,
+      "maxFrameGap": 0.08000000000000007,
       "exclusiveAmbientPlayback": true
     },
     {
