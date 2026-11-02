@@ -19,7 +19,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    const time=width===1440?25.32:3;await video.evaluate(async(v,t)=>{v.currentTime=t;await new Promise(resolve=>v.addEventListener('seeked',resolve,{once:true}));},time);
    const file=target.replace('.html','')+'-'+width+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,target,width,height,bounds});
    await page.locator('#about summary').click();assert.match(await page.locator('#about').innerText(),/model-generated|generated in simulation/i);
-   assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.slice(0,5).map(x=>x.id)),['overview','rgb','diversity','results','method']);
+   assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.slice(0,5).map(x=>x.id)),['overview','diversity','rgb','results','method']);
    assert(await page.locator('body').evaluate(b=>b.classList.contains('research30')),'Keep the approved research design at the official entry');
    assert.equal(await page.locator('#diversity .atlas-overview a, #diversity a.atlas-overview').count(),0,'The garment overview remains presentation-only');
    report.checks.push({target,width,height,oneViewport:true,noHeroControls:true,whiteGround:true,reducedMotion:true});await context.close();save();
