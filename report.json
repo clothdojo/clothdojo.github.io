@@ -359,7 +359,7 @@
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.07999999999999996,
+      "maxFrameGap": 0.08000000000000007,
       "exclusiveAmbientPlayback": true
     },
     {
