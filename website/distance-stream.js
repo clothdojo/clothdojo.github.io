@@ -33,6 +33,7 @@
   await update(()=>buffer.appendBuffer(data));timeline.push({...entry,start:end,end:end+entry.frames/25});end+=entry.frames/25;
  }
  function at(time){return timeline.find(e=>time>=e.start-.0001&&time<e.end-.0001)||timeline[timeline.length-1];}
+ function phaseAt(time){const e=at(time);return e?((e.phase+time-e.start)%10+10)%10:0;}
  async function fill(){
   if(busy||!buffer||error)return;busy=true;
   try{
@@ -72,7 +73,7 @@
    }else{
     const changed=current!==e.view;
     if(stage==='bridge'){
-     transitions.push({from:transition.from,to:transition.to,start:transition.start,end:transition.end,firstFrame:transition.presentedAt,presentedFrames:transition.presentedFrames,landingFrame:frame.mediaTime,expectedLanding:transition.end});if(transitions.length>30)transitions.shift();landedAt=frame.mediaTime;
+     transitions.push({from:transition.from,to:transition.to,start:transition.start,end:transition.end,firstFrame:transition.presentedAt,presentedFrames:transition.presentedFrames,expectedFrames:transition.frames,landingFrame:frame.mediaTime,expectedLanding:transition.end});if(transitions.length>30)transitions.shift();landedAt=frame.mediaTime;
     }current=e.view;stage='loop';if(changed)prefetch(current);
    }
    presentations.push({time:frame.mediaTime,wall:now,kind:e.kind});if(presentations.length>160)presentations.shift();
@@ -80,8 +81,9 @@
   }
   fill();video.requestVideoFrameCallback(presented);
  });
- Object.defineProperty(window,'distanceStudy',{value:{get state(){const e=at(video.currentTime);return {ready,current,wanted,mode,running,stage,error,phase:e?((e.phase+video.currentTime-e.start)%10+10)%10:0,playing:video.paused?0:1,bufferAhead:end-video.currentTime,cachedBytes:cacheBytes,transitions:transitions.map(x=>({...x})),presentations:presentations.map(x=>({...x})),waits:[...waits],lastTransition:transitions.at(-1),stream:true};}}});
+ Object.defineProperty(window,'distanceStudy',{value:{phaseAt,get state(){const e=at(video.currentTime);return {ready,current,wanted,mode,running,stage,error,phase:phaseAt(video.currentTime),playing:video.paused?0:1,bufferAhead:end-video.currentTime,cachedBytes:cacheBytes,transitions:transitions.map(x=>({...x})),presentations:presentations.map(x=>({...x})),waits:[...waits],lastTransition:transitions.at(-1),stream:true};}}});
  async function prefetch(view='near'){
+  if(navigator.connection?.saveData)return;
   const ticket=++prefetchTicket,i=order.indexOf(view);let direction=mode==='manual'&&wanted!==view?Math.sign(order.indexOf(wanted)-i):autoDirection;
   if(i+direction<0||i+direction>=order.length)direction=-direction;const next=order[i+direction];if(!next)return;
   const route=manifest.bridges[view+'-'+next],anchor=Math.ceil(tailFrame/25)%10,list=[manifest.views[next],...Array.from({length:10},(_,j)=>route[(anchor+j)%10])];let cursor=0;
