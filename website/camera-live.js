@@ -91,7 +91,7 @@ function applyClothMode(){
   document.querySelectorAll('[data-cloth-mode]').forEach(button=>{button.disabled=false;button.setAttribute('aria-pressed',String(button.dataset.clothMode===clothMode));});
 }
 function markReady(){
-  if(cells[0].ready&&cells[24].ready&&fidelityReady&&!ready){ready=true;slider.disabled=false;toggle.disabled=false;ui();}
+  if(cells[0].ready&&cells[24].ready&&fidelityReady&&!ready){ready=true;slider.disabled=false;toggle.disabled=false;document.querySelectorAll('[data-lighting-mode]').forEach(b=>b.disabled=false);ui();}
 }
 async function loadFullCloth(){
   const folder='assets/cloth48/',study=await(await fetch(folder+'manifest.json')).json();
