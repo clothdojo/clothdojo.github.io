@@ -64,6 +64,8 @@ Native controls remain available. Expanded replay loads on explicit request and 
 
 ## Browser verification
 
+`cloth-study.html` compares the two opening garments using their complete source triangle meshes and the original cotton base-color, normal and roughness maps against the previous simplified cloth, sharing the same action time, camera, robot and lights. All source triangles and face-varying UVs are retained; UV seams duplicate some display vertices. Textures are resized to at most 1024 pixels with source tint/roughness transforms retained. This restores source simulation geometry, not offline subdivision or RTX lighting. Assets and precision are recorded in `assets/cloth48/manifest.json`. Both variants load before comparison is enabled; switching and dragging make no requests. Paused camera movement does not recompute cloth positions/normals. `.github/scripts/cloth-study-review.cjs` captures matched frames and exercises continuous dragging on desktop and mobile. Software WebGL timings do not measure target-device GPU performance.
+
 `.github/workflows/website-visual-review.yml` uses Playwright 1.56.1 and the runner's installed Google Chrome for H.264 playback. It accepts a Git ref and page path, and reviews the website work branches before publication on `main`.
 
 The verification server is pinned to `http-server` 14.1.1 and supports HTTP byte ranges for native video seeking. Before browser checks, a 1,024-byte media request must return HTTP 206 and a matching `Content-Range`.

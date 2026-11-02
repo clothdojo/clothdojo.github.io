@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ClothDojo · 原始衣服网格与棉布材质对照</title>
+<meta name="theme-color" content="#ffffff"><link rel="icon" href="data:,">
+<link rel="stylesheet" href="camera-study.css?v=48"><script type="module" src="camera-live.js?v=48"></script>
+<style>.cloth-compare{display:flex;justify-content:center;gap:8px;margin:16px 20px 4px}.cloth-compare button{border:1px solid #dce0e3;background:#fff;border-radius:20px;padding:9px 15px;font-size:12px;cursor:pointer}.cloth-compare button[aria-pressed="true"]{color:#fff;background:#273b36;border-color:#273b36}.cloth-compare button:disabled{opacity:.5;cursor:wait}.intro .compare-hint{font-size:12px;color:#737a77;margin:9px auto;max-width:420px}</style>
+</head>
+<body data-cloth-study>
+<header><a class="brand" href="research-preview-v31.html?v=perspective-loop">ClothDojo</a><span>Cloth material study</span><a href="camera-study-video.html">对照离线视频 ↗</a></header>
+<main>
+<div class="intro"><p class="eyebrow">ORIGINAL MESH · COTTON</p><h1>把布料的细节带回来。</h1>
+<div class="cloth-compare" role="group" aria-label="同帧衣服对照"><button type="button" data-cloth-mode="full" aria-pressed="true" disabled>完整网格 · 棉布材质</button><button type="button" data-cloth-mode="baseline" aria-pressed="false" disabled>原简化版</button></div>
+<p class="compare-hint">暂停动作后切换，可比较同一帧。相机位置与动作进度保持一致。</p></div>
+<div id="camera-viewer" class="viewer" role="group" data-mode="auto" aria-label="原始衣服网格与棉布材质实时对照" aria-busy="true">
+<canvas id="live-canvas" aria-label="两件完整衣服轨迹与背景工作区"></canvas><p id="camera-status" role="status">正在准备完整衣服网格…</p></div>
+<div class="control-area"><div class="control-heading"><span id="camera-label">自动运镜</span><button id="motion-toggle" type="button" disabled>暂停动作</button></div>
+<div class="camera-control"><label class="sr-only" for="camera-distance">镜头距离</label><input id="camera-distance" type="range" min="0" max="1" step="0.001" value="0" disabled><div class="marks" aria-hidden="true"><span>近景 · 动作细节</span><span>中景 · 多样性</span><span>远景 · 规模</span></div></div><button id="resume-auto" type="button" disabled>自动运镜中</button></div>
+<p class="note">仅开头两件衣服恢复完整网格与原片棉布贴图。首次加载后，拖动和对照切换均无需下载。</p>
+<details><summary>这次恢复了什么？</summary><p>保留两件衣服的全部原始三角形与轨迹顶点；按原面片 UV 恢复棉布基色、法线与粗糙度贴图。纹理做网页尺寸编码，轨迹保持与原简化版相同的采样时刻、终态和 home 回位。</p><p>机器人、灯光、相机与动作时钟在两种对照中相同。周围工作区仍用简化网格。本次没有恢复离线渲染的细分、光线追踪或全局光照，因此仍不能等同 RTX 原片。</p><a href="assets/cloth48/manifest.json">查看网格、轨迹与材质处理记录 ↗</a></details>
+</main></body></html>
