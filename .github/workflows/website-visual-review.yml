@@ -51,6 +51,7 @@ on:
       - 'website/assets/camera60/**'
       - 'website/assets/film61/**'
       - 'website/assets/film62/**'
+      - 'website/assets/robots71/**'
       - 'website/assets/cloth48/**'
       - 'website/assets/atlas32/**'
 

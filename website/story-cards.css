@@ -9,6 +9,8 @@
 .research30 .story-card-heading h2{margin:0;font-size:clamp(27px,2.8vw,38px);line-height:1.12;letter-spacing:-.8px}
 .release-count{margin:12px 0 0;font-size:15px;line-height:1.4;color:var(--text)}
 .release-count strong{font-weight:600;color:var(--ink)}
+.research30 .story-card--render video{border-radius:0;aspect-ratio:100/33}
+@media(max-width:700px){.research30 .story-card--render video{aspect-ratio:9/11}}
 .story-card-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:0 40px 24px;overscroll-behavior-y:contain;scrollbar-width:thin}
 .story-card-body .container{width:100%;max-width:none;margin-inline:0;padding:0}
 .story-card-body .section-heading:not(:has(*)),.story-card-body .asset-heading:not(:has(*)),.story-card-body .rgb-heading:not(:has(*)),.story-card-body .research-heading:not(:has(*)){display:none}
