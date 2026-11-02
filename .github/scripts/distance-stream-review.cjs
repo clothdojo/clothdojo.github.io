@@ -1,6 +1,6 @@
 const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process'),out=process.env.REVIEW_OUTPUT;fs.mkdirSync(out,{recursive:true});
-const manifest=JSON.parse(fs.readFileSync('website/assets/camera58/manifest.json','utf8')),order=['near','middle','far','scale'].filter(v=>manifest.views[v]);
+const manifest=JSON.parse(fs.readFileSync('website/assets/camera60/manifest.json','utf8')),order=['near','middle','far','scale'].filter(v=>manifest.views[v]);
 const report={commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),passed:false,errors:[],screenshots:[],checks:[],recordings:[],draft:manifest.draft,distances:order};
 const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));let browser;
 (async()=>{try{

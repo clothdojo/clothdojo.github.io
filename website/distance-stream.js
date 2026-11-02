@@ -6,7 +6,8 @@
  let manifest,source,buffer,ready=false,running=!reduced&&!navigator.connection?.saveData,mode=reduced?'manual':'auto',wanted='near',current='near',stage='loop',error='',busy=false;
  let tailView='near',tailFrame=0,end=0,landedAt=0,timer,transition=null,autoDirection=1;
  const cache=new Map(),segments=new Map(),timeline=[],transitions=[],presentations=[],waits=[],requests=[];let cacheBytes=0,prefetchTicket=0;
- const url=path=>new URL(path,new URL('assets/camera58/',location.href)).href;
+ const mediaDirectory='assets/camera60/';
+ const url=path=>new URL(path,new URL(mediaDirectory,location.href)).href;
  function write(element,value){if(element.textContent!==value)element.textContent=value;}
  function ui(){
   root.dataset.stage=stage;root.dataset.distance=current;root.setAttribute('aria-busy',String(!ready));
@@ -114,7 +115,7 @@
   await Promise.all([0,1].map(async()=>{while(cursor<list.length&&ticket===prefetchTicket){const r=list[cursor++];try{await load(r);}catch{/* Explicit requests retry. */}}}));
  }
  async function start(){
-  manifest=await fetch('assets/camera58/manifest.json').then(r=>{if(!r.ok)throw new Error('素材清单未就绪');return r.json();});
+  manifest=await fetch(mediaDirectory+'manifest.json').then(r=>{if(!r.ok)throw new Error('素材清单未就绪');return r.json();});
   order=['near','middle','far','scale'].filter(view=>manifest.views[view]);
   const mime='video/mp4; codecs="'+manifest.codec+'"';if(!window.MediaSource||!MediaSource.isTypeSupported(mime))throw new Error('请使用支持此视频格式的 Chrome 浏览器');
   const near=await load(manifest.views.near);source=new MediaSource();const opened=new Promise(resolve=>source.addEventListener('sourceopen',resolve,{once:true}));video.src=URL.createObjectURL(source);await opened;
