@@ -159,8 +159,16 @@ function visibility(cell){
   const scaleWidth=Math.min(w,h*(20/7));
   return smooth(Math.max(0,Math.min(1,(edge-Math.max(6,22*scaleWidth/1600))/Math.max(3,8*scaleWidth/1600))));
 }
+function workcellAlpha(cell,i){return cell.ready?(i===0||i===24?1:visibility(cell)):0;}
+function inspectPullback(){
+  if(!ready)return [];
+  const saved=renderedZoom,samples=[];
+  try{for(let step=0;step<=1000;step++){cameraAt(step/1000);samples.push({zoom:step/1000,opacity:cells.map(workcellAlpha)});}}
+  finally{cameraAt(saved);}
+  return samples;
+}
 function animateCell(cell,i,a,b,mix){
-  const alpha=cell.ready?(i===0||i===24?1:visibility(cell)):0;const visible=alpha>.001;
+  const alpha=workcellAlpha(cell,i);const visible=alpha>.001;
   cell.mesh.visible=visible;cell.mesh.material.userData.fade.value=alpha;
   if(!visible)return;
   visibleCells+=i+',';
@@ -246,5 +254,5 @@ async function boot(){
   let cursor=0;
   await Promise.all(Array.from({length:3},async()=>{while(cursor<order.length)await loadCell(order[cursor++]);}));
 }
-Object.defineProperty(window,'liveCamera',{value:{get state(){return {ready,loaded,mode,zoom,renderedZoom,phase:motion,running,frames,inputToFrameMs:inputToFrame,error,camera:camera?.position.toArray(),triangles:renderer?.info.render.triangles,lightingMode:lightingStudy?lightingMode:null,clothMode:clothStudy?clothMode:null,fidelityReady,geometryUpdates,focusVertices:cells.filter((_,i)=>i===0||i===24).map(c=>c.meta.vertices),workcellOpacity:cells.map(c=>c.mesh.visible?c.mesh.material.userData.fade.value:0),clothAlbedo:cells.filter((_,i)=>i===0||i===24).map(c=>(c.baseline?.mesh??c.mesh).material.color.toArray())};},seekFrame(frame){if(!clothStudy||running||!ready)return;motion=Math.max(0,Math.min(249,frame))/25;}}});
+Object.defineProperty(window,'liveCamera',{value:{get state(){return {ready,loaded,mode,zoom,renderedZoom,phase:motion,running,frames,inputToFrameMs:inputToFrame,error,camera:camera?.position.toArray(),triangles:renderer?.info.render.triangles,lightingMode:lightingStudy?lightingMode:null,clothMode:clothStudy?clothMode:null,fidelityReady,geometryUpdates,focusVertices:cells.filter((_,i)=>i===0||i===24).map(c=>c.meta.vertices),workcellOpacity:cells.map(c=>c.mesh.visible?c.mesh.material.userData.fade.value:0),clothAlbedo:cells.filter((_,i)=>i===0||i===24).map(c=>(c.baseline?.mesh??c.mesh).material.color.toArray())};},inspectPullback,seekFrame(frame){if(!clothStudy||running||!ready)return;motion=Math.max(0,Math.min(249,frame))/25;}}});
 ui();requestAnimationFrame(draw);boot().catch(e=>{error=String(e);status.textContent='实时场景未能载入，可打开上方视频版对照。';console.error(e);});
