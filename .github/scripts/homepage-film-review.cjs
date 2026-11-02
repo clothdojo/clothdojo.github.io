@@ -35,7 +35,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    if(i)await next.click();await page.waitForFunction(i=>window.storyCards.state.active===i,i);
    const card=page.locator('.story-card').nth(i);const box=await card.boundingBox();assert(Math.abs(box.x+box.width/2-width/2)<2,'Center the selected card');
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-   await page.waitForFunction(i=>[...document.querySelectorAll('.story-card')[i].querySelectorAll('img')].filter(img=>img.getClientRects().length).every(img=>img.complete&&img.naturalWidth>0),i,{timeout:15000});
+   await page.waitForFunction(i=>[...document.querySelectorAll('.story-card')[i].querySelectorAll('img')].filter(img=>!img.closest('details:not([open])')).every(img=>img.complete&&img.naturalWidth>0),i,{timeout:15000});
    const file='card-'+width+'-'+i+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,width,card:i});
    assert.equal(await page.locator('.story-dots button[aria-current=true]').count(),1);
    assert.equal(await page.locator('video').evaluateAll(vs=>vs.filter(v=>!v.paused).length),0,'Reduced motion applies to card videos');
