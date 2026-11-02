@@ -1,5 +1,5 @@
 {
-  "commit": "22c8dcd918e3abd1431ffe6e10a9d6253f465b5d",
+  "commit": "163d66b30aea3f6f7e7caab09be17f107aee18ae",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -84,7 +84,7 @@
         "x": 0,
         "y": 74,
         "width": 1440,
-        "height": 761.984375
+        "height": 681.984375
       }
     },
     {
@@ -96,7 +96,7 @@
         "x": 0,
         "y": 74,
         "width": 1280,
-        "height": 551.546875
+        "height": 471.546875
       }
     },
     {
@@ -108,7 +108,7 @@
         "x": 0,
         "y": 74,
         "width": 1920,
-        "height": 935.5
+        "height": 863.5
       }
     },
     {
@@ -120,7 +120,7 @@
         "x": 0,
         "y": 74,
         "width": 1724,
-        "height": 632
+        "height": 552
       }
     },
     {
@@ -261,7 +261,7 @@
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.08000000000000007,
+      "maxFrameGap": 0.08000000000000002,
       "exclusiveAmbientPlayback": true
     },
     {
