@@ -51,6 +51,12 @@ function geometry(buffer,spec){
   if(spec.color?.type)g.setAttribute('color',new T.BufferAttribute(attribute(buffer,spec.color).slice(),3,true));
   g.computeVertexNormals();return g;
 }
+function clothColor(rgb){
+  const color=new T.Color().setRGB(...rgb);
+  if(!lightingStudy)return color;
+  const hsl=color.getHSL({},T.SRGBColorSpace);
+  return color.setHSL(hsl.h,Math.min(.75,hsl.s*1.25+.04),Math.min(.78,hsl.l+.09),T.SRGBColorSpace);
+}
 function fadeMaterial(material,instanced){
   material.userData.fade={value:1};
   material.customProgramCacheKey=()=>instanced?'workcell-instance-fade':'workcell-cloth-fade';
@@ -103,7 +109,9 @@ async function loadFullCloth(){
   await Promise.all(study.cells.map(async meta=>{
     const cell=cells[meta.i],[buffer,animation]=await Promise.all([binary(meta.geometry,folder),binary(meta.file,folder)]);
     const g=geometry(buffer,meta);g.attributes.position.setUsage(T.DynamicDrawUsage);
-    const material=fadeMaterial(new T.MeshPhysicalMaterial({color:new T.Color().setRGB(...meta.texture_tint),map:maps[0],normalMap:maps[1],normalScale:new T.Vector2(.35,.35),roughnessMap:maps[2],roughness:1,metalness:0,ior:1.5,specularIntensity:.375,side:T.DoubleSide}),false);
+    const tint=new T.Color().setRGB(...meta.texture_tint);
+    if(lightingStudy){const color=clothColor(cell.meta.color);tint.r*=color.r/cell.meta.color[0];tint.g*=color.g/cell.meta.color[1];tint.b*=color.b/cell.meta.color[2];}
+    const material=fadeMaterial(new T.MeshPhysicalMaterial({color:tint,map:maps[0],normalMap:maps[1],normalScale:new T.Vector2(.35,.35),roughnessMap:maps[2],roughness:1,metalness:0,ior:1.5,specularIntensity:.375,side:T.DoubleSide}),false);
     const mesh=new T.Mesh(g,material);mesh.position.copy(cell.mesh.position);mesh.rotation.copy(cell.mesh.rotation);mesh.visible=false;mesh.frustumCulled=false;mesh.castShadow=true;mesh.receiveShadow=true;scene.add(mesh);
     const data=new Uint16Array(animation),stride=meta.vertices*3;
     if(data.length!==250*stride)throw new Error('完整网格轨迹长度不匹配');
@@ -130,7 +138,9 @@ function cameraAt(value){
   const at=a.camera_target,bt=b.camera_target;
   target.set(...at).lerp(vec.set(...bt),u);
   const da=Math.hypot(...a.camera_eye.map((x,i)=>x-at[i])),db=Math.hypot(...b.camera_eye.map((x,i)=>x-bt[i]));
-  const distance=Math.exp(Math.log(da)*(1-u)+Math.log(db)*u)*Math.max(1,(20/7)/camera.aspect);
+  // Match distance and target interpolation: logarithmic dolly speed let the
+  // translating frustum cross already-visible workcells near the middle key.
+  const distance=(da*(1-u)+db*u)*Math.max(1,(20/7)/camera.aspect);
   eye.set(.82,0,.5724).normalize().multiplyScalar(distance).add(target);
   camera.position.copy(eye);camera.lookAt(target);camera.updateMatrixWorld();
   forward.copy(target).sub(eye).normalize();right.crossVectors(forward,worldUp).normalize();up.crossVectors(right,forward);
@@ -224,7 +234,7 @@ async function boot(){
   }
   for(const meta of manifest.cells){
     const g=geometry(buffer,meta);g.getAttribute('position').setUsage(T.DynamicDrawUsage);
-    const m=fadeMaterial(new T.MeshStandardMaterial({color:new T.Color().setRGB(...meta.color),roughness:.97,metalness:0,side:T.DoubleSide}),false);
+    const m=fadeMaterial(new T.MeshStandardMaterial({color:clothColor(meta.color),roughness:.97,metalness:0,side:T.DoubleSide}),false);
     const mesh=new T.Mesh(g,m);mesh.position.set(...meta.translation);mesh.rotation.z=T.MathUtils.degToRad(meta.yaw);mesh.visible=false;mesh.frustumCulled=false;mesh.castShadow=true;mesh.receiveShadow=true;scene.add(mesh);
     const angle=T.MathUtils.degToRad(meta.yaw);cells.push({meta,mesh,ready:false,data:null,cos:Math.cos(angle),sin:Math.sin(angle),yaw:new T.Quaternion().setFromAxisAngle(worldUp,angle)});
   }
@@ -235,5 +245,5 @@ async function boot(){
   let cursor=0;
   await Promise.all(Array.from({length:3},async()=>{while(cursor<order.length)await loadCell(order[cursor++]);}));
 }
-Object.defineProperty(window,'liveCamera',{value:{get state(){return {ready,loaded,mode,zoom,renderedZoom,phase:motion,running,frames,inputToFrameMs:inputToFrame,error,camera:camera?.position.toArray(),triangles:renderer?.info.render.triangles,lightingMode:lightingStudy?lightingMode:null,clothMode:clothStudy?clothMode:null,fidelityReady,geometryUpdates,focusVertices:cells.filter((_,i)=>i===0||i===24).map(c=>c.meta.vertices)};},seekFrame(frame){if(!clothStudy||running||!ready)return;motion=Math.max(0,Math.min(249,frame))/25;}}});
+Object.defineProperty(window,'liveCamera',{value:{get state(){return {ready,loaded,mode,zoom,renderedZoom,phase:motion,running,frames,inputToFrameMs:inputToFrame,error,camera:camera?.position.toArray(),triangles:renderer?.info.render.triangles,lightingMode:lightingStudy?lightingMode:null,clothMode:clothStudy?clothMode:null,fidelityReady,geometryUpdates,focusVertices:cells.filter((_,i)=>i===0||i===24).map(c=>c.meta.vertices),workcellOpacity:cells.map(c=>c.mesh.visible?c.mesh.material.userData.fade.value:0),clothAlbedo:cells.filter((_,i)=>i===0||i===24).map(c=>(c.baseline?.mesh??c.mesh).material.color.toArray())};},seekFrame(frame){if(!clothStudy||running||!ready)return;motion=Math.max(0,Math.min(249,frame))/25;}}});
 ui();requestAnimationFrame(draw);boot().catch(e=>{error=String(e);status.textContent='实时场景未能载入，可打开上方视频版对照。';console.error(e);});
