@@ -14,7 +14,7 @@ on:
         default: index.html
         type: string
   push:
-    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal, codex/rgb-ribbon-homepage, codex/complete-generation-loop, codex/white-asset-atlas, codex/direct-embedded-loop, codex/synchronized-case-film, codex/rgb-playback-release, codex/in-motion-reveal, codex/departure-reveal-holds, codex/full-perspective-loop, codex/camera-control-study, codex/continuous-camera-study, codex/cloth-fidelity-study, codex/lighting-study, codex/camera-color-fix, codex/startup-streaming]
+    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal, codex/rgb-ribbon-homepage, codex/complete-generation-loop, codex/white-asset-atlas, codex/direct-embedded-loop, codex/synchronized-case-film, codex/rgb-playback-release, codex/in-motion-reveal, codex/departure-reveal-holds, codex/full-perspective-loop, codex/camera-control-study, codex/continuous-camera-study, codex/cloth-fidelity-study, codex/lighting-study, codex/camera-color-fix, codex/startup-streaming, codex/rendered-distance-sample]
     paths:
       - '.github/workflows/website-visual-review.yml'
       - '.github/scripts/website-visual-review.cjs'
@@ -42,6 +42,8 @@ on:
       - '.github/scripts/camera-live-review.cjs'
       - '.github/scripts/cloth-study-review.cjs'
       - '.github/scripts/lighting-study-review.cjs'
+      - '.github/scripts/distance-study-review.cjs'
+      - 'website/assets/camera52/**'
       - 'website/assets/cloth48/**'
       - 'website/assets/atlas32/**'
 
@@ -74,7 +76,9 @@ jobs:
           REVIEW_PAGE_PATH: ${{ inputs.page_path || 'index.html' }}
         run: |
           "$RUNNER_TEMP/browser-tools/node_modules/.bin/http-server" website -a 127.0.0.1 -p 8787 -c-1 -s > "$RUNNER_TEMP/site-server.log" 2>&1 &
-          if [ '${{ github.ref_name }}' = 'codex/lighting-study' ] || [ '${{ github.ref_name }}' = 'codex/camera-color-fix' ] || [ '${{ github.ref_name }}' = 'codex/startup-streaming' ]; then
+          if [ '${{ inputs.page_path }}' = 'distance-study.html' ] || [ '${{ github.ref_name }}' = 'codex/rendered-distance-sample' ]; then
+            node .github/scripts/distance-study-review.cjs
+          elif [ '${{ github.ref_name }}' = 'codex/lighting-study' ] || [ '${{ github.ref_name }}' = 'codex/camera-color-fix' ] || [ '${{ github.ref_name }}' = 'codex/startup-streaming' ]; then
             node .github/scripts/lighting-study-review.cjs
           elif [ '${{ github.ref_name }}' = 'codex/cloth-fidelity-study' ]; then
             node .github/scripts/cloth-study-review.cjs
