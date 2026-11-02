@@ -36,6 +36,10 @@
  }
  function at(time){return timeline.find(e=>time>=e.start-.0001&&time<e.end-.0001)||timeline[timeline.length-1];}
  function phaseAt(time){const e=at(time);if(!e)return 0;const phase=((e.phase+time-e.start)%10+10)%10;return phase>10-.00001?0:phase;}
+ function arrived(time){
+  transitions.push({from:transition.from,to:transition.to,start:transition.start,end:transition.end,firstFrame:transition.presentedAt,presentedFrames:transition.presentedFrames,expectedFrames:transition.frames,landingFrame:time,expectedLanding:transition.end});
+  if(transitions.length>30)transitions.shift();current=transition.to;landedAt=time;
+ }
  async function fill(){
   if(busy||!buffer||error)return;busy=true;
   try{
@@ -63,7 +67,7 @@
   }catch(e){fail(e);}finally{busy=false;}
  }
  function fail(e){error=e.message||String(e);running=false;video.pause();ui();}
- function request(view){mode='manual';wanted=view;ui();prefetch(current);fill();}
+ function request(view){mode='manual';wanted=view;ui();prefetch(tailView);fill();}
  for(const b of buttons)b.addEventListener('click',()=>request(b.dataset.distance));
  auto.addEventListener('click',()=>{mode=mode==='auto'?'manual':'auto';wanted=current;landedAt=video.currentTime;ui();});
  play.addEventListener('click',async()=>{running=!running;ui();if(!running)video.pause();else if(!document.hidden)try{await video.play();}catch(e){fail(e);}});
@@ -74,11 +78,11 @@
   const e=at(frame.mediaTime);
   if(e){
    if(e.kind==='bridge'){
-    if(transition!==e){transition=e;e.presentedAt=frame.mediaTime;e.presentedFrames=0;}stage='bridge';e.presentedFrames++;
+    if(transition!==e){if(stage==='bridge'){arrived(frame.mediaTime);prefetch(tailView);}transition=e;e.presentedAt=frame.mediaTime;e.presentedFrames=0;}stage='bridge';e.presentedFrames++;
    }else{
     const changed=current!==e.view;
     if(stage==='bridge'){
-     transitions.push({from:transition.from,to:transition.to,start:transition.start,end:transition.end,firstFrame:transition.presentedAt,presentedFrames:transition.presentedFrames,expectedFrames:transition.frames,landingFrame:frame.mediaTime,expectedLanding:transition.end});if(transitions.length>30)transitions.shift();landedAt=frame.mediaTime;
+     arrived(frame.mediaTime);
     }current=e.view;stage='loop';if(changed)prefetch(current);
    }
    presentations.push({time:frame.mediaTime,wall:now,kind:e.kind});if(presentations.length>160)presentations.shift();
