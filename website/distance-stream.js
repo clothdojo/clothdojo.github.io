@@ -6,12 +6,13 @@
  let tailView='near',tailFrame=0,end=0,landedAt=0,timer,transition=null,autoDirection=1;
  const cache=new Map(),timeline=[],transitions=[],presentations=[],waits=[];let cacheBytes=0,prefetchTicket=0;
  const url=path=>new URL(path,new URL('assets/camera58/',location.href)).href;
+ function write(element,value){if(element.textContent!==value)element.textContent=value;}
  function ui(){
   root.dataset.stage=stage;root.dataset.distance=current;root.setAttribute('aria-busy',String(!ready));
   for(const b of buttons){b.disabled=!ready;b.hidden=!!manifest&&!manifest.views[b.dataset.distance];b.setAttribute('aria-pressed',String(b.dataset.distance===wanted));}
-  auto.disabled=play.disabled=!ready;auto.setAttribute('aria-pressed',String(mode==='auto'));play.textContent=running?'暂停动作':'继续动作';
-  label.textContent=stage==='bridge'?names[transition.from]+' → '+names[transition.to]:(mode==='auto'?'自动 · ':'已固定')+names[current]+' · 动作循环';
-  status.textContent=error?'影片暂未就绪：'+error:!ready?'正在载入近景影片…':wanted!==current&&stage==='loop'?'当前动作继续，即将运镜…':'';
+  auto.disabled=play.disabled=!ready;auto.setAttribute('aria-pressed',String(mode==='auto'));write(play,running?'暂停动作':'继续动作');
+  write(label,stage==='bridge'?names[transition.from]+' → '+names[transition.to]:names[current]+(mode==='auto'?' · 自动运镜':' · 镜头停留')+' · 动作循环');
+  write(status,error?'影片暂未就绪：'+error:!ready?'正在载入近景影片…':wanted!==current&&stage==='loop'?running?'当前动作继续，即将运镜…':'继续播放后运镜。':'');
  }
  function load(record){
   if(cache.has(record.src)){const entry=cache.get(record.src);cache.delete(record.src);cache.set(record.src,entry);return entry.promise;}
