@@ -1,5 +1,7 @@
 import * as T from './vendor/three-r180/three.module.min.js';
 const clothStudy=document.body.hasAttribute('data-cloth-study');
+const lightingStudy=document.body.hasAttribute('data-lighting-study');
+let studio=null,lightingMode='enhanced';
 const sourceMaterialStudy=clothStudy||new URLSearchParams(location.search).get('material')==='source';
 let clothMode=new URLSearchParams(location.search).get('cloth')==='baseline'?'baseline':'full',fidelityReady=!clothStudy,geometryUpdates=0;
 
@@ -114,8 +116,13 @@ async function loadFullCloth(){
   fidelityReady=true;applyClothMode();markReady();
 }
 document.querySelectorAll('[data-cloth-mode]').forEach(button=>button.addEventListener('click',()=>{clothMode=button.dataset.clothMode;applyClothMode();}));
+document.querySelectorAll('[data-lighting-mode]').forEach(button=>button.addEventListener('click',()=>{
+  if(!studio)return;lightingMode=button.dataset.lightingMode;studio.apply(lightingMode);shadowPhase=-1;
+  document.querySelectorAll('[data-lighting-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lightingMode===lightingMode)));
+}));
 function resize(){
   const w=root.clientWidth,h=root.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();
+  studio?.resize();
 }
 function cameraAt(value){
   const keys=value<.5?['2','8']:['8','48'];const u=value<.5?value*2:(value-.5)*2;
@@ -182,7 +189,7 @@ function draw(stamp){
   canvas.style.opacity=String(running?Math.min(1,motion/.16,(10-motion)/.16):1);
   renderer.shadowMap.needsUpdate=motion!==shadowPhase||visibleCells!==shadowCells||clothMode!==shadowClothMode;
   shadowPhase=motion;shadowCells=visibleCells;shadowClothMode=clothMode;
-  renderer.render(scene,camera);frames++;
+  if(studio){studio.fit(cells);studio.render(zoom);}else renderer.render(scene,camera);frames++;
   if(lastInput){inputToFrame=performance.now()-lastInput;lastInput=0;}
 }
 async function loadCell(i){
@@ -208,6 +215,7 @@ async function boot(){
   light.shadow.mapSize.set(innerWidth<700?1024:2048,innerWidth<700?1024:2048);Object.assign(light.shadow.camera,{left:-19,right:19,top:19,bottom:-19,near:1,far:65});light.shadow.bias=-.00025;light.shadow.normalBias=.015;
   scene.add(light,light.target);
   const ground=new T.Mesh(new T.PlaneGeometry(400,400),new T.ShadowMaterial({color:0x26333b,opacity:.17}));ground.position.z=-.025;ground.receiveShadow=true;scene.add(ground);
+  if(lightingStudy){const {createStudio}=await import('./lighting-studio.js?v=49');studio=createStudio(renderer,scene,camera,light,hemi,ground,root);}
   for(const spec of manifest.prototypes){
     if(!spec.position.length){bodies.push(null);continue;}
     const g=geometry(buffer,spec);g.setAttribute('cellAlpha',new T.InstancedBufferAttribute(new Float32Array(48),1));
@@ -227,5 +235,5 @@ async function boot(){
   let cursor=0;
   await Promise.all(Array.from({length:3},async()=>{while(cursor<order.length)await loadCell(order[cursor++]);}));
 }
-Object.defineProperty(window,'liveCamera',{value:{get state(){return {ready,loaded,mode,zoom,renderedZoom,phase:motion,running,frames,inputToFrameMs:inputToFrame,error,camera:camera?.position.toArray(),triangles:renderer?.info.render.triangles,clothMode:clothStudy?clothMode:null,fidelityReady,geometryUpdates,focusVertices:cells.filter((_,i)=>i===0||i===24).map(c=>c.meta.vertices)};},seekFrame(frame){if(!clothStudy||running||!ready)return;motion=Math.max(0,Math.min(249,frame))/25;}}});
+Object.defineProperty(window,'liveCamera',{value:{get state(){return {ready,loaded,mode,zoom,renderedZoom,phase:motion,running,frames,inputToFrameMs:inputToFrame,error,camera:camera?.position.toArray(),triangles:renderer?.info.render.triangles,lightingMode:lightingStudy?lightingMode:null,clothMode:clothStudy?clothMode:null,fidelityReady,geometryUpdates,focusVertices:cells.filter((_,i)=>i===0||i===24).map(c=>c.meta.vertices)};},seekFrame(frame){if(!clothStudy||running||!ready)return;motion=Math.max(0,Math.min(249,frame))/25;}}});
 ui();requestAnimationFrame(draw);boot().catch(e=>{error=String(e);status.textContent='实时场景未能载入，可打开上方视频版对照。';console.error(e);});
