@@ -1,5 +1,5 @@
 {
-  "commit": "357f9b9306ac1d93f6d055254c45ad3c042e4993",
+  "commit": "df3ccb2be7fa5c51b8688ee2ef0e6bced86b0efd",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -12,7 +12,7 @@
         "x": 0,
         "y": 74,
         "width": 1440,
-        "height": 761.984375
+        "height": 728.484375
       }
     },
     {
@@ -24,7 +24,7 @@
         "x": 0,
         "y": 74,
         "width": 1280,
-        "height": 551.546875
+        "height": 526.546875
       }
     },
     {
@@ -36,7 +36,7 @@
         "x": 0,
         "y": 74,
         "width": 1920,
-        "height": 935.5
+        "height": 902
       }
     },
     {
@@ -48,7 +48,7 @@
         "x": 0,
         "y": 74,
         "width": 1724,
-        "height": 632
+        "height": 607
       }
     },
     {
@@ -60,7 +60,7 @@
         "x": 0,
         "y": 62,
         "width": 390,
-        "height": 400.1875
+        "height": 366.6875
       }
     },
     {
@@ -72,7 +72,7 @@
         "x": 0,
         "y": 62,
         "width": 320,
-        "height": 393.6875
+        "height": 360.1875
       }
     },
     {
@@ -84,7 +84,7 @@
         "x": 0,
         "y": 74,
         "width": 1440,
-        "height": 761.984375
+        "height": 728.484375
       }
     },
     {
@@ -96,7 +96,7 @@
         "x": 0,
         "y": 74,
         "width": 1280,
-        "height": 551.546875
+        "height": 526.546875
       }
     },
     {
@@ -108,7 +108,7 @@
         "x": 0,
         "y": 74,
         "width": 1920,
-        "height": 935.5
+        "height": 902
       }
     },
     {
@@ -120,7 +120,7 @@
         "x": 0,
         "y": 74,
         "width": 1724,
-        "height": 632
+        "height": 607
       }
     },
     {
@@ -132,7 +132,7 @@
         "x": 0,
         "y": 62,
         "width": 390,
-        "height": 400.1875
+        "height": 366.6875
       }
     },
     {
@@ -144,7 +144,7 @@
         "x": 0,
         "y": 62,
         "width": 320,
-        "height": 393.6875
+        "height": 360.1875
       }
     }
   ],
@@ -261,7 +261,7 @@
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.07999999999999918,
+      "maxFrameGap": 0.08000000000000007,
       "exclusiveAmbientPlayback": true
     },
     {
