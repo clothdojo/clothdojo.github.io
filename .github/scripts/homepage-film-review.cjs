@@ -30,12 +30,12 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',hasTouch:width===390}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));
   await page.goto('http://127.0.0.1:8787/index.html');await page.locator('#highlights').scrollIntoViewIfNeeded();
   const next=page.locator('[data-story-next]'),prev=page.locator('[data-story-prev]');
-  assert(await prev.isDisabled());
+  assert(await prev.isDisabled());console.log('Gallery initial state',width,await page.evaluate(()=>window.storyCards.state));
   for(let i=0;i<8;i++){
    if(i)await next.click();await page.waitForFunction(i=>window.storyCards.state.active===i,i);
    const card=page.locator('.story-card').nth(i);const box=await card.boundingBox();assert(Math.abs(box.x+box.width/2-width/2)<2,'Center the selected card');
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-   await card.locator('img').evaluateAll(async imgs=>Promise.all(imgs.map(img=>img.decode())));
+   await page.waitForFunction(i=>[...document.querySelectorAll('.story-card')[i].querySelectorAll('img')].every(img=>img.complete&&img.naturalWidth>0),i,{timeout:15000});
    const file='card-'+width+'-'+i+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,width,card:i});
    assert.equal(await page.locator('.story-dots button[aria-current=true]').count(),1);
    assert.equal(await page.locator('video').evaluateAll(vs=>vs.filter(v=>!v.paused).length),0,'Reduced motion applies to card videos');
