@@ -1,6 +1,6 @@
 {
-  "commit": "6c795a9adf3f5d2d02abce29690c4c7ed86efa81",
-  "passed": true,
+  "commit": "2af913ea2dba0ed312d4a0d9887370fc3d71f043",
+  "passed": false,
   "errors": [],
   "screenshots": [
     {
@@ -256,24 +256,7 @@
       "noHeroControls": true,
       "whiteGround": true,
       "reducedMotion": true
-    },
-    {
-      "width": 1440,
-      "fullLoop": true,
-      "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.08000000000000007,
-      "exclusiveAmbientPlayback": true
-    },
-    {
-      "width": 390,
-      "fullLoop": true,
-      "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.04000000000000625,
-      "exclusiveAmbientPlayback": true
     }
   ],
-  "recordings": [
-    "homepage-loop-1440.webm",
-    "homepage-loop-390.webm"
-  ]
+  "recordings": []
 }
