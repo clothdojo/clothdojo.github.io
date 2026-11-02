@@ -35,6 +35,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    if((await state()).current===target)return;
    await page.locator('button[data-distance="'+target+'"]').click();
    await page.waitForFunction(()=>window.distanceStudy.state.stage==='bridge',null,{timeout:20000});
+   const response=(await state()).requests.at(-1);assert(response.latencyMs<1600,JSON.stringify(response));report.checks.push({width,target,clickToCameraMs:response.latencyMs});
    if(pause){await page.locator('#distance-play').click();const held=await page.locator('video').evaluate(v=>v.currentTime);await page.waitForTimeout(250);assert.equal(await page.locator('video').evaluate(v=>v.currentTime),held);await shot('stream-paused-bridge');await page.locator('#distance-play').click();}
    await page.waitForTimeout(320);await shot('early-reveal-to-'+target);
    await page.waitForTimeout(650);await shot('stream-to-'+target);

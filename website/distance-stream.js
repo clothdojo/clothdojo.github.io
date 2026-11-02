@@ -5,7 +5,7 @@
  const autoHold={near:3,middle:1,far:1,scale:8};
  let manifest,source,buffer,ready=false,running=!reduced&&!navigator.connection?.saveData,mode=reduced?'manual':'auto',wanted='near',current='near',stage='loop',error='',busy=false;
  let tailView='near',tailFrame=0,end=0,landedAt=0,timer,transition=null,autoDirection=1;
- const cache=new Map(),timeline=[],transitions=[],presentations=[],waits=[];let cacheBytes=0,prefetchTicket=0;
+ const cache=new Map(),segments=new Map(),timeline=[],transitions=[],presentations=[],waits=[],requests=[];let cacheBytes=0,prefetchTicket=0;
  const url=path=>new URL(path,new URL('assets/camera58/',location.href)).href;
  function write(element,value){if(element.textContent!==value)element.textContent=value;}
  function ui(){
@@ -25,6 +25,17 @@
    return {record,data};
   }).catch(e=>{cache.delete(record.src);record.loaded=false;throw e;});return entry.promise;
  }
+ function segment(record,frame){
+  const part=record.segments[frame/5],key=record.src+':'+frame;
+  if(record.loaded)return load(record).then(({data})=>data.slice(part.offset,part.offset+part.bytes));
+  if(segments.has(key))return segments.get(key);
+  const pending=fetch(url(record.src),{headers:{Range:'bytes='+part.offset+'-'+(part.offset+part.bytes-1)}}).then(async r=>{
+   if(!r.ok)throw new Error('动作片段载入失败');const data=await r.arrayBuffer();
+   return r.status===206?data:data.slice(part.offset,part.offset+part.bytes);
+  }).catch(e=>{segments.delete(key);throw e;});
+  segments.set(key,pending);while(segments.size>40)segments.delete(segments.keys().next().value);return pending;
+ }
+ function landing(record,frame){return Promise.all([0,5,10].map(offset=>segment(record,(frame+offset)%250)));}
  function update(operation){return new Promise((resolve,reject)=>{
   const clean=()=>{buffer.removeEventListener('updateend',done);buffer.removeEventListener('error',fail);};
   const done=()=>{clean();resolve();},fail=()=>{clean();reject(new Error('视频片段解码失败'));};
@@ -43,23 +54,24 @@
  async function fill(){
   if(busy||!buffer||error)return;busy=true;
   try{
-   while(end-video.currentTime<.8){
+   while(end-video.currentTime<.4){
     const next=order[order.indexOf(tailView)+Math.sign(order.indexOf(wanted)-order.indexOf(tailView))],edge=tailView+'-'+next;
     // Keep automatic camera moves away from the existing end-of-loop dissolve.
     // Manual selections still use every available matching action anchor.
     if(wanted!==tailView&&tailFrame%25===0&&(mode==='manual'||tailFrame<200)){
      const record=manifest.bridges[edge][tailFrame/25];
-     const destination=manifest.views[next];if(!record.loaded)load(record).catch(fail);if(!destination.loaded)load(destination).catch(fail);
-     if(record.loaded&&destination.loaded){
+     const destination=manifest.views[next];if(!record.loaded)load(record).catch(fail);
+     if(!record.landingReady&&!record.landingPending){record.landingPending=true;landing(destination,record.end_frame).then(()=>{record.landingReady=true;record.landingPending=false;fill();}).catch(e=>{record.landingPending=false;fail(e);});}
+     if(record.loaded&&record.landingReady){
       const {data}=await load(record),from=tailView,to=next,phase=tailFrame/25;
       await append(data.slice(record.init_bytes),{kind:'bridge',from,to,phase,frames:record.frames});tailView=to;tailFrame=record.end_frame;continue;
      }
      // Use the already buffered lead to finish preparation at this anchor.
      // Keep a safety margin; continue the current loop if data is still late.
-     if(end-video.currentTime>.3)break;
+     if(end-video.currentTime>.16)break;
     }
-    const {record,data}=await load(manifest.views[tailView]),segment=record.segments[tailFrame/5];
-    await append(data.slice(segment.offset,segment.offset+segment.bytes),{kind:'loop',view:tailView,phase:tailFrame/25,frames:5});tailFrame=(tailFrame+5)%250;
+    const data=await segment(manifest.views[tailView],tailFrame);
+    await append(data,{kind:'loop',view:tailView,phase:tailFrame/25,frames:5});tailFrame=(tailFrame+5)%250;
    }
    if(video.currentTime>20&&buffer.buffered.length&&buffer.buffered.start(0)<video.currentTime-16){
     await update(()=>buffer.remove(0,video.currentTime-15));while(timeline.length>1&&timeline[0].end<video.currentTime-15)timeline.shift();
@@ -67,7 +79,7 @@
   }catch(e){fail(e);}finally{busy=false;}
  }
  function fail(e){error=e.message||String(e);running=false;video.pause();ui();}
- function request(view){mode='manual';wanted=view;ui();prefetch(tailView);fill();}
+ function request(view){mode='manual';wanted=view;requests.push({view,wall:performance.now(),media:video.currentTime});if(requests.length>30)requests.shift();ui();prefetch(tailView);fill();}
  for(const b of buttons)b.addEventListener('click',()=>request(b.dataset.distance));
  auto.addEventListener('click',()=>{mode=mode==='auto'?'manual':'auto';wanted=current;landedAt=video.currentTime;ui();});
  play.addEventListener('click',async()=>{running=!running;ui();if(!running)video.pause();else if(!document.hidden)try{await video.play();}catch(e){fail(e);}});
@@ -78,7 +90,7 @@
   const e=at(frame.mediaTime);
   if(e){
    if(e.kind==='bridge'){
-    if(transition!==e){if(stage==='bridge'){arrived(frame.mediaTime);prefetch(tailView);}transition=e;e.presentedAt=frame.mediaTime;e.presentedFrames=0;}stage='bridge';e.presentedFrames++;
+    if(transition!==e){if(stage==='bridge'){arrived(frame.mediaTime);prefetch(tailView);}transition=e;e.presentedAt=frame.mediaTime;e.presentedFrames=0;const request=requests.at(-1);if(request&&!request.startedAt){request.startedAt=now;request.latencyMs=now-request.wall;}}stage='bridge';e.presentedFrames++;
    }else{
     const changed=current!==e.view;
     if(stage==='bridge'){
@@ -90,14 +102,15 @@
   }
   fill();video.requestVideoFrameCallback(presented);
  });
- Object.defineProperty(window,'distanceStudy',{value:{phaseAt,get state(){const e=at(video.currentTime);return {ready,current,wanted,mode,running,stage,error,phase:phaseAt(video.currentTime),playing:video.paused?0:1,bufferAhead:end-video.currentTime,cachedBytes:cacheBytes,transitions:transitions.map(x=>({...x})),presentations:presentations.map(x=>({...x})),waits:[...waits],lastTransition:transitions.at(-1),stream:true};}}});
+ Object.defineProperty(window,'distanceStudy',{value:{phaseAt,get state(){const e=at(video.currentTime);return {ready,current,wanted,mode,running,stage,error,phase:phaseAt(video.currentTime),playing:video.paused?0:1,bufferAhead:end-video.currentTime,cachedBytes:cacheBytes,requests:requests.map(x=>({...x})),transitions:transitions.map(x=>({...x})),presentations:presentations.map(x=>({...x})),waits:[...waits],lastTransition:transitions.at(-1),stream:true};}}});
  async function prefetch(view='near'){
   if(navigator.connection?.saveData)return;
   const ticket=++prefetchTicket,i=order.indexOf(view);let direction=mode==='manual'&&wanted!==view?Math.sign(order.indexOf(wanted)-i):autoDirection;
   if(i+direction<0||i+direction>=order.length)direction=-direction;const next=order[i+direction];if(!next)return;
   const remaining=mode==='auto'?Math.max(0,autoHold[view]-(video.currentTime-landedAt)):0,route=manifest.bridges[view+'-'+next];let anchor=Math.ceil(tailFrame/25+remaining)%10;
   if(mode==='auto')while(anchor>=8)anchor=(anchor+1)%10;
-  const list=[manifest.views[next],...Array.from({length:10},(_,j)=>route[(anchor+j)%10])];let cursor=0;
+  const opposite=order[i-direction],reverse=opposite?manifest.bridges[view+'-'+opposite]:null;
+  const list=[route[anchor],manifest.views[next],...Array.from({length:10},(_,j)=>[route[(anchor+j)%10],...(reverse?[reverse[(anchor+j)%10]]:[])]).flat()];let cursor=0;
   await Promise.all([0,1].map(async()=>{while(cursor<list.length&&ticket===prefetchTicket){const r=list[cursor++];try{await load(r);}catch{/* Explicit requests retry. */}}}));
  }
  async function start(){
