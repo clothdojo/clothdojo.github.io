@@ -1,9 +1,7 @@
 {
-  "commit": "b88db7c513221fc3b530ca670a382706b9c7df15",
-  "passed": false,
-  "errors": [
-    "locator.click: Error: strict mode violation: locator('[data-distance=\"near\"]') resolved to 2 elements:\n    1) <div role=\"group\" class=\"viewer\" aria-busy=\"false\" data-stage=\"loop\" id=\"distance-viewer\" data-distance=\"near\" aria-pressed=\"false\" aria-label=\"Isaac 渲染的近景与中景循环\">…</div> aka getByRole('group', { name: 'Isaac 渲染的近景与中景循环' })\n    2) <button type=\"button\" data-distance=\"near\" aria-pressed=\"false\">近景 · 2 台</button> aka getByRole('button', { name: '近景 · 2 台' })\n\nCall log:\n  - waiting for locator('[data-distance=\"near\"]')\n\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/distance-study-review.cjs:30:103"
-  ],
+  "commit": "aa6391fe810682a1f3f1c034b869151b4a107fd5",
+  "passed": true,
+  "errors": [],
   "screenshots": [
     {
       "file": "near-1440.jpg",
@@ -32,16 +30,16 @@
         "mode": "manual",
         "running": true,
         "stage": "bridge",
-        "phase": 1.3557000000000006,
+        "phase": 1.3587000000000007,
         "pending": null,
         "playing": 1,
         "lastTransition": {
           "from": "near",
           "to": "middle",
           "anchor": 1,
-          "startPhase": 1.014,
-          "startSkew": 0.013999999999999346,
-          "startedAt": 1443.0999999999767,
+          "startPhase": 1.0029,
+          "startSkew": 0.0029000000000003467,
+          "startedAt": 2346.9999999999927,
           "bridgeFirstFrame": 0.04
         },
         "transitions": [],
@@ -58,37 +56,37 @@
         "mode": "manual",
         "running": true,
         "stage": "loop",
-        "phase": 2.0395,
+        "phase": 2.092,
         "pending": null,
         "playing": 1,
         "lastTransition": {
           "from": "near",
           "to": "middle",
           "anchor": 1,
-          "startPhase": 1.014,
-          "startSkew": 0.013999999999999346,
-          "startedAt": 1443.0999999999767,
+          "startPhase": 1.0029,
+          "startSkew": 0.0029000000000003467,
+          "startedAt": 2346.9999999999927,
           "bridgeFirstFrame": 0.04,
           "landedPhase": 1.839999,
           "expectedPhase": 1.8399999999999999,
           "landingSkew": 0.0000010000000010279564,
-          "landedAt": 2283.899999999994,
-          "firstPresentedSkew": 0.008699999999983277
+          "landedAt": 3187.7999999999956,
+          "firstPresentedSkew": 0.045100000000005025
         },
         "transitions": [
           {
             "from": "near",
             "to": "middle",
             "anchor": 1,
-            "startPhase": 1.014,
-            "startSkew": 0.013999999999999346,
-            "startedAt": 1443.0999999999767,
+            "startPhase": 1.0029,
+            "startSkew": 0.0029000000000003467,
+            "startedAt": 2346.9999999999927,
             "bridgeFirstFrame": 0.04,
             "landedPhase": 1.839999,
             "expectedPhase": 1.8399999999999999,
             "landingSkew": 0.0000010000000010279564,
-            "landedAt": 2283.899999999994,
-            "firstPresentedSkew": 0.008699999999983277
+            "landedAt": 3187.7999999999956,
+            "firstPresentedSkew": 0.045100000000005025
           }
         ],
         "error": "",
@@ -104,16 +102,16 @@
         "mode": "manual",
         "running": true,
         "stage": "bridge",
-        "phase": 1.3558000000000003,
+        "phase": 1.3598,
         "pending": null,
         "playing": 1,
         "lastTransition": {
           "from": "middle",
           "to": "near",
           "anchor": 1,
-          "startPhase": 1.0085,
-          "startSkew": 0.00849999999999973,
-          "startedAt": 3726.1999999999825,
+          "startPhase": 1.0133,
+          "startSkew": 0.013300000000000978,
+          "startedAt": 4696.799999999996,
           "bridgeFirstFrame": 0.04
         },
         "transitions": [
@@ -121,15 +119,15 @@
             "from": "near",
             "to": "middle",
             "anchor": 1,
-            "startPhase": 1.014,
-            "startSkew": 0.013999999999999346,
-            "startedAt": 1443.0999999999767,
+            "startPhase": 1.0029,
+            "startSkew": 0.0029000000000003467,
+            "startedAt": 2346.9999999999927,
             "bridgeFirstFrame": 0.04,
             "landedPhase": 1.839999,
             "expectedPhase": 1.8399999999999999,
             "landingSkew": 0.0000010000000010279564,
-            "landedAt": 2283.899999999994,
-            "firstPresentedSkew": 0.008699999999983277
+            "landedAt": 3187.7999999999956,
+            "firstPresentedSkew": 0.045100000000005025
           }
         ],
         "error": "",
@@ -145,51 +143,242 @@
         "mode": "manual",
         "running": true,
         "stage": "loop",
-        "phase": 2.0378,
+        "phase": 2.0424,
         "pending": null,
         "playing": 1,
         "lastTransition": {
           "from": "middle",
           "to": "near",
           "anchor": 1,
-          "startPhase": 1.0085,
-          "startSkew": 0.00849999999999973,
-          "startedAt": 3726.1999999999825,
+          "startPhase": 1.0133,
+          "startSkew": 0.013300000000000978,
+          "startedAt": 4696.799999999996,
           "bridgeFirstFrame": 0.04,
           "landedPhase": 1.839999,
           "expectedPhase": 1.8399999999999999,
           "landingSkew": 0.0000010000000010279564,
-          "landedAt": 4566.899999999994,
-          "firstPresentedSkew": 0.009000000000000341
+          "landedAt": 5537.4000000000015,
+          "firstPresentedSkew": 0.009199999999996322
         },
         "transitions": [
           {
             "from": "near",
             "to": "middle",
             "anchor": 1,
-            "startPhase": 1.014,
-            "startSkew": 0.013999999999999346,
-            "startedAt": 1443.0999999999767,
+            "startPhase": 1.0029,
+            "startSkew": 0.0029000000000003467,
+            "startedAt": 2346.9999999999927,
             "bridgeFirstFrame": 0.04,
             "landedPhase": 1.839999,
             "expectedPhase": 1.8399999999999999,
             "landingSkew": 0.0000010000000010279564,
-            "landedAt": 2283.899999999994,
-            "firstPresentedSkew": 0.008699999999983277
+            "landedAt": 3187.7999999999956,
+            "firstPresentedSkew": 0.045100000000005025
           },
           {
             "from": "middle",
             "to": "near",
             "anchor": 1,
-            "startPhase": 1.0085,
-            "startSkew": 0.00849999999999973,
-            "startedAt": 3726.1999999999825,
+            "startPhase": 1.0133,
+            "startSkew": 0.013300000000000978,
+            "startedAt": 4696.799999999996,
             "bridgeFirstFrame": 0.04,
             "landedPhase": 1.839999,
             "expectedPhase": 1.8399999999999999,
             "landingSkew": 0.0000010000000010279564,
-            "landedAt": 4566.899999999994,
-            "firstPresentedSkew": 0.009000000000000341
+            "landedAt": 5537.4000000000015,
+            "firstPresentedSkew": 0.009199999999996322
+          }
+        ],
+        "error": "",
+        "cacheEntries": 20
+      }
+    },
+    {
+      "file": "near-390.jpg",
+      "state": {
+        "ready": true,
+        "current": "near",
+        "wanted": "near",
+        "mode": "manual",
+        "running": false,
+        "stage": "loop",
+        "phase": 0,
+        "pending": null,
+        "playing": 0,
+        "lastTransition": null,
+        "transitions": [],
+        "error": "",
+        "cacheEntries": 20
+      }
+    },
+    {
+      "file": "bridge-to-middle-390.jpg",
+      "state": {
+        "ready": true,
+        "current": "near",
+        "wanted": "middle",
+        "mode": "manual",
+        "running": true,
+        "stage": "bridge",
+        "phase": 1.3411000000000008,
+        "pending": null,
+        "playing": 1,
+        "lastTransition": {
+          "from": "near",
+          "to": "middle",
+          "anchor": 1,
+          "startPhase": 1.0119,
+          "startSkew": 0.011900000000000688,
+          "startedAt": 1385.199999999997,
+          "bridgeFirstFrame": 0.04
+        },
+        "transitions": [],
+        "error": "",
+        "cacheEntries": 20
+      }
+    },
+    {
+      "file": "middle-landed-390.jpg",
+      "state": {
+        "ready": true,
+        "current": "middle",
+        "wanted": "middle",
+        "mode": "manual",
+        "running": true,
+        "stage": "loop",
+        "phase": 2.0412,
+        "pending": null,
+        "playing": 1,
+        "lastTransition": {
+          "from": "near",
+          "to": "middle",
+          "anchor": 1,
+          "startPhase": 1.0119,
+          "startSkew": 0.011900000000000688,
+          "startedAt": 1385.199999999997,
+          "bridgeFirstFrame": 0.04,
+          "landedPhase": 1.839999,
+          "expectedPhase": 1.8399999999999999,
+          "landingSkew": 0.0000010000000010279564,
+          "landedAt": 2226.4000000000087,
+          "firstPresentedSkew": 0.008299999999987762
+        },
+        "transitions": [
+          {
+            "from": "near",
+            "to": "middle",
+            "anchor": 1,
+            "startPhase": 1.0119,
+            "startSkew": 0.011900000000000688,
+            "startedAt": 1385.199999999997,
+            "bridgeFirstFrame": 0.04,
+            "landedPhase": 1.839999,
+            "expectedPhase": 1.8399999999999999,
+            "landingSkew": 0.0000010000000010279564,
+            "landedAt": 2226.4000000000087,
+            "firstPresentedSkew": 0.008299999999987762
+          }
+        ],
+        "error": "",
+        "cacheEntries": 20
+      }
+    },
+    {
+      "file": "bridge-to-near-390.jpg",
+      "state": {
+        "ready": true,
+        "current": "middle",
+        "wanted": "near",
+        "mode": "manual",
+        "running": true,
+        "stage": "bridge",
+        "phase": 1.3421000000000003,
+        "pending": null,
+        "playing": 1,
+        "lastTransition": {
+          "from": "middle",
+          "to": "near",
+          "anchor": 1,
+          "startPhase": 1.0167,
+          "startSkew": 0.01670000000000016,
+          "startedAt": 3685,
+          "bridgeFirstFrame": 0.04
+        },
+        "transitions": [
+          {
+            "from": "near",
+            "to": "middle",
+            "anchor": 1,
+            "startPhase": 1.0119,
+            "startSkew": 0.011900000000000688,
+            "startedAt": 1385.199999999997,
+            "bridgeFirstFrame": 0.04,
+            "landedPhase": 1.839999,
+            "expectedPhase": 1.8399999999999999,
+            "landingSkew": 0.0000010000000010279564,
+            "landedAt": 2226.4000000000087,
+            "firstPresentedSkew": 0.008299999999987762
+          }
+        ],
+        "error": "",
+        "cacheEntries": 20
+      }
+    },
+    {
+      "file": "near-landed-390.jpg",
+      "state": {
+        "ready": true,
+        "current": "near",
+        "wanted": "near",
+        "mode": "manual",
+        "running": true,
+        "stage": "loop",
+        "phase": 2.0248,
+        "pending": null,
+        "playing": 1,
+        "lastTransition": {
+          "from": "middle",
+          "to": "near",
+          "anchor": 1,
+          "startPhase": 1.0167,
+          "startSkew": 0.01670000000000016,
+          "startedAt": 3685,
+          "bridgeFirstFrame": 0.04,
+          "landedPhase": 1.839999,
+          "expectedPhase": 1.8399999999999999,
+          "landingSkew": 0.0000010000000010279564,
+          "landedAt": 4525.5,
+          "firstPresentedSkew": 0.009100000000005437
+        },
+        "transitions": [
+          {
+            "from": "near",
+            "to": "middle",
+            "anchor": 1,
+            "startPhase": 1.0119,
+            "startSkew": 0.011900000000000688,
+            "startedAt": 1385.199999999997,
+            "bridgeFirstFrame": 0.04,
+            "landedPhase": 1.839999,
+            "expectedPhase": 1.8399999999999999,
+            "landingSkew": 0.0000010000000010279564,
+            "landedAt": 2226.4000000000087,
+            "firstPresentedSkew": 0.008299999999987762
+          },
+          {
+            "from": "middle",
+            "to": "near",
+            "anchor": 1,
+            "startPhase": 1.0167,
+            "startSkew": 0.01670000000000016,
+            "startedAt": 3685,
+            "bridgeFirstFrame": 0.04,
+            "landedPhase": 1.839999,
+            "expectedPhase": 1.8399999999999999,
+            "landingSkew": 0.0000010000000010279564,
+            "landedAt": 4525.5,
+            "firstPresentedSkew": 0.009100000000005437
           }
         ],
         "error": "",
@@ -205,15 +394,15 @@
         "from": "near",
         "to": "middle",
         "anchor": 1,
-        "startPhase": 1.014,
-        "startSkew": 0.013999999999999346,
-        "startedAt": 1443.0999999999767,
+        "startPhase": 1.0029,
+        "startSkew": 0.0029000000000003467,
+        "startedAt": 2346.9999999999927,
         "bridgeFirstFrame": 0.04,
         "landedPhase": 1.839999,
         "expectedPhase": 1.8399999999999999,
         "landingSkew": 0.0000010000000010279564,
-        "landedAt": 2283.899999999994,
-        "firstPresentedSkew": 0.008699999999983277
+        "landedAt": 3187.7999999999956,
+        "firstPresentedSkew": 0.045100000000005025
       }
     },
     {
@@ -223,15 +412,51 @@
         "from": "middle",
         "to": "near",
         "anchor": 1,
-        "startPhase": 1.0085,
-        "startSkew": 0.00849999999999973,
-        "startedAt": 3726.1999999999825,
+        "startPhase": 1.0133,
+        "startSkew": 0.013300000000000978,
+        "startedAt": 4696.799999999996,
         "bridgeFirstFrame": 0.04,
         "landedPhase": 1.839999,
         "expectedPhase": 1.8399999999999999,
         "landingSkew": 0.0000010000000010279564,
-        "landedAt": 4566.899999999994,
-        "firstPresentedSkew": 0.009000000000000341
+        "landedAt": 5537.4000000000015,
+        "firstPresentedSkew": 0.009199999999996322
+      }
+    },
+    {
+      "width": 390,
+      "target": "middle",
+      "transition": {
+        "from": "near",
+        "to": "middle",
+        "anchor": 1,
+        "startPhase": 1.0119,
+        "startSkew": 0.011900000000000688,
+        "startedAt": 1385.199999999997,
+        "bridgeFirstFrame": 0.04,
+        "landedPhase": 1.839999,
+        "expectedPhase": 1.8399999999999999,
+        "landingSkew": 0.0000010000000010279564,
+        "landedAt": 2226.4000000000087,
+        "firstPresentedSkew": 0.008299999999987762
+      }
+    },
+    {
+      "width": 390,
+      "target": "near",
+      "transition": {
+        "from": "middle",
+        "to": "near",
+        "anchor": 1,
+        "startPhase": 1.0167,
+        "startSkew": 0.01670000000000016,
+        "startedAt": 3685,
+        "bridgeFirstFrame": 0.04,
+        "landedPhase": 1.839999,
+        "expectedPhase": 1.8399999999999999,
+        "landingSkew": 0.0000010000000010279564,
+        "landedAt": 4525.5,
+        "firstPresentedSkew": 0.009100000000005437
       }
     }
   ]
