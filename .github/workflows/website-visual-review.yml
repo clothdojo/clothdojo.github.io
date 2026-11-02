@@ -45,7 +45,7 @@ on:
       - '.github/scripts/distance-study-review.cjs'
       - '.github/scripts/distance-stream-review.cjs'
       - 'website/assets/camera52/**'
-      - 'website/assets/camera54/**'
+      - 'website/assets/camera58/**'
       - 'website/assets/cloth48/**'
       - 'website/assets/atlas32/**'
 
@@ -79,11 +79,7 @@ jobs:
         run: |
           "$RUNNER_TEMP/browser-tools/node_modules/.bin/http-server" website -a 127.0.0.1 -p 8787 -c-1 -s > "$RUNNER_TEMP/site-server.log" 2>&1 &
           if [ '${{ inputs.page_path }}' = 'distance-study.html' ] || [ '${{ github.ref_name }}' = 'codex/rendered-distance-sample' ]; then
-            if [ -f website/assets/camera54/manifest.json ]; then
-              node .github/scripts/distance-stream-review.cjs
-            else
-              node .github/scripts/distance-stream-smoke.cjs
-            fi
+            node .github/scripts/distance-stream-review.cjs
           elif [ '${{ github.ref_name }}' = 'codex/lighting-study' ] || [ '${{ github.ref_name }}' = 'codex/camera-color-fix' ] || [ '${{ github.ref_name }}' = 'codex/startup-streaming' ]; then
             node .github/scripts/lighting-study-review.cjs
           elif [ '${{ github.ref_name }}' = 'codex/cloth-fidelity-study' ]; then

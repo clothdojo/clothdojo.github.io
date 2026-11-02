@@ -11,6 +11,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.waitForFunction(()=>window.distanceStudy?.state.ready||window.distanceStudy?.state.error,null,{timeout:45000});
   const state=()=>page.evaluate(()=>window.distanceStudy.state);
   assert(!(await state()).error,JSON.stringify(await state()));
+  const originalSource=await page.locator('video').evaluate(v=>v.currentSrc);
   const shot=async name=>{const file=name+'-'+width+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,state:await state()});save();};
   assert.equal(await page.locator('video').count(),1);assert.equal(await page.locator('video[controls]').count(),0);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   await page.evaluate(()=>{window.unexpectedSeeks=0;document.querySelector('video').addEventListener('seeking',()=>window.unexpectedSeeks++);});
@@ -18,9 +19,10 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   for(const target of ['middle','near']){
    await page.locator('button[data-distance="'+target+'"]').click();
    await page.waitForFunction(()=>window.distanceStudy.state.stage==='bridge',null,{timeout:20000});
+   await page.waitForTimeout(320);await shot('early-reveal-to-'+target);
    await page.waitForTimeout(650);await shot('stream-to-'+target);
    await page.waitForFunction(target=>window.distanceStudy.state.stage==='loop'&&window.distanceStudy.state.current===target,target,{timeout:12000});
-   await page.waitForTimeout(150);const s=await state();assert(!s.error,s.error);assert.equal(s.playing,1);assert.equal(String(s.sourceChanges),'1');
+   await page.waitForTimeout(150);const s=await state();assert(!s.error,s.error);assert.equal(s.playing,1);assert.equal(await page.locator('video').evaluate(v=>v.currentSrc),originalSource);
    assert(Math.abs(s.lastTransition.firstFrame-s.lastTransition.start)<.081,JSON.stringify(s.lastTransition));
    assert(Math.abs(s.lastTransition.landingFrame-s.lastTransition.expectedLanding)<.081,JSON.stringify(s.lastTransition));
    assert(s.lastTransition.presentedFrames>=34,JSON.stringify(s.lastTransition));assert.equal(s.waits.length,0,JSON.stringify(s.waits));
@@ -38,7 +40,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    await page.locator('#distance-auto').click();await page.waitForFunction(()=>window.distanceStudy.state.current==='near'&&window.distanceStudy.state.stage==='loop',null,{timeout:16000});
    report.checks.push({automaticReturn:await state()});
   }
-  assert.equal(await page.evaluate(()=>window.unexpectedSeeks),0);assert.equal(String((await state()).sourceChanges),'1');
+  assert.equal(await page.evaluate(()=>window.unexpectedSeeks),0);assert.equal(await page.locator('video').evaluate(v=>v.currentSrc),originalSource);
   const recording=page.video();await context.close();if(recording){const file='stream-switch-1440.webm';await recording.saveAs(path.join(out,file));report.recordings.push(file);}save();
  }
  assert.deepEqual(report.errors,[]);report.passed=true;
