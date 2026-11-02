@@ -118,9 +118,9 @@
  autoButton.addEventListener('click',()=>{mode=mode==='auto'?'manual':'auto';elapsed=0;wanted=current;if(stage==='loop')cancelPending();ui();});
  playButton.addEventListener('click',async()=>{
   running=!running;ui();if(!running){all.forEach(v=>v.pause());return;}
-  try{await active.play();lastTime=active.currentTime;}catch(e){running=false;error=e.message;ui();}
+  try{await (stage==='landing'?loops[inFlight.to]:active).play();lastTime=active.currentTime;}catch(e){running=false;error=e.message;ui();}
  });
- document.addEventListener('visibilitychange',()=>{if(document.hidden)all.forEach(v=>v.pause());else if(ready&&running)active.play().catch(e=>{error=e.message;running=false;ui();});});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)all.forEach(v=>v.pause());else if(ready&&running)(stage==='landing'?loops[inFlight.to]:active).play().catch(e=>{error=e.message;running=false;ui();});});
  function tick(){
   requestAnimationFrame(tick);if(!ready||!running||document.hidden||stage!=='loop')return;
   const t=loops[current].currentTime,delta=wrap(t-lastTime);if(delta<.5)elapsed+=delta;lastTime=t;
