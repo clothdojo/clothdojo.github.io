@@ -37,7 +37,7 @@ HTTP byte-range support is required to verify native video seeking and expanded 
 
 ## Presentation and evidence
 
-The homepage retains the approved centred formal title and opens with the fixed two-worktable film. It then shows the RGB dataset and white garment asset collection before model benchmarking, method, generation scale, joint visual-randomization/robot-transfer evidence and practical code entry points. Other generation, data-value and outcome-quality experiments remain on the full results page.
+The homepage retains the approved centred formal title and opens with the fixed two-worktable film. Author names and affiliations are tucked into a small disclosure at the page footer. The page then shows the RGB dataset and white garment asset collection before model benchmarking, method, generation scale, joint visual-randomization/robot-transfer evidence and practical code entry points. Other generation, data-value and outcome-quality experiments remain on the full results page.
 
 The opening film keeps two worktables and one camera fixed, cycling six garments through twelve complete model-generated task trajectories. Both tasks use the same garment identity and colour in each round. The learned NOCS-guided rollout checkpoints are recorded in the manifest; these task actions are not human demonstrations. The 65.44-second film uses 1600×560 native Isaac frames at 25 fps and 2× source replay, with CRF18 H.264 and faststart. Desktop and mobile use the same complete frame without cropping or source switching.
 
