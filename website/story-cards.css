@@ -39,6 +39,10 @@
 .story-card-body .usage-links>a{padding:12px}
 .story-card-body .usage-links h3{font-size:18px}
 .story-card-body .usage-links p{font-size:12px}
+.code-section{padding:12px 0 56px;background:#f5f5f7}
+.code-card{width:min(1080px,calc(100% - 80px));margin:0 auto;background:#fff;border-radius:32px;overflow:hidden}
+.code-card .story-card-body{overflow:visible;padding-bottom:32px}
+@media(max-width:700px){.code-section{padding-bottom:36px}.code-card{width:calc(100% - 48px);border-radius:24px}.code-card .story-card-body{padding-bottom:24px}}
 .highlights-controls{width:var(--story-card-width);margin:20px auto 0;display:flex;align-items:center;gap:10px}
 .story-dots{display:flex;align-items:center;margin-right:auto;gap:0}
 .story-dots button{border:0;background:transparent;padding:12px 7px;min-height:36px;display:flex;align-items:center;justify-content:center}
