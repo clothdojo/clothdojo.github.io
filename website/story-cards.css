@@ -1,4 +1,4 @@
-.highlights-section{--story-card-width:min(1080px,calc(100vw - 80px));--story-card-height:clamp(440px,calc(100svh - 240px),680px);background:#f5f5f7;padding:56px 0 36px;overflow:hidden;scroll-margin-top:80px}
+.highlights-section{--story-card-width:min(1080px,calc(100vw - 80px));--story-card-height:clamp(380px,calc(100svh - 330px),600px);background:#f5f5f7;padding:56px 0 36px;overflow:hidden;scroll-margin-top:80px}
 .highlights-heading{width:min(var(--width),calc(100% - var(--gutter)*2));margin:0 auto 28px}
 .research30 .highlights-heading h2{font-size:clamp(32px,4vw,52px);line-height:1.1}
 .story-track{position:relative;display:flex;gap:24px;overflow-x:auto;overflow-y:hidden;padding:0 max(40px,calc((100% - var(--story-card-width))/2));scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;touch-action:pan-x pan-y}
@@ -16,9 +16,11 @@
 .story-card-body .atlas-overview img{width:100%;height:100%;max-height:100%;object-fit:contain}
 .story-card--generation .story-card-body>.container{min-height:100%;display:flex;flex-direction:column;justify-content:center;gap:30px}
 .story-card--generation .hero-facts{justify-content:center;gap:70px;text-align:center;margin:auto 0}
+.story-card--generation .hero-facts p{flex-direction:column;align-items:center;gap:10px}
 .research30 .story-card--generation .hero-facts strong{font-size:clamp(52px,7vw,96px);line-height:1.1;letter-spacing:-3px}
 .story-card--generation .hero-facts span{font-size:14px}
 .story-card-body video{display:block;width:100%;height:auto;max-height:calc(var(--story-card-height) - 210px);object-fit:contain;background:#fff;border-radius:0}
+.research30 .story-card-body .rgb-ribbon{width:100%;margin:0}
 .story-card-body .rgb-ribbon figcaption,.story-card-body .transfer-film figcaption{margin:8px 0 0}
 .story-card-body details.explanation{margin:18px 0 0}
 .story-card-body .explanation>summary{font-size:12px;padding:8px 0}
@@ -47,5 +49,5 @@
 .story-arrow{display:grid;place-items:center;width:42px;height:42px;padding:0 0 3px;border:0;border-radius:50%;background:#e7e7eb;color:#353538;font:30px/1 Arial,sans-serif}
 .story-arrow:disabled{opacity:.3;cursor:default}
 .story-announcement{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-@media(max-width:700px){.highlights-section{--story-card-width:calc(100vw - 48px);--story-card-height:clamp(440px,calc(100svh - 200px),640px);padding-top:36px}.highlights-heading{margin-bottom:22px}.story-track{gap:14px;padding-inline:24px}.research30 .story-card{border-radius:24px}.story-card-heading{padding:24px 20px 18px}.story-card-body{padding:0 20px 20px}.story-card--generation .hero-facts{gap:30px;flex-direction:column}.research30 .story-card--generation .hero-facts strong{font-size:64px}.story-card-body .chart-pair{gap:20px;padding:0}.story-card-body .metric-row{font-size:12px;gap:6px;min-height:24px}.story-card-body .metric-chart{--metric-label:94px;--metric-value:30px}.story-card-body .chart-axis{font-size:10px}.story-card-body .usage-links{display:block}.story-card-body .usage-links>a{margin-top:8px}.highlights-controls{gap:8px}.story-arrow{width:36px;height:36px}.story-dots button{padding-inline:5px}.story-card-body .method-flow{margin:8px 0;gap:8px}.story-card-body .method-flow>div{padding:10px 4px}.research30 .story-card-body .method-flow h3{font-size:19px}}
+@media(max-width:700px){.highlights-section{--story-card-width:calc(100vw - 48px);--story-card-height:clamp(360px,calc(100svh - 300px),600px);padding-top:36px}.highlights-heading{margin-bottom:22px}.story-track{gap:14px;padding-inline:24px}.research30 .story-card{border-radius:24px}.story-card-heading{padding:24px 20px 18px}.story-card-body{padding:0 20px 20px}.story-card--generation .hero-facts{gap:30px;flex-direction:column}.research30 .story-card--generation .hero-facts strong{font-size:64px}.story-card-body .chart-pair{gap:20px;padding:0}.story-card-body .metric-row{font-size:12px;gap:6px;min-height:24px}.story-card-body .metric-chart{--metric-label:94px;--metric-value:30px}.story-card-body .chart-axis{font-size:10px}.story-card-body .usage-links{display:block}.story-card-body .usage-links>a{margin-top:8px}.highlights-controls{gap:8px}.story-arrow{width:36px;height:36px}.story-dots button{padding-inline:5px}.story-card-body .method-flow{margin:8px 0;gap:8px}.story-card-body .method-flow>div{padding:10px 4px}.research30 .story-card-body .method-flow h3{font-size:19px}}
 @media(prefers-reduced-motion:reduce){.story-track{scroll-behavior:auto}.story-dots button::before{transition:none}}
