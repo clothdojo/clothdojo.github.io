@@ -28,8 +28,11 @@
   });
  }
  async function seek(video,time,signal){
-  if(video.readyState>=3&&!video.seeking&&Math.abs(video.currentTime-time)<.005)return;
-  video.currentTime=time;await waitReady(video,signal);
+  // Seek just inside the intended frame, not infinitesimally before its PTS.
+  // Chrome may otherwise present the previous frame at a decimal boundary.
+  const target=time+.0005;
+  if(video.readyState>=3&&!video.seeking&&Math.abs(video.currentTime-target)<.0001)return;
+  video.currentTime=target;await waitReady(video,signal);
  }
  async function ensureLoop(view,signal){
   const video=loops[view];if(!video.hasAttribute('src')){video.src=asset(manifest.views[view].src);video.poster=asset(manifest.views[view].poster);video.preload='auto';video.load();}
@@ -73,22 +76,31 @@
   show(bridge);ui();
   try{await bridge.play();if(!running||document.hidden)bridge.pause();}catch(e){running=false;error=e.message;ui();}
  }
- bridge.addEventListener('ended',async()=>{
+ async function land(){
   if(stage!=='bridge'||!inFlight)return;
   const flight=inFlight;stage='landing';const destination=loops[flight.to];
   try{
-   await seek(destination,flight.record.end_phase);
+   // The destination was already decoded during prepare(); do not seek again
+   // at the handoff and stall the final camera frame.
+   if(running&&!document.hidden){
+    const presented=new Promise(resolve=>destination.requestVideoFrameCallback(resolve));
+    await destination.play();await presented;
+   }
    bridge.pause();show(destination);current=flight.to;stage='loop';elapsed=0;lastTime=destination.currentTime;
    lastTransition.landedPhase=destination.currentTime;lastTransition.expectedPhase=flight.record.end_phase;lastTransition.landingSkew=Math.abs(diff(destination.currentTime,flight.record.end_phase));lastTransition.landedAt=performance.now();
    transitions.push({...lastTransition});if(transitions.length>30)transitions.shift();inFlight=null;
-   if(running&&!document.hidden)await destination.play();
+   if(!running||document.hidden)destination.pause();
    bridge.removeAttribute('src');bridge.load();ui();
    if(wanted!==current)prepare(wanted);
   }catch(e){error=e.message;running=false;ui();}
- });
+ }
+ bridge.addEventListener('ended',land);
  for(const video of all){
   const presented=(_now,frame)=>{
    video.dataset.presentedTime=String(frame.mediaTime);
+   // Start the warm destination on the final bridge frame, one frame before
+   // `ended`. Its next presentation follows the bridge's final source state.
+   if(video===bridge&&stage==='bridge'&&inFlight&&running&&!document.hidden&&frame.mediaTime>=inFlight.record.duration-1/manifest.fps-.002)land();
    if(video===active&&lastTransition){
     if(stage==='bridge'&&lastTransition.bridgeFirstFrame===undefined)lastTransition.bridgeFirstFrame=frame.mediaTime;
     if(stage==='loop'&&lastTransition.landedAt&&lastTransition.firstPresentedSkew===undefined){
