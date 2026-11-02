@@ -19,11 +19,13 @@ export function createStudio(renderer,scene,camera,light,hemi,ground,root){
     light.position.set(...(improved?[-3,-4,9]:[8,-12,22]));light.target.position.set(improved?0:-5,0,0);
     renderer.toneMappingExposure=improved?1.05:1.25;
     renderer.shadowMap.type=improved?T.VSMShadowMap:T.PCFSoftShadowMap;
-    light.shadow.radius=improved?4:1;light.shadow.blurSamples=8;
+    light.shadow.radius=improved?8:1;light.shadow.blurSamples=8;
     light.shadow.bias=improved?-.00005:-.00025;light.shadow.normalBias=improved?.002:.015;
-    ground.material.opacity=improved?.24:.17;
+    ground.material.opacity=improved?.19:.17;
     if(!improved)Object.assign(light.shadow.camera,{left:-19,right:19,top:19,bottom:-19,near:1,far:65});
     light.shadow.camera.updateProjectionMatrix();renderer.shadowMap.needsUpdate=true;
+    // Changing shadow algorithms also changes receiver shader defines.
+    scene.traverse(object=>{if(object.material)for(const material of (Array.isArray(object.material)?object.material:[object.material]))material.needsUpdate=true;});
   }
   function fit(cells){
     if(mode!=='enhanced')return;
@@ -42,6 +44,10 @@ export function createStudio(renderer,scene,camera,light,hemi,ground,root){
   return {apply,fit,resize(){ao.setSize(Math.max(128,Math.round(root.clientWidth*.5)),Math.max(96,Math.round(root.clientHeight*.5)));},render(zoom){
     renderer.render(scene,camera);
     const strength=.45*(1-T.MathUtils.smoothstep(zoom,.25,.5));
-    if(mode==='enhanced'&&strength>.001){ao.ssaoMaterial.uniforms.studyStrength.value=strength;ao.render(renderer,null,null);}
+    if(mode==='enhanced'&&strength>.001){
+      ao.ssaoMaterial.uniforms.studyStrength.value=strength;
+      // The infinite shadow catcher is presentation geometry, not an AO subject.
+      ground.visible=false;try{ao.render(renderer,null,null);}finally{ground.visible=true;}
+    }
   },get mode(){return mode;}};
 }
