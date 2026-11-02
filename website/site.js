@@ -121,6 +121,7 @@
     if (motion.matches) { films.forEach(v => v.pause()); active = undefined; }
     else ambient();
   });
+  document.addEventListener('clothdojo:ambient', ambient);
   const dialog = document.getElementById('media-dialog');
   const expanded = document.getElementById('expanded-film');
   document.querySelectorAll('[data-expand]').forEach(button => button.addEventListener('click', () => {

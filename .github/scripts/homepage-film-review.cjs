@@ -19,11 +19,34 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    const time=width===1440?25.32:3;await video.evaluate(async(v,t)=>{v.currentTime=t;await new Promise(resolve=>v.addEventListener('seeked',resolve,{once:true}));},time);
    const file=target.replace('.html','')+'-'+width+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,target,width,height,bounds});
    await page.locator('#about summary').click();assert.match(await page.locator('#about').innerText(),/model-generated|generated in simulation/i);
-   assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','diversity','generation','rgb','render','results','method','use']);
+   assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','highlights']);
+   assert.deepEqual(await page.locator('.story-track > .story-card').evaluateAll(s=>s.map(x=>x.id)),['diversity','generation','rgb','render','results','transfer-results','method','use']);
    assert(await page.locator('body').evaluate(b=>b.classList.contains('research30')),'Keep the approved research design at the official entry');
    assert.equal(await page.locator('#diversity .atlas-overview a, #diversity a.atlas-overview').count(),0,'The garment overview remains presentation-only');
    report.checks.push({target,width,height,oneViewport:true,noHeroControls:true,whiteGround:true,reducedMotion:true});await context.close();save();
   }
+ }
+ for(const width of [1440,390]){
+  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',hasTouch:width===390}),page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));
+  await page.goto('http://127.0.0.1:8787/index.html');await page.locator('#highlights').scrollIntoViewIfNeeded();
+  const next=page.locator('[data-story-next]'),prev=page.locator('[data-story-prev]');
+  assert(await prev.isDisabled());
+  for(let i=0;i<8;i++){
+   if(i)await next.click();await page.waitForFunction(i=>window.storyCards.state.active===i,i);
+   const card=page.locator('.story-card').nth(i);const box=await card.boundingBox();assert(Math.abs(box.x+box.width/2-width/2)<2,'Center the selected card');
+   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+   await card.locator('img').evaluateAll(async imgs=>Promise.all(imgs.map(img=>img.decode())));
+   const file='card-'+width+'-'+i+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,width,card:i});
+   assert.equal(await page.locator('.story-dots button[aria-current=true]').count(),1);
+   assert.equal(await page.locator('video').evaluateAll(vs=>vs.filter(v=>!v.paused).length),0,'Reduced motion applies to card videos');
+  }
+  assert(await next.isDisabled());await prev.click();await page.waitForFunction(()=>window.storyCards.state.active===6);
+  await page.locator('.story-dots button').nth(0).click();await page.waitForFunction(()=>window.storyCards.state.active===0);
+  await page.locator('.story-track').focus();await page.keyboard.press('ArrowRight');await page.waitForFunction(()=>window.storyCards.state.active===1);
+  if(width===1440){const box=await page.locator('.story-track').boundingBox();await page.mouse.move(width*.75,box.y+140);await page.mouse.down();await page.mouse.move(width*.2,box.y+140,{steps:12});await page.mouse.up();await page.waitForFunction(()=>window.storyCards.state.active===2);}
+  await page.locator('header a[href="#method"]').click();await page.waitForFunction(()=>window.storyCards.state.active===6);
+  await page.goto('http://127.0.0.1:8787/index.html#results');await page.waitForFunction(()=>window.storyCards.state.active===4);
+  report.checks.push({width,horizontalCards:8,arrows:true,dots:true,keyboard:true,deepLinks:true,noDocumentOverflow:true});await context.close();save();
  }
  for(const width of [1440,390]){
   const context=await browser.newContext({viewport:{width,height:900},recordVideo:{dir:path.join(out,'recordings'),size:{width,height:900}}}),page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));
@@ -38,7 +61,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   const source=await page.locator('#hero-film').evaluate(v=>v.currentSrc);
   for(const c of manifest.cases){await page.waitForFunction(t=>document.getElementById('hero-film').currentTime>=t,c.first_frame/25+3,{timeout:30000});}
   await page.waitForFunction(()=>window.heroProbe.wrapped,null,{timeout:20000});const probe=await page.evaluate(()=>window.heroProbe);assert(probe.seam<8);assert(Math.max(...probe.gaps)<.161);assert.equal(await page.locator('#hero-film').evaluate(v=>v.currentSrc),source);
-  await page.locator('#transfer-film').scrollIntoViewIfNeeded();await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.paused;});
+  await page.evaluate(()=>window.storyCards.go(3,'auto'));await page.locator('#transfer-film').scrollIntoViewIfNeeded();await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.paused;});
   await page.waitForFunction(()=>document.querySelectorAll('video[data-auto]').length&&[...document.querySelectorAll('video[data-auto]')].filter(v=>!v.paused).length===1);
   await page.locator('#hero-film').scrollIntoViewIfNeeded();await page.waitForFunction(()=>!document.getElementById('hero-film').paused);
   report.checks.push({width,fullLoop:true,seamMeanRgbDifference:probe.seam,maxFrameGap:Math.max(...probe.gaps),exclusiveAmbientPlayback:true});
