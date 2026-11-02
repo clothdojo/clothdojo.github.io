@@ -1,17 +1,34 @@
 const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process');
 const out=process.env.REVIEW_OUTPUT;fs.mkdirSync(out,{recursive:true});
-const report={commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),passed:false,errors:[],screenshots:[],checks:[],timing:[],cameraSweep:[],pagePath:'lighting-study.html'};
+const report={commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),passed:false,errors:[],screenshots:[],checks:[],timing:[],startup:[],cameraSweep:[],pagePath:'lighting-study.html'};
 const sourceManifest=JSON.parse(fs.readFileSync('website/assets/live46/manifest.json','utf8'));
 const luminance=rgb=>rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722;
-const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));let browser;
+const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));let browser,releasePending;
 (async()=>{try{
  browser=await chromium.launch({channel:'chrome',args:['--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader']});
  for(const [width,height] of [[1440,900],[390,844],[1920,490]]){
-  const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'}),page=await context.newPage();let requests=0;
-  page.on('request',()=>requests++);page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});page.on('response',r=>{if(r.status()>=400)report.errors.push(r.status()+' '+r.url());});
+  const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'}),page=await context.newPage();let requests=0;const urls=[];
+  const tailGate=new Promise(resolve=>{releasePending=resolve;});
+  await page.route('**/assets/**',async route=>{
+    const name=new URL(route.request().url()).pathname,cell=name.match(/\/live46\/(?:cloth|poses)-(\d+)\.bin$/);
+    if(/\/cloth48\/part-(?:0|24)-[1-4]\.bin$/.test(name)||(cell&&![0,24].includes(Number(cell[1]))))await tailGate;
+    await route.continue();
+  });
+  page.on('request',r=>{requests++;urls.push(r.url());});page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});page.on('response',r=>{if(r.status()>=400)report.errors.push(r.status()+' '+r.url());});
   await page.goto('http://127.0.0.1:8787/lighting-study.html',{waitUntil:'domcontentloaded'});
-  await page.waitForFunction(()=>window.liveCamera?.state.loaded===48||window.liveCamera?.state.error,null,{timeout:150000});
+  await page.waitForFunction(()=>window.liveCamera?.state.firstFrameMs!==null&&window.liveCamera?.state.ready||window.liveCamera?.state.error,null,{timeout:150000});
+  const early=await page.evaluate(()=>window.liveCamera.state);assert(!early.error,early.error);assert.equal(early.loaded,2);assert.equal(early.bufferedFrames,50);assert.deepEqual(early.focusVertices,[9760,6116]);
+  const criticalBytes=await page.evaluate(()=>performance.getEntriesByType('resource').filter(r=>r.responseEnd<=window.liveCamera.state.firstFrameMs).reduce((n,r)=>n+r.encodedBodySize,0));
+  report.startup.push({width,firstFrameMs:early.firstFrameMs,criticalEncodedBytes:criticalBytes,bufferedFrames:early.bufferedFrames,loaded:early.loaded});
+  const startupFile='startup51-'+width+'.jpg';await page.screenshot({path:path.join(out,startupFile),type:'jpeg',quality:90});report.screenshots.push({file:startupFile,viewport:{width,height},state:early});save();
+  if(width===390){
+    await page.locator('#motion-toggle').click();await page.waitForFunction(()=>window.liveCamera.state.phase>=1.95,null,{timeout:45000});
+    assert(await page.evaluate(()=>window.liveCamera.state.phase<=1.96+1e-6),'Playback must stay within buffered data');await page.locator('#motion-toggle').click();
+  }
+  releasePending();releasePending=null;
+  await page.waitForFunction(()=>(window.liveCamera?.state.loaded===48&&window.liveCamera?.state.bufferedFrames===250)||window.liveCamera?.state.error,null,{timeout:150000});
+  assert(!urls.some(u=>/\/(?:cloth48|live46)\/cloth-(?:0|24)\.bin$/.test(u)),'Whole focus animations and duplicate low-LOD focus animations are not startup downloads');
   let s=await page.evaluate(()=>window.liveCamera.state);assert(!s.error,s.error);assert(s.ready);assert.deepEqual(s.focusVertices,[9760,6116]);const baselineRequests=requests;
   for(const [j,i] of [0,24].entries())assert(luminance(s.clothAlbedo[j])>luminance(sourceManifest.cells[i].color)*1.1,'Cloth display albedo is brighter without changing scene exposure');
   const settle=async()=>{const n=await page.evaluate(()=>window.liveCamera.state.frames);await page.waitForFunction(n=>window.liveCamera.state.frames>n,n);};
@@ -47,5 +64,5 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.locator('#motion-toggle').click();await page.locator('#camera-distance').evaluate(el=>{el.value='1';el.dispatchEvent(new Event('input',{bubbles:true}));});await page.waitForFunction(()=>window.liveCamera.state.renderedZoom===1);await shot('light49-'+width+'-far');
   assert.equal(requests,baselineRequests,'No additional requests on lighting switch or continuous camera navigation');assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await context.close();
  }
- assert.equal(report.errors.length,0,JSON.stringify(report.errors));report.checks.push('Monotone visibility/opacity for all48 workcells through1001 actual camera/visibility evaluations; brighter cloth albedo; matched complete mesh/material/frame/camera; lighting switch preserves phase; arbitrary adjacent zoom; paused geometry cached; action continues during drag; no requests on interaction; near AO and far-scale rendering; desktop/mobile/short-wide/reduced motion');report.passed=true;
-}catch(e){report.failure=e.stack;process.exitCode=1;}finally{save();if(browser)await browser.close();console.log(JSON.stringify({passed:report.passed,failure:report.failure,errors:report.errors}));}})();
+ assert.equal(report.errors.length,0,JSON.stringify(report.errors));report.checks.push('Complete-quality first frame while later animation/workcells are deliberately blocked; buffered playback guard; no duplicate full focus downloads; monotone visibility for48 workcells at1001 camera positions; matched mesh/material/frame/camera; no requests during loaded interaction; desktop/mobile/short-wide');report.passed=true;
+}catch(e){report.failure=e.stack;process.exitCode=1;}finally{releasePending?.();save();if(browser)await browser.close();console.log(JSON.stringify({passed:report.passed,failure:report.failure,errors:report.errors}));}})();

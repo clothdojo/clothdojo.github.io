@@ -14,7 +14,7 @@ let browser;
     page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});
     page.on('response',r=>{if(r.status()>=400)report.errors.push(r.status()+' '+r.url());});
     await page.goto('http://127.0.0.1:8787/cloth-study.html',{waitUntil:'domcontentloaded'});
-    await page.waitForFunction(()=>window.liveCamera?.state.loaded===48||window.liveCamera?.state.error,null,{timeout:120000});
+    await page.waitForFunction(()=>(window.liveCamera?.state.loaded===48&&window.liveCamera?.state.bufferedFrames===250)||window.liveCamera?.state.error,null,{timeout:120000});
     let state=await page.evaluate(()=>window.liveCamera.state);assert(!state.error,state.error);assert(state.ready&&state.fidelityReady);
     assert.deepEqual(state.focusVertices,[9760,6116]);assert.equal(state.phase,0);assert(!state.running);
     const loadedRequests=requests;
