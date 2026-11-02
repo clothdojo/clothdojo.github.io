@@ -59,7 +59,7 @@ permissions:
 
 concurrency:
   group: website-visual-review
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   capture:
