@@ -14,7 +14,7 @@ The current `distance-study.html` preview plays one ordinary MP4 from `assets/fi
 - `rgb-collection.css`: aligns the v31 RGB preview with the shared content width used by the garment collection. Showcase videos use a compact play/pause control without metadata captions; replay speed, recording counts and sources live in expandable explanations. Ambient playback follows the most visible automatic video.
 - `research-preview-v30.html` / `research30.css`: white centred-title research UI study, referencing SuperMimic; includes a separate full-width RGB dataset ribbon after model results.
 - `assets/rgb30/manifest.json`: original `cam_high` source episodes, hashes, 2× replay timing and periodic 72-second ribbon composition. Desktop shows 24 trajectories; mobile shows 12 with larger panels. Resets happen outside the viewport.
-- `index.html`: an automatic task demonstration, model evaluations, method, generation scale, combined domain/robot comparison and practical entry points.
+- `index.html`: the approved SuperMimic-inspired research layout promoted to the official entry: centred full title, white integrated film, RGB ribbon, white garment collection, model results, method, generation and combined domain/robot comparison. Existing official numerical tables are retained. `research-preview-v31.html` remains the design reference.
 - `site.css` / `studio.css` / `site.js`: the shared visual system and homepage media interactions. The homepage does not depend on the archived homepage CSS or player scripts.
 - `results.html` / `results.css`: five complete experiment groups. Homepage research charts and all research tables use these same components.
 - `explore.html` / `explore.css` / `explorer.js`: the 24-trajectory catalog and interactive 500-garment atlas.
@@ -37,7 +37,7 @@ HTTP byte-range support is required to verify native video seeking and expanded 
 
 ## Presentation and evidence
 
-The homepage retains the complete formal title and opens with a continuous demonstration. The reading order after this visual introduction is model benchmarking, method, generation scale and the asset pool, then a joint visual-randomization/robot-transfer scene and practical code entry points. Other generation, data-value and outcome-quality experiments remain on the full results page.
+The homepage retains the approved centred formal title and opens with the fixed two-worktable film. It then shows the RGB dataset and white garment asset collection before model benchmarking, method, generation scale, joint visual-randomization/robot-transfer evidence and practical code entry points. Other generation, data-value and outcome-quality experiments remain on the full results page.
 
 The opening film keeps two worktables and one camera fixed, cycling six garments through twelve complete model-generated task trajectories. Both tasks use the same garment identity and colour in each round. The learned NOCS-guided rollout checkpoints are recorded in the manifest; these task actions are not human demonstrations. The 65.44-second film uses 1600×560 native Isaac frames at 25 fps and 2× source replay, with CRF18 H.264 and faststart. Desktop and mobile use the same complete frame without cropping or source switching.
 
