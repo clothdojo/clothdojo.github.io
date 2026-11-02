@@ -1,9 +1,7 @@
 {
-  "commit": "05f0bae074a4380ef9e5f57813d8a97fd0462ca6",
-  "passed": false,
-  "errors": [
-    "page.waitForFunction: Timeout 30000ms exceeded.\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/homepage-film-review.cjs:65:66"
-  ],
+  "commit": "76c1e4a010558a14e323a3c68b6aca4b78ba6939",
+  "passed": true,
+  "errors": [],
   "screenshots": [
     {
       "file": "index-1440.jpg",
@@ -361,11 +359,19 @@
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.08000000000000007,
+      "maxFrameGap": 0.07999999999999996,
+      "exclusiveAmbientPlayback": true
+    },
+    {
+      "width": 390,
+      "fullLoop": true,
+      "seamMeanRgbDifference": 0.16666666666666666,
+      "maxFrameGap": 0.04000000000000625,
       "exclusiveAmbientPlayback": true
     }
   ],
   "recordings": [
-    "homepage-loop-1440.webm"
+    "homepage-loop-1440.webm",
+    "homepage-loop-390.webm"
   ]
 }
