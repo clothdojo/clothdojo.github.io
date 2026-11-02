@@ -1,7 +1,7 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ClothDojo · 实时光照对照</title><link rel="icon" href="data:,">
-<link rel="stylesheet" href="camera-study.css?v=49">
-<script type="importmap">{"imports":{"three":"./vendor/three-r180/three.module.min.js"}}</script><script type="module" src="camera-live.js?v=49"></script>
+<link rel="stylesheet" href="camera-study.css?v=50">
+<script type="importmap">{"imports":{"three":"./vendor/three-r180/three.module.min.js"}}</script><script type="module" src="camera-live.js?v=50"></script>
 <style>.lighting-compare{display:flex;justify-content:center;gap:8px;margin:16px 20px 4px}.lighting-compare button{border:1px solid #dce0e3;background:#fff;border-radius:20px;padding:9px 15px;font-size:12px;cursor:pointer}.lighting-compare button[aria-pressed="true"]{color:#fff;background:#273b36;border-color:#273b36}.intro>p.hint:last-child{font-size:12px;color:#737a77;margin:9px auto;max-width:430px}</style>
 </head><body data-cloth-study data-lighting-study>
 <header><a class="brand" href="research-preview-v31.html">ClothDojo</a><span>Lighting study</span><a href="camera-study-video.html">对照 Isaac 影片 ↗</a></header><main>
@@ -9,5 +9,5 @@
 <div id="camera-viewer" class="viewer" role="group" aria-label="实时光照与自由相机" aria-busy="true"><canvas id="live-canvas" aria-label="完整衣服轨迹与光照对照"></canvas><p id="camera-status" role="status">正在准备环境光与完整衣服…</p></div>
 <div class="control-area"><div class="control-heading"><span id="camera-label">自动运镜</span><button id="motion-toggle" type="button" disabled>暂停动作</button></div><div class="camera-control"><label class="sr-only" for="camera-distance">镜头距离</label><input id="camera-distance" type="range" min="0" max="1" step="0.001" value="0" disabled><div class="marks" aria-hidden="true"><span>近景 · 动作细节</span><span>中景 · 多样性</span><span>远景 · 规模</span></div></div><button id="resume-auto" type="button" disabled>自动运镜中</button></div>
 <p class="note">自由相机与动作独立循环。近景启用半分辨率褶皱遮蔽，远景逐渐关闭以控制开销。</p>
-<details><summary>这一版改变了什么？</summary><p>用共享室内环境贴图补充表面受光与反射，降低均匀半球光；阴影范围按可见工作区的完整运动边界拟合，采用模糊阴影；近景增加屏幕空间环境遮蔽。背景仍为网页白色，环境贴图不会作为背景墙显示。</p><p>这些是实时近似，不是 RTX 光线追踪。原版与新版使用相同轨迹、网格、棉布材质、相机及动作时钟。</p></details>
+<details><summary>这一版改变了什么？</summary><p>用共享室内环境贴图补充表面受光与反射，降低均匀半球光；阴影范围按可见工作区的完整运动边界拟合，采用模糊阴影；近景增加屏幕空间环境遮蔽。背景仍为网页白色，环境贴图不会作为背景墙显示。</p><p>衣服的展示配色按原色相提高亮度与饱和度，保留棉布贴图及哑光参数。两种光照共用这套配色。</p><p>这些是实时近似，不是 RTX 光线追踪。原版与新版使用相同轨迹、网格、棉布材质、相机及动作时钟。</p></details>
 </main></body></html>
