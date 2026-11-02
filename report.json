@@ -1,7 +1,9 @@
 {
-  "commit": "79dbfda59df1c349d5e03dd9232c636e80d77fd1",
+  "commit": "f745a2c4d9e257b47a67b33f997dd7b6683e2bc6",
   "passed": false,
-  "errors": [],
+  "errors": [
+    "page.waitForFunction: Timeout 15000ms exceeded.\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/homepage-film-review.cjs:38:15"
+  ],
   "screenshots": [
     {
       "file": "index-1440.jpg",
@@ -146,6 +148,36 @@
         "width": 320,
         "height": 342.1875
       }
+    },
+    {
+      "file": "card-1440-0.jpg",
+      "width": 1440,
+      "card": 0
+    },
+    {
+      "file": "card-1440-1.jpg",
+      "width": 1440,
+      "card": 1
+    },
+    {
+      "file": "card-1440-2.jpg",
+      "width": 1440,
+      "card": 2
+    },
+    {
+      "file": "card-1440-3.jpg",
+      "width": 1440,
+      "card": 3
+    },
+    {
+      "file": "card-1440-4.jpg",
+      "width": 1440,
+      "card": 4
+    },
+    {
+      "file": "card-1440-5.jpg",
+      "width": 1440,
+      "card": 5
     }
   ],
   "checks": [
