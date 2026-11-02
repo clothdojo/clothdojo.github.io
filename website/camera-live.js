@@ -156,7 +156,8 @@ function visibility(cell){
     const py=(.5-(x*up.x+y*up.y+z*up.z)/(2*d*tan))*h;
     edge=Math.min(edge,px,w-px,py,h-py);
   }
-  return smooth(Math.max(0,Math.min(1,(edge-Math.max(6,22*w/1600))/Math.max(3,8*w/1600))));
+  const scaleWidth=Math.min(w,h*(20/7));
+  return smooth(Math.max(0,Math.min(1,(edge-Math.max(6,22*scaleWidth/1600))/Math.max(3,8*scaleWidth/1600))));
 }
 function animateCell(cell,i,a,b,mix){
   const alpha=cell.ready?(i===0||i===24?1:visibility(cell)):0;const visible=alpha>.001;

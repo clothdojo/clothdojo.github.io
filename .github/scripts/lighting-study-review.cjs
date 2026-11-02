@@ -7,7 +7,7 @@ const luminance=rgb=>rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722;
 const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));let browser;
 (async()=>{try{
  browser=await chromium.launch({channel:'chrome',args:['--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader']});
- for(const [width,height] of [[1440,900],[390,844]]){
+ for(const [width,height] of [[1440,900],[390,844],[1920,490]]){
   const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'}),page=await context.newPage();let requests=0;
   page.on('request',()=>requests++);page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});page.on('response',r=>{if(r.status()>=400)report.errors.push(r.status()+' '+r.url());});
   await page.goto('http://127.0.0.1:8787/lighting-study.html',{waitUntil:'domcontentloaded'});
