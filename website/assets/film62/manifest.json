@@ -1,0 +1,424 @@
+{
+  "schema": "clothdojo_fixed_pair_film_v1",
+  "src": "generation-loop.mp4",
+  "poster": "generation-loop-poster.jpg",
+  "width": 1600,
+  "height": 560,
+  "fps": 25,
+  "frames": 1636,
+  "duration_seconds": 65.44,
+  "bytes": 5466711,
+  "sha256": "46d8ff9261415279602a9a0317f692240f176886402c5f41311acaf7c4cdfaeb",
+  "workspaces": 2,
+  "asset_count": 6,
+  "trajectory_count": 12,
+  "playback_speed": 2,
+  "camera": {
+    "camera_eye": [
+      7.074829758172653,
+      -2.22460584200135e-16,
+      5.474316292554007
+    ],
+    "camera_target": [
+      0.2415505816917361,
+      -2.22460584200135e-16,
+      0.7043540966787896
+    ],
+    "camera_focal_length": 35.0
+  },
+  "cases": [
+    {
+      "case": 0,
+      "asset_id": "rand_0UKD4QKBTS",
+      "color_linear_rgb": [
+        0.3510138,
+        0.2302416,
+        0.119254
+      ],
+      "first_frame": 0,
+      "frames": 275,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UKD4QKBTS__07",
+          "terminal_state": 794,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 794,
+            "window_start_state_index": 769,
+            "deformable_distance": 0.04385646432638168,
+            "rigid_distance": 0.00468369061127305,
+            "combined_distance": 0.03014599345624447,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          }
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UKD4QKBTS_000004",
+          "terminal_state": 901,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.8212745469688574,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 901,
+            "last_release_step": 2593,
+            "latest_cutoff_step": 2643,
+            "scored_states": 1954,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "56212893636c61bd1a6741de3cefd65b2c0f5ea5caaad0b59b27d51a73515aa2",
+            "reference_sha256": "38cbd51e063925eb68c18e4bb5d35ab21cdf038e507475fc07fe69c5d88e651d",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          }
+        }
+      ]
+    },
+    {
+      "case": 1,
+      "asset_id": "rand_1ONEJHCOVS",
+      "color_linear_rgb": [
+        0.0268307,
+        0.2416271,
+        0.4173454
+      ],
+      "first_frame": 275,
+      "frames": 283,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1ONEJHCOVS__03",
+          "terminal_state": 913,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 913,
+            "window_start_state_index": 888,
+            "deformable_distance": 0.05374550074338913,
+            "rigid_distance": 0.014361978508532047,
+            "combined_distance": 0.03996126726269722,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          }
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1ONEJHCOVS_000001_r001",
+          "terminal_state": 934,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.0096733599984844,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 934,
+            "last_release_step": 964,
+            "latest_cutoff_step": 1014,
+            "scored_states": 385,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "714c188d6621bd994e67031f9297ee6705b3704cebf73c9a6a576235a5bcfd4e",
+            "reference_sha256": "46779837ada5c691a08f6625dc22f43fb1a9994bcec353b6125816a1a1c81605",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          }
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "asset_id": "rand_0UVZH267ZC",
+      "color_linear_rgb": [
+        0.0817098,
+        0.0751887,
+        0.3770465
+      ],
+      "first_frame": 558,
+      "frames": 298,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0UVZH267ZC__00",
+          "terminal_state": 918,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 918,
+            "window_start_state_index": 893,
+            "deformable_distance": 0.05735456943511963,
+            "rigid_distance": 0.01470861118286848,
+            "combined_distance": 0.04242848604917526,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          }
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0UVZH267ZC_000005",
+          "terminal_state": 995,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.5078397972300985,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 995,
+            "last_release_step": 959,
+            "latest_cutoff_step": 1009,
+            "scored_states": 421,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "15ef389991f853e77ed7dde8bae591c47d64c9863e37e3b2e59cd76bd344b516",
+            "reference_sha256": "04f785e25d29b32f737441e9bf954b99e769d2c81362aca42f1e14a1db97daeb",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          }
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "asset_id": "rand_12CR1HRKKE",
+      "color_linear_rgb": [
+        0.2223711,
+        0.2439302,
+        0.0859177
+      ],
+      "first_frame": 856,
+      "frames": 250,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_12CR1HRKKE__00",
+          "terminal_state": 804,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 804,
+            "window_start_state_index": 779,
+            "deformable_distance": 0.03750915452837944,
+            "rigid_distance": 0.02340010367333889,
+            "combined_distance": 0.032570987939834595,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          }
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_12CR1HRKKE_000007_r000",
+          "terminal_state": 738,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.3575734820507552,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 738,
+            "last_release_step": 726,
+            "latest_cutoff_step": 776,
+            "scored_states": 345,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "2718d5713e5a5f2657b54e8300f6274944f552021b192b8be9acbf9cf529ed4e",
+            "reference_sha256": "fa15c23bcbfc7b3f9b0ebc548a0d46ef77189891e929bde949976c701394a398",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          }
+        }
+      ]
+    },
+    {
+      "case": 4,
+      "asset_id": "rand_1EDHTQFUNP",
+      "color_linear_rgb": [
+        0.1028436,
+        0.2969576,
+        0.5119581
+      ],
+      "first_frame": 1106,
+      "frames": 256,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EDHTQFUNP__01",
+          "terminal_state": 824,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 824,
+            "window_start_state_index": 799,
+            "deformable_distance": 0.058815762400627136,
+            "rigid_distance": 0.0019341326551511884,
+            "combined_distance": 0.03890719264745712,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          }
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EDHTQFUNP_000001",
+          "terminal_state": 827,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.6602558652025967,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 827,
+            "last_release_step": 796,
+            "latest_cutoff_step": 846,
+            "scored_states": 372,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "7d9b195c9d0e1568223d597d19b1e5eabb4e9a0775b85b75d43ad373e96379e2",
+            "reference_sha256": "ad6f9e4a4af2db041401dd20c2d166d334a2ab07d87d1b13b13f3161afc51a17",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          }
+        }
+      ]
+    },
+    {
+      "case": 5,
+      "asset_id": "rand_1EHUSGYR73",
+      "color_linear_rgb": [
+        0.0832353,
+        0.2781524,
+        0.1076309
+      ],
+      "first_frame": 1362,
+      "frames": 274,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1EHUSGYR73__09",
+          "terminal_state": 669,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 669,
+            "window_start_state_index": 644,
+            "deformable_distance": 0.04591074213385582,
+            "rigid_distance": 0.025586415082216263,
+            "combined_distance": 0.038797229528427124,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          }
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1EHUSGYR73_000006",
+          "terminal_state": 898,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.98325709675834,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 898,
+            "last_release_step": 898,
+            "latest_cutoff_step": 948,
+            "scored_states": 426,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "853e096db5b0869d46893e5dc59a65f1093ff38d1056bbc10fef17bd671b0035",
+            "reference_sha256": "3f9d8895be55428ead41c56e9df1c28387602001106616ecf854226e2cfc3ed8",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          }
+        }
+      ]
+    }
+  ],
+  "audit": [
+    {
+      "case": 0,
+      "native_frames": 276,
+      "source_particles_verified": true,
+      "full_released_terminal": true,
+      "scripted_home_frames": 38,
+      "stationary_camera": true,
+      "zero_subject_border_intersections": true,
+      "render_manifest_sha256": "b8e1c06ee50cda19339afc33eed56947631ba28d3b99a6a2bcd7097a1a107d10"
+    },
+    {
+      "case": 1,
+      "native_frames": 284,
+      "source_particles_verified": true,
+      "full_released_terminal": true,
+      "scripted_home_frames": 38,
+      "stationary_camera": true,
+      "zero_subject_border_intersections": true,
+      "render_manifest_sha256": "c3ce1c4187148f01eece3126c0f7ded5c5445cfafff79568ee942630c1d7ed0c"
+    },
+    {
+      "case": 2,
+      "native_frames": 299,
+      "source_particles_verified": true,
+      "full_released_terminal": true,
+      "scripted_home_frames": 38,
+      "stationary_camera": true,
+      "zero_subject_border_intersections": true,
+      "render_manifest_sha256": "8f998bc6c8795ee9abcc2099a4475ffc7a1b8c68de8aac36a5860f96515c88e5"
+    },
+    {
+      "case": 3,
+      "native_frames": 251,
+      "source_particles_verified": true,
+      "full_released_terminal": true,
+      "scripted_home_frames": 38,
+      "stationary_camera": true,
+      "zero_subject_border_intersections": true,
+      "render_manifest_sha256": "05bde9a9f9927d8db160fc70b7e933af72044b561eae1bee8c1fa7a28488c94f"
+    },
+    {
+      "case": 4,
+      "native_frames": 257,
+      "source_particles_verified": true,
+      "full_released_terminal": true,
+      "scripted_home_frames": 38,
+      "stationary_camera": true,
+      "zero_subject_border_intersections": true,
+      "render_manifest_sha256": "93d2da46c86d4c15044a47911fe71e0b0417e6c5dca18e0737416629622cc963"
+    },
+    {
+      "case": 5,
+      "native_frames": 275,
+      "source_particles_verified": true,
+      "full_released_terminal": true,
+      "scripted_home_frames": 38,
+      "stationary_camera": true,
+      "zero_subject_border_intersections": true,
+      "render_manifest_sha256": "e1904f32eb383a8603bb83b1020e5ce186853ab391deaebd7421ea752ee8d043"
+    }
+  ],
+  "presentation": "Fixed camera and two fixed worktables throughout. Each round compares flattening on the left and folding on the right of the same garment identity and colour. Six garment identities, twelve unique recorded trajectories. Each real successful released endpoint is retained, followed by38 native frames of scripted robot home and12frames of stationary home hold. Only the last12home frames dissolve to the next asset initial state; final frame equals next case native frame0, followed by native frame1. Original cloth meshes/cotton,1600x560,25fps native Isaac rendering. No camera animation, scale reveal, geometry simplification, per-case retiming or image resizing. Film uses2x source replay; resets, home and asset dissolves are presentation, not claims of live generation."
+}

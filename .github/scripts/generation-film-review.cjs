@@ -1,6 +1,6 @@
 const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process'),out=process.env.REVIEW_OUTPUT;fs.mkdirSync(out,{recursive:true});
-const manifest=JSON.parse(fs.readFileSync('website/assets/film61/manifest.json','utf8'));
+const manifest=JSON.parse(fs.readFileSync('website/assets/film62/manifest.json','utf8'));
 const report={commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),passed:false,errors:[],screenshots:[],checks:[],recordings:[]};
 const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));let browser;
 (async()=>{try{
@@ -25,11 +25,11 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
     lastTime=frame.mediaTime;lastPixels=pixels;v.requestVideoFrameCallback(sample);
    });
   });
-  for(const [name,time] of [['near',1],['middle',12],['far',15.4],['scale',22],['return',30.2]]){
+  for(const [name,time] of manifest.cases.map(c=>['case-'+c.case,c.first_frame/25+3])){
    await page.waitForFunction(t=>document.getElementById('generation-film').currentTime>=t,time,{timeout:40000});
    const file='film-'+name+'-'+width+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,time:await video.evaluate(v=>v.currentTime)});save();
   }
-  await page.waitForFunction(()=>window.filmReview.wrapped,null,{timeout:10000});
+  await page.waitForFunction(()=>window.filmReview.wrapped,null,{timeout:20000});
   const playback=await page.evaluate(()=>window.filmReview);assert(playback.seam<8,JSON.stringify(playback));assert(Math.max(...playback.gaps)<.161);assert.equal(await video.evaluate(v=>v.currentSrc),src);assert.equal(await video.evaluate(v=>v.paused),false);
   report.checks.push({width,metadata,loopSeamMeanRgbDifference:playback.seam,maxMediaFrameGap:Math.max(...playback.gaps)});
   const recording=page.video();await context.close();const file='generation-film-'+width+'.webm';await recording.saveAs(path.join(out,file));report.recordings.push(file);save();

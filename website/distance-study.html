@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ClothDojo · 轨迹生成</title><link rel="icon" href="data:,"><link rel="stylesheet" href="camera-study.css?v=52">
-<style>.viewer{background:#fff}.intro>p:last-child{max-width:490px;margin:10px auto}details{margin-top:24px}</style>
+<style>.viewer{background:#fff}.intro>p:last-child{max-width:490px;margin:10px auto}.task-labels{display:grid;grid-template-columns:1fr 1fr;width:66.6667%;margin:22px auto 0;text-align:center;font-size:12px;color:#687071}details{margin-top:24px}</style>
 </head>
 <body>
 <header><a class="brand" href="research-preview-v31.html">ClothDojo</a><span>Trajectory generation</span><a href="research-preview-v31.html">项目主页 ↗</a></header>
 <main>
-<div class="intro"><p class="eyebrow">COMPLEX TRAJECTORIES · AT SCALE</p><h1>复杂轨迹，规模化生成。</h1><p>左侧展平，右侧折叠。384 条真实轨迹，202 件服装资产。</p></div>
+<div class="intro"><p class="eyebrow">GARMENT MANIPULATION · GENERATED EXPERIENCE</p><h1>两项任务，不同服装。</h1><p>固定机位，连续展示不同服装的完整展平与折叠。</p></div>
+<div class="task-labels" aria-hidden="true"><span>展平 · Flattening</span><span>折叠 · Folding</span></div>
 <div class="viewer">
-<video id="generation-film" data-active="true" src="assets/film61/generation-loop.mp4" poster="assets/film61/generation-loop-poster.jpg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback preload="auto" width="1600" height="560" aria-label="两项完整操作逐步展开至384台工作区的轨迹生成展示"></video>
+<video id="generation-film" data-active="true" src="assets/film62/generation-loop.mp4" poster="assets/film62/generation-loop-poster.jpg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback preload="auto" width="1600" height="560" aria-label="固定两个工作台，左侧展平、右侧折叠，依次展示六款服装的完整操作"></video>
 </div>
-<details><summary>关于这段展示</summary><p>影片从两项完整操作开始，镜头逐步拉远至 384 个工作区，展示一整轮规模化操作后直接淡回近景，自动循环播放。</p><p>画面来自 Isaac 原生 25 fps 渲染，保留原始衣服网格和棉布材质。规模档的长轨迹有逐条变速；成功终态来自保存的轨迹，回到 home 和循环淡化属于展示编排。最终规模画面完整入画。</p><a href="assets/film61/manifest.json">影片来源与时序 ↗</a> · <a href="assets/camera60/manifest.json">轨迹与渲染记录 ↗</a></details>
+<details><summary>关于这段展示</summary><p>六款服装，十二条真实记录轨迹。每轮左右使用同一款服装和颜色，分别展示展平与折叠；完成动作并回到 home 后，再更换下一款。</p><p>相机、工作台、光照与棉布材质保持一致。Isaac 原生 25 fps 渲染，保留原始服装网格，动作按 2× 速度回放。成功终态来自真实记录；回到 home 和服装轮换淡化属于展示编排。</p><a href="assets/film62/manifest.json">影片来源与时序 ↗</a></details>
 </main>
 </body>
 </html>
