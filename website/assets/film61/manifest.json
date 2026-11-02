@@ -1,0 +1,76 @@
+{
+  "schema": "clothdojo_complete_loop_v1",
+  "src": "generation-loop.mp4",
+  "poster": "generation-loop-poster.jpg",
+  "width": 1600,
+  "height": 560,
+  "fps": 25,
+  "frames": 762,
+  "duration_seconds": 30.48,
+  "bytes": 13032973,
+  "sha256": "ad0bb0dd4ef99f695f002ea8116c5410d236a5a6b0592f38595f7c4e67a2dc08",
+  "chapters": [
+    {
+      "kind": "hold",
+      "view": "near",
+      "source_start_frame": 0,
+      "first_frame": 0,
+      "frames": 250
+    },
+    {
+      "kind": "camera",
+      "edge": "near-middle",
+      "source_phase": 0,
+      "first_frame": 250,
+      "frames": 40
+    },
+    {
+      "kind": "hold",
+      "view": "middle",
+      "source_start_frame": 40,
+      "first_frame": 290,
+      "frames": 35
+    },
+    {
+      "kind": "camera",
+      "edge": "middle-far",
+      "source_phase": 3,
+      "first_frame": 325,
+      "frames": 50
+    },
+    {
+      "kind": "hold",
+      "view": "far",
+      "source_start_frame": 125,
+      "first_frame": 375,
+      "frames": 25
+    },
+    {
+      "kind": "camera",
+      "edge": "far-scale",
+      "source_phase": 6,
+      "first_frame": 400,
+      "frames": 60
+    },
+    {
+      "kind": "hold",
+      "view": "scale",
+      "source_start_frame": 210,
+      "first_frame": 460,
+      "frames": 290
+    },
+    {
+      "kind": "return_dissolve",
+      "first_frame": 750,
+      "frames": 12,
+      "from_view": "scale",
+      "to_view": "near",
+      "destination_frames": [
+        238,
+        249
+      ]
+    }
+  ],
+  "source_manifest": "../camera60/manifest.json",
+  "presentation": "One pre-encoded film assembled from original native RGB frames, not screen capture or re-encoded component movies. Complete close-loop actions; one outward camera route; full scale action cycle;12-frame linear-light dissolve directly back to near without reverse stair-step. Original25fps and1600x560; no crop, resize or invented frames. Source motion/retiming/home choreography unchanged from camera60."
+}
