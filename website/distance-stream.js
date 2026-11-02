@@ -64,7 +64,7 @@
      if(!record.landingReady&&!record.landingPending){record.landingPending=true;landing(destination,record.end_frame).then(()=>{record.landingReady=true;record.landingPending=false;fill();}).catch(e=>{record.landingPending=false;fail(e);});}
      if(record.loaded&&record.landingReady){
       const {data}=await load(record),from=tailView,to=next,phase=tailFrame/25;
-      await append(data.slice(record.init_bytes),{kind:'bridge',from,to,phase,frames:record.frames});tailView=to;tailFrame=record.end_frame;continue;
+      await append(data.slice(record.init_bytes),{kind:'bridge',from,to,phase,frames:record.frames});tailView=to;tailFrame=record.end_frame;prefetch(to);continue;
      }
      // Use the already buffered lead to finish preparation at this anchor.
      // Keep a safety margin; continue the current loop if data is still late.
