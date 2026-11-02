@@ -17,7 +17,13 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    await page.evaluate(f=>window.liveCamera.seekFrame(f),frame);await settle();const camera=await page.evaluate(()=>window.liveCamera.state.camera);
    for(const variant of ['enhanced','baseline']){
     await page.locator('[data-lighting-mode="'+variant+'"]').click();await settle();s=await page.evaluate(()=>window.liveCamera.state);
-    assert.equal(s.phase,frame/25);assert.equal(s.lightingMode,variant);assert.deepEqual(s.camera,camera);await shot('light49-'+width+'-'+frame+'-'+variant);
+    assert.equal(s.phase,frame/25);assert.equal(s.lightingMode,variant);assert.deepEqual(s.camera,camera);
+    const corners=await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>{
+      const canvas=document.getElementById('live-canvas'),gl=canvas.getContext('webgl2'),result=[];
+      for(const x of [16,canvas.width-17]){const p=new Uint8Array(4);gl.readPixels(x,canvas.height-17,1,1,gl.RGBA,gl.UNSIGNED_BYTE,p);result.push(Array.from(p));}resolve(result);
+    })));
+    assert(corners.every(p=>p[0]>=250&&p[1]>=250&&p[2]>=250),'Empty canvas corners must remain webpage white: '+JSON.stringify(corners));
+    await shot('light49-'+width+'-'+frame+'-'+variant);
    }
   }
   await page.locator('[data-lighting-mode="enhanced"]').click();await settle();
