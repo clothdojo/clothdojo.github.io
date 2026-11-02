@@ -1,5 +1,5 @@
 {
-  "commit": "88ef2e07f61d98fd145bb4fa55939b51cb17088d",
+  "commit": "546be2e4e8d742dc515f12411fb6f93410b40c14",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -17,7 +17,7 @@
         "renderedZoom": 0,
         "phase": 3,
         "running": false,
-        "frames": 126,
+        "frames": 128,
         "inputToFrameMs": 0,
         "error": "",
         "camera": [
@@ -50,7 +50,7 @@
         "renderedZoom": 0,
         "phase": 3,
         "running": false,
-        "frames": 148,
+        "frames": 152,
         "inputToFrameMs": 0,
         "error": "",
         "camera": [
@@ -83,7 +83,7 @@
         "renderedZoom": 0,
         "phase": 6,
         "running": false,
-        "frames": 175,
+        "frames": 181,
         "inputToFrameMs": 0,
         "error": "",
         "camera": [
@@ -116,7 +116,7 @@
         "renderedZoom": 0,
         "phase": 6,
         "running": false,
-        "frames": 197,
+        "frames": 205,
         "inputToFrameMs": 0,
         "error": "",
         "camera": [
@@ -149,8 +149,8 @@
         "renderedZoom": 1,
         "phase": 9.299999999999988,
         "running": false,
-        "frames": 296,
-        "inputToFrameMs": 48.5,
+        "frames": 304,
+        "inputToFrameMs": 31.29999999998836,
         "error": "",
         "camera": [
           19.226081535955245,
@@ -182,7 +182,7 @@
         "renderedZoom": 0,
         "phase": 3,
         "running": false,
-        "frames": 124,
+        "frames": 125,
         "inputToFrameMs": 0,
         "error": "",
         "camera": [
@@ -215,7 +215,7 @@
         "renderedZoom": 0,
         "phase": 3,
         "running": false,
-        "frames": 146,
+        "frames": 149,
         "inputToFrameMs": 0,
         "error": "",
         "camera": [
@@ -246,10 +246,10 @@
         "mode": "manual",
         "zoom": 1,
         "renderedZoom": 1,
-        "phase": 6.299999999999993,
+        "phase": 6.2665999999999915,
         "running": false,
-        "frames": 245,
-        "inputToFrameMs": 35.600000000034925,
+        "frames": 248,
+        "inputToFrameMs": 21.70000000001164,
         "error": "",
         "camera": [
           25.08830783049367,
@@ -276,32 +276,32 @@
       "width": 1440,
       "softwareWebGL": true,
       "inputToRenderCallMs": [
-        5.900000000023283,
-        950,
-        954.3999999999651,
-        953.7999999999884,
-        947.6000000000349,
-        950.6999999999534,
-        960.2000000000116,
-        946.9000000000233,
-        940,
-        935.9000000000233
+        2.7000000000116415,
+        681.9000000000233,
+        574,
+        573.3000000000175,
+        565.8999999999942,
+        568.8000000000175,
+        561.3999999999942,
+        576.6999999999825,
+        561.5999999999767,
+        576.3999999999942
       ]
     },
     {
       "width": 390,
       "softwareWebGL": true,
       "inputToRenderCallMs": [
-        3.099999999976717,
-        297.1000000000349,
-        294.5999999999767,
-        293.79999999998836,
-        292.20000000001164,
-        291.80000000004657,
-        296.9000000000233,
-        295.9000000000233,
-        295.79999999998836,
-        294
+        2.8999999999650754,
+        168,
+        173.89999999996508,
+        173.20000000001164,
+        172.70000000001164,
+        168.59999999997672,
+        168.90000000002328,
+        169.79999999998836,
+        166.89999999996508,
+        166.30000000004657
       ]
     }
   ],
