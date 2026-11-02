@@ -54,7 +54,9 @@
     const url=await clipURL(record);if(ticket!==version)return;
     if(wrap(anchor-loops[current].currentTime)>1.4)continue;
     bridge.pause();bridge.src=url;bridge.load();await waitReady(bridge,signal);await seek(bridge,0,signal);
-    destination.pause();await seek(destination,record.end_phase,signal);
+    // Decode the overlapping final camera frame while hidden. Playback then
+    // presents its successor at end_phase for the visible handoff.
+    destination.pause();await seek(destination,wrap(record.end_phase-1/manifest.fps),signal);
     if(ticket!==version)return;
     if(wrap(anchor-loops[current].currentTime)>1.4)continue;
     pending={target,controller,armed:true,anchor,record,ticket};ui();return;
