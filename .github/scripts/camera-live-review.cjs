@@ -50,6 +50,20 @@ let browser;
       assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
       await context.close();
     }
+    // Identical saved frame, camera, lighting and viewport: isolate material import.
+    for(const variant of ['baseline','source']){
+      const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'reduce'});
+      const page=await context.newPage();
+      page.on('pageerror',e=>report.errors.push(e.message));
+      page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});
+      await page.goto('http://127.0.0.1:8787/camera-study.html'+(variant==='source'?'?material=source':''));
+      await page.waitForFunction(()=>window.liveCamera?.state.loaded===48,null,{timeout:90000});
+      assert.equal(await page.evaluate(()=>window.liveCamera.state.phase),0);
+      const file='material-study-'+variant+'.jpg';
+      await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});
+      report.screenshots.push({file,viewport:{width:1440,height:900},state:await page.evaluate(()=>window.liveCamera.state)});
+      await context.close();save();
+    }
     assert.equal(report.errors.length,0,JSON.stringify(report.errors));
     report.checks.push('Real WebGL renderer;48 actual source episodes; arbitrary neighboring camera positions; no network on drag; independent action/camera clocks; paused camera navigation; continuous auto resume; desktop/mobile/reduced motion');
     report.passed=true;

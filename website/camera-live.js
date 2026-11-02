@@ -1,4 +1,5 @@
 import * as T from './vendor/three-r180/three.module.min.js';
+const sourceMaterialStudy=new URLSearchParams(location.search).get('material')==='source';
 
 const root=document.getElementById('camera-viewer'),canvas=document.getElementById('live-canvas');
 const slider=document.getElementById('camera-distance'),resume=document.getElementById('resume-auto');
@@ -134,7 +135,7 @@ async function loadCell(i){
 async function boot(){
   const response=await fetch(base+'manifest.json');if(!response.ok)throw new Error('场景清单加载失败');manifest=await response.json();
   status.textContent='正在载入共享几何与动作…';
-  const buffer=await binary(manifest.geometry);
+  const buffer=await binary(sourceMaterialStudy?'geometry-material.bin':manifest.geometry);
   renderer=new T.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance'});
   renderer.setPixelRatio(Math.min(devicePixelRatio,innerWidth<700?1.25:1.5));renderer.setClearColor(0xffffff);
   renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.25;
@@ -149,7 +150,7 @@ async function boot(){
   for(const spec of manifest.prototypes){
     if(!spec.position.length){bodies.push(null);continue;}
     const g=geometry(buffer,spec);g.setAttribute('cellAlpha',new T.InstancedBufferAttribute(new Float32Array(48),1));
-    const m=fadeMaterial(new T.MeshStandardMaterial({vertexColors:true,roughness:.58,metalness:.25}),true);
+    const m=fadeMaterial(new T.MeshStandardMaterial({vertexColors:true,roughness:sourceMaterialStudy?.5:.58,metalness:sourceMaterialStudy?0:.25}),true);
     const body=new T.InstancedMesh(g,m,48);body.instanceMatrix.setUsage(T.DynamicDrawUsage);body.castShadow=true;body.receiveShadow=true;body.frustumCulled=false;scene.add(body);bodies.push(body);
   }
   for(const meta of manifest.cells){
