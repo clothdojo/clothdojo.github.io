@@ -3,7 +3,8 @@ const clothStudy=document.body.hasAttribute('data-cloth-study');
 const lightingStudy=document.body.hasAttribute('data-lighting-study');
 let studio=null,lightingMode='enhanced';
 const sourceMaterialStudy=clothStudy||new URLSearchParams(location.search).get('material')==='source';
-let clothMode=new URLSearchParams(location.search).get('cloth')==='baseline'?'baseline':'full',fidelityReady=!clothStudy,geometryUpdates=0;
+let clothMode=!lightingStudy&&new URLSearchParams(location.search).get('cloth')==='baseline'?'baseline':'full',fidelityReady=!clothStudy,geometryUpdates=0;
+let bufferedFrames=clothStudy?0:250,firstFrameMs=null;
 
 const root=document.getElementById('camera-viewer'),canvas=document.getElementById('live-canvas');
 const slider=document.getElementById('camera-distance'),resume=document.getElementById('resume-auto');
@@ -97,31 +98,56 @@ function applyClothMode(){
   document.querySelectorAll('[data-cloth-mode]').forEach(button=>{button.disabled=false;button.setAttribute('aria-pressed',String(button.dataset.clothMode===clothMode));});
 }
 function markReady(){
-  if(cells[0].ready&&cells[24].ready&&fidelityReady&&!ready){ready=true;slider.disabled=false;toggle.disabled=false;document.querySelectorAll('[data-lighting-mode]').forEach(b=>b.disabled=false);ui();}
+  if(cells[0].ready&&cells[24].ready&&fidelityReady&&!ready){ready=true;slider.disabled=false;toggle.disabled=false;document.querySelectorAll('[data-lighting-mode]').forEach(b=>b.disabled=false);ui();updateStatus();}
 }
-async function loadFullCloth(){
-  const folder='assets/cloth48/',study=await(await fetch(folder+'manifest.json')).json();
+function updateStatus(){
+  if(error)return;
+  const buffering=ready&&running&&bufferedFrames<250&&motion>=(bufferedFrames-1)/25-.001;
+  const message=!ready?'正在准备开头两台工作区…':buffering?'正在缓冲后续动作…':loaded<48?'已载入 '+loaded+' / 48 个工作区；镜头可直接拖动':'';
+  if(status.textContent!==message)status.textContent=message;
+}
+function decodePart(buffer,meta,chunk,data){
+  const values=new Uint16Array(buffer),stride=meta.vertices*3;
+  if(values.length!==chunk.frames*stride)throw new Error('完整网格轨迹分段长度不匹配');
+  for(let k=stride;k<values.length;k++)values[k]=(values[k]+values[k-stride])&65535;
+  data.set(values,chunk.start*stride);
+}
+async function fetchFullInputs(){
+  const folder='assets/cloth48/',study=await(await fetch(folder+'manifest.json?v=51')).json();
   const loader=new T.TextureLoader();
-  const maps=await Promise.all(['base_color','normal_gl','roughness'].map(async name=>{
+  const maps=Promise.all(['base_color','normal_gl','roughness'].map(async name=>{
     const texture=await loader.loadAsync(folder+study.textures[name].file);texture.wrapS=texture.wrapT=T.RepeatWrapping;
-    texture.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());texture.colorSpace=name==='base_color'?T.SRGBColorSpace:T.NoColorSpace;return texture;
+    texture.colorSpace=name==='base_color'?T.SRGBColorSpace:T.NoColorSpace;return texture;
   }));
-  await Promise.all(study.cells.map(async meta=>{
-    const cell=cells[meta.i],[buffer,animation]=await Promise.all([binary(meta.geometry,folder),binary(meta.file,folder)]);
+  const inputs=Promise.all(study.cells.map(async meta=>({meta,buffers:await Promise.all([binary(meta.geometry,folder),binary(meta.chunks[0].file,folder)])})));
+  const [textures,entries]=await Promise.all([maps,inputs]);return {textures,entries};
+}
+async function loadFullCloth(input){
+  const maps=input.textures;for(const texture of maps)texture.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());
+  for(const {meta,buffers:[buffer,animation]} of input.entries){
+    const cell=cells[meta.i];
     const g=geometry(buffer,meta);g.attributes.position.setUsage(T.DynamicDrawUsage);
     const tint=new T.Color().setRGB(...meta.texture_tint);
     if(lightingStudy){const color=clothColor(cell.meta.color);tint.r*=color.r/cell.meta.color[0];tint.g*=color.g/cell.meta.color[1];tint.b*=color.b/cell.meta.color[2];}
     const material=fadeMaterial(new T.MeshPhysicalMaterial({color:tint,map:maps[0],normalMap:maps[1],normalScale:new T.Vector2(.35,.35),roughnessMap:maps[2],roughness:1,metalness:0,ior:1.5,specularIntensity:.375,side:T.DoubleSide}),false);
     const mesh=new T.Mesh(g,material);mesh.position.copy(cell.mesh.position);mesh.rotation.copy(cell.mesh.rotation);mesh.visible=false;mesh.frustumCulled=false;mesh.castShadow=true;mesh.receiveShadow=true;scene.add(mesh);
-    const data=new Uint16Array(animation),stride=meta.vertices*3;
-    if(data.length!==250*stride)throw new Error('完整网格轨迹长度不匹配');
-    for(let k=stride;k<data.length;k++)data[k]=(data[k]+data[k-stride])&65535;
-    cell.full={meta:{...cell.meta,...meta,full:true},mesh,data};
-  }));
-  // Both variants are already resident; changing material never seeks or fetches.
+    const data=new Uint16Array(250*meta.vertices*3);decodePart(animation,meta,meta.chunks[0],data);
+    cell.full={meta:{...cell.meta,...meta,full:true},mesh,data,loadedFrames:meta.chunks[0].frames};
+  }
+  bufferedFrames=Math.min(cells[0].full.loadedFrames,cells[24].full.loadedFrames);
   await Promise.all([cells[0].baselineLoaded,cells[24].baselineLoaded]);
   for(const i of [0,24])cells[i].baseline={meta:cells[i].meta,mesh:cells[i].mesh,data:cells[i].data};
   fidelityReady=true;applyClothMode();markReady();
+}
+async function streamFullCloth(){
+  for(let part=1;part<5;part++){
+    await Promise.all([0,24].map(async i=>{
+      const full=cells[i].full,chunk=full.meta.chunks[part];
+      decodePart(await binary(chunk.file,'assets/cloth48/'),full.meta,chunk,full.data);
+      full.loadedFrames=chunk.start+chunk.frames;
+    }));
+    bufferedFrames=Math.min(cells[0].full.loadedFrames,cells[24].full.loadedFrames);updateStatus();
+  }
 }
 document.querySelectorAll('[data-cloth-mode]').forEach(button=>button.addEventListener('click',()=>{clothMode=button.dataset.clothMode;applyClothMode();}));
 document.querySelectorAll('[data-lighting-mode]').forEach(button=>button.addEventListener('click',()=>{
@@ -198,7 +224,8 @@ function draw(stamp){
   requestAnimationFrame(draw);
   if(!manifest||!renderer||!cells.length||document.hidden||(clothStudy&&!ready)){lastStamp=null;return;}
   const dt=lastStamp===null?0:Math.min(.1,(stamp-lastStamp)/1000);lastStamp=stamp;
-  if(ready&&running){motion=(motion+dt)%10;if(mode==='auto'&&loaded===48)autoTime+=dt;}
+  if(ready&&running){motion=bufferedFrames<250?Math.min(motion+dt,(bufferedFrames-1)/25):(motion+dt)%10;if(mode==='auto'&&loaded===48&&bufferedFrames===250)autoTime+=dt;}
+  if(ready&&bufferedFrames<250)updateStatus();
   if(mode==='auto'){zoom=route(autoTime);slider.value=String(zoom);}
   cameraAt(zoom);
   const f=motion*25,a=Math.floor(f),b=Math.min(a+1,249),t=f-a;
@@ -209,20 +236,23 @@ function draw(stamp){
   renderer.shadowMap.needsUpdate=motion!==shadowPhase||visibleCells!==shadowCells||clothMode!==shadowClothMode;
   shadowPhase=motion;shadowCells=visibleCells;shadowClothMode=clothMode;
   if(studio){studio.fit(cells);studio.render(zoom);}else renderer.render(scene,camera);frames++;
+  if(firstFrameMs===null)firstFrameMs=performance.now();
   if(lastInput){inputToFrame=performance.now()-lastInput;lastInput=0;}
 }
-async function loadCell(i){
-  const cell=cells[i],[buffer,poseBuffer]=await Promise.all([binary(cell.meta.file),binary(cell.meta.poses)]),data=new Uint16Array(buffer),stride=cell.meta.vertices*3;
-  if(data.length!==250*stride)throw new Error('轨迹数据长度不匹配');
-  for(let k=stride;k<data.length;k++)data[k]=(data[k]+data[k-stride])&65535;
+async function loadCell(i,downloads){
+  const cell=cells[i],[buffer,poseBuffer]=downloads||await Promise.all([binary(cell.meta.file),binary(cell.meta.poses)]),data=buffer?new Uint16Array(buffer):null,stride=cell.meta.vertices*3;
+  if(data){if(data.length!==250*stride)throw new Error('轨迹数据长度不匹配');for(let k=stride;k<data.length;k++)data[k]=(data[k]+data[k-stride])&65535;}
   cell.data=data;cell.poses=new Float32Array(poseBuffer);cell.ready=true;loaded++;
   markReady();
-  status.textContent=!fidelityReady?'正在载入两件完整网格与棉布贴图…':loaded===48?'':'已载入 '+loaded+' / 48 个工作区；镜头可直接拖动';
+  updateStatus();
 }
 async function boot(){
-  const response=await fetch(base+'manifest.json');if(!response.ok)throw new Error('场景清单加载失败');manifest=await response.json();
-  status.textContent='正在载入共享几何与动作…';
-  const buffer=await binary(sourceMaterialStudy?'geometry-material.bin':manifest.geometry);
+  const initial=async()=>{
+    const response=await fetch(base+'manifest.json');if(!response.ok)throw new Error('场景清单加载失败');const meta=await response.json();
+    const [geometry,focus]=await Promise.all([binary(sourceMaterialStudy?'geometry-material.bin':meta.geometry),Promise.all([0,24].map(i=>Promise.all([lightingStudy?Promise.resolve(null):binary(meta.cells[i].file),binary(meta.cells[i].poses)])))]);
+    return {meta,geometry,focus};
+  };
+  const [first,fullInput]=await Promise.all([initial(),clothStudy?fetchFullInputs():Promise.resolve(null)]);manifest=first.meta;const buffer=first.geometry;
   renderer=new T.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance'});
   renderer.setPixelRatio(Math.min(devicePixelRatio,innerWidth<700?1.25:1.5));renderer.setClearColor(0xffffff);
   renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.25;
@@ -248,11 +278,15 @@ async function boot(){
     const angle=T.MathUtils.degToRad(meta.yaw);cells.push({meta,mesh,ready:false,data:null,cos:Math.cos(angle),sin:Math.sin(angle),yaw:new T.Quaternion().setFromAxisAngle(worldUp,angle)});
   }
   resize();new ResizeObserver(resize).observe(root);
-  cells[0].baselineLoaded=loadCell(0);cells[24].baselineLoaded=loadCell(24);
-  await Promise.all([cells[0].baselineLoaded,cells[24].baselineLoaded,clothStudy?loadFullCloth():Promise.resolve()]);
+  cells[0].baselineLoaded=loadCell(0,first.focus[0]);cells[24].baselineLoaded=loadCell(24,first.focus[1]);
+  await Promise.all([cells[0].baselineLoaded,cells[24].baselineLoaded,clothStudy?loadFullCloth(fullInput):Promise.resolve()]);
+  // Give the complete-quality opening frame a paint before background work.
+  await new Promise(resolve=>requestAnimationFrame(()=>setTimeout(resolve,0)));
   const order=[1,25,6,30,7,31,...Array.from({length:48},(_,i)=>i).filter(i=>![0,24,1,25,6,30,7,31].includes(i))];
   let cursor=0;
-  await Promise.all(Array.from({length:3},async()=>{while(cursor<order.length)await loadCell(order[cursor++]);}));
+  const worker=async()=>{while(cursor<order.length)await loadCell(order[cursor++]);};
+  const motionStream=clothStudy?streamFullCloth():Promise.resolve();
+  await Promise.all([worker(),motionStream.then(()=>Promise.all([worker(),worker()]))]);
 }
-Object.defineProperty(window,'liveCamera',{value:{get state(){return {ready,loaded,mode,zoom,renderedZoom,phase:motion,running,frames,inputToFrameMs:inputToFrame,error,camera:camera?.position.toArray(),triangles:renderer?.info.render.triangles,lightingMode:lightingStudy?lightingMode:null,clothMode:clothStudy?clothMode:null,fidelityReady,geometryUpdates,focusVertices:cells.filter((_,i)=>i===0||i===24).map(c=>c.meta.vertices),workcellOpacity:cells.map(c=>c.mesh.visible?c.mesh.material.userData.fade.value:0),clothAlbedo:cells.filter((_,i)=>i===0||i===24).map(c=>(c.baseline?.mesh??c.mesh).material.color.toArray())};},inspectPullback,seekFrame(frame){if(!clothStudy||running||!ready)return;motion=Math.max(0,Math.min(249,frame))/25;}}});
+Object.defineProperty(window,'liveCamera',{value:{get state(){return {ready,loaded,mode,zoom,renderedZoom,phase:motion,running,frames,inputToFrameMs:inputToFrame,error,camera:camera?.position.toArray(),triangles:renderer?.info.render.triangles,lightingMode:lightingStudy?lightingMode:null,clothMode:clothStudy?clothMode:null,fidelityReady,geometryUpdates,bufferedFrames,firstFrameMs,focusVertices:cells.filter((_,i)=>i===0||i===24).map(c=>c.meta.vertices),workcellOpacity:cells.map(c=>c.mesh.visible?c.mesh.material.userData.fade.value:0),clothAlbedo:cells.filter((_,i)=>i===0||i===24).map(c=>(c.baseline?.mesh??c.mesh).material.color.toArray())};},inspectPullback,seekFrame(frame){if(!clothStudy||running||!ready)return;motion=Math.max(0,Math.min(bufferedFrames-1,frame))/25;}}});
 ui();requestAnimationFrame(draw);boot().catch(e=>{error=String(e);status.textContent='实时场景未能载入，可打开上方视频版对照。';console.error(e);});
