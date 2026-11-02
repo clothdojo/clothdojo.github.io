@@ -9,6 +9,7 @@ const toggle=document.getElementById('motion-toggle'),label=document.getElementB
 let mode='auto',running=!matchMedia('(prefers-reduced-motion: reduce)').matches;
 let zoom=0,renderedZoom=0,motion=0,autoTime=0,loaded=0,ready=false,error='';
 let frames=0,lastInput=0,inputToFrame=0,lastStamp=null,manifest,renderer,camera,scene,drawnCells=0;
+let shadowPhase=-1,shadowCells=-1,shadowClothMode='';
 const base='assets/live46/';const bodies=[],cells=[];
 const vec=new T.Vector3(),qa=new T.Quaternion(),qb=new T.Quaternion(),matrix=new T.Matrix4(),scale=new T.Vector3();
 const forward=new T.Vector3(),right=new T.Vector3(),up=new T.Vector3(),worldUp=new T.Vector3(0,0,1);
@@ -178,6 +179,8 @@ function draw(stamp){
   for(let i=0;i<cells.length;i++)animateCell(cells[i],i,a,b,t);
   for(const body of bodies)if(body){body.count=drawnCells;body.instanceMatrix.needsUpdate=true;body.geometry.getAttribute('cellAlpha').needsUpdate=true;}
   canvas.style.opacity=String(running?Math.min(1,motion/.16,(10-motion)/.16):1);
+  renderer.shadowMap.needsUpdate=motion!==shadowPhase||drawnCells!==shadowCells||clothMode!==shadowClothMode;
+  shadowPhase=motion;shadowCells=drawnCells;shadowClothMode=clothMode;
   renderer.render(scene,camera);frames++;
   if(lastInput){inputToFrame=performance.now()-lastInput;lastInput=0;}
 }
@@ -196,7 +199,7 @@ async function boot(){
   renderer=new T.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance'});
   renderer.setPixelRatio(Math.min(devicePixelRatio,innerWidth<700?1.25:1.5));renderer.setClearColor(0xffffff);
   renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.25;
-  renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
+  renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.shadowMap.autoUpdate=false;
   scene=new T.Scene();scene.background=new T.Color(0xffffff);
   camera=new T.PerspectiveCamera(2*Math.atan(18/(20/7)/35)*180/Math.PI,20/7,.01,400);camera.up.set(0,0,1);
   const hemi=new T.HemisphereLight(0xffffff,0xdde0e1,1.8);hemi.position.set(0,0,10);scene.add(hemi);
