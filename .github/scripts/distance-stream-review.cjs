@@ -60,6 +60,18 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   assert.equal(await page.evaluate(()=>window.unexpectedSeeks),0);assert.equal(await page.locator('video').evaluate(v=>v.currentSrc),originalSource);
   const recording=page.video();await context.close();if(recording){const file='stream-switch-1440.webm';await recording.saveAs(path.join(out,file));report.recordings.push(file);}save();
  }
+ {
+  const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'reduce'}),page=await context.newPage();let ranged=0,fullFinished=false;
+  await page.route('**/assets/camera58/middle.mp4',async route=>{
+   if(route.request().headers().range){ranged++;await page.waitForTimeout(60);}else{await page.waitForTimeout(6000);fullFinished=true;}
+   await route.continue();
+  });
+  await page.goto('http://127.0.0.1:8787/distance-study.html');await page.waitForFunction(()=>window.distanceStudy?.state.ready,null,{timeout:45000});
+  await page.locator('#distance-play').click();const clicked=Date.now();await page.locator('button[data-distance="middle"]').click();
+  await page.waitForFunction(()=>window.distanceStudy.state.current==='middle'&&window.distanceStudy.state.stage==='loop',null,{timeout:5000});
+  const state=await page.evaluate(()=>window.distanceStudy.state),elapsed=Date.now()-clicked;assert(ranged>0);assert(!fullFinished,'Camera should land before the entire destination movie finishes loading');assert.equal(state.waits.length,0);assert(state.requests.at(-1).latencyMs<1600);report.checks.push({slowDestinationFullDownload:{landingMs:elapsed,rangeRequests:ranged,clickToCameraMs:state.requests.at(-1).latencyMs,waits:state.waits}});save();
+  await page.waitForTimeout(Math.max(0,6500-elapsed));await context.close();
+ }
  if(!manifest.draft){
   const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'no-preference',recordVideo:{dir:path.join(out,'recordings-auto'),size:{width:1440,height:900}}}),page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));
   await page.goto('http://127.0.0.1:8787/distance-study.html');await page.waitForFunction(()=>window.distanceStudy?.state.ready,null,{timeout:45000});const src=await page.locator('video').evaluate(v=>v.currentSrc);
