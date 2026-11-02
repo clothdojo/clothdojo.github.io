@@ -16,7 +16,8 @@ export function createStudio(renderer,scene,camera,light,hemi,ground,root){
     scene.environment=improved?environment.texture:null;scene.environmentIntensity=improved?.65:1;
     scene.environmentRotation.set(improved?Math.PI/2:0,0,0);
     hemi.intensity=improved?.35:1.8;light.intensity=improved?3.2:2.7;
-    light.position.set(...(improved?[-3,-4,9]:[8,-12,22]));light.target.position.set(improved?0:-5,0,0);
+    // Preserve the original key direction so cast shadows stay within the fitted composition.
+    light.position.set(8,-12,22);light.target.position.set(-5,0,0);
     renderer.toneMappingExposure=improved?1.05:1.25;
     renderer.shadowMap.type=improved?T.VSMShadowMap:T.PCFSoftShadowMap;
     light.shadow.radius=improved?8:1;light.shadow.blurSamples=8;
