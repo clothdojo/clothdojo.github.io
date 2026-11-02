@@ -7,6 +7,8 @@
 .research30 .story-card{flex:0 0 var(--story-card-width);width:var(--story-card-width);max-width:none;height:var(--story-card-height);min-width:0;margin:0;padding:0;background:#fff;border:0;border-radius:32px;overflow:hidden;display:flex;flex-direction:column;scroll-snap-align:center;scroll-snap-stop:always}
 .story-card-heading{padding:32px 40px 18px;flex:none;text-align:center}
 .research30 .story-card-heading h2{margin:0;font-size:clamp(27px,2.8vw,38px);line-height:1.12;letter-spacing:-.8px}
+.release-count{margin:12px 0 0;font-size:15px;line-height:1.4;color:var(--text)}
+.release-count strong{font-weight:600;color:var(--ink)}
 .story-card-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:0 40px 24px;overscroll-behavior-y:contain;scrollbar-width:thin}
 .story-card-body .container{width:100%;max-width:none;margin-inline:0;padding:0}
 .story-card-body .section-heading:not(:has(*)),.story-card-body .asset-heading:not(:has(*)),.story-card-body .rgb-heading:not(:has(*)),.story-card-body .research-heading:not(:has(*)){display:none}

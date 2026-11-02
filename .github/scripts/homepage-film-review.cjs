@@ -20,7 +20,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    const file=target.replace('.html','')+'-'+width+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,target,width,height,bounds});
    await page.locator('#about summary').click();assert.match(await page.locator('#about').innerText(),/model-generated|generated in simulation/i);
    assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','highlights','use']);
-   assert.deepEqual(await page.locator('.story-track > .story-card').evaluateAll(s=>s.map(x=>x.id)),['diversity','generation','rgb','render']);
+   assert.deepEqual(await page.locator('.story-track > .story-card').evaluateAll(s=>s.map(x=>x.id)),['diversity','rgb','render']);
    assert.equal(await page.locator('#results, #transfer-results, #method, .story-track #use').count(),0);
    assert(await page.locator('body').evaluate(b=>b.classList.contains('research30')),'Keep the approved research design at the official entry');
    assert.equal(await page.locator('#diversity .atlas-overview a, #diversity a.atlas-overview').count(),0,'The garment overview remains presentation-only');
@@ -32,7 +32,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.goto('http://127.0.0.1:8787/index.html');await page.locator('#highlights').evaluate(e=>e.scrollIntoView({block:'start'}));
   const next=page.locator('[data-story-next]'),prev=page.locator('[data-story-prev]');
   assert(await prev.isDisabled());console.log('Gallery initial state',width,await page.evaluate(()=>window.storyCards.state));
-  for(let i=0;i<4;i++){
+  for(let i=0;i<3;i++){
    if(i)await next.click();await page.waitForFunction(i=>window.storyCards.state.active===i,i);
    const card=page.locator('.story-card').nth(i);const box=await card.boundingBox();assert(Math.abs(box.x+box.width/2-width/2)<2,'Center the selected card');
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
@@ -41,7 +41,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.equal(await page.locator('.story-dots button[aria-current=true]').count(),1);
    assert.equal(await page.locator('video').evaluateAll(vs=>vs.filter(v=>!v.paused).length),0,'Reduced motion applies to card videos');
   }
-  assert(await next.isDisabled());await prev.click();await page.waitForFunction(()=>window.storyCards.state.active===2);
+  assert(await next.isDisabled());await prev.click();await page.waitForFunction(()=>window.storyCards.state.active===1);
   await page.locator('.story-dots button').nth(0).click();await page.waitForFunction(()=>window.storyCards.state.active===0);
   await page.locator('.story-track').focus();await page.keyboard.press('ArrowRight');await page.waitForFunction(()=>window.storyCards.state.active===1);
   if(width===1440){const box=await page.locator('.story-track').boundingBox();await page.mouse.move(width*.75,box.y+140);await page.mouse.down();await page.mouse.move(width*.2,box.y+140,{steps:12});await page.mouse.up();await page.waitForFunction(()=>window.storyCards.state.active===2);}
@@ -50,8 +50,8 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   assert.equal(await page.locator('#use').evaluate(e=>!!e.closest('.story-track')),false);
   assert(await page.locator('#use .code-card').evaluate(e=>Math.abs(parseFloat(getComputedStyle(e).height)-e.scrollHeight)<2),'The code card grows with its content');
   const codeFile='code-'+width+'.jpg';await page.screenshot({path:path.join(out,codeFile),type:'jpeg',quality:92});report.screenshots.push({file:codeFile,width,staticCode:true});
-  await page.goto('http://127.0.0.1:8787/index.html#rgb');await page.waitForFunction(()=>window.storyCards.state.active===2);
-  report.checks.push({width,horizontalCards:4,staticCode:true,arrows:true,dots:true,keyboard:true,deepLinks:true,noDocumentOverflow:true});await context.close();save();
+  await page.goto('http://127.0.0.1:8787/index.html#rgb');await page.waitForFunction(()=>window.storyCards.state.active===1);
+  report.checks.push({width,horizontalCards:3,staticCode:true,arrows:true,dots:true,keyboard:true,deepLinks:true,noDocumentOverflow:true});await context.close();save();
  }
  for(const width of [1440,390]){
   const context=await browser.newContext({viewport:{width,height:900},recordVideo:{dir:path.join(out,'recordings'),size:{width,height:900}}}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));
@@ -67,7 +67,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   for(const c of manifest.cases){await page.waitForFunction(t=>document.getElementById('hero-film').currentTime>=t,c.first_frame/25+3,{timeout:30000});}
   await page.waitForFunction(()=>window.heroProbe.wrapped,null,{timeout:20000});const probe=await page.evaluate(()=>window.heroProbe);assert(probe.seam<8);assert(Math.max(...probe.gaps)<.161);assert.equal(await page.locator('#hero-film').evaluate(v=>v.currentSrc),source);
   await page.locator('header a[href="#rgb"]').click();await page.waitForFunction(()=>{const v=document.getElementById('rgb-film');return !v.paused&&v.currentTime>.2;},null,{timeout:30000});
-  await page.locator('[data-story-next]').click();await page.waitForFunction(()=>window.storyCards.state.active===3&&!document.getElementById('transfer-film').paused,null,{timeout:30000});await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.paused;});
+  await page.locator('[data-story-next]').click();await page.waitForFunction(()=>window.storyCards.state.active===2&&!document.getElementById('transfer-film').paused,null,{timeout:30000});await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.paused;});
   await page.waitForFunction(()=>document.querySelectorAll('video[data-auto]').length&&[...document.querySelectorAll('video[data-auto]')].filter(v=>!v.paused).length===1);
   await page.locator('#hero-film').scrollIntoViewIfNeeded();await page.waitForFunction(()=>!document.getElementById('hero-film').paused);
   report.checks.push({width,fullLoop:true,seamMeanRgbDifference:probe.seam,maxFrameGap:Math.max(...probe.gaps),exclusiveAmbientPlayback:true});
