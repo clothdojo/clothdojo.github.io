@@ -29,6 +29,19 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   }
   await page.locator('button[data-distance="middle"]').click();await page.locator('button[data-distance="near"]').click();
   await page.waitForTimeout(500);assert.equal((await state()).wanted,'near');assert.equal((await state()).stage,'loop');
+  if(width===1440){
+   await page.locator('#distance-near').evaluate(v=>{v.currentTime=8.4;});
+   await page.locator('button[data-distance="middle"]').click();
+   await page.waitForFunction(()=>window.distanceStudy.state.stage==='bridge',null,{timeout:10000});
+   await page.locator('#distance-play').click();const held=await state();assert.equal(held.playing,0);assert.equal(held.lastTransition.anchor,9);
+   await page.waitForTimeout(250);assert.equal((await state()).phase,held.phase);await shot('held-camera-bridge');
+   await page.locator('#distance-play').click();
+   await page.waitForFunction(()=>window.distanceStudy.state.current==='middle'&&window.distanceStudy.state.stage==='loop');
+   await page.locator('#distance-auto').click();
+   await page.waitForFunction(()=>window.distanceStudy.state.current==='near'&&window.distanceStudy.state.stage==='loop',null,{timeout:15000});
+   report.checks.push({automaticReturn:await state()});
+   await page.locator('button[data-distance="near"]').click();
+  }
   await page.locator('#distance-play').click();const t=await page.locator('#distance-near').evaluate(v=>v.currentTime);await page.waitForTimeout(250);assert.equal(await page.locator('#distance-near').evaluate(v=>v.currentTime),t);
   await context.close();
  }
