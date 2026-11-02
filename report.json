@@ -1,5 +1,5 @@
 {
-  "commit": "fc4be622b04100c2c0e1b520d518bfdfac40b9cc",
+  "commit": "bfc40a15efddf3252640832cb3e0e2c7365c434a",
   "passed": false,
   "errors": [
     "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(s.lastTransition.landingSkew<.01)\n\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/distance-study-review.cjs:22:146"
@@ -32,16 +32,16 @@
         "mode": "manual",
         "running": true,
         "stage": "bridge",
-        "phase": 1.3569999999999993,
+        "phase": 1.3602000000000007,
         "pending": null,
         "playing": 1,
         "lastTransition": {
           "from": "near",
           "to": "middle",
           "anchor": 1,
-          "startPhase": 1.0043,
-          "startSkew": 0.004300000000000637,
-          "startedAt": 1453.5,
+          "startPhase": 1.0057,
+          "startSkew": 0.0057000000000009265,
+          "startedAt": 2045.3999999999942,
           "bridgeFirstFrame": 0.04
         },
         "transitions": [],
