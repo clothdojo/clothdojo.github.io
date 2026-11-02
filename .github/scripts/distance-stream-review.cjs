@@ -59,5 +59,12 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   assert.equal(await page.evaluate(()=>window.unexpectedSeeks),0);assert.equal(await page.locator('video').evaluate(v=>v.currentSrc),originalSource);
   const recording=page.video();await context.close();if(recording){const file='stream-switch-1440.webm';await recording.saveAs(path.join(out,file));report.recordings.push(file);}save();
  }
+ if(!manifest.draft){
+  const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'no-preference',recordVideo:{dir:path.join(out,'recordings-auto'),size:{width:1440,height:900}}}),page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));
+  await page.goto('http://127.0.0.1:8787/distance-study.html');await page.waitForFunction(()=>window.distanceStudy?.state.ready,null,{timeout:45000});const src=await page.locator('video').evaluate(v=>v.currentSrc);
+  for(const target of ['middle','far','scale'])await page.waitForFunction(target=>window.distanceStudy.state.current===target&&window.distanceStudy.state.stage==='loop',target,{timeout:30000});
+  const arrival=await page.locator('video').evaluate(v=>v.currentTime);assert(arrival<24,'Default tour should reach scale promptly: '+arrival);await page.screenshot({path:path.join(out,'automatic-scale-1440.jpg'),type:'jpeg',quality:92});report.screenshots.push({file:'automatic-scale-1440.jpg',state:await page.evaluate(()=>window.distanceStudy.state)});
+  await page.waitForFunction(()=>window.distanceStudy.state.current==='near'&&window.distanceStudy.state.stage==='loop'&&window.distanceStudy.state.transitions.length>=6,null,{timeout:45000});const s=await page.evaluate(()=>window.distanceStudy.state);assert.deepEqual(s.transitions.slice(0,6).map(t=>t.to),['middle','far','scale','far','middle','near']);assert.equal(s.waits.length,0,JSON.stringify(s));assert.equal(await page.locator('video').evaluate(v=>v.currentSrc),src);report.checks.push({defaultTour:s,scaleArrivalSeconds:arrival});const recording=page.video();await context.close();const file='automatic-tour-1440.webm';await recording.saveAs(path.join(out,file));report.recordings.push(file);save();
+ }
  assert.deepEqual(report.errors,[]);report.passed=true;
 }catch(e){report.errors.push(e.stack||String(e));process.exitCode=1;}finally{save();await browser?.close();}})();

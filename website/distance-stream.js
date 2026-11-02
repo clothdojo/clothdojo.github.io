@@ -2,6 +2,7 @@
  const video=document.getElementById('distance-near'),root=document.getElementById('distance-viewer'),status=document.getElementById('distance-status'),label=document.getElementById('distance-label');
  const auto=document.getElementById('distance-auto'),play=document.getElementById('distance-play'),buttons=[...document.querySelectorAll('button[data-distance]')];
  const names={near:'近景',middle:'中景',far:'远景',scale:'规模'},reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let order=[];
+ const autoHold={near:3,middle:1,far:1,scale:8};
  let manifest,source,buffer,ready=false,running=!reduced&&!navigator.connection?.saveData,mode=reduced?'manual':'auto',wanted='near',current='near',stage='loop',error='',busy=false;
  let tailView='near',tailFrame=0,end=0,landedAt=0,timer,transition=null,autoDirection=1;
  const cache=new Map(),timeline=[],transitions=[],presentations=[],waits=[];let cacheBytes=0,prefetchTicket=0;
@@ -49,6 +50,9 @@
       const {data}=await load(record),from=tailView,to=next,phase=tailFrame/25;
       await append(data.slice(record.init_bytes),{kind:'bridge',from,to,phase,frames:record.frames});tailView=to;tailFrame=record.end_frame;continue;
      }
+     // Use the already buffered lead to finish preparation at this anchor.
+     // Keep a safety margin; continue the current loop if data is still late.
+     if(end-video.currentTime>.3)break;
     }
     const {record,data}=await load(manifest.views[tailView]),segment=record.segments[tailFrame/5];
     await append(data.slice(segment.offset,segment.offset+segment.bytes),{kind:'loop',view:tailView,phase:tailFrame/25,frames:5});tailFrame=(tailFrame+5)%250;
@@ -78,7 +82,7 @@
     }current=e.view;stage='loop';if(changed)prefetch(current);
    }
    presentations.push({time:frame.mediaTime,wall:now,kind:e.kind});if(presentations.length>160)presentations.shift();
-   if(mode==='auto'&&stage==='loop'&&video.currentTime-landedAt>=8){const i=order.indexOf(current);if(i===0)autoDirection=1;if(i===order.length-1)autoDirection=-1;wanted=order[i+autoDirection];}ui();
+   if(mode==='auto'&&stage==='loop'&&video.currentTime-landedAt>=autoHold[current]){const i=order.indexOf(current);if(i===0)autoDirection=1;if(i===order.length-1)autoDirection=-1;wanted=order[i+autoDirection];}ui();
   }
   fill();video.requestVideoFrameCallback(presented);
  });
@@ -87,7 +91,9 @@
   if(navigator.connection?.saveData)return;
   const ticket=++prefetchTicket,i=order.indexOf(view);let direction=mode==='manual'&&wanted!==view?Math.sign(order.indexOf(wanted)-i):autoDirection;
   if(i+direction<0||i+direction>=order.length)direction=-direction;const next=order[i+direction];if(!next)return;
-  const route=manifest.bridges[view+'-'+next],anchor=Math.ceil(tailFrame/25)%10,list=[manifest.views[next],...Array.from({length:10},(_,j)=>route[(anchor+j)%10])];let cursor=0;
+  const remaining=mode==='auto'?Math.max(0,autoHold[view]-(video.currentTime-landedAt)):0,route=manifest.bridges[view+'-'+next];let anchor=Math.ceil(tailFrame/25+remaining)%10;
+  if(mode==='auto')while(anchor>=8)anchor=(anchor+1)%10;
+  const list=[manifest.views[next],...Array.from({length:10},(_,j)=>route[(anchor+j)%10])];let cursor=0;
   await Promise.all([0,1].map(async()=>{while(cursor<list.length&&ticket===prefetchTicket){const r=list[cursor++];try{await load(r);}catch{/* Explicit requests retry. */}}}));
  }
  async function start(){
