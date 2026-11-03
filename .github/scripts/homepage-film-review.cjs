@@ -24,6 +24,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.equal(await page.locator('#results, #transfer-results, #method, .story-track #use').count(),0);
    assert(await page.locator('body').evaluate(b=>b.classList.contains('research30')),'Keep the approved research design at the official entry');
    assert.equal(await page.locator('#diversity .atlas-overview a, #diversity a.atlas-overview').count(),0,'The garment overview remains presentation-only');
+   assert.equal(await page.locator('[data-ambient-toggle], video[controls]').count(),0,'Homepage videos have no playback controls');
    assert.deepEqual(await page.locator('.rgb-task-labels span').allTextContents(),['Flattening','Folding']);
    report.checks.push({target,width,height,oneViewport:true,noHeroControls:true,whiteGround:true,reducedMotion:true});await context.close();save();
   }
