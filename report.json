@@ -1,5 +1,5 @@
 {
-  "commit": "444fe1a5f7a52d6e38f568e6849472a1d5e083c2",
+  "commit": "f9ffdf5dea567b16b441f87733afc500ab97524e",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -367,10 +367,34 @@
     },
     {
       "width": 1440,
+      "galleryMetadataBeforeNavigation": true,
+      "correctViewportPoster": true,
+      "cardRequests": [
+        "/assets/cards78/rgb-wide.webp",
+        "/assets/cards78/robot.webp",
+        "/assets/cards78/atlas-wide.webp",
+        "/assets/rgb76/ribbon.mp4",
+        "/assets/transfer73/robot-transfer.mp4"
+      ]
+    },
+    {
+      "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
       "maxFrameGap": 0.08000000000000007,
       "exclusiveAmbientPlayback": true
+    },
+    {
+      "width": 390,
+      "galleryMetadataBeforeNavigation": true,
+      "correctViewportPoster": true,
+      "cardRequests": [
+        "/assets/cards78/atlas-mobile.webp",
+        "/assets/cards78/rgb-mobile.webp",
+        "/assets/cards78/robot.webp",
+        "/assets/rgb77/ribbon-mobile.mp4",
+        "/assets/transfer73/robot-transfer.mp4"
+      ]
     },
     {
       "width": 390,
