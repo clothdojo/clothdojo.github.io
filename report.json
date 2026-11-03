@@ -1,5 +1,5 @@
 {
-  "commit": "6f4624c160e886548051654d6f1db5c679f69c66",
+  "commit": "69f7b6e8d200efbdfde623642404a436d103678f",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -168,6 +168,26 @@
       "staticCode": true
     },
     {
+      "file": "card-1280-0.jpg",
+      "width": 1280,
+      "card": 0
+    },
+    {
+      "file": "card-1280-1.jpg",
+      "width": 1280,
+      "card": 1
+    },
+    {
+      "file": "card-1280-2.jpg",
+      "width": 1280,
+      "card": 2
+    },
+    {
+      "file": "code-1280.jpg",
+      "width": 1280,
+      "staticCode": true
+    },
+    {
       "file": "card-390-0.jpg",
       "width": 390,
       "card": 0
@@ -308,6 +328,16 @@
       "noDocumentOverflow": true
     },
     {
+      "width": 1280,
+      "horizontalCards": 3,
+      "staticCode": true,
+      "arrows": true,
+      "dots": true,
+      "keyboard": true,
+      "deepLinks": true,
+      "noDocumentOverflow": true
+    },
+    {
       "width": 390,
       "horizontalCards": 3,
       "staticCode": true,
@@ -320,8 +350,8 @@
     {
       "width": 1440,
       "fullLoop": true,
-      "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.08000000000000007,
+      "seamMeanRgbDifference": 0.3953125,
+      "maxFrameGap": 0.07999999999999918,
       "exclusiveAmbientPlayback": true
     },
     {
