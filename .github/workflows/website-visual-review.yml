@@ -58,6 +58,7 @@ on:
       - 'website/assets/rgb77/**'
       - 'website/assets/cards78/**'
       - 'website/assets/robots79/**'
+      - 'website/assets/robots80/**'
       - 'website/assets/cloth48/**'
       - 'website/assets/atlas32/**'
 
