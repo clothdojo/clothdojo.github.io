@@ -47,6 +47,8 @@ The open-source dataset contains 7,848 trajectories: 3,992 flattening and 3,856 
 
 `assets/transfer73/` shows five complete worktables simultaneously: ALOHA 2 and X5 in the back row, PIPER, Franka and UR5e in the front. The shared camera is fitted during native RTX rendering without post-cropping. Original cloth and robot states are replayed at 2× speed and 25 fps, followed by a scripted home return and a 0.48-second loop dissolve. This is a saved PIPER demonstration with four kinematic retargets, not five-robot closed-loop policy evaluation. Ground normalization preserves contact shadows on white. The RGB card separately presents scene/appearance re-rendering with fixed Flattening/Folding labels.
 
+`assets/robots79/` supplies the mobile robot replay with its own native 960×1440 camera, matching the RGB card's portrait aspect ratio. All five complete worktables share one scene, arranged as two back, two middle and the PIPER source in front. The orthographic camera uses a roughly 30° elevation, fitted to projected workcell bounds; increased depth spacing keeps the rear garments/grippers visible. Cloth/joint sequences, playback speed, home return and loop timing match the desktop replay. Videos are not cropped to create this view; the mobile card grows with its media rather than shrinking the desktop landscape frame.
+
 The model comparison reports the same four garment–appearance conditions for all four models. π₀.₅, GR00T N1.7 and the internal StarVLA-based policy are fine-tuned; Diffusion Policy is trained from scratch. Pretraining differences are included, so these results are not an architecture-only ablation.
 
 ## Shared research presentation
