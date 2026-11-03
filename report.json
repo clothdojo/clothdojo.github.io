@@ -420,7 +420,7 @@
           "width": 350
         },
         "gallery": {
-          "left": 93,
+          "left": 63,
           "width": 350
         }
       }
@@ -464,9 +464,9 @@
       "galleryMetadataBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
-        "/assets/cards78/atlas-mobile.webp",
         "/assets/cards78/rgb-mobile.webp",
         "/assets/robots82/robot-mobile.webp",
+        "/assets/cards78/atlas-mobile.webp",
         "/assets/rgb77/ribbon-mobile.mp4",
         "/assets/robots82/robot-transfer-mobile.mp4"
       ]
