@@ -71,9 +71,9 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.waitForFunction(()=>['rgb-film','transfer-film'].every(id=>document.getElementById(id).readyState>=1));
   assert(mediaRequests.includes(width===390?'/assets/rgb77/ribbon-mobile.mp4':'/assets/rgb76/ribbon.mp4'),'The correct RGB video is prepared before gallery navigation');
   assert(!mediaRequests.includes(width===390?'/assets/cards78/rgb-wide.webp':'/assets/cards78/rgb-mobile.webp'),'Do not download the other viewport poster');
-  assert(!mediaRequests.includes(width===390?'/assets/cards78/robot.webp':'/assets/robots80/robot-mobile.webp'),'Select the robot poster before requesting it');
+  assert(!mediaRequests.includes(width===390?'/assets/robots81/robot-wide.webp':'/assets/robots81/robot-mobile.webp'),'Select the robot poster before requesting it');
   assert.equal(await page.locator('#rgb-film').evaluate(v=>v.paused),true,'Preparing metadata must not start offscreen playback');
-  report.checks.push({width,galleryMetadataBeforeNavigation:true,correctViewportPoster:true,cardRequests:mediaRequests.filter(p=>/cards78|rgb76|rgb77|transfer73|robots80/.test(p))});save();
+  report.checks.push({width,galleryMetadataBeforeNavigation:true,correctViewportPoster:true,cardRequests:mediaRequests.filter(p=>/cards78|rgb76|rgb77|robots81/.test(p))});save();
   await page.evaluate(()=>{
    window.heroProbe={wrapped:false,gaps:[],seam:null};const v=document.getElementById('hero-film'),c=document.createElement('canvas');c.width=160;c.height=56;const ctx=c.getContext('2d',{willReadFrequently:true});let last,lastPixels;
    v.requestVideoFrameCallback(function sample(_now,f){ctx.drawImage(v,0,0,160,56);const p=ctx.getImageData(0,0,160,56).data;
@@ -88,9 +88,9 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   assert((await page.locator('#rgb-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'rgb77/ribbon-mobile.mp4':'rgb76/ribbon.mp4'));
   assert.deepEqual(await page.locator('#rgb-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[960,1440]:[1920,720]);
   await page.locator('[data-story-next]').click();await page.waitForFunction(()=>{const v=document.getElementById('transfer-film');return window.storyCards.state.active===2&&!v.paused&&v.currentTime>.2;},null,{timeout:30000});await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.paused;});
-  assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'robots80/robot-transfer-mobile.mp4':'transfer73/robot-transfer.mp4'));
+  assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'robots81/robot-transfer-mobile.mp4':'robots81/robot-transfer.mp4'));
   const robotCorner=await page.locator('#transfer-film').evaluate(v=>{const c=document.createElement('canvas');c.width=20;c.height=20;const x=c.getContext('2d');x.drawImage(v,0,0,20,20);return [...x.getImageData(0,0,1,1).data].slice(0,3);});assert(robotCorner.every(x=>x>=245),'The robot replay blends into white');
-  assert.deepEqual(await page.locator('#transfer-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[960,1440]:[1800,1100]);
+  assert.deepEqual(await page.locator('#transfer-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[960,1440]:[1400,1100]);
   await page.locator('#transfer-film').evaluate(v=>{window.robotWrapped=false;let last=v.currentTime;v.addEventListener('timeupdate',()=>{if(v.currentTime<last)window.robotWrapped=true;last=v.currentTime;});});await page.waitForFunction(()=>window.robotWrapped,null,{timeout:30000});
   await page.waitForFunction(()=>document.querySelectorAll('video[data-auto]').length&&[...document.querySelectorAll('video[data-auto]')].filter(v=>!v.paused).length===1);
   await page.locator('#hero-film').scrollIntoViewIfNeeded();await page.waitForFunction(()=>!document.getElementById('hero-film').paused);
