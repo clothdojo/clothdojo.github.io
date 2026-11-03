@@ -89,6 +89,8 @@ The review captures 1440 px desktop and 390/320 px mobile viewports, with decode
 
 Inspect screenshots as well as automated results: passing interaction checks is not a visual-quality assessment.
 
+The garment overview uses narrow visual gutters while keeping its disclosure aligned with the shared text gutter. Desktop card height also accounts for the landscape atlas width, so short windows do not shrink the entire image into a narrow centered strip. Asset placement and spacing are unchanged. Browser review includes a 1280×720 gallery capture.
+
 ## Sources and hosting
 
 The manuscript source for the reported experiments is `paper/sections/experiments.tex` in the development repository. Original trajectories and raw render outputs are provenance references and are not bundled with the code preview.

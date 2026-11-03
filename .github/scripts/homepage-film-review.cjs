@@ -28,8 +28,8 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    report.checks.push({target,width,height,oneViewport:true,noHeroControls:true,whiteGround:true,reducedMotion:true});await context.close();save();
   }
  }
- for(const width of [1440,390]){
-  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',hasTouch:width===390}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));
+ for(const width of [1440,1280,390]){
+  const context=await browser.newContext({viewport:{width,height:width===1280?720:900},reducedMotion:'reduce',hasTouch:width===390}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));
   await page.goto('http://127.0.0.1:8787/index.html');await page.locator('#highlights').evaluate(e=>e.scrollIntoView({block:'start'}));
   const next=page.locator('[data-story-next]'),prev=page.locator('[data-story-prev]');
   assert(await prev.isDisabled());console.log('Gallery initial state',width,await page.evaluate(()=>window.storyCards.state));
@@ -45,7 +45,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   assert(await next.isDisabled());await prev.click();await page.waitForFunction(()=>window.storyCards.state.active===1);
   await page.locator('.story-dots button').nth(0).click();await page.waitForFunction(()=>window.storyCards.state.active===0);
   await page.locator('.story-track').focus();await page.keyboard.press('ArrowRight');await page.waitForFunction(()=>window.storyCards.state.active===1);
-  if(width===1440){const box=await page.locator('.story-track').boundingBox();await page.mouse.move(width*.75,box.y+140);await page.mouse.down();await page.mouse.move(width*.2,box.y+140,{steps:12});await page.mouse.up();await page.waitForFunction(()=>window.storyCards.state.active===2);}
+  if(width!==390){const box=await page.locator('.story-track').boundingBox();await page.mouse.move(width*.75,box.y+140);await page.mouse.down();await page.mouse.move(width*.2,box.y+140,{steps:12});await page.mouse.up();await page.waitForFunction(()=>window.storyCards.state.active===2);}
   else {const box=await page.locator('.story-track').boundingBox(),session=await context.newCDPSession(page),y=box.y+140;await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:width*.85,y}]});for(let i=1;i<=12;i++){await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:width*(.85-.7*i/12),y}]});await page.waitForTimeout(16);}await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await page.waitForFunction(()=>window.storyCards.state.active===2);await session.detach();}
   await page.locator('header a[href="#use"]').click();await page.waitForFunction(()=>document.querySelector('#use').getBoundingClientRect().top>=0&&document.querySelector('#use').getBoundingClientRect().top<200);
   assert.equal(await page.locator('#use').evaluate(e=>!!e.closest('.story-track')),false);
