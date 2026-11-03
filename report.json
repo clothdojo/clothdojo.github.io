@@ -1,5 +1,5 @@
 {
-  "commit": "97d204fb528dbd7656fd944d46c0394cb9e51d13",
+  "commit": "177e432935701a5d23afa8f3bd570c2a86ccf8fe",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -420,7 +420,7 @@
           "width": 350
         },
         "gallery": {
-          "left": 92,
+          "left": 93,
           "width": 350
         }
       }
@@ -450,13 +450,13 @@
     {
       "width": 1440,
       "heroLoopSeam": 0.16666666666666666,
-      "heroMaxFrameGap": 0.08000000000000007
+      "heroMaxFrameGap": 0.08000000000000002
     },
     {
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.08000000000000007,
+      "maxFrameGap": 0.08000000000000002,
       "exclusiveAmbientPlayback": true
     },
     {
@@ -464,9 +464,9 @@
       "galleryMetadataBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
-        "/assets/cards78/atlas-mobile.webp",
         "/assets/cards78/rgb-mobile.webp",
         "/assets/robots82/robot-mobile.webp",
+        "/assets/cards78/atlas-mobile.webp",
         "/assets/rgb77/ribbon-mobile.mp4",
         "/assets/robots82/robot-transfer-mobile.mp4"
       ]
