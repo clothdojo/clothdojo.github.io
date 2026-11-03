@@ -1,5 +1,5 @@
 {
-  "commit": "1de59c8d0faadcdb069bb98d89752f4ddc482591",
+  "commit": "97d204fb528dbd7656fd944d46c0394cb9e51d13",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -10,10 +10,17 @@
       "height": 900,
       "bounds": {
         "x": 0,
-        "y": 74,
+        "y": 64,
         "width": 1440,
-        "height": 747.984375
+        "height": 749.09375
       }
+    },
+    {
+      "file": "layout-1440-full.jpg",
+      "target": "index.html",
+      "width": 1440,
+      "height": 900,
+      "fullPage": true
     },
     {
       "file": "index-1280.jpg",
@@ -22,9 +29,9 @@
       "height": 720,
       "bounds": {
         "x": 0,
-        "y": 74,
+        "y": 64,
         "width": 1280,
-        "height": 546.046875
+        "height": 494.78125
       }
     },
     {
@@ -34,9 +41,9 @@
       "height": 1080,
       "bounds": {
         "x": 0,
-        "y": 74,
+        "y": 64,
         "width": 1920,
-        "height": 921.5
+        "height": 929.09375
       }
     },
     {
@@ -46,9 +53,9 @@
       "height": 756,
       "bounds": {
         "x": 0,
-        "y": 74,
+        "y": 64,
         "width": 1724,
-        "height": 626.5
+        "height": 530.78125
       }
     },
     {
@@ -58,18 +65,25 @@
       "height": 844,
       "bounds": {
         "x": 0,
-        "y": 62,
+        "y": 60,
         "width": 390,
-        "height": 384.6875
+        "height": 446.40625
       }
+    },
+    {
+      "file": "layout-390-full.jpg",
+      "target": "index.html",
+      "width": 390,
+      "height": 844,
+      "fullPage": true
     },
     {
       "file": "atlas-fit-390.jpg",
       "width": 390,
       "height": 844,
       "assetFit": {
-        "paintedWidth": 326,
-        "cardWidth": 342
+        "paintedWidth": 334,
+        "cardWidth": 350
       }
     },
     {
@@ -79,9 +93,9 @@
       "height": 640,
       "bounds": {
         "x": 0,
-        "y": 62,
+        "y": 60,
         "width": 320,
-        "height": 360.1875
+        "height": 442.90625
       }
     },
     {
@@ -89,8 +103,8 @@
       "width": 320,
       "height": 640,
       "assetFit": {
-        "paintedWidth": 255.9375,
-        "cardWidth": 272
+        "paintedWidth": 263.8125,
+        "cardWidth": 280
       }
     },
     {
@@ -100,9 +114,9 @@
       "height": 900,
       "bounds": {
         "x": 0,
-        "y": 74,
+        "y": 64,
         "width": 1440,
-        "height": 747.984375
+        "height": 749.09375
       }
     },
     {
@@ -112,9 +126,9 @@
       "height": 720,
       "bounds": {
         "x": 0,
-        "y": 74,
+        "y": 64,
         "width": 1280,
-        "height": 546.046875
+        "height": 494.78125
       }
     },
     {
@@ -124,9 +138,9 @@
       "height": 1080,
       "bounds": {
         "x": 0,
-        "y": 74,
+        "y": 64,
         "width": 1920,
-        "height": 921.5
+        "height": 929.09375
       }
     },
     {
@@ -136,9 +150,9 @@
       "height": 756,
       "bounds": {
         "x": 0,
-        "y": 74,
+        "y": 64,
         "width": 1724,
-        "height": 626.5
+        "height": 530.78125
       }
     },
     {
@@ -148,9 +162,9 @@
       "height": 844,
       "bounds": {
         "x": 0,
-        "y": 62,
+        "y": 60,
         "width": 390,
-        "height": 384.6875
+        "height": 446.40625
       }
     },
     {
@@ -160,9 +174,9 @@
       "height": 640,
       "bounds": {
         "x": 0,
-        "y": 62,
+        "y": 60,
         "width": 320,
-        "height": 360.1875
+        "height": 442.90625
       }
     },
     {
@@ -342,6 +356,23 @@
     },
     {
       "width": 1440,
+      "sharedContentEdges": {
+        "nav": {
+          "left": 120,
+          "width": 1200
+        },
+        "code": {
+          "left": 120,
+          "width": 1200
+        },
+        "gallery": {
+          "left": 120,
+          "width": 1200
+        }
+      }
+    },
+    {
+      "width": 1440,
       "horizontalCards": 3,
       "staticCode": true,
       "arrows": true,
@@ -352,6 +383,23 @@
     },
     {
       "width": 1280,
+      "sharedContentEdges": {
+        "nav": {
+          "left": 40,
+          "width": 1200
+        },
+        "code": {
+          "left": 40,
+          "width": 1200
+        },
+        "gallery": {
+          "left": 40,
+          "width": 1200
+        }
+      }
+    },
+    {
+      "width": 1280,
       "horizontalCards": 3,
       "staticCode": true,
       "arrows": true,
@@ -359,6 +407,23 @@
       "keyboard": true,
       "deepLinks": true,
       "noDocumentOverflow": true
+    },
+    {
+      "width": 390,
+      "sharedContentEdges": {
+        "nav": {
+          "left": 20,
+          "width": 350
+        },
+        "code": {
+          "left": 20,
+          "width": 350
+        },
+        "gallery": {
+          "left": 92,
+          "width": 350
+        }
+      }
     },
     {
       "width": 390,
@@ -375,9 +440,9 @@
       "galleryMetadataBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
+        "/assets/cards78/atlas-wide.webp",
         "/assets/cards78/rgb-wide.webp",
         "/assets/robots82/robot-wide.webp",
-        "/assets/cards78/atlas-wide.webp",
         "/assets/rgb76/ribbon.mp4",
         "/assets/robots82/robot-transfer.mp4"
       ]
