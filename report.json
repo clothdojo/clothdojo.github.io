@@ -1,5 +1,5 @@
 {
-  "commit": "4aac10540d00aa1b12476d637c28a04df5cafce3",
+  "commit": "2bd8e791214329c4bd2987a871f0e9e512ab6652",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -369,7 +369,7 @@
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.08000000000000007,
+      "maxFrameGap": 0.0800000000000054,
       "exclusiveAmbientPlayback": true
     },
     {
