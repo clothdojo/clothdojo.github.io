@@ -381,7 +381,7 @@
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.08000000000000185,
+      "maxFrameGap": 0.08000000000000002,
       "exclusiveAmbientPlayback": true
     },
     {
@@ -389,9 +389,9 @@
       "galleryMetadataBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
+        "/assets/cards78/atlas-mobile.webp",
         "/assets/cards78/rgb-mobile.webp",
         "/assets/robots81/robot-mobile.webp",
-        "/assets/cards78/atlas-mobile.webp",
         "/assets/rgb77/ribbon-mobile.mp4",
         "/assets/robots81/robot-transfer-mobile.mp4"
       ]
