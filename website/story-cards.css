@@ -69,6 +69,7 @@
  .story-card--diversity .atlas-overview picture{height:auto}
  .research30 .story-card--diversity .atlas-overview img{display:block;width:100%;height:auto;max-height:none}
  .research30 .story-card--diversity details.explanation{margin-inline:12px}
+ .story-card[data-active="false"] .explanation-body{display:none}
 }
 .research30 .story-card--rgb .rgb-task-labels{padding:0 0 8px;border:0;font-size:15px;font-weight:600;line-height:1.4}
 .story-card--rgb .rgb-task-labels>span:first-child{color:#2c737e}.story-card--rgb .rgb-task-labels>span+span{color:#9c684b;border:0}

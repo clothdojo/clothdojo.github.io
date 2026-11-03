@@ -28,6 +28,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.deepEqual(await page.locator('.rgb-task-labels span').allTextContents(),['Flattening','Folding']);
    if(target==='index.html'&&width<700){
     await page.locator('header a[href="#diversity"]').click();await page.waitForFunction(()=>window.storyCards.state.active===0);
+    assert.equal(await page.locator('#about .explanation-body').isVisible(),false,'Offscreen explanations do not stretch the mobile gallery');
     await page.locator('#highlights').evaluate(e=>e.scrollIntoView({block:'start'}));
     await page.waitForFunction(()=>{const i=document.querySelector('#diversity img');return i.complete&&i.naturalWidth>0;});
     const fit=await page.locator('#diversity').evaluate(card=>{const i=card.querySelector('img');return {paintedWidth:Math.min(i.clientWidth,i.clientHeight*i.naturalWidth/i.naturalHeight),cardWidth:card.clientWidth};});
