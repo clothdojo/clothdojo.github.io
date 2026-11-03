@@ -69,6 +69,13 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.locator('header a[href="#use"]').click();await page.waitForFunction(()=>document.querySelector('#use').getBoundingClientRect().top>=0&&document.querySelector('#use').getBoundingClientRect().top<200);
   assert.equal(await page.locator('#use').evaluate(e=>!!e.closest('.story-track')),false);
   assert(await page.locator('#use .code-card').evaluate(e=>Math.abs(parseFloat(getComputedStyle(e).height)-e.scrollHeight)<2),'The code card grows with its content');
+   const edges=await page.evaluate(()=>{
+    const box=s=>{const b=document.querySelector(s).getBoundingClientRect();return {left:b.left,width:b.width};};
+    return {nav:box('.site-header .nav'),code:box('#use .code-card'),gallery:box('.story-card[data-active="true"]')};
+   });
+   assert(Math.abs(edges.nav.left-edges.code.left)<1&&Math.abs(edges.nav.width-edges.code.width)<1,'Navigation and code share one content edge');
+   assert(Math.abs(edges.gallery.width-edges.code.width)<1,'Gallery and code share one content width');
+   report.checks.push({width,sharedContentEdges:edges});
   const codeFile='code-'+width+'.jpg';await page.screenshot({path:path.join(out,codeFile),type:'jpeg',quality:92});report.screenshots.push({file:codeFile,width,staticCode:true});
   await page.goto('http://127.0.0.1:8787/index.html#rgb');await page.waitForFunction(()=>window.storyCards.state.active===1);
   report.checks.push({width,horizontalCards:3,staticCode:true,arrows:true,dots:true,keyboard:true,deepLinks:true,noDocumentOverflow:true});await context.close();save();

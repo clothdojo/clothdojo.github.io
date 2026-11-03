@@ -2,6 +2,8 @@
 
 Buildless research website. GitHub Pages publishes this directory only; code, tests and benchmark fixtures remain in the same repository.
 
+The current homepage uses one 1200px content width with responsive gutters. `generation-hero.css` owns navigation, opening typography and the footer; `story-cards.css` owns the shared gallery heading/media rhythm and the open code chapter. The white opening leads into a single soft-gray highlight band, then returns to white for the code and credits. Existing recordings, responsive sources and horizontal-gallery interactions remain the content foundation.
+
 ## Structure
 
 The current `distance-study.html` preview plays one ordinary MP4 from `assets/film62/`, with muted autoplay and a native loop. Two worktables and one camera remain fixed. Six rounds compare flattening on the left and folding on the right, using the same garment identity and colour in each round. The film contains six garments and twelve unique real trajectories; each reaches its recorded successful released endpoint, then the arms return home before the asset changes. The 65.44-second loop uses original native 1600×560, 25 fps Isaac frames at 2× source replay, without individual retiming. Only the final home hold dissolves to the next initial state. There are no distance controls, progress bar, JavaScript player or dynamic clip loading. The interactive `distance-stream.js`, camera58/camera60 components and unshipped film61 assembly remain archived and are not loaded by this page. Browser playback, all six rounds and the actual loop seam are checked by `.github/scripts/generation-film-review.cjs`.
