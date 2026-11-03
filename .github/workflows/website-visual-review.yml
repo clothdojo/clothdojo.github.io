@@ -14,7 +14,7 @@ on:
         default: index.html
         type: string
   push:
-    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal, codex/rgb-ribbon-homepage, codex/complete-generation-loop, codex/white-asset-atlas, codex/direct-embedded-loop, codex/synchronized-case-film, codex/rgb-playback-release, codex/in-motion-reveal, codex/departure-reveal-holds, codex/full-perspective-loop, codex/camera-control-study, codex/continuous-camera-study, codex/cloth-fidelity-study, codex/lighting-study, codex/camera-color-fix, codex/startup-streaming, codex/rendered-distance-sample, codex/homepage-film-release-20261102]
+    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal, codex/rgb-ribbon-homepage, codex/complete-generation-loop, codex/white-asset-atlas, codex/direct-embedded-loop, codex/synchronized-case-film, codex/rgb-playback-release, codex/in-motion-reveal, codex/departure-reveal-holds, codex/full-perspective-loop, codex/camera-control-study, codex/continuous-camera-study, codex/cloth-fidelity-study, codex/lighting-study, codex/camera-color-fix, codex/startup-streaming, codex/rendered-distance-sample, codex/homepage-film-release-20261102, codex/mobile80-integration-20261103]
     paths:
       - '.github/workflows/website-visual-review.yml'
       - '.github/scripts/website-visual-review.cjs'
@@ -93,7 +93,7 @@ jobs:
           "$RUNNER_TEMP/browser-tools/node_modules/.bin/http-server" website -a 127.0.0.1 -p 8787 -c-1 -s > "$RUNNER_TEMP/site-server.log" 2>&1 &
           if [ '${{ inputs.page_path }}' = 'distance-study.html' ]; then
             node .github/scripts/generation-film-review.cjs
-          elif { [ '${{ github.ref_name }}' = 'codex/rendered-distance-sample' ] || [ '${{ github.ref_name }}' = 'codex/homepage-film-release-20261102' ] || [ '${{ github.ref_name }}' = 'main' ]; } && { [ '${{ inputs.page_path }}' = '' ] || [ '${{ inputs.page_path }}' = 'index.html' ] || [ '${{ inputs.page_path }}' = 'research-preview-v31.html' ]; }; then
+          elif { [ '${{ github.ref_name }}' = 'codex/rendered-distance-sample' ] || [ '${{ github.ref_name }}' = 'codex/homepage-film-release-20261102' ] || [ '${{ github.ref_name }}' = 'codex/mobile80-integration-20261103' ] || [ '${{ github.ref_name }}' = 'main' ]; } && { [ '${{ inputs.page_path }}' = '' ] || [ '${{ inputs.page_path }}' = 'index.html' ] || [ '${{ inputs.page_path }}' = 'research-preview-v31.html' ]; }; then
             node .github/scripts/homepage-film-review.cjs
           elif [ '${{ github.ref_name }}' = 'codex/lighting-study' ] || [ '${{ github.ref_name }}' = 'codex/camera-color-fix' ] || [ '${{ github.ref_name }}' = 'codex/startup-streaming' ]; then
             node .github/scripts/lighting-study-review.cjs
