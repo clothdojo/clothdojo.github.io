@@ -66,7 +66,13 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
  }
  for(const width of [1440,390]){
   const context=await browser.newContext({viewport:{width,height:900},recordVideo:{dir:path.join(out,'recordings'),size:{width,height:900}}}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));
+  const mediaRequests=[];page.on('request',r=>{if(/\.(mp4|webp|jpg)$/.test(new URL(r.url()).pathname))mediaRequests.push(new URL(r.url()).pathname);});
   await page.goto('http://127.0.0.1:8787/index.html');await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return !v.paused&&v.currentTime>.1;},null,{timeout:45000});
+  await page.waitForFunction(()=>['rgb-film','transfer-film'].every(id=>document.getElementById(id).readyState>=1));
+  assert(mediaRequests.includes(width===390?'/assets/rgb77/ribbon-mobile.mp4':'/assets/rgb76/ribbon.mp4'),'The correct RGB video is prepared before gallery navigation');
+  assert(!mediaRequests.includes(width===390?'/assets/cards78/rgb-wide.webp':'/assets/cards78/rgb-mobile.webp'),'Do not download the other viewport poster');
+  assert.equal(await page.locator('#rgb-film').evaluate(v=>v.paused),true,'Preparing metadata must not start offscreen playback');
+  report.checks.push({width,galleryMetadataBeforeNavigation:true,correctViewportPoster:true,cardRequests:mediaRequests.filter(p=>/cards78|rgb76|rgb77|transfer73/.test(p))});save();
   await page.evaluate(()=>{
    window.heroProbe={wrapped:false,gaps:[],seam:null};const v=document.getElementById('hero-film'),c=document.createElement('canvas');c.width=160;c.height=56;const ctx=c.getContext('2d',{willReadFrequently:true});let last,lastPixels;
    v.requestVideoFrameCallback(function sample(_now,f){ctx.drawImage(v,0,0,160,56);const p=ctx.getImageData(0,0,160,56).data;

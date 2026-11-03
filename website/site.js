@@ -8,7 +8,7 @@
   const variantLoading = new WeakMap();
   const resizePaused = new WeakSet();
   const comparisons = films.filter(video => video.dataset.mobileSrc).map(video => ({
-    video, desktopSrc: video.dataset.src, desktopPoster: video.poster
+    video, desktopSrc: video.dataset.src, desktopPoster: video.dataset.poster || video.getAttribute('poster')
   }));
   function attach(video) {
     if (!video.hasAttribute('src')) { video.src = video.dataset.src; video.load(); }
@@ -72,13 +72,13 @@
     for (const { video, desktopSrc, desktopPoster } of comparisons) {
       const src = narrow.matches ? video.dataset.mobileSrc : desktopSrc;
       const poster = narrow.matches ? video.dataset.mobilePoster : desktopPoster;
+      if (poster && video.getAttribute('poster') !== poster) video.poster = poster;
       if (video.dataset.src === src) continue;
       const pending = variantLoading.get(video);
       const wasPlaying = pending?.wasPlaying ?? !video.paused;
       const position = pending?.position ?? video.currentTime;
       const attached = video.hasAttribute('src');
       video.dataset.src = src;
-      video.poster = poster;
       if (!attached) continue;
       const version = (versions.get(video) || 0) + 1;
       versions.set(video, version);
@@ -113,6 +113,24 @@
     ambient();
   }, { threshold: [0,.2,.5,1] });
   films.forEach(v => observer.observe(v));
+  const gallery = document.getElementById('highlights');
+  if (gallery && !motion.matches && !navigator.connection?.saveData) {
+    const warmup = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      warmup.disconnect();
+      const prepare = () => {
+        if (document.hidden || motion.matches || navigator.connection?.saveData) return;
+        gallery.querySelectorAll('img').forEach(image => { image.loading = 'eager'; });
+        gallery.querySelectorAll('video[data-src]').forEach(video => {
+          if (!video.hasAttribute('src')) { video.preload = 'metadata'; attach(video); }
+        });
+      };
+      const box = hero?.getBoundingClientRect();
+      if (hero && hero.readyState < 2 && box.bottom > 0 && box.top < innerHeight) hero.addEventListener('loadeddata', prepare, { once: true });
+      else prepare();
+    }, { rootMargin: '400px 0px' });
+    warmup.observe(gallery);
+  }
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) { document.querySelectorAll('video').forEach(v => v.pause()); active = undefined; }
     else ambient();

@@ -1,0 +1,111 @@
+{
+  "schema": "clothdojo_card_display_encodings_v78",
+  "scope": "Display compression and proportional downsampling only. Full source images and videos remain unchanged. No crop, recoloring or asset removal.",
+  "images": [
+    {
+      "file": "atlas-wide.webp",
+      "source": "../atlas73/garment-atlas-wide.webp",
+      "source_sha256": "d3092cdaf9576a5d9fd909e70f118efce8c3c31ecb99450f712de81c02e67c5f",
+      "source_dimensions": [
+        3000,
+        1200
+      ],
+      "dimensions": [
+        2160,
+        864
+      ],
+      "source_bytes": 1554426,
+      "bytes": 235982,
+      "sha256": "0a53fd2447a005d5431faee02f71008892f742c80bee1e223ce1c7013cbcc71f",
+      "encoding": {
+        "format": "WebP",
+        "quality": 88,
+        "method": 6
+      }
+    },
+    {
+      "file": "atlas-mobile.webp",
+      "source": "../atlas73/garment-atlas-portrait.webp",
+      "source_sha256": "d8e9302eb32b2a4514ee4d2219445908624992134cd52f98c26400e4498f2342",
+      "source_dimensions": [
+        1050,
+        1600
+      ],
+      "dimensions": [
+        1050,
+        1600
+      ],
+      "source_bytes": 859540,
+      "bytes": 224706,
+      "sha256": "a1ed84bbab2cf024c006b34f761f56a60679e9308830ecaee74f5e1cc0770845",
+      "encoding": {
+        "format": "WebP",
+        "quality": 88,
+        "method": 6
+      }
+    },
+    {
+      "file": "rgb-wide.webp",
+      "source": "../rgb76/ribbon-poster.jpg",
+      "source_sha256": "fb57e5dbf16f63115c9bdb60c7a94b6d407c713d659b4fcdd29fdf2ef627db06",
+      "source_dimensions": [
+        1920,
+        720
+      ],
+      "dimensions": [
+        1280,
+        480
+      ],
+      "source_bytes": 559054,
+      "bytes": 115312,
+      "sha256": "53637e1dac5c72add04eb170fc026aea6f952aae30e58bab3ec245a93770a400",
+      "encoding": {
+        "format": "WebP",
+        "quality": 82,
+        "method": 6
+      }
+    },
+    {
+      "file": "rgb-mobile.webp",
+      "source": "../rgb77/ribbon-mobile-poster.jpg",
+      "source_sha256": "495f11c98126e5b85b00df647b26c8366131702ac0de5c206f9a1799f1be531c",
+      "source_dimensions": [
+        960,
+        1440
+      ],
+      "dimensions": [
+        640,
+        960
+      ],
+      "source_bytes": 559949,
+      "bytes": 116186,
+      "sha256": "cd1d8df62fec5657f22438a74d6950b65062f82249446ea6fe7cd34d980b7c09",
+      "encoding": {
+        "format": "WebP",
+        "quality": 82,
+        "method": 6
+      }
+    },
+    {
+      "file": "robot.webp",
+      "source": "../transfer73/robot-transfer-poster.jpg",
+      "source_sha256": "d7aedc1b92a84370d1c4ff9fdd3d2a255f031d330c29af2d359616512d9301f5",
+      "source_dimensions": [
+        1800,
+        1100
+      ],
+      "dimensions": [
+        960,
+        587
+      ],
+      "source_bytes": 128337,
+      "bytes": 15344,
+      "sha256": "f748cee3035b2c73844eb19ba87d83648390c7fc7947297925c0dd0f8c3d897c",
+      "encoding": {
+        "format": "WebP",
+        "quality": 85,
+        "method": 6
+      }
+    }
+  ]
+}

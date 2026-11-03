@@ -56,6 +56,7 @@ on:
       - 'website/assets/transfer73/**'
       - 'website/assets/rgb76/**'
       - 'website/assets/rgb77/**'
+      - 'website/assets/cards78/**'
       - 'website/assets/cloth48/**'
       - 'website/assets/atlas32/**'
 

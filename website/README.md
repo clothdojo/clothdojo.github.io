@@ -91,6 +91,8 @@ Inspect screenshots as well as automated results: passing interaction checks is 
 
 Each current showcase card has one conclusion-first heading. Asset count, dataset size and source/retarget robot names remain in disclosures rather than repeated subtitles or captions. Only the RGB task labels remain visible to orient the two halves.
 
+`assets/cards78/` contains proportional WebP display encodings for card images and posters; original renders and all video frames are unchanged. The browser selects the appropriate poster before assigning its URL, avoiding a desktop-poster request on mobile. After the opening film has its first frame, approaching the gallery warms the selected viewport's video metadata without playing the offscreen cards. Reduced-motion and data-saver preferences suppress this extra video preparation. Chrome review checks early media requests, viewport-specific poster selection and exclusive playback.
+
 The garment overview uses narrow visual gutters while keeping its disclosure aligned with the shared text gutter. Desktop card height accounts for the landscape atlas width. On mobile the portrait image uses its full available width and natural aspect ratio; the asset card grows with the image instead of shrinking it into a fixed height. Asset placement and spacing are unchanged. Chrome review includes 1280×720 gallery captures and painted-image width checks at 390×844 and 320×640.
 
 ## Sources and hosting
