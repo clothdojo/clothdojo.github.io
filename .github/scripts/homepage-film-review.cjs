@@ -24,6 +24,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.equal(await page.locator('#results, #transfer-results, #method, .story-track #use').count(),0);
    assert(await page.locator('body').evaluate(b=>b.classList.contains('research30')),'Keep the approved research design at the official entry');
    assert.equal(await page.locator('#diversity .atlas-overview a, #diversity a.atlas-overview').count(),0,'The garment overview remains presentation-only');
+   assert.deepEqual(await page.locator('.rgb-task-labels span').allTextContents(),['Flattening','Folding']);
    report.checks.push({target,width,height,oneViewport:true,noHeroControls:true,whiteGround:true,reducedMotion:true});await context.close();save();
   }
  }
@@ -68,9 +69,9 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.waitForFunction(()=>window.heroProbe.wrapped,null,{timeout:20000});const probe=await page.evaluate(()=>window.heroProbe);assert(probe.seam<8);assert(Math.max(...probe.gaps)<.161);assert.equal(await page.locator('#hero-film').evaluate(v=>v.currentSrc),source);
   await page.locator('header a[href="#rgb"]').click();await page.waitForFunction(()=>{const v=document.getElementById('rgb-film');return !v.paused&&v.currentTime>.2;},null,{timeout:30000});
   await page.locator('[data-story-next]').click();await page.waitForFunction(()=>{const v=document.getElementById('transfer-film');return window.storyCards.state.active===2&&!v.paused&&v.currentTime>.2;},null,{timeout:30000});await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.paused;});
-  assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'robots71/robot-transfer-mobile.mp4':'robots71/robot-transfer.mp4'));
+  assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith('transfer73/robot-transfer.mp4'));
   const robotCorner=await page.locator('#transfer-film').evaluate(v=>{const c=document.createElement('canvas');c.width=20;c.height=20;const x=c.getContext('2d');x.drawImage(v,0,0,20,20);return [...x.getImageData(0,0,1,1).data].slice(0,3);});assert(robotCorner.every(x=>x>=245),'The robot replay blends into white');
-  await page.locator('#transfer-film').evaluate(v=>{window.robotWrapped=false;let last=v.currentTime;v.addEventListener('timeupdate',()=>{if(v.currentTime<last)window.robotWrapped=true;last=v.currentTime;});});await page.waitForFunction(()=>window.robotWrapped,null,{timeout:18000});
+  await page.locator('#transfer-film').evaluate(v=>{window.robotWrapped=false;let last=v.currentTime;v.addEventListener('timeupdate',()=>{if(v.currentTime<last)window.robotWrapped=true;last=v.currentTime;});});await page.waitForFunction(()=>window.robotWrapped,null,{timeout:30000});assert.equal(await page.locator('#robot-group-label').textContent(),'PIPER → ALOHA 2 · X5 · Franka · UR5e');
   await page.waitForFunction(()=>document.querySelectorAll('video[data-auto]').length&&[...document.querySelectorAll('video[data-auto]')].filter(v=>!v.paused).length===1);
   await page.locator('#hero-film').scrollIntoViewIfNeeded();await page.waitForFunction(()=>!document.getElementById('hero-film').paused);
   report.checks.push({width,fullLoop:true,seamMeanRgbDifference:probe.seam,maxFrameGap:Math.max(...probe.gaps),exclusiveAmbientPlayback:true});
