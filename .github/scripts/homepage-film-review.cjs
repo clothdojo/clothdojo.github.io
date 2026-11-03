@@ -27,6 +27,9 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    const style=await video.evaluate(v=>{const s=getComputedStyle(v);return {fit:s.objectFit,background:s.backgroundColor};});assert.deepEqual(style,{fit:'contain',background:'rgb(255, 255, 255)'});
    const time=width===1440?25.32:3;await video.evaluate(async(v,t)=>{v.currentTime=t;await new Promise(resolve=>v.addEventListener('seeked',resolve,{once:true}));},time);
    const file=target.replace('.html','')+'-'+width+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,target,width,height,bounds});
+   if(target==='index.html'&&(width===1440||width===390)){
+    const full='layout-'+width+'-full.jpg';await page.screenshot({path:path.join(out,full),fullPage:true,type:'jpeg',quality:90});report.screenshots.push({file:full,target,width,height,fullPage:true});
+   }
    await page.locator('#about summary').click();assert.match(await page.locator('#about').innerText(),/model-generated|generated in simulation/i);
    assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','highlights','use']);
    assert.deepEqual(await page.locator('.story-track > .story-card').evaluateAll(s=>s.map(x=>x.id)),['diversity','rgb','render']);
