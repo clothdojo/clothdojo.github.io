@@ -1,9 +1,7 @@
 {
-  "commit": "b893d5290b56aa5cf63a0c932ef2f87c9d28a60a",
-  "passed": false,
-  "errors": [
-    "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(Math.max(...probe.gaps)<.161)\n\n    at /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/homepage-film-review.cjs:86:156"
-  ],
+  "commit": "1de59c8d0faadcdb069bb98d89752f4ddc482591",
+  "passed": true,
+  "errors": [],
   "screenshots": [
     {
       "file": "index-1440.jpg",
@@ -230,6 +228,11 @@
   ],
   "checks": [
     {
+      "independentOrthographicViews": 4,
+      "sharedCameraScale": true,
+      "tableRowsAndColumnsAligned": true
+    },
+    {
       "target": "index.html",
       "width": 1440,
       "height": 900,
@@ -378,7 +381,46 @@
         "/assets/rgb76/ribbon.mp4",
         "/assets/robots82/robot-transfer.mp4"
       ]
+    },
+    {
+      "width": 1440,
+      "heroLoopSeam": 0.16666666666666666,
+      "heroMaxFrameGap": 0.04000000000000625
+    },
+    {
+      "width": 1440,
+      "fullLoop": true,
+      "seamMeanRgbDifference": 0.16666666666666666,
+      "maxFrameGap": 0.04000000000000625,
+      "exclusiveAmbientPlayback": true
+    },
+    {
+      "width": 390,
+      "galleryMetadataBeforeNavigation": true,
+      "correctViewportPoster": true,
+      "cardRequests": [
+        "/assets/cards78/rgb-mobile.webp",
+        "/assets/robots82/robot-mobile.webp",
+        "/assets/cards78/atlas-mobile.webp",
+        "/assets/rgb77/ribbon-mobile.mp4",
+        "/assets/robots82/robot-transfer-mobile.mp4"
+      ]
+    },
+    {
+      "width": 390,
+      "heroLoopSeam": 0.16666666666666666,
+      "heroMaxFrameGap": 0.04000000000000625
+    },
+    {
+      "width": 390,
+      "fullLoop": true,
+      "seamMeanRgbDifference": 0.16666666666666666,
+      "maxFrameGap": 0.04000000000000625,
+      "exclusiveAmbientPlayback": true
     }
   ],
-  "recordings": []
+  "recordings": [
+    "homepage-loop-1440.webm",
+    "homepage-loop-390.webm"
+  ]
 }
