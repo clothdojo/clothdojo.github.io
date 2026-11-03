@@ -1,5 +1,5 @@
 {
-  "commit": "f9ffdf5dea567b16b441f87733afc500ab97524e",
+  "commit": "c1a483588b0f466ca2391c99f2caf7de887e0f9d",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -390,10 +390,10 @@
       "correctViewportPoster": true,
       "cardRequests": [
         "/assets/cards78/rgb-mobile.webp",
-        "/assets/cards78/robot.webp",
+        "/assets/robots79/robot-mobile.webp",
         "/assets/cards78/atlas-mobile.webp",
         "/assets/rgb77/ribbon-mobile.mp4",
-        "/assets/transfer73/robot-transfer.mp4"
+        "/assets/robots79/robot-transfer-mobile.mp4"
       ]
     },
     {
