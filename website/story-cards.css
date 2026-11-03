@@ -64,5 +64,5 @@
 @media(max-width:700px){.story-card--diversity .story-card-body{padding-inline:8px}.research30 .story-card--diversity details.explanation{margin-inline:12px}}
 .research30 .story-card--rgb .rgb-task-labels{padding:0 0 8px;border:0;font-size:15px;font-weight:600;line-height:1.4}
 .story-card--rgb .rgb-task-labels>span:first-child{color:#2c737e}.story-card--rgb .rgb-task-labels>span+span{color:#9c684b;border:0}
-.story-card--rgb video{max-height:calc(var(--story-card-height) - 275px)}
-.research30 .transfer-film figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px}#robot-group-label{font-size:13px;color:var(--text)}
+.story-card--rgb video{max-height:calc(var(--story-card-height) - 210px)}
+@media(max-width:700px){.research30 .story-card--rgb .rgb-ribbon video{aspect-ratio:2/3}}
