@@ -1,4 +1,5 @@
 /* Shared opening scale and content edges for the current research homepage. */
+html { scroll-padding-top: 64px; }
 .research30 {
   --width: 1200px;
   --gutter: 32px;
@@ -95,6 +96,7 @@
   .research30 .hero-intro p { font-size: 14px; }
 }
 @media (max-width: 700px) {
+  html { scroll-padding-top: 60px; }
   .research30 { --gutter: 20px; }
   .research30 .site-header, .research30 .nav { height: 60px; min-height: 60px; }
   .research30 .nav { gap: 20px; }

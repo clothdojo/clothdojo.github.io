@@ -58,6 +58,11 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   for(let i=0;i<3;i++){
    if(i)await next.click();await page.waitForFunction(i=>window.storyCards.state.active===i,i);
    const card=page.locator('.story-card').nth(i);const box=await card.boundingBox();assert(Math.abs(box.x+box.width/2-width/2)<2,'Center the selected card');
+   if(width>700){
+    const heading=await card.locator('.story-card-heading').boundingBox(),controls=await page.locator('.highlights-controls').boundingBox();
+    const header=await page.locator('.site-header').boundingBox();
+    assert(heading.y>=header.y+header.height-1&&controls.y+controls.height<=(width===1280?720:900)+1,'Keep the active title and gallery controls together in the viewport');
+   }
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    await page.waitForFunction(i=>[...document.querySelectorAll('.story-card')[i].querySelectorAll('img')].filter(img=>!img.closest('details:not([open])')).every(img=>img.complete&&img.naturalWidth>0),i,{timeout:15000});
    const file='card-'+width+'-'+i+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,width,card:i});
