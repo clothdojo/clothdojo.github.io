@@ -1,16 +1,16 @@
 {
   "schema": "clothdojo_four_column_mobile_rgb_v77",
-  "duration_seconds": 48,
+  "duration_seconds": 25.6,
   "fps": 25,
   "source_fps": 50,
   "playback_speed": 2,
   "dimensions": [
     960,
-    720
+    1440
   ],
   "trajectory_count": 64,
-  "full_panels_at_row_alignment": 16,
-  "layout": "Four columns: two flattening on the left, two folding on the right. Four full rows at row alignment. Same scrolling/source clock as the desktop rgb76 film; resets occur offscreen.",
+  "full_panels_at_row_alignment": 32,
+  "layout": "Four columns: two flattening on the left, two folding on the right. Eight full rows at row alignment. Independent 25.6-second mobile scroll clock; original source motion still runs at 2x and resets only offscreen.",
   "parent_manifest": "../rgb76/manifest.json",
   "parent_manifest_sha256": "ec255505a1a41e2b388c01c46b021e57591770c15385d07a4056b8b4d0fbef6d",
   "cases": [
@@ -849,8 +849,8 @@
   ],
   "files": {
     "ribbon-mobile.mp4": {
-      "bytes": 14354792,
-      "sha256": "1c2b131eac5cb4ed4e149a0e83e5d59b23b35aabd2fe24ea5e9edad9232bfeb0"
+      "bytes": 14935881,
+      "sha256": "84c585c1d0d14d71104c290ba00d402ede019d17f41c619fc50a88607b754524"
     }
   }
 }

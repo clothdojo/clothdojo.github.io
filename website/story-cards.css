@@ -62,7 +62,8 @@
 
 .story-card--diversity .atlas-overview picture{display:block;width:100%;height:100%}
 @media(max-width:700px){
- .research30 .story-card--diversity{height:auto;min-height:var(--story-card-height)}
+ .research30 .story-card--diversity,.research30 .story-card--rgb{height:auto;min-height:var(--story-card-height)}
+ .story-card--rgb .story-card-body{flex:none}
  .story-card--diversity .story-card-body{flex:none;padding-inline:8px}
  .story-card--diversity .atlas-overview{flex:none;min-height:0;height:auto}
  .story-card--diversity .atlas-overview picture{height:auto}
@@ -72,4 +73,4 @@
 .research30 .story-card--rgb .rgb-task-labels{padding:0 0 8px;border:0;font-size:15px;font-weight:600;line-height:1.4}
 .story-card--rgb .rgb-task-labels>span:first-child{color:#2c737e}.story-card--rgb .rgb-task-labels>span+span{color:#9c684b;border:0}
 .story-card--rgb video{max-height:calc(var(--story-card-height) - 210px)}
-@media(max-width:700px){.research30 .story-card--rgb .rgb-ribbon video{aspect-ratio:4/3}}
+@media(max-width:700px){.research30 .story-card--rgb .rgb-ribbon video{aspect-ratio:2/3;max-height:none}}

@@ -78,7 +78,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.waitForFunction(()=>window.heroProbe.wrapped,null,{timeout:20000});const probe=await page.evaluate(()=>window.heroProbe);assert(probe.seam<8);assert(Math.max(...probe.gaps)<.161);assert.equal(await page.locator('#hero-film').evaluate(v=>v.currentSrc),source);
   await page.locator('header a[href="#rgb"]').click();await page.waitForFunction(()=>{const v=document.getElementById('rgb-film');return !v.paused&&v.currentTime>.2;},null,{timeout:30000});
   assert((await page.locator('#rgb-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'rgb77/ribbon-mobile.mp4':'rgb76/ribbon.mp4'));
-  assert.deepEqual(await page.locator('#rgb-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[960,720]:[1920,720]);
+  assert.deepEqual(await page.locator('#rgb-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[960,1440]:[1920,720]);
   await page.locator('[data-story-next]').click();await page.waitForFunction(()=>{const v=document.getElementById('transfer-film');return window.storyCards.state.active===2&&!v.paused&&v.currentTime>.2;},null,{timeout:30000});await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.paused;});
   assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith('transfer73/robot-transfer.mp4'));
   const robotCorner=await page.locator('#transfer-film').evaluate(v=>{const c=document.createElement('canvas');c.width=20;c.height=20;const x=c.getContext('2d');x.drawImage(v,0,0,20,20);return [...x.getImageData(0,0,1,1).data].slice(0,3);});assert(robotCorner.every(x=>x>=245),'The robot replay blends into white');
