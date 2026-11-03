@@ -30,7 +30,9 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    if(target==='index.html'&&(width===1440||width===390)){
     const full='layout-'+width+'-full.jpg';await page.screenshot({path:path.join(out,full),fullPage:true,type:'jpeg',quality:90});report.screenshots.push({file:full,target,width,height,fullPage:true});
    }
-   await page.locator('#about summary').click();assert.match(await page.locator('#about').innerText(),/model-generated|generated in simulation/i);
+   assert.equal(await page.locator('.story-track details, .story-track p').count(),0,'Capabilities are presented as full headings, without fine print or collapsed explanations');
+   assert.equal(await page.locator('#authors, .author-credit').count(),0,'The homepage omits author details');
+   const paper=page.locator('#overview .paper-link');assert(await paper.isVisible());assert.equal(await paper.getAttribute('href'),'https://arxiv.org/html/2611.01190v1');
    assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','highlights','use']);
    assert.deepEqual(await page.locator('.story-track > .story-card').evaluateAll(s=>s.map(x=>x.id)),['diversity','rgb','render']);
    assert.equal(await page.locator('#results, #transfer-results, #method, .story-track #use').count(),0);
@@ -40,7 +42,6 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.deepEqual(await page.locator('.rgb-task-labels span').allTextContents(),['Flattening','Folding']);
    if(target==='index.html'&&width<700){
     await page.locator('header a[href="#diversity"]').click();await page.waitForFunction(()=>window.storyCards.state.active===0);
-    assert.equal(await page.locator('#about .explanation-body').isVisible(),false,'Offscreen explanations do not stretch the mobile gallery');
     await page.locator('#highlights').evaluate(e=>e.scrollIntoView({block:'start'}));
     await page.waitForFunction(()=>{const i=document.querySelector('#diversity img');return i.complete&&i.naturalWidth>0;});
     const fit=await page.locator('#diversity').evaluate(card=>{const i=card.querySelector('img');return {paintedWidth:Math.min(i.clientWidth,i.clientHeight*i.naturalWidth/i.naturalHeight),cardWidth:card.clientWidth};});

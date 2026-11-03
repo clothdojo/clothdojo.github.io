@@ -39,7 +39,9 @@ HTTP byte-range support is required to verify native video seeking and expanded 
 
 ## Presentation and evidence
 
-The homepage retains the approved centred formal title and opens with the fixed two-worktable film. Garments, re-rendered RGB data and robot transfer follow in three sliding cards, then code in a static card. The RGB count describes the open-source dataset rather than generation capacity. Sources and throughput qualifications remain in disclosures. Author names and affiliations remain at the footer; detailed experiments remain on the separate results page.
+The three gallery cards use full capability headings for the 500-garment asset pool, re-rendered RGB trajectories and cross-robot trajectory transfer. They contain no fine-print paragraphs or expandable explanations; source and presentation details remain in this document and the media manifests. The bottom code chapter is unchanged while the weight and asset release is being prepared.
+
+The homepage retains the approved centred formal title and opens with the fixed two-worktable film. Garments, re-rendered RGB data and robot transfer follow in three sliding cards, then code in a static card. The RGB count describes the dataset rather than generation capacity. Source and throughput qualifications remain in this document and the media manifests. Author details are omitted. The hero and footer link to the [arXiv preprint](https://arxiv.org/html/2611.01190v1); detailed experiments remain on the separate results page.
 
 The opening film keeps two worktables and one camera fixed, cycling six garments through twelve complete model-generated task trajectories. Both tasks use the same garment identity and colour in each round. The learned NOCS-guided rollout checkpoints are recorded in the manifest; these task actions are not human demonstrations. The 65.44-second film uses 1600×560 native Isaac frames at 25 fps and 2× source replay, with CRF18 H.264 and faststart. Desktop and mobile use the same complete frame without cropping or source switching.
 

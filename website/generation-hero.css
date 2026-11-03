@@ -53,7 +53,8 @@ html { scroll-padding-top: 64px; }
   letter-spacing: -.6px;
   font-weight: 500;
 }
-.research30 .hero-intro { margin-top: 18px; }
+.research30 .hero-intro { margin-top: 18px; flex-wrap: wrap; gap: 12px 24px; }
+.research30 .hero-intro > .paper-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 16px; font-weight: 500; }
 .research30 .hero-intro p { font-size: 16px; line-height: 1.5; color: var(--text); }
 .research30 .hero .embedded-generation { display: block; margin-top: 20px; }
 .hero-task-labels {
