@@ -1,5 +1,5 @@
 {
-  "commit": "24b4083e79e8a5795acf73ff3e5e08915494cf1e",
+  "commit": "4aac10540d00aa1b12476d637c28a04df5cafce3",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -64,6 +64,15 @@
       }
     },
     {
+      "file": "atlas-fit-390.jpg",
+      "width": 390,
+      "height": 844,
+      "assetFit": {
+        "paintedWidth": 326,
+        "cardWidth": 342
+      }
+    },
+    {
       "file": "index-320.jpg",
       "target": "index.html",
       "width": 320,
@@ -73,6 +82,15 @@
         "y": 62,
         "width": 320,
         "height": 360.1875
+      }
+    },
+    {
+      "file": "atlas-fit-320.jpg",
+      "width": 320,
+      "height": 640,
+      "assetFit": {
+        "paintedWidth": 255.9375,
+        "cardWidth": 272
       }
     },
     {
