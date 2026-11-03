@@ -61,8 +61,15 @@
 @media(prefers-reduced-motion:reduce){.story-track{scroll-behavior:auto}.story-dots button::before{transition:none}}
 
 .story-card--diversity .atlas-overview picture{display:block;width:100%;height:100%}
-@media(max-width:700px){.story-card--diversity .story-card-body{padding-inline:8px}.research30 .story-card--diversity details.explanation{margin-inline:12px}}
+@media(max-width:700px){
+ .research30 .story-card--diversity{height:auto;min-height:var(--story-card-height)}
+ .story-card--diversity .story-card-body{flex:none;padding-inline:8px}
+ .story-card--diversity .atlas-overview{flex:none;min-height:0;height:auto}
+ .story-card--diversity .atlas-overview picture{height:auto}
+ .research30 .story-card--diversity .atlas-overview img{display:block;width:100%;height:auto;max-height:none}
+ .research30 .story-card--diversity details.explanation{margin-inline:12px}
+}
 .research30 .story-card--rgb .rgb-task-labels{padding:0 0 8px;border:0;font-size:15px;font-weight:600;line-height:1.4}
 .story-card--rgb .rgb-task-labels>span:first-child{color:#2c737e}.story-card--rgb .rgb-task-labels>span+span{color:#9c684b;border:0}
 .story-card--rgb video{max-height:calc(var(--story-card-height) - 210px)}
-@media(max-width:700px){.research30 .story-card--rgb .rgb-ribbon video{aspect-ratio:2/3}}
+@media(max-width:700px){.research30 .story-card--rgb .rgb-ribbon video{aspect-ratio:4/3}}
