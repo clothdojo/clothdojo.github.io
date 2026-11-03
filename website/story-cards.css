@@ -75,4 +75,4 @@
 .story-card--rgb .rgb-task-labels>span:first-child{color:#2c737e}.story-card--rgb .rgb-task-labels>span+span{color:#9c684b;border:0}
 .story-card--rgb video{max-height:calc(var(--story-card-height) - 210px)}
 @media(max-width:700px){.research30 .story-card--rgb .rgb-ribbon video{aspect-ratio:2/3;max-height:none}}
-@media(max-width:700px){.research30 .story-card--render .transfer-film video{aspect-ratio:2/3;max-height:none}}
+@media(max-width:700px){.research30 .story-card--render .transfer-film video{aspect-ratio:10/9;max-height:none}}
