@@ -4,6 +4,15 @@ const manifest=JSON.parse(fs.readFileSync('website/assets/film62/manifest.json',
 const report={commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),passed:false,errors:[],screenshots:[],checks:[],recordings:[]};
 const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));let browser;
 (async()=>{try{
+ const transfer=JSON.parse(fs.readFileSync('website/assets/robots82/manifest.json','utf8'));
+ assert.equal(transfer.sources.length,4);
+ for(const source of transfer.sources){assert.equal(source.camera_projection,'orthographic');assert.deepEqual(source.camera,transfer.sources[0].camera);}
+ for(const video of transfer.videos){
+  const p=video.placements;assert.equal(p.length,4);
+  for(const box of video.source_crop_bounds)assert.deepEqual(box,video.source_crop_bounds[0]);
+  assert.equal(p[0][1],p[1][1]);assert.equal(p[2][1],p[3][1]);assert.equal(p[0][0],p[2][0]);assert.equal(p[1][0],p[3][0]);
+ }
+ report.checks.push({independentOrthographicViews:4,sharedCameraScale:true,tableRowsAndColumnsAligned:true});
  browser=await chromium.launch({channel:'chrome'});
  for(const target of ['index.html','research-preview-v31.html']){
   for(const [width,height] of [[1440,900],[1280,720],[1920,1080],[1724,756],[390,844],[320,640]]){
@@ -83,7 +92,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   });
   const source=await page.locator('#hero-film').evaluate(v=>v.currentSrc);
   for(const c of manifest.cases){await page.waitForFunction(t=>document.getElementById('hero-film').currentTime>=t,c.first_frame/25+3,{timeout:30000});}
-  await page.waitForFunction(()=>window.heroProbe.wrapped,null,{timeout:20000});const probe=await page.evaluate(()=>window.heroProbe);assert(probe.seam<8);assert(Math.max(...probe.gaps)<.161);assert.equal(await page.locator('#hero-film').evaluate(v=>v.currentSrc),source);
+  await page.waitForFunction(()=>window.heroProbe.wrapped,null,{timeout:20000});const probe=await page.evaluate(()=>window.heroProbe);const maxGap=Math.max(...probe.gaps);report.checks.push({width,heroLoopSeam:probe.seam,heroMaxFrameGap:maxGap});save();assert(probe.seam<8);assert(maxGap<.161,`Hero frame gap ${maxGap.toFixed(3)}s exceeds 0.161s at ${width}px`);assert.equal(await page.locator('#hero-film').evaluate(v=>v.currentSrc),source);
   await page.locator('header a[href="#rgb"]').click();await page.waitForFunction(()=>{const v=document.getElementById('rgb-film');return !v.paused&&v.currentTime>.2;},null,{timeout:30000});
   assert((await page.locator('#rgb-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'rgb77/ribbon-mobile.mp4':'rgb76/ribbon.mp4'));
   assert.deepEqual(await page.locator('#rgb-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[960,1440]:[1920,720]);
