@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="embedded-hero.css?v=44">
 <link rel="stylesheet" href="rgb-collection.css?v=3">
 <link rel="stylesheet" href="generation-hero.css?v=65">
-<link rel="stylesheet" href="story-cards.css?v=71"><script src="story-cards.js?v=68" defer></script>
+<link rel="stylesheet" href="story-cards.css?v=72"><script src="story-cards.js?v=68" defer></script>
 </head>
 <body class="launch scene-preview fold-fit research30">
 <a class="skip" href="#main">Skip to content</a>
@@ -25,8 +25,8 @@
 </figure></section>
 <section class="highlights-section" id="highlights" aria-label="Project highlights">
 <div class="story-track" tabindex="0" aria-label="Project highlights; use left and right arrow keys"><section class="asset-section container story-card story-card--diversity" id="diversity" aria-labelledby="diversity-title" role="group" aria-roledescription="slide" aria-label="1 of 3">
-<header class="story-card-heading"><h2 id="diversity-title">500 garments.</h2></header>
-<div class="story-card-body"><div class="asset-heading"></div><div class="atlas-overview"><img src="assets/atlas32/garment-atlas.webp" width="3200" height="1800" loading="lazy" alt="500 actual garment assets arranged on white, with their rendered contact shadows blending into the page"></div></div>
+<header class="story-card-heading"><h2 id="diversity-title">Generate beyond demonstrated garments.</h2><p class="release-count">500 core assets · generation and held-out evaluation</p></header>
+<div class="story-card-body"><div class="atlas-overview"><img src="assets/atlas32/garment-atlas.webp" width="3200" height="1800" loading="lazy" alt="The 500-garment core asset pool, used for generation and evaluation; these are not 500 manually demonstrated garments"></div><details class="explanation" id="asset-roles"><summary>Human supervision, generation &amp; held-out assets</summary><div class="explanation-body"><p>The 500 garments form a structurally diverse core pool for trajectory generation and evaluation. Human demonstrations and corrections cover only part of the garment space and are not restricted to this pool.</p><p>Privileged policies learn from that human experience, then autonomously generate trajectories on garments without human demonstrations or corrections. This generalization extends the data beyond manually collected experience.</p><p>Held-out garments test generalization. The split depends on the experiment: an asset unseen in the privileged policy's human supervision is different from an asset unseen in downstream RGB-policy training. The latter evaluation includes held-out assets from both this core pool and the larger converted library. The atlas shows asset diversity, not a color-coded train/test partition.</p></div></details></div>
 </section>
 <section class="rgb-section story-card story-card--rgb" id="rgb" aria-labelledby="rgb-title" role="group" aria-roledescription="slide" aria-label="2 of 3">
 <header class="story-card-heading"><h2 id="rgb-title">Re-render trajectories as RGB.</h2><p class="release-count">Open-source dataset · <strong>7,848 trajectories</strong></p></header>
