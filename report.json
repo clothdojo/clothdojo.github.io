@@ -1,5 +1,5 @@
 {
-  "commit": "4405f024a6584f999ef7df321e0f2cc68e83af7f",
+  "commit": "9b09119133d95cbdb4ef2df9ff5e680be7e288a1",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -12,7 +12,7 @@
         "x": 0,
         "y": 64,
         "width": 1440,
-        "height": 729.09375
+        "height": 725.09375
       }
     },
     {
@@ -31,7 +31,7 @@
         "x": 0,
         "y": 64,
         "width": 1280,
-        "height": 480.78125
+        "height": 473.78125
       }
     },
     {
@@ -43,7 +43,7 @@
         "x": 0,
         "y": 64,
         "width": 1920,
-        "height": 909.09375
+        "height": 905.09375
       }
     },
     {
@@ -55,7 +55,7 @@
         "x": 0,
         "y": 64,
         "width": 1724,
-        "height": 516.78125
+        "height": 509.78125
       }
     },
     {
@@ -67,7 +67,7 @@
         "x": 0,
         "y": 60,
         "width": 390,
-        "height": 459.40625
+        "height": 425.40625
       }
     },
     {
@@ -95,7 +95,7 @@
         "x": 0,
         "y": 60,
         "width": 320,
-        "height": 455.90625
+        "height": 421.90625
       }
     },
     {
@@ -116,7 +116,7 @@
         "x": 0,
         "y": 64,
         "width": 1440,
-        "height": 729.09375
+        "height": 725.09375
       }
     },
     {
@@ -128,7 +128,7 @@
         "x": 0,
         "y": 64,
         "width": 1280,
-        "height": 480.78125
+        "height": 473.78125
       }
     },
     {
@@ -140,7 +140,7 @@
         "x": 0,
         "y": 64,
         "width": 1920,
-        "height": 909.09375
+        "height": 905.09375
       }
     },
     {
@@ -152,7 +152,7 @@
         "x": 0,
         "y": 64,
         "width": 1724,
-        "height": 516.78125
+        "height": 509.78125
       }
     },
     {
@@ -164,7 +164,7 @@
         "x": 0,
         "y": 60,
         "width": 390,
-        "height": 459.40625
+        "height": 425.40625
       }
     },
     {
@@ -176,7 +176,7 @@
         "x": 0,
         "y": 60,
         "width": 320,
-        "height": 455.90625
+        "height": 421.90625
       }
     },
     {
@@ -244,7 +244,8 @@
     {
       "independentOrthographicViews": 4,
       "sharedCameraScale": true,
-      "tableRowsAndColumnsAligned": true
+      "desktopTablesInOneRow": true,
+      "completeForegroundBounds": true
     },
     {
       "target": "index.html",
@@ -420,7 +421,7 @@
           "width": 350
         },
         "gallery": {
-          "left": 63,
+          "left": 85,
           "width": 350
         }
       }
@@ -441,22 +442,20 @@
       "correctViewportPoster": true,
       "cardRequests": [
         "/assets/cards78/rgb-wide.webp",
-        "/assets/robots82/robot-wide.webp",
         "/assets/cards78/atlas-wide.webp",
-        "/assets/rgb76/ribbon.mp4",
-        "/assets/robots82/robot-transfer.mp4"
+        "/assets/rgb76/ribbon.mp4"
       ]
     },
     {
       "width": 1440,
       "heroLoopSeam": 0.16666666666666666,
-      "heroMaxFrameGap": 0.04000000000000625
+      "heroMaxFrameGap": 0.08000000000000007
     },
     {
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.04000000000000625,
+      "maxFrameGap": 0.08000000000000007,
       "exclusiveAmbientPlayback": true
     },
     {
