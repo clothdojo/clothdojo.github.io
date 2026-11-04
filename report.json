@@ -1,5 +1,5 @@
 {
-  "commit": "9b09119133d95cbdb4ef2df9ff5e680be7e288a1",
+  "commit": "12edc21aed866e17b1cb7013226d7ff88c10e2e0",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -421,7 +421,7 @@
           "width": 350
         },
         "gallery": {
-          "left": 79,
+          "left": 93,
           "width": 350
         }
       }
@@ -441,8 +441,8 @@
       "galleryMetadataBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
-        "/assets/cards78/atlas-wide.webp",
         "/assets/cards78/rgb-wide.webp",
+        "/assets/cards78/atlas-wide.webp",
         "/assets/rgb76/ribbon.mp4"
       ]
     },
@@ -463,9 +463,9 @@
       "galleryMetadataBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
+        "/assets/cards78/atlas-mobile.webp",
         "/assets/cards78/rgb-mobile.webp",
         "/assets/robots82/robot-mobile.webp",
-        "/assets/cards78/atlas-mobile.webp",
         "/assets/rgb77/ribbon-mobile.mp4",
         "/assets/robots82/robot-transfer-mobile.mp4"
       ]
