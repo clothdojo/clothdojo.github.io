@@ -14,7 +14,7 @@ Quickstart example · 4× preview · [Full 60-second replay](docs/assets/nocs-fl
 
 ## Getting started
 
-Use Linux x86_64, Python 3.11, and an NVIDIA GPU with native BF16 support. We tested this on one RTX 5090 D v2 (24 GB). Isaac Sim is not required for NOCS generation.
+Use Linux x86_64, Python 3.11, Git, `patch`, [uv](https://docs.astral.sh/uv/), and an NVIDIA GPU with native BF16 support. We tested this on one RTX 5090 D v2 (24 GB). Isaac Sim is not required for NOCS generation.
 
 ```bash
 git clone https://github.com/clothdojo/clothdojo.github.io.git ClothDojo

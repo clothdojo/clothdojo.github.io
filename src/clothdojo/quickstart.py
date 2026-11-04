@@ -76,7 +76,8 @@ def run(task: str, root: Path, output: Path | None = None) -> Path:
         print("[1/4] Preparing the tokenizer", flush=True)
         _run([python, "-c", "from openpi.shared import download; "
               "download.maybe_download('gs://big_vision/paligemma_tokenizer.model', "
-              "gs={'token': 'anon'})"], logs / "tokenizer.log", root, env)
+              "gs={'token': 'anon', 'session_kwargs': {'trust_env': True}})"],
+             logs / "tokenizer.log", root, env)
         with socket.socket() as probe:
             probe.bind(("127.0.0.1", 0))
             port = probe.getsockname()[1]
