@@ -6,17 +6,14 @@ __pycache__/
 build/
 dist/
 .DS_Store
-/assets/*
-!/assets/garments/
-/assets/garments/*
-!/assets/garments/converted/
-/assets/garments/converted/*
-!/assets/garments/converted/rand_ZZCWITH5HY/
-!/assets/robots/
-/assets/robots/*
-!/assets/robots/piper/
+/assets/
+/templates/
 /outputs/
-/models/
+/models
+/benchmark
+/data/
+/licenses/assets/
+/.cache/
 
 # Local preparation records; not part of the public project.
 /notes/

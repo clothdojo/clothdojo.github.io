@@ -1,0 +1,7 @@
+schema: clothdojo_frozen_benchmark
+panel_id: nocs_flatten_physical_repair_20261030
+scenario: configs/rollout/shirt_flatten.yaml
+protocol: benchmark/conditions/nocs-flatten/runtime_protocol.json
+states: benchmark/conditions/nocs-flatten/states
+templates: benchmark/conditions/nocs-flatten/templates
+assets: benchmark/assets

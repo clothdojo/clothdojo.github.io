@@ -1,11 +1,12 @@
 schema: clothdojo_evaluation_protocol
-protocol_id: shirt_fold_q_40s_v1
-stage: calibration
+protocol_id: shirt_fold_q_v1
+stage: frozen
 task: shirt_fold
 
 timing:
   control_fps: 50
-  horizon_seconds: 40.0
+  horizon_seconds: 60.0
+  # Diagnostic curve rate. Success is verified at the saved 50 Hz control rate.
   metric_hz: 1
 
 metric:
@@ -16,6 +17,8 @@ success:
   continuous_seconds: 3.0
   fold_quality_min: 0.14228658677130532
 
+# Existing verified flat references fix material geometry and support height;
+# they are not target folded shapes. Reuse the same settled reference collection.
 target:
   method: large_support_free_settle_v1
   min_settle_seconds: 8.0

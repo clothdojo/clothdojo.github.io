@@ -56,7 +56,12 @@ def compute_norm_stats(
     import pyarrow as pa
     import pyarrow.parquet as pq
     from openpi import transforms
-    from openpi.policies import aloha_policy
+    from openpi.models import pi0_config
+    from openpi.training.config import (
+        AssetsConfig,
+        DataConfig,
+        LeRobotAlohaDataConfig,
+    )
 
     data_files = sorted((dataset / "data").glob("chunk-*/*.parquet"))
     if not data_files:
@@ -84,14 +89,34 @@ def compute_norm_stats(
         "extra_delta_transform": True,
         "default_prompt": prompt,
     }
-    # These are exactly LeRobotAlohaDataConfig's data transforms. Building the
-    # whole model pipeline also constructs a tokenizer and downloads it, even
-    # though normalization never uses text or model transforms.
-    data_transforms = (
-        aloha_policy.AlohaInputs(adapt_to_pi=False),
-        transforms.DeltaActions(transforms.make_bool_mask(6, -1, 6, -1)),
+    model_config = pi0_config.Pi0Config(pi05=True, discrete_state_input=True)
+    data_factory = LeRobotAlohaDataConfig(
+        repo_id=str(dataset),
+        assets=AssetsConfig(assets_dir=str(output.parent), asset_id=output.name),
+        base_config=DataConfig(prompt_from_task=True),
+        repack_transforms=transforms.Group(
+            inputs=[
+                transforms.RepackTransform(
+                    {
+                        "images": {
+                            "cam_high": "observation.images.cam_high",
+                            "cam_left_wrist": "observation.images.cam_left_wrist",
+                            "cam_right_wrist": "observation.images.cam_right_wrist",
+                        },
+                        "state": "observation.state",
+                        "actions": "action",
+                        "prompt": "prompt",
+                    }
+                )
+            ]
+        ),
+        default_prompt=prompt,
+        adapt_to_pi=False,
+        use_delta_joint_actions=True,
+        action_sequence_keys=("action",),
     )
-    horizon = 50
+    data_config = data_factory.create(output.parent, model_config)
+    horizon = int(model_config.action_horizon)
     action_offsets = np.arange(horizon, dtype=np.int64)
     if action_chunk_boundary == "full_only":
         anchor_indices = np.flatnonzero(
@@ -99,10 +124,9 @@ def compute_norm_stats(
         )
     else:
         anchor_indices = np.arange(len(states), dtype=np.int64)
-    if len(anchor_indices) < 2:
+    if not len(anchor_indices):
         raise ValueError(
-            f"normalization requires at least two {action_chunk_boundary} anchors "
-            f"for action horizon {horizon}; found {len(anchor_indices)}"
+            f"dataset has no {action_chunk_boundary} anchors for action horizon {horizon}"
         )
     dummy_images = {"cam_high": np.zeros((3, 1, 1), dtype=np.uint8)}
     running = {
@@ -122,7 +146,7 @@ def compute_norm_stats(
             "actions": actions[action_indices],
             "images": dummy_images,
         }
-        for transform in data_transforms:
+        for transform in data_config.data_transforms.inputs:
             transformed = transform(transformed)
         for key in running:
             running[key].update(np.asarray(transformed[key]))

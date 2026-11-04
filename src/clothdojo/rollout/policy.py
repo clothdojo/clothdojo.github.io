@@ -1,108 +1,49 @@
-"""Pi0.5 inference using the pinned RLinf/OpenPI transforms."""
+"""Checked RLINF SFT/CFG services and one strict remote rollout client."""
+
 from __future__ import annotations
+
 import dataclasses
+import hashlib
 import json
 import os
+import threading
+import uuid
+from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor
 from functools import wraps
 from pathlib import Path
 from types import MethodType
 from typing import Any
+
 import numpy as np
-from clothdojo.rendering import CAMERA_NAMES, POLICY_TRANSPORT_SIZE
-from clothdojo.rollout.checkpoint import inspect_rlinf_openpi_checkpoint, rlinf_openpi_weights_sha256
-from clothdojo.rollout.guided_rtc import GuidedRTCConfig, sample_guided_openpi_rlinf_actions
+
+from clothdojo.rendering import CAMERA_NAMES, POLICY_RENDER_SIZE, POLICY_TRANSPORT_SIZE
+from clothdojo.rollout.artifacts import (
+    validate_cfg_checkpoint_binding,
+    validate_jax_reference_binding,
+    validate_sft_norm_binding,
+)
+from clothdojo.rollout.checkpoint import (
+    inspect_rlinf_openpi_checkpoint,
+    rlinf_openpi_weights_sha256,
+    strict_reload_matching_rlinf_openpi_checkpoint,
+)
+from clothdojo.rollout.engine import ExecutionMode
+from clothdojo.rollout.guided_rtc import (
+    GuidedRTCConfig,
+    sample_guided_cfg_openpi_rlinf_actions,
+    sample_guided_openpi_rlinf_actions,
+)
 from clothdojo.rollout.newton import POLICY_ACTION_DIM
+from clothdojo.runtime_identity import runtime_source_sha256
+
+POLICY_PROTOCOL_VERSION = 2
 IMAGE_PREPROCESSING_POLICIES = ("none", "training_fixed_crop")
-DELTA_ACTION_MASK = np.asarray([True] * 6 + [False] + [True] * 6 + [False], dtype=bool)
-
-
-class Pi05Policy:
-    """A local, single-session policy loaded from a self-contained model bundle."""
-
-    def __init__(self, bundle: str | Path, *, device: str = "cuda:0", num_steps: int = 10):
-        import hashlib
-
-        root = Path(bundle).expanduser().resolve()
-        metadata = json.loads((root / "policy.json").read_text())
-        if metadata.get("schema") != "clothdojo_pi05_policy_v1":
-            raise ValueError("unsupported policy bundle schema")
-        if metadata.get("task") not in {"shirt_flatten", "shirt_fold"}:
-            raise ValueError("unsupported policy task")
-        if metadata.get("cloth_visual") not in {"nocs", "white", "rgb"}:
-            raise ValueError("unsupported policy observation type")
-        if type(num_steps) is not int or num_steps < 1:
-            raise ValueError("num_steps must be positive")
-        self.metadata = metadata
-        self.action_horizon = 50
-        if "initial_states_sha256" in metadata:
-            actual = hashlib.sha256((root / "initial_states.npz").read_bytes()).hexdigest()
-            if actual != metadata["initial_states_sha256"]:
-                raise ValueError("policy bundle checksum mismatch: initial_states.npz")
-        _validate_image_preprocessing(metadata["image_preprocessing"])
-        for relative, key in (
-            ("norm_stats.json", "norm_stats_sha256"),
-            ("cache/big_vision/paligemma_tokenizer.model", "tokenizer_sha256"),
-        ):
-            actual = hashlib.sha256((root / relative).read_bytes()).hexdigest()
-            if actual != metadata[key]:
-                raise ValueError(f"policy bundle checksum mismatch: {relative}")
-        os.environ["CLOTHDOJO_OPENPI_CACHE"] = str(root / "cache")
-        _configure_openpi_data_home()
-        checkpoint = root / "weights"
-        inspection = inspect_rlinf_openpi_checkpoint(checkpoint, action_horizon=self.action_horizon)
-        if inspection["weights_sha256"] != metadata["weights_sha256"]:
-            raise ValueError("policy weights checksum mismatch")
-        self._backend = _RLinfSFTPolicy(
-            checkpoint, root / "norm_stats.json", openpi_config="pi05_aloha_robotwin",
-            action_horizon=self.action_horizon, num_steps=num_steps, autocast=False,
-            device=device, rtc_guidance=GuidedRTCConfig(),
-            expected_checkpoint_sha256=metadata["weights_sha256"],
-            image_preprocessing=metadata["image_preprocessing"],
-        )
-        self._mode = None
-        self._previous = None
-
-    def reset(self, seed: int, *, mode: str, exec_horizon: int) -> None:
-        if mode not in {"chunk", "rtc"}:
-            raise ValueError("mode must be chunk or rtc")
-        if not 1 <= exec_horizon <= self.action_horizon:
-            raise ValueError("invalid execution horizon")
-        if mode == "rtc" and exec_horizon == self.action_horizon:
-            raise ValueError("RTC requires an overlapping action chunk")
-        if type(seed) is not int or seed < 0:
-            raise ValueError("seed must be a non-negative integer")
-        self._backend.reset(seed)
-        self._mode = mode
-        self._exec_horizon = exec_horizon
-        self._previous = None
-
-    def infer(self, observation, prompt, *, inference_delay_steps=0):
-        if self._mode is None:
-            raise RuntimeError("reset the policy before inference")
-        if not isinstance(prompt, str) or not prompt.strip():
-            raise ValueError("prompt must be a non-empty string")
-        if type(inference_delay_steps) is not int or not 0 <= inference_delay_steps < self._exec_horizon:
-            raise ValueError("invalid inference delay")
-        if self._mode == "chunk" and inference_delay_steps:
-            raise ValueError("chunk execution does not accept an inference delay")
-        prepared = _prepare_remote_observation(observation)
-        rtc = None
-        if self._mode == "rtc" and self._previous is not None:
-            previous_actions, previous_state = self._previous
-            rtc = {
-                "previous_model_actions": previous_actions,
-                "previous_state": previous_state,
-                "executed_horizon": self._exec_horizon,
-                "inference_delay_steps": inference_delay_steps,
-            }
-        actions, model_actions = self._backend.infer(prepared, prompt, rtc)
-        if actions.shape != (len(prepared["observation.state"]), self.action_horizon, 14):
-            raise ValueError("policy returned an unexpected action shape")
-        if not np.isfinite(actions).all() or not np.isfinite(model_actions).all():
-            raise ValueError("policy returned non-finite actions")
-        self._previous = (model_actions.copy(), prepared["observation.state"].copy())
-        return actions
+RTC_GUIDANCE = GuidedRTCConfig()
+DELTA_ACTION_MASK = np.asarray(
+    [True] * 6 + [False] + [True] * 6 + [False],
+    dtype=bool,
+)
 
 
 def _validate_image_preprocessing(value: Any) -> None:
@@ -155,6 +96,218 @@ def _install_inference_image_preprocessing(model: Any, image_preprocessing: str)
 
     prepare._clothdojo_image_preprocessing = image_preprocessing
     model._observation_dict_to_device = MethodType(prepare, model)
+
+
+class RemotePolicy:
+    """Connect rollout to one identity-checked SFT or CFG policy service."""
+
+    def __init__(
+        self,
+        endpoint: str,
+        *,
+        expected_checkpoint_sha256: str | None = None,
+        expected_image_preprocessing: str = "none",
+        action_horizon: int,
+        client_factory: Callable[..., Any] | None = None,
+    ) -> None:
+        if not isinstance(endpoint, str) or not endpoint.strip():
+            raise ValueError("policy endpoint must be a non-empty string")
+        if expected_checkpoint_sha256 is not None:
+            _require_sha256(expected_checkpoint_sha256, "expected checkpoint")
+        if action_horizon < 1:
+            raise ValueError("action_horizon must be positive")
+        _validate_image_preprocessing(expected_image_preprocessing)
+        _bypass_proxy_for_loopback(endpoint)
+        if client_factory is None:
+            self._client = _connect_remote_policy(endpoint)
+        else:
+            self._client = client_factory(host=endpoint)
+        metadata = self._client.get_server_metadata()
+        self.identity = _validate_server_metadata(
+            metadata,
+            expected_checkpoint_sha256=expected_checkpoint_sha256,
+            action_horizon=action_horizon,
+            expected_image_preprocessing=expected_image_preprocessing,
+        )
+        self._pending_seed: int | None = None
+        self._session_id = uuid.uuid4().hex
+        self._mode: ExecutionMode | None = None
+        self._exec_horizon: int | None = None
+        self._previous_model_actions: np.ndarray | None = None
+        self._previous_model_state: np.ndarray | None = None
+        self.last_semantic: dict[str, Any] | None = None
+
+    def reset(
+        self,
+        seed: int,
+        *,
+        mode: ExecutionMode,
+        exec_horizon: int,
+    ) -> None:
+        if isinstance(seed, bool) or not isinstance(seed, (int, np.integer)) or seed < 0:
+            raise ValueError("policy seed must be a non-negative integer")
+        if mode not in {"chunk", "rtc"}:
+            raise ValueError("mode must be 'chunk' or 'rtc'")
+        action_horizon = int(self.identity["action_horizon"])
+        if not 1 <= exec_horizon <= action_horizon:
+            raise ValueError("exec_horizon must be in [1, action_horizon]")
+        if mode == "rtc":
+            if exec_horizon == action_horizon:
+                raise ValueError("RTC exec_horizon must be smaller than action_horizon")
+            guidance = self.identity.get("rtc_guidance")
+            if guidance is None:
+                raise ValueError("RTC execution requires an RTC-capable policy server")
+        self._pending_seed = int(seed)
+        self._mode = mode
+        self._exec_horizon = int(exec_horizon)
+        self._previous_model_actions = None
+        self._previous_model_state = None
+
+    def infer(
+        self,
+        observation: dict[str, np.ndarray],
+        prompt: str,
+        *,
+        inference_delay_steps: int = 0,
+    ) -> np.ndarray:
+        if self._mode is None or self._exec_horizon is None:
+            raise RuntimeError("policy must be reset before inference")
+        if (
+            isinstance(inference_delay_steps, bool)
+            or not isinstance(inference_delay_steps, int)
+            or inference_delay_steps < 0
+        ):
+            raise ValueError("inference_delay_steps must be a non-negative integer")
+        if self._mode == "chunk" and inference_delay_steps:
+            raise ValueError("chunk inference does not accept an RTC delay")
+        if self._mode == "rtc":
+            guidance_horizon = int(self.identity["rtc_guidance"]["guidance_horizon"])
+            if inference_delay_steps > guidance_horizon:
+                raise ValueError(
+                    "RTC inference delay must not exceed the policy guidance horizon: "
+                    f"{inference_delay_steps} > {guidance_horizon}"
+                )
+        request = _prepare_remote_observation(
+            observation,
+            observation_horizon=int(self.identity.get("observation_horizon", 1)),
+            transport_width_height=tuple(self.identity["transport_image_size"]),
+        )
+        if (
+            request["observation.state"].shape[0] > 1
+            and self.identity.get("batched_inference") is not True
+        ):
+            raise ValueError("policy server does not advertise batched inference")
+        request["prompt"] = prompt
+        request["clothdojo.session_id"] = self._session_id
+        if self._pending_seed is not None:
+            request["clothdojo.seed"] = self._pending_seed
+            self._pending_seed = None
+        if self._mode == "rtc" and self._previous_model_actions is not None:
+            if self._previous_model_state is None:
+                raise RuntimeError("RTC replan has no previous model-state reference")
+            request["clothdojo.rtc"] = {
+                "previous_model_actions": self._previous_model_actions.copy(),
+                "previous_state": self._previous_model_state.copy(),
+                "executed_horizon": self._exec_horizon,
+                "inference_delay_steps": inference_delay_steps,
+            }
+        result = self._client.infer(request)
+        if not isinstance(result, dict):
+            raise ValueError("policy server response must be an object")
+        actions = _finite_actions(result.get("actions"), POLICY_ACTION_DIM, "actions")
+        batch_size = int(request["observation.state"].shape[0])
+        expected_prefix = (batch_size, int(self.identity["action_horizon"]))
+        if actions.shape[:2] != expected_prefix:
+            raise ValueError(
+                "policy response batch/horizon "
+                f"{actions.shape[:2]} does not match request {expected_prefix}"
+            )
+        model_actions = result.get("model_actions")
+        if model_actions is not None:
+            model_actions = _finite_actions(
+                model_actions,
+                POLICY_ACTION_DIM,
+                "model_actions",
+            )
+            if model_actions.shape[:2] != actions.shape[:2]:
+                raise ValueError("model_actions must match the action batch and horizon")
+        if self._mode == "rtc":
+            if model_actions is None:
+                raise ValueError("RTC policy response must include model_actions")
+            self._previous_model_actions = model_actions.copy()
+            self._previous_model_state = np.asarray(
+                request["observation.state"], dtype=np.float32
+            ).copy()
+        semantic_subtask = result.get("semantic_subtask")
+        if semantic_subtask is None:
+            self.last_semantic = None
+        else:
+            if (
+                not isinstance(semantic_subtask, list)
+                or len(semantic_subtask) != batch_size
+                or any(
+                    not isinstance(label, str) or not label.strip()
+                    for label in semantic_subtask
+                )
+            ):
+                raise ValueError(
+                    "policy semantic_subtask must be one non-empty string per world"
+                )
+            candidate_nll = result.get("semantic_candidate_nll")
+            if candidate_nll is None:
+                raise ValueError("semantic_subtask requires semantic_candidate_nll")
+            candidate_nll = np.asarray(candidate_nll, dtype=np.float32)
+            if (
+                candidate_nll.ndim != 2
+                or candidate_nll.shape[0] != batch_size
+                or not np.all(np.isfinite(candidate_nll))
+            ):
+                raise ValueError("semantic_candidate_nll must be finite per world")
+            self.last_semantic = {
+                "subtask": [str(label) for label in semantic_subtask],
+                "candidate_nll": candidate_nll,
+            }
+        return actions
+
+
+def _connect_remote_policy(endpoint: str) -> Any:
+    """Connect without treating a long synchronous inference as a dead peer."""
+
+    if endpoint.startswith("tcp://"):
+        from clothdojo.rollout.groot import GrootZmqClient
+
+        return GrootZmqClient(endpoint)
+
+    import websockets.sync.client
+    from openpi_client import msgpack_numpy
+    from openpi_client.websocket_client_policy import WebsocketClientPolicy
+
+    class _LongInferenceClient(WebsocketClientPolicy):
+        def _wait_for_server(self) -> tuple[Any, dict[str, Any]]:
+            headers = (
+                {"Authorization": f"Api-Key {self._api_key}"}
+                if self._api_key
+                else None
+            )
+            connection = websockets.sync.client.connect(
+                self._uri,
+                compression=None,
+                max_size=None,
+                additional_headers=headers,
+                # Starting dozens of Isaac workers at once causes a short
+                # connection burst at each shared policy endpoint.  The
+                # websocket default (10 seconds) can expire while the server
+                # is accepting the preceding handshakes, although it remains
+                # healthy.  This only covers connection setup; inference has
+                # its own no-timeout behavior below.
+                open_timeout=180,
+                ping_timeout=None,
+                proxy=None,
+            )
+            metadata = msgpack_numpy.unpackb(connection.recv())
+            return connection, metadata
+
+    return _LongInferenceClient(host=endpoint)
 
 
 class _RLinfSFTPolicy:
@@ -220,10 +373,14 @@ class _RLinfSFTPolicy:
             raise ValueError("openpi_rlinf uses native BF16; autocast is not a mode")
         self.model = model.to(self.device).eval().requires_grad_(False)
         _install_inference_image_preprocessing(self.model, image_preprocessing)
+        self.semantic_subtask = _install_checkpoint_semantic_inference(
+            self.model, checkpoint
+        )
         self.autocast = False
         self.rtc_guidance = rtc_guidance
         self.num_steps = int(num_steps)
         self._delta_action_scale = _load_action_quantile_scale(norm_stats)
+        self.last_semantic: dict[str, Any] | None = None
 
     def _guided_infer(
         self,
@@ -237,6 +394,11 @@ class _RLinfSFTPolicy:
             transpose=False,
         )
         observation = self.model._observation_dict_to_device(processed)
+        if self.semantic_subtask is not None:
+            observation, labels, scores = self.model.condition_semantic_observation(
+                observation
+            )
+            self.last_semantic = _semantic_inference_record(labels, scores)
         model_actions = sample_guided_openpi_rlinf_actions(
             self.model.model,
             observation,
@@ -309,6 +471,7 @@ class _RLinfSFTPolicy:
     ) -> tuple[np.ndarray, np.ndarray]:
         import torch
 
+        self.last_semantic = None
         state = np.asarray(observation["observation.state"], dtype=np.float32)
         env_observation = self._to_env_observation(observation, prompt)
         previous_remaining = None
@@ -342,6 +505,11 @@ class _RLinfSFTPolicy:
                     compute_values=False,
                 )
                 model_actions = self._model_actions_from_forward(actions, forward)
+                semantic = forward.get("semantic_subtask")
+                if semantic is not None:
+                    self.last_semantic = _semantic_inference_record(
+                        semantic, forward.get("semantic_candidate_nll")
+                    )
             else:
                 actions, model_actions = self._guided_infer(
                     env_observation,
@@ -352,6 +520,804 @@ class _RLinfSFTPolicy:
             _to_numpy(actions),
             _to_numpy(model_actions[..., :POLICY_ACTION_DIM]),
         )
+
+
+class _RLinfCFGPolicy(_RLinfSFTPolicy):
+    """RLINF's CFG OpenPI model behind the same rollout boundary."""
+
+    def __init__(
+        self,
+        checkpoint: Path,
+        norm_stats: Path,
+        *,
+        openpi_config: str,
+        action_horizon: int,
+        num_steps: int,
+        autocast: bool,
+        device: str,
+        rtc_guidance: GuidedRTCConfig,
+        guidance_scale: float,
+        guidance_type: str,
+        positive_only_conditional: bool,
+        expected_checkpoint_sha256: str,
+        image_preprocessing: str = "none",
+    ) -> None:
+        import torch
+        from omegaconf import OmegaConf
+
+        _configure_openpi_data_home()
+        from rlinf.models import get_model
+
+        from clothdojo.training.rlinf_cfg import MODEL_TYPE, enable
+
+        enable()
+        config = OmegaConf.create(
+            {
+                "precision": None,
+                "model_path": str(checkpoint),
+                "model_type": MODEL_TYPE,
+                "expected_weights_sha256": expected_checkpoint_sha256,
+                "pi05": True,
+                "use_proprio": True,
+                "num_steps": num_steps,
+                "is_lora": False,
+                "lora_rank": 32,
+                "load_to_device": False,
+                "num_action_chunks": action_horizon,
+                "action_dim": POLICY_ACTION_DIM,
+                "add_value_head": False,
+                "openpi": {
+                    "task": "cfg",
+                    "config_name": openpi_config,
+                    "num_images_in_input": len(CAMERA_NAMES),
+                    "action_chunk": action_horizon,
+                    "action_env_dim": POLICY_ACTION_DIM,
+                    "num_steps": num_steps,
+                    "model_action_dim": 32,
+                    "paligemma_variant": "gemma_2b",
+                    "action_expert_variant": "gemma_300m",
+                    "discrete_state_input": True,
+                    "max_token_len": 200,
+                    "use_rlt": False,
+                    "cfgrl_guidance_scale": guidance_scale,
+                    "unconditional_prob": 0.1,
+                    "train_expert_only": False,
+                    "guidance_type": guidance_type,
+                    "positive_only_conditional": positive_only_conditional,
+                },
+                "openpi_data": {
+                    "adapt_to_pi": False,
+                    "extra_delta_transform": True,
+                    "default_prompt": "flatten the shirt",
+                    "norm_stats_path": str(norm_stats),
+                },
+            }
+        )
+        model = get_model(config)
+        if model is None:
+            raise RuntimeError("pinned RLINF did not register its CFG OpenPI model")
+        strict_reload = getattr(model, "clothdojo_checkpoint_validation", None)
+        if not isinstance(strict_reload, dict):
+            strict_reload = strict_reload_matching_rlinf_openpi_checkpoint(
+                model,
+                checkpoint,
+            )
+        if strict_reload["weights_sha256"] != expected_checkpoint_sha256:
+            raise RuntimeError("CFG checkpoint changed while the model was loading")
+        # Validate the stored FP32 checkpoint before selecting compute precision.
+        # Without autocast, match the native BF16 path used by the SFT policy.
+        if not autocast:
+            model = model.to(dtype=torch.bfloat16)
+        self.device = torch.device(device)
+        self.model = model.to(self.device).eval().requires_grad_(False)
+        _install_inference_image_preprocessing(self.model, image_preprocessing)
+        self.autocast = bool(autocast)
+        self.inference_precision = "native_bfloat16"
+        if self.autocast:
+            self.inference_precision = (
+                "float32_autocast_bfloat16" if self.device.type == "cuda" else "float32"
+            )
+        self.rtc_guidance = rtc_guidance
+        self.num_steps = int(num_steps)
+        self._delta_action_scale = _load_action_quantile_scale(norm_stats)
+        self.checkpoint_validation = strict_reload
+
+    def _guided_infer(
+        self,
+        env_observation: dict[str, Any],
+        previous_actions: Any,
+        *,
+        inference_delay_steps: int,
+    ) -> tuple[Any, Any]:
+        unconditional, conditional = self.model.prepare_cfg_observations(
+            env_observation
+        )
+        model_actions = sample_guided_cfg_openpi_rlinf_actions(
+            self.model.model,
+            unconditional,
+            conditional,
+            previous_actions,
+            inference_delay=inference_delay_steps,
+            num_steps=self.num_steps,
+            guidance_scale=self.model.routing.guidance_scale,
+            config=self.rtc_guidance,
+        )
+        actions = self.model.output_transform(
+            {"actions": model_actions, "state": unconditional.state}
+        )["actions"]
+        return actions, model_actions
+
+    @staticmethod
+    def _model_actions_from_forward(actions: Any, forward: dict[str, Any]) -> Any:
+        del actions
+        return forward["forward_inputs"]["raw_actions"]
+
+
+class _OpenPIJAXPolicy:
+    """Original OpenPI/JAX policy behind ClothDojo's batched rollout boundary."""
+
+    def __init__(
+        self,
+        checkpoint: Path,
+        norm_stats: Path,
+        training_config: Path,
+        *,
+        action_horizon: int,
+        num_steps: int,
+    ) -> None:
+        import jax
+        import jax.numpy as jnp
+        from openpi import transforms
+        from openpi.models import model as model_module
+        from openpi.shared import nnx_utils
+        from openpi.training import checkpoints
+
+        from clothdojo.training.jax_sft import (
+            build_openpi_train_config,
+            compose_jax_sft_spec,
+        )
+
+        spec = compose_jax_sft_spec(training_config)
+        if not spec.norm_stats.samefile(norm_stats):
+            raise ValueError("JAX serving config norm_stats differs from --norm-stats")
+        config = build_openpi_train_config(spec)
+        if config.model.action_horizon != action_horizon:
+            raise ValueError("JAX model action horizon differs from serving horizon")
+        data_config = config.data.create(config.assets_dirs, config.model)
+        norm_dir = norm_stats if norm_stats.is_dir() else norm_stats.parent
+        norm_values = checkpoints.load_norm_stats(norm_dir.parent, norm_dir.name)
+        self._input_transform = transforms.compose(
+            [
+                transforms.InjectDefaultPrompt(spec.default_prompt),
+                *data_config.data_transforms.inputs,
+                transforms.Normalize(
+                    norm_values,
+                    use_quantiles=data_config.use_quantile_norm,
+                ),
+                *data_config.model_transforms.inputs,
+            ]
+        )
+        self._output_transform = transforms.compose(
+            [
+                *data_config.model_transforms.outputs,
+                transforms.Unnormalize(
+                    norm_values,
+                    use_quantiles=data_config.use_quantile_norm,
+                ),
+                *data_config.data_transforms.outputs,
+            ]
+        )
+        self._model = config.model.load(
+            model_module.restore_params(checkpoint / "params", dtype=jnp.bfloat16)
+        )
+        self._model.eval()
+        self._sample_actions = nnx_utils.module_jit(self._model.sample_actions)
+        self._rng = jax.random.key(0)
+        self._num_steps = int(num_steps)
+
+    def reset(self, seed: int) -> None:
+        import jax
+
+        self._rng = jax.random.key(seed)
+
+    def infer(
+        self,
+        observation: dict[str, np.ndarray],
+        prompt: str,
+        rtc: dict[str, Any] | None,
+    ) -> tuple[np.ndarray, np.ndarray]:
+        if rtc is not None:
+            raise ValueError("the OpenPI/JAX reference supports chunk execution only")
+
+        import jax
+        import jax.numpy as jnp
+        from openpi.models import model as model_module
+
+        states = np.asarray(observation["observation.state"], dtype=np.float32)
+        transformed = []
+        for index, state in enumerate(states):
+            item = {
+                "state": state,
+                "images": {
+                    name: np.moveaxis(
+                        observation[f"observation.images.{name}"][index], -1, 0
+                    )
+                    for name in CAMERA_NAMES
+                },
+                "prompt": prompt,
+            }
+            transformed.append(self._input_transform(item))
+        inputs = jax.tree.map(
+            lambda *values: jnp.stack(values),
+            *transformed,
+        )
+        model_observation = model_module.Observation.from_dict(inputs)
+        self._rng, sample_rng = jax.random.split(self._rng)
+        model_actions = np.asarray(
+            self._sample_actions(
+                sample_rng,
+                model_observation,
+                num_steps=self._num_steps,
+            ),
+            dtype=np.float32,
+        )
+        actions = np.stack(
+            [
+                np.asarray(
+                    self._output_transform(
+                        {"actions": action, "state": state}
+                    )["actions"],
+                    dtype=np.float32,
+                )
+                for action, state in zip(
+                    model_actions,
+                    np.asarray(model_observation.state),
+                    strict=True,
+                )
+            ]
+        )
+        return actions, model_actions[..., :POLICY_ACTION_DIM]
+
+
+class _PolicySessionRouter:
+    def __init__(self, policy: Any) -> None:
+        self._policy = policy
+        capture = callable(getattr(policy, "capture_session_state", None))
+        restore = callable(getattr(policy, "restore_session_state", None))
+        if capture != restore:
+            raise TypeError(
+                "policy must define both capture_session_state and "
+                "restore_session_state"
+            )
+        self._has_backend_session_state = capture
+        self._rng_states: dict[
+            str, tuple[Any, tuple[Any, ...], Any | None]
+        ] = {}
+        self._lock = threading.Lock()
+
+    def infer(self, request: dict[str, Any]) -> dict[str, Any]:
+        # The backend owns the CUDA RNG. Serialize requests, then restore the
+        # requesting rollout's RNG stream so several simulation workers can
+        # safely share one inference GPU without changing their seeded samples.
+        with self._lock:
+            return self._infer(request)
+
+    def _infer(self, request: dict[str, Any]) -> dict[str, Any]:
+        request = dict(request)
+        prompt = request.pop("prompt", None)
+        session = request.pop("clothdojo.session_id", None)
+        if not isinstance(prompt, str) or not prompt.strip():
+            raise ValueError("prompt must be a non-empty string")
+        if not isinstance(session, str) or not session:
+            raise ValueError("clothdojo.session_id must be a non-empty string")
+        seed = request.pop("clothdojo.seed", None)
+        if seed is None:
+            state = self._rng_states.get(session)
+            if state is None:
+                raise ValueError("a policy session must provide a seed on its first request")
+            self._restore_rng_state(state)
+        else:
+            if isinstance(seed, bool) or not isinstance(seed, int) or seed < 0:
+                raise ValueError("clothdojo.seed must be a non-negative integer")
+            self._policy.reset(seed)
+        rtc = _validate_rtc_request(request.pop("clothdojo.rtc", None))
+        actions, model_actions = self._policy.infer(request, prompt, rtc)
+        self._rng_states[session] = self._capture_rng_state()
+        response = {
+            "actions": actions,
+            "model_actions": model_actions,
+        }
+        semantic = getattr(self._policy, "last_semantic", None)
+        if semantic is not None:
+            response["semantic_subtask"] = semantic["subtask"]
+            response["semantic_candidate_nll"] = semantic["candidate_nll"]
+        return response
+
+    def _capture_rng_state(self) -> tuple[Any, tuple[Any, ...], Any | None]:
+        import torch
+
+        cpu = torch.random.get_rng_state().clone()
+        cuda = (
+            tuple(state.clone() for state in torch.cuda.get_rng_state_all())
+            if torch.cuda.is_available()
+            else ()
+        )
+        backend = (
+            self._policy.capture_session_state()
+            if self._has_backend_session_state
+            else None
+        )
+        return cpu, cuda, backend
+
+    def _restore_rng_state(
+        self, state: tuple[Any, tuple[Any, ...], Any | None]
+    ) -> None:
+        import torch
+
+        cpu, cuda, backend = state
+        torch.random.set_rng_state(cpu)
+        if cuda:
+            torch.cuda.set_rng_state_all(list(cuda))
+        if self._has_backend_session_state:
+            self._policy.restore_session_state(backend)
+
+
+def serve_sft_policy(
+    checkpoint: str | Path,
+    norm_stats: str | Path,
+    *,
+    openpi_config: str = "pi05_aloha_robotwin",
+    action_horizon: int = 50,
+    num_steps: int = 10,
+    image_preprocessing: str = "none",
+    rtc_guidance_horizon: int = 10,
+    rtc_max_guidance_weight: float = 10.0,
+    rtc_prefix_schedule: str = "linear",
+    device: str = "cuda:0",
+    host: str = "127.0.0.1",
+    port: int = 8080,
+) -> dict[str, Any]:
+    """Load an accepted SFT checkpoint and serve the rollout-only protocol."""
+
+    from openpi.serving.websocket_policy_server import WebsocketPolicyServer
+
+    _validate_image_preprocessing(image_preprocessing)
+    checkpoint_path = Path(checkpoint).expanduser().resolve()
+    norm_path = Path(norm_stats).expanduser().resolve()
+    rtc_guidance = GuidedRTCConfig(
+        guidance_horizon=rtc_guidance_horizon,
+        max_guidance_weight=rtc_max_guidance_weight,
+        prefix_attention_schedule=rtc_prefix_schedule,
+    )
+    _validate_serve_arguments(
+        checkpoint_path,
+        norm_path,
+        openpi_config=openpi_config,
+        action_horizon=action_horizon,
+        num_steps=num_steps,
+        port=port,
+    )
+    if rtc_guidance_horizon > action_horizon:
+        raise ValueError("RTC guidance horizon must not exceed the action horizon")
+    checkpoint_manifest = inspect_rlinf_openpi_checkpoint(
+        checkpoint_path,
+        action_horizon=action_horizon,
+    )
+    norm_identity = validate_sft_norm_binding(
+        checkpoint_path,
+        norm_path,
+        openpi_config=openpi_config,
+        action_horizon=action_horizon,
+        weights_sha256=checkpoint_manifest["weights_sha256"],
+    )
+    identity = {
+        "protocol_version": POLICY_PROTOCOL_VERSION,
+        "clothdojo_runtime_sha256": runtime_source_sha256(),
+        "backend": "rlinf-sft",
+        "checkpoint_sha256": checkpoint_manifest["weights_sha256"],
+        "checkpoint_validation": {
+            "exact_layout": True,
+            **{
+                key: checkpoint_manifest[key]
+                for key in (
+                    "schema",
+                    "format_version",
+                    "loader",
+                    "weights_format",
+                    "state_dict_layout",
+                    "tensor_count",
+                    "dtype_counts",
+                    "stored_dtype_contract",
+                    "expected_state_dict_keys",
+                    "tied_aliases",
+                )
+            },
+        },
+        **norm_identity,
+        "openpi_config": openpi_config,
+        "action_dim": POLICY_ACTION_DIM,
+        "action_horizon": action_horizon,
+        "camera_names": list(CAMERA_NAMES),
+        "transport_image_size": list(POLICY_TRANSPORT_SIZE),
+        "batched_inference": True,
+        "num_steps": num_steps,
+        "inference_precision": "native_bfloat16",
+        "image_preprocessing": image_preprocessing,
+        "rtc_guidance": rtc_guidance.to_json_dict(),
+    }
+    policy = _RLinfSFTPolicy(
+        checkpoint_path,
+        norm_path,
+        openpi_config=openpi_config,
+        action_horizon=action_horizon,
+        num_steps=num_steps,
+        autocast=False,
+        device=device,
+        rtc_guidance=rtc_guidance,
+        expected_checkpoint_sha256=checkpoint_manifest["weights_sha256"],
+        image_preprocessing=image_preprocessing,
+    )
+    print(json.dumps({"clothdojo": identity}, sort_keys=True), flush=True)
+    WebsocketPolicyServer(
+        _PolicySessionRouter(policy),
+        host=host,
+        port=port,
+        metadata={"clothdojo": identity},
+    ).serve_forever()
+    return identity
+
+
+def serve_jax_policy(
+    checkpoint: str | Path,
+    norm_stats: str | Path,
+    training_config: str | Path,
+    *,
+    action_horizon: int = 50,
+    num_steps: int = 10,
+    image_preprocessing: str = "none",
+    host: str = "127.0.0.1",
+    port: int = 8080,
+) -> dict[str, Any]:
+    """Serve the original OpenPI/JAX EMA as a chunk-only reference."""
+
+    _validate_image_preprocessing(image_preprocessing)
+    if image_preprocessing != "none":
+        raise ValueError("OpenPI/JAX only supports image_preprocessing='none'")
+
+    from openpi.serving.websocket_policy_server import WebsocketPolicyServer
+
+    checkpoint_path = Path(checkpoint).expanduser().resolve()
+    norm_path = Path(norm_stats).expanduser().resolve()
+    config_path = Path(training_config).expanduser().resolve()
+    if not (checkpoint_path / "params" / "_METADATA").is_file():
+        raise FileNotFoundError("JAX checkpoint has no Orbax params metadata")
+    if not config_path.is_file():
+        raise FileNotFoundError(f"JAX training config does not exist: {config_path}")
+    if action_horizon < 1 or num_steps < 1 or not 1 <= port <= 65535:
+        raise ValueError("invalid JAX serving horizon, sampling steps, or port")
+    norm_file = norm_path / "norm_stats.json" if norm_path.is_dir() else norm_path
+    if not norm_file.is_file():
+        raise FileNotFoundError(f"normalization stats do not exist: {norm_file}")
+
+    checkpoint_identity = _tree_sha256(checkpoint_path / "params")
+    artifact_identity = validate_jax_reference_binding(
+        checkpoint_path,
+        norm_path,
+        config_path,
+        action_horizon=action_horizon,
+    )
+    identity = {
+        "protocol_version": POLICY_PROTOCOL_VERSION,
+        "clothdojo_runtime_sha256": runtime_source_sha256(),
+        "backend": "openpi",
+        "checkpoint_sha256": checkpoint_identity,
+        **artifact_identity,
+        "openpi_config": "pi05_aloha_robotwin",
+        "action_dim": POLICY_ACTION_DIM,
+        "action_horizon": action_horizon,
+        "camera_names": list(CAMERA_NAMES),
+        "transport_image_size": list(POLICY_TRANSPORT_SIZE),
+        "batched_inference": True,
+        "num_steps": num_steps,
+        "inference_precision": "bfloat16",
+        "image_preprocessing": image_preprocessing,
+        "rtc_guidance": None,
+    }
+    policy = _OpenPIJAXPolicy(
+        checkpoint_path,
+        norm_path,
+        config_path,
+        action_horizon=action_horizon,
+        num_steps=num_steps,
+    )
+    if _tree_sha256(checkpoint_path / "params") != checkpoint_identity:
+        raise RuntimeError("JAX checkpoint changed while the model was loading")
+    print(json.dumps({"clothdojo": identity}, sort_keys=True), flush=True)
+    WebsocketPolicyServer(
+        _PolicySessionRouter(policy),
+        host=host,
+        port=port,
+        metadata={"clothdojo": identity},
+    ).serve_forever()
+    return identity
+
+
+def serve_cfg_policy(
+    checkpoint: str | Path,
+    norm_stats: str | Path,
+    *,
+    openpi_config: str = "pi05_aloha_robotwin",
+    action_horizon: int = 50,
+    num_steps: int = 5,
+    image_preprocessing: str = "none",
+    guidance_scale: float = 1.0,
+    guidance_type: str = "positive",
+    positive_only_conditional: bool = False,
+    autocast: bool = True,
+    rtc_guidance_horizon: int = 10,
+    rtc_max_guidance_weight: float = 10.0,
+    rtc_prefix_schedule: str = "linear",
+    device: str = "cuda:0",
+    host: str = "127.0.0.1",
+    port: int = 8080,
+) -> dict[str, Any]:
+    """Serve an RLINF CFG checkpoint for chunk or composed CFG+RTC rollout."""
+
+    from openpi.serving.websocket_policy_server import WebsocketPolicyServer
+
+    _validate_image_preprocessing(image_preprocessing)
+    checkpoint_path = Path(checkpoint).expanduser().resolve()
+    norm_path = Path(norm_stats).expanduser().resolve()
+    _validate_serve_arguments(
+        checkpoint_path,
+        norm_path,
+        openpi_config=openpi_config,
+        action_horizon=action_horizon,
+        num_steps=num_steps,
+        port=port,
+    )
+    if not np.isfinite(guidance_scale) or guidance_scale < 0.0:
+        raise ValueError("CFG guidance_scale must be finite and non-negative")
+    if guidance_type not in {"positive", "negative", "no_guide"}:
+        raise ValueError("CFG guidance_type must be positive, negative or no_guide")
+    if positive_only_conditional and guidance_type == "negative":
+        raise ValueError("negative CFG guidance requires negative-conditioned training")
+    rtc_guidance = GuidedRTCConfig(
+        guidance_horizon=rtc_guidance_horizon,
+        max_guidance_weight=rtc_max_guidance_weight,
+        prefix_attention_schedule=rtc_prefix_schedule,
+    )
+    if rtc_guidance_horizon > action_horizon:
+        raise ValueError("RTC guidance horizon must not exceed the action horizon")
+    weights_sha256 = rlinf_openpi_weights_sha256(checkpoint_path)
+    cfg_binding = validate_cfg_checkpoint_binding(
+        checkpoint_path,
+        norm_path,
+        openpi_config=openpi_config,
+        action_horizon=action_horizon,
+        action_dim=POLICY_ACTION_DIM,
+        positive_only_conditional=positive_only_conditional,
+    )
+    policy = _RLinfCFGPolicy(
+        checkpoint_path,
+        norm_path,
+        openpi_config=openpi_config,
+        action_horizon=action_horizon,
+        num_steps=num_steps,
+        guidance_scale=guidance_scale,
+        guidance_type=guidance_type,
+        positive_only_conditional=positive_only_conditional,
+        autocast=autocast,
+        device=device,
+        rtc_guidance=rtc_guidance,
+        expected_checkpoint_sha256=weights_sha256,
+        image_preprocessing=image_preprocessing,
+    )
+    identity = {
+        "protocol_version": POLICY_PROTOCOL_VERSION,
+        "clothdojo_runtime_sha256": runtime_source_sha256(),
+        "backend": "rlinf-cfg",
+        "checkpoint_sha256": weights_sha256,
+        "checkpoint_validation": {
+            "strict_reload": True,
+            "tensor_count": policy.checkpoint_validation["tensor_count"],
+            "tied_aliases": policy.checkpoint_validation["tied_aliases"],
+        },
+        **cfg_binding,
+        "openpi_config": openpi_config,
+        "action_dim": POLICY_ACTION_DIM,
+        "action_horizon": action_horizon,
+        "camera_names": list(CAMERA_NAMES),
+        "transport_image_size": list(POLICY_TRANSPORT_SIZE),
+        "batched_inference": True,
+        "num_steps": num_steps,
+        "autocast": bool(autocast),
+        "inference_precision": policy.inference_precision,
+        "image_preprocessing": image_preprocessing,
+        "cfg_guidance": {
+            "type": guidance_type,
+            "scale": float(guidance_scale),
+            "positive_only_conditional": bool(positive_only_conditional),
+        },
+        "rtc_guidance": rtc_guidance.to_json_dict(),
+    }
+    print(json.dumps({"clothdojo": identity}, sort_keys=True), flush=True)
+    WebsocketPolicyServer(
+        _PolicySessionRouter(policy),
+        host=host,
+        port=port,
+        metadata={"clothdojo": identity},
+    ).serve_forever()
+    return identity
+
+
+def checkpoint_sha256(checkpoint: str | Path) -> str:
+    return rlinf_openpi_weights_sha256(checkpoint)
+
+
+def _file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _tree_sha256(root: Path) -> str:
+    digest = hashlib.sha256()
+    files = sorted(path for path in root.rglob("*") if path.is_file())
+    if not files:
+        raise FileNotFoundError(f"checkpoint tree has no files: {root}")
+    for path in files:
+        relative = path.relative_to(root).as_posix().encode()
+        digest.update(len(relative).to_bytes(4, "big"))
+        digest.update(relative)
+        with path.open("rb") as stream:
+            for block in iter(lambda: stream.read(1024 * 1024), b""):
+                digest.update(block)
+    return digest.hexdigest()
+
+
+def _validate_server_metadata(
+    metadata: Any,
+    *,
+    expected_checkpoint_sha256: str | None,
+    action_horizon: int,
+    expected_image_preprocessing: str = "none",
+) -> dict[str, Any]:
+    if not isinstance(metadata, dict) or not isinstance(metadata.get("clothdojo"), dict):
+        raise ValueError("policy server is missing ClothDojo metadata")
+    identity = dict(metadata["clothdojo"])
+    # Servers predating this option had the deterministic no-crop eval path.
+    identity.setdefault("image_preprocessing", "none")
+    backend = identity.get("backend")
+    if backend not in {
+        "rlinf-sft", "rlinf-cfg", "openpi", "gr00t-n1.7", "lerobot_diffusion"
+    }:
+        raise ValueError(f"unsupported policy server backend: {backend!r}")
+    _validate_image_preprocessing(identity.get("image_preprocessing"))
+    if backend == "openpi" and identity["image_preprocessing"] != "none":
+        raise ValueError("OpenPI/JAX only supports image_preprocessing='none'")
+    expected_transport = (
+        POLICY_RENDER_SIZE if backend == "gr00t-n1.7" else POLICY_TRANSPORT_SIZE
+    )
+    expected = {
+        "protocol_version": POLICY_PROTOCOL_VERSION,
+        "action_dim": POLICY_ACTION_DIM,
+        "action_horizon": action_horizon,
+        "camera_names": list(CAMERA_NAMES),
+        "transport_image_size": list(expected_transport),
+        "image_preprocessing": expected_image_preprocessing,
+    }
+    if expected_checkpoint_sha256 is not None:
+        expected["checkpoint_sha256"] = expected_checkpoint_sha256
+    mismatches = {
+        key: {"expected": value, "actual": identity.get(key)}
+        for key, value in expected.items()
+        if identity.get(key) != value
+    }
+    if mismatches:
+        raise ValueError(f"policy server identity mismatch: {mismatches}")
+    _require_sha256(identity.get("checkpoint_sha256"), "server checkpoint")
+    runtime_sha256 = identity.get("clothdojo_runtime_sha256")
+    if runtime_sha256 is not None:
+        _require_sha256(runtime_sha256, "server ClothDojo runtime")
+    _require_sha256(identity.get("norm_stats_sha256"), "server norm stats")
+    if backend == "gr00t-n1.7":
+        if identity.get("embodiment_tag") != "new_embodiment":
+            raise ValueError("GR00T server has an unsupported embodiment tag")
+        if identity.get("batched_inference") is not True:
+            raise ValueError("GR00T server must advertise batched inference")
+        return identity
+    if backend == "lerobot_diffusion":
+        if identity.get("observation_horizon") != 2:
+            raise ValueError("Diffusion Policy must use two adjacent observations")
+        if identity.get("task_conditioning") != "none":
+            raise ValueError("Diffusion Policy task conditioning differs from training")
+        return identity
+    if not isinstance(identity.get("openpi_config"), str) or not identity["openpi_config"]:
+        raise ValueError("policy server is missing openpi_config")
+    if backend in {"rlinf-sft", "rlinf-cfg", "openpi"}:
+        _require_sha256(identity.get("norm_provenance_sha256"), "server norm provenance")
+        _require_sha256(identity.get("training_manifest_sha256"), "server training manifest")
+    if backend in {"rlinf-sft", "openpi"}:
+        training_dataset_roots = identity.get("training_dataset_roots")
+        if training_dataset_roots is not None:
+            semantic = identity.get("semantic_subtask")
+            if (
+                backend != "rlinf-sft"
+                or identity.get("source_framework") != "pytorch"
+                or not isinstance(semantic, dict)
+                or semantic.get("schema") != "clothdojo_pi05_semantic_subtask"
+                or semantic.get("format_version") != 1
+                or not isinstance(training_dataset_roots, list)
+                or len(training_dataset_roots) < 2
+                or any(not isinstance(root, str) or not root.strip() for root in training_dataset_roots)
+            ):
+                raise ValueError("policy server has invalid semantic training dataset roots")
+        else:
+            training_dataset_root = identity.get("training_dataset_root")
+            if not isinstance(training_dataset_root, str) or not training_dataset_root.strip():
+                raise ValueError("policy server is missing its training dataset root")
+            _require_sha256(identity.get("dataset_info_sha256"), "server dataset info")
+            _require_sha256(identity.get("dataset_sidecar_sha256"), "server dataset sidecar")
+        source_framework = identity.get("source_framework")
+        if source_framework not in {"jax", "pytorch"}:
+            raise ValueError("policy server has an unsupported SFT source framework")
+        if backend == "openpi" and source_framework != "jax":
+            raise ValueError("the OpenPI reference backend requires JAX artifacts")
+        if source_framework == "jax":
+            if backend == "rlinf-sft":
+                _require_sha256(identity.get("parity_report_sha256"), "server conversion parity")
+            else:
+                _require_sha256(
+                    identity.get("checkpoint_contract_sha256"),
+                    "server JAX checkpoint contract",
+                )
+    if backend == "rlinf-cfg":
+        _validate_cfg_guidance_metadata(identity.get("cfg_guidance"))
+    if backend == "rlinf-sft" or identity.get("rtc_guidance") is not None:
+        _validate_rtc_guidance_metadata(identity.get("rtc_guidance"))
+    return identity
+
+
+def _validate_rtc_guidance_metadata(value: Any) -> None:
+    if not isinstance(value, dict):
+        raise ValueError("policy server is missing RTC guidance metadata")
+    required = {
+        "implementation",
+        "guidance_horizon",
+        "max_guidance_weight",
+        "prefix_attention_schedule",
+        "delta_rebase",
+    }
+    if set(value) != required:
+        raise ValueError("policy server RTC guidance metadata has invalid fields")
+    if value["implementation"] != "physical_intelligence_guided_vjp":
+        raise ValueError("policy server RTC implementation is unsupported")
+    if value["delta_rebase"] is not True:
+        raise ValueError("policy server RTC delta rebase must be enabled")
+    GuidedRTCConfig(
+        guidance_horizon=value["guidance_horizon"],
+        max_guidance_weight=value["max_guidance_weight"],
+        prefix_attention_schedule=value["prefix_attention_schedule"],
+    )
+
+
+def _validate_cfg_guidance_metadata(value: Any) -> None:
+    if not isinstance(value, dict) or set(value) != {
+        "type",
+        "scale",
+        "positive_only_conditional",
+    }:
+        raise ValueError("policy server CFG guidance metadata is invalid")
+    if value["type"] not in {"positive", "negative", "no_guide"}:
+        raise ValueError("policy server CFG guidance type is invalid")
+    scale = value["scale"]
+    if isinstance(scale, bool) or not isinstance(scale, (int, float)) or not np.isfinite(scale):
+        raise ValueError("policy server CFG guidance scale is invalid")
+    if scale < 0.0 or not isinstance(value["positive_only_conditional"], bool):
+        raise ValueError("policy server CFG guidance metadata is invalid")
 
 
 def _prepare_remote_observation(
@@ -414,6 +1380,53 @@ def _prepare_remote_observation(
     return {"observation.state": np.ascontiguousarray(state), **images}
 
 
+def _validate_rtc_request(value: Any) -> dict[str, Any] | None:
+    if value is None:
+        return None
+    required = {
+        "previous_model_actions",
+        "previous_state",
+        "executed_horizon",
+        "inference_delay_steps",
+    }
+    if not isinstance(value, dict) or set(value) != required:
+        raise ValueError("clothdojo.rtc has invalid fields")
+    previous = _finite_actions(
+        value["previous_model_actions"],
+        POLICY_ACTION_DIM,
+        "previous_model_actions",
+    )
+    previous_state = np.asarray(value["previous_state"], dtype=np.float32)
+    if (
+        previous_state.shape != (previous.shape[0], POLICY_ACTION_DIM)
+        or not np.isfinite(previous_state).all()
+    ):
+        raise ValueError("clothdojo.rtc.previous_state must be finite float32[batch, 14]")
+    result = {
+        "previous_model_actions": previous,
+        "previous_state": np.ascontiguousarray(previous_state),
+    }
+    executed_horizon = value["executed_horizon"]
+    if (
+        isinstance(executed_horizon, bool)
+        or not isinstance(executed_horizon, int)
+        or not 1 <= executed_horizon < previous.shape[1]
+    ):
+        raise ValueError("clothdojo.rtc.executed_horizon must be in [1, previous horizon)")
+    result["executed_horizon"] = executed_horizon
+    inference_delay_steps = value["inference_delay_steps"]
+    if (
+        isinstance(inference_delay_steps, bool)
+        or not isinstance(inference_delay_steps, int)
+        or not 0 <= inference_delay_steps < executed_horizon
+    ):
+        raise ValueError(
+            "clothdojo.rtc.inference_delay_steps must be in [0, executed_horizon)"
+        )
+    result["inference_delay_steps"] = inference_delay_steps
+    return result
+
+
 def _load_action_quantile_scale(norm_stats: Path) -> np.ndarray:
     source = norm_stats / "norm_stats.json" if norm_stats.is_dir() else norm_stats
     try:
@@ -447,6 +1460,50 @@ def _configure_openpi_data_home() -> None:
     os.environ["OPENPI_DATA_HOME"] = str(cache)
 
 
+def _install_checkpoint_semantic_inference(model: Any, checkpoint: Path) -> dict[str, Any] | None:
+    """Activate semantic-text-first inference when the checkpoint declares it."""
+
+    contract_path = checkpoint / "clothdojo_weights.json"
+    if not contract_path.is_file():
+        return None
+    try:
+        contract = json.loads(contract_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"cannot read checkpoint semantic contract: {contract_path}") from exc
+    semantic = contract.get("semantic_subtask")
+    if semantic is None:
+        return None
+    if (
+        not isinstance(semantic, dict)
+        or semantic.get("schema") != "clothdojo_pi05_semantic_subtask"
+        or semantic.get("format_version") != 1
+    ):
+        raise ValueError(f"unsupported checkpoint semantic contract: {contract_path}")
+    cache = os.environ.get("OPENPI_DATA_HOME")
+    if not cache:
+        raise ValueError("semantic inference requires OPENPI_DATA_HOME")
+    from clothdojo.training.semantic_pi05 import install_semantic_inference
+
+    install_semantic_inference(
+        model,
+        tokenizer_path=Path(cache) / "big_vision/paligemma_tokenizer.model",
+        overall_prompt=str(semantic["overall_prompt"]),
+        subtasks=list(semantic["subtasks"]),
+    )
+    return semantic
+
+
+def _semantic_inference_record(labels: Any, scores: Any) -> dict[str, Any]:
+    """Convert one semantic subtask selection into a serializable record."""
+
+    import torch
+
+    return {
+        "subtask": [str(label) for label in labels],
+        "candidate_nll": scores.detach().to(torch.float32).cpu().numpy(),
+    }
+
+
 def _rebase_delta_model_actions(
     previous_model_actions: np.ndarray,
     *,
@@ -476,7 +1533,61 @@ def _rebase_delta_model_actions(
     return np.ascontiguousarray(result)
 
 
+def _finite_actions(value: Any, action_dim: int | None, name: str) -> np.ndarray:
+    result = np.asarray(value, dtype=np.float32)
+    if (
+        result.ndim != 3
+        or result.shape[0] < 1
+        or result.shape[1] < 1
+        or (action_dim is not None and result.shape[2] != action_dim)
+        or not np.isfinite(result).all()
+    ):
+        suffix = "" if action_dim is None else f" with action_dim={action_dim}"
+        raise ValueError(f"{name} must be finite with shape (batch, horizon, dim){suffix}")
+    return np.ascontiguousarray(result)
+
+
+def _validate_serve_arguments(
+    checkpoint: Path,
+    norm_stats: Path,
+    *,
+    openpi_config: str,
+    action_horizon: int,
+    num_steps: int,
+    port: int,
+) -> None:
+    if not checkpoint.is_dir():
+        raise FileNotFoundError(f"SFT checkpoint directory does not exist: {checkpoint}")
+    norm_file = norm_stats / "norm_stats.json" if norm_stats.is_dir() else norm_stats
+    if not norm_file.is_file():
+        raise FileNotFoundError(f"norm_stats.json does not exist: {norm_stats}")
+    if not openpi_config.strip():
+        raise ValueError("openpi_config must be non-empty")
+    if min(action_horizon, num_steps, port) < 1:
+        raise ValueError("action_horizon, num_steps and port must be positive")
+
+
+def _require_sha256(value: Any, name: str) -> None:
+    if not isinstance(value, str) or len(value) != 64:
+        raise ValueError(f"{name} SHA-256 must contain 64 hexadecimal characters")
+    try:
+        int(value, 16)
+    except ValueError as exc:
+        raise ValueError(f"{name} SHA-256 must contain 64 hexadecimal characters") from exc
+
+
 def _to_numpy(value: Any) -> np.ndarray:
     if hasattr(value, "detach"):
         value = value.detach().cpu().numpy()
     return np.ascontiguousarray(np.asarray(value, dtype=np.float32))
+
+
+def _bypass_proxy_for_loopback(endpoint: str) -> None:
+    if not any(host in endpoint for host in ("127.0.0.1", "localhost", "[::1]")):
+        return
+    for name in ("NO_PROXY", "no_proxy"):
+        values = [value for value in os.environ.get(name, "").split(",") if value]
+        for host in ("127.0.0.1", "localhost", "::1"):
+            if host not in values:
+                values.append(host)
+        os.environ[name] = ",".join(values)

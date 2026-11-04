@@ -41,8 +41,8 @@ def capture_states(
         gripper_q,
         gripper_lower,
         gripper_upper,
-        open_positions=(profile.gripper_open_positions[0],) * 2,
-        closed_positions=(profile.gripper_closed_positions[0],) * 2,
+        open_positions=profile.gripper_open_positions,
+        closed_positions=profile.gripper_closed_positions,
     )
     grasp = runtime.grasp.capture_all_states()
     ranges = runtime.grasp.particle_ranges()
@@ -120,10 +120,17 @@ def gripper_openness(
     if open_positions is not None or closed_positions is not None:
         opened = np.asarray(open_positions, dtype=np.float32)
         closed = np.asarray(closed_positions, dtype=np.float32)
-        if opened.shape != (2,) or closed.shape != (2,) or np.any(opened == closed):
-            raise ValueError("robot gripper open/closed positions must be distinct pairs")
+        per_side = q.shape[1] // 2
+        if (
+            opened.shape != (per_side,)
+            or closed.shape != (per_side,)
+            or opened[0] == closed[0]
+        ):
+            raise ValueError("gripper endpoints must describe one side with a distinct leader range")
+        # Profiles describe one gripper's fingers, repeated on both arms.
+        # Both selected coordinates are leaders and use the first endpoint.
         return np.clip(
-            (values - closed) / (opened - closed), 0.0, 1.0
+            (values - closed[0]) / (opened[0] - closed[0]), 0.0, 1.0
         ).astype(np.float32, copy=False)
     return np.clip(
         (values - lower[:, controlled]) / (upper[:, controlled] - lower[:, controlled]),
@@ -163,10 +170,8 @@ class NewtonTrajectoryRecorder:
             dtype=np.float32,
         )
         profile = runtime.scene.robot_profile
-        # Profiles describe finger coordinates within one gripper; openness
-        # uses the leader finger of each of the two identical grippers.
-        self._gripper_open_positions = (profile.gripper_open_positions[0],) * 2
-        self._gripper_closed_positions = (profile.gripper_closed_positions[0],) * 2
+        self._gripper_open_positions = profile.gripper_open_positions
+        self._gripper_closed_positions = profile.gripper_closed_positions
         sources = self._state_sources()
         self._buffers = {
             name: _PinnedWarpBuffer(source, capacity=self.capacity)

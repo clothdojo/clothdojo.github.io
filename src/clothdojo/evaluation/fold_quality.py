@@ -31,6 +31,15 @@ FEATURE_NAMES = (
 )
 
 
+@cache
+def load_fold_quality_triangles(assets_root: str, asset_id: str) -> np.ndarray:
+    """Read the converted material topology once per asset for CPU scoring."""
+    from clothdojo.assets import GarmentLibrary
+    from clothdojo.sim.cloth import load_garment_mesh
+
+    return load_garment_mesh(GarmentLibrary(assets_root).converted(asset_id))[1].reshape(-1, 3)
+
+
 @dataclass(frozen=True)
 class FoldQualityReference:
     """Fixed material geometry, valid only for this mesh's particle ordering."""

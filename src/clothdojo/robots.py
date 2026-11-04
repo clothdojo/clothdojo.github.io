@@ -14,6 +14,11 @@ if "pxr.Work" not in sys.modules:
     os.environ.setdefault("PXR_WORK_THREAD_LIMIT", "1")
 
 PIPER = "piper"
+ALOHA2 = "aloha2"
+X5 = "x5"
+PANDA = "panda"
+FR3_DUO = "fr3_duo"
+UR5E_2F85 = "ur5e_2f85"
 
 
 @dataclass(frozen=True, slots=True)
@@ -230,6 +235,10 @@ def _load_workstation(robot_id: str, asset: str, assets_root: Path) -> RobotProf
 
 _ASSETS = {
     PIPER: "robots/piper/piper.usda",
+    ALOHA2: "robots/aloha2/aloha2.usda",
+    X5: "robots/x5/x5.usda",
+    FR3_DUO: "robots/fr3_duo/fr3_duo.usda",
+    UR5E_2F85: "robots/ur5e_2f85/ur5e_2f85.usda",
 }
 
 
@@ -252,6 +261,6 @@ def robot_profile(robot_id: str, *, assets_root: str | Path | None = None) -> Ro
     """Read a deployed fixed workstation on demand, so deployment needs no USDs."""
     root = (
         Path(assets_root) if assets_root is not None
-        else Path("assets")
+        else Path(__file__).resolve().parents[2] / "assets"
     )
     return _profile_at(robot_id, root.expanduser().resolve())

@@ -1,1 +1,1 @@
-"""Reference policy data preparation and training helpers."""
+"""Training backend adapters."""

@@ -1,0 +1,29 @@
+defaults:
+  - pi05_aloha_openpi_rlinf_mirrored_runtime_target_fullonly_wd001_40k
+  - _self_
+
+# Fresh pi05_base SFT: three equivalent passes over 3,754,885 full_only H50 anchors.
+# ceil(3 * 3,754,885 / 512) = 22,002 optimizer updates.
+# Cosine reaches its floor at 80% of the run; the final 20% is a plateau.
+cluster:
+  num_nodes: 2
+  component_placement:
+    actor: all
+
+runner:
+  max_steps: 22002
+  save_interval: 7334
+  logger:
+    experiment_name: pi05_rgb_success_release_b512_3epochs
+    logger_backends: [tensorboard]
+
+actor:
+  global_batch_size: 512
+  micro_batch_size: 32
+  fsdp_config:
+    enable_gradient_accumulation: false
+  optim:
+    lr: 7.071067811865476e-5
+    min_lr: 7.071067811865476e-6
+    lr_warmup_steps: 500
+    total_training_steps: 17601

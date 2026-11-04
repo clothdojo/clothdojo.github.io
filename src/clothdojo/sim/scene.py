@@ -5,7 +5,8 @@ from __future__ import annotations
 import os
 import sys
 from dataclasses import dataclass
-from math import ceil, sqrt
+from itertools import pairwise
+from math import ceil, cos, pi, sin, sqrt
 from pathlib import Path
 from typing import Literal
 
@@ -19,12 +20,13 @@ import numpy as np
 
 from clothdojo.assets import GarmentLibrary
 from clothdojo.robots import (
+    ALOHA2,
     PIPER,
     RobotProfile,
     robot_profile,
 )
 from clothdojo.sim.cloth import add_style3d_garment, load_garment_mesh
-from clothdojo.tasks import SHIRT_FLATTEN, task_profile
+from clothdojo.tasks import HANGER_DEMO, SHIRT_FLATTEN, SHIRT_FLATTEN_FOLD, SHIRT_FOLD, task_profile
 
 ARM_JOINTS = tuple(f"{side}/joint{joint}" for side in ("left", "right") for joint in range(1, 7))
 GRIPPER_JOINTS = tuple(f"{side}/joint{joint}" for side in ("left", "right") for joint in (7, 8))
@@ -84,6 +86,22 @@ class ShirtFlattenSpec:
             raise ValueError("self_contact_friction_mu must be non-negative")
         if self.self_contact_friction_epsilon <= 0.0:
             raise ValueError("self_contact_friction_epsilon must be positive")
+
+
+@dataclass(frozen=True, slots=True)
+class HangerDemoSpec(ShirtFlattenSpec):
+    """The teleoperation workstation with a wider table and garment rack."""
+
+    table_half_extents: tuple[float, float, float] = (0.78, 1.02, 0.025)
+    # Keep the airborne garment inside the bimanual workspace but clear of the
+    # rack while gravity establishes its initial state.
+    garment_position: tuple[float, float, float] = (0.25, 0.0, 1.162)
+    rack_x: float = 0.72
+    rack_center_y: float = 0.0
+    rack_rail_z: float = 1.43
+    rack_half_width: float = 0.62
+    rack_radius: float = 0.012
+    hanger_slots: tuple[float, ...] = (-0.45, -0.15, 0.15, 0.45)
 
 
 @dataclass(frozen=True, slots=True)
@@ -167,6 +185,8 @@ def _build_shirt_flatten(
 
         _apply_authored_appearance(template, Usd.Stage.Open(str(robot_path)))
     _add_table(newton, wp, template, spec)
+    if isinstance(spec, HangerDemoSpec):
+        _add_hanger_rack(newton, wp, template, spec)
     particle_range = (0, 0)
     if include_cloth:
         garment_path = GarmentLibrary(assets_root).converted(spec.garment_id)
@@ -268,6 +288,10 @@ def build_scene(
         raise NotImplementedError(
             f"{task_name} task assets and randomization are not defined yet"
         )
+    if task_name not in {SHIRT_FLATTEN, SHIRT_FOLD, SHIRT_FLATTEN_FOLD, HANGER_DEMO}:
+        raise ValueError(f"no scene builder is registered for task {task_name!r}")
+    if task_name == HANGER_DEMO and spec is None:
+        spec = HangerDemoSpec()
     return _build_shirt_flatten(
         assets_root,
         robot_id=robot_id,
@@ -341,7 +365,7 @@ def _add_robot(
     shape_start = int(builder.shape_count)
     q_start = int(builder.joint_coord_count)
     dof_start = int(builder.joint_dof_count)
-    from pxr import Usd
+    from pxr import Usd, UsdGeom, UsdPhysics
 
     stage = Usd.Stage.Open(str(path))
     if stage is None or not stage.GetDefaultPrim():
@@ -351,6 +375,27 @@ def _add_robot(
         for prim in stage.Traverse()
         if prim.GetAttribute("clothdojo:shapeFlags")
     )
+    if embedded_shape_contract and profile.robot_id == "ur5e_2f85":
+        # Menagerie's 2F-85 collision geoms reference the render-resolution STL
+        # meshes (about 140k triangles for the dual-arm workstation).  Importing
+        # those meshes verbatim makes Newton's particle broad phase generate
+        # millions of triangle candidates per control step.  Keep the authored
+        # primitive pad contacts, but request the standard USD convex-hull
+        # approximation for collision meshes.  This is applied to the in-memory
+        # stage only; visual meshes and the source asset remain untouched.
+        stage.SetEditTarget(stage.GetSessionLayer())
+        particle_bit = int(newton.ShapeFlags.COLLIDE_PARTICLES)
+        for prim in stage.Traverse():
+            flags = prim.GetAttribute("clothdojo:shapeFlags")
+            if (
+                prim.IsA(UsdGeom.Mesh)
+                and flags
+                and flags.HasAuthoredValue()
+                and int(flags.Get()) & particle_bit
+            ):
+                UsdPhysics.MeshCollisionAPI.Apply(prim).CreateApproximationAttr(
+                    "convexHull"
+                )
     import_options = {
         "source": stage,
         "floating": False,
@@ -369,6 +414,8 @@ def _add_robot(
         )
     imported = builder.add_usd(**import_options)
     _restore_authored_mimic_constraints(stage, imported, builder)
+    if profile.robot_id == ALOHA2:
+        _restore_exported_joint_dynamics(stage, imported, builder)
     legacy_contract = None
     if not embedded_shape_contract:
         legacy_contract = _robot_asset_contract(path)
@@ -576,6 +623,31 @@ def _restore_authored_mimic_constraints(stage, imported, builder) -> None:
             label=str(follower_path),
         )
         existing.add(pair)
+
+
+def _restore_exported_joint_dynamics(stage, imported, builder) -> None:
+    """Restore SI joint values written by Newton's ModelBuilder USD exporter."""
+
+    attributes = {
+        "newton:damping": "joint_damping",
+        "newton:limitStiffness": "joint_limit_ke",
+        "newton:limitDamping": "joint_limit_kd",
+        "newton:velocityLimit": "joint_velocity_limit",
+    }
+    for prim_path, joint in imported["path_joint_map"].items():
+        joint = int(joint)
+        linear_dofs, angular_dofs = builder.joint_dof_dim[joint]
+        if int(linear_dofs) + int(angular_dofs) != 1:
+            continue
+        dof = int(builder.joint_qd_start[joint])
+        prim = stage.GetPrimAtPath(prim_path)
+        for usd_name, builder_name in attributes.items():
+            attribute = prim.GetAttribute(usd_name)
+            if not attribute or not attribute.HasAuthoredValue():
+                continue
+            value = float(attribute.Get())
+            if np.isfinite(value):
+                getattr(builder, builder_name)[dof] = value
 
 
 @dataclass(frozen=True, slots=True)
@@ -830,6 +902,108 @@ def _add_table(newton, wp, builder, spec: ShirtFlattenSpec) -> None:
         color=(0.85, 0.85, 0.85),
         label="table",
     )
+
+
+def _add_hanger_rack(newton, wp, builder, spec: HangerDemoSpec) -> None:
+    """Add a static rack carrying independently simulated 6-DoF hangers."""
+
+    cfg = newton.ModelBuilder.ShapeConfig(
+        density=0.0,
+        mu=0.55,
+        ke=spec.rigid_contact_ke,
+        kd=spec.rigid_contact_kd,
+        kf=0.0,
+        margin=spec.rigid_contact_margin,
+        has_particle_collision=True,
+        has_shape_collision=True,
+    )
+    def capsule(body, start, end, radius, label, *, color=(0.16, 0.18, 0.21)):
+        start_v = np.asarray(start, dtype=np.float32)
+        end_v = np.asarray(end, dtype=np.float32)
+        delta = end_v - start_v
+        length = float(np.linalg.norm(delta))
+        rotation = wp.quat_between_vectors(
+            wp.vec3(0.0, 0.0, 1.0), wp.vec3(*(delta / length))
+        )
+        builder.add_shape_capsule(
+            body=body,
+            xform=wp.transform(wp.vec3(*((start_v + end_v) * 0.5)), rotation),
+            radius=radius,
+            half_height=0.5 * length,
+            cfg=cfg,
+            color=color,
+            label=label,
+        )
+
+    y0 = spec.rack_center_y - spec.rack_half_width
+    y1 = spec.rack_center_y + spec.rack_half_width
+    table_top = spec.table_position[2] + spec.table_half_extents[2]
+    capsule(
+        -1,
+        (spec.rack_x, y0, table_top),
+        (spec.rack_x, y0, spec.rack_rail_z),
+        0.018,
+        "rack_left",
+    )
+    capsule(
+        -1,
+        (spec.rack_x, y1, table_top),
+        (spec.rack_x, y1, spec.rack_rail_z),
+        0.018,
+        "rack_right",
+    )
+    capsule(
+        -1,
+        (spec.rack_x, y0, spec.rack_rail_z),
+        (spec.rack_x, y1, spec.rack_rail_z),
+        spec.rack_radius,
+        "rack_rail",
+    )
+
+    hanger_rotation = wp.quat_identity()
+    # This is the validated geometry used by isaac_table_hanger_demo.  The
+    # rail starts inside the open hook; gravity then loads the inner arc.
+    hook_center_world_offset = (0.026, 0.0, 0.080)
+    colors = ((0.08, 0.31, 0.62), (0.55, 0.27, 0.10), (0.58, 0.08, 0.09), (0.08, 0.42, 0.25))
+    for index, y in enumerate(spec.hanger_slots):
+        root = (
+            spec.rack_x - hook_center_world_offset[0],
+            y,
+            spec.rack_rail_z - hook_center_world_offset[2],
+        )
+        hanger = builder.add_body(
+            xform=wp.transform(wp.vec3(*root), hanger_rotation),
+            mass=0.25,
+            inertia=wp.mat33(0.0035, 0.0, 0.0, 0.0, 0.0065, 0.0, 0.0, 0.0, 0.0035),
+            lock_inertia=True,
+            label=f"hanger_{index}",
+        )
+        for segment_index, (start, end) in enumerate(_hanger_segments()):
+            capsule(
+                hanger,
+                start,
+                end,
+                0.012 if segment_index < 3 else 0.0045,
+                f"hanger_{index}_{segment_index:02d}",
+                color=colors[index % len(colors)],
+            )
+
+
+def _hanger_segments() -> tuple[tuple[tuple[float, float, float], ...], ...]:
+    """Return the validated flat hanger body and open curved hook."""
+
+    segments = [
+        ((0.0, 0.0, 0.0), (-0.21, 0.0, -0.085)),
+        ((0.0, 0.0, 0.0), (0.21, 0.0, -0.085)),
+        ((-0.21, 0.0, -0.085), (0.21, 0.0, -0.085)),
+        ((0.0, 0.0, 0.0), (0.0, 0.0, 0.08)),
+    ]
+    hook = [
+        (0.026 + 0.026 * cos(angle), 0.0, 0.08 + 0.026 * sin(angle))
+        for angle in np.linspace(pi, -pi / 3.0, 17)
+    ]
+    segments.extend(pairwise(hook))
+    return tuple(segments)
 
 
 def _add_smooth_garment_visual(

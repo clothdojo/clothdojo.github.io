@@ -1,0 +1,19 @@
+schema: clothdojo_benchmark_run
+condition_id: nocs-flatten-teacher
+output: outputs/evaluations/nocs-flatten-teacher
+benchmark: configs/quickstart/nocs-flatten-panel.yaml
+deployment: configs/quickstart/local.yaml
+policy:
+  kind: sft
+  checkpoint: models/nocs-teachers/flatten/weights
+  norm_stats: models/nocs-teachers/flatten/norm_stats
+  expected_checkpoint_sha256: b54e8fe54f025a9d3a7196b79be080ee3afc2ada8f2de4c57a7e5b3b5cd187b0
+  num_steps: 10
+  image_preprocessing: none
+  rtc_prefix_schedule: exp
+execution:
+  mode: chunk
+  exec_horizon: 10
+  cloth_visual: nocs
+  image_preprocessing: none
+  batch_size: 1

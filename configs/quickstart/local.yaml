@@ -1,0 +1,11 @@
+schema: clothdojo_evaluation_deployment
+policy:
+  nodes:
+    - host: local
+      gpus: [0]
+      port_start: 28000
+simulation:
+  nodes:
+    - host: local
+      gpus: [1]
+score_workers: 1

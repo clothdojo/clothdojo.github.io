@@ -1,0 +1,7 @@
+schema: clothdojo_frozen_benchmark
+panel_id: nocs_fold_physical_repair_20261030
+scenario: configs/rollout/shirt_fold_eval_40s.yaml
+protocol: benchmark/conditions/nocs-fold/protocol.json
+states: benchmark/conditions/nocs-fold/states
+templates: benchmark/conditions/nocs-fold/templates
+assets: benchmark/assets

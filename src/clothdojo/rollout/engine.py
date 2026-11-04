@@ -124,6 +124,7 @@ class RolloutReport:
     inference_delay_steps: int
     world_count: int
     timings: RolloutTimings
+    semantic_records: list[dict[str, Any]] | None = None
 
     def to_json_dict(self) -> dict[str, Any]:
         result = {
@@ -138,6 +139,8 @@ class RolloutReport:
                 steps=self.steps,
             ),
         }
+        if self.semantic_records:
+            result["semantic_chunk_count"] = len(self.semantic_records)
         return result
 
 
@@ -190,6 +193,7 @@ def run_episode(
     action_index = 0
     requests = 0
     executed = 0
+    semantic_records: list[dict[str, Any]] = []
 
     def observe() -> dict[str, np.ndarray]:
         started = time.perf_counter()
@@ -200,6 +204,7 @@ def run_episode(
     def infer(
         observation: dict[str, np.ndarray],
         delay: int,
+        context: tuple[int, int] | None = None,
     ) -> np.ndarray:
         started = time.perf_counter()
         result = _validate_actions(
@@ -212,6 +217,19 @@ def run_episode(
             expected_horizon=scenario.action_horizon,
             expected_batch=world_count,
         )
+        semantic = getattr(policy, "last_semantic", None)
+        if semantic is not None:
+            request_index, requested_at_step = (
+                context if context is not None else (requests, executed)
+            )
+            semantic_records.append(
+                {
+                    "request_index": request_index,
+                    "requested_at_step": requested_at_step,
+                    "subtask": [str(label) for label in semantic["subtask"]],
+                    "candidate_nll": np.asarray(semantic["candidate_nll"]),
+                }
+            )
         policy_samples.append(time.perf_counter() - started)
         return result
 
@@ -254,7 +272,8 @@ def run_episode(
                     execution_samples.append(time.perf_counter() - execution_started)
                     break
 
-                future = executor.submit(infer, observe(), rtc_delay_steps)
+                context = (requests, executed)
+                future = executor.submit(infer, observe(), rtc_delay_steps, context)
                 for _ in range(rtc_delay_steps):
                     episode.step(actions[:, action_index].copy())
                     action_index += 1
@@ -288,10 +307,9 @@ def run_episode(
             observation=PhaseTiming.from_samples(observation_samples),
             policy_end_to_end=PhaseTiming.from_samples(policy_samples),
             execution=PhaseTiming.from_samples(execution_samples),
-            # RTC execution windows include the wait for policy completion,
-            # including zero-delay RTC; their timing is not additive.
-            phases_overlap=mode == "rtc",
+            phases_overlap=mode == "rtc" and rtc_delay_steps > 0,
         ),
+        semantic_records=semantic_records or None,
     )
 
 

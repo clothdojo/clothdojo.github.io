@@ -1,82 +1,40 @@
 """Optional Isaac RTX rendering for canonical Newton trajectory replay."""
 
-
 from __future__ import annotations
 
-
 import ctypes
-
-
 import hashlib
-
-
 import importlib.metadata
-
-
-
-
+import json
 import math
-
-
 import os
-
-
 import re
-
-
-
-
+import socket
 import sys
-
-
 import tempfile
-
-
-
-
+import traceback
 from dataclasses import asdict, dataclass, replace
-
-
 from pathlib import Path
-
-
 from types import SimpleNamespace
-
-
 from typing import Any, Literal
 
-
 import numpy as np
-
 
 from clothdojo.assets.materials import (
     MaterialAsset,
     MaterialCatalog,
     load_material_catalog,
+    prepare_polyhaven_assets,
     require_polyhaven_assets,
 )
-
-
 from clothdojo.rendering import CameraSpec
-
-
 from clothdojo.robots import RobotProfile
-
-
-
+from clothdojo.trajectory import TrajectoryState
 
 ROBODOJO_REVISION = "c037c1b3183a030724e694d69a08cb62369ed285"
-
-
 _ISAAC_MAJOR_MINOR = (5, 0)
-
-
 _DEVICE = re.compile(r"cuda:(\d+)\Z")
-
-
 VisualComponent = Literal["cloth", "table", "ground", "lighting", "background"]
-
-
 VISUAL_COMPONENTS: tuple[VisualComponent, ...] = (
     "cloth",
     "table",
@@ -84,8 +42,6 @@ VISUAL_COMPONENTS: tuple[VisualComponent, ...] = (
     "lighting",
     "background",
 )
-
-
 _ROOMS = tuple(
     f"Simple_Room_{color}"
     for color in (
@@ -103,6 +59,51 @@ _ROOMS = tuple(
         "yellow",
     )
 )
+
+
+def prepare_isaac_assets(
+    output: str | Path = "data/visual-assets", *, include_room: bool = False
+) -> dict[str, Any]:
+    """Prepare the curated Poly Haven set and optional RoboDojo rooms."""
+
+    target = Path(output).expanduser().resolve()
+    catalog = load_material_catalog()
+    polyhaven = prepare_polyhaven_assets(target / "polyhaven", catalog)
+    if include_room:
+        from huggingface_hub import snapshot_download
+
+        patterns = []
+        for room in _ROOMS:
+            patterns.extend(
+                (
+                    f"Assets/Room/{room}/base0.usd",
+                    f"Assets/Room/{room}/SubUSDs/textures/DefaultMaterial_*",
+                    f"Assets/Room/{room}/SubUSDs/textures/Parquet_*",
+                    f"Assets/Room/{room}/SubUSDs/textures/WallWood_*",
+                    f"Assets/Room/{room}/SubUSDs/textures/WhitePlastic_*",
+                )
+            )
+        snapshot_download(
+            repo_id="RoboDojo-Benchmark/RoboDojo",
+            repo_type="dataset",
+            revision=ROBODOJO_REVISION,
+            allow_patterns=patterns,
+            local_dir=target / "robodojo",
+            max_workers=8,
+        )
+        revision = target / "robodojo/clothdojo_revision.txt"
+        revision.parent.mkdir(parents=True, exist_ok=True)
+        temporary = revision.with_name(f".{revision.name}.tmp")
+        temporary.write_text(f"{ROBODOJO_REVISION}\n", encoding="utf-8")
+        os.replace(temporary, revision)
+    _require_visual_assets(target, catalog, include_room=include_room)
+    return {
+        "compatible": True,
+        "output": str(target),
+        "polyhaven": polyhaven,
+        "robodojo_revision": ROBODOJO_REVISION if include_room else None,
+        "rooms": "included" if include_room else "excluded",
+    }
 
 
 @dataclass(frozen=True, slots=True)
@@ -131,6 +132,47 @@ class VisualLayout:
     room: str | None
     background: str | None = None
     visual_profile: str | None = None
+
+
+def overlay_kinematic_arm_reference(
+    state: TrajectoryState,
+    *,
+    reference_joint_q: np.ndarray,
+    reference_joint_qd: np.ndarray,
+    robot_profile: RobotProfile,
+) -> TrajectoryState:
+    """Overlay arm references without discarding simulated gripper linkages.
+
+    Robotiq workstations contain passive closed-chain coordinates that are not
+    part of the geometric IK reference. Replacing the complete generalized
+    state would reset those coordinates to their open home pose. Keep every
+    non-arm coordinate from the dynamics replay and replace only the arm
+    position and velocity entries declared by the robot profile.
+    """
+
+    joint_q = np.asarray(state.joint_q, dtype=np.float32)
+    joint_qd = np.asarray(state.joint_qd, dtype=np.float32)
+    reference_q = np.asarray(reference_joint_q, dtype=np.float32)
+    reference_qd = np.asarray(reference_joint_qd, dtype=np.float32)
+    expected_q = (len(robot_profile.home_joint_q),)
+    expected_qd = (robot_profile.joint_dof_count,)
+    if (
+        joint_q.shape != expected_q
+        or reference_q.shape != expected_q
+        or joint_qd.shape != expected_qd
+        or reference_qd.shape != expected_qd
+    ):
+        raise ValueError("kinematic arm reference does not match the trajectory state")
+    if not np.isfinite(reference_q).all() or not np.isfinite(reference_qd).all():
+        raise ValueError("kinematic arm reference must be finite")
+
+    mixed_q = joint_q.copy()
+    mixed_qd = joint_qd.copy()
+    arm_q = np.asarray(robot_profile.arm_coord_indices, dtype=np.int64)
+    arm_qd = np.asarray(robot_profile.arm_dof_indices, dtype=np.int64)
+    mixed_q[arm_q] = reference_q[arm_q]
+    mixed_qd[arm_qd] = reference_qd[arm_qd]
+    return replace(state, joint_q=mixed_q, joint_qd=mixed_qd)
 
 
 def sample_visual_layout(
@@ -290,6 +332,217 @@ def _rounded_uniform(rng: np.random.Generator, low: float, high: float) -> float
     return round(float(rng.uniform(low, high)), 6)
 
 
+def inspect_isaac_rollout_export(
+    source: str | Path,
+    *,
+    seed: int,
+    include_room: bool,
+    randomize: tuple[VisualComponent, ...],
+    visual_profile: str | None = None,
+    shard_index: int | None = None,
+    shard_count: int | None = None,
+    min_segment_frames: int = 65,
+    whole_trajectory_good_only: bool = False,
+) -> dict:
+    """Inspect the Isaac export plan without checking its rendering runtime."""
+
+    sample_visual_layout(
+        seed, 0, include_room=include_room, randomize=randomize, visual_profile=visual_profile
+    )
+    from clothdojo.data.rollout import inspect_rollout_collection_export
+
+    if not (Path(source) / "meta.json").is_file() and not (Path(source) / "manifest.json").is_file():
+        from clothdojo.data.rollout import inspect_trajectory_dataset_export
+        result = inspect_trajectory_dataset_export(
+            source, min_segment_frames=min_segment_frames,
+            whole_trajectory_good_only=whole_trajectory_good_only,
+            shard_index=shard_index, shard_count=shard_count,
+        )
+    else:
+        result = inspect_rollout_collection_export(
+            source, shard_index=shard_index, shard_count=shard_count,
+        )
+    result.update(
+        {
+            "renderer": "isaac_rtx",
+            "cloth_visual": "normal",
+            "visual_randomization_seed": seed,
+            "randomized_components": list(randomize),
+            "room_mode": "robodojo_per_episode" if include_room else "disabled",
+            "required_python": "3.11",
+            "required_isaac_sim": "5.0.x",
+            "required_gpu": "RTX GPU with RT Cores and Vulkan",
+        }
+    )
+    if visual_profile is not None:
+        from clothdojo.assets.visual_benchmark import visual_protocol_identity
+
+        result.update(
+            visual_profile=visual_profile,
+            room_mode="benchmark_background",
+            **visual_protocol_identity(),
+        )
+    return result
+
+
+def export_isaac_rollout_collection(
+    source: str | Path,
+    output: str | Path,
+    *,
+    assets_root: str | Path,
+    visual_assets_root: str | Path,
+    device: str,
+    seed: int,
+    include_room: bool,
+    randomize: tuple[VisualComponent, ...],
+    repo_id: str | None,
+    image_writer_threads: int,
+    visual_profile: str | None = None,
+    shard_index: int | None = None,
+    shard_count: int | None = None,
+    _exit_process: bool = False,
+    min_segment_frames: int = 65,
+    whole_trajectory_good_only: bool = False,
+) -> dict[str, Any]:
+    """Render a canonical trajectory collection with Isaac 5 RTX."""
+
+    gpu_id = _physical_gpu(device)
+    runtime_device = "cuda:0"
+    _require_isaac5_runtime()
+    root = Path(source).expanduser().resolve()
+    asset_root = Path(assets_root).expanduser().resolve()
+    visual_assets = Path(visual_assets_root).expanduser().resolve()
+    catalog = load_material_catalog()
+    _validate_visual_components(randomize)
+    _require_visual_assets(visual_assets, catalog, include_room=include_room)
+    if visual_profile is not None:
+        from clothdojo.assets.scene_materials import require_scene_materials
+        from clothdojo.assets.visual_benchmark import require_background_assets, visual_pool
+
+        sample_visual_layout(seed, 0, include_room=include_room, visual_profile=visual_profile)
+        require_background_assets(visual_assets, visual_profile)
+        require_scene_materials(visual_assets, set(visual_pool(visual_profile, "table")))
+
+    from clothdojo.data.rollout import _export_canonical_collection
+
+    rendering: dict[str, Any] = {
+        "backend": "isaac_rtx",
+        "camera_projection": "newton_compatible_v1",
+        "cloth_visual": "normal",
+        "cloth_backface_scale": 0.25,
+        "granularity": "episode",
+        "sampling": "uniform_material_then_colorway",
+        "appearance_source": "Poly Haven CC0 curated materials",
+        "robodojo_revision": ROBODOJO_REVISION if include_room else None,
+        "base_seed": seed,
+        "randomized_components": list(randomize),
+        "room_mode": "robodojo_per_episode" if include_room else "disabled",
+        "layouts": [],
+    }
+    if visual_profile is not None:
+        from clothdojo.assets.visual_benchmark import visual_protocol_identity
+
+        rendering.update(
+            visual_profile=visual_profile,
+            room_mode="benchmark_background",
+            **visual_protocol_identity(),
+        )
+
+    # Isaac 5's USDRT Fabric only supports logical cuda:0. Isolate the selected
+    # physical GPU, then keep Isaac, Warp and Fabric on that single device.
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
+    os.environ.setdefault("OMNI_KIT_ACCEPT_EULA", "yes")
+    os.environ.setdefault("PXR_WORK_THREAD_LIMIT", "1")
+    _preload_python_libstdcpp()
+    from clothdojo.teleop.isaac_compat import configure_replicator_warp
+
+    configure_replicator_warp()
+    portable = (
+        Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache"))
+        / "clothdojo"
+        / "isaac5-export"
+        / f"{socket.gethostname()}-gpu-{gpu_id}"
+    )
+    portable.mkdir(parents=True, exist_ok=True)
+    # Success-quota collections explicitly retain exact body poses but omit
+    # velocities. Their storage cannot be passed through articulation replay.
+    source_metadata_path = root / "meta.json"
+    expert_collection = not source_metadata_path.is_file() and not (root / "manifest.json").is_file()
+    source_metadata = json.loads(source_metadata_path.read_text()) if source_metadata_path.is_file() else {}
+    recorded_bodies = (
+        source_metadata.get("success_selection", {}).get("published_storage") == "render_only_v1"
+    )
+    app = None
+
+    def camera_factory(asset_id: str, initial_state, profile):
+        return IsaacRandomizedCamera(
+            app,
+            initial_state,
+            asset_path=(
+                asset_root
+                / "garments"
+                / "converted"
+                / asset_id
+                / f"{asset_id}.usdc"
+            ),
+            assets_root=asset_root,
+            visual_assets_root=visual_assets,
+            device=runtime_device,
+            base_seed=seed,
+            include_room=include_room,
+            randomize=randomize,
+            layouts=rendering["layouts"],
+            robot_profile=profile,
+            visual_profile=visual_profile,
+            use_recorded_body_q=recorded_bodies,
+        )
+
+    try:
+        app = _start_isaac_app(gpu_id, portable)
+        if expert_collection:
+            from clothdojo.data.rollout import export_trajectory_dataset
+            result = export_trajectory_dataset(
+                root, output, _camera_factory=camera_factory, _rendering=rendering,
+                repo_id=repo_id, image_writer_threads=image_writer_threads,
+                shard_index=shard_index, shard_count=shard_count,
+                min_segment_frames=min_segment_frames,
+                whole_trajectory_good_only=whole_trajectory_good_only,
+            )
+            result.update(renderer="isaac_rtx", cloth_visual="normal")
+        else:
+            result = _export_canonical_collection(
+                root, output, camera_factory=camera_factory, rendering=rendering,
+                repo_id=repo_id, image_writer_threads=image_writer_threads,
+                shard_index=shard_index, shard_count=shard_count,
+            )
+        if _exit_process:
+            # The standalone CLI owns this process. The writer has joined its
+            # image workers, validated the dataset, and atomically published it
+            # before returning; Isaac 5.0's native teardown can still hang.
+            sidecar = Path(output).expanduser().resolve() / "meta/clothdojo.json"
+            if json.loads(sidecar.read_text()).get("export_status") != "complete":
+                raise RuntimeError("Isaac batch export returned without a completed publication")
+            print(json.dumps(result, indent=2, sort_keys=True), flush=True)
+    except BaseException:
+        # Kit may terminate during shutdown before Python's top-level exception
+        # hook runs, so preserve the actual export failure first.
+        traceback.print_exc()
+        if _exit_process:
+            # Kit's fast shutdown can replace Python failures with exit 0.
+            sys.stdout.flush()
+            sys.stderr.flush()
+            os._exit(1)
+        raise
+    finally:
+        if not _exit_process and app is not None and not app.is_exiting():
+            app.close(wait_for_replicator=False)
+    if _exit_process:
+        sys.stdout.flush()
+        sys.stderr.flush()
+        os._exit(0)
+    return result
+
+
 class IsaacRandomizedCamera:
     """Project recorded Newton state into Isaac Fabric and RTX."""
 
@@ -315,8 +568,6 @@ class IsaacRandomizedCamera:
         use_recorded_body_q: bool = False,
         visual_profile: str | None = None,
         world_count: int = 1,
-        simulation_spec=None,
-        surface_winding_reversed: bool = False,
     ) -> None:
         import omni.usd
         from pxr import Usd
@@ -376,18 +627,8 @@ class IsaacRandomizedCamera:
             plan,
             cloth_visual="normal",
             robot_profile=robot_profile,
-            spec=simulation_spec,
         )
         source_stage = Usd.Stage.Open(str(stage_path))
-        if surface_winding_reversed:
-            from pxr import UsdGeom, Vt
-
-            cloth = UsdGeom.Mesh(source_stage.GetPrimAtPath("/World/Cloth"))
-            faces = np.asarray(cloth.GetFaceVertexIndicesAttr().Get(), dtype=np.int32).reshape(-1, 3)
-            cloth.GetFaceVertexIndicesAttr().Set(Vt.IntArray.FromNumpy(faces[:, ::-1].copy().reshape(-1)))
-            st = UsdGeom.PrimvarsAPI(cloth).GetPrimvar("st")
-            uv = np.asarray(st.Get(), dtype=np.float32).reshape(-1, 3, 2)
-            st.Set(Vt.Vec2fArray.FromNumpy(uv[:, ::-1].copy().reshape(-1, 2)))
         paths = _author_cameras(
             source_stage, robot_profile.body_names,
             _newton_projection_cameras(self._cameras, render_resolution),
@@ -1232,7 +1473,7 @@ def _start_isaac_app(gpu_id: int, portable: Path):
     if not extension_cache.is_dir():
         raise RuntimeError(
             "Isaac RTX export requires the local Isaac Sim extension cache; "
-            "install the Isaac environment as shown in README.md"
+            "run scripts/setup-environment.sh"
         )
     cpu_threads = int(os.environ.get("CLOTHDOJO_ISAAC_CPU_THREADS", "4"))
     if cpu_threads < 2:

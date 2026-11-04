@@ -11,7 +11,7 @@ from pathlib import Path
 
 from clothdojo.assets.materials import MaterialAsset, MaterialCatalog
 
-SCENE_MATERIALS = Path(__file__).with_name("rendering") / "scene_materials.json"
+SCENE_MATERIALS = Path(__file__).resolve().parents[3] / "configs/rendering/scene_materials.json"
 
 
 @cache

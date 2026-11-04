@@ -1,0 +1,29 @@
+defaults:
+  - pi05_aloha_openpi_rlinf_mirrored_runtime_target_fullonly_wd001_40k
+  - _self_
+
+# 3856 pure generated episodes, 4754348 full-only H50 anchors.
+# ceil(3 * 4754348 / 256) = 55716 updates.
+cluster:
+  num_nodes: 2
+  component_placement:
+    actor: all
+runner:
+  max_steps: 55716
+  save_interval: 18572
+  logger:
+    experiment_name: pi05_rgb_fold_generated_b256_3epochs
+    logger_backends: [tensorboard]
+actor:
+  global_batch_size: 256
+  micro_batch_size: 16
+  fsdp_config:
+    enable_gradient_accumulation: false
+  model:
+    openpi_data:
+      default_prompt: Fold the shirt.
+  optim:
+    lr: 5.0e-5
+    min_lr: 5.0e-6
+    lr_warmup_steps: 500
+    total_training_steps: 44572

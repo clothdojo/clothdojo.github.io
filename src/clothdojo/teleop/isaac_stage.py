@@ -1,10 +1,57 @@
 from __future__ import annotations
 
-
 from pathlib import Path
 
-
 import numpy as np
+
+
+class XRAnchorRuntime:
+    _ANCHOR_PATH = "/XRAnchor"
+
+    def __init__(
+        self,
+        xr_core,
+        post_sync_event_type: int,
+        initial_view_pose,
+    ) -> None:
+        self._xr_core = xr_core
+        self._initial_view_pose = initial_view_pose
+        self._post_sync_rebind_armed = False
+        self._post_sync_subscription = xr_core.get_message_bus().create_subscription_to_pop_by_type(
+            post_sync_event_type,
+            self._on_post_sync,
+            name="Newton initial XR view",
+        )
+
+    def arm_initial_rebind(self) -> None:
+        """Apply the initial view after the next completed XR synchronization."""
+        self._post_sync_rebind_armed = True
+
+    def _on_post_sync(self, _event) -> None:
+        if not self._post_sync_rebind_armed:
+            return
+        self._post_sync_rebind_armed = False
+        self.rebind()
+        print("  [VR] initial XR view restored after connection", flush=True)
+
+    def rebind(self) -> None:
+        """Restore the identity stage anchor and deterministic initial view."""
+        self._xr_core.schedule_set_stage_anchor(self._ANCHOR_PATH)
+        self._xr_core.schedule_set_camera(self._initial_view_pose)
+
+    def update_flight(self, translation_delta, yaw_delta: float) -> None:
+        """Move the XR origin by one camera-relative input increment."""
+        self._xr_core.schedule_move_space_origin_relative_to_camera(
+            *[float(value) for value in translation_delta]
+        )
+        if float(yaw_delta) != 0.0:
+            self._xr_core.schedule_rotate_space_origin_relative_to_camera(
+                yaw=float(yaw_delta),
+                pitch=0.0,
+            )
+
+    def close(self) -> None:
+        self._post_sync_subscription.unsubscribe()
 
 
 def build_render_stage(
@@ -31,13 +78,12 @@ def build_replay_render_stage(
     *,
     robot_profile,
     cloth_visual: str = "normal",
-    spec=None,
 ) -> Path:
     """Author the same stage directly from a recorded trajectory state."""
     from clothdojo.sim.scene import ShirtFlattenSpec
 
     return _build_render_stage(
-        ShirtFlattenSpec() if spec is None else spec,
+        ShirtFlattenSpec(),
         initial_points,
         plan,
         cloth_visual=cloth_visual,
@@ -83,6 +129,11 @@ def _build_render_stage(
     _set_cube(table, spec.table_position, spec.table_half_extents)
     UsdShade.MaterialBindingAPI.Apply(table.GetPrim()).Bind(table_material)
 
+    from clothdojo.sim.scene import HangerDemoSpec
+
+    if isinstance(spec, HangerDemoSpec):
+        _author_hanger_rack(stage, spec)
+
     points = np.asarray(initial_points, dtype=np.float32)
     rest_vertices, triangles, panel_vertices, panel_indices = load_garment_mesh(plan.asset_path)
     indices = np.asarray(triangles, dtype=np.int32).reshape(-1)
@@ -123,6 +174,84 @@ def _build_render_stage(
     return output_path
 
 
+def _author_hanger_rack(stage, spec) -> None:
+    """Mirror the Newton rack collision geometry in the RTX render stage."""
+
+    from pxr import Gf, UsdGeom
+
+    from clothdojo.sim.scene import _hanger_segments
+
+    rack_material = _preview_material(stage, "/World/Looks/Rack", (0.12, 0.14, 0.17), 0.24)
+    hanger_materials = (
+        _preview_material(stage, "/World/Looks/HangerBlue", (0.08, 0.31, 0.62), 0.42),
+        _preview_material(stage, "/World/Looks/HangerWood", (0.55, 0.27, 0.10), 0.48),
+        _preview_material(stage, "/World/Looks/HangerRed", (0.58, 0.08, 0.09), 0.42),
+        _preview_material(stage, "/World/Looks/HangerGreen", (0.08, 0.42, 0.25), 0.42),
+    )
+    y0 = spec.rack_center_y - spec.rack_half_width
+    y1 = spec.rack_center_y + spec.rack_half_width
+    table_top = spec.table_position[2] + spec.table_half_extents[2]
+    _author_capsule_between(
+        stage,
+        "/World/HangerRack/LeftPost",
+        (spec.rack_x, y0, table_top),
+        (spec.rack_x, y0, spec.rack_rail_z),
+        0.018,
+        rack_material,
+    )
+    _author_capsule_between(
+        stage,
+        "/World/HangerRack/RightPost",
+        (spec.rack_x, y1, table_top),
+        (spec.rack_x, y1, spec.rack_rail_z),
+        0.018,
+        rack_material,
+    )
+    _author_capsule_between(
+        stage,
+        "/World/HangerRack/Rail",
+        (spec.rack_x, y0, spec.rack_rail_z),
+        (spec.rack_x, y1, spec.rack_rail_z),
+        spec.rack_radius,
+        rack_material,
+    )
+    for index, y in enumerate(spec.hanger_slots):
+        material = hanger_materials[index % len(hanger_materials)]
+        base = f"/World/RigidObjects/hanger_{index}"
+        root = UsdGeom.Xform.Define(stage, base)
+        root.AddTranslateOp().Set(
+            Gf.Vec3d(spec.rack_x - 0.026, y, spec.rack_rail_z - 0.080)
+        )
+        for segment_index, (start, end) in enumerate(_hanger_segments()):
+            _author_capsule_between(
+                stage,
+                f"{base}/Segment_{segment_index:02d}",
+                start,
+                end,
+                0.012 if segment_index < 3 else 0.0045,
+                material,
+            )
+
+
+def _author_capsule_between(stage, path, start, end, radius, material) -> None:
+    from pxr import Gf, UsdGeom, UsdShade
+
+    start_v = Gf.Vec3d(*[float(value) for value in start])
+    end_v = Gf.Vec3d(*[float(value) for value in end])
+    delta = end_v - start_v
+    length = delta.GetLength()
+    capsule = UsdGeom.Capsule.Define(stage, path)
+    capsule.CreateAxisAttr(UsdGeom.Tokens.z)
+    capsule.CreateRadiusAttr(float(radius))
+    capsule.CreateHeightAttr(float(length))
+    xform = UsdGeom.Xformable(capsule)
+    xform.AddTranslateOp().Set((start_v + end_v) * 0.5)
+    xform.AddOrientOp(UsdGeom.XformOp.PrecisionDouble).Set(
+        Gf.Rotation(Gf.Vec3d(0.0, 0.0, 1.0), delta).GetQuat()
+    )
+    UsdShade.MaterialBindingAPI.Apply(capsule.GetPrim()).Bind(material)
+
+
 def _author_robot(stage, assets_root: Path, robot_profile) -> tuple[str, ...]:
     robot_root = stage.DefinePrim("/World/Robot", "Xform")
     robot_asset = str((assets_root / robot_profile.asset).resolve())
@@ -131,6 +260,297 @@ def _author_robot(stage, assets_root: Path, robot_profile) -> tuple[str, ...]:
     if physics and "none" in physics.GetVariantNames():
         physics.SetVariantSelection("none")
     return (robot_root.GetPath().pathString,)
+
+
+def _author_single_arm_mjcf_visuals(
+    stage, mjcf_path: Path, robot_root, *, material_prefix: str
+) -> None:
+    """Author one pinned Menagerie arm while keeping project-owned installation."""
+
+    import mujoco
+    from pxr import UsdGeom
+
+    if not mjcf_path.is_file():
+        raise FileNotFoundError(f"missing Menagerie robot asset: {mjcf_path}")
+    model = mujoco.MjModel.from_xml_path(str(mjcf_path))
+    body_paths: dict[int, str] = {}
+    for body_id in range(1, model.nbody):
+        name = mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_BODY, body_id)
+        if not name or "/" in name:
+            raise RuntimeError(f"single-arm MJCF body name is invalid: {name!r}")
+        parent_id = int(model.body_parentid[body_id])
+        parent_path = (
+            robot_root.GetPath().pathString
+            if parent_id == 0
+            else body_paths[parent_id]
+        )
+        path = f"{parent_path}/{name}"
+        body = UsdGeom.Xform.Define(stage, path)
+        _set_mujoco_pose(body, model.body_pos[body_id], model.body_quat[body_id])
+        body_paths[body_id] = path
+
+    materials = {}
+    for material_id in range(model.nmat):
+        name = mujoco.mj_id2name(
+            model, mujoco.mjtObj.mjOBJ_MATERIAL, material_id
+        ) or f"material_{material_id}"
+        rgba = model.mat_rgba[material_id]
+        materials[material_id] = _preview_material(
+            stage,
+            f"/World/Looks/{material_prefix}_{name}",
+            _display_to_linear(tuple(float(value) for value in rgba[:3])),
+            0.35,
+        )
+    fallback = _preview_material(
+        stage,
+        f"/World/Looks/{material_prefix}_default",
+        _display_to_linear((0.6, 0.6, 0.6)),
+        0.35,
+    )
+    for geom_id in range(model.ngeom):
+        if int(model.geom_group[geom_id]) != 2:
+            continue
+        if int(model.geom_type[geom_id]) != int(mujoco.mjtGeom.mjGEOM_MESH):
+            raise RuntimeError("Menagerie visual geometry must be a mesh")
+        material_id = int(model.geom_matid[geom_id])
+        _author_mujoco_mesh(
+            stage,
+            model,
+            geom_id,
+            f"{body_paths[int(model.geom_bodyid[geom_id])]}/visual_{geom_id}",
+            materials.get(material_id, fallback),
+        )
+
+
+def _author_aloha2_mjcf_visuals(stage, mjcf_path: Path, robot_root) -> None:
+    """Author the pinned Menagerie meshes without importing its workbench."""
+
+    import mujoco
+    from pxr import UsdGeom
+
+    if not mjcf_path.is_file():
+        raise FileNotFoundError(f"missing ALOHA 2 Menagerie asset: {mjcf_path}")
+    model = mujoco.MjModel.from_xml_path(str(mjcf_path))
+    if model.nbody != 21 or model.nq != 16:
+        raise RuntimeError(
+            "pinned ALOHA 2 MJCF topology changed: expected 20 bodies and 16 coordinates"
+        )
+
+    aloha_root = UsdGeom.Xform.Define(stage, f"{robot_root.GetPath()}/aloha")
+    side_roots = {
+        side: UsdGeom.Xform.Define(stage, f"{aloha_root.GetPath()}/{side}")
+        for side in ("left", "right")
+    }
+    # Menagerie authors the plastic as display-space 0.15 gray. PreviewSurface
+    # consumes linear color, so use the corresponding linear value instead of
+    # making the robot appear middle gray under RTX color management.
+    official_black_linear = (0.01960665,) * 3
+    material = _preview_material(
+        stage, "/World/Looks/Aloha2Black", official_black_linear, 0.35
+    )
+    body_paths: dict[int, str] = {}
+    for body_id in range(1, model.nbody):
+        name = mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_BODY, body_id)
+        if not name or "/" not in name:
+            raise RuntimeError(f"ALOHA 2 MJCF body has no side-qualified name: {name!r}")
+        side, body_name = name.split("/", 1)
+        parent_id = int(model.body_parentid[body_id])
+        parent_path = (
+            side_roots[side].GetPath().pathString
+            if parent_id == 0
+            else body_paths[parent_id]
+        )
+        path = f"{parent_path}/{body_name}"
+        body = UsdGeom.Xform.Define(stage, path)
+        _set_mujoco_pose(
+            body,
+            model.body_pos[body_id],
+            model.body_quat[body_id],
+        )
+        body_paths[body_id] = path
+
+    for geom_id in range(model.ngeom):
+        if int(model.geom_group[geom_id]) != 2:
+            continue
+        if int(model.geom_type[geom_id]) != int(mujoco.mjtGeom.mjGEOM_MESH):
+            raise RuntimeError("ALOHA 2 visual geometry must be a mesh")
+        body_path = body_paths[int(model.geom_bodyid[geom_id])]
+        _author_mujoco_mesh(
+            stage,
+            model,
+            geom_id,
+            f"{body_path}/visual_{geom_id}",
+            material,
+        )
+
+
+def _author_aloha2_installation_visuals(stage, mjcf_path: Path, robot_root) -> None:
+    """Author the pinned official frame on ClothDojo's existing workbench."""
+
+    import mujoco
+    from pxr import UsdGeom
+
+    if not mjcf_path.is_file():
+        raise FileNotFoundError(f"missing ALOHA 2 installation asset: {mjcf_path}")
+    model = mujoco.MjModel.from_xml_path(str(mjcf_path))
+    if model.nbody != 1 or model.ngeom != 31:
+        raise RuntimeError("pinned ALOHA 2 installation must contain 31 world meshes")
+
+    frame_root = UsdGeom.Xform.Define(stage, f"{robot_root.GetPath()}/frame")
+    black = _preview_material(
+        stage, "/World/Looks/Aloha2FrameBlack", _display_to_linear((0.15,) * 3), 0.42
+    )
+    metal = _preview_material(
+        stage,
+        "/World/Looks/Aloha2FrameMetal",
+        _display_to_linear((0.517, 0.529, 0.537)),
+        0.28,
+    )
+    for geom_id in range(model.ngeom):
+        if int(model.geom_group[geom_id]) != 1:
+            raise RuntimeError("ALOHA installation geometry must use visual group 1")
+        if int(model.geom_type[geom_id]) != int(mujoco.mjtGeom.mjGEOM_MESH):
+            raise RuntimeError("ALOHA installation geometry must be a mesh")
+        material_id = int(model.geom_matid[geom_id])
+        material_name = (
+            mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_MATERIAL, material_id)
+            if material_id >= 0
+            else None
+        )
+        _author_mujoco_mesh(
+            stage,
+            model,
+            geom_id,
+            f"{frame_root.GetPath()}/visual_{geom_id}",
+            metal if material_name == "metal" else black,
+        )
+
+
+def _author_mujoco_mesh(stage, model, geom_id: int, path: str, material) -> None:
+    import mujoco
+    from pxr import UsdGeom, UsdShade, Vt
+
+    mesh_id = int(model.geom_dataid[geom_id])
+    vertex_start = int(model.mesh_vertadr[mesh_id])
+    vertex_count = int(model.mesh_vertnum[mesh_id])
+    face_start = int(model.mesh_faceadr[mesh_id])
+    face_count = int(model.mesh_facenum[mesh_id])
+    points = np.asarray(
+        model.mesh_vert[vertex_start : vertex_start + vertex_count],
+        dtype=np.float32,
+    )
+    faces = np.asarray(
+        model.mesh_face[face_start : face_start + face_count], dtype=np.int32
+    )
+    normal_start = int(model.mesh_normaladr[mesh_id])
+    normal_count = int(model.mesh_normalnum[mesh_id])
+    normals = np.asarray(
+        model.mesh_normal[normal_start : normal_start + normal_count],
+        dtype=np.float32,
+    )
+    face_normals = np.asarray(
+        model.mesh_facenormal[face_start : face_start + face_count], dtype=np.int32
+    )
+    mesh_name = mujoco.mj_id2name(
+        model, mujoco.mjtObj.mjOBJ_MESH, mesh_id
+    ) or f"mesh_{mesh_id}"
+    mesh = UsdGeom.Mesh.Define(stage, f"{path}_{mesh_name}")
+    mesh.CreatePointsAttr(Vt.Vec3fArray.FromNumpy(points))
+    mesh.CreateFaceVertexCountsAttr(Vt.IntArray([3] * face_count))
+    mesh.CreateFaceVertexIndicesAttr(Vt.IntArray.FromNumpy(faces.reshape(-1)))
+    mesh.CreateNormalsAttr(
+        Vt.Vec3fArray.FromNumpy(normals[face_normals].reshape(-1, 3))
+    )
+    mesh.SetNormalsInterpolation(UsdGeom.Tokens.faceVarying)
+    mesh.CreateSubdivisionSchemeAttr(UsdGeom.Tokens.none)
+    _set_mujoco_pose(mesh, model.geom_pos[geom_id], model.geom_quat[geom_id])
+    UsdShade.MaterialBindingAPI.Apply(mesh.GetPrim()).Bind(material)
+
+
+def _display_to_linear(color: tuple[float, float, float]) -> tuple[float, float, float]:
+    return tuple(
+        value / 12.92 if value <= 0.04045 else ((value + 0.055) / 1.055) ** 2.4
+        for value in color
+    )
+
+
+def _set_mujoco_pose(xformable, position, quaternion_wxyz) -> None:
+    from pxr import Gf, UsdGeom
+
+    quaternion = np.asarray(quaternion_wxyz, dtype=np.float64)
+    matrix = Gf.Matrix4d(1.0)
+    matrix.SetRotateOnly(
+        Gf.Quatd(float(quaternion[0]), Gf.Vec3d(*quaternion[1:4]))
+    )
+    matrix.SetTranslateOnly(
+        Gf.Vec3d(*(float(value) for value in position))
+    )
+    UsdGeom.Xformable(xformable).AddTransformOp().Set(matrix)
+
+
+def configure_xr(
+    app,
+    stage,
+    initial_view_position,
+    initial_view_target,
+) -> XRAnchorRuntime:
+    import carb
+    from omni.kit.xr.core import XRCore, XRCoreEventType
+    from pxr import Gf, Usd, UsdGeom
+
+    settings = carb.settings.get_settings()
+    settings.set_string("/persistent/xr/profile/vr/system/display", "OpenXR")
+    settings.set_string("/xr/profile/vr/tools/layout", "")
+    settings.set_string("/xr/profile/vr/gui/layers", "")
+    settings.set_bool("/xr/profile/vr/enableNavigationControls", False)
+    settings.set_bool("/xr/profile/vr/controllers/visible", False)
+    settings.set_bool("/xr/profile/vr/tooltips/visible", False)
+    settings.set_string("/xr/profile/vr/renderQuality", "performance")
+    settings.set_float("/xr/profile/vr/renderScale", 0.5)
+    settings.set_bool("/rtx/post/dlss/enabled", False)
+    settings.set_int("/rtx/post/dlss/execMode", 0)
+    settings.set_int("/rtx/post/aa/op", 3)
+    settings.set_bool("/rtx/reflections/enabled", False)
+    settings.set_bool("/rtx/ambientOcclusion/enabled", False)
+    settings.set_int("/rtx/directLighting/sampledLighting/autoNumberOfRays", 1)
+    settings.set_int("/rtx/directLighting/samplesPerPixel", 1)
+    settings.set_bool("/rtx/indirectDiffuse/enabled", False)
+    settings.set_bool("/rtx/translucency/enabled", False)
+    settings.set_bool("/rtx/raytracing/fractionalCutoutOpacity", False)
+    settings.set_bool("/rtx/post/motionBlur/enabled", False)
+    settings.set_bool("/rtx/post/dof/enabled", False)
+    settings.set_bool("/app/runLoops/main/rateLimitEnabled", False)
+
+    xr = XRCore.get_singleton()
+    settings.set_float(
+        "/persistent/simulation/defaultMetersPerUnit",
+        UsdGeom.GetStageMetersPerUnit(stage),
+    )
+    UsdGeom.Xform.Define(stage, XRAnchorRuntime._ANCHOR_PATH)
+    usd_view_pose = (
+        Gf.Matrix4d()
+        .SetLookAt(
+            Gf.Vec3d(*[float(value) for value in initial_view_position]),
+            Gf.Vec3d(*[float(value) for value in initial_view_target]),
+            Gf.Vec3d(0.0, 0.0, 1.0),
+        )
+        .GetInverse()
+    )
+    with Usd.EditContext(stage, Usd.EditTarget(stage.GetSessionLayer())):
+        initial_view = UsdGeom.Xform.Define(stage, "/_xr/initialView")
+        initial_view.AddTransformOp().Set(usd_view_pose)
+    settings.set_bool("/xr/profile/vr/enabled", True)
+    for _ in range(30):
+        app.update()
+    if xr.is_xr_enabled():
+        anchor_runtime = XRAnchorRuntime(
+            xr,
+            XRCoreEventType.post_sync_update,
+            xr.get_world_transform_matrix(initial_view.GetPrim()),
+        )
+    else:
+        raise RuntimeError("OpenXR did not become active; check the active runtime and headset")
+    return anchor_runtime
 
 
 def _set_cube(cube, position, half_extents) -> None:
@@ -291,4 +711,3 @@ def _nocs_material(stage, path):
     )
     material.CreateSurfaceOutput().ConnectToSource(shader.ConnectableAPI(), "surface")
     return material
-

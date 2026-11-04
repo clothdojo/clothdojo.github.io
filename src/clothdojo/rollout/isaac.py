@@ -60,13 +60,12 @@ class IsaacCameraObservation:
     """Batched world-local observations; rendering never advances Newton physics."""
 
     def __init__(self, app, runtime, *, asset_path: Path, assets_root: Path,
-                 visual_assets: Path, visual_profile: str | None,
-                 visual_profiles: tuple[str, ...] | None = None,
+                 visual_profile: str | None, visual_profiles: tuple[str, ...] | None = None,
                  visual_seed: int) -> None:
         from clothdojo.assets.scene_materials import require_scene_materials
         from clothdojo.assets.visual_benchmark import require_background_assets, visual_pool
 
-        visual_assets = visual_assets.expanduser().resolve()
+        visual_assets = Path("data/visual-assets").resolve()
         profiles = visual_profiles or (visual_profile,)
         for profile_name in profiles:
             require_background_assets(visual_assets, profile_name)

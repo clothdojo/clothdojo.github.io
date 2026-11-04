@@ -81,8 +81,8 @@ class NewtonBatchEnvironment:
             dtype=np.float32,
         )
         profile = scene.robot_profile
-        self._gripper_open_positions = (profile.gripper_open_positions[0],) * 2
-        self._gripper_closed_positions = (profile.gripper_closed_positions[0],) * 2
+        self._gripper_open_positions = profile.gripper_open_positions
+        self._gripper_closed_positions = profile.gripper_closed_positions
         self._arm_device = wp.empty((self.world_count, 12), dtype=wp.float32, device=model.device)
         self._gripper_device = wp.empty(
             (self.world_count, 2), dtype=wp.float32, device=model.device
@@ -211,7 +211,6 @@ class NewtonTrajectoryEpisode(NewtonBatchEnvironment):
                     "training_eligible": bool(training_eligible),
                     "action_semantics": RUNTIME_ACTION_SEMANTICS,
                     **extra,
-                    "asset_id": garment_id,
                 }
                 writer_type = (
                     RenderOnlyTrajectoryWriter

@@ -6,12 +6,109 @@ import gc
 
 import numpy as np
 import warp as wp
+from newton._src.solvers.vbd.rigid_vbd_kernels import evaluate_body_particle_contact
+from newton import JointType
 
 from clothdojo.sim.grasp import ParticleGrasp
-from clothdojo.sim.scene import ShirtFlattenScene
+from clothdojo.sim.scene import HangerDemoSpec, ShirtFlattenScene
 
 _CLOTH_BVH_REBUILD_CONTROL_STEPS = 2
 _CUDA_GRAPH_CONDITIONAL_MIN_DRIVER = (12, 4)
+
+
+@wp.kernel
+def _accumulate_style3d_body_reaction(
+    dt: float,
+    particle_q_prev: wp.array(dtype=wp.vec3),
+    particle_q: wp.array(dtype=wp.vec3),
+    particle_radius: wp.array(dtype=float),
+    contact_particle: wp.array(dtype=int),
+    contact_count: wp.array(dtype=int),
+    contact_capacity: int,
+    friction_mu: float,
+    friction_epsilon: float,
+    shape_material_mu: wp.array(dtype=float),
+    shape_body: wp.array(dtype=int),
+    body_q: wp.array(dtype=wp.transform),
+    body_q_prev: wp.array(dtype=wp.transform),
+    body_qd: wp.array(dtype=wp.spatial_vector),
+    body_com: wp.array(dtype=wp.vec3),
+    contact_shape: wp.array(dtype=int),
+    contact_body_pos: wp.array(dtype=wp.vec3),
+    contact_body_vel: wp.array(dtype=wp.vec3),
+    contact_normal: wp.array(dtype=wp.vec3),
+    shape_margin: wp.array(dtype=float),
+    reaction_force: wp.array(dtype=wp.vec3),
+    reaction_torque: wp.array(dtype=wp.vec3),
+    contact_ke: float,
+    contact_kd: float,
+):
+    contact = wp.tid()
+    if contact >= wp.min(contact_count[0], contact_capacity):
+        return
+    body = shape_body[contact_shape[contact]]
+    if body < 0:
+        return
+    particle = contact_particle[contact]
+    particle_force, _ = evaluate_body_particle_contact(
+        particle,
+        particle_q[particle],
+        particle_q_prev[particle],
+        contact,
+        contact_ke,
+        contact_kd,
+        friction_mu,
+        friction_epsilon,
+        particle_radius,
+        shape_material_mu,
+        shape_body,
+        body_q,
+        body_q_prev,
+        body_qd,
+        body_com,
+        contact_shape,
+        contact_body_pos,
+        contact_body_vel,
+        contact_normal,
+        shape_margin,
+        dt,
+    )
+    force = -particle_force
+    wp.atomic_add(reaction_force, body, force)
+    # The rigid solver consumes a COM wrench. Transporting the contact force
+    # there without its torque would hide every off-center cloth load and pin
+    # the rotation DOFs, so the held garment can never hang level.
+    contact_point = wp.transform_point(body_q[body], contact_body_pos[contact])
+    com_world = wp.transform_point(body_q[body], body_com[body])
+    wp.atomic_add(reaction_torque, body, wp.cross(contact_point - com_world, force))
+
+
+@wp.kernel
+def _relax_body_reaction(
+    force_alpha: float,
+    torque_alpha: float,
+    raw_force: wp.array(dtype=wp.vec3),
+    raw_torque: wp.array(dtype=wp.vec3),
+    relaxed_force: wp.array(dtype=wp.vec3),
+    relaxed_torque: wp.array(dtype=wp.vec3),
+):
+    body = wp.tid()
+    relaxed_force[body] = relaxed_force[body] + force_alpha * (
+        raw_force[body] - relaxed_force[body]
+    )
+    relaxed_torque[body] = relaxed_torque[body] + torque_alpha * (
+        raw_torque[body] - relaxed_torque[body]
+    )
+
+
+@wp.kernel
+def _apply_body_reaction(
+    reaction_force: wp.array(dtype=wp.vec3),
+    reaction_torque: wp.array(dtype=wp.vec3),
+    body_f: wp.array(dtype=wp.spatial_vector),
+):
+    body = wp.tid()
+    body_f[body] += wp.spatial_vector(reaction_force[body], reaction_torque[body])
 
 
 @wp.kernel
@@ -106,6 +203,292 @@ def _damp_particles(
 ):
     particle = wp.tid()
     particle_qd[particle] = particle_qd[particle] * retention
+
+
+@wp.kernel
+def _enforce_rigid_hanger_grasp(
+    dt: float,
+    gripper_open: wp.array2d(dtype=float),
+    end_effectors: wp.array2d(dtype=int),
+    hanger_bodies: wp.array2d(dtype=int),
+    attach_frames: wp.array(dtype=wp.transform),
+    attached_bodies: wp.array2d(dtype=int),
+    relative_poses: wp.array2d(dtype=wp.transform),
+    body_q: wp.array(dtype=wp.transform),
+    body_com: wp.array(dtype=wp.vec3),
+    free_qd_start: wp.array(dtype=int),
+    joint_qd: wp.array(dtype=float),
+):
+    world, side = wp.tid()
+    if gripper_open[world, side] > 0.65:
+        held = attached_bodies[world, side]
+        if held >= 0:
+            # The held twist is a grasp-servo command, not measured physical
+            # momentum.  Do not leak its last value into the released body.
+            qd_start = free_qd_start[held]
+            for dof in range(6):
+                joint_qd[qd_start + dof] = 0.0
+        attached_bodies[world, side] = -1
+        return
+
+    end_effector_pose = wp.transform_multiply(
+        body_q[end_effectors[world, side]], attach_frames[side]
+    )
+    held = attached_bodies[world, side]
+    if held < 0 and gripper_open[world, side] < 0.25:
+        nearest = int(-1)  # noqa: UP018, RUF046 -- Warp requires explicit local types.
+        nearest_distance = float(0.075)  # noqa: UP018 -- Warp requires explicit local types.
+        for slot in range(hanger_bodies.shape[1]):
+            candidate = hanger_bodies[world, slot]
+            distance = wp.length(
+                wp.transform_get_translation(body_q[candidate])
+                - wp.transform_get_translation(end_effector_pose)
+            )
+            if distance < nearest_distance:
+                nearest = candidate
+                nearest_distance = distance
+        if nearest >= 0:
+            held = nearest
+            attached_bodies[world, side] = held
+            relative_poses[world, side] = wp.transform_multiply(
+                wp.transform_inverse(end_effector_pose), body_q[held]
+            )
+
+    if held >= 0:
+        target_pose = wp.transform_multiply(
+            end_effector_pose, relative_poses[world, side]
+        )
+        current_pose = body_q[held]
+        current_position = wp.transform_get_translation(current_pose)
+        delta = wp.transform_get_translation(target_pose) - current_position
+        distance = wp.length(delta)
+        if distance > 0.004:
+            delta = delta * (0.004 / distance)
+        current_rotation = wp.transform_get_rotation(current_pose)
+        target_rotation = wp.transform_get_rotation(target_pose)
+        rotation_delta = wp.normalize(target_rotation * wp.quat_inverse(current_rotation))
+        axis, angle = wp.quat_to_axis_angle(rotation_delta)
+        if angle > wp.pi:
+            angle = angle - 2.0 * wp.pi
+        angle = wp.clamp(angle, -0.035, 0.035)
+        # Drive the held body through its MuJoCo-consumed joint velocity
+        # instead of State.body_qd, which SolverMuJoCo never reads: the free
+        # joint's dofs hold the child-COM linear velocity and the angular
+        # velocity, both in the world frame for these world-rooted bodies.
+        # The bounded twist keeps the motion continuous so gripper/rack
+        # contacts still resolve before penetration grows.
+        angular_velocity = axis * (angle / dt)
+        origin_velocity = delta / dt
+        com_world = wp.transform_point(current_pose, body_com[held])
+        com_velocity = origin_velocity + wp.cross(angular_velocity, com_world - current_position)
+        qd_start = free_qd_start[held]
+        joint_qd[qd_start + 0] = com_velocity[0]
+        joint_qd[qd_start + 1] = com_velocity[1]
+        joint_qd[qd_start + 2] = com_velocity[2]
+        joint_qd[qd_start + 3] = angular_velocity[0]
+        joint_qd[qd_start + 4] = angular_velocity[1]
+        joint_qd[qd_start + 5] = angular_velocity[2]
+
+
+class _RigidHangerGrasp:
+    """Stable grasp assistance for thin dynamic hangers in teleoperation."""
+
+    def __init__(self, scene: ShirtFlattenScene) -> None:
+        model = scene.model
+        self.model = model
+        worlds = int(model.world_count)
+        body_world = np.asarray(model.body_world.numpy(), dtype=np.int32)
+        labels = [str(label) for label in model.body_label]
+        ee_labels = [labels[index] for index in scene.end_effector_body_indices]
+        end_effectors = np.empty((worlds, 2), dtype=np.int32)
+        hangers: list[list[int]] = []
+        for world in range(worlds):
+            world_indices = np.flatnonzero(body_world == world)
+            for side, label in enumerate(ee_labels):
+                matches = [index for index in world_indices if labels[index] == label]
+                if len(matches) != 1:
+                    raise RuntimeError(f"hanger grasp could not resolve {label!r} in world {world}")
+                end_effectors[world, side] = matches[0]
+            world_hangers = sorted(
+                (index for index in world_indices if labels[index].startswith("hanger_")),
+                key=lambda index: labels[index],
+            )
+            if not world_hangers:
+                raise RuntimeError("hanger demo has no dynamic hanger bodies")
+            hangers.append(world_hangers)
+        if len({len(indices) for indices in hangers}) != 1:
+            raise RuntimeError("hanger count differs between physics worlds")
+
+        self.world_count = worlds
+        self.device = model.device
+        self.end_effectors = wp.array(end_effectors, dtype=wp.int32, device=self.device)
+        self.hanger_bodies = wp.array(
+            np.asarray(hangers, dtype=np.int32), dtype=wp.int32, device=self.device
+        )
+        self.attach_frames = wp.array(
+            [
+                wp.transform(wp.vec3(*frame.position), wp.quat(*frame.rotation_xyzw))
+                for frame in scene.robot_profile.attach_frames
+            ],
+            dtype=wp.transform,
+            device=self.device,
+        )
+        self.attached_bodies = wp.full(
+            (worlds, 2), -1, dtype=wp.int32, device=self.device
+        )
+        self.relative_poses = wp.zeros(
+            (worlds, 2), dtype=wp.transform, device=self.device
+        )
+        # Free-joint velocity dofs per body: the servo command must land in
+        # State.joint_qd because that is what SolverMuJoCo copies into qvel.
+        free_qd_start = np.full(int(model.body_count), -1, dtype=np.int32)
+        joint_child = np.asarray(model.joint_child.numpy(), dtype=np.int32)
+        joint_types = np.asarray(model.joint_type.numpy(), dtype=np.int32)
+        joint_qd_start = np.asarray(model.joint_qd_start.numpy(), dtype=np.int32)
+        for joint, child in enumerate(joint_child):
+            if child >= 0 and int(joint_types[joint]) == int(JointType.FREE):
+                free_qd_start[child] = joint_qd_start[joint]
+        held_bodies = np.unique(np.asarray(hangers, dtype=np.int32))
+        if any(free_qd_start[held] < 0 for held in held_bodies):
+            raise RuntimeError("hanger bodies are not free joints")
+        self.free_qd_start = wp.array(free_qd_start, dtype=wp.int32, device=self.device)
+
+    def enforce(self, gripper_open, state, dt: float) -> None:
+        wp.launch(
+            _enforce_rigid_hanger_grasp,
+            dim=(self.world_count, 2),
+            inputs=[
+                dt,
+                gripper_open,
+                self.end_effectors,
+                self.hanger_bodies,
+                self.attach_frames,
+                self.attached_bodies,
+                self.relative_poses,
+                state.body_q,
+                self.model.body_com,
+                self.free_qd_start,
+                state.joint_qd,
+            ],
+            device=self.device,
+        )
+
+    def reset(self) -> None:
+        self.attached_bodies.fill_(-1)
+
+
+class _Style3DBodyReaction:
+    """Feed Style3D particle-contact reaction back to finite-mass rigid bodies.
+
+    The reaction is a full COM wrench (force plus torque about each body's
+    center of mass).  One physics substep of latency between cloth contact and
+    rigid integration is inherent to the partitioned scheme; the optional
+    per-substep relaxation factors low-pass that loop for light bodies whose
+    contact stiffness dominates their inertia.
+    """
+
+    def __init__(
+        self,
+        scene: ShirtFlattenScene,
+        contacts,
+        *,
+        force_relaxation: float = 1.0,
+        torque_relaxation: float = 1.0,
+    ) -> None:
+        if not 0.0 < force_relaxation <= 1.0 or not 0.0 < torque_relaxation <= 1.0:
+            raise ValueError("reaction relaxation factors must be in (0, 1]")
+        self.model = scene.model
+        self.contacts = contacts
+        self.spec = scene.spec
+        self.device = scene.model.device
+        self.force_relaxation = float(force_relaxation)
+        self.torque_relaxation = float(torque_relaxation)
+        self.body_q_prev = wp.zeros_like(scene.model.body_q)
+        self.reaction_force = wp.zeros(
+            scene.model.body_count,
+            dtype=wp.vec3,
+            device=self.device,
+        )
+        self.reaction_torque = wp.zeros(
+            scene.model.body_count,
+            dtype=wp.vec3,
+            device=self.device,
+        )
+        self.relaxed_force = wp.zeros(
+            scene.model.body_count,
+            dtype=wp.vec3,
+            device=self.device,
+        )
+        self.relaxed_torque = wp.zeros(
+            scene.model.body_count,
+            dtype=wp.vec3,
+            device=self.device,
+        )
+
+    def begin_rigid_step(self, state) -> None:
+        wp.copy(self.body_q_prev, state.body_q)
+
+    def apply(self, state) -> None:
+        wp.launch(
+            _apply_body_reaction,
+            dim=self.model.body_count,
+            inputs=[self.relaxed_force, self.relaxed_torque, state.body_f],
+            device=self.device,
+        )
+
+    def update(self, particle_q_prev, state, dt: float) -> None:
+        self.reaction_force.zero_()
+        self.reaction_torque.zero_()
+        wp.launch(
+            _accumulate_style3d_body_reaction,
+            dim=self.contacts.soft_contact_max,
+            inputs=[
+                dt,
+                particle_q_prev,
+                state.particle_q,
+                self.model.particle_radius,
+                self.contacts.soft_contact_particle,
+                self.contacts.soft_contact_count,
+                self.contacts.soft_contact_max,
+                self.spec.soft_contact_mu,
+                self.spec.cloth_body_friction_epsilon,
+                self.model.shape_material_mu,
+                self.model.shape_body,
+                state.body_q,
+                self.body_q_prev,
+                state.body_qd,
+                self.model.body_com,
+                self.contacts.soft_contact_shape,
+                self.contacts.soft_contact_body_pos,
+                self.contacts.soft_contact_body_vel,
+                self.contacts.soft_contact_normal,
+                self.model.shape_margin,
+                self.reaction_force,
+                self.reaction_torque,
+                self.spec.soft_contact_ke,
+                self.spec.soft_contact_kd,
+            ],
+            device=self.device,
+        )
+        wp.launch(
+            _relax_body_reaction,
+            dim=self.model.body_count,
+            inputs=[
+                self.force_relaxation,
+                self.torque_relaxation,
+                self.reaction_force,
+                self.reaction_torque,
+                self.relaxed_force,
+                self.relaxed_torque,
+            ],
+            device=self.device,
+        )
+
+    def reset(self) -> None:
+        self.reaction_force.zero_()
+        self.reaction_torque.zero_()
+        self.relaxed_force.zero_()
+        self.relaxed_torque.zero_()
 
 
 def _prune_static_soft_contact_pairs(model, collision_pipeline) -> None:
@@ -316,6 +699,14 @@ class ShirtFlattenRuntime:
             device=self.model.device,
         )
         self.grasp = ParticleGrasp(scene) if self.model.particle_count else None
+        self.rigid_hanger_grasp = (
+            _RigidHangerGrasp(scene) if isinstance(scene.spec, HangerDemoSpec) else None
+        )
+        self.style3d_body_reaction = (
+            _Style3DBodyReaction(scene, self.contacts)
+            if isinstance(scene.spec, HangerDemoSpec) and self.contacts is not None
+            else None
+        )
         self.reset()
         self._graph_arm_target = wp.empty(
             (self.model.world_count, self._arm_action_count),
@@ -450,6 +841,12 @@ class ShirtFlattenRuntime:
         self.apply_action(arm_target, gripper_open)
         sub_dt = self.control_dt / float(self.spec.sim_substeps)
         for _ in range(self.spec.sim_substeps):
+            body_reaction = getattr(self, "style3d_body_reaction", None)
+            if body_reaction is not None:
+                body_reaction.begin_rigid_step(self.state_0)
+            rigid_hanger_grasp = getattr(self, "rigid_hanger_grasp", None)
+            if rigid_hanger_grasp is not None:
+                rigid_hanger_grasp.enforce(self._canonical_gripper_open, self.state_0, sub_dt)
             self._step_rigid(sub_dt)
             self.state_0, self.state_1 = self.state_1, self.state_0
 
@@ -696,6 +1093,12 @@ class ShirtFlattenRuntime:
         self.apply_action(arm_target, gripper_open)
         sub_dt = self.control_dt / float(self.spec.sim_substeps)
         for _ in range(self.spec.sim_substeps):
+            body_reaction = getattr(self, "style3d_body_reaction", None)
+            if body_reaction is not None:
+                body_reaction.begin_rigid_step(self.state_0)
+            rigid_hanger_grasp = getattr(self, "rigid_hanger_grasp", None)
+            if rigid_hanger_grasp is not None:
+                rigid_hanger_grasp.enforce(self._canonical_gripper_open, self.state_0, sub_dt)
             self._step_rigid(sub_dt)
             self.grasp.update(self.state_0, self.state_1)
             self._step_cloth(sub_dt)
@@ -808,6 +1211,10 @@ class ShirtFlattenRuntime:
             )
             self.cloth.rebuild_bvh(self.state_0)
             self.grasp.reset(world_mask)
+        if self.rigid_hanger_grasp is not None:
+            self.rigid_hanger_grasp.reset()
+        if self.style3d_body_reaction is not None:
+            self.style3d_body_reaction.reset()
         self._control_steps_since_cloth_bvh_rebuild = 0
         articulation_mask = world_mask[: self.model.world_count]
         self.scene.arms.set_attribute(
@@ -964,6 +1371,9 @@ class ShirtFlattenRuntime:
     def _step_rigid(self, dt: float) -> None:
         self.state_0.clear_forces()
         self.state_1.clear_forces()
+        body_reaction = getattr(self, "style3d_body_reaction", None)
+        if body_reaction is not None:
+            body_reaction.apply(self.state_0)
         self.rigid_collision.collide(self.state_0, self.rigid_contacts)
         self.rigid.step(
             self.state_0,
@@ -995,6 +1405,9 @@ class ShirtFlattenRuntime:
             static_patch.enforce(self.state_0)
         self._collide_cloth_with_updated_rigid_state()
         self.cloth.step(self.state_0, self.state_1, None, self.contacts, dt)
+        body_reaction = getattr(self, "style3d_body_reaction", None)
+        if body_reaction is not None:
+            body_reaction.update(self.state_0.particle_q, self.state_1, dt)
         self.state_0, self.state_1 = self.state_1, self.state_0
         if static_patch is not None:
             static_patch.enforce(self.state_0)

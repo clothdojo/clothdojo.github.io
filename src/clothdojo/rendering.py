@@ -14,19 +14,6 @@ POLICY_RENDER_SIZE = (640, 480)
 POLICY_TRANSPORT_SIZE = (224, 224)
 
 
-def policy_observation_settings(*, cloth_visual: str) -> dict[str, object]:
-    """Describe the supported Newton policy observation contract."""
-    if cloth_visual not in ("nocs", "white"):
-        raise ValueError("cloth_visual must be 'nocs' or 'white'")
-    return {
-        "renderer": "newton-sensor-tiled-camera",
-        "camera_names": list(CAMERA_NAMES),
-        "render_width_height": list(POLICY_RENDER_SIZE),
-        "transport_width_height": list(POLICY_TRANSPORT_SIZE),
-        "cloth_visual": cloth_visual,
-    }
-
-
 @dataclass(frozen=True, slots=True)
 class CameraSpec:
     name: str
@@ -73,3 +60,47 @@ def _apply_authored_appearance(builder, stage) -> dict:
         "hidden_authored_proxy_shapes": hidden_proxies,
     }
 
+
+def policy_observation_settings(
+    *, cloth_visual: str, visual_profile: str | None = None,
+    visual_profiles: tuple[str, ...] | None = None, visual_seed: int = 0,
+) -> dict[str, object]:
+    """Describe the visual contract using the scene's explicit cloth appearance."""
+    if cloth_visual == "rgb":
+        from clothdojo.assets.visual_benchmark import VISUAL_PROFILES, visual_protocol_identity
+
+        if visual_profiles is not None:
+            if visual_profile is not None:
+                raise ValueError("use visual_profile or visual_profiles, not both")
+            if not visual_profiles or len(set(visual_profiles)) != len(visual_profiles):
+                raise ValueError("visual_profiles must be non-empty and unique")
+            if any(profile not in VISUAL_PROFILES for profile in visual_profiles):
+                raise ValueError("RGB observations contain an unknown visual profile")
+        elif visual_profile not in VISUAL_PROFILES:
+            raise ValueError("RGB observations require a visual_profile")
+        if type(visual_seed) is not int or visual_seed < 0:
+            raise ValueError("visual_seed must be a non-negative integer")
+        return {
+            "renderer": "isaac_rtx",
+            "camera_projection": "newton_compatible_v1",
+            "cloth_backface_scale": 0.25,
+            "camera_names": list(CAMERA_NAMES),
+            "render_width_height": list(POLICY_RENDER_SIZE),
+            "transport_width_height": list(POLICY_TRANSPORT_SIZE),
+            "cloth_visual": cloth_visual,
+            **({"visual_profiles": list(visual_profiles)} if visual_profiles is not None
+               else {"visual_profile": visual_profile}),
+            "visual_seed": visual_seed,
+            **visual_protocol_identity(),
+        }
+    if cloth_visual not in ("nocs", "white"):
+        raise ValueError("cloth_visual must be 'nocs', 'white' or 'rgb'")
+    if visual_profile is not None or visual_profiles is not None or visual_seed != 0:
+        raise ValueError("visual_profile(s)/visual_seed require RGB observations")
+    return {
+        "renderer": "newton-sensor-tiled-camera",
+        "camera_names": list(CAMERA_NAMES),
+        "render_width_height": list(POLICY_RENDER_SIZE),
+        "transport_width_height": list(POLICY_TRANSPORT_SIZE),
+        "cloth_visual": cloth_visual,
+    }

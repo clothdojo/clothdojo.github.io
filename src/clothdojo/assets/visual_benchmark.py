@@ -14,7 +14,7 @@ from clothdojo.assets.scene_materials import SCENE_MATERIALS, load_scene_materia
 VISUAL_PROFILES = (
     "train", "test_cloth", "test_background", "test_lighting", "test_all"
 )
-VISUAL_PROTOCOL = Path(__file__).with_name("rendering") / "benchmark.json"
+VISUAL_PROTOCOL = Path(__file__).resolve().parents[3] / "configs/rendering/benchmark.json"
 _COMPONENTS = ("cloth", "table", "ground", "lighting", "background")
 
 

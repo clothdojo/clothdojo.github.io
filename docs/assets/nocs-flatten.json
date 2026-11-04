@@ -1,0 +1,21 @@
+{
+  "source": "bash scripts/quickstart.sh flatten",
+  "trajectory_id": "rand_004NVCOKV7_000000",
+  "task_success_assessed": false,
+  "asset_revision": "fec94c9eae85a33c45a19859a0ea2d1b35da27d3",
+  "teacher_revision": "429e737efd492be6910f20efa58d095a4a7544d1",
+  "checkpoint_sha256": "b54e8fe54f025a9d3a7196b79be080ee3afc2ada8f2de4c57a7e5b3b5cd187b0",
+  "runtime_sha256": "1c8b2f0a45404dfae665fa21e85f6f3796291a0f75cf66dcca7fad1913d814e6",
+  "trajectory_manifest_sha256": "bdf4b02ca3991275909a3b31d5e063f017e0b3867e804d1c347ac290c5113fe0",
+  "source_video_sha256": "c6900fa0dce9b005e7b3eeb12653b83f0cc313ff2ce126821b090e7f9f35bd88",
+  "video_sha256": "fcb2bb81f57325769d5e995058af624ebd5482635119276678bfe090153a0502",
+  "preview_sha256": "8c3228bc40ed88444ed5e635053cc0906b5299df141e08e7a169e77a0aa24ecf",
+  "duration_seconds": 60,
+  "video_fps": 10,
+  "video_frames": 600,
+  "preview_speed": 4,
+  "preview_width": 360,
+  "action_count": 3000,
+  "state_count": 3001,
+  "storage_kind": "render_only_v1"
+}

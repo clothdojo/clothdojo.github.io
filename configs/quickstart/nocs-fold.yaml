@@ -1,0 +1,19 @@
+schema: clothdojo_benchmark_run
+condition_id: nocs-fold-generation-teacher
+output: outputs/evaluations/nocs-fold-teacher
+benchmark: configs/quickstart/nocs-fold-panel.yaml
+deployment: configs/quickstart/local.yaml
+policy:
+  kind: sft
+  checkpoint: models/nocs-teachers/fold/weights
+  norm_stats: models/nocs-teachers/fold/norm_stats
+  expected_checkpoint_sha256: 85f439da84ee971be6b0ea5e04fc6e7eec4dc563628e70089a6468173afcfbe3
+  num_steps: 10
+  image_preprocessing: none
+  rtc_prefix_schedule: exp
+execution:
+  mode: chunk
+  exec_horizon: 10
+  cloth_visual: nocs
+  image_preprocessing: none
+  batch_size: 1

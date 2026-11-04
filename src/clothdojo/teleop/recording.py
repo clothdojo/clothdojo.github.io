@@ -8,12 +8,13 @@ import os
 import shutil
 import uuid
 from collections.abc import Mapping
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from queue import Full, Queue
 from threading import Event, Thread
 
+from clothdojo.teleop.session import SessionPlan
 from clothdojo.trajectory import (
     RUNTIME_ACTION_SEMANTICS,
     SceneMetadata,
@@ -22,24 +23,6 @@ from clothdojo.trajectory import (
     TrajectoryWriter,
 )
 from clothdojo.trajectory.newton import capture_canonical_actions, capture_states
-
-
-@dataclass(frozen=True, slots=True)
-class RecordingConfig:
-    session_id: str
-    scene: str
-    asset_id: str
-    asset_path: Path
-    assets_root: Path
-    output_root: Path
-    max_actions: int
-    mode: str = "collection"
-
-    def __post_init__(self):
-        if self.scene not in {"shirt_flatten", "shirt_fold"}:
-            raise ValueError("unsupported recording task")
-        if self.mode not in {"collection", "intervention"} or self.max_actions < 1:
-            raise ValueError("invalid recording mode or duration")
 
 
 @dataclass(frozen=True, slots=True)
@@ -155,7 +138,7 @@ class _TrajectoryWriterWorker:
 class TeleopRecorder:
     """Record simulation frames while keeping filesystem work off the XR loop."""
 
-    def __init__(self, runtime, plan: RecordingConfig) -> None:
+    def __init__(self, runtime, plan: SessionPlan) -> None:
         self.runtime = runtime
         self.plan = plan
         self._worker: _TrajectoryWriterWorker | None = None
@@ -218,11 +201,11 @@ class TeleopRecorder:
         stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
         episode_id = f"teleop_{stamp}_{uuid.uuid4().hex[:8]}"
         output = self.plan.output_root / episode_id
-        robot = self.plan.assets_root / self.runtime.scene.robot_profile.asset
+        robot = self.plan.assets_root / "robots/piper/piper.usda"
         metadata: dict[str, object] = {
             "producer": "clothdojo_isaac_teleop",
             "session_id": self.plan.session_id,
-            "simulation_spec": asdict(self.runtime.spec),
+            "profile_id": self.plan.profile_id,
             "asset_id": self.plan.asset_id,
             "mode": self.plan.mode,
             "training_eligible": self.plan.mode == "collection",

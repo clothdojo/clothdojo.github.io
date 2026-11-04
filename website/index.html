@@ -45,13 +45,14 @@
 <p class="story-announcement" role="status" aria-live="polite"></p>
 </section>
 <section class="code-section" id="use" aria-labelledby="story-use-title"><div class="code-card">
-<header class="story-card-heading"><h2 id="story-use-title">Start with the code preview.</h2></header>
+<header class="story-card-heading"><h2 id="story-use-title">Start with ClothDojo.</h2></header>
 <div class="story-card-body"><div class="section-heading"></div>
-<div class="quickstart"><div><h3>CPU quickstart</h3><p>Score a saved cloth state.</p></div><div class="code-panel"><div class="code-heading"><span>Python 3.11 · uv</span><button type="button" id="copy-commands">Copy</button></div><pre><code id="commands">git clone --depth 1 https://github.com/clothdojo/clothdojo.github.io.git
-cd clothdojo.github.io
-uv sync --frozen
-uv run --frozen python scripts/score_fold.py</code></pre><span id="copy-status" role="status"></span></div></div>
-<div class="usage-links"><a href="https://github.com/clothdojo/clothdojo.github.io#3-policy-evaluation"><span>01</span><h3>Evaluate a policy ↗</h3><p>Connect a policy server and evaluate against fixed initial states.</p></a><a href="https://github.com/clothdojo/clothdojo.github.io#4-data-generation"><span>02</span><h3>Generate & render ↗</h3><p>Collect trajectories and export RGB training episodes.</p></a><a href="https://github.com/clothdojo/clothdojo.github.io#6-rgb-policy-training"><span>03</span><h3>Train an RGB policy ↗</h3><p>Inspect datasets and train with task-matched model bundles.</p></a></div><details class="explanation"><summary>Requirements &amp; expected output</summary><div class="explanation-body"><p>The code preview includes a CPU scoring example, one garment, and four initial states per task. Full model bundles, datasets and visual assets are forthcoming.</p><p>This example runs on CPU, with no simulator or model checkpoint. It checks a single saved state, not a complete rollout.</p><p class="expected">Expected output: <code>frame_passes_threshold: true</code></p><p class="fine-print">Generation, rendering and training workflows require the relevant model/data/visual resources. See each guide for availability and requirements.</p></div></details>
+<div class="quickstart"><div><h3>GPU environment</h3><p>Generate a trajectory and watch both camera views.</p></div><div class="code-panel"><div class="code-heading"><span>Python 3.11 · uv</span><button type="button" id="copy-commands">Copy</button></div><pre><code id="commands">git clone https://github.com/clothdojo/clothdojo.github.io.git ClothDojo
+cd ClothDojo
+bash scripts/download.sh flatten
+bash scripts/setup.sh
+bash scripts/quickstart.sh flatten</code></pre><span id="copy-status" role="status"></span></div></div>
+<div class="usage-links"><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/advanced.md#evaluate-on-the-released-panel"><span>01</span><h3>Evaluate a policy ↗</h3><p>Connect a policy server and evaluate against fixed initial states.</p></a><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/advanced.md#generate-successful-trajectories"><span>02</span><h3>Generate & render ↗</h3><p>Collect trajectories and export RGB training episodes.</p></a><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/advanced.md#export-rgb-training-data"><span>03</span><h3>Export RGB data ↗</h3><p>Re-render successful trajectories as training episodes.</p></a></div><details class="explanation"><summary>Environment &amp; resources</summary><div class="explanation-body"><p>ClothDojo requires Linux x86_64, Python 3.11, and a CUDA GPU. The published runtime uses one pinned environment. RGB rendering additionally requires an RTX GPU and upstream NVIDIA visual assets.</p><p>Assets, repaired benchmark states, and NOCS reference teachers are available on Hugging Face. See the download guide for RGB training dataset availability.</p><p class="fine-print">Generation, rendering and training workflows require the relevant model/data/visual resources. See each guide for availability and requirements.</p></div></details>
 </div>
 </div></section>
 </main>

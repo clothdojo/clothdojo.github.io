@@ -6,6 +6,8 @@ from dataclasses import dataclass
 
 SHIRT_FLATTEN = "shirt_flatten"
 SHIRT_FOLD = "shirt_fold"
+SHIRT_FLATTEN_FOLD = "shirt_flatten_fold"
+HANGER_DEMO = "hanger_demo"
 
 
 @dataclass(frozen=True, slots=True)
@@ -20,6 +22,8 @@ _PROFILES = {
     # garment workstation and physics scene as flattening.  Its initial-state
     # and target distributions are owned by rollout/evaluation artifacts.
     SHIRT_FOLD: TaskProfile(task_name=SHIRT_FOLD, scene_available=True),
+    SHIRT_FLATTEN_FOLD: TaskProfile(task_name=SHIRT_FLATTEN_FOLD, scene_available=True),
+    HANGER_DEMO: TaskProfile(task_name=HANGER_DEMO, scene_available=True),
 }
 
 

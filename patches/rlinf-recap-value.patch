@@ -1,0 +1,354 @@
+--- a/rlinf/data/datasets/recap/value_dataset.py
++++ b/rlinf/data/datasets/recap/value_dataset.py
+@@ -52,6 +52,30 @@
+ 
+ logger = logging.getLogger(__name__)
+ 
++
++def _fix_filtered_episode_data_index(dataset: Any, episodes: list[int]) -> None:
++    """Map LeRobot v2.1's compact subset bounds back to original episode ids."""
++    index = getattr(dataset, "episode_data_index", None)
++    if index is None:  # LeRobot v3.0 no longer has this field or the bug.
++        return
++    if not episodes or len(episodes) != len(set(episodes)):
++        raise ValueError("episodes must be a non-empty list of unique indices")
++
++    old_from = index["from"]
++    old_to = index["to"]
++    if len(old_from) != len(episodes) or len(old_to) != len(episodes):
++        raise RuntimeError("LeRobot filtered episode bounds do not match episodes")
++
++    new_size = max(episodes) + 1
++    new_from = torch.full((new_size,), -1, dtype=old_from.dtype)
++    new_to = torch.full((new_size,), -1, dtype=old_to.dtype)
++    for local_index, episode_index in enumerate(episodes):
++        new_from[episode_index] = old_from[local_index]
++        new_to[episode_index] = old_to[local_index]
++    index["from"] = new_from
++    index["to"] = new_to
++
++
+ _MODEL_TYPE_MAP = {
+     "pi0": _openpi_model.ModelType.PI0,
+     "pi05": _openpi_model.ModelType.PI05,
+@@ -217,6 +241,9 @@
+         episode_percentage: Optional[float] = None,
+         shuffle_episodes: bool = False,
+         episode_seed: int = 42,
++        episodes: Optional[list[int]] = None,
++        frame_stride: int = 1,
++        image_key_map: Optional[dict[str, str]] = None,
+         **kwargs,
+     ):
+         _known_unused = {
+@@ -232,6 +259,18 @@
+         if unexpected:
+             logger.warning(f"ValueDataset ignoring unexpected kwargs: {unexpected}")
+ 
++        if isinstance(frame_stride, bool) or not isinstance(frame_stride, int) or frame_stride < 1:
++            raise ValueError(f"frame_stride must be a positive integer, got {frame_stride!r}")
++        if episodes is not None and episode_percentage is not None:
++            raise ValueError("episodes and episode_percentage cannot be used together")
++        if image_key_map is not None:
++            image_key_map = dict(image_key_map)
++            if not image_key_map or any(
++                not isinstance(key, str) or not isinstance(value, str)
++                for key, value in image_key_map.items()
++            ):
++                raise ValueError("image_key_map must be a non-empty string-to-string mapping")
++
+         self.max_samples = max_samples
+         local_path = Path(dataset_path).absolute()
+ 
+@@ -251,6 +290,7 @@
+         self._base = LeRobotDataset(
+             local_path.name,
+             root=local_path,
++            episodes=episodes,
+             delta_timestamps=delta_timestamps,
+             download_videos=False,
+         )
+@@ -265,6 +305,7 @@
+             )
+ 
+         self._indices = None
++        selected_episode_positions = None
+         if episode_percentage is not None and episode_percentage < 100:
+             if episode_percentage <= 0:
+                 raise ValueError(
+@@ -278,16 +319,33 @@
+                 selected = set(rng.choice(all_eps, size=num, replace=False).tolist())
+             else:
+                 selected = set(all_eps[:num])
++            selected_episode_positions = sorted(selected)
++
++        if frame_stride > 1 or selected_episode_positions is not None:
+             ep_starts, ep_ends = episode_boundaries(self._base)
++            positions = (
++                selected_episode_positions
++                if selected_episode_positions is not None
++                else range(len(ep_starts))
++            )
+             self._indices = [
+-                i for ep in sorted(selected) for i in range(ep_starts[ep], ep_ends[ep])
++                i
++                for ep in positions
++                for i in range(ep_starts[ep], ep_ends[ep], frame_stride)
+             ]
+ 
++        if episodes is not None:
++            # LeRobot v2.1 stores compact bounds for an episode subset while
++            # __getitem__ indexes them with the original episode_index value.
++            # Apply RLinf's existing compatibility fix after stride indexing.
++            _fix_filtered_episode_data_index(self._base, episodes)
++
+         self._transform = self._build_transform(
+             robot_type=robot_type,
+             model_type=model_type,
+             action_dim=action_dim or 32,
+             default_prompt=default_prompt,
++            image_key_map=image_key_map,
+         )
+         self._tasks = load_task_descriptions(local_path) or (
+             self.dataset_meta.tasks if hasattr(self.dataset_meta, "tasks") else None
+@@ -305,34 +364,44 @@
+         logger.info(f"ValueDataset: {dataset_path}, {min(n, max_samples or n)} samples")
+ 
+     @staticmethod
+-    def _build_transform(robot_type, model_type, action_dim, default_prompt):
++    def _build_transform(
++        robot_type, model_type, action_dim, default_prompt, image_key_map=None
++    ):
+         model_type_lower = model_type.lower()
+         model_type_enum = _MODEL_TYPE_MAP[model_type_lower]
+         robot = robot_type.lower()
+ 
+         transforms_list = []
+-        repack_keys = _REPACK_KEYS.get(robot)
+-        if repack_keys is None:
+-            raise ValueError(
+-                f"Unknown robot type: {robot_type}. "
+-                f"Available: {list(_REPACK_KEYS.keys())}"
+-            )
+-        transforms_list.append(_openpi_transforms.RepackTransform(repack_keys))
+-
+-        if robot in ("libero", "libero_v2"):
++        if image_key_map is not None:
+             transforms_list.append(
+-                libero_policy.LiberoInputs(model_type=model_type_enum)
+-            )
+-        elif robot in ("franka", "franka_co_train"):
+-            transforms_list.append(
+-                franka_policy.FrankaEEInputs(
+-                    action_dim=action_dim,
+-                    model_type=model_type_enum,
++                _openpi_transforms.RepackTransform(
++                    {"image": dict(image_key_map), "prompt": "prompt"}
+                 )
+             )
++        else:
++            repack_keys = _REPACK_KEYS.get(robot)
++            if repack_keys is None:
++                raise ValueError(
++                    f"Unknown robot type: {robot_type}. "
++                    f"Available: {list(_REPACK_KEYS.keys())}"
++                )
++            transforms_list.append(_openpi_transforms.RepackTransform(repack_keys))
++
++            if robot in ("libero", "libero_v2"):
++                transforms_list.append(
++                    libero_policy.LiberoInputs(model_type=model_type_enum)
++                )
++            elif robot in ("franka", "franka_co_train"):
++                transforms_list.append(
++                    franka_policy.FrankaEEInputs(
++                        action_dim=action_dim,
++                        model_type=model_type_enum,
++                    )
++                )
+ 
+         transforms_list.append(_openpi_transforms.InjectDefaultPrompt(default_prompt))
+-        transforms_list.append(_openpi_transforms.PadStatesAndActions(action_dim))
++        if image_key_map is None:
++            transforms_list.append(_openpi_transforms.PadStatesAndActions(action_dim))
+ 
+         return _openpi_transforms.compose(transforms_list)
+ 
+--- a/rlinf/workers/sft/fsdp_value_sft_worker.py
++++ b/rlinf/workers/sft/fsdp_value_sft_worker.py
+@@ -155,6 +155,9 @@
+ 
+         data_cfg = self.cfg.get("data", {})
+         model_cfg = self.cfg.actor.model
++        image_key_map = data_cfg.get("image_key_map", None)
++        if image_key_map is not None:
++            image_key_map = dict(image_key_map)
+         pin_memory = data_cfg.get("pin_memory", True)
+         train_num_workers = int(data_cfg.get("train_num_workers", 0))
+         eval_num_workers = int(data_cfg.get("eval_num_workers", train_num_workers))
+@@ -190,6 +193,7 @@
+             max_token_len=getattr(model_cfg, "max_token_len", 200),
+             tokenizer_name_or_path=tokenizer_path,
+             do_augment=bool(data_cfg.get("do_augment", True)),
++            image_keys=tuple(image_key_map) if image_key_map is not None else None,
+         )
+         train_collator = ValueDataCollator(
+             processor=processor,
+@@ -222,6 +226,8 @@
+             ),
+             "robot_type": robot_type,
+             "model_type": model_type,
++            "image_key_map": image_key_map,
++            "frame_stride": data_cfg.get("frame_stride", 1),
+         }
+ 
+         datasets_list = data_cfg.get("train_data_paths", [])
+@@ -296,6 +302,8 @@
+             "return_max": global_return_max,
+             "normalize_to_minus_one_zero": shared["normalize_to_minus_one_zero"],
+             "action_dim": shared["action_dim"],
++            "image_key_map": shared["image_key_map"],
++            "frame_stride": shared["frame_stride"],
+         }
+ 
+         datasets_with_weights = []
+@@ -330,6 +338,8 @@
+                 "episode_percentage": entry.get("episode_percentage", None),
+                 "shuffle_episodes": entry.get("shuffle_episodes", False),
+                 "episode_seed": entry.get("episode_seed", 42),
++                "episodes": entry.get("episodes", None),
++                "frame_stride": entry.get("frame_stride", shared["frame_stride"]),
+                 "tag": data_cfg.get("tag", None),
+             }
+ 
+@@ -421,6 +431,9 @@
+                 action_dim=eval_entry.get("action_dim", shared["action_dim"]),
+                 default_prompt=eval_entry.get("default_prompt", None),
+                 max_samples=eval_max_samples,
++                episodes=eval_entry.get("episodes", None),
++                frame_stride=eval_entry.get("frame_stride", shared["frame_stride"]),
++                image_key_map=shared["image_key_map"],
+                 tag=data_cfg.get("tag", None),
+             )
+             eval_sampler = None
+@@ -538,6 +551,10 @@
+                 all_metrics.append(metrics)
+ 
+             grad_norm, lr_list = self.optimizer_step()
++            if not torch.isfinite(torch.as_tensor(grad_norm)):
++                raise FloatingPointError(
++                    f"Value SFT produced non-finite gradient norm: {grad_norm}"
++                )
+             self.optimizer.zero_grad(set_to_none=True)
+ 
+             agg = {}
+--- a/rlinf/hybrid_engines/fsdp/fsdp_model_manager.py
++++ b/rlinf/hybrid_engines/fsdp/fsdp_model_manager.py
+@@ -58,6 +58,8 @@
+     category=UserWarning,
+ )
+ 
++DEFAULT_VALUE_MODULE_PARAMETER_PATTERNS = ("value_head", "model.value_head")
++
+ 
+ class FSDPModelManager:
+     """
+@@ -516,6 +518,11 @@
+         betas = (self._cfg.optim.adam_beta1, self._cfg.optim.adam_beta2)
+         adam_eps = self._cfg.optim.get("adam_eps", 1e-8)
+         weight_decay = self._cfg.optim.get("weight_decay", 1e-2)
++        value_module_patterns = tuple(
++            self._cfg.optim.get(
++                "value_module_patterns", DEFAULT_VALUE_MODULE_PARAMETER_PATTERNS
++            )
++        )
+ 
+         params_actor = []
+         params_critic = []
+@@ -525,7 +532,7 @@
+             for name, param in model.named_parameters():
+                 if param.requires_grad:
+                     self.store_requires_grad_param_name.append(name)
+-                    if "value_head" in name or "model.value_head" in name:
++                    if any(pattern in name for pattern in value_module_patterns):
+                         params_critic.append(param)
+                         continue
+                     param.requires_grad = False
+@@ -535,7 +542,7 @@
+                 if name in self.store_requires_grad_param_name:
+                     param.requires_grad = True
+                 if param.requires_grad:
+-                    if "value_head" in name or "model.value_head" in name:
++                    if any(pattern in name for pattern in value_module_patterns):
+                         params_critic.append(param)
+                     else:
+                         params_actor.append(param)
+--- a/rlinf/models/embodiment/value_model/recap/modeling_critic.py
++++ b/rlinf/models/embodiment/value_model/recap/modeling_critic.py
+@@ -176,6 +176,12 @@
+             path_parts = name.split(".")
+             setattr(module, "_fsdp_wrap_name", path_parts[-1] if path_parts else name)
+ 
++        language = self.value_expert.gemma3
++        if language.lm_head.weight is language.model.embed_tokens.weight:
++            # Keep the unused tied output alias out of a separate FSDP unit.
++            # The live embedding remains owned and executed by the language model.
++            language.lm_head._fsdp_wrap_name = "tied_token_embedding"
++
+     @property
+     def _no_split_modules(self) -> list[str]:
+         if self.value_expert.freeze_vlm:
+@@ -232,10 +238,11 @@
+         """Get the dtype of the backbone model's attention weights."""
+         return self.value_expert.gemma3.model.layers[0].self_attn.q_proj.weight.dtype
+ 
+-    def _prepare_attention_masks_4d(self, att_2d_masks):
++    def _prepare_attention_masks_4d(self, att_2d_masks, *, dtype=None):
+         """Prepare 4D attention masks for transformer."""
+         att_2d_masks_4d = att_2d_masks[:, None, :, :]
+-        dtype = self._get_model_dtype()
++        if dtype is None:
++            dtype = self._get_model_dtype()
+         return torch.where(
+             att_2d_masks_4d,
+             torch.tensor(0.0, dtype=dtype, device=att_2d_masks.device),
+@@ -415,7 +422,9 @@
+         # Phase 1: prefill frozen VLM to get KV cache.
+         # Prefix is fully bidirectional, so attention = pad_mask outer product.
+         prefix_attn = prefix_pad_masks[:, None, :] * prefix_pad_masks[:, :, None]
+-        prefix_attn_4d = self._prepare_attention_masks_4d(prefix_attn)
++        prefix_attn_4d = self._prepare_attention_masks_4d(
++            prefix_attn, dtype=prefix_embs.dtype
++        )
+         prefix_pos = torch.cumsum(prefix_pad_masks, dim=1) - 1
+ 
+         (prefix_out, _), past_kv = self.value_expert.forward(
+@@ -445,7 +454,7 @@
+         )
+         suffix_attn = make_att_2d_masks(suffix_pad_masks, suffix_ar_masks)
+         full_attn_4d = self._prepare_attention_masks_4d(
+-            torch.cat([prefix_2d, suffix_attn], dim=2)
++            torch.cat([prefix_2d, suffix_attn], dim=2), dtype=suffix_embs.dtype
+         )
+         suffix_pos = (
+             prefix_pad_masks.sum(dim=-1)[:, None]
+@@ -533,7 +542,9 @@
+ 
+         # Prefix is fully bidirectional, so attention = pad_mask outer product.
+         prefix_attn = prefix_pad_masks[:, None, :] * prefix_pad_masks[:, :, None]
+-        prefix_attn_4d = self._prepare_attention_masks_4d(prefix_attn)
++        prefix_attn_4d = self._prepare_attention_masks_4d(
++            prefix_attn, dtype=prefix_embs.dtype
++        )
+         prefix_pos = torch.cumsum(prefix_pad_masks, dim=1) - 1
+ 
+         _, past_kv = self.value_expert.forward(
+@@ -550,7 +561,7 @@
+         )
+         suffix_attn = make_att_2d_masks(suffix_pad_masks, suffix_ar_masks)
+         full_attn_4d = self._prepare_attention_masks_4d(
+-            torch.cat([prefix_2d, suffix_attn], dim=2)
++            torch.cat([prefix_2d, suffix_attn], dim=2), dtype=suffix_embs.dtype
+         )
+         suffix_pos = (
+             prefix_pad_masks.sum(dim=-1)[:, None]

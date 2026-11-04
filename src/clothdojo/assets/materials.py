@@ -3,14 +3,12 @@
 from __future__ import annotations
 
 import hashlib
-import http.client
 import json
 import os
 import re
 import ssl
 import time
 import urllib.error
-import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from functools import cache
@@ -20,7 +18,7 @@ from typing import Literal
 MaterialRole = Literal["cloth", "table", "ground"]
 
 DEFAULT_MATERIAL_CATALOG = (
-    Path(__file__).with_name("rendering") / "materials.json"
+    Path(__file__).resolve().parents[3] / "configs/rendering/materials.json"
 )
 _ASSET_ID = re.compile(r"[a-z0-9][a-z0-9_]*\Z")
 _SHA1 = re.compile(r"[0-9a-f]{40}\Z")
@@ -278,41 +276,13 @@ def _source_hash(value: object) -> str:
     return value
 
 
-def _require_https(url: str) -> None:
-    parsed = urllib.parse.urlsplit(url)
-    if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
-        raise ValueError("material downloads require HTTPS URLs without credentials")
-
-
-class _HTTPSRedirectHandler(urllib.request.HTTPRedirectHandler):
-    def redirect_request(self, req, fp, code, msg, headers, newurl):
-        _require_https(newurl)
-        return super().redirect_request(req, fp, code, msg, headers, newurl)
-
-
-def _open_https(request, *, timeout, context):
-    _require_https(request.full_url)
-    opener = urllib.request.build_opener(
-        urllib.request.HTTPSHandler(context=context), _HTTPSRedirectHandler()
-    )
-    return opener.open(request, timeout=timeout)
-
-
 def _api_json(url: str) -> dict:
-    for attempt in range(3):
-        request = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
-        try:
-            with _open_https(request, timeout=60, context=_https_context()) as response:
-                value = json.load(response)
-        except (OSError, http.client.IncompleteRead, json.JSONDecodeError):
-            if attempt == 2:
-                raise
-            time.sleep(2**attempt)
-            continue
-        if not isinstance(value, dict):
-            raise RuntimeError(f"Poly Haven API returned a non-object: {url}")
-        return value
-    raise AssertionError("unreachable")
+    request = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
+    with urllib.request.urlopen(request, timeout=60, context=_https_context()) as response:
+        value = json.load(response)
+    if not isinstance(value, dict):
+        raise RuntimeError(f"Poly Haven API returned a non-object: {url}")
+    return value
 
 
 def _file_entry(files: dict, channel: str, resolution: str, extension: str) -> dict:
@@ -341,7 +311,7 @@ def _download_verified(entry: dict, target: Path) -> tuple[int, int]:
         digest = hashlib.md5(usedforsecurity=False)
         size = 0
         try:
-            response = _open_https(request, timeout=120, context=_https_context())
+            response = urllib.request.urlopen(request, timeout=120, context=_https_context())
             with response, temporary.open("wb") as stream:
                 while chunk := response.read(1024 * 1024):
                     stream.write(chunk)
@@ -353,7 +323,7 @@ def _download_verified(entry: dict, target: Path) -> tuple[int, int]:
                 )
             os.replace(temporary, target)
             return 1, size
-        except (OSError, RuntimeError, urllib.error.URLError, http.client.IncompleteRead):
+        except (OSError, RuntimeError, urllib.error.URLError):
             temporary.unlink(missing_ok=True)
             if attempt == 2:
                 raise
