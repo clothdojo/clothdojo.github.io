@@ -421,7 +421,7 @@
           "width": 350
         },
         "gallery": {
-          "left": 85,
+          "left": 79,
           "width": 350
         }
       }
@@ -441,8 +441,8 @@
       "galleryMetadataBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
-        "/assets/cards78/rgb-wide.webp",
         "/assets/cards78/atlas-wide.webp",
+        "/assets/cards78/rgb-wide.webp",
         "/assets/rgb76/ribbon.mp4"
       ]
     },
