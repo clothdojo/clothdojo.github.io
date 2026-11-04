@@ -81,7 +81,7 @@
   background: #fff;
   border-radius: 0;
 }
-.research30 .story-card--render video { aspect-ratio: 14/11; max-height: calc(var(--story-card-height) - 220px); }
+.research30 .story-card--render video { aspect-ratio: 2328/536; max-height: none; }
 .research30 .story-card-body .rgb-ribbon { width: 100%; margin: 0; }
 .story-card-body details.explanation { margin: 20px 0 0; border-color: #ececef; }
 .story-card-body .explanation > summary { font-size: 13px; padding: 12px 0; line-height: 1.5; }
@@ -122,6 +122,9 @@
 @media (min-width: 701px) and (max-height: 800px) {
   .highlights-section { padding-block: 48px 40px; }
   .highlights-controls { margin-top: 20px; }
+}
+@media (min-width: 701px) {
+  .story-card--render .story-card-body { display: flex; align-items: center; }
 }
 @media (max-width: 700px) {
   .highlights-section { --story-card-height: clamp(500px, calc(100svh - 180px), 680px); padding-block: 48px 40px; }

@@ -4,15 +4,17 @@ const manifest=JSON.parse(fs.readFileSync('website/assets/film62/manifest.json',
 const report={commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),passed:false,errors:[],screenshots:[],checks:[],recordings:[]};
 const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));let browser;
 (async()=>{try{
- const transfer=JSON.parse(fs.readFileSync('website/assets/robots82/manifest.json','utf8'));
+ const transfer=JSON.parse(fs.readFileSync('website/assets/robots85/manifest.json','utf8'));
  assert.equal(transfer.sources.length,4);
  for(const source of transfer.sources){assert.equal(source.camera_projection,'orthographic');assert.deepEqual(source.camera,transfer.sources[0].camera);}
  for(const video of transfer.videos){
   const p=video.placements;assert.equal(p.length,4);
   for(const box of video.source_crop_bounds)assert.deepEqual(box,video.source_crop_bounds[0]);
-  assert.equal(p[0][1],p[1][1]);assert.equal(p[2][1],p[3][1]);assert.equal(p[0][0],p[2][0]);assert.equal(p[1][0],p[3][0]);
+  assert(p.every(cell=>cell[1]===p[0][1]&&cell[2]===p[0][2]&&cell[3]===p[0][3]));
+  assert(p.slice(1).every((cell,i)=>cell[0]>p[i][0]+p[i][2]));
+  assert.equal(video.cropped_border_foreground_pixels,0);assert.equal(video.decoded_frames,306);
  }
- report.checks.push({independentOrthographicViews:4,sharedCameraScale:true,tableRowsAndColumnsAligned:true});
+ report.checks.push({independentOrthographicViews:4,sharedCameraScale:true,desktopTablesInOneRow:true,completeForegroundBounds:true});
  browser=await chromium.launch({channel:'chrome'});
  for(const target of ['index.html','research-preview-v31.html']){
   for(const [width,height] of [[1440,900],[1280,720],[1920,1080],[1724,756],[390,844],[320,640]]){
@@ -32,7 +34,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    }
    assert.equal(await page.locator('.story-track details, .story-track p').count(),0,'Capabilities are presented as full headings, without fine print or collapsed explanations');
    assert.equal(await page.locator('#authors, .author-credit').count(),0,'The homepage omits author details');
-   const paper=page.locator('#overview .paper-link');assert(await paper.isVisible());assert.equal(await paper.getAttribute('href'),'https://arxiv.org/html/2611.01190v1');
+   const paper=page.locator('.site-header .paper-link');assert(await paper.isVisible());assert.equal(await paper.getAttribute('href'),'https://arxiv.org/abs/2611.01190');
    assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','highlights','use']);
    assert.deepEqual(await page.locator('.story-track > .story-card').evaluateAll(s=>s.map(x=>x.id)),['diversity','rgb','render']);
    assert.equal(await page.locator('#results, #transfer-results, #method, .story-track #use').count(),0);
@@ -65,6 +67,10 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
     assert(heading.y>=header.y+header.height-1&&controls.y+controls.height<=(width===1280?720:900)+1,'Keep the active title and gallery controls together in the viewport');
    }
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+   if(width>700&&i===2){
+    const media=await page.locator('#transfer-film').evaluate(v=>{const b=v.getBoundingClientRect();const ratio=2328/536;return {element:b.width,painted:Math.min(b.width,b.height*ratio)};});
+    assert(media.painted>=media.element*.98,'Desktop retarget footage fills the card width without side letterboxing');
+   }
    await page.waitForFunction(i=>[...document.querySelectorAll('.story-card')[i].querySelectorAll('img')].filter(img=>!img.closest('details:not([open])')).every(img=>img.complete&&img.naturalWidth>0),i,{timeout:15000});
    const file='card-'+width+'-'+i+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,width,card:i});
    assert.equal(await page.locator('.story-dots button[aria-current=true]').count(),1);
@@ -96,7 +102,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.waitForFunction(()=>['rgb-film','transfer-film'].every(id=>document.getElementById(id).readyState>=1));
   assert(mediaRequests.includes(width===390?'/assets/rgb77/ribbon-mobile.mp4':'/assets/rgb76/ribbon.mp4'),'The correct RGB video is prepared before gallery navigation');
   assert(!mediaRequests.includes(width===390?'/assets/cards78/rgb-wide.webp':'/assets/cards78/rgb-mobile.webp'),'Do not download the other viewport poster');
-  assert(!mediaRequests.includes(width===390?'/assets/robots82/robot-wide.webp':'/assets/robots82/robot-mobile.webp'),'Select the robot poster before requesting it');
+  assert(!mediaRequests.includes(width===390?'/assets/robots85/robot-wide.webp':'/assets/robots82/robot-mobile.webp'),'Select the robot poster before requesting it');
   assert.equal(await page.locator('#rgb-film').evaluate(v=>v.paused),true,'Preparing metadata must not start offscreen playback');
   report.checks.push({width,galleryMetadataBeforeNavigation:true,correctViewportPoster:true,cardRequests:mediaRequests.filter(p=>/cards78|rgb76|rgb77|robots82/.test(p))});save();
   await page.evaluate(()=>{
@@ -113,9 +119,9 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   assert((await page.locator('#rgb-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'rgb77/ribbon-mobile.mp4':'rgb76/ribbon.mp4'));
   assert.deepEqual(await page.locator('#rgb-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[960,1440]:[1920,720]);
   await page.locator('[data-story-next]').click();await page.waitForFunction(()=>{const v=document.getElementById('transfer-film');return window.storyCards.state.active===2&&!v.paused&&v.currentTime>.2;},null,{timeout:30000});await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.paused;});
-  assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'robots82/robot-transfer-mobile.mp4':'robots82/robot-transfer.mp4'));
+  assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'robots82/robot-transfer-mobile.mp4':'robots85/robot-transfer.mp4'));
   const robotCorner=await page.locator('#transfer-film').evaluate(v=>{const c=document.createElement('canvas');c.width=20;c.height=20;const x=c.getContext('2d');x.drawImage(v,0,0,20,20);return [...x.getImageData(0,0,1,1).data].slice(0,3);});assert(robotCorner.every(x=>x>=245),'The robot replay blends into white');
-  assert.deepEqual(await page.locator('#transfer-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[1000,900]:[1400,1100]);
+  assert.deepEqual(await page.locator('#transfer-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[1000,900]:[2328,536]);
   await page.locator('#transfer-film').evaluate(v=>{window.robotWrapped=false;let last=v.currentTime;v.addEventListener('timeupdate',()=>{if(v.currentTime<last)window.robotWrapped=true;last=v.currentTime;});});await page.waitForFunction(()=>window.robotWrapped,null,{timeout:30000});
   await page.waitForFunction(()=>document.querySelectorAll('video[data-auto]').length&&[...document.querySelectorAll('video[data-auto]')].filter(v=>!v.paused).length===1);
   await page.locator('#hero-film').scrollIntoViewIfNeeded();await page.waitForFunction(()=>!document.getElementById('hero-film').paused);

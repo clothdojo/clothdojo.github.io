@@ -54,7 +54,6 @@ html { scroll-padding-top: 64px; }
   font-weight: 500;
 }
 .research30 .hero-intro { margin-top: 18px; flex-wrap: wrap; gap: 12px 24px; }
-.research30 .hero-intro > .paper-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 16px; font-weight: 500; }
 .research30 .hero-intro p { font-size: 16px; line-height: 1.5; color: var(--text); }
 .research30 .hero .embedded-generation { display: block; margin-top: 20px; }
 .hero-task-labels {
@@ -113,4 +112,10 @@ html { scroll-padding-top: 64px; }
   .hero-task-labels { font-size: 10px; }
   .research30 .site-footer { flex-wrap: wrap; gap: 20px; }
   .research30 .site-footer p { flex-basis: 100%; order: 3; }
+}
+@media (max-width: 380px) {
+  .research30 .nav { gap: 8px; }
+  .research30 .nav .brand { font-size: 18px; }
+  .research30 .nav-links { gap: 8px; }
+  .research30 .nav-links a { font-size: 11px; }
 }
