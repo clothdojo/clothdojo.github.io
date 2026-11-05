@@ -19,6 +19,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
  }
  report.checks.push({independentOrthographicViews:4,sharedCameraScale:true,desktopTablesInOneRow:true,completeForegroundBounds:true});
  browser=await chromium.launch({channel:'chrome'});
+ await require('./gallery-playback-review.cjs')(browser,report,save);
  for(const target of ['index.html','research-preview-v31.html']){
   for(const [width,height] of [[1440,900],[1280,720],[1920,1080],[1724,756],[390,844],[320,640]]){
    const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));page.on('response',r=>{if(r.status()>=400)report.errors.push(r.status()+' '+r.url());});
@@ -103,12 +104,12 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   const context=await browser.newContext({viewport:{width,height:900},recordVideo:{dir:path.join(out,'recordings'),size:{width,height:900}}}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));
   const mediaRequests=[];page.on('request',r=>{if(/\.(mp4|webp|jpg)$/.test(new URL(r.url()).pathname))mediaRequests.push(new URL(r.url()).pathname);});
   await page.goto('http://127.0.0.1:8787/index.html');await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return !v.paused&&v.currentTime>.1;},null,{timeout:45000});
-  await page.waitForFunction(()=>['rgb-film','transfer-film'].every(id=>document.getElementById(id).readyState>=1));
-  assert(mediaRequests.includes(width===390?'/assets/rgb77/ribbon-mobile.mp4':'/assets/rgb76/ribbon.mp4'),'The correct RGB video is prepared before gallery navigation');
+  await page.waitForFunction(()=>['rgb-film','transfer-film'].every(id=>document.getElementById(id).readyState>=2));
+  assert(mediaRequests.includes(width===390?'/assets/gallery86/rgb-mobile.mp4':'/assets/gallery86/rgb.mp4'),'The correct RGB video is prepared before gallery navigation');
   assert(!mediaRequests.includes(width===390?'/assets/cards78/rgb-wide.webp':'/assets/cards78/rgb-mobile.webp'),'Do not download the other viewport poster');
   assert(!mediaRequests.includes(width===390?'/assets/robots85/robot-wide.webp':'/assets/robots82/robot-mobile.webp'),'Select the robot poster before requesting it');
-  assert.equal(await page.locator('#rgb-film').evaluate(v=>v.paused),true,'Preparing metadata must not start offscreen playback');
-  report.checks.push({width,galleryMetadataBeforeNavigation:true,correctViewportPoster:true,cardRequests:mediaRequests.filter(p=>/cards78|rgb76|rgb77|robots82/.test(p))});save();
+  assert.equal(await page.locator('#rgb-film').evaluate(v=>v.paused),true,'Buffering data must not start offscreen playback');
+  report.checks.push({width,galleryFramesBufferedBeforeNavigation:true,correctViewportPoster:true,cardRequests:mediaRequests.filter(p=>/cards78|gallery86|robots82/.test(p))});save();
   await page.evaluate(()=>{
    window.heroProbe={wrapped:false,gaps:[],seam:null};const v=document.getElementById('hero-film'),c=document.createElement('canvas');c.width=160;c.height=56;const ctx=c.getContext('2d',{willReadFrequently:true});let last,lastPixels;
    v.requestVideoFrameCallback(function sample(_now,f){ctx.drawImage(v,0,0,160,56);const p=ctx.getImageData(0,0,160,56).data;
@@ -120,12 +121,12 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   for(const c of manifest.cases){await page.waitForFunction(t=>document.getElementById('hero-film').currentTime>=t,c.first_frame/25+3,{timeout:30000});}
   await page.waitForFunction(()=>window.heroProbe.wrapped,null,{timeout:20000});const probe=await page.evaluate(()=>window.heroProbe);const maxGap=Math.max(...probe.gaps);report.checks.push({width,heroLoopSeam:probe.seam,heroMaxFrameGap:maxGap});save();assert(probe.seam<8);assert(maxGap<.161,`Hero frame gap ${maxGap.toFixed(3)}s exceeds 0.161s at ${width}px`);assert.equal(await page.locator('#hero-film').evaluate(v=>v.currentSrc),source);
   await page.locator('header a[href="#rgb"]').click();await page.waitForFunction(()=>{const v=document.getElementById('rgb-film');return !v.paused&&v.currentTime>.2;},null,{timeout:30000});
-  assert((await page.locator('#rgb-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'rgb77/ribbon-mobile.mp4':'rgb76/ribbon.mp4'));
-  assert.deepEqual(await page.locator('#rgb-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[960,1440]:[1920,720]);
+  assert((await page.locator('#rgb-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'gallery86/rgb-mobile.mp4':'gallery86/rgb.mp4'));
+  assert.deepEqual(await page.locator('#rgb-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[720,1080]:[1920,720]);
   await page.locator('[data-story-next]').click();await page.waitForFunction(()=>{const v=document.getElementById('transfer-film');return window.storyCards.state.active===2&&!v.paused&&v.currentTime>.2;},null,{timeout:30000});await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.paused;});
-  assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'robots82/robot-transfer-mobile.mp4':'robots85/robot-transfer.mp4'));
+  assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'gallery86/retarget-mobile.mp4':'gallery86/retarget.mp4'));
   const robotCorner=await page.locator('#transfer-film').evaluate(v=>{const c=document.createElement('canvas');c.width=20;c.height=20;const x=c.getContext('2d');x.drawImage(v,0,0,20,20);return [...x.getImageData(0,0,1,1).data].slice(0,3);});assert(robotCorner.every(x=>x>=245),'The robot replay blends into white');
-  assert.deepEqual(await page.locator('#transfer-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[1000,900]:[2328,536]);
+  assert.deepEqual(await page.locator('#transfer-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[1000,900]:[1920,442]);
   await page.locator('#transfer-film').evaluate(v=>{window.robotWrapped=false;let last=v.currentTime;v.addEventListener('timeupdate',()=>{if(v.currentTime<last)window.robotWrapped=true;last=v.currentTime;});});await page.waitForFunction(()=>window.robotWrapped,null,{timeout:30000});
   await page.waitForFunction(()=>document.querySelectorAll('video[data-auto]').length&&[...document.querySelectorAll('video[data-auto]')].filter(v=>!v.paused).length===1);
   await page.locator('#hero-film').scrollIntoViewIfNeeded();await page.waitForFunction(()=>!document.getElementById('hero-film').paused);

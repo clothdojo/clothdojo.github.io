@@ -14,7 +14,7 @@ on:
         default: index.html
         type: string
   push:
-    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal, codex/rgb-ribbon-homepage, codex/complete-generation-loop, codex/white-asset-atlas, codex/direct-embedded-loop, codex/synchronized-case-film, codex/rgb-playback-release, codex/in-motion-reveal, codex/departure-reveal-holds, codex/full-perspective-loop, codex/camera-control-study, codex/continuous-camera-study, codex/cloth-fidelity-study, codex/lighting-study, codex/camera-color-fix, codex/startup-streaming, codex/rendered-distance-sample, codex/homepage-film-release-20261102, codex/mobile80-integration-20261103, codex/site-layout-rhythm, codex/paper-dense-retarget, codex/website-quickstart-sync]
+    branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal, codex/rgb-ribbon-homepage, codex/complete-generation-loop, codex/white-asset-atlas, codex/direct-embedded-loop, codex/synchronized-case-film, codex/rgb-playback-release, codex/in-motion-reveal, codex/departure-reveal-holds, codex/full-perspective-loop, codex/camera-control-study, codex/continuous-camera-study, codex/cloth-fidelity-study, codex/lighting-study, codex/camera-color-fix, codex/startup-streaming, codex/rendered-distance-sample, codex/homepage-film-release-20261102, codex/mobile80-integration-20261103, codex/site-layout-rhythm, codex/paper-dense-retarget, codex/website-quickstart-sync, codex/gallery-playback]
     paths:
       - 'docs/usage.md'
       - '.github/workflows/website-visual-review.yml'
@@ -47,6 +47,7 @@ on:
       - '.github/scripts/distance-stream-review.cjs'
       - '.github/scripts/generation-film-review.cjs'
       - '.github/scripts/homepage-film-review.cjs'
+      - '.github/scripts/gallery-playback-review.cjs'
       - 'website/assets/camera52/**'
       - 'website/assets/camera58/**'
       - 'website/assets/camera60/**'
@@ -63,6 +64,7 @@ on:
       - 'website/assets/robots81/**'
       - 'website/assets/robots82/**'
       - 'website/assets/robots85/**'
+      - 'website/assets/gallery86/**'
       - 'website/assets/cloth48/**'
       - 'website/assets/atlas32/**'
 
@@ -97,7 +99,7 @@ jobs:
           "$RUNNER_TEMP/browser-tools/node_modules/.bin/http-server" website -a 127.0.0.1 -p 8787 -c-1 -s > "$RUNNER_TEMP/site-server.log" 2>&1 &
           if [ '${{ inputs.page_path }}' = 'distance-study.html' ]; then
             node .github/scripts/generation-film-review.cjs
-          elif { [ '${{ github.ref_name }}' = 'codex/rendered-distance-sample' ] || [ '${{ github.ref_name }}' = 'codex/homepage-film-release-20261102' ] || [ '${{ github.ref_name }}' = 'codex/mobile80-integration-20261103' ] || [ '${{ github.ref_name }}' = 'main' ] || [ '${{ github.ref_name }}' = 'codex/site-layout-rhythm' ] || [ '${{ github.ref_name }}' = 'codex/paper-dense-retarget' ] || [ '${{ github.ref_name }}' = 'codex/website-quickstart-sync' ]; } && { [ '${{ inputs.page_path }}' = '' ] || [ '${{ inputs.page_path }}' = 'index.html' ] || [ '${{ inputs.page_path }}' = 'research-preview-v31.html' ]; }; then
+          elif { [ '${{ github.ref_name }}' = 'codex/rendered-distance-sample' ] || [ '${{ github.ref_name }}' = 'codex/homepage-film-release-20261102' ] || [ '${{ github.ref_name }}' = 'codex/mobile80-integration-20261103' ] || [ '${{ github.ref_name }}' = 'main' ] || [ '${{ github.ref_name }}' = 'codex/site-layout-rhythm' ] || [ '${{ github.ref_name }}' = 'codex/paper-dense-retarget' ] || [ '${{ github.ref_name }}' = 'codex/website-quickstart-sync' ] || [ '${{ github.ref_name }}' = 'codex/gallery-playback' ]; } && { [ '${{ inputs.page_path }}' = '' ] || [ '${{ inputs.page_path }}' = 'index.html' ] || [ '${{ inputs.page_path }}' = 'research-preview-v31.html' ]; }; then
             node .github/scripts/homepage-film-review.cjs
           elif [ '${{ github.ref_name }}' = 'codex/lighting-study' ] || [ '${{ github.ref_name }}' = 'codex/camera-color-fix' ] || [ '${{ github.ref_name }}' = 'codex/startup-streaming' ]; then
             node .github/scripts/lighting-study-review.cjs

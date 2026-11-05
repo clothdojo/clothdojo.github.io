@@ -14,6 +14,7 @@
     if (!video.hasAttribute('src')) { video.src = video.dataset.src; video.load(); }
   }
   function play(video) {
+    video.preload = 'auto';
     attach(video);
     document.querySelectorAll('video').forEach(other => { if (other !== video) other.pause(); });
     active = video;
@@ -122,7 +123,8 @@
         if (document.hidden || motion.matches || navigator.connection?.saveData) return;
         gallery.querySelectorAll('img').forEach(image => { image.loading = 'eager'; });
         gallery.querySelectorAll('video[data-src]').forEach(video => {
-          if (!video.hasAttribute('src')) { video.preload = 'metadata'; attach(video); }
+          video.preload = 'auto';
+          attach(video);
         });
       };
       const box = hero?.getBoundingClientRect();
