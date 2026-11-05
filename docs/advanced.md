@@ -6,43 +6,11 @@ Run these commands from the GitHub checkout root after completing the quickstart
 
 ## Run the individual steps
 
-To change rollout parameters, start the teacher in one terminal:
-
-```bash
-export PXR_WORK_THREAD_LIMIT=1
-export CLOTHDOJO_OPENPI_CACHE="$PWD/.cache/openpi"
-export OPENPI_DATA_HOME="$CLOTHDOJO_OPENPI_CACHE"
-.venv/bin/clothdojo policy serve-sft \
-  --checkpoint models/nocs-teachers/flatten/weights \
-  --norm-stats models/nocs-teachers/flatten/norm_stats
-```
-
-In another terminal, generate a compact collection:
-
-```bash
-export PXR_WORK_THREAD_LIMIT=1
-.venv/bin/clothdojo rollout run \
-  --scenario configs/rollout/shirt_flatten.yaml \
-  --states benchmark/conditions/nocs-flatten/states \
-  --policy ws://127.0.0.1:8080 --assets benchmark/assets \
-  --batch-size 1 --seen-assets 1 --unseen-assets 0 --limit-per-asset 1 \
-  --storage-kind render_only_v1 --output outputs/my-flatten
-```
-
-Stop the teacher when generation finishes. Export each camera to a separate review root:
-
-```bash
-export PXR_WORK_THREAD_LIMIT=1
-for camera in cam_high cam_low; do
-  .venv/bin/clothdojo data render-review \
-    --source outputs/my-flatten --assets benchmark/assets \
-    --camera "$camera" --output "outputs/my-flatten/review-$camera"
-done
-```
+Follow the [step-by-step Quickstart](usage.md#3-run-the-steps-yourself) to start a teacher, generate a collection, and replay both cameras. It also explains garment/state selection and reading the resulting arrays in Python.
 
 ## Generate successful trajectories
 
-Start the flattening teacher as above. To retain a successful rollout, run a new collection with a success quota and the matching released protocol and templates:
+Start the flattening teacher using the Quickstart's policy command. To retain a successful rollout, run a new collection with a success quota and the matching released protocol and templates:
 
 ```bash
 .venv/bin/clothdojo rollout run \

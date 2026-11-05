@@ -33,6 +33,10 @@ The script generates one trajectory, exports high and low camera views, and prin
 
 The output contains robot actions, robot/cloth states, metadata, and both replay videos.
 
+## Using ClothDojo
+
+The [step-by-step Quickstart](docs/usage.md#3-run-the-steps-yourself) explains how the policy server, simulator, and replay fit together. Use it to collect more trajectories, replay saved results, and [read states and actions in Python](docs/usage.md#4-read-a-trajectory-in-python) with `TrajectoryReader`.
+
 ## Resources
 
 - [Assets](https://huggingface.co/datasets/clothdojo/assets) · [NOCS teachers](https://huggingface.co/clothdojo/nocs-teachers) · [Download details](docs/data-and-assets.md)
