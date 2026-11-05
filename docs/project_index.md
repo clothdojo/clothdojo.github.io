@@ -5,8 +5,8 @@
 | `scripts/download.sh` | Download assets and the selected teacher; never download code |
 | `scripts/setup.sh` | Create the pinned NOCS environment |
 | `scripts/quickstart.sh` | Generate one trajectory and both review views |
-| `docs/usage.md` | Generate trajectories, choose run options, and watch both camera views |
-| `docs/randomized-rendering.md` | Prepare Isaac 5 and render saved motion with randomized RGB appearances |
+| `docs/usage.md` | Install, generate trajectories, and watch NOCS and randomized RGB videos |
+| `docs/randomized-rendering.md` | RGB appearance controls and advanced resource references |
 | `src/clothdojo/quickstart.py` | Own the quickstart's child processes and logs; delegate work to the CLI |
 | `src/clothdojo/cli.py` | Individual generation, evaluation, export, and training commands |
 | `src/clothdojo/rollout/` | Policy inference and trajectory collection |

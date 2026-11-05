@@ -29,7 +29,7 @@ If the upstream download is denied or inaccessible, obtain this tokenizer throug
 
 ## Isaac 5 runtime
 
-The [randomized RGB guide](randomized-rendering.md#1-prepare-the-renderer) contains the complete pinned Isaac 5.0 installation command, public-material download and first export. Complete that path before adding the optional resources below.
+The [Quickstart's RGB steps](usage.md#4-prepare-rgb-rendering) contain the pinned Isaac 5.0 installation, public-material download and first export. Complete that path before adding the optional resources below.
 
 ## NVIDIA visual assets for RGB
 
@@ -83,4 +83,4 @@ Use the omission manifest as the file, size and hash reference for restoring the
 
 ## What to download first
 
-For the shortest NOCS path, follow the [Quickstart](usage.md). Then try [randomized RGB rendering](randomized-rendering.md) with the public materials. Restore NVIDIA visual assets when using the full appearance profiles. The RGB training datasets are not required to generate or render new trajectories.
+Follow the [Quickstart](usage.md) from NOCS generation to randomized RGB rendering with public materials. Restore NVIDIA visual assets when using the full appearance profiles. The RGB training datasets are not required to generate or render new trajectories.

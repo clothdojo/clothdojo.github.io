@@ -71,7 +71,7 @@ A flattening trajectory has 3000 actions and 3001 states; folding has 2000 actio
 
 ## Optional RGB resources
 
-For a first RGB export, follow [Randomized RGB rendering](randomized-rendering.md), which downloads only the public Poly Haven set. For the full appearance profiles, also obtain the redistributable visual assets and upstream omission manifest:
+The [Quickstart's RGB steps](usage.md#4-prepare-rgb-rendering) download only the public Poly Haven set. For the full appearance profiles, also obtain the redistributable visual assets and upstream omission manifest:
 
 ```bash
 uvx --from 'huggingface-hub==0.32.3' huggingface-cli download clothdojo/assets \

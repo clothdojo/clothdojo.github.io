@@ -14,14 +14,14 @@ ClothDojo generates bimanual garment-manipulation trajectories in simulation, wi
 
 ## Getting started
 
-Follow the [Quickstart](docs/usage.md): install the environment, generate a trajectory with `clothdojo generate`, then export high and low camera videos with `clothdojo replay`.
+Follow the [Quickstart](docs/usage.md) from installation to trajectory generation, NOCS videos, and randomized RGB videos. Both stages include high and low camera views.
 
-The NOCS workflow runs on one NVIDIA GPU and does not require Isaac Sim. The guide includes requirements, folding, and options for paths, GPU and generation size.
+NOCS generation and replay use one NVIDIA GPU. The RGB step adds Isaac Sim 5 and requires an RTX GPU.
 
 ## Resources
 
 - [Assets](https://huggingface.co/datasets/clothdojo/assets) · [NOCS teachers](https://huggingface.co/clothdojo/nocs-teachers) · [Download details](docs/data-and-assets.md)
-- [Randomized RGB rendering](docs/randomized-rendering.md): render the same motion with different materials and lighting
+- [RGB rendering reference](docs/randomized-rendering.md): appearance controls and advanced resources
 - [More workflows](docs/advanced.md): successful-trajectory selection, evaluation, and RGB export
 - [Questions and bug reports](https://github.com/clothdojo/clothdojo.github.io/issues)
 
