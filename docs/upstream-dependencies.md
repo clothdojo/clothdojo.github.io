@@ -29,17 +29,7 @@ If the upstream download is denied or inaccessible, obtain this tokenizer throug
 
 ## Isaac 5 runtime
 
-Randomized RGB rendering requires an RTX GPU, Python 3.11, and Linux with GLIBC 2.35 or newer. Install the pinned Isaac 5.0 SDK and extension caches into the NOCS environment. Keep `--no-deps`: the shared Python package versions are owned by `requirements.txt`.
-
-```bash
-.venv/bin/python -m pip install --extra-index-url https://pypi.nvidia.com --no-deps \
-  'isaacsim==5.0.0' 'isaacsim-app==5.0.0' 'isaacsim-core==5.0.0' \
-  'isaacsim-replicator==5.0.0' 'isaacsim-extscache-kit==5.0.0' \
-  'isaacsim-extscache-kit-sdk==5.0.0' 'isaacsim-extscache-physics==5.0.0' \
-  'isaacsim-kernel==5.0.0' 'omniverse-kit==107.3.1.206797'
-```
-
-Continue with [randomized RGB rendering](randomized-rendering.md) for a first example using public materials.
+The [randomized RGB guide](randomized-rendering.md#1-prepare-the-renderer) contains the complete pinned Isaac 5.0 installation command, public-material download and first export. Complete that path before adding the optional resources below.
 
 ## NVIDIA visual assets for RGB
 

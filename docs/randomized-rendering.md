@@ -1,14 +1,21 @@
 # Randomized RGB rendering
 
-Reuse the trajectory from the [Quickstart](usage.md) with different materials and lighting. The recorded motion stays the same; Isaac RTX replaces the NOCS appearance with RGB rendering.
+Continue with `outputs/first-flatten/rollout`, the trajectory saved in the [Quickstart](usage.md). The recorded motion stays the same; Isaac RTX replaces the NOCS appearance with RGB rendering.
 
 ## 1. Prepare the renderer
 
-Use an RTX GPU with RT cores and Vulkan support. Complete the [Isaac 5 runtime installation](upstream-dependencies.md#isaac-5-runtime) in the existing Python 3.11 environment, then activate it:
+Use an RTX GPU with RT cores and Vulkan support, Python 3.11, and Linux with GLIBC 2.35 or newer. From the checkout root, activate the environment and install the pinned Isaac 5.0 runtime:
 
 ```bash
 source .venv/bin/activate
+python -m pip install --extra-index-url https://pypi.nvidia.com --no-deps \
+  'isaacsim==5.0.0' 'isaacsim-app==5.0.0' 'isaacsim-core==5.0.0' \
+  'isaacsim-replicator==5.0.0' 'isaacsim-extscache-kit==5.0.0' \
+  'isaacsim-extscache-kit-sdk==5.0.0' 'isaacsim-extscache-physics==5.0.0' \
+  'isaacsim-kernel==5.0.0' 'omniverse-kit==107.3.1.206797'
 ```
+
+Keep `--no-deps` so the shared environment installed by `setup.sh` is preserved.
 
 Download the public Poly Haven material set from Hugging Face:
 
