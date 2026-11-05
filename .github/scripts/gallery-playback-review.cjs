@@ -1,4 +1,5 @@
 const fs=require('node:fs'),assert=require('node:assert/strict');
+const {execFileSync}=require('node:child_process');
 
 module.exports=async function galleryPlayback(browser,report,save){
  const originalSources={
@@ -20,9 +21,7 @@ module.exports=async function galleryPlayback(browser,report,save){
     return route.fulfill({body,contentType:'text/html'});
    });
    await page.route('**/site.js?*',route=>{
-    const body=fs.readFileSync('website/site.js','utf8')
-     .replace("    video.preload = 'auto';\n",'')
-     .replace("          video.preload = 'auto';\n          attach(video);","          if (!video.hasAttribute('src')) { video.preload = 'metadata'; attach(video); }");
+    const body=execFileSync('git',['show','d0e8827:website/site.js'],{encoding:'utf8'});
     return route.fulfill({body,contentType:'text/javascript'});
    });
   }
