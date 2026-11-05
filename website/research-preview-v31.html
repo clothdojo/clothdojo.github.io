@@ -45,13 +45,17 @@
 <p class="story-announcement" role="status" aria-live="polite"></p>
 </section>
 <section class="code-section" id="use" aria-labelledby="story-use-title"><div class="code-card">
-<header class="story-card-heading"><h2 id="story-use-title">Start with the code preview.</h2></header>
+<header class="story-card-heading"><h2 id="story-use-title">Start with ClothDojo.</h2></header>
 <div class="story-card-body"><div class="section-heading"></div>
-<div class="quickstart"><div><h3>CPU quickstart</h3><p>Score a saved cloth state.</p></div><div class="code-panel"><div class="code-heading"><span>Python 3.11 · uv</span><button type="button" id="copy-commands">Copy</button></div><pre><code id="commands">git clone --depth 1 https://github.com/clothdojo/clothdojo.github.io.git
-cd clothdojo.github.io
-uv sync --frozen
-uv run --frozen python scripts/score_fold.py</code></pre><span id="copy-status" role="status"></span></div></div>
-<div class="usage-links"><a href="https://github.com/clothdojo/clothdojo.github.io#3-policy-evaluation"><span>01</span><h3>Evaluate a policy ↗</h3><p>Connect a policy server and evaluate against fixed initial states.</p></a><a href="https://github.com/clothdojo/clothdojo.github.io#4-data-generation"><span>02</span><h3>Generate & render ↗</h3><p>Collect trajectories and export RGB training episodes.</p></a><a href="https://github.com/clothdojo/clothdojo.github.io#6-rgb-policy-training"><span>03</span><h3>Train an RGB policy ↗</h3><p>Inspect datasets and train with task-matched model bundles.</p></a></div><details class="explanation"><summary>Requirements &amp; expected output</summary><div class="explanation-body"><p>The code preview includes a CPU scoring example, one garment, and four initial states per task. Full model bundles, datasets and visual assets are forthcoming.</p><p>This example runs on CPU, with no simulator or model checkpoint. It checks a single saved state, not a complete rollout.</p><p class="expected">Expected output: <code>frame_passes_threshold: true</code></p><p class="fine-print">Generation, rendering and training workflows require the relevant model/data/visual resources. See each guide for availability and requirements.</p></div></details>
+<div class="quickstart"><div><h3>Generate a trajectory</h3><p>Set up ClothDojo, then watch both NOCS camera views.</p><p><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/usage.md">Full quickstart ↗</a></p></div><div class="code-panel"><div class="code-heading"><span>Python 3.11 · uv</span><button type="button" id="copy-commands">Copy</button></div><pre><code id="commands">git clone https://github.com/clothdojo/clothdojo.github.io.git ClothDojo
+cd ClothDojo
+bash scripts/download.sh flatten
+bash scripts/setup.sh
+source .venv/bin/activate
+
+clothdojo generate --output outputs/first-flatten
+clothdojo replay outputs/first-flatten/rollout</code></pre><span id="copy-status" role="status"></span></div></div>
+<div class="usage-links"><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/advanced.md#evaluate-on-the-released-panel"><span>01</span><h3>Evaluate a policy ↗</h3><p>Evaluate on the released garment panel.</p></a><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/randomized-rendering.md"><span>02</span><h3>Render RGB observations ↗</h3><p>Render saved motion with randomized appearances.</p></a><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/advanced.md#export-rgb-training-data"><span>03</span><h3>Export RGB data ↗</h3><p>Export rendered observations as training episodes.</p></a></div><details class="explanation"><summary>Environment &amp; resources</summary><div class="explanation-body"><p>Use Linux x86_64, Python 3.11, and an NVIDIA GPU with native BF16 support. NOCS generation and replay do not require Isaac Sim.</p><p>The quickstart downloads the required assets and flattening teacher. See the <a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/data-and-assets.md">download guide</a> for resources and the <a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/randomized-rendering.md">RGB rendering guide</a> for the separate renderer environment and materials.</p></div></details>
 </div>
 </div></section>
 </main>

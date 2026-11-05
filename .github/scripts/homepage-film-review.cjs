@@ -1,6 +1,9 @@
 const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process'),out=process.env.REVIEW_OUTPUT;fs.mkdirSync(out,{recursive:true});
 const manifest=JSON.parse(fs.readFileSync('website/assets/film62/manifest.json','utf8'));
+const normalizeCommands=text=>text.split('\n').map(line=>line.trim()).filter(Boolean).join('\n');
+const quickstartBlocks=[...fs.readFileSync('docs/usage.md','utf8').matchAll(/^```bash\n([\s\S]*?)^```/gm)];
+const quickstartCommands=normalizeCommands(quickstartBlocks.slice(0,3).map(block=>block[1]).join('\n'));
 const report={commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),passed:false,errors:[],screenshots:[],checks:[],recordings:[]};
 const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));let browser;
 (async()=>{try{
@@ -20,6 +23,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   for(const [width,height] of [[1440,900],[1280,720],[1920,1080],[1724,756],[390,844],[320,640]]){
    const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));page.on('response',r=>{if(r.status()>=400)report.errors.push(r.status()+' '+r.url());});
    await page.goto('http://127.0.0.1:8787/'+target,{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);
+   assert.equal(normalizeCommands(await page.locator('#commands').innerText()),quickstartCommands,'Website quickstart follows the current install, generate and replay tutorial');
    const video=page.locator('#hero-film');await page.waitForFunction(()=>document.getElementById('hero-film').readyState>=2,null,{timeout:45000});
    assert.equal(await video.getAttribute('data-src'),'assets/film62/generation-loop.mp4');assert.equal(await video.getAttribute('data-mobile-src'),null);assert.equal(await video.evaluate(v=>v.controls),false);
    assert.equal(await page.locator('#overview button, #overview input').count(),0);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
