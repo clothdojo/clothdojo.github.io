@@ -37,7 +37,7 @@ The output contains robot actions, robot/cloth states, metadata, and both replay
 
 After activating `.venv`, run `clothdojo generate` and copy its printed `clothdojo replay` command for both camera views. Add options only when needed, such as `--task fold`, `--gpu 1`, or `--output outputs/my-run`.
 
-The [step-by-step Quickstart](docs/usage.md#3-run-the-steps-yourself) explains the options and pipeline, and shows how to [read states and actions in Python](docs/usage.md#4-read-a-trajectory-in-python) with `TrajectoryReader`.
+The [step-by-step Quickstart](docs/usage.md#3-run-the-steps-yourself) explains the options and how to generate trajectories and watch both camera views.
 
 ## Resources
 

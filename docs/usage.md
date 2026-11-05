@@ -118,30 +118,6 @@ Generation records an unfiltered trajectory; it does not guarantee task success.
 
 Use a new output directory for a new generation run; existing directories are never overwritten. Replaying the same collection reuses matching videos. To manage the policy server and simulator separately, see the [individual commands](advanced.md#run-the-individual-steps).
 
-## 4. Read a trajectory in Python
-
-Use `TrajectoryReader` to inspect or analyze generated data:
-
-```bash
-.venv/bin/python - <<'PY'
-from pathlib import Path
-from clothdojo.trajectory import TrajectoryReader
-
-collection = Path("outputs/my-flatten/rollout")
-trajectory = sorted((collection / "trajectories").iterdir())[0]
-reader = TrajectoryReader(trajectory)
-
-states = reader.state_arrays(["joint_q", "particle_q", "gripper_open_state"])
-actions = reader.action_arrays()
-print("States / actions:", reader.manifest.state_count, reader.manifest.action_count)
-print("Cloth positions:", states["particle_q"].shape)
-print("Arm targets:", actions["joint_target"].shape)
-print("Gripper commands:", actions["gripper_open_command"].shape)
-PY
-```
-
-Arrays are indexed by time. Action `i` is applied at state `i` and leads to state `i + 1`, so a trajectory has one more state than action. Arm targets are in radians; gripper commands are normalized openness in `[0, 1]`.
-
-The compact `render_only_v1` format retains `joint_q`, `body_q`, `particle_q`, and `gripper_open_state`. Request retained fields explicitly, as above. It supports replay and geometric analysis; it omits internal dynamics and grasp state needed for a complete simulation restart.
+Open the MP4 paths printed by `replay` in your video player. Each trajectory has a high view and a low view, both at 640×480 and 10 fps. These videos are the visual output of the NOCS workflow; no Python data-reading code is needed to watch them.
 
 For code changes, start with the [module index](project_index.md). For success selection, policy evaluation and RGB export, continue to [more workflows](advanced.md).

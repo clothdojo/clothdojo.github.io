@@ -5,7 +5,7 @@
 | `scripts/download.sh` | Download assets and the selected teacher; never download code |
 | `scripts/setup.sh` | Create the pinned NOCS environment |
 | `scripts/quickstart.sh` | Generate one trajectory and both review views |
-| `docs/usage.md` | Quick example, individual steps, and the Python trajectory reader |
+| `docs/usage.md` | Generate trajectories, choose run options, and watch both camera views |
 | `src/clothdojo/quickstart.py` | Own the quickstart's child processes and logs; delegate work to the CLI |
 | `src/clothdojo/cli.py` | Individual generation, evaluation, export, and training commands |
 | `src/clothdojo/rollout/` | Policy inference and trajectory collection |
