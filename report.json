@@ -1,8 +1,8 @@
 {
-  "commit": "b50f2ca2ddf0b91a9e7f0d827caef71aece55abd",
+  "commit": "6443e638f0635a3fe8fb807e473421ac12c66cdb",
   "passed": false,
   "errors": [
-    "AssertionError [ERR_ASSERTION]: {\"width\":1440,\"baseline\":false,\"bandwidthMbps\":4,\"latencyMs\":80,\"cpuSlowdown\":2,\"action\":\"rgb\",\"id\":\"rgb-film\",\"startupMs\":1713.1,\"frames\":164,\"maxWallGapMs\":633.3000000000002,\"waitingMs\":5261.199999999924,\"droppedFrames\":8,\"totalFrames\":172,\"elapsedMs\":12040.699999999983,\"readyState\":3,\"paused\":false}\n    at galleryPlayback (/home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/gallery-playback-review.cjs:67:5)\n    at runNextTicks (node:internal/process/task_queues:64:5)\n    at process.processImmediate (node:internal/timers:452:9)\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)\n    at async /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/homepage-film-review.cjs:22:2"
+    "AssertionError [ERR_ASSERTION]: {\"width\":1440,\"baseline\":false,\"bandwidthMbps\":4,\"latencyMs\":80,\"cpuSlowdown\":2,\"action\":\"rgb\",\"id\":\"rgb-film\",\"startupMs\":1294.5999999999972,\"frames\":241,\"maxWallGapMs\":333.3000000000002,\"waitingMs\":2187.100000000006,\"droppedFrames\":3,\"totalFrames\":247,\"elapsedMs\":12076,\"readyState\":4,\"paused\":false}\n    at galleryPlayback (/home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/gallery-playback-review.cjs:67:5)\n    at async /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/homepage-film-review.cjs:22:2"
   ],
   "screenshots": [],
   "checks": [
@@ -21,13 +21,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 1978.400000000006,
+        "startupMs": 2076.4000000000015,
         "frames": 107,
-        "maxWallGapMs": 716.7000000000007,
-        "waitingMs": 7620.799999999959,
+        "maxWallGapMs": 716.6999999999998,
+        "waitingMs": 7616.8000000000175,
         "droppedFrames": 10,
-        "totalFrames": 110,
-        "elapsedMs": 12150,
+        "totalFrames": 108,
+        "elapsedMs": 12100.900000000009,
         "readyState": 2,
         "paused": false
       }
@@ -41,13 +41,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 275.89799999999923,
+        "startupMs": 271.7659999999978,
         "frames": 295,
-        "maxWallGapMs": 66.70000000000073,
+        "maxWallGapMs": 66.80000000000109,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 295,
-        "elapsedMs": 12040.300000000017,
+        "elapsedMs": 12032.100000000006,
         "readyState": 4,
         "paused": false
       }
@@ -61,13 +61,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 300.0319999999956,
-        "frames": 42,
-        "maxWallGapMs": 66.70000000000073,
+        "startupMs": 320.59999999999127,
+        "frames": 43,
+        "maxWallGapMs": 66.57200000000012,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 44,
-        "elapsedMs": 2023.2999999999884,
+        "elapsedMs": 2045.8999999999942,
         "readyState": 4,
         "paused": false
       }
@@ -81,14 +81,14 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 1713.1,
-        "frames": 164,
-        "maxWallGapMs": 633.3000000000002,
-        "waitingMs": 5261.199999999924,
-        "droppedFrames": 8,
-        "totalFrames": 172,
-        "elapsedMs": 12040.699999999983,
-        "readyState": 3,
+        "startupMs": 1294.5999999999972,
+        "frames": 241,
+        "maxWallGapMs": 333.3000000000002,
+        "waitingMs": 2187.100000000006,
+        "droppedFrames": 3,
+        "totalFrames": 247,
+        "elapsedMs": 12076,
+        "readyState": 4,
         "paused": false
       }
     }
