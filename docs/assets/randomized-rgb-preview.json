@@ -141,5 +141,26 @@
   "comparison_image_sha256": "e253751100ed7209a9104510012e2bf760cc7871c64fe83ac5eca3ef588ab69e",
   "limitations": "Short recorded-trajectory excerpts; reused installed Isaac SDK and verified public material bytes, not a fresh SDK installation or full 60-second RGB export.",
   "source_trajectory_manifest_sha256": "cec5c4c86a8ecfdd1216cd7f3136d6aed2e9c8b14bce504227807fa2449e7b16",
-  "source_collection_excerpt_sha256": "d164d664a8e03979ab94c7c7a788057bd26a2cf47855128b36bf71121a3ec663"
+  "source_collection_excerpt_sha256": "d164d664a8e03979ab94c7c7a788057bd26a2cf47855128b36bf71121a3ec663",
+  "readme_example": {
+    "seed": 42,
+    "time_seconds": 1,
+    "frame_index": 50,
+    "size": [
+      360,
+      270
+    ],
+    "views": {
+      "cam_high": {
+        "image": "docs/assets/randomized-rgb-cam_high.jpg",
+        "sha256": "3806361e9cf69712ca8b80f67ac8d6504a284f18e6befd9ea2ae9b1ae45056ec",
+        "source_video_sha256": "fb2c8502ad8bef240c55bbd77e8b82942ad71fd514704453afa1b2a15ab86bce"
+      },
+      "cam_low": {
+        "image": "docs/assets/randomized-rgb-cam_low.jpg",
+        "sha256": "1ddc5d830b1ddf6ca4585257ec5ea97b318a033668128af6e566c72ba9c367b1",
+        "source_video_sha256": "eed18d6e452190e377f56f9e97d0198dd0e3495f5fa62ddaaf2db1c40c432b00"
+      }
+    }
+  }
 }

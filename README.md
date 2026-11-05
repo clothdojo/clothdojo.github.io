@@ -16,7 +16,9 @@ ClothDojo generates bimanual garment-manipulation trajectories in simulation, wi
 
 **Randomized RGB**
 
-[![The same recorded pose rendered with seeds 42 and 43, shown from cam_high and cam_low](docs/assets/randomized-rgb-preview.jpg)](docs/randomized-rendering.md)
+| cam_high | cam_low |
+| :---: | :---: |
+| [![cam_high RGB render](docs/assets/randomized-rgb-cam_high.jpg)](docs/randomized-rendering.md) | [![cam_low RGB render](docs/assets/randomized-rgb-cam_low.jpg)](docs/randomized-rendering.md) |
 
 ## Getting started
 
