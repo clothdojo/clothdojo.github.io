@@ -94,7 +94,7 @@ The protocol files in `benchmark/conditions/` describe this release. Do not subs
 
 ## Export RGB training data
 
-Stop the policy server. Install the Isaac 5 SDK into the same environment and restore the original visual assets using the [upstream dependency guide](upstream-dependencies.md#nvidia-visual-assets-for-rgb). Use an indexed collection of successful trajectories as the source:
+Follow [Randomized RGB rendering](randomized-rendering.md) to prepare Isaac 5, download the public materials, and view a first RGB export. For training data, stop the policy server and use an indexed collection of successful trajectories as the source:
 
 ```bash
 .venv/bin/clothdojo data export-lerobot \

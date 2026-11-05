@@ -502,7 +502,8 @@ def export_isaac_rollout_collection(
         if expert_collection:
             from clothdojo.data.rollout import export_trajectory_dataset
             result = export_trajectory_dataset(
-                root, output, _camera_factory=camera_factory, _rendering=rendering,
+                root, output, assets_root=asset_root,
+                _camera_factory=camera_factory, _rendering=rendering,
                 repo_id=repo_id, image_writer_threads=image_writer_threads,
                 shard_index=shard_index, shard_count=shard_count,
                 min_segment_frames=min_segment_frames,
@@ -511,7 +512,8 @@ def export_isaac_rollout_collection(
             result.update(renderer="isaac_rtx", cloth_visual="normal")
         else:
             result = _export_canonical_collection(
-                root, output, camera_factory=camera_factory, rendering=rendering,
+                root, output, assets_root=asset_root,
+                camera_factory=camera_factory, rendering=rendering,
                 repo_id=repo_id, image_writer_threads=image_writer_threads,
                 shard_index=shard_index, shard_count=shard_count,
             )

@@ -46,6 +46,10 @@ Each video is 60 seconds at 640×480 and 10 fps. Replay uses the saved robot and
 
 For another generation run, use a new `--output` directory or omit the option for an automatically created directory. `generate` prints the corresponding replay command, including any custom benchmark path and GPU. Replaying the same collection reuses matching videos.
 
+## Next: randomized RGB rendering
+
+Follow [Randomized RGB rendering](randomized-rendering.md) to give this same trajectory different materials and lighting and watch the resulting RGB videos. This additional step requires the Isaac 5 runtime and an RTX GPU.
+
 ## Try folding
 
 Use the installed environment:

@@ -21,6 +21,7 @@ The NOCS workflow runs on one NVIDIA GPU and does not require Isaac Sim. The gui
 ## Resources
 
 - [Assets](https://huggingface.co/datasets/clothdojo/assets) · [NOCS teachers](https://huggingface.co/clothdojo/nocs-teachers) · [Download details](docs/data-and-assets.md)
+- [Randomized RGB rendering](docs/randomized-rendering.md): render the same motion with different materials and lighting
 - [More workflows](docs/advanced.md): successful-trajectory selection, evaluation, and RGB export
 - [Questions and bug reports](https://github.com/clothdojo/clothdojo.github.io/issues)
 

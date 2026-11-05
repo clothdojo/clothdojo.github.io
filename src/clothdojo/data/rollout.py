@@ -272,6 +272,7 @@ def export_rollout_collection(
     return _export_canonical_collection(
         source,
         output,
+        assets_root=assets_root,
         camera_factory=camera_factory,
         rendering={"backend": "newton", "cloth_visual": cloth_visual},
         repo_id=repo_id,
@@ -418,6 +419,7 @@ def export_trajectory_dataset(
     _export_collection_manifest(
         root,
         output,
+        assets_root=assets_root,
         manifest=manifest,
         source_kind="trajectory_collection",
         camera_factory=_camera_factory or camera_factory,
@@ -564,6 +566,7 @@ def _export_canonical_collection(
     source: str | Path,
     output: str | Path,
     *,
+    assets_root: str | Path = "assets",
     camera_factory: Callable[[str, Any, RobotProfile], Any],
     rendering: dict[str, Any],
     repo_id: str | None,
@@ -590,6 +593,7 @@ def _export_canonical_collection(
     _export_collection_manifest(
         root,
         output,
+        assets_root=assets_root,
         manifest=manifest,
         source_kind=source_kind,
         camera_factory=camera_factory,
@@ -676,6 +680,7 @@ def _export_collection_manifest(
     root: Path,
     output: str | Path,
     *,
+    assets_root: str | Path = "assets",
     manifest: dict[str, Any],
     source_kind: str,
     camera_factory: Callable[[str, Any, RobotProfile], Any],
@@ -695,7 +700,7 @@ def _export_collection_manifest(
     scenario = manifest["scenario"]
     trajectories = manifest["trajectories"]
     first_reader = TrajectoryReader(root / trajectories[0]["path"])
-    collection_robot = _trajectory_robot(first_reader)
+    collection_robot = _trajectory_robot(first_reader, assets_root=assets_root)
     missing_cameras = set(CAMERA_NAMES) - {camera.name for camera in collection_robot.cameras}
     if missing_cameras:
         raise ValueError(
@@ -739,7 +744,7 @@ def _export_collection_manifest(
             reader = TrajectoryReader(root / episode["path"])
             if float(reader.manifest.control_fps) != export_fps:
                 raise ValueError("trajectories use different control rates")
-            profile = _trajectory_robot(reader)
+            profile = _trajectory_robot(reader, assets_root=assets_root)
             if profile.robot_id != collection_robot.robot_id:
                 raise ValueError("one export cannot mix robot profiles")
             action_start = int(episode.get("action_start", 0))
@@ -872,8 +877,8 @@ def _load_canonical_collection(root: Path) -> tuple[dict[str, Any], str]:
     raise ValueError(f"unsupported canonical trajectory collection schema: {schema!r}")
 
 
-def _trajectory_robot(reader) -> RobotProfile:
-    return robot_profile(reader.manifest.scene.robot_id)
+def _trajectory_robot(reader, *, assets_root: str | Path = "assets") -> RobotProfile:
+    return robot_profile(reader.manifest.scene.robot_id, assets_root=assets_root)
 
 
 def _trajectory_export_context(

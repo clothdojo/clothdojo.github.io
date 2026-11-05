@@ -71,7 +71,7 @@ A flattening trajectory has 3000 actions and 3001 states; folding has 2000 actio
 
 ## Optional RGB resources
 
-For RGB export, also obtain the redistributable visual assets and upstream omission manifest:
+For a first RGB export, follow [Randomized RGB rendering](randomized-rendering.md), which downloads only the public Poly Haven set. For the full appearance profiles, also obtain the redistributable visual assets and upstream omission manifest:
 
 ```bash
 uvx --from 'huggingface-hub==0.32.3' huggingface-cli download clothdojo/assets \
@@ -80,7 +80,7 @@ uvx --from 'huggingface-hub==0.32.3' huggingface-cli download clothdojo/assets \
   --local-dir .
 ```
 
-Install the Isaac 5 SDK and acquire excluded NVIDIA originals using the [upstream guide](upstream-dependencies.md). The omission manifest lists 1,572 original asset-tree files and 18 extracted-material files; these are not needed for NOCS generation. Downloaded components retain their upstream terms.
+The [upstream guide](upstream-dependencies.md) covers the Isaac 5 SDK and excluded NVIDIA originals. The omission manifest lists 1,572 original asset-tree files and 18 extracted-material files; these are not needed for NOCS generation or the basic Poly Haven rendering example. Downloaded components retain their upstream terms.
 
 The original RGB dataset repositories, [clothdojo/flatten](https://huggingface.co/datasets/clothdojo/flatten) and [clothdojo/fold](https://huggingface.co/datasets/clothdojo/fold), are separate from the assets and teachers. Check their dataset cards for current completeness before training; they are not required for the quickstart.
 

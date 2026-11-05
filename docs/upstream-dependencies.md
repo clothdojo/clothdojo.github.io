@@ -16,7 +16,8 @@ export OPENPI_DATA_HOME="$CLOTHDOJO_OPENPI_CACHE"
 .venv/bin/python - <<'PY'
 from openpi.shared import download
 path = download.maybe_download(
-    "gs://big_vision/paligemma_tokenizer.model", gs={"token": "anon"}
+    "gs://big_vision/paligemma_tokenizer.model",
+    gs={"token": "anon", "session_kwargs": {"trust_env": True}},
 )
 print(path)
 PY
@@ -26,11 +27,9 @@ The resulting file must be at `.cache/openpi/big_vision/paligemma_tokenizer.mode
 
 If the upstream download is denied or inaccessible, obtain this tokenizer through the publisher's authorized access route and place it at that exact path. An arbitrary tokenizer or a different Gemma tokenizer is not interchangeable. The teacher repository's `base_model.json`, notices, and Gemma restrictions identify the upstream model and applicable terms.
 
-## NVIDIA visual assets for RGB
+## Isaac 5 runtime
 
-The initial simulation check, NOCS rollout, and Newton review videos do not require the excluded Isaac visual files. Complete this section before using the published Isaac RGB appearance setup.
-
-Install the snapshot's pinned Isaac 5 SDK and extension caches into the NOCS environment. Keep `--no-deps`: the shared Python package versions are owned by `requirements.txt`.
+Randomized RGB rendering requires an RTX GPU, Python 3.11, and Linux with GLIBC 2.35 or newer. Install the pinned Isaac 5.0 SDK and extension caches into the NOCS environment. Keep `--no-deps`: the shared Python package versions are owned by `requirements.txt`.
 
 ```bash
 .venv/bin/python -m pip install --extra-index-url https://pypi.nvidia.com --no-deps \
@@ -40,7 +39,11 @@ Install the snapshot's pinned Isaac 5 SDK and extension caches into the NOCS env
   'isaacsim-kernel==5.0.0' 'omniverse-kit==107.3.1.206797'
 ```
 
-The SDK installation does not restore the original environment scenes, MDL materials, or textures omitted from the asset package.
+Continue with [randomized RGB rendering](randomized-rendering.md) for a first example using public materials.
+
+## NVIDIA visual assets for RGB
+
+The full appearance profiles use original scenes, MDL materials and textures omitted from the asset package. These are additional resources beyond the basic Poly Haven example; installing the SDK does not restore them.
 
 1. Obtain Isaac Sim **5.0** visual assets from NVIDIA under its applicable terms. Use the [official download entry](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/download.html) and select the matching archived version. The [5.0 asset browser](https://docs.isaacsim.omniverse.nvidia.com/5.0.0/utilities/asset_browser.html) describes upstream browsing and downloading. A newer asset version is not an exact replacement for this snapshot.
 2. Locate the downloaded asset root containing both `Isaac/` and `NVIDIA/`. Copy the matching original files under `data/visual-assets/isaac-5.0/`, preserving the relative paths in the omission manifest. Keep these files inside the visual-assets tree: the extraction code records dependencies relative to that tree, so an external directory symlink is unsuitable.
@@ -86,8 +89,8 @@ PY
 
 Proceed with the exact released appearance setup only when this check reports zero missing and zero different files. If it fails, use the listed paths and hashes to identify the version or extraction mismatch. Missing upstream files are not repaired by renaming a newer asset or substituting a different background.
 
-Local restoration from retained NVIDIA originals reproduced all 18 omitted extracted-material files with the exact sizes and SHA256 values in the release manifest. A clean external download and GPU rendering run remain to be verified.
+Use the omission manifest as the file, size and hash reference for restoring these full appearance resources.
 
 ## What to download first
 
-For the shortest NOCS path, follow the [Quickstart](usage.md): GitHub provides the code, the download script obtains assets and one teacher, and the run script prepares the upstream tokenizer. Restore NVIDIA visual assets when moving to randomized RGB export. The RGB training datasets are not required to generate new NOCS trajectories.
+For the shortest NOCS path, follow the [Quickstart](usage.md). Then try [randomized RGB rendering](randomized-rendering.md) with the public materials. Restore NVIDIA visual assets when using the full appearance profiles. The RGB training datasets are not required to generate or render new trajectories.
