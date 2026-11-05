@@ -1,245 +1,10 @@
 {
-  "commit": "d0e8827fcd37f683534808b4cc3d9d3d00081506",
-  "passed": true,
-  "errors": [],
-  "screenshots": [
-    {
-      "file": "index-1440.jpg",
-      "target": "index.html",
-      "width": 1440,
-      "height": 900,
-      "bounds": {
-        "x": 0,
-        "y": 64,
-        "width": 1440,
-        "height": 725.09375
-      }
-    },
-    {
-      "file": "layout-1440-full.jpg",
-      "target": "index.html",
-      "width": 1440,
-      "height": 900,
-      "fullPage": true
-    },
-    {
-      "file": "index-1280.jpg",
-      "target": "index.html",
-      "width": 1280,
-      "height": 720,
-      "bounds": {
-        "x": 0,
-        "y": 64,
-        "width": 1280,
-        "height": 473.78125
-      }
-    },
-    {
-      "file": "index-1920.jpg",
-      "target": "index.html",
-      "width": 1920,
-      "height": 1080,
-      "bounds": {
-        "x": 0,
-        "y": 64,
-        "width": 1920,
-        "height": 905.09375
-      }
-    },
-    {
-      "file": "index-1724.jpg",
-      "target": "index.html",
-      "width": 1724,
-      "height": 756,
-      "bounds": {
-        "x": 0,
-        "y": 64,
-        "width": 1724,
-        "height": 509.78125
-      }
-    },
-    {
-      "file": "index-390.jpg",
-      "target": "index.html",
-      "width": 390,
-      "height": 844,
-      "bounds": {
-        "x": 0,
-        "y": 60,
-        "width": 390,
-        "height": 425.40625
-      }
-    },
-    {
-      "file": "layout-390-full.jpg",
-      "target": "index.html",
-      "width": 390,
-      "height": 844,
-      "fullPage": true
-    },
-    {
-      "file": "atlas-fit-390.jpg",
-      "width": 390,
-      "height": 844,
-      "assetFit": {
-        "paintedWidth": 334,
-        "cardWidth": 350
-      }
-    },
-    {
-      "file": "index-320.jpg",
-      "target": "index.html",
-      "width": 320,
-      "height": 640,
-      "bounds": {
-        "x": 0,
-        "y": 60,
-        "width": 320,
-        "height": 421.90625
-      }
-    },
-    {
-      "file": "atlas-fit-320.jpg",
-      "width": 320,
-      "height": 640,
-      "assetFit": {
-        "paintedWidth": 263.8125,
-        "cardWidth": 280
-      }
-    },
-    {
-      "file": "research-preview-v31-1440.jpg",
-      "target": "research-preview-v31.html",
-      "width": 1440,
-      "height": 900,
-      "bounds": {
-        "x": 0,
-        "y": 64,
-        "width": 1440,
-        "height": 725.09375
-      }
-    },
-    {
-      "file": "research-preview-v31-1280.jpg",
-      "target": "research-preview-v31.html",
-      "width": 1280,
-      "height": 720,
-      "bounds": {
-        "x": 0,
-        "y": 64,
-        "width": 1280,
-        "height": 473.78125
-      }
-    },
-    {
-      "file": "research-preview-v31-1920.jpg",
-      "target": "research-preview-v31.html",
-      "width": 1920,
-      "height": 1080,
-      "bounds": {
-        "x": 0,
-        "y": 64,
-        "width": 1920,
-        "height": 905.09375
-      }
-    },
-    {
-      "file": "research-preview-v31-1724.jpg",
-      "target": "research-preview-v31.html",
-      "width": 1724,
-      "height": 756,
-      "bounds": {
-        "x": 0,
-        "y": 64,
-        "width": 1724,
-        "height": 509.78125
-      }
-    },
-    {
-      "file": "research-preview-v31-390.jpg",
-      "target": "research-preview-v31.html",
-      "width": 390,
-      "height": 844,
-      "bounds": {
-        "x": 0,
-        "y": 60,
-        "width": 390,
-        "height": 425.40625
-      }
-    },
-    {
-      "file": "research-preview-v31-320.jpg",
-      "target": "research-preview-v31.html",
-      "width": 320,
-      "height": 640,
-      "bounds": {
-        "x": 0,
-        "y": 60,
-        "width": 320,
-        "height": 421.90625
-      }
-    },
-    {
-      "file": "card-1440-0.jpg",
-      "width": 1440,
-      "card": 0
-    },
-    {
-      "file": "card-1440-1.jpg",
-      "width": 1440,
-      "card": 1
-    },
-    {
-      "file": "card-1440-2.jpg",
-      "width": 1440,
-      "card": 2
-    },
-    {
-      "file": "code-1440.jpg",
-      "width": 1440,
-      "staticCode": true
-    },
-    {
-      "file": "card-1280-0.jpg",
-      "width": 1280,
-      "card": 0
-    },
-    {
-      "file": "card-1280-1.jpg",
-      "width": 1280,
-      "card": 1
-    },
-    {
-      "file": "card-1280-2.jpg",
-      "width": 1280,
-      "card": 2
-    },
-    {
-      "file": "code-1280.jpg",
-      "width": 1280,
-      "staticCode": true
-    },
-    {
-      "file": "card-390-0.jpg",
-      "width": 390,
-      "card": 0
-    },
-    {
-      "file": "card-390-1.jpg",
-      "width": 390,
-      "card": 1
-    },
-    {
-      "file": "card-390-2.jpg",
-      "width": 390,
-      "card": 2
-    },
-    {
-      "file": "code-390.jpg",
-      "width": 390,
-      "staticCode": true
-    }
+  "commit": "b50f2ca2ddf0b91a9e7f0d827caef71aece55abd",
+  "passed": false,
+  "errors": [
+    "AssertionError [ERR_ASSERTION]: {\"width\":1440,\"baseline\":false,\"bandwidthMbps\":4,\"latencyMs\":80,\"cpuSlowdown\":2,\"action\":\"rgb\",\"id\":\"rgb-film\",\"startupMs\":1713.1,\"frames\":164,\"maxWallGapMs\":633.3000000000002,\"waitingMs\":5261.199999999924,\"droppedFrames\":8,\"totalFrames\":172,\"elapsedMs\":12040.699999999983,\"readyState\":3,\"paused\":false}\n    at galleryPlayback (/home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/gallery-playback-review.cjs:67:5)\n    at runNextTicks (node:internal/process/task_queues:64:5)\n    at process.processImmediate (node:internal/timers:452:9)\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)\n    at async /home/runner/work/clothdojo.github.io/clothdojo.github.io/.github/scripts/homepage-film-review.cjs:22:2"
   ],
+  "screenshots": [],
   "checks": [
     {
       "independentOrthographicViews": 4,
@@ -248,243 +13,85 @@
       "completeForegroundBounds": true
     },
     {
-      "target": "index.html",
-      "width": 1440,
-      "height": 900,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "index.html",
-      "width": 1280,
-      "height": 720,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "index.html",
-      "width": 1920,
-      "height": 1080,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "index.html",
-      "width": 1724,
-      "height": 756,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "index.html",
-      "width": 390,
-      "height": 844,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "index.html",
-      "width": 320,
-      "height": 640,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "research-preview-v31.html",
-      "width": 1440,
-      "height": 900,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "research-preview-v31.html",
-      "width": 1280,
-      "height": 720,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "research-preview-v31.html",
-      "width": 1920,
-      "height": 1080,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "research-preview-v31.html",
-      "width": 1724,
-      "height": 756,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "research-preview-v31.html",
-      "width": 390,
-      "height": 844,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "target": "research-preview-v31.html",
-      "width": 320,
-      "height": 640,
-      "oneViewport": true,
-      "noHeroControls": true,
-      "whiteGround": true,
-      "reducedMotion": true
-    },
-    {
-      "width": 1440,
-      "sharedContentEdges": {
-        "nav": {
-          "left": 120,
-          "width": 1200
-        },
-        "code": {
-          "left": 120,
-          "width": 1200
-        },
-        "gallery": {
-          "left": 120,
-          "width": 1200
-        }
+      "galleryPlayback": {
+        "width": 1440,
+        "baseline": true,
+        "bandwidthMbps": 4,
+        "latencyMs": 80,
+        "cpuSlowdown": 2,
+        "action": "rgb",
+        "id": "rgb-film",
+        "startupMs": 1978.400000000006,
+        "frames": 107,
+        "maxWallGapMs": 716.7000000000007,
+        "waitingMs": 7620.799999999959,
+        "droppedFrames": 10,
+        "totalFrames": 110,
+        "elapsedMs": 12150,
+        "readyState": 2,
+        "paused": false
       }
     },
     {
-      "width": 1440,
-      "horizontalCards": 3,
-      "staticCode": true,
-      "arrows": true,
-      "dots": true,
-      "keyboard": true,
-      "deepLinks": true,
-      "noDocumentOverflow": true
-    },
-    {
-      "width": 1280,
-      "sharedContentEdges": {
-        "nav": {
-          "left": 40,
-          "width": 1200
-        },
-        "code": {
-          "left": 40,
-          "width": 1200
-        },
-        "gallery": {
-          "left": 40,
-          "width": 1200
-        }
+      "galleryPlayback": {
+        "width": 1440,
+        "baseline": true,
+        "bandwidthMbps": 4,
+        "latencyMs": 80,
+        "cpuSlowdown": 2,
+        "action": "next",
+        "id": "transfer-film",
+        "startupMs": 275.89799999999923,
+        "frames": 295,
+        "maxWallGapMs": 66.70000000000073,
+        "waitingMs": 0,
+        "droppedFrames": 0,
+        "totalFrames": 295,
+        "elapsedMs": 12040.300000000017,
+        "readyState": 4,
+        "paused": false
       }
     },
     {
-      "width": 1280,
-      "horizontalCards": 3,
-      "staticCode": true,
-      "arrows": true,
-      "dots": true,
-      "keyboard": true,
-      "deepLinks": true,
-      "noDocumentOverflow": true
-    },
-    {
-      "width": 390,
-      "sharedContentEdges": {
-        "nav": {
-          "left": 20,
-          "width": 350
-        },
-        "code": {
-          "left": 20,
-          "width": 350
-        },
-        "gallery": {
-          "left": 85,
-          "width": 350
-        }
+      "galleryPlayback": {
+        "width": 1440,
+        "baseline": true,
+        "bandwidthMbps": 4,
+        "latencyMs": 80,
+        "cpuSlowdown": 2,
+        "action": "previous",
+        "id": "rgb-film",
+        "startupMs": 300.0319999999956,
+        "frames": 42,
+        "maxWallGapMs": 66.70000000000073,
+        "waitingMs": 0,
+        "droppedFrames": 0,
+        "totalFrames": 44,
+        "elapsedMs": 2023.2999999999884,
+        "readyState": 4,
+        "paused": false
       }
     },
     {
-      "width": 390,
-      "horizontalCards": 3,
-      "staticCode": true,
-      "arrows": true,
-      "dots": true,
-      "keyboard": true,
-      "deepLinks": true,
-      "noDocumentOverflow": true
-    },
-    {
-      "width": 1440,
-      "galleryMetadataBeforeNavigation": true,
-      "correctViewportPoster": true,
-      "cardRequests": [
-        "/assets/cards78/rgb-wide.webp",
-        "/assets/cards78/atlas-wide.webp",
-        "/assets/rgb76/ribbon.mp4"
-      ]
-    },
-    {
-      "width": 1440,
-      "heroLoopSeam": 0.16666666666666666,
-      "heroMaxFrameGap": 0.08000000000000007
-    },
-    {
-      "width": 1440,
-      "fullLoop": true,
-      "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.08000000000000007,
-      "exclusiveAmbientPlayback": true
-    },
-    {
-      "width": 390,
-      "galleryMetadataBeforeNavigation": true,
-      "correctViewportPoster": true,
-      "cardRequests": [
-        "/assets/cards78/atlas-mobile.webp",
-        "/assets/cards78/rgb-mobile.webp",
-        "/assets/robots82/robot-mobile.webp",
-        "/assets/rgb77/ribbon-mobile.mp4",
-        "/assets/robots82/robot-transfer-mobile.mp4"
-      ]
-    },
-    {
-      "width": 390,
-      "heroLoopSeam": 0.16666666666666666,
-      "heroMaxFrameGap": 0.04000000000000625
-    },
-    {
-      "width": 390,
-      "fullLoop": true,
-      "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.04000000000000625,
-      "exclusiveAmbientPlayback": true
+      "galleryPlayback": {
+        "width": 1440,
+        "baseline": false,
+        "bandwidthMbps": 4,
+        "latencyMs": 80,
+        "cpuSlowdown": 2,
+        "action": "rgb",
+        "id": "rgb-film",
+        "startupMs": 1713.1,
+        "frames": 164,
+        "maxWallGapMs": 633.3000000000002,
+        "waitingMs": 5261.199999999924,
+        "droppedFrames": 8,
+        "totalFrames": 172,
+        "elapsedMs": 12040.699999999983,
+        "readyState": 3,
+        "paused": false
+      }
     }
   ],
-  "recordings": [
-    "homepage-loop-1440.webm",
-    "homepage-loop-390.webm"
-  ]
+  "recordings": []
 }
