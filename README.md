@@ -6,7 +6,7 @@ Zilong Huang, Zipeng Ye, Caicheng Wang, Yuchen Xie, Jiaxiang Luo
 
 [Website](https://clothdojo.github.io/) · [Paper](https://arxiv.org/abs/2611.01190) · [Assets](https://huggingface.co/datasets/clothdojo/assets)
 
-ClothDojo generates bimanual garment-manipulation trajectories in simulation, with NOCS teachers for flattening and folding.
+ClothDojo generates bimanual garment-manipulation trajectories in simulation, with NOCS teachers for flattening and folding. Its simulation environment is built on [Newton](https://github.com/newton-physics/newton).
 
 ## NOCS Quickstart
 
@@ -25,6 +25,18 @@ Follow the [RGB rendering guide](docs/randomized-rendering.md) to render the sav
 - [Assets](https://huggingface.co/datasets/clothdojo/assets) · [NOCS teachers](https://huggingface.co/clothdojo/nocs-teachers) · [Download details](docs/data-and-assets.md)
 - [More workflows](docs/advanced.md): successful-trajectory selection, evaluation, and RGB export
 - [Questions and bug reports](https://github.com/clothdojo/clothdojo.github.io/issues)
+
+## Acknowledgements
+
+ClothDojo builds on the work of the following projects and asset creators. We thank their authors and contributors:
+
+- **Simulation:** [Newton](https://github.com/newton-physics/newton), [NVIDIA Warp](https://github.com/NVIDIA/warp), [MuJoCo](https://github.com/google-deepmind/mujoco), and [MuJoCo Warp](https://github.com/google-deepmind/mujoco_warp). Our environment uses a pinned Newton 1.5.0 fork; see the [source and version details](THIRD_PARTY_NOTICES.md#simulation).
+- **Garments:** [GarmentCodeData](https://www.research-collection.ethz.ch/handle/20.500.11850/690432), whose garment assets we select and convert for simulation, under CC BY 4.0.
+- **Textures and scenes:** [Poly Haven](https://polyhaven.com/) provides fabric and surface textures (CC0). Optional RGB scene and material sources include [GenieSimAssets](https://huggingface.co/datasets/agibot-world/GenieSimAssets) and [NVIDIA Isaac Sim](https://docs.isaacsim.omniverse.nvidia.com/5.0.0/index.html), under their respective asset terms.
+- **Robot assets:** [AgileX](https://github.com/agilexrobotics/agx_arm_urdf), [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie), [RoboDojo](https://github.com/RoboDojo-Benchmark/RoboDojo), [Franka Robotics](https://franka.de/3d-assets), and the component authors credited in the [robot provenance notes](THIRD_PARTY_NOTICES.md#robot-assets).
+- **Policy and data tooling:** [OpenPI](https://github.com/Physical-Intelligence/openpi), [RLinf](https://github.com/RLinf/RLinf), and [Hugging Face LeRobot](https://github.com/huggingface/lerobot).
+
+See [third-party notices](THIRD_PARTY_NOTICES.md) for authors, pinned sources, modifications, and component license information. These acknowledgements do not replace the original license and attribution files supplied with code, assets, or model weights.
 
 ## Citation
 
