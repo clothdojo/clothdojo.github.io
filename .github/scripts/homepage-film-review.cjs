@@ -40,7 +40,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.equal(await page.locator('.story-track details, .story-track p').count(),0,'Capabilities are presented as full headings, without fine print or collapsed explanations');
    assert.equal(await page.locator('#authors, .author-credit').count(),0,'The homepage omits author details');
    const paper=page.locator('.site-header .paper-link');assert(await paper.isVisible());assert.equal(await paper.getAttribute('href'),'https://arxiv.org/abs/2611.01190');
-   assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','highlights','use']);
+   assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','capabilities','highlights','use']);
    assert.deepEqual(await page.locator('.story-track > .story-card').evaluateAll(s=>s.map(x=>x.id)),['diversity','rgb','render']);
    assert.equal(await page.locator('#results, #transfer-results, #method, .story-track #use').count(),0);
    assert(await page.locator('body').evaluate(b=>b.classList.contains('research30')),'Keep the approved research design at the official entry');

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="ClothDojo learns to generate complex garment manipulation data in simulation. Explore regenerated observations, cross-robot transfer, and controlled policy evaluations.">
+<meta name="description" content="ClothDojo combines learned data generation, policy evaluation, and an interactive platform for bimanual garment manipulation.">
 <meta name="theme-color" content="#ffffff"><title>ClothDojo · Learned garment manipulation data</title>
 <link rel="stylesheet" href="site.css?v=26"><link rel="stylesheet" href="results.css?v=26"><link rel="stylesheet" href="studio.css?v=26"><script src="site.js?v=86" defer></script>
 <link rel="stylesheet" href="scene-study.css?v=27"><link rel="stylesheet" href="fold-fit.css?v=28"><script src="generation-loop.js?v=34" defer></script>
@@ -11,19 +11,24 @@
 <link rel="stylesheet" href="embedded-hero.css?v=44">
 <link rel="stylesheet" href="rgb-collection.css?v=3">
 <link rel="stylesheet" href="generation-hero.css?v=85">
-<link rel="stylesheet" href="story-cards.css?v=88"><script src="story-cards.js?v=68" defer></script>
+<link rel="stylesheet" href="story-cards.css?v=91"><script src="story-cards.js?v=68" defer></script>
 </head>
 <body class="launch scene-preview fold-fit research30">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><nav class="nav container" aria-label="Main navigation"><a class="brand" href="#main">ClothDojo</a><div class="nav-links"><a class="paper-link" href="https://arxiv.org/abs/2611.01190">Paper</a><a href="#use">Code</a></div><a class="nav-code" href="https://github.com/clothdojo/clothdojo.github.io">GitHub ↗</a></nav></header>
 <main id="main">
 <section class="hero container" id="overview" aria-labelledby="title">
-<div class="hero-copy"><h1 id="title"><span class="studio-wordmark">ClothDojo:</span> <span class="studio-paper-title">Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding</span></h1><div class="hero-intro"><p>Complex manipulation. Reproducible evaluation.</p></div></div>
+<div class="hero-copy"><h1 id="title"><span class="studio-wordmark">ClothDojo:</span> <span class="studio-paper-title">Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding</span></h1><div class="hero-intro"><p>Generate data. Evaluate policies. Interact with cloth.</p></div></div>
 <figure class="hero-figure scene-study embedded-generation" aria-label="Model-generated garment manipulation">
 <div class="hero-task-labels" aria-hidden="true"><span>Flattening</span><span>Folding</span></div>
 <video id="hero-film" class="scene-media" muted loop playsinline disablepictureinpicture disableremoteplayback preload="metadata" data-auto data-src="assets/film62/generation-loop.mp4" poster="assets/film62/generation-loop-poster.jpg" width="1600" height="560" aria-label="Model-generated trajectories: two fixed worktables, flattening on the left and folding on the right, six garments and twelve complete task episodes at 2× replay"></video>
 </figure></section>
-<section class="highlights-section" id="highlights" aria-label="Project highlights">
+<section class="core-capabilities container" id="capabilities" aria-label="Three core capabilities">
+<article><h2>Data generation</h2><p>Learn from demonstrations and corrections. Generate successful trajectories and re-render them as RGB training data.</p></article>
+<article><h2>Policy evaluation</h2><p>Compare policies on fixed initial states with shared task metrics and replayable trajectories.</p></article>
+<article><h2>Interactive platform</h2><p>Teleoperate in VR, provide human-in-the-loop corrections, and review trajectories in one interface.</p></article>
+</section>
+<section class="highlights-section" id="highlights" aria-label="Supporting capabilities">
 <div class="story-track" tabindex="0" aria-label="Project highlights; use left and right arrow keys"><section class="asset-section container story-card story-card--diversity" id="diversity" aria-labelledby="diversity-title" role="group" aria-roledescription="slide" aria-label="1 of 3">
 <header class="story-card-heading"><h2 id="diversity-title">Diverse assets</h2></header>
 <div class="story-card-body"><div class="atlas-overview"><picture><source media="(max-width: 700px)" srcset="assets/cards78/atlas-mobile.webp"><img src="assets/cards78/atlas-wide.webp" width="3000" height="1200" loading="lazy" decoding="async" alt="The 500-garment core asset pool, used for generation and evaluation; these are not 500 manually demonstrated garments"></picture></div></div>

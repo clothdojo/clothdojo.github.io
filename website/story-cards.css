@@ -1,3 +1,8 @@
+/* Three equal contributions, followed by their supporting media. */
+.core-capabilities { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; padding-block: 40px 72px; }
+.research30 .core-capabilities h2 { margin: 0 0 16px; font-size: 25px; line-height: 1.2; letter-spacing: -.5px; font-weight: 600; }
+.core-capabilities p { max-width: 34ch; margin: 0; font-size: 16px; line-height: 1.65; color: var(--text); }
+
 /* One gallery band, with shared heading, media and disclosure spacing. */
 .highlights-section {
   --story-card-width: min(var(--width), calc(100vw - var(--gutter) * 2));
@@ -122,6 +127,9 @@
   .story-card--render .story-card-body { display: flex; align-items: center; }
 }
 @media (max-width: 700px) {
+  .core-capabilities { grid-template-columns: 1fr; gap: 28px; padding-block: 24px 48px; }
+  .research30 .core-capabilities h2 { margin-bottom: 10px; font-size: 24px; }
+  .core-capabilities p { max-width: none; font-size: 15px; }
   .highlights-section { --story-card-height: clamp(500px, calc(100svh - 180px), 680px); padding-block: 48px 40px; }
   .story-track { gap: 16px; padding-inline: var(--gutter); }
   .research30 .story-card { height: auto; min-height: var(--story-card-height); border-radius: 20px; }
