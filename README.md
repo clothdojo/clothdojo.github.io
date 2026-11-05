@@ -8,9 +8,9 @@ Zilong Huang, Zipeng Ye, Caicheng Wang, Yuchen Xie, Jiaxiang Luo
 
 ClothDojo generates bimanual garment-manipulation trajectories in simulation, with NOCS teachers for flattening and folding.
 
-[![Quickstart NOCS trajectory preview](docs/assets/nocs-flatten-preview.gif)](docs/assets/nocs-flatten.mp4)
-
-Quickstart example · 4× preview · [Full 60-second replay](docs/assets/nocs-flatten.mp4)
+| cam_high | cam_low |
+| :---: | :---: |
+| [![cam_high, 4× preview](docs/assets/nocs-flatten-preview.gif)](docs/assets/nocs-flatten.mp4) | [![cam_low, 4× preview](docs/assets/nocs-flatten-low-preview.gif)](docs/assets/nocs-flatten-low.mp4) |
 
 ## Getting started
 

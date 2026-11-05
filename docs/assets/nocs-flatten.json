@@ -17,5 +17,21 @@
   "preview_width": 360,
   "action_count": 3000,
   "state_count": 3001,
-  "storage_kind": "render_only_v1"
+  "storage_kind": "render_only_v1",
+  "camera": "cam_high",
+  "cam_low": {
+    "video": "docs/assets/nocs-flatten-low.mp4",
+    "preview": "docs/assets/nocs-flatten-low-preview.gif",
+    "source_video_sha256": "5009e503473996c8471c284acf5597bcb6ee5d02d138c7d8e7184ad4b2665195",
+    "video_sha256": "f2cc04bac9b08c15440508236f3ef96c45566dbebebf5b0cd7514853eb3ae846",
+    "preview_sha256": "a0f8bc1d3759fca32048e3cda516b7a63e97f35a0e339ff75a7ff2cbb97f699d",
+    "video_frames": 600,
+    "video_fps": 10,
+    "duration_seconds": 60,
+    "preview_frames": 90,
+    "preview_duration_seconds": 15,
+    "preview_speed": 4,
+    "preview_width": 360,
+    "decoded_frames_match_source": true
+  }
 }
