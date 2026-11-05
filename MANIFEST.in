@@ -1,6 +1,6 @@
 include README.md LICENSE LICENSE-DATA LICENSE_SCOPE.md THIRD_PARTY_NOTICES.md requirements.txt requirements-dev.txt
 recursive-include patches *.patch
-recursive-include scripts *.sh
+recursive-include scripts *.sh *.py
 recursive-include configs *.yaml *.json
 recursive-include docs *.md
 recursive-include third_party LICENSE

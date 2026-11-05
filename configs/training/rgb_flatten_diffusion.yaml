@@ -1,0 +1,25 @@
+# Single-GPU example, not the paper's RGB training recipe.
+seed: 43
+datasets: [data/datasets/clothdojo-flatten]
+fps: 50
+image_size: 224
+n_obs_steps: 2
+horizon: 64
+n_action_steps: 8
+down_dims: [256, 512, 1024]
+num_train_timesteps: 100
+num_inference_steps: 10
+max_steps: 80000
+micro_batch_size: 8
+global_batch_size: 8
+gradient_accumulation_steps: 1
+num_workers: 4
+lr: 0.0001
+betas: [0.95, 0.999]
+weight_decay: 0.000001
+warmup_steps: 500
+grad_clip_norm: 1.0
+save_interval: 5000
+log_interval: 20
+ema_power: 0.75
+ema_max_decay: 0.9999

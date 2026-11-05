@@ -20,6 +20,11 @@ Follow the [RGB rendering guide](docs/randomized-rendering.md) to render the sav
 
 [![RGB: cam_high left, cam_low right; 4× preview](docs/assets/randomized-rgb-paired-preview.gif)](docs/assets/randomized-rgb-paired.mp4)
 
+## RGB policy training and evaluation
+
+Follow the [RGB policy guide](docs/rgb-policy.md) to download Flatten demonstrations,
+train an example policy, and evaluate it on repaired initial states.
+
 ## Resources
 
 - [Assets](https://huggingface.co/datasets/clothdojo/assets) · [NOCS teachers](https://huggingface.co/clothdojo/nocs-teachers) · [Download details](docs/data-and-assets.md)

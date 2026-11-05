@@ -7,6 +7,8 @@
 | `scripts/quickstart.sh` | Generate one trajectory and both review views |
 | `docs/usage.md` | NOCS quickstart: install, generate a trajectory, and watch both camera views |
 | `docs/randomized-rendering.md` | Separate RGB workflow: renderer setup, materials, randomized export and videos |
+| `docs/rgb-policy.md` | Download public Flatten data, train an RGB policy, and run repaired-state evaluation |
+| `scripts/rgb-policy.py` | Three-stage RGB policy example using the existing trainer and managed evaluator |
 | `src/clothdojo/quickstart.py` | Own the quickstart's child processes and logs; delegate work to the CLI |
 | `src/clothdojo/cli.py` | Individual generation, evaluation, export, and training commands |
 | `src/clothdojo/rollout/` | Policy inference and trajectory collection |
