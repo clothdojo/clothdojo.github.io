@@ -421,7 +421,7 @@
           "width": 350
         },
         "gallery": {
-          "left": 93,
+          "left": 85,
           "width": 350
         }
       }
@@ -449,13 +449,13 @@
     {
       "width": 1440,
       "heroLoopSeam": 0.16666666666666666,
-      "heroMaxFrameGap": 0.0800000000000125
+      "heroMaxFrameGap": 0.08000000000000007
     },
     {
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.0800000000000125,
+      "maxFrameGap": 0.08000000000000007,
       "exclusiveAmbientPlayback": true
     },
     {
@@ -463,9 +463,9 @@
       "galleryMetadataBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
+        "/assets/cards78/atlas-mobile.webp",
         "/assets/cards78/rgb-mobile.webp",
         "/assets/robots82/robot-mobile.webp",
-        "/assets/cards78/atlas-mobile.webp",
         "/assets/rgb77/ribbon-mobile.mp4",
         "/assets/robots82/robot-transfer-mobile.mp4"
       ]
