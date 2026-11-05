@@ -856,19 +856,31 @@ def _parser() -> argparse.ArgumentParser:
 
     parser = argparse.ArgumentParser(prog="clothdojo")
     commands = parser.add_subparsers(dest="command")
-    generate = commands.add_parser("generate", help="generate trajectories with a managed teacher")
-    generate.add_argument("--task", choices=("flatten", "fold"), default="flatten")
+    generate = commands.add_parser(
+        "generate", help="generate trajectories with a managed teacher",
+        description="Start a teacher, generate trajectories, and stop the teacher. "
+                    "Prints a command to replay both camera views.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    generate.add_argument("--task", choices=("flatten", "fold"), default="flatten",
+                          help="task to generate")
     generate.add_argument("--benchmark", default="benchmark", help="released benchmark root")
     generate.add_argument("--teachers", default="models/nocs-teachers", help="teacher root")
-    generate.add_argument("--output", type=Path, help="new run directory; default: automatic")
-    generate.add_argument("--gpu", type=int, default=0)
-    generate.add_argument("--seen-assets", type=int, default=1)
-    generate.add_argument("--unseen-assets", type=int, default=0)
-    generate.add_argument("--states-per-asset", type=int, default=1)
-    replay = commands.add_parser("replay", help="export high and low views of a saved collection")
+    generate.add_argument("--output", type=Path,
+                          help="new run directory; omit to create one automatically; never overwrite")
+    generate.add_argument("--gpu", type=int, default=0, help="visible CUDA GPU index")
+    generate.add_argument("--seen-assets", type=int, default=1,
+                          help="number of seen garments, selected in pool order")
+    generate.add_argument("--unseen-assets", type=int, default=0,
+                          help="number of unseen garments, selected in pool order")
+    generate.add_argument("--states-per-asset", type=int, default=1,
+                          help="initial states per garment in pool order; released pool has four")
+    replay = commands.add_parser(
+        "replay", help="export high and low views of a saved collection",
+        description="Export cam_high and cam_low videos from recorded poses without a teacher.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     replay.add_argument("source", help="trajectory collection printed by generate")
     replay.add_argument("--benchmark", default="benchmark", help="benchmark root containing assets/")
-    replay.add_argument("--gpu", type=int, default=0)
+    replay.add_argument("--gpu", type=int, default=0, help="visible CUDA GPU index")
 
     environment = commands.add_parser("env", help="inspect the project environment")
     environment_commands = environment.add_subparsers(dest="env_command")
