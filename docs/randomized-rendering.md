@@ -1,21 +1,37 @@
 # Randomized RGB rendering
 
-After watching the [NOCS Quickstart](usage.md) videos, use this separate workflow to render the saved motion with different materials and lighting. The commands below reuse `outputs/first-flatten/rollout`.
+Render saved motion with different materials and lighting. The commands below reuse `outputs/first-flatten/rollout` from the [NOCS Quickstart](usage.md).
 
 ## 1. Prepare the renderer
 
-Use an RTX GPU with RT cores and Vulkan support, Python 3.11, and Linux with GLIBC 2.35 or newer. From the checkout root, activate the existing environment and install Isaac Sim 5.0:
+Use an RTX GPU with RT cores and Vulkan support, Python 3.11, and Linux with GLIBC 2.35 or newer. If you completed the Quickstart, run from the same checkout:
 
 ```bash
+bash scripts/setup.sh --rgb
 source .venv/bin/activate
-python -m pip install --extra-index-url https://pypi.nvidia.com --no-deps \
-  'isaacsim==5.0.0' 'isaacsim-app==5.0.0' 'isaacsim-core==5.0.0' \
-  'isaacsim-replicator==5.0.0' 'isaacsim-extscache-kit==5.0.0' \
-  'isaacsim-extscache-kit-sdk==5.0.0' 'isaacsim-extscache-physics==5.0.0' \
-  'isaacsim-kernel==5.0.0' 'omniverse-kit==107.3.1.206797'
 ```
 
-Keep `--no-deps` to preserve the shared Python dependencies. Download the public Poly Haven materials:
+This adds the pinned Isaac 5 runtime to the existing `.venv`, leaving the working NOCS dependencies in place.
+
+<details>
+<summary>Starting fresh? Install the full environment and generate the input trajectory</summary>
+
+You also need Git, `patch`, and [uv](https://docs.astral.sh/uv/). Use this block instead:
+
+```bash
+git clone https://github.com/clothdojo/clothdojo.github.io.git ClothDojo
+cd ClothDojo
+bash scripts/download.sh flatten
+bash scripts/setup.sh --rgb
+source .venv/bin/activate
+clothdojo generate --output outputs/first-flatten
+```
+
+`--rgb` installs the base environment first when needed; it always uses the same `.venv`.
+
+</details>
+
+Download the public Poly Haven materials:
 
 ```bash
 uvx --from 'huggingface-hub==0.32.3' huggingface-cli download clothdojo/assets \

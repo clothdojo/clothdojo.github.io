@@ -19,7 +19,7 @@ Follow the [NOCS Quickstart](docs/usage.md) to generate a trajectory and watch i
 ## Resources
 
 - [Assets](https://huggingface.co/datasets/clothdojo/assets) · [NOCS teachers](https://huggingface.co/clothdojo/nocs-teachers) · [Download details](docs/data-and-assets.md)
-- [Randomized RGB rendering](docs/randomized-rendering.md): a separate next step using the saved trajectory, an RTX GPU, and Isaac Sim 5
+- [Randomized RGB rendering](docs/randomized-rendering.md): reuse the trajectory and add Isaac Sim 5 with `setup.sh --rgb` on an RTX GPU
 - [More workflows](docs/advanced.md): successful-trajectory selection, evaluation, and RGB export
 - [Questions and bug reports](https://github.com/clothdojo/clothdojo.github.io/issues)
 

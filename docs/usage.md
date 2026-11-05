@@ -16,7 +16,7 @@ bash scripts/setup.sh
 source .venv/bin/activate
 ```
 
-`download.sh` fetches assets and the selected teacher from Hugging Face. `setup.sh` creates `.venv/` and installs the library and its dependencies. Run the remaining commands from this checkout root.
+`download.sh` fetches assets and the selected teacher from Hugging Face. `setup.sh` creates `.venv/` and installs the NOCS environment. Run the remaining commands from this checkout root.
 
 ## 2. Generate a trajectory
 

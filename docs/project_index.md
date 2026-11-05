@@ -3,7 +3,7 @@
 | Path | Purpose |
 |---|---|
 | `scripts/download.sh` | Download assets and the selected teacher; never download code |
-| `scripts/setup.sh` | Create the pinned NOCS environment |
+| `scripts/setup.sh` | Create the NOCS environment; `--rgb` adds Isaac 5 in the same `.venv` |
 | `scripts/quickstart.sh` | Generate one trajectory and both review views |
 | `docs/usage.md` | NOCS quickstart: install, generate a trajectory, and watch both camera views |
 | `docs/randomized-rendering.md` | Separate RGB workflow: renderer setup, materials, randomized export and videos |

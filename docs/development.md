@@ -1,6 +1,6 @@
 # Development
 
-Use Python 3.11 and run commands from the repository root. `scripts/setup.sh` installs the pinned shared environment in `.venv/`; Isaac is an optional later installation for RGB export.
+Use Python 3.11 and run commands from the repository root. `bash scripts/setup.sh` installs the pinned NOCS environment in `.venv/`. Use `bash scripts/setup.sh --rgb` for base dependencies plus Isaac 5, or to add Isaac to a working Quickstart environment without reinstalling the base dependencies.
 
 ```bash
 .venv/bin/python -m pip install -r requirements-dev.txt
