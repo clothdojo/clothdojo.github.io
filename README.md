@@ -12,17 +12,13 @@ ClothDojo generates bimanual garment-manipulation trajectories in simulation, wi
 
 Follow the [Quickstart](docs/usage.md) to generate a trajectory and watch its high and low camera videos on one NVIDIA GPU. Isaac Sim is not required.
 
-| cam_high | cam_low |
-| :---: | :---: |
-| [![cam_high, 4× preview](docs/assets/nocs-flatten-preview.gif)](docs/assets/nocs-flatten.mp4) | [![cam_low, 4× preview](docs/assets/nocs-flatten-low-preview.gif)](docs/assets/nocs-flatten-low.mp4) |
+[![NOCS: cam_high left, cam_low right; 4× preview](docs/assets/nocs-flatten-paired-preview.gif)](docs/assets/nocs-flatten-paired.mp4)
 
 ## Randomized RGB rendering
 
 Follow the [RGB rendering guide](docs/randomized-rendering.md) to render the saved motion with different materials and lighting. Add Isaac Sim 5 to the same environment with `setup.sh --rgb`; rendering requires an RTX GPU.
 
-| cam_high | cam_low |
-| :---: | :---: |
-| [![cam_high RGB, 4× preview](docs/assets/randomized-rgb-cam_high-preview.gif)](docs/assets/randomized-rgb-cam_high.mp4) | [![cam_low RGB, 4× preview](docs/assets/randomized-rgb-cam_low-preview.gif)](docs/assets/randomized-rgb-cam_low.mp4) |
+[![RGB: cam_high left, cam_low right; 4× preview](docs/assets/randomized-rgb-paired-preview.gif)](docs/assets/randomized-rgb-paired.mp4)
 
 ## Resources
 

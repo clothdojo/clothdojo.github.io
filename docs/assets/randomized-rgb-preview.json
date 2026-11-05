@@ -86,5 +86,39 @@
       "preview": "docs/assets/randomized-rgb-cam_low-preview.gif",
       "preview_sha256": "6c81026d85dabd6b70721459c5e69758a51566c578100eed97ef42c121a4feea"
     }
+  },
+  "readme_pair": {
+    "layout": "cam_high_left_cam_low_right",
+    "preview": {
+      "file": "docs/assets/randomized-rgb-paired-preview.gif",
+      "bytes": 2829818,
+      "sha256": "19f03bdc9d15efd56f99dbcefc2e32edba921dfd8252d2d750b35715077b64cd",
+      "size": [
+        640,
+        264
+      ],
+      "fps": 5,
+      "frames": 75,
+      "speed": 4,
+      "duration_seconds": 15,
+      "loop": 0,
+      "palette_colors": 64
+    },
+    "video": {
+      "file": "docs/assets/randomized-rgb-paired.mp4",
+      "bytes": 6726110,
+      "sha256": "23ce8f67f66ace80ec77e1dcd796845071bf36954c5b7b6765ee7d8a600913c3",
+      "size": [
+        1280,
+        528
+      ],
+      "fps": 25,
+      "frames": 1500,
+      "speed": 1,
+      "duration_seconds": 60,
+      "faststart": true
+    },
+    "source_high_sha256": "b32b3459833e3793200d4b7821b2e42ea94caa2df06bce54871824036d04946a",
+    "source_low_sha256": "dadae5c0b46759919fef07c890aea4b97837d6bc66fe2bdaae9e582b11b4278d"
   }
 }
