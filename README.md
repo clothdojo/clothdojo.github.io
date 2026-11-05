@@ -35,7 +35,9 @@ The output contains robot actions, robot/cloth states, metadata, and both replay
 
 ## Using ClothDojo
 
-The [step-by-step Quickstart](docs/usage.md#3-run-the-steps-yourself) explains how the policy server, simulator, and replay fit together. Use it to collect more trajectories, replay saved results, and [read states and actions in Python](docs/usage.md#4-read-a-trajectory-in-python) with `TrajectoryReader`.
+For your own runs, edit `configs/generation/flatten.yaml` to choose the task, resource paths, GPU and generation size. After activating `.venv`, use `clothdojo generate --config configs/generation/flatten.yaml`, then copy its printed `clothdojo replay` command for both camera views.
+
+The [step-by-step Quickstart](docs/usage.md#3-run-the-steps-yourself) explains the configuration and pipeline, and shows how to [read states and actions in Python](docs/usage.md#4-read-a-trajectory-in-python) with `TrajectoryReader`.
 
 ## Resources
 

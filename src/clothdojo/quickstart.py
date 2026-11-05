@@ -1,4 +1,4 @@
-"""One recorded NOCS trajectory and two review videos, using the existing CLI."""
+"""Managed NOCS generation and dual-view replay using the existing CLI."""
 from __future__ import annotations
 
 import argparse
@@ -6,6 +6,7 @@ from datetime import datetime
 import os
 from pathlib import Path
 import signal
+import shlex
 import socket
 import subprocess
 import sys
@@ -46,21 +47,102 @@ def _run(command: list[str], log: Path, root: Path, env: dict[str, str]) -> None
         raise RuntimeError(f"Command exited with status {code}; see {log}")
 
 
-def run(task: str, root: Path, output: Path | None = None) -> Path:
+def _path(value: str | Path, root: Path) -> Path:
+    path = Path(value).expanduser()
+    return (path if path.is_absolute() else root / path).resolve()
+
+
+def generate(config: str | Path, root: Path) -> Path:
+    """Read user choices and reuse the quickstart's managed generation loop."""
+    import yaml
+
     root = root.resolve()
-    teacher = root / "models/nocs-teachers" / task
-    states = root / f"benchmark/conditions/nocs-{task}/states"
+    try:
+        with _path(config, root).open() as stream:
+            settings = yaml.safe_load(stream)
+    except yaml.YAMLError as error:
+        raise ValueError(f"Invalid generation YAML: {error}") from error
+    allowed = {"task", "benchmark", "teachers", "output", "gpu", "seen_assets",
+               "unseen_assets", "states_per_asset"}
+    if not isinstance(settings, dict) or set(settings) - allowed:
+        raise ValueError(f"Generation config must contain only: {', '.join(sorted(allowed))}")
+    collection = run(settings.get("task", "flatten"), root, settings.get("output"),
+               benchmark=settings.get("benchmark", "benchmark"),
+               teachers=settings.get("teachers", "models/nocs-teachers"),
+               gpu=settings.get("gpu", 0), seen_assets=settings.get("seen_assets", 1),
+               unseen_assets=settings.get("unseen_assets", 0),
+               states_per_asset=settings.get("states_per_asset", 1), render=False)
+    command = [".venv/bin/clothdojo", "replay", str(collection)]
+    if settings.get("benchmark", "benchmark") != "benchmark":
+        command.extend(["--benchmark", str(_path(settings["benchmark"], root))])
+    if settings.get("gpu", 0) != 0:
+        command.extend(["--gpu", str(settings["gpu"])])
+    print(f"Replay both views: {shlex.join(command)}", flush=True)
+    return collection
+
+
+def replay(source: str | Path, root: Path, *, benchmark: str | Path = "benchmark",
+           gpu: int = 0, logs: Path | None = None) -> None:
+    """Export both native views of an existing trajectory collection."""
+    if type(gpu) is not int or gpu < 0:
+        raise ValueError("gpu must be a non-negative integer")
+    collection = _path(source, root)
+    assets = _path(benchmark, root) / "assets"
+    if not assets.is_dir():
+        raise FileNotFoundError(f"Missing benchmark assets: {assets}")
+    expected = {p.parent.name for p in (collection / "trajectories").glob("*/manifest.json")}
+    if not expected:
+        raise ValueError(f"No trajectories found in collection: {collection}")
+    logs = logs or collection / "review-logs"
+    logs.mkdir(parents=True, exist_ok=True)
+    env = dict(os.environ, PXR_WORK_THREAD_LIMIT="1")
+    for camera, destination in (("cam_high", collection / "review"),
+                                ("cam_low", collection / "review-low")):
+        _run([sys.executable, "-m", "clothdojo", "data", "render-review", "--source",
+              str(collection), "--assets", str(assets), "--device", f"cuda:{gpu}",
+              "--camera", camera, "--fps", "10", "--output", str(destination)],
+             logs / f"{camera}.log", root, env)
+        videos = sorted((destination / "videos" / camera).glob("*.mp4"))
+        if {p.stem for p in videos} != expected:
+            raise RuntimeError(f"Missing or unexpected {camera} videos; see {logs / f'{camera}.log'}")
+        for video in videos:
+            print(f"{camera}: {video}", flush=True)
+
+
+def run(task: str, root: Path, output: str | Path | None = None, *,
+        benchmark: str | Path = "benchmark", teachers: str | Path = "models/nocs-teachers",
+        gpu: int = 0, seen_assets: int = 1, unseen_assets: int = 0,
+        states_per_asset: int = 1, render: bool = True) -> Path:
+    if task not in ("flatten", "fold"):
+        raise ValueError("task must be flatten or fold")
+    for name, value in (("benchmark", benchmark), ("teachers", teachers), ("output", output)):
+        if name == "output" and value is None:
+            continue
+        if not isinstance(value, (str, Path)) or not str(value).strip():
+            raise ValueError(f"{name} must be a non-empty path")
+    for name, value, minimum in (("gpu", gpu, 0), ("seen_assets", seen_assets, 0),
+                                  ("unseen_assets", unseen_assets, 0),
+                                  ("states_per_asset", states_per_asset, 1)):
+        if type(value) is not int or value < minimum:
+            raise ValueError(f"{name} must be an integer >= {minimum}")
+    if seen_assets + unseen_assets == 0:
+        raise ValueError("Select at least one seen or unseen garment")
+    root = root.resolve()
+    benchmark = _path(benchmark, root)
+    teacher = _path(teachers, root) / task
+    states = benchmark / f"conditions/nocs-{task}/states"
     for path in (teacher / "weights", teacher / "norm_stats/norm_stats.json",
-                 states / "meta.json", root / "benchmark/assets"):
+                 states / "meta.json", benchmark / "assets"):
         if not path.exists():
-            raise FileNotFoundError(f"Missing {path}. Run bash scripts/download.sh {task} first.")
+            raise FileNotFoundError(
+                f"Missing {path}. Check resource paths or run bash scripts/download.sh {task} first.")
     if output is None:
         parent = root / "outputs/quickstart"
         parent.mkdir(parents=True, exist_ok=True)
         stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
         output = Path(tempfile.mkdtemp(prefix=f"{task}-{stamp}-", dir=parent))
     else:
-        output = output.resolve()
+        output = _path(output, root)
         output.mkdir(parents=True, exist_ok=False)
     logs = output / "logs"
     logs.mkdir()
@@ -71,9 +153,10 @@ def run(task: str, root: Path, output: Path | None = None) -> Path:
     python = sys.executable
     cli = [python, "-m", "clothdojo"]
     server = None
+    stages = 4 if render else 3
     print(f"Saving this run to {output}", flush=True)
     try:
-        print("[1/4] Preparing the tokenizer", flush=True)
+        print(f"[1/{stages}] Preparing the tokenizer", flush=True)
         _run([python, "-c", "from openpi.shared import download; "
               "download.maybe_download('gs://big_vision/paligemma_tokenizer.model', "
               "gs={'token': 'anon', 'session_kwargs': {'trust_env': True}})"],
@@ -81,12 +164,12 @@ def run(task: str, root: Path, output: Path | None = None) -> Path:
         with socket.socket() as probe:
             probe.bind(("127.0.0.1", 0))
             port = probe.getsockname()[1]
-        print("[2/4] Loading the NOCS teacher", flush=True)
+        print(f"[2/{stages}] Loading the NOCS teacher", flush=True)
         with (logs / "teacher.log").open("w") as stream:
             server = subprocess.Popen(cli + ["policy", "serve-sft", "--checkpoint",
                 str(teacher / "weights"), "--norm-stats", str(teacher / "norm_stats"),
                 "--num-steps", "10", "--image-preprocessing", "none", "--rtc-prefix-schedule",
-                "exp", "--device", "cuda:0", "--port", str(port)], cwd=root, env=env,
+                "exp", "--device", f"cuda:{gpu}", "--port", str(port)], cwd=root, env=env,
                 stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
         deadline = time.monotonic() + SERVER_START_TIMEOUT
         while True:
@@ -101,25 +184,20 @@ def run(task: str, root: Path, output: Path | None = None) -> Path:
                 time.sleep(0.2)
         seconds = 60 if task == "flatten" else 40
         scenario = "shirt_flatten.yaml" if task == "flatten" else "shirt_fold_eval_40s.yaml"
-        print(f"[3/4] Generating one {seconds}-second trajectory", flush=True)
+        count = (seen_assets + unseen_assets) * states_per_asset
+        print(f"[3/{stages}] Generating {count} trajectories of {seconds} seconds", flush=True)
         _run(cli + ["rollout", "run", "--scenario", str(root / "configs/rollout" / scenario),
             "--states", str(states), "--policy", f"ws://127.0.0.1:{port}",
-            "--assets", str(root / "benchmark/assets"), "--gpus", "0", "--batch-size", "1",
-            "--seen-assets", "1", "--unseen-assets", "0", "--limit-per-asset", "1",
+            "--assets", str(benchmark / "assets"), "--gpus", str(gpu), "--batch-size", "1",
+            "--seen-assets", str(seen_assets), "--unseen-assets", str(unseen_assets),
+            "--limit-per-asset", str(states_per_asset),
             "--execution", "chunk", "--exec-horizon", "10", "--storage-kind", "render_only_v1",
             "--output", str(collection)], logs / "generation.log", root, env)
         _stop(server)
         server = None
-        print("[4/4] Exporting high and low camera views", flush=True)
-        for camera, destination in (("cam_high", collection / "review"),
-                                    ("cam_low", collection / "review-low")):
-            _run(cli + ["data", "render-review", "--source", str(collection), "--assets",
-                str(root / "benchmark/assets"), "--device", "cuda:0", "--camera", camera,
-                "--fps", "10", "--output", str(destination)], logs / f"{camera}.log", root, env)
-            videos = list((destination / "videos" / camera).glob("*.mp4"))
-            if len(videos) != 1:
-                raise RuntimeError(f"Expected one {camera} video; see {logs / f'{camera}.log'}")
-            print(f"{camera}: {videos[0]}", flush=True)
+        if render:
+            print("[4/4] Exporting high and low camera views", flush=True)
+            replay(collection, root, benchmark=benchmark, gpu=gpu, logs=logs)
         print(f"Trajectory: {collection}", flush=True)
         return collection
     finally:

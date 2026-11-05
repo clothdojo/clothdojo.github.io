@@ -1,0 +1,9 @@
+# Paths are relative to the checkout root where you run clothdojo.
+task: fold
+benchmark: benchmark
+teachers: models/nocs-teachers
+output: null  # Automatically create a new run directory; or specify a new path.
+gpu: 0
+seen_assets: 1
+unseen_assets: 0
+states_per_asset: 1

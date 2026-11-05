@@ -50,73 +50,73 @@ The quickstart connects three parts of ClothDojo:
 | Simulator and recorder | Initial state and policy actions → saved trajectory | [`rollout/`](../src/clothdojo/rollout/) |
 | Replay | Saved robot and cloth poses → camera videos | [`data/rollout_review.py`](../src/clothdojo/data/rollout_review.py) |
 
-Use the following commands after the first example. Run them from the checkout root. These are the same generation and replay steps used by `scripts/quickstart.sh`.
-
-### Start the policy
-
-In terminal A:
+Run from the checkout root and activate the installed environment:
 
 ```bash
-export PXR_WORK_THREAD_LIMIT=1
-export OPENPI_DATA_HOME="$PWD/.cache/openpi"
-export CLOTHDOJO_OPENPI_CACHE="$OPENPI_DATA_HOME"
-.venv/bin/clothdojo policy serve-sft \
-  --checkpoint models/nocs-teachers/flatten/weights \
-  --norm-stats models/nocs-teachers/flatten/norm_stats \
-  --num-steps 10 --image-preprocessing none --rtc-prefix-schedule exp \
-  --device cuda:0 --port 8080
+source .venv/bin/activate
+clothdojo generate --config configs/generation/flatten.yaml
 ```
 
-Wait for `server listening`. Keep this terminal running. Weights and normalization must belong to the same teacher.
+`generate` starts the teacher, runs simulation and recording, then stops the teacher. It prints the saved collection path and a ready-to-copy replay command. For folding, use `configs/generation/fold.yaml` after downloading its teacher.
 
-### Generate a trajectory
+### Choose what to generate
 
-In terminal B:
+The generation YAML contains the choices for this run:
+
+```yaml
+task: flatten
+benchmark: benchmark
+teachers: models/nocs-teachers
+output: null
+gpu: 0
+seen_assets: 1
+unseen_assets: 0
+states_per_asset: 1
+```
+
+| Setting | When to change it |
+|---|---|
+| `task` | Choose `flatten` or `fold` |
+| `benchmark` | The released benchmark folder is on another disk |
+| `teachers` | The teacher root containing `flatten/` and `fold/` is elsewhere |
+| `output` | Use a specific new run directory; `null` creates a separate directory automatically |
+| `gpu` | Choose another visible CUDA GPU; policy, simulation and replay can share one GPU |
+| `seen_assets`, `unseen_assets` | Choose how many garments from each released split |
+| `states_per_asset` | Choose how many initial states per garment; the released pool has four |
+
+Paths are relative to the checkout root where you run the command, including when the YAML is stored elsewhere. Absolute paths and `~` are supported. The benchmark root supplies assets and task-matched initial states; the teacher root supplies matching weights and normalization. Keep their downloaded layouts intact.
+
+For eight trajectories, set `seen_assets: 2`, `unseen_assets: 2`, and `states_per_asset: 2`. Selection uses the first garments and states in the recorded pool order, not random sampling. Generation uses one simulation world at a time. Task scenarios, inference settings, and action execution parameters keep the tested defaults.
+
+### Replay a saved collection
+
+Copy the replay command printed by `generate`. For example, if you set `output: outputs/my-flatten`:
 
 ```bash
-export PXR_WORK_THREAD_LIMIT=1
-.venv/bin/clothdojo rollout run \
-  --scenario configs/rollout/shirt_flatten.yaml \
-  --states benchmark/conditions/nocs-flatten/states \
-  --policy ws://127.0.0.1:8080 --assets benchmark/assets \
-  --gpus 0 --batch-size 1 \
-  --seen-assets 1 --unseen-assets 0 --limit-per-asset 1 \
-  --execution chunk --exec-horizon 10 --storage-kind render_only_v1 \
-  --output outputs/my-flatten
+clothdojo replay outputs/my-flatten/rollout
 ```
 
-`--scenario` defines the task, prompt, duration and seed. `--states` supplies the released initial-state pool; this command does not generate a new initial state. `--policy` connects the simulator to terminal A.
-
-This selects the first seen garment and its first saved initial state, producing one trajectory. To collect eight trajectories, change `--seen-assets 2 --unseen-assets 2 --limit-per-asset 2` and use a new output directory. Selection follows the pool's recorded order; these options do not randomly sample garments or states. Keep `--batch-size 1` initially; it controls simultaneous simulation worlds, not the total number of trajectories.
+This exports both cameras without starting a teacher or generating new actions. With external assets or a different GPU, the printed command includes `--benchmark` and `--gpu`; these are also available when replaying an older collection on another machine.
 
 The collection contains:
 
 ```text
 outputs/my-flatten/
-  meta.json
-  trajectories/<trajectory-id>/
-    manifest.json          # Task, asset, timing and provenance
-    actions.npz           # Arm targets and gripper commands
-    states.npz            # Recorded robot and cloth poses
-    selection_signals.npz
+  logs/
+  rollout/
+    meta.json
+    trajectories/<trajectory-id>/
+      manifest.json        # Task, asset, timing and provenance
+      actions.npz         # Arm targets and gripper commands
+      states.npz          # Recorded robot and cloth poses
+      selection_signals.npz
+    review/videos/cam_high/
+    review-low/videos/cam_low/
 ```
 
 Generation records an unfiltered trajectory; it does not guarantee task success. See [success selection](advanced.md#generate-successful-trajectories) when collecting training data.
 
-### Replay both cameras
-
-After generation finishes, stop the policy in terminal A with Ctrl+C to free GPU memory. In terminal B:
-
-```bash
-for camera in cam_high cam_low; do
-  .venv/bin/clothdojo data render-review \
-    --source outputs/my-flatten --assets benchmark/assets \
-    --device cuda:0 --camera "$camera" --fps 10 \
-    --output "outputs/my-flatten/review-$camera"
-done
-```
-
-Videos are saved to `outputs/my-flatten/review-<camera>/videos/<camera>/`. Replay reads recorded poses; it does not run the policy again. You can use the same command on an earlier quickstart result by replacing `--source` with its printed trajectory collection path.
+Use a new output directory for a new generation run; existing directories are never overwritten. Replaying the same collection reuses matching videos. To manage the policy server and simulator separately, see the [individual commands](advanced.md#run-the-individual-steps).
 
 ## 4. Read a trajectory in Python
 
@@ -127,7 +127,7 @@ Use `TrajectoryReader` to inspect or analyze generated data:
 from pathlib import Path
 from clothdojo.trajectory import TrajectoryReader
 
-collection = Path("outputs/my-flatten")
+collection = Path("outputs/my-flatten/rollout")
 trajectory = sorted((collection / "trajectories").iterdir())[0]
 reader = TrajectoryReader(trajectory)
 

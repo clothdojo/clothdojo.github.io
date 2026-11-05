@@ -25,6 +25,21 @@ def _training_config_schema(path: str | Path) -> str:
 def main(argv: Sequence[str] | None = None) -> None:
     parser = _parser()
     args, passthrough = parser.parse_known_args(argv)
+    if args.command in {"generate", "replay"}:
+        if passthrough:
+            parser.error(f"unrecognized arguments: {' '.join(passthrough)}")
+        from clothdojo.quickstart import generate, replay
+
+        try:
+            if args.command == "generate":
+                generate(args.config, Path.cwd())
+            else:
+                replay(args.source, Path.cwd(), benchmark=args.benchmark, gpu=args.gpu)
+        except KeyboardInterrupt:
+            parser.exit(130, "Cancelled. Partial output and logs have been kept.\n")
+        except (OSError, ValueError, RuntimeError) as error:
+            parser.exit(1, f"{error}\n")
+        return
     if args.command == "env" and args.env_command == "check":
         if passthrough:
             parser.error(f"unrecognized arguments: {' '.join(passthrough)}")
@@ -838,6 +853,13 @@ def _parser() -> argparse.ArgumentParser:
 
     parser = argparse.ArgumentParser(prog="clothdojo")
     commands = parser.add_subparsers(dest="command")
+    generate = commands.add_parser("generate", help="generate trajectories using a small run config")
+    generate.add_argument("--config", default="configs/generation/flatten.yaml",
+                          help="run YAML (default: configs/generation/flatten.yaml)")
+    replay = commands.add_parser("replay", help="export high and low views of a saved collection")
+    replay.add_argument("source", help="trajectory collection printed by generate")
+    replay.add_argument("--benchmark", default="benchmark", help="benchmark root containing assets/")
+    replay.add_argument("--gpu", type=int, default=0)
 
     environment = commands.add_parser("env", help="inspect the project environment")
     environment_commands = environment.add_subparsers(dest="env_command")

@@ -8,6 +8,7 @@
 | `docs/usage.md` | Quick example, individual steps, and the Python trajectory reader |
 | `src/clothdojo/quickstart.py` | Own the quickstart's child processes and logs; delegate work to the CLI |
 | `src/clothdojo/cli.py` | Individual generation, evaluation, export, and training commands |
+| `configs/generation/` | User choices for managed generation: task, paths, GPU, garment/state counts |
 | `src/clothdojo/rollout/` | Policy inference and trajectory collection |
 | `src/clothdojo/sim/` | Newton scene and simulation |
 | `src/clothdojo/trajectory/` | Shared trajectory storage and readback |

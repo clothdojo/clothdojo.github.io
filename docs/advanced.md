@@ -6,11 +6,41 @@ Run these commands from the GitHub checkout root after completing the quickstart
 
 ## Run the individual steps
 
-Follow the [step-by-step Quickstart](usage.md#3-run-the-steps-yourself) to start a teacher, generate a collection, and replay both cameras. It also explains garment/state selection and reading the resulting arrays in Python.
+The [Quickstart](usage.md#3-run-the-steps-yourself) uses a short generation config and manages the policy service for you. For direct control of the same components, start the teacher in terminal A:
+
+```bash
+export PXR_WORK_THREAD_LIMIT=1
+export OPENPI_DATA_HOME="$PWD/.cache/openpi"
+export CLOTHDOJO_OPENPI_CACHE="$OPENPI_DATA_HOME"
+.venv/bin/clothdojo policy serve-sft \
+  --checkpoint models/nocs-teachers/flatten/weights \
+  --norm-stats models/nocs-teachers/flatten/norm_stats \
+  --num-steps 10 --image-preprocessing none --rtc-prefix-schedule exp \
+  --device cuda:0 --port 8080
+```
+
+Wait for `server listening`. In terminal B:
+
+```bash
+export PXR_WORK_THREAD_LIMIT=1
+.venv/bin/clothdojo rollout run \
+  --scenario configs/rollout/shirt_flatten.yaml \
+  --states benchmark/conditions/nocs-flatten/states \
+  --policy ws://127.0.0.1:8080 --assets benchmark/assets \
+  --gpus 0 --batch-size 1 --seen-assets 1 --unseen-assets 0 --limit-per-asset 1 \
+  --execution chunk --exec-horizon 10 --storage-kind render_only_v1 \
+  --output outputs/manual-flatten
+```
+
+`--scenario` defines the task, prompt, duration and seed. `--states` supplies saved initial states; `--policy` connects simulation to the teacher. Stop the teacher with Ctrl+C when generation finishes, then replay in terminal B:
+
+```bash
+.venv/bin/clothdojo replay outputs/manual-flatten
+```
 
 ## Generate successful trajectories
 
-Start the flattening teacher using the Quickstart's policy command. To retain a successful rollout, run a new collection with a success quota and the matching released protocol and templates:
+Start the flattening teacher as above. To retain a successful rollout, run a new collection with a success quota and the matching released protocol and templates:
 
 ```bash
 .venv/bin/clothdojo rollout run \
