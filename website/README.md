@@ -63,7 +63,7 @@ All homepage and experiment-page charts are HTML components from `results.css`, 
 
 All research tables use `.table-block` with a caption outside the horizontally scrolling `.table-wrap > .data-table`. They share typography, numeric alignment, headings and borders; narrow screens show a scrolling hint for wide tables. Captions remain fully readable while numeric columns scroll. Full numerical results and experimental qualifications are retained. Combined data does not exceed Generated alone; three epochs do not mean equal optimizer steps; pretrained models are distinguished from Diffusion Policy trained from scratch.
 
-The first usage entry is an executable CPU saved-state scoring example. Generation, training and full evaluation workflows disclose their dependence on forthcoming model/data/visual-resource bundles.
+The homepage quickstart follows `docs/usage.md`: download the flattening resources, install and activate the environment, generate a trajectory, then replay both NOCS views. Its command panel is checked against the tutorial's installation, generation and replay blocks by the browser review. The adjacent links point to the released-panel evaluation, separate randomized RGB-renderer setup and training-data export workflows.
 
 ## Delivery and playback
 
