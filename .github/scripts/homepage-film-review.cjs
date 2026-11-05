@@ -86,7 +86,10 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.locator('.story-track').focus();await page.keyboard.press('ArrowRight');await page.waitForFunction(()=>window.storyCards.state.active===1);
   if(width!==390){const box=await page.locator('.story-track').boundingBox();await page.mouse.move(width*.75,box.y+140);await page.mouse.down();await page.mouse.move(width*.2,box.y+140,{steps:12});await page.mouse.up();await page.waitForFunction(()=>window.storyCards.state.active===2);}
   else {const box=await page.locator('.story-track').boundingBox(),session=await context.newCDPSession(page),y=box.y+140;await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:width*.85,y}]});for(let i=1;i<=12;i++){await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:width*(.85-.7*i/12),y}]});await page.waitForTimeout(16);}await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await page.waitForFunction(()=>window.storyCards.state.active===2);await session.detach();}
-  await page.locator('header a[href="#use"]').click();await page.waitForFunction(()=>document.querySelector('#use').getBoundingClientRect().top>=0&&document.querySelector('#use').getBoundingClientRect().top<200);
+  await page.locator('header a[href="#use"]').click();await page.waitForFunction(()=>{
+   const heading=document.getElementById('story-use-title').getBoundingClientRect(),panel=document.querySelector('#use .code-panel').getBoundingClientRect();
+   return heading.top>=document.querySelector('.site-header').getBoundingClientRect().bottom&&panel.bottom<=innerHeight+1;
+  });
   assert.equal(await page.locator('#use').evaluate(e=>!!e.closest('.story-track')),false);
   assert(await page.locator('#use .code-card').evaluate(e=>Math.abs(parseFloat(getComputedStyle(e).height)-e.scrollHeight)<2),'The code card grows with its content');
    const edges=await page.evaluate(()=>{
