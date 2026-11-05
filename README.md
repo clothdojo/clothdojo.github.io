@@ -14,35 +14,14 @@ Quickstart example · 4× preview · [Full 60-second replay](docs/assets/nocs-fl
 
 ## Getting started
 
-Use Linux x86_64, Python 3.11, Git, `patch`, [uv](https://docs.astral.sh/uv/), and an NVIDIA GPU with native BF16 support. We tested this on one RTX 5090 D v2 (24 GB). Isaac Sim is not required for NOCS generation.
+Follow the [Quickstart](docs/usage.md): install the environment, generate a trajectory with `clothdojo generate`, then export high and low camera videos with `clothdojo replay`.
 
-```bash
-git clone https://github.com/clothdojo/clothdojo.github.io.git ClothDojo
-cd ClothDojo
-```
-
-Then download the assets and flattening teacher, install the environment, and run:
-
-```bash
-bash scripts/download.sh flatten
-bash scripts/setup.sh
-bash scripts/quickstart.sh flatten
-```
-
-The script generates one trajectory, exports high and low camera views, and prints the MP4 paths. See the [Quickstart](docs/usage.md) for prerequisites and the folding example. All source code comes from this GitHub checkout; Hugging Face supplies assets and weights.
-
-The output contains robot actions, robot/cloth states, metadata, and both replay videos.
-
-## Using ClothDojo
-
-After activating `.venv`, run `clothdojo generate` and copy its printed `clothdojo replay` command for both camera views. Add options only when needed, such as `--task fold`, `--gpu 1`, or `--output outputs/my-run`.
-
-The [step-by-step Quickstart](docs/usage.md#3-run-the-steps-yourself) explains the options and how to generate trajectories and watch both camera views.
+The NOCS workflow runs on one NVIDIA GPU and does not require Isaac Sim. The guide includes requirements, folding, and options for paths, GPU and generation size.
 
 ## Resources
 
 - [Assets](https://huggingface.co/datasets/clothdojo/assets) · [NOCS teachers](https://huggingface.co/clothdojo/nocs-teachers) · [Download details](docs/data-and-assets.md)
-- [More workflows](docs/advanced.md): folding, successful-trajectory selection, evaluation, and RGB export
+- [More workflows](docs/advanced.md): successful-trajectory selection, evaluation, and RGB export
 - [Questions and bug reports](https://github.com/clothdojo/clothdojo.github.io/issues)
 
 ## Citation

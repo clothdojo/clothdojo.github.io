@@ -1,6 +1,6 @@
 # Quickstart
 
-Generate a NOCS trajectory and watch it from two camera views on one GPU. Isaac Sim is not required.
+Install ClothDojo, generate a trajectory, and watch the high and low camera videos. Isaac Sim is not required for this NOCS workflow.
 
 You need Linux x86_64, Python 3.11, Git, `patch`, [uv](https://docs.astral.sh/uv/), and an NVIDIA GPU with native BF16 support. Tested on one RTX 5090 D v2 (24 GB).
 
@@ -8,64 +8,59 @@ The first download is about 13.4 GiB, plus space for the environment and caches.
 
 ## 1. Download and install
 
-From the [GitHub checkout](../README.md#getting-started):
-
 ```bash
+git clone https://github.com/clothdojo/clothdojo.github.io.git ClothDojo
+cd ClothDojo
 bash scripts/download.sh flatten
 bash scripts/setup.sh
+source .venv/bin/activate
 ```
 
-The download script fetches only benchmark assets, initial states, templates, licenses, and the selected teacher. It does not download or replace source code. The install script creates `.venv/` and installs the pinned Python dependencies without the Isaac SDK.
+`download.sh` fetches assets and the selected teacher from Hugging Face. `setup.sh` creates `.venv/` and installs the library and its dependencies. Run the remaining commands from this checkout root.
 
-## 2. Run a first example
+## 2. Generate a trajectory
 
 ```bash
-bash scripts/quickstart.sh flatten
+clothdojo generate --output outputs/first-flatten
 ```
 
-This prepares the upstream tokenizer, starts the teacher, generates one 60-second trajectory, stops the teacher, and exports both `cam_high` and `cam_low` videos. Everything runs in one terminal. The first run also compiles CUDA kernels.
+This starts the flattening teacher on GPU 0, simulates one 60-second trajectory, saves it, and stops the teacher. The first run downloads the upstream tokenizer and compiles CUDA kernels, so it takes longer.
 
-The script prints the trajectory directory and both MP4 paths. Each video is 640×480 at 10 fps. Runs are saved separately under `outputs/quickstart/`; rerunning the command does not overwrite an earlier result. Logs are kept with each run. Ctrl+C stops the processes started by the script and keeps partial output.
+The trajectory collection is saved in `outputs/first-flatten/rollout/`; logs are in `outputs/first-flatten/logs/`. Generation records an unfiltered trajectory; task success is assessed separately through [success selection](advanced.md#generate-successful-trajectories).
 
-[View an example replay](assets/nocs-flatten.mp4).
+## 3. Replay and watch both views
+
+```bash
+clothdojo replay outputs/first-flatten/rollout
+```
+
+Open the two MP4 paths printed by the command in your video player:
+
+```text
+outputs/first-flatten/rollout/
+  review/videos/cam_high/<trajectory-id>.mp4
+  review-low/videos/cam_low/<trajectory-id>.mp4
+```
+
+Each video is 60 seconds at 640×480 and 10 fps. Replay uses the saved robot and cloth poses, so it does not run the teacher again.
+
+For another generation run, use a new `--output` directory or omit the option for an automatically created directory. `generate` prints the corresponding replay command, including any custom benchmark path and GPU. Replaying the same collection reuses matching videos.
 
 ## Try folding
 
-Use the same environment:
+Use the installed environment:
 
 ```bash
 bash scripts/download.sh fold
-bash scripts/quickstart.sh fold
+clothdojo generate --task fold --output outputs/first-fold
+clothdojo replay outputs/first-fold/rollout
 ```
 
-This generates a 40-second folding trajectory and exports the same two camera views. Each teacher uses its own weights and normalization statistics.
+This produces a 40-second folding trajectory and its two camera videos.
 
-## 3. Run the steps yourself
+## Change a run
 
-The quickstart connects three parts of ClothDojo:
-
-| Part | Input → output | Code |
-|---|---|---|
-| Policy server | NOCS observations and robot state → action chunks | [`rollout/policy.py`](../src/clothdojo/rollout/policy.py) |
-| Simulator and recorder | Initial state and policy actions → saved trajectory | [`rollout/`](../src/clothdojo/rollout/) |
-| Replay | Saved robot and cloth poses → camera videos | [`data/rollout_review.py`](../src/clothdojo/data/rollout_review.py) |
-
-Run from the checkout root and activate the installed environment:
-
-```bash
-source .venv/bin/activate
-clothdojo generate
-```
-
-`generate` starts the teacher, runs simulation and recording, then stops the teacher. It prints the saved collection path and a ready-to-copy replay command. The default generates one flattening trajectory on GPU 0 using the downloaded resources.
-
-### Choose what to generate
-
-Add only the options you want to change. For folding, after downloading its teacher:
-
-```bash
-clothdojo generate --task fold
-```
+Add only the options you need:
 
 | Option | Default / purpose |
 |---|---|
@@ -77,7 +72,7 @@ clothdojo generate --task fold
 | `--seen-assets`, `--unseen-assets` | `1`, `0`; garment counts from each released split |
 | `--states-per-asset` | `1`; initial states per garment, up to four in the released pool |
 
-Relative paths start from the checkout root where you run the command. Absolute paths and `~` are supported. The benchmark root supplies assets and task-matched initial states; the teacher root supplies matching weights and normalization. Keep their downloaded layouts intact.
+Paths are relative to the checkout root; absolute paths and `~` are also supported. Keep the downloaded benchmark and teacher folder layouts intact: task-matched initial states, weights and normalization are selected automatically.
 
 For eight trajectories:
 
@@ -87,37 +82,4 @@ clothdojo generate --seen-assets 2 --unseen-assets 2 --states-per-asset 2
 
 Selection uses the first garments and states in the recorded pool order, not random sampling. Generation uses one simulation world at a time. Task scenarios, inference settings, and action execution parameters keep the tested defaults.
 
-### Replay a saved collection
-
-Copy the replay command printed by `generate`. For a fixed output location:
-
-```bash
-clothdojo generate --output outputs/my-flatten
-clothdojo replay outputs/my-flatten/rollout
-```
-
-This exports both cameras without starting a teacher or generating new actions. With external assets or a different GPU, the printed command includes `--benchmark` and `--gpu`; these are also available when replaying an older collection on another machine.
-
-The collection contains:
-
-```text
-outputs/my-flatten/
-  logs/
-  rollout/
-    meta.json
-    trajectories/<trajectory-id>/
-      manifest.json        # Task, asset, timing and provenance
-      actions.npz         # Arm targets and gripper commands
-      states.npz          # Recorded robot and cloth poses
-      selection_signals.npz
-    review/videos/cam_high/
-    review-low/videos/cam_low/
-```
-
-Generation records an unfiltered trajectory; it does not guarantee task success. See [success selection](advanced.md#generate-successful-trajectories) when collecting training data.
-
-Use a new output directory for a new generation run; existing directories are never overwritten. Replaying the same collection reuses matching videos. To manage the policy server and simulator separately, see the [individual commands](advanced.md#run-the-individual-steps).
-
-Open the MP4 paths printed by `replay` in your video player. Each trajectory has a high view and a low view, both at 640×480 and 10 fps. These videos are the visual output of the NOCS workflow; no Python data-reading code is needed to watch them.
-
-For code changes, start with the [module index](project_index.md). For success selection, policy evaluation and RGB export, continue to [more workflows](advanced.md).
+Run `clothdojo generate --help` or `clothdojo replay --help` for option details. For separate policy/simulation commands, success selection, evaluation and RGB export, see [more workflows](advanced.md).

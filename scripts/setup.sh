@@ -23,4 +23,4 @@ elif ! patch --dry-run --batch --silent -R -p1 -d "$site_packages" < patches/rli
 fi
 .venv/bin/python -m pip install --no-deps -e .
 .venv/bin/clothdojo env check --training
-echo 'Ready. Run: bash scripts/quickstart.sh flatten'
+echo 'Ready. Activate the environment: source .venv/bin/activate'

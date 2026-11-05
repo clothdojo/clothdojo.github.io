@@ -6,7 +6,7 @@ Run these commands from the GitHub checkout root after completing the quickstart
 
 ## Run the individual steps
 
-The [Quickstart](usage.md#3-run-the-steps-yourself) uses `clothdojo generate` to manage the policy service for you. For direct control of the same components, start the teacher in terminal A:
+The [Quickstart](usage.md#2-generate-a-trajectory) uses `clothdojo generate` to manage the policy service for you. For direct control of the same components, start the teacher in terminal A:
 
 ```bash
 export PXR_WORK_THREAD_LIMIT=1
