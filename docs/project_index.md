@@ -5,8 +5,8 @@
 | `scripts/download.sh` | Download assets and the selected teacher; never download code |
 | `scripts/setup.sh` | Create the pinned NOCS environment |
 | `scripts/quickstart.sh` | Generate one trajectory and both review views |
-| `docs/usage.md` | Install, generate trajectories, and watch NOCS and randomized RGB videos |
-| `docs/randomized-rendering.md` | RGB appearance controls and advanced resource references |
+| `docs/usage.md` | NOCS quickstart: install, generate a trajectory, and watch both camera views |
+| `docs/randomized-rendering.md` | Separate RGB workflow: renderer setup, materials, randomized export and videos |
 | `src/clothdojo/quickstart.py` | Own the quickstart's child processes and logs; delegate work to the CLI |
 | `src/clothdojo/cli.py` | Individual generation, evaluation, export, and training commands |
 | `src/clothdojo/rollout/` | Policy inference and trajectory collection |

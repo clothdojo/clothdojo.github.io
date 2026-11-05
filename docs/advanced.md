@@ -94,7 +94,7 @@ The protocol files in `benchmark/conditions/` describe this release. Do not subs
 
 ## Export RGB training data
 
-Follow the [Quickstart's RGB steps](usage.md#4-prepare-rgb-rendering) to prepare Isaac 5, download the public materials, and view a first RGB export. For training data, stop the policy server and use an indexed collection of successful trajectories as the source:
+Follow [Randomized RGB rendering](randomized-rendering.md) to prepare Isaac 5, download the public materials, and view a first RGB export. For training data, stop the policy server and use an indexed collection of successful trajectories as the source:
 
 ```bash
 .venv/bin/clothdojo data export-lerobot \
