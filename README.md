@@ -8,26 +8,25 @@ Zilong Huang, Zipeng Ye, Caicheng Wang, Yuchen Xie, Jiaxiang Luo
 
 ClothDojo generates bimanual garment-manipulation trajectories in simulation, with NOCS teachers for flattening and folding.
 
-**NOCS**
+## NOCS Quickstart
+
+Follow the [Quickstart](docs/usage.md) to generate a trajectory and watch its high and low camera videos on one NVIDIA GPU. Isaac Sim is not required.
 
 | cam_high | cam_low |
 | :---: | :---: |
 | [![cam_high, 4× preview](docs/assets/nocs-flatten-preview.gif)](docs/assets/nocs-flatten.mp4) | [![cam_low, 4× preview](docs/assets/nocs-flatten-low-preview.gif)](docs/assets/nocs-flatten-low.mp4) |
 
-**Randomized RGB**
+## Randomized RGB rendering
+
+Follow the [RGB rendering guide](docs/randomized-rendering.md) to render the saved motion with different materials and lighting. Add Isaac Sim 5 to the same environment with `setup.sh --rgb`; rendering requires an RTX GPU.
 
 | cam_high | cam_low |
 | :---: | :---: |
 | [![cam_high RGB render](docs/assets/randomized-rgb-cam_high.jpg)](docs/randomized-rendering.md) | [![cam_low RGB render](docs/assets/randomized-rgb-cam_low.jpg)](docs/randomized-rendering.md) |
 
-## Getting started
-
-Follow the [NOCS Quickstart](docs/usage.md) to generate a trajectory and watch its high and low camera videos on one NVIDIA GPU. Isaac Sim is not required.
-
 ## Resources
 
 - [Assets](https://huggingface.co/datasets/clothdojo/assets) · [NOCS teachers](https://huggingface.co/clothdojo/nocs-teachers) · [Download details](docs/data-and-assets.md)
-- [Randomized RGB rendering](docs/randomized-rendering.md): reuse the trajectory and add Isaac Sim 5 with `setup.sh --rgb` on an RTX GPU
 - [More workflows](docs/advanced.md): successful-trajectory selection, evaluation, and RGB export
 - [Questions and bug reports](https://github.com/clothdojo/clothdojo.github.io/issues)
 
