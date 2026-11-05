@@ -1,5 +1,4 @@
 const fs=require('node:fs'),assert=require('node:assert/strict');
-const {execFileSync}=require('node:child_process');
 
 module.exports=async function galleryPlayback(browser,report,save){
  const originalSources={
@@ -21,7 +20,8 @@ module.exports=async function galleryPlayback(browser,report,save){
     return route.fulfill({body,contentType:'text/html'});
    });
    await page.route('**/site.js?*',route=>{
-    const body=execFileSync('git',['show','d0e8827:website/site.js'],{encoding:'utf8'});
+    // Frozen from d0e8827:website/site.js so shallow CI checkouts can compare delivery behavior.
+    const body=fs.readFileSync('.github/scripts/fixtures/gallery-before-v86.js','utf8');
     return route.fulfill({body,contentType:'text/javascript'});
    });
   }
