@@ -16,6 +16,7 @@ on:
   push:
     branches: [main, codex/launch-rebuild, codex/title-details, codex/scale-reveal, codex/scale-hundreds, codex/studio-rebuild, codex/homepage-evidence-flow, codex/scene-in-page-preview, codex/white-banner-fit, codex/centred-workcell-reveal, codex/rgb-ribbon-homepage, codex/complete-generation-loop, codex/white-asset-atlas, codex/direct-embedded-loop, codex/synchronized-case-film, codex/rgb-playback-release, codex/in-motion-reveal, codex/departure-reveal-holds, codex/full-perspective-loop, codex/camera-control-study, codex/continuous-camera-study, codex/cloth-fidelity-study, codex/lighting-study, codex/camera-color-fix, codex/startup-streaming, codex/rendered-distance-sample, codex/homepage-film-release-20261102, codex/mobile80-integration-20261103, codex/site-layout-rhythm, codex/paper-dense-retarget, codex/website-quickstart-sync]
     paths:
+      - 'docs/usage.md'
       - '.github/workflows/website-visual-review.yml'
       - '.github/scripts/website-visual-review.cjs'
       - 'website/**/*.html'
