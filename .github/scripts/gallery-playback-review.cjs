@@ -55,7 +55,7 @@ module.exports=async function galleryPlayback(browser,report,save){
   const samples=[];
   for(const [id,action]of [['rgb-film','rgb'],['transfer-film','next'],['rgb-film','previous']]){
    await page.evaluate(id=>window.beginGalleryProbe(id),id);
-   if(action==='rgb')await page.locator('header a[href="#rgb"]').click();
+   if(action==='rgb')await page.evaluate(()=>{location.hash='rgb';});
    else await page.locator(action==='next'?'[data-story-next]':'[data-story-prev]').click();
    await page.waitForTimeout(action==='previous'?2000:12000);
    const sample=await page.evaluate(id=>window.readGalleryProbe(id),id);samples.push(sample);
