@@ -52,31 +52,20 @@ def _path(value: str | Path, root: Path) -> Path:
     return (path if path.is_absolute() else root / path).resolve()
 
 
-def generate(config: str | Path, root: Path) -> Path:
-    """Read user choices and reuse the quickstart's managed generation loop."""
-    import yaml
-
+def generate(root: Path, *, task: str = "flatten", benchmark: str | Path = "benchmark",
+             teachers: str | Path = "models/nocs-teachers", output: str | Path | None = None,
+             gpu: int = 0, seen_assets: int = 1, unseen_assets: int = 0,
+             states_per_asset: int = 1) -> Path:
+    """Generate with user choices and print the matching replay command."""
     root = root.resolve()
-    try:
-        with _path(config, root).open() as stream:
-            settings = yaml.safe_load(stream)
-    except yaml.YAMLError as error:
-        raise ValueError(f"Invalid generation YAML: {error}") from error
-    allowed = {"task", "benchmark", "teachers", "output", "gpu", "seen_assets",
-               "unseen_assets", "states_per_asset"}
-    if not isinstance(settings, dict) or set(settings) - allowed:
-        raise ValueError(f"Generation config must contain only: {', '.join(sorted(allowed))}")
-    collection = run(settings.get("task", "flatten"), root, settings.get("output"),
-               benchmark=settings.get("benchmark", "benchmark"),
-               teachers=settings.get("teachers", "models/nocs-teachers"),
-               gpu=settings.get("gpu", 0), seen_assets=settings.get("seen_assets", 1),
-               unseen_assets=settings.get("unseen_assets", 0),
-               states_per_asset=settings.get("states_per_asset", 1), render=False)
+    collection = run(task, root, output, benchmark=benchmark, teachers=teachers, gpu=gpu,
+                     seen_assets=seen_assets, unseen_assets=unseen_assets,
+                     states_per_asset=states_per_asset, render=False)
     command = [".venv/bin/clothdojo", "replay", str(collection)]
-    if settings.get("benchmark", "benchmark") != "benchmark":
-        command.extend(["--benchmark", str(_path(settings["benchmark"], root))])
-    if settings.get("gpu", 0) != 0:
-        command.extend(["--gpu", str(settings["gpu"])])
+    if _path(benchmark, root) != root / "benchmark":
+        command.extend(["--benchmark", str(_path(benchmark, root))])
+    if gpu != 0:
+        command.extend(["--gpu", str(gpu)])
     print(f"Replay both views: {shlex.join(command)}", flush=True)
     return collection
 

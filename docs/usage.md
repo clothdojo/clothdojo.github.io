@@ -54,45 +54,45 @@ Run from the checkout root and activate the installed environment:
 
 ```bash
 source .venv/bin/activate
-clothdojo generate --config configs/generation/flatten.yaml
+clothdojo generate
 ```
 
-`generate` starts the teacher, runs simulation and recording, then stops the teacher. It prints the saved collection path and a ready-to-copy replay command. For folding, use `configs/generation/fold.yaml` after downloading its teacher.
+`generate` starts the teacher, runs simulation and recording, then stops the teacher. It prints the saved collection path and a ready-to-copy replay command. The default generates one flattening trajectory on GPU 0 using the downloaded resources.
 
 ### Choose what to generate
 
-The generation YAML contains the choices for this run:
+Add only the options you want to change. For folding, after downloading its teacher:
 
-```yaml
-task: flatten
-benchmark: benchmark
-teachers: models/nocs-teachers
-output: null
-gpu: 0
-seen_assets: 1
-unseen_assets: 0
-states_per_asset: 1
+```bash
+clothdojo generate --task fold
 ```
 
-| Setting | When to change it |
+| Option | Default / purpose |
 |---|---|
-| `task` | Choose `flatten` or `fold` |
-| `benchmark` | The released benchmark folder is on another disk |
-| `teachers` | The teacher root containing `flatten/` and `fold/` is elsewhere |
-| `output` | Use a specific new run directory; `null` creates a separate directory automatically |
-| `gpu` | Choose another visible CUDA GPU; policy, simulation and replay can share one GPU |
-| `seen_assets`, `unseen_assets` | Choose how many garments from each released split |
-| `states_per_asset` | Choose how many initial states per garment; the released pool has four |
+| `--task` | `flatten`; also accepts `fold` |
+| `--benchmark` | `benchmark`; change when the released benchmark folder is elsewhere |
+| `--teachers` | `models/nocs-teachers`; root containing `flatten/` and `fold/` |
+| `--output` | Automatic new directory; specify a new path for a fixed location |
+| `--gpu` | `0`; choose a visible CUDA GPU |
+| `--seen-assets`, `--unseen-assets` | `1`, `0`; garment counts from each released split |
+| `--states-per-asset` | `1`; initial states per garment, up to four in the released pool |
 
-Paths are relative to the checkout root where you run the command, including when the YAML is stored elsewhere. Absolute paths and `~` are supported. The benchmark root supplies assets and task-matched initial states; the teacher root supplies matching weights and normalization. Keep their downloaded layouts intact.
+Relative paths start from the checkout root where you run the command. Absolute paths and `~` are supported. The benchmark root supplies assets and task-matched initial states; the teacher root supplies matching weights and normalization. Keep their downloaded layouts intact.
 
-For eight trajectories, set `seen_assets: 2`, `unseen_assets: 2`, and `states_per_asset: 2`. Selection uses the first garments and states in the recorded pool order, not random sampling. Generation uses one simulation world at a time. Task scenarios, inference settings, and action execution parameters keep the tested defaults.
+For eight trajectories:
+
+```bash
+clothdojo generate --seen-assets 2 --unseen-assets 2 --states-per-asset 2
+```
+
+Selection uses the first garments and states in the recorded pool order, not random sampling. Generation uses one simulation world at a time. Task scenarios, inference settings, and action execution parameters keep the tested defaults.
 
 ### Replay a saved collection
 
-Copy the replay command printed by `generate`. For example, if you set `output: outputs/my-flatten`:
+Copy the replay command printed by `generate`. For a fixed output location:
 
 ```bash
+clothdojo generate --output outputs/my-flatten
 clothdojo replay outputs/my-flatten/rollout
 ```
 

@@ -110,20 +110,28 @@ def test_existing_output_is_preserved_before_starting_a_teacher(project, tmp_pat
     assert not (tmp_path / "teacher.pid").exists()
 
 
-def test_config_generates_with_custom_paths_then_replays_without_a_teacher(project, tmp_path):
+def test_cli_generate_defaults_need_no_options(project, tmp_path, monkeypatch):
+    from clothdojo.cli import main
+
+    monkeypatch.chdir(project)
+    main(['generate'])
+    collections = list((project / 'outputs/quickstart').glob('flatten-*/rollout'))
+    assert len(collections) == 1
+    assert (collections[0] / 'trajectories/example/manifest.json').exists()
+    assert not (collections[0] / 'review').exists()
+    assert_teacher_exited(tmp_path / 'teacher.pid')
+
+
+def test_cli_generates_with_custom_paths_then_replays_without_a_teacher(project, tmp_path, monkeypatch):
+    from clothdojo.cli import main
+
     (project / 'benchmark').rename(tmp_path / 'external-benchmark')
     (project / 'models/nocs-teachers').rename(tmp_path / 'external-teachers')
-    config = project / 'run.yaml'
-    config.write_text('''task: fold
-benchmark: ../external-benchmark
-teachers: ../external-teachers
-output: runs/custom
-gpu: 3
-seen_assets: 1
-unseen_assets: 1
-states_per_asset: 2
-''')
-    collection = quickstart.generate(config, project)
+    monkeypatch.chdir(project)
+    main(['generate', '--task', 'fold', '--benchmark', '../external-benchmark',
+          '--teachers', '../external-teachers', '--output', 'runs/custom', '--gpu', '3',
+          '--seen-assets', '1', '--unseen-assets', '1', '--states-per-asset', '2'])
+    collection = project / 'runs/custom/rollout'
     assert collection == project / 'runs/custom/rollout'
     assert len(list((collection / 'trajectories').iterdir())) == 4
     assert not (collection / 'review').exists()
@@ -144,12 +152,20 @@ states_per_asset: 2
         assert len(list((collection / folder / 'videos' / view).glob('*.mp4'))) == 4
 
 
-@pytest.mark.parametrize('settings', ['gpu: true', 'gpu: -1', 'task: typo', 'unknown: 1',
-                                     'benchmark: null', 'seen_assets: 0\nunseen_assets: 0',
-                                     'states_per_asset: 0', '[]', 'task: ['])
-def test_invalid_config_does_not_start_processes(project, tmp_path, settings):
-    config = project / 'invalid.yaml'
-    config.write_text(settings)
+@pytest.mark.parametrize('settings', [{'gpu': True}, {'gpu': -1}, {'task': 'typo'},
+                                     {'benchmark': None}, {'seen_assets': 0, 'unseen_assets': 0},
+                                     {'states_per_asset': 0}])
+def test_invalid_generation_choices_do_not_start_processes(project, tmp_path, settings):
     with pytest.raises(ValueError):
-        quickstart.generate(config, project)
+        quickstart.generate(project, **settings)
+    assert not (tmp_path / 'teacher.pid').exists()
+
+
+@pytest.mark.parametrize('arguments', [['--config', 'old.yaml'], ['--task', 'typo'],
+                                      ['--gpu', 'not-a-number']])
+def test_invalid_cli_arguments_do_not_start_processes(project, tmp_path, arguments):
+    from clothdojo.cli import main
+
+    with pytest.raises(SystemExit):
+        main(['generate', *arguments])
     assert not (tmp_path / 'teacher.pid').exists()

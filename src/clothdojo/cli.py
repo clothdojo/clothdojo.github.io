@@ -32,7 +32,10 @@ def main(argv: Sequence[str] | None = None) -> None:
 
         try:
             if args.command == "generate":
-                generate(args.config, Path.cwd())
+                generate(Path.cwd(), task=args.task, benchmark=args.benchmark,
+                         teachers=args.teachers, output=args.output, gpu=args.gpu,
+                         seen_assets=args.seen_assets, unseen_assets=args.unseen_assets,
+                         states_per_asset=args.states_per_asset)
             else:
                 replay(args.source, Path.cwd(), benchmark=args.benchmark, gpu=args.gpu)
         except KeyboardInterrupt:
@@ -853,9 +856,15 @@ def _parser() -> argparse.ArgumentParser:
 
     parser = argparse.ArgumentParser(prog="clothdojo")
     commands = parser.add_subparsers(dest="command")
-    generate = commands.add_parser("generate", help="generate trajectories using a small run config")
-    generate.add_argument("--config", default="configs/generation/flatten.yaml",
-                          help="run YAML (default: configs/generation/flatten.yaml)")
+    generate = commands.add_parser("generate", help="generate trajectories with a managed teacher")
+    generate.add_argument("--task", choices=("flatten", "fold"), default="flatten")
+    generate.add_argument("--benchmark", default="benchmark", help="released benchmark root")
+    generate.add_argument("--teachers", default="models/nocs-teachers", help="teacher root")
+    generate.add_argument("--output", type=Path, help="new run directory; default: automatic")
+    generate.add_argument("--gpu", type=int, default=0)
+    generate.add_argument("--seen-assets", type=int, default=1)
+    generate.add_argument("--unseen-assets", type=int, default=0)
+    generate.add_argument("--states-per-asset", type=int, default=1)
     replay = commands.add_parser("replay", help="export high and low views of a saved collection")
     replay.add_argument("source", help="trajectory collection printed by generate")
     replay.add_argument("--benchmark", default="benchmark", help="benchmark root containing assets/")
