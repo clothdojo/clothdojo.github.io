@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="embedded-hero.css?v=44">
 <link rel="stylesheet" href="rgb-collection.css?v=3">
 <link rel="stylesheet" href="generation-hero.css?v=85">
-<link rel="stylesheet" href="story-cards.css?v=87"><script src="story-cards.js?v=68" defer></script>
+<link rel="stylesheet" href="story-cards.css?v=88"><script src="story-cards.js?v=68" defer></script>
 </head>
 <body class="launch scene-preview fold-fit research30">
 <a class="skip" href="#main">Skip to content</a>
@@ -47,7 +47,7 @@
 <section class="code-section" id="use" aria-labelledby="story-use-title"><div class="code-card">
 <header class="story-card-heading"><h2 id="story-use-title">Start with ClothDojo.</h2></header>
 <div class="story-card-body"><div class="section-heading"></div>
-<div class="quickstart"><div><h3>Generate a trajectory</h3><p>Set up ClothDojo, then watch both NOCS camera views.</p><p><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/usage.md">Full quickstart ↗</a></p></div><div class="code-panel"><div class="code-heading"><span>Python 3.11 · uv</span><button type="button" id="copy-commands">Copy</button></div><pre><code id="commands">git clone https://github.com/clothdojo/clothdojo.github.io.git ClothDojo
+<div class="quickstart"><div><h3>Generate a trajectory</h3><p>Set up ClothDojo, then watch both NOCS camera views.</p><a class="repository-link" href="https://github.com/clothdojo/clothdojo.github.io">View code on GitHub <span aria-hidden="true">↗</span></a></div><div class="code-panel"><div class="code-heading"><span>Python 3.11 · uv</span><button type="button" id="copy-commands">Copy</button></div><pre><code id="commands">git clone https://github.com/clothdojo/clothdojo.github.io.git ClothDojo
 cd ClothDojo
 bash scripts/download.sh flatten
 bash scripts/setup.sh
@@ -55,10 +55,8 @@ source .venv/bin/activate
 
 clothdojo generate --output outputs/first-flatten
 clothdojo replay outputs/first-flatten/rollout</code></pre><span id="copy-status" role="status"></span></div></div>
-<nav class="usage-links" aria-label="More documentation"><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/advanced.md#evaluate-on-the-released-panel">Evaluation ↗</a><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/randomized-rendering.md">RGB rendering ↗</a><a href="https://github.com/clothdojo/clothdojo.github.io/blob/main/docs/advanced.md#export-rgb-training-data">Data export ↗</a></nav>
 </div>
 </div></section>
 </main>
-<footer class="container site-footer"><a class="brand" href="#main">ClothDojo</a><a href="https://arxiv.org/abs/2611.01190">Paper ↗</a><a href="https://github.com/clothdojo/clothdojo.github.io">GitHub ↗</a></footer>
 <dialog id="media-dialog" aria-labelledby="media-title"><div class="dialog-header"><h2 id="media-title">Trajectory replay</h2><button type="button" id="close-media">Close ×</button></div><video id="expanded-film" muted playsinline preload="none"></video></dialog>
 </body></html>
