@@ -65,9 +65,7 @@ outputs/rgb-seed42/videos/chunk-000/
 
 The full flattening videos remain 60 seconds long, now at the recorded control rate of 50 fps. Two wrist-camera videos and accompanying LeRobot v2.1 data are also exported.
 
-To compare another appearance, rerun the command with `--isaac-seed 43` and `--output outputs/rgb-seed43`. The same recorded pose rendered with two seeds looks like this:
-
-![High and low RGB views of the same recorded pose with seeds 42 and 43](assets/randomized-rgb-preview.jpg)
+To compare another appearance, rerun the command with `--isaac-seed 43` and `--output outputs/rgb-seed43`.
 
 Use a new output directory for each export. For folding, use the saved folding collection as `--source`; the other steps are unchanged.
 

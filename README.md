@@ -22,7 +22,7 @@ Follow the [RGB rendering guide](docs/randomized-rendering.md) to render the sav
 
 | cam_high | cam_low |
 | :---: | :---: |
-| [![cam_high RGB render](docs/assets/randomized-rgb-cam_high.jpg)](docs/randomized-rendering.md) | [![cam_low RGB render](docs/assets/randomized-rgb-cam_low.jpg)](docs/randomized-rendering.md) |
+| [![cam_high RGB, 4× preview](docs/assets/randomized-rgb-cam_high-preview.gif)](docs/assets/randomized-rgb-cam_high.mp4) | [![cam_low RGB, 4× preview](docs/assets/randomized-rgb-cam_low-preview.gif)](docs/assets/randomized-rgb-cam_low.mp4) |
 
 ## Resources
 

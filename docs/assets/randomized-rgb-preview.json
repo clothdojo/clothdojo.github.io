@@ -1,53 +1,34 @@
 {
   "source_trajectory": "rand_004NVCOKV7_000000",
-  "source_action_range": [
-    0,
-    100
-  ],
-  "source_fps": 50,
-  "source_seconds": 2,
-  "only_public_polyhaven_assets": true,
+  "source_trajectory_manifest_sha256": "bdf4b02ca3991275909a3b31d5e063f017e0b3867e804d1c347ac290c5113fe0",
+  "same_trajectory_as_nocs": true,
+  "seed": 42,
   "isaac_version": "5.0.0.0",
-  "nonvisual_dataset_columns_identical": [
-    "observation.state",
-    "action",
-    "timestamp",
-    "frame_index",
-    "episode_index",
-    "index",
-    "task_index"
+  "action_count": 3000,
+  "state_count": 3001,
+  "source_video_fps": 50,
+  "source_video_frames": 3000,
+  "video_duration_seconds": 60,
+  "video_fps": 10,
+  "video_frames": 600,
+  "source_frame_selection": "0,5,10,...,2995",
+  "preview_speed": 4,
+  "preview_duration_seconds": 15,
+  "preview_frames": 90,
+  "preview_size": [
+    360,
+    270
   ],
-  "comparison_time_seconds": 1,
-  "results": [
-    {
-      "seed": 42,
-      "videos": [
-        {
-          "camera": "cam_high",
-          "frames": 100,
-          "seconds": 2,
-          "sha256": "fb2c8502ad8bef240c55bbd77e8b82942ad71fd514704453afa1b2a15ab86bce"
-        },
-        {
-          "camera": "cam_left_wrist",
-          "frames": 100,
-          "seconds": 2,
-          "sha256": "a991a86dd880295ddb0f2ec278c821a5d998cf055dae102a7ef1c6ca83438227"
-        },
-        {
-          "camera": "cam_low",
-          "frames": 100,
-          "seconds": 2,
-          "sha256": "eed18d6e452190e377f56f9e97d0198dd0e3495f5fa62ddaaf2db1c40c432b00"
-        },
-        {
-          "camera": "cam_right_wrist",
-          "frames": 100,
-          "seconds": 2,
-          "sha256": "0eece474f338d754422d00aa4fc454360cbe35e410f328b11c7aaac3c67c39c2"
-        }
-      ],
-      "layout": {
+  "rendering": {
+    "appearance_source": "Poly Haven CC0 curated materials",
+    "backend": "isaac_rtx",
+    "base_seed": 42,
+    "camera_projection": "newton_compatible_v1",
+    "cloth_backface_scale": 0.25,
+    "cloth_visual": "normal",
+    "granularity": "episode",
+    "layouts": [
+      {
         "background": null,
         "cloth": {
           "color_channel": "Diffuse",
@@ -77,90 +58,33 @@
         },
         "visual_profile": null
       }
-    },
-    {
-      "seed": 43,
-      "videos": [
-        {
-          "camera": "cam_high",
-          "frames": 100,
-          "seconds": 2,
-          "sha256": "08809414f0e2c074c78ed436051d3df5769071ae29902888b0f29fe94169d893"
-        },
-        {
-          "camera": "cam_left_wrist",
-          "frames": 100,
-          "seconds": 2,
-          "sha256": "c14232aef8a373abe89073c18a09a4a4c68d9981b7c7f78412e9a66fd2db5f89"
-        },
-        {
-          "camera": "cam_low",
-          "frames": 100,
-          "seconds": 2,
-          "sha256": "8afe1016032111d8e50bc814982c29dcc233493659c124518bd34513c32f0d55"
-        },
-        {
-          "camera": "cam_right_wrist",
-          "frames": 100,
-          "seconds": 2,
-          "sha256": "80c45c225a6078625bc85e2557ff693f1150b85ae3bf98a96daf0985c4ff70a3"
-        }
-      ],
-      "layout": {
-        "background": null,
-        "cloth": {
-          "color_channel": "Diffuse",
-          "material": "rough_linen"
-        },
-        "episode_index": 0,
-        "ground": {
-          "color_channel": "Diffuse",
-          "material": "concrete_floor_worn_001"
-        },
-        "lighting": {
-          "condition": "neutral",
-          "intensity": 10861.002346,
-          "position": [
-            1.113291,
-            -0.225539,
-            1.858907
-          ],
-          "temperature": 5564.046733
-        },
-        "room": null,
-        "seed": 2768168839,
-        "source_episode_id": "rand_004NVCOKV7_000000",
-        "table": {
-          "color_channel": "Diffuse",
-          "material": "wood_table_large"
-        },
-        "visual_profile": null
-      }
-    }
-  ],
-  "comparison_image_sha256": "e253751100ed7209a9104510012e2bf760cc7871c64fe83ac5eca3ef588ab69e",
-  "limitations": "Short recorded-trajectory excerpts; reused installed Isaac SDK and verified public material bytes, not a fresh SDK installation or full 60-second RGB export.",
-  "source_trajectory_manifest_sha256": "cec5c4c86a8ecfdd1216cd7f3136d6aed2e9c8b14bce504227807fa2449e7b16",
-  "source_collection_excerpt_sha256": "d164d664a8e03979ab94c7c7a788057bd26a2cf47855128b36bf71121a3ec663",
-  "readme_example": {
-    "seed": 42,
-    "time_seconds": 1,
-    "frame_index": 50,
-    "size": [
-      360,
-      270
     ],
-    "views": {
-      "cam_high": {
-        "image": "docs/assets/randomized-rgb-cam_high.jpg",
-        "sha256": "3806361e9cf69712ca8b80f67ac8d6504a284f18e6befd9ea2ae9b1ae45056ec",
-        "source_video_sha256": "fb2c8502ad8bef240c55bbd77e8b82942ad71fd514704453afa1b2a15ab86bce"
-      },
-      "cam_low": {
-        "image": "docs/assets/randomized-rgb-cam_low.jpg",
-        "sha256": "1ddc5d830b1ddf6ca4585257ec5ea97b318a033668128af6e566c72ba9c367b1",
-        "source_video_sha256": "eed18d6e452190e377f56f9e97d0198dd0e3495f5fa62ddaaf2db1c40c432b00"
-      }
+    "randomized_components": [
+      "cloth",
+      "table",
+      "ground",
+      "lighting",
+      "background"
+    ],
+    "robodojo_revision": null,
+    "room_mode": "disabled",
+    "sampling": "uniform_material_then_colorway"
+  },
+  "training_eligible": false,
+  "views": {
+    "cam_high": {
+      "source_video_sha256": "b32b3459833e3793200d4b7821b2e42ea94caa2df06bce54871824036d04946a",
+      "video": "docs/assets/randomized-rgb-cam_high.mp4",
+      "video_sha256": "28f4d267b134acdc51a569fa4f8deb0be92433373d0b75d7d01b6fec70c8ec77",
+      "preview": "docs/assets/randomized-rgb-cam_high-preview.gif",
+      "preview_sha256": "03818a44c482d01c19aad6526dd14f3815237bfc764426c8e03b63086c12126b"
+    },
+    "cam_low": {
+      "source_video_sha256": "dadae5c0b46759919fef07c890aea4b97837d6bc66fe2bdaae9e582b11b4278d",
+      "video": "docs/assets/randomized-rgb-cam_low.mp4",
+      "video_sha256": "5b0591dcac72580b3a91903a0d63088f8da2ffb33f6d4a6c4d6aa5c3fa280111",
+      "preview": "docs/assets/randomized-rgb-cam_low-preview.gif",
+      "preview_sha256": "6c81026d85dabd6b70721459c5e69758a51566c578100eed97ef42c121a4feea"
     }
   }
 }
