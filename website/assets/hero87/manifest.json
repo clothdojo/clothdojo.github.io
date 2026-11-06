@@ -1,0 +1,441 @@
+{
+  "schema": "clothdojo_fixed_pair_film_v1",
+  "src": "generation-loop.mp4",
+  "poster": "generation-loop-poster.jpg",
+  "width": 1600,
+  "height": 560,
+  "fps": 25,
+  "workspaces": 2,
+  "asset_count": 6,
+  "trajectory_count": 12,
+  "playback_speed": 2,
+  "camera": {
+    "camera_eye": [
+      7.074829758172653,
+      -2.22460584200135e-16,
+      5.474316292554007
+    ],
+    "camera_target": [
+      0.2415505816917361,
+      -2.22460584200135e-16,
+      0.7043540966787896
+    ],
+    "camera_focal_length": 35
+  },
+  "material": {
+    "color_linear_rgb": [
+      0.035,
+      0.07,
+      0.12
+    ],
+    "shared_across_cases": true
+  },
+  "transitions": {
+    "opening_hold_frames": 12,
+    "fade_frames": 8,
+    "description": "Cross-dissolve during released-terminal holds into the next real initial pose. The first frame is a visible real initial state, including under reduced motion. No synthetic return-home robot motion."
+  },
+  "scope": "Presentation replay of existing generated trajectories. Not live generation throughput or RGB-trained-policy evaluation.",
+  "cases": [
+    {
+      "case": 0,
+      "label": "B",
+      "morphology": "wide sleeves",
+      "asset_id": "rand_0X68PQMHZM",
+      "size_m": [
+        1.310166597366333,
+        0.547435998916626
+      ],
+      "first_frame": 0,
+      "frames": 302,
+      "source_render_frames": 290,
+      "initial_hold_frames": 12,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0X68PQMHZM__04",
+          "terminal_state": 721,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 721,
+            "window_start_state_index": 696,
+            "deformable_distance": 0.041058249771595,
+            "rigid_distance": 0.014852283522486687,
+            "combined_distance": 0.031886160373687744,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          },
+          "source_manifest_sha256": "735220a148e4c1e73a0457ca822b8abb6b9386042627031fa9ddc93ac0db3539",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0X68PQMHZM_000000",
+          "terminal_state": 1055,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.9026505866724013,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 1055,
+            "last_release_step": 2626,
+            "latest_cutoff_step": 2676,
+            "scored_states": 1448,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "c8a73d6f9ddbfdbdf92210da025a3b98a6da6d14dda99555d70b54b16f291987",
+            "reference_sha256": "e9f1a9f7c5dea52535e1b4cf3bc0bc3d0ec815c562d36efa1a5d44dcbd4190a3",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          },
+          "source_manifest_sha256": "3ef3a9a6e5d32e8856e4acf8049d7b0f76da93122bead6dc39c4f75fb6a73c30",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        }
+      ]
+    },
+    {
+      "case": 1,
+      "label": "D",
+      "morphology": "wide long-body top",
+      "asset_id": "rand_1G753QQF8L",
+      "size_m": [
+        1.2943992614746094,
+        0.8440214991569519
+      ],
+      "first_frame": 302,
+      "frames": 536,
+      "source_render_frames": 524,
+      "initial_hold_frames": 12,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1G753QQF8L__00",
+          "terminal_state": 1989,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 1989,
+            "window_start_state_index": 1964,
+            "deformable_distance": 0.043458063155412674,
+            "rigid_distance": 0.0423995666205883,
+            "combined_distance": 0.043087590485811234,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          },
+          "source_manifest_sha256": "4372fc243a5c468e377bcb45f455cd2e9d2bb41afe27c8ba0c63942f6fe072fd",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1G753QQF8L_000007_r000",
+          "terminal_state": 1335,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.7621592701024247,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 1335,
+            "last_release_step": 1324,
+            "latest_cutoff_step": 1374,
+            "scored_states": 670,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "2c1c9e92fb158e9a43e1c3fab30b1aa17820bbf52c147901d597c76d0eb7ddc5",
+            "reference_sha256": "37b62f56571905251bb22f680bd392f8df27973e2f7e9abbd27ad2324ba1baac",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          },
+          "source_manifest_sha256": "22c9feefd14a3a99397b19a9a7ed6d86b4734edcc4f65f7f564b86131f1ad4a7",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "label": "A",
+      "morphology": "compact top",
+      "asset_id": "rand_1K7UAS5RJU",
+      "size_m": [
+        0.5887923240661621,
+        0.4982820749282837
+      ],
+      "first_frame": 838,
+      "frames": 289,
+      "source_render_frames": 277,
+      "initial_hold_frames": 12,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_1K7UAS5RJU__01",
+          "terminal_state": 1002,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 1002,
+            "window_start_state_index": 977,
+            "deformable_distance": 0.01568215899169445,
+            "rigid_distance": 0.017684904858469963,
+            "combined_distance": 0.01638312079012394,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          },
+          "source_manifest_sha256": "b3eeb26f1e7653d9466a61691464a11c4e998ed0720989f08e11122753fa222d",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_1K7UAS5RJU_000008",
+          "terminal_state": 950,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.8384294318412782,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 950,
+            "last_release_step": 1292,
+            "latest_cutoff_step": 1342,
+            "scored_states": 631,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "9e7c56c446b575816644bd00ac420225e23e4797bbd95c16aa6b16cd884f48b6",
+            "reference_sha256": "db8b232cac7be1860e169a6d2bdadca4dcca3c7433eeb3425827ba05cda7222e",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          },
+          "source_manifest_sha256": "572da36b3696f18371c0606fd3d091f6f352991dc2e61882dda35bb8f6917055",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "label": "E",
+      "morphology": "large long-body top",
+      "asset_id": "rand_2D87L67S71",
+      "size_m": [
+        1.0950814485549927,
+        1.0347084999084473
+      ],
+      "first_frame": 1127,
+      "frames": 747,
+      "source_render_frames": 735,
+      "initial_hold_frames": 12,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_2D87L67S71__06",
+          "terminal_state": 2491,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 2491,
+            "window_start_state_index": 2466,
+            "deformable_distance": 0.0566556490957737,
+            "rigid_distance": 0.04154706001281738,
+            "combined_distance": 0.05136764049530029,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          },
+          "source_manifest_sha256": "1b742f7e564a104ea73e7a196f416be5a9228c183d5d8807069441d860dda998",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_2D87L67S71_000006_r001",
+          "terminal_state": 2835,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.1595253812341504,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 2835,
+            "last_release_step": 2944,
+            "latest_cutoff_step": 2994,
+            "scored_states": 1481,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "425d0e0c0c1eddc34cefd262d3eeed95cdd344fab336f632730c0dea31c482cf",
+            "reference_sha256": "3d67e41e0ea9dd01bbda0a8911297629a273a14724e876851222dd44ebf83a4a",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          },
+          "source_manifest_sha256": "82fdc71fab191a05f6c465a196a62c3e00e784eb7d59b4dc1ab01ecc1a843257",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        }
+      ]
+    },
+    {
+      "case": 4,
+      "label": "C",
+      "morphology": "long sleeveless",
+      "asset_id": "rand_299AM1LG5I",
+      "size_m": [
+        0.4054451286792755,
+        0.8744649291038513
+      ],
+      "first_frame": 1874,
+      "frames": 299,
+      "source_render_frames": 287,
+      "initial_hold_frames": 12,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_299AM1LG5I__06",
+          "terminal_state": 805,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 805,
+            "window_start_state_index": 780,
+            "deformable_distance": 0.03329772502183914,
+            "rigid_distance": 0.032148320227861404,
+            "combined_distance": 0.03289543092250824,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          },
+          "source_manifest_sha256": "aa79eb0eb99832ff665c4ea4ef3804125e47dbda515634cfa831f81f0488472f",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_299AM1LG5I_000008",
+          "terminal_state": 1041,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.8170311575052638,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 1041,
+            "last_release_step": 1932,
+            "latest_cutoff_step": 1982,
+            "scored_states": 1387,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "77af2cf3766fc26a52cd1d032f00713847ff6442c55710ab0bfbbcf62e9fcd3b",
+            "reference_sha256": "bae1942f61aebd9dc4756df4e757b88c86d4e677cca94922ef4a26bffae51dfe",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          },
+          "source_manifest_sha256": "32009f159c633533b31cac6d6190f88042072b8d699f08f28cc25fdc011ef857",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        }
+      ]
+    },
+    {
+      "case": 5,
+      "label": "F",
+      "morphology": "longest body",
+      "asset_id": "rand_0WYOH8KDV2",
+      "size_m": [
+        0.8514237999916077,
+        1.2259835004806519
+      ],
+      "first_frame": 2173,
+      "frames": 768,
+      "source_render_frames": 756,
+      "initial_hold_frames": 12,
+      "tasks": [
+        {
+          "task": "flatten",
+          "trajectory": "data/rollouts/dagger40k_release_window_train400_v1_20260910/trajectories/rand_0WYOH8KDV2__05",
+          "terminal_state": 2918,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "status": "keep",
+            "reason": "first_success_hold_release",
+            "terminal_state_index": 2918,
+            "window_start_state_index": 2893,
+            "deformable_distance": 0.038220152258872986,
+            "rigid_distance": 0.026756882667541504,
+            "combined_distance": 0.03420800715684891,
+            "thresholds": {
+              "deformable_distance_max": 0.08810820503011346,
+              "rigid_distance_max": 0.04299899448500946
+            },
+            "geometry_hold_seconds": 0.5,
+            "release_required": "terminal state",
+            "speed_required": false,
+            "selection_rule": "first_0p5s_geometry_with_released_endpoint"
+          },
+          "source_manifest_sha256": "aeecc364517ee09fb658a76794437235fceb8acce5f317ce9bee9baad22ab302",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        },
+        {
+          "task": "fold",
+          "trajectory": "data/rollouts/fold_best_released_train400_v1_20260911/trajectories/rand_0WYOH8KDV2_000009_r000",
+          "terminal_state": 2060,
+          "terminal_released_verified": true,
+          "terminal_success_evidence": {
+            "reason": "keep",
+            "best_released_q": 1.6599377044922088,
+            "success_threshold": 0.14228658677130532,
+            "action_end_exclusive": 2060,
+            "last_release_step": 2130,
+            "latest_cutoff_step": 2180,
+            "scored_states": 1082,
+            "rule_sha256": "2459567ee9c6371e94a421a80de5c3f8b0330aa0a83eca7a76c0ec69341721ab",
+            "signals_sha256": "48878a8ccd794f6281dd9e6a033d77cb40b3501c7cd44c0f651d1012d9321a11",
+            "reference_sha256": "3c4a4683bcf1d80b733347c688ecb732b90104c9fb0a5ce80c651962aa81bbc6",
+            "selection_rule": "best_released_q_before_last_release_plus_1s_v1"
+          },
+          "source_manifest_sha256": "4278efffc0f9734937593704d4f419b523efcc64aac915273ea3d97c6c89dc2c",
+          "source_start_index": 0,
+          "sampled_state_step": 4,
+          "all_sampled_values_match_source": true
+        }
+      ]
+    }
+  ],
+  "frames": 2941,
+  "duration_seconds": 117.64,
+  "bytes": 4964697,
+  "sha256": "77dda81c6c042f3498751213fe7ac2143d4c3b7ccd88d86c60df50cc086bfa44"
+}

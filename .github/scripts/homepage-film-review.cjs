@@ -1,6 +1,6 @@
 const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process'),out=process.env.REVIEW_OUTPUT;fs.mkdirSync(out,{recursive:true});
-const manifest=JSON.parse(fs.readFileSync('website/assets/film62/manifest.json','utf8'));
+const manifest=JSON.parse(fs.readFileSync('website/assets/hero87/manifest.json','utf8'));
 const leaderboardModels=JSON.parse(fs.readFileSync('website/assets/experiment-results.json','utf8')).models;
 const normalizeCommands=text=>text.split('\n').map(line=>line.trim()).filter(Boolean).join('\n');
 const quickstartBlocks=[...fs.readFileSync('docs/usage.md','utf8').matchAll(/^```bash\n([\s\S]*?)^```/gm)];
@@ -27,7 +27,8 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    await page.goto('http://127.0.0.1:8787/'+target,{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);
    assert.equal(normalizeCommands(await page.locator('#commands').innerText()),quickstartCommands,'Website quickstart follows the current install, generate and replay tutorial');
    const video=page.locator('#hero-film');await page.waitForFunction(()=>document.getElementById('hero-film').readyState>=2,null,{timeout:45000});
-   assert.equal(await video.getAttribute('data-src'),'assets/film62/generation-loop.mp4');assert.equal(await video.getAttribute('data-mobile-src'),null);assert.equal(await video.evaluate(v=>v.controls),false);
+   const initialRange=await video.evaluate(v=>{const c=document.createElement('canvas');c.width=160;c.height=56;const x=c.getContext('2d');x.drawImage(v,0,0,160,56);const p=x.getImageData(0,0,160,56).data;let low=255,high=0;for(let i=0;i<p.length;i+=4){low=Math.min(low,p[i]);high=Math.max(high,p[i]);}return high-low;});assert(initialRange>64,'Reduced-motion viewers see a real initial pose, not a blank transition');
+   assert.equal(await video.getAttribute('data-src'),'assets/hero87/generation-loop.mp4');assert.equal(await video.getAttribute('data-mobile-src'),null);assert.equal(await video.evaluate(v=>v.controls),false);
    assert.equal(await page.locator('#overview button, #overview input').count(),0);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    assert.equal(await video.evaluate(v=>v.paused),true,'Respect reduced motion');
    const bounds=await page.locator('#overview').boundingBox();assert(bounds.y+bounds.height<=height+1,JSON.stringify({target,width,height,bounds}));
@@ -144,8 +145,9 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    });
   });
   const source=await page.locator('#hero-film').evaluate(v=>v.currentSrc);
-  for(const c of manifest.cases){await page.waitForFunction(t=>document.getElementById('hero-film').currentTime>=t,c.first_frame/25+3,{timeout:30000});}
-  await page.waitForFunction(()=>window.heroProbe.wrapped,null,{timeout:20000});const probe=await page.evaluate(()=>window.heroProbe);const maxGap=Math.max(...probe.gaps);report.checks.push({width,heroLoopSeam:probe.seam,heroMaxFrameGap:maxGap});save();assert(probe.seam<8);assert(maxGap<.161,`Hero frame gap ${maxGap.toFixed(3)}s exceeds 0.161s at ${width}px`);assert.equal(await page.locator('#hero-film').evaluate(v=>v.currentSrc),source);
+  const caseWaitMs=Math.ceil(Math.max(...manifest.cases.map(c=>c.frames))/manifest.fps*1000)+10000;
+  for(const c of manifest.cases){await page.waitForFunction(t=>document.getElementById('hero-film').currentTime>=t,c.first_frame/manifest.fps+3,{timeout:caseWaitMs});}
+  await page.waitForFunction(()=>window.heroProbe.wrapped,null,{timeout:caseWaitMs});const probe=await page.evaluate(()=>window.heroProbe);const maxGap=Math.max(...probe.gaps);report.checks.push({width,heroLoopSeam:probe.seam,heroMaxFrameGap:maxGap});save();assert(probe.seam<8);assert(maxGap<.161,`Hero frame gap ${maxGap.toFixed(3)}s exceeds 0.161s at ${width}px`);assert.equal(await page.locator('#hero-film').evaluate(v=>v.currentSrc),source);
   await page.evaluate(()=>{location.hash='rgb';});await page.waitForFunction(()=>{const v=document.getElementById('rgb-film');return !v.paused&&v.currentTime>.2;},null,{timeout:30000});
   assert((await page.locator('#rgb-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'gallery86/rgb-mobile.mp4':'gallery86/rgb.mp4'));
   assert.deepEqual(await page.locator('#rgb-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[720,1080]:[1280,480]);
