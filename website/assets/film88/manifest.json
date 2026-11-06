@@ -1,0 +1,95 @@
+{
+  "asset_count": 12,
+  "trajectory_count": 24,
+  "frames": 4643,
+  "duration_seconds": 185.72,
+  "decoded_frames": 4643,
+  "loop_seam_mean_rgb_difference": 0.3807206101190476,
+  "cases": [
+    {
+      "case": 0,
+      "source": 0,
+      "start_seconds": 0.0,
+      "frames": 275,
+      "asset_id": "rand_0UKD4QKBTS"
+    },
+    {
+      "case": 1,
+      "source": "B",
+      "start_seconds": 11.0,
+      "frames": 313,
+      "asset_id": "rand_0X68PQMHZM"
+    },
+    {
+      "case": 2,
+      "source": 1,
+      "start_seconds": 23.52,
+      "frames": 283,
+      "asset_id": "rand_1ONEJHCOVS"
+    },
+    {
+      "case": 3,
+      "source": "D",
+      "start_seconds": 34.84,
+      "frames": 547,
+      "asset_id": "rand_1G753QQF8L"
+    },
+    {
+      "case": 4,
+      "source": 2,
+      "start_seconds": 56.72,
+      "frames": 298,
+      "asset_id": "rand_0UVZH267ZC"
+    },
+    {
+      "case": 5,
+      "source": "A",
+      "start_seconds": 68.64,
+      "frames": 300,
+      "asset_id": "rand_1K7UAS5RJU"
+    },
+    {
+      "case": 6,
+      "source": 3,
+      "start_seconds": 80.64,
+      "frames": 250,
+      "asset_id": "rand_12CR1HRKKE"
+    },
+    {
+      "case": 7,
+      "source": "E",
+      "start_seconds": 90.64,
+      "frames": 758,
+      "asset_id": "rand_2D87L67S71"
+    },
+    {
+      "case": 8,
+      "source": 4,
+      "start_seconds": 120.96,
+      "frames": 256,
+      "asset_id": "rand_1EDHTQFUNP"
+    },
+    {
+      "case": 9,
+      "source": "C",
+      "start_seconds": 131.2,
+      "frames": 310,
+      "asset_id": "rand_299AM1LG5I"
+    },
+    {
+      "case": 10,
+      "source": 5,
+      "start_seconds": 143.6,
+      "frames": 274,
+      "asset_id": "rand_1EHUSGYR73"
+    },
+    {
+      "case": 11,
+      "source": "F",
+      "start_seconds": 154.56,
+      "frames": 779,
+      "asset_id": "rand_0WYOH8KDV2"
+    }
+  ],
+  "presentation": "Six original cases interleaved with six additions. Native fixed camera and identity colors. Scripted home return retained; 12-frame home-only dissolves. 25fps, 2x source replay."
+}

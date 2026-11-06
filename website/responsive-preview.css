@@ -1,0 +1,25 @@
+/* Keep native media proportions while adapting to window width and height. */
+.research30 { --width: clamp(1040px, 84vw, 1600px); --gutter: clamp(16px, 2.4vw, 48px); }
+.research30 .hero .embedded-generation {
+  width: min(100%, max(560px, calc(52svh * 20 / 7)));
+  max-width: min(100%, 1600px);
+  margin-inline: auto;
+}
+#hero-film { width: 100%; height: auto; max-height: none; aspect-ratio: 20 / 7; }
+.hero-task-labels { width: 66.6667%; }
+.research30 .nav { grid-template-columns: 1fr auto; }
+.research30 .nav-links { grid-column: 2; }
+.research30 .core-capabilities > *, .research30 .quickstart > * { min-width: 0; }
+.research30 .leaderboard-scroll { max-width: 100%; overflow-x: auto; }
+.research30 .code-panel pre { max-width: 100%; overflow-x: auto; }
+@media (min-width: 1800px) {
+  .research30 .hero h1 { max-width: 1100px; }
+  .research30 .hero .studio-paper-title { max-width: 1050px; font-size: 30px; }
+}
+@media (max-width: 700px) {
+  .research30 .hero .embedded-generation { width: 100%; }
+  .research30 .hero .studio-wordmark { font-size: clamp(38px, 10vw, 48px); }
+  .research30 .hero .studio-paper-title { font-size: clamp(18px, 4.5vw, 22px); }
+  .research30 .nav { gap: 12px; }
+  .research30 .nav-links { gap: clamp(8px, 2.5vw, 16px); }
+}
