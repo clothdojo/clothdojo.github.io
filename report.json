@@ -1,5 +1,5 @@
 {
-  "commit": "66fa99ce86b5e699f0546c176bd59a36f8ca9b4c",
+  "commit": "82b3a82265340d78d01fa55541581d7d9ca5beab",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -268,13 +268,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 1862.0000000000014,
+        "startupMs": 1977.3999999999942,
         "frames": 107,
-        "maxWallGapMs": 700,
-        "waitingMs": 7627.3000000000175,
+        "maxWallGapMs": 716.6000000000004,
+        "waitingMs": 7619.200000000012,
         "droppedFrames": 10,
-        "totalFrames": 110,
-        "elapsedMs": 12008.200000000004,
+        "totalFrames": 108,
+        "elapsedMs": 12008.699999999997,
         "readyState": 2,
         "paused": false
       }
@@ -288,13 +288,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 266.2320000000036,
+        "startupMs": 281.0319999999974,
         "frames": 295,
         "maxWallGapMs": 66.70000000000073,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 295,
-        "elapsedMs": 12046.400000000009,
+        "elapsedMs": 12062,
         "readyState": 4,
         "paused": false
       }
@@ -308,13 +308,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 300.7659999999996,
+        "startupMs": 299.6980000000003,
         "frames": 43,
-        "maxWallGapMs": 66.60000000000218,
+        "maxWallGapMs": 66.70000000000073,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 44,
-        "elapsedMs": 2027.300000000003,
+        "elapsedMs": 2041,
         "readyState": 4,
         "paused": false
       }
@@ -328,13 +328,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 863.0000000000086,
-        "frames": 275,
-        "maxWallGapMs": 200,
-        "waitingMs": 830.7000000000116,
+        "startupMs": 861.1999999999971,
+        "frames": 276,
+        "maxWallGapMs": 166.5999999999999,
+        "waitingMs": 826.1999999999971,
         "droppedFrames": 0,
         "totalFrames": 279,
-        "elapsedMs": 12005.300000000003,
+        "elapsedMs": 12006.899999999994,
         "readyState": 4,
         "paused": false
       }
@@ -348,13 +348,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 287.96600000000035,
+        "startupMs": 300.66600000000653,
         "frames": 295,
         "maxWallGapMs": 66.70000000000073,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 295,
-        "elapsedMs": 12046.800000000003,
+        "elapsedMs": 12062.900000000009,
         "readyState": 4,
         "paused": false
       }
@@ -368,13 +368,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 255.16600000000108,
-        "frames": 44,
-        "maxWallGapMs": 66.70000000000073,
+        "startupMs": 268.400000000016,
+        "frames": 45,
+        "maxWallGapMs": 50.10000000000218,
         "waitingMs": 0,
         "droppedFrames": 0,
-        "totalFrames": 46,
-        "elapsedMs": 2029.3999999999942,
+        "totalFrames": 45,
+        "elapsedMs": 2043.7000000000116,
         "readyState": 4,
         "paused": false
       }
@@ -388,13 +388,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 1896.299999999997,
+        "startupMs": 1913.1,
         "frames": 105,
-        "maxWallGapMs": 716.7000000000007,
-        "waitingMs": 7679.599999999991,
+        "maxWallGapMs": 733.3000000000002,
+        "waitingMs": 7679.599999999977,
         "droppedFrames": 9,
         "totalFrames": 107,
-        "elapsedMs": 12004.699999999997,
+        "elapsedMs": 12006.599999999977,
         "readyState": 3,
         "paused": false
       }
@@ -408,13 +408,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 204.9999999999909,
+        "startupMs": 203.5000000000182,
         "frames": 296,
-        "maxWallGapMs": 66.70000000000073,
+        "maxWallGapMs": 66.79999999999927,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 297,
-        "elapsedMs": 12047.5,
+        "elapsedMs": 12046.300000000017,
         "readyState": 4,
         "paused": false
       }
@@ -428,13 +428,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 238.86399999999048,
+        "startupMs": 237.96600000002218,
         "frames": 46,
         "maxWallGapMs": 50.10000000000218,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 46,
-        "elapsedMs": 2027.6999999999825,
+        "elapsedMs": 2029.2000000000116,
         "readyState": 4,
         "paused": false
       }
@@ -448,13 +448,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 696.8,
+        "startupMs": 679.9000000000174,
         "frames": 279,
-        "maxWallGapMs": 200,
-        "waitingMs": 729.2000000000116,
+        "maxWallGapMs": 216.70000000000005,
+        "waitingMs": 724.3999999999942,
         "droppedFrames": 0,
-        "totalFrames": 282,
-        "elapsedMs": 12006,
+        "totalFrames": 283,
+        "elapsedMs": 12007.100000000006,
         "readyState": 4,
         "paused": false
       }
@@ -468,13 +468,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 221.09799999998904,
+        "startupMs": 236.26599999999416,
         "frames": 297,
-        "maxWallGapMs": 50.10000000000218,
+        "maxWallGapMs": 66.70000000000073,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 297,
-        "elapsedMs": 12045.600000000006,
+        "elapsedMs": 12063.299999999988,
         "readyState": 4,
         "paused": false
       }
@@ -488,12 +488,12 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 189.2659999999887,
+        "startupMs": 203.4320000000116,
         "frames": 47,
-        "maxWallGapMs": 50.099999999998545,
+        "maxWallGapMs": 66.66800000000148,
         "waitingMs": 0,
         "droppedFrames": 0,
-        "totalFrames": 48,
+        "totalFrames": 47,
         "elapsedMs": 2028.6000000000058,
         "readyState": 4,
         "paused": false
@@ -697,7 +697,7 @@
           "width": 350
         },
         "gallery": {
-          "left": 100,
+          "left": 92,
           "width": 350
         }
       }
@@ -717,8 +717,8 @@
       "galleryFramesBufferedBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
-        "/assets/cards78/rgb-wide.webp",
         "/assets/cards78/atlas-wide.webp",
+        "/assets/cards78/rgb-wide.webp",
         "/assets/gallery86/rgb.mp4",
         "/assets/gallery86/retarget.mp4"
       ]
@@ -726,13 +726,13 @@
     {
       "width": 1440,
       "heroLoopSeam": 0.16666666666666666,
-      "heroMaxFrameGap": 0.08000000000000007
+      "heroMaxFrameGap": 0.04000000000000625
     },
     {
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.08000000000000007,
+      "maxFrameGap": 0.04000000000000625,
       "exclusiveAmbientPlayback": true
     },
     {
@@ -740,9 +740,9 @@
       "galleryFramesBufferedBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
-        "/assets/cards78/atlas-mobile.webp",
         "/assets/cards78/rgb-mobile.webp",
         "/assets/robots82/robot-mobile.webp",
+        "/assets/cards78/atlas-mobile.webp",
         "/assets/gallery86/rgb-mobile.mp4",
         "/assets/gallery86/retarget-mobile.mp4"
       ]
