@@ -1,6 +1,6 @@
 # Single-GPU example, not the paper's RGB training recipe.
 seed: 43
-datasets: [data/datasets/clothdojo-flatten]
+datasets: [data/datasets/clothdojo]
 fps: 50
 image_size: 224
 n_obs_steps: 2

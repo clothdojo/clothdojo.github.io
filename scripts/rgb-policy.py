@@ -1,4 +1,4 @@
-"""Public RGB Flatten: download, train, evaluate through the existing ClothDojo CLI."""
+"""Public RGB policies: download, train and evaluate Flatten or Fold."""
 
 import argparse
 import hashlib
@@ -12,7 +12,10 @@ from pathlib import Path
 import yaml
 
 ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src/clothdojo").is_dir())
-DATA_REV = "a498929e3f4a1f070cb820d48752cd8eb025752e"
+DATASETS = {
+    "flatten": ("clothdojo/flatten", "a498929e3f4a1f070cb820d48752cd8eb025752e"),
+    "fold": ("clothdojo/fold", "f56fe17ed73a25a4c110fb2f78706054ff6b5e2d"),
+}
 ASSET_REV = "22923d5d4e5c628b7539e478bb27f0fd79e820f3"
 
 
@@ -65,10 +68,17 @@ def check_visual_dependencies(work):
         )
 
 
-def prepare(work, smoke):
-    if read(work / "download.json")["smoke_only"] != smoke:
+def validate_work(work, smoke, task):
+    receipt = read(work / "download.json")
+    if receipt.get("task", "flatten") != task:
+        raise ValueError("use separate work directories for Flatten and Fold")
+    if receipt["smoke_only"] != smoke:
         raise ValueError("use separate directories for smoke and full runs")
-    cfg = yaml.safe_load((ROOT / "configs/training/rgb_flatten_diffusion.yaml").read_text())
+
+
+def prepare(work, smoke, task="flatten"):
+    validate_work(work, smoke, task)
+    cfg = yaml.safe_load((ROOT / "configs/training/rgb_diffusion.yaml").read_text())
     cfg["weight_decay"] = float(cfg["weight_decay"])
     cfg.update(
         datasets=[str(work / "dataset")],
@@ -80,7 +90,7 @@ def prepare(work, smoke):
         save_interval=2 if smoke else 5000,
     )
     (work / "train.yaml").write_text(yaml.safe_dump(cfg))
-    condition = work / "assets/benchmark/conditions/rgb-flatten"
+    condition = work / "assets/benchmark/conditions" / f"rgb-{task}"
     states = condition / "states"
     meta = read(states / "meta.json")
     panel = meta["selection_provenance"]["panel_id"]
@@ -107,7 +117,7 @@ def prepare(work, smoke):
                 },
             ).save(path)
         row.update(state_count=1, sha256=hashlib.sha256(path.read_bytes()).hexdigest())
-        panel = "public_rgb_flatten_smoke_only"
+        panel = f"public_rgb_{task}_smoke_only"
         meta.update(
             assets=[row],
             seen_assets=1,
@@ -118,7 +128,7 @@ def prepare(work, smoke):
         )
         write(states / "meta.json", meta)
     scenario = read(condition / "scenario.json")
-    scenario.update(scenario_id="public_rgb_flatten_diffusion", action_horizon=8)
+    scenario.update(scenario_id=f"public_rgb_{task}_diffusion", action_horizon=8)
     write(work / "scenario.json", scenario)
     write(
         work / "benchmark.json",
@@ -178,6 +188,7 @@ def configure_model(work, model, checkpoint=None, output=None):
 
     path = work / "evaluate.json"
     run = read(path)
+    task = read(work / "download.json").get("task", "flatten")
     checkpoint = (checkpoint or Path(run["policy"]["checkpoint"])).expanduser().resolve()
     policy = {"kind": "xpolicy", "model": model, "checkpoint": str(checkpoint)}
     if checkpoint.exists():
@@ -185,7 +196,7 @@ def configure_model(work, model, checkpoint=None, output=None):
         code = runtime_source_sha256(ROOT / "src/clothdojo")[:8]
         policy["expected_checkpoint_sha256"] = digest
         name = model.replace(":", "-").replace(".", "-")[:40]
-        run["condition_id"] = f"rgb_flatten_{name}_{digest[:12]}_{code}"
+        run["condition_id"] = f"rgb_{task}_{name}_{digest[:12]}_{code}"
         run["output"] = str(work / "evaluations" / f"{name}-{digest[:12]}-{code}")
         if model == "diffusion":
             import torch
@@ -219,6 +230,7 @@ def check_xpolicy_runtime():
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("stage", choices=["download", "train", "evaluate"])
+    p.add_argument("--task", choices=tuple(DATASETS), default="flatten")
     p.add_argument("--work", type=Path)
     p.add_argument(
         "--model", default="diffusion", help="registered model or importable module:Model"
@@ -246,10 +258,12 @@ def main():
     if a.check and a.stage == "download":
         p.error("--check is a train/evaluate option")
     work = (
-        a.work or ROOT / "outputs" / ("rgb-policy-smoke" if a.smoke else "rgb-policy")
+        a.work or ROOT / "outputs" / (f"rgb-{a.task}-smoke" if a.smoke else f"rgb-{a.task}")
     ).resolve()
     if not work.is_relative_to(ROOT):
         p.error("--work must be inside the project for managed evaluation")
+    if (work / "download.json").exists():
+        validate_work(work, a.smoke, a.task)
     if a.stage == "download":
         # The pinned training client otherwise requests a fresh Xet token for every
         # small asset, exhausting Hub API quota before the asset tree is fetched.
@@ -269,9 +283,9 @@ def main():
         )
         if not a.assets_only:
             snapshot_download(
-                "clothdojo/flatten",
+                DATASETS[a.task][0],
                 repo_type="dataset",
-                revision=DATA_REV,
+                revision=DATASETS[a.task][1],
                 local_dir=work / "dataset",
                 allow_patterns=patterns,
                 max_workers=8,
@@ -293,7 +307,7 @@ def main():
                 "upstream_visual_dependencies.json",
             ],
         )
-        if not (work / "assets/benchmark/conditions/rgb-flatten/states/meta.json").is_file():
+        if not (work / f"assets/benchmark/conditions/rgb-{a.task}/states/meta.json").is_file():
             raise RuntimeError(
                 "asset download is incomplete; retry after the Hub rate limit resets"
             )
@@ -318,16 +332,16 @@ def main():
             work / "download.json",
             {
                 "smoke_only": a.smoke,
-                "dataset_revision": DATA_REV,
+                "task": a.task,
+                "dataset_repo": DATASETS[a.task][0],
+                "dataset_revision": DATASETS[a.task][1],
                 "assets_revision": ASSET_REV,
                 "training_data_included": not a.assets_only,
             },
         )
         install_visuals(work)
     if a.stage == "download" or not (work / "evaluate.json").exists():
-        prepare(work, a.smoke)
-    elif read(work / "download.json")["smoke_only"] != a.smoke:
-        raise ValueError("use separate directories for smoke and full runs")
+        prepare(work, a.smoke, a.task)
     cli = [sys.executable, "-m", "clothdojo"]
     if a.stage == "train":
         if not (work / "dataset/meta/info.json").is_file():

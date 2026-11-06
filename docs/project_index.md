@@ -7,7 +7,7 @@
 | `scripts/quickstart.sh` | Generate one trajectory and both review views |
 | `docs/usage.md` | NOCS quickstart: install, generate a trajectory, and watch both camera views |
 | `docs/randomized-rendering.md` | Separate RGB workflow: renderer setup, materials, randomized export and videos |
-| `docs/rgb-policy.md` | Download public Flatten data, train an RGB policy, and run repaired-state evaluation |
+| `docs/rgb-policy.md` | Download public Flatten / Fold data, train an RGB policy, and run repaired-state evaluation |
 | `scripts/rgb-policy.py` | Three-stage RGB policy example using the existing trainer and managed evaluator |
 | `docs/model-adapters.md` | Checkpoint-only evaluation and the new-model adapter contract |
 | `examples/policy_adapter.py` | Working model adapter template; change loading, prediction and reset |

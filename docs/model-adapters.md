@@ -20,18 +20,19 @@ separate normalization path are required.
 To evaluate an existing checkpoint without downloading training demonstrations:
 
 ```bash
-python scripts/rgb-policy.py download --assets-only --smoke
-python scripts/rgb-policy.py evaluate --smoke --checkpoint /path/to/step_080000.pt
+python scripts/rgb-policy.py download --task flatten --assets-only --smoke
+python scripts/rgb-policy.py evaluate --task flatten --smoke --checkpoint /path/to/step_080000.pt
 ```
 
 Complete the [upstream visual asset preparation](upstream-dependencies.md#nvidia-visual-assets-for-rgb)
 before evaluation. The command verifies these asset hashes before allocating GPU
-processes. Omit `--smoke` in both commands for the complete 1,600-case RGB Flatten
-panel. The smoke run keeps the same 60-second protocol but selects only one case;
-it is not a benchmark result. This public example covers Flatten.
+processes. Select `--task fold` in both commands for Fold. Omit `--smoke` in both
+commands for the selected task's complete 1,600-case RGB panel. The smoke run
+selects one case while preserving the task protocol: Flatten 60 seconds, Fold
+40 seconds, each with its own scorer. Smoke results are not benchmark results.
 
 Evaluation owns and stops the policy server and simulator. Results live under
-`outputs/rgb-policy[-smoke]/evaluations/<model>-<checkpoint-hash>-<code-hash>/`.
+`outputs/rgb-<task>[-smoke]/evaluations/<model>-<checkpoint-hash>-<code-hash>/`.
 Use `--check` to validate inputs without running GPU work. Use `--output` for a
 fresh result directory when changing an external adapter's code; incompatible
 results are rejected rather than overwritten. GPU assignments remain in the
@@ -52,7 +53,7 @@ Change these parts in `my_policy.py`:
 Then run:
 
 ```bash
-python scripts/rgb-policy.py evaluate --smoke \
+python scripts/rgb-policy.py evaluate --task flatten --smoke \
   --model my_policy:Model --checkpoint /path/to/my-checkpoint
 ```
 
