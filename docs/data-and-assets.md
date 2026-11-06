@@ -82,6 +82,6 @@ uvx --from 'huggingface-hub==0.32.3' huggingface-cli download clothdojo/assets \
 
 The [upstream guide](upstream-dependencies.md) covers the Isaac 5 SDK and excluded NVIDIA originals. The omission manifest lists 1,572 original asset-tree files and 18 extracted-material files; these are not needed for NOCS generation or the basic Poly Haven rendering example. Downloaded components retain their upstream terms.
 
-The original RGB dataset repositories, [clothdojo/flatten](https://huggingface.co/datasets/clothdojo/flatten) and [clothdojo/fold](https://huggingface.co/datasets/clothdojo/fold), are separate from the assets and teachers. Check their dataset cards for current completeness before training; they are not required for the quickstart.
+The complete RGB LeRobot datasets, [clothdojo/flatten](https://huggingface.co/datasets/clothdojo/flatten) (3,992 episodes) and [clothdojo/fold](https://huggingface.co/datasets/clothdojo/fold) (3,856 episodes), are separate from the assets and teachers. The [RGB policy guide](rgb-policy.md) downloads pinned revisions and supports training and evaluation for either task. These datasets are not required for the NOCS generation quickstart.
 
 Code is Apache-2.0. See `licenses/assets/LICENSE_SCOPE.md` and component notices for downloaded assets, and each teacher's Gemma terms, NOTICE, and use restrictions for weights. The code license does not replace those terms.
