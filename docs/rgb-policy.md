@@ -11,53 +11,53 @@ it with `source .venv/bin/activate`. Reserve GPUs on shared machines before use.
 ## 1. Download the data
 
 ```bash
-python scripts/rgb-policy.py download --task flatten --smoke
+python scripts/rgb-policy.py download --task flatten
 ```
 
 Use `--task fold` in all three commands for [Fold](https://huggingface.co/datasets/clothdojo/fold).
-The example below selects [Flatten](https://huggingface.co/datasets/clothdojo/flatten).
-This downloads one complete episode from the selected public LeRobot dataset
-and the evaluation assets, using pinned revisions. The smoke fixture is separate
-from the full training dataset. Keep its `outputs/rgb-flatten-smoke/` directory
+The commands shown select [Flatten](https://huggingface.co/datasets/clothdojo/flatten).
+This downloads the complete selected LeRobot dataset and evaluation assets,
+using pinned revisions. Keep its `outputs/rgb-flatten/` directory
 to reuse downloads after interruption.
 
 Downloaded visuals are linked into the renderer's standard `data/visual-assets`
-directory without overwriting existing files. Evaluation, including this smoke run, also needs
+directory without overwriting existing files. Evaluation also needs
 the excluded NVIDIA background/material dependencies described in
 [upstream dependencies](upstream-dependencies.md) and
-`outputs/rgb-flatten-smoke/assets/upstream_visual_dependencies.json`.
+`outputs/rgb-flatten/assets/upstream_visual_dependencies.json` (or the Fold equivalent).
 The fixed-background RGB rendering example alone does not supply these scenes.
 
 ## 2. Train the policy
 
 ```bash
-python scripts/rgb-policy.py train --task flatten --smoke
+python scripts/rgb-policy.py train --task flatten
 ```
 
-This uses the existing LeRobot Diffusion Policy trainer on GPU 0, performs two
-updates, and saves `outputs/rgb-flatten-smoke/train/step_000002.pt` with its
+This uses the existing LeRobot Diffusion Policy trainer on GPU 0, performs 80,000
+updates, and saves `outputs/rgb-flatten/train/step_080000.pt` (or the Fold equivalent) with its
 normalization and EMA weights. It does not download the NOCS teacher or a VLA
-base model. Two updates check the connection; they do not produce a useful policy.
+base model.
 The example uses the high camera and both wrist cameras; the dataset also supplies
 the low camera for other uses. States and absolute joint/gripper targets are 14-dimensional.
 
 ## 3. Run evaluation
 
 ```bash
-python scripts/rgb-policy.py evaluate --task flatten --smoke
+python scripts/rgb-policy.py evaluate --task flatten
 ```
 
 The command checks upstream visual hashes before starting GPU processes.
-The existing evaluator then starts the policy server, loads one repaired RGB initial
-state, runs the task's simulated episode (Flatten: 60 seconds; Fold: 40 seconds), saves a `render_only_v1` trajectory,
-scores its geometry offline, and stops its processes. Results are written under
-`outputs/rgb-flatten-smoke/evaluations/<model>-<checkpoint-hash>-<code-hash>/`. Smoke results are not official
-benchmark results. Training RGB videos are never used as geometry scoring inputs.
+The existing evaluator starts the policy server, runs the selected task's complete
+repaired RGB initial-state panel, saves `render_only_v1` trajectories, scores their
+geometry offline, and stops its processes. Each episode runs for 60 seconds in
+Flatten or 40 seconds in Fold. Results are written under
+`outputs/rgb-<task>/evaluations/<model>-<checkpoint-hash>-<code-hash>/`.
+Training RGB videos are never used as geometry scoring inputs.
 
-## Use the full dataset and benchmark
+## Dataset size and configuration
 
-Omit `--smoke` in all three commands. Each task has its own directory:
-`outputs/rgb-flatten/` or `outputs/rgb-fold/` (with `-smoke` for smoke runs).
+The commands above use the full dataset and benchmark. Each task has its own
+directory: `outputs/rgb-flatten/` or `outputs/rgb-fold/`.
 Do not share a work directory between tasks.
 
 | Task | LeRobot episodes | Dataset download | Evaluation duration |
@@ -88,3 +88,20 @@ Use `--work <directory>` in all three commands to select another output location
 
 For an existing checkpoint or your own model, follow [model adapters](model-adapters.md).
 Evaluation-only users can use `download --assets-only`; training data is optional.
+
+## Optional: quickly check the workflow
+
+Add `--smoke` to all three commands to download one complete training episode,
+train for two updates and evaluate one initial state. For example:
+
+```bash
+python scripts/rgb-policy.py download --task fold --smoke
+python scripts/rgb-policy.py train --task fold --smoke
+python scripts/rgb-policy.py evaluate --task fold --smoke
+```
+
+Use `--task flatten` in all three commands for Flatten. Smoke runs use separate
+`outputs/rgb-<task>-smoke/` directories and save `train/step_000002.pt`. They retain
+the task's full episode duration and scoring criteria. Two updates only check the
+workflow; they do not produce a useful policy, and smoke results are not benchmark
+results. Use the commands above without `--smoke` for full training and evaluation.

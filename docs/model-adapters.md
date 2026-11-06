@@ -20,19 +20,18 @@ separate normalization path are required.
 To evaluate an existing checkpoint without downloading training demonstrations:
 
 ```bash
-python scripts/rgb-policy.py download --task flatten --assets-only --smoke
-python scripts/rgb-policy.py evaluate --task flatten --smoke --checkpoint /path/to/step_080000.pt
+python scripts/rgb-policy.py download --task flatten --assets-only
+python scripts/rgb-policy.py evaluate --task flatten --checkpoint /path/to/step_080000.pt
 ```
 
 Complete the [upstream visual asset preparation](upstream-dependencies.md#nvidia-visual-assets-for-rgb)
 before evaluation. The command verifies these asset hashes before allocating GPU
-processes. Select `--task fold` in both commands for Fold. Omit `--smoke` in both
-commands for the selected task's complete 1,600-case RGB panel. The smoke run
-selects one case while preserving the task protocol: Flatten 60 seconds, Fold
-40 seconds, each with its own scorer. Smoke results are not benchmark results.
+processes. Select `--task fold` in both commands for Fold and provide that task's
+checkpoint. Evaluation runs the selected task's complete 1,600-case RGB panel:
+Flatten 60 seconds per episode, Fold 40 seconds, each with its own scorer.
 
 Evaluation owns and stops the policy server and simulator. Results live under
-`outputs/rgb-<task>[-smoke]/evaluations/<model>-<checkpoint-hash>-<code-hash>/`.
+`outputs/rgb-<task>/evaluations/<model>-<checkpoint-hash>-<code-hash>/`.
 Use `--check` to validate inputs without running GPU work. Use `--output` for a
 fresh result directory when changing an external adapter's code; incompatible
 results are rejected rather than overwritten. GPU assignments remain in the
@@ -53,10 +52,11 @@ Change these parts in `my_policy.py`:
 Then run:
 
 ```bash
-python scripts/rgb-policy.py evaluate --task flatten --smoke \
+python scripts/rgb-policy.py evaluate --task flatten \
   --model my_policy:Model --checkpoint /path/to/my-checkpoint
 ```
 
+Use `--task fold` for Fold after downloading its evaluation assets as shown above.
 You do not edit the evaluator, simulator or scorer. The supplied template is a
 working DP reference, so its loading and prediction calls can be tested before
 you replace them. `examples.policy_adapter:Model` is its importable reference name.
@@ -94,6 +94,16 @@ the same trained 224x224 letterbox used by the trainer. A different model can us
 native RGB with `transport_image_size = (640, 480)` and perform its own preprocessing.
 Keep preprocessing statistics in the checkpoint bundle; its contents and the
 adapter source hash are recorded with evaluation results.
+
+## Optional: check one case first
+
+Add `--smoke` to both the assets download and evaluation commands to check the
+model connection with one initial state. This applies to both `--task flatten`
+and `--task fold`, including custom adapters. It uses a separate
+`outputs/rgb-<task>-smoke/` directory and retains the task's full episode duration
+and scoring criteria. Smoke results are not benchmark results; omit `--smoke`
+for the complete panel. For a short training check, see the
+[optional workflow check](rgb-policy.md#optional-quickly-check-the-workflow).
 
 ## What XPolicyLab supplies
 
