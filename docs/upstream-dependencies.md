@@ -1,5 +1,13 @@
 # Upstream dependencies
 
+## XPolicyLab model serving
+
+Run `bash scripts/setup.sh --xpolicy` from the Git checkout to initialize the
+optional `XPolicyLab/` submodule and install its serving runtime in `.venv`.
+The submodule is pinned to [6baccd57ff958570d0db1588370289ee36c8bb70](https://github.com/XPolicyLab/XPolicyLab/tree/6baccd57ff958570d0db1588370289ee36c8bb70)
+under Apache-2.0. Model-specific weights and dependencies remain separate.
+See [model adapters](model-adapters.md) for the checkpoint and observation/action contracts.
+
 [Trajectory generation](usage.md) · [Downloads and assets](data-and-assets.md)
 
 Run these commands from the GitHub checkout root. Obtain upstream files under their publisher's terms; this guide does not redistribute them.

@@ -5,7 +5,7 @@ ClothDojo. Code comes from this Git checkout; Hugging Face supplies data and ass
 
 Use Linux, Python 3.11 and two available NVIDIA GPUs. Evaluation uses GPU 0 for
 the policy and an Isaac-compatible RTX GPU 1 for simulation and RGB observations.
-Install the environment once with `bash scripts/setup.sh --rgb`, then activate
+Install the environment once with `bash scripts/setup.sh --rgb --xpolicy`, then activate
 it with `source .venv/bin/activate`. Reserve GPUs on shared machines before use.
 
 ## 1. Download the data
@@ -49,7 +49,7 @@ The command checks upstream visual hashes before starting GPU processes.
 The existing evaluator then starts the policy server, loads one repaired RGB initial
 state, runs a 60-second simulated episode, saves a `render_only_v1` trajectory,
 scores its geometry offline, and stops its processes. Results are written under
-`outputs/rgb-policy-smoke/evaluation-smoke/`. Smoke results are not official
+`outputs/rgb-policy-smoke/evaluations/<model>-<checkpoint-hash>-<code-hash>/`. Smoke results are not official
 benchmark results. Training RGB videos are never used as geometry scoring inputs.
 
 ## Use the full dataset and benchmark
@@ -75,3 +75,6 @@ regenerate initial states or relax the benchmark checks.
 
 Add `--check` to `train` or `evaluate` to inspect configuration without GPU work.
 Use `--work <directory>` in all three commands to select another output location.
+
+For an existing checkpoint or your own model, follow [model adapters](model-adapters.md).
+Evaluation-only users can use `download --assets-only`; training data is optional.

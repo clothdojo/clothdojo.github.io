@@ -2,6 +2,7 @@
 
 import argparse
 import hashlib
+import importlib
 import json
 import os
 import subprocess
@@ -151,9 +152,9 @@ def prepare(work, smoke):
             "benchmark": str(work / "benchmark.json"),
             "deployment": str(work / "deployment.json"),
             "policy": {
-                "kind": "diffusion",
+                "kind": "xpolicy",
                 "checkpoint": str(checkpoint),
-                "norm_stats": str(checkpoint),
+                "model": "diffusion",
             },
             "execution": {
                 "mode": "chunk",
@@ -168,10 +169,67 @@ def prepare(work, smoke):
     )
 
 
+def configure_model(work, model, checkpoint=None, output=None):
+    """Bind each checkpoint to its own resumable output; never mix model results."""
+    from clothdojo.rollout.xpolicy import artifact_sha256, validate_model_name
+    from clothdojo.runtime_identity import runtime_source_sha256
+
+    validate_model_name(model)
+
+    path = work / "evaluate.json"
+    run = read(path)
+    checkpoint = (checkpoint or Path(run["policy"]["checkpoint"])).expanduser().resolve()
+    policy = {"kind": "xpolicy", "model": model, "checkpoint": str(checkpoint)}
+    if checkpoint.exists():
+        digest = artifact_sha256(checkpoint)
+        code = runtime_source_sha256(ROOT / "src/clothdojo")[:8]
+        policy["expected_checkpoint_sha256"] = digest
+        name = model.replace(":", "-").replace(".", "-")[:40]
+        run["condition_id"] = f"rgb_flatten_{name}_{digest[:12]}_{code}"
+        run["output"] = str(work / "evaluations" / f"{name}-{digest[:12]}-{code}")
+        if model == "diffusion":
+            import torch
+
+            saved = torch.load(checkpoint, map_location="cpu", weights_only=False)
+            if saved.get("schema") != "clothdojo_diffusion_v1":
+                raise ValueError("diffusion requires a ClothDojo-trained Diffusion checkpoint")
+            horizon = int(saved["config"]["n_action_steps"])
+            run["execution"]["exec_horizon"] = horizon
+            scenario_path = Path(read(work / "benchmark.json")["scenario"])
+            scenario = read(scenario_path)
+            scenario["action_horizon"] = horizon
+            write(scenario_path, scenario)
+    run["policy"] = policy
+    if output is not None:
+        run["output"] = str(output.expanduser().resolve())
+    write(path, run)
+    return run
+
+
+def check_xpolicy_runtime():
+    try:
+        importlib.import_module("client_server.ws.model_client")
+        importlib.import_module("client_server.ws.model_server")
+    except ModuleNotFoundError as error:
+        raise RuntimeError(
+            "Install the optional policy runtime first: bash scripts/setup.sh --xpolicy"
+        ) from error
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("stage", choices=["download", "train", "evaluate"])
     p.add_argument("--work", type=Path)
+    p.add_argument(
+        "--model", default="diffusion", help="registered model or importable module:Model"
+    )
+    p.add_argument("--checkpoint", type=Path, help="self-contained checkpoint to evaluate")
+    p.add_argument("--output", type=Path, help="new evaluation output directory (optional)")
+    p.add_argument(
+        "--assets-only",
+        action="store_true",
+        help="download evaluation assets without training data",
+    )
     p.add_argument(
         "--smoke",
         action="store_true",
@@ -179,6 +237,14 @@ def main():
     )
     p.add_argument("--check", action="store_true", help="validate configuration without GPU work")
     a = p.parse_args()
+    if a.assets_only and a.stage != "download":
+        p.error("--assets-only is a download option")
+    if a.stage != "evaluate" and (
+        a.model != "diffusion" or a.checkpoint is not None or a.output is not None
+    ):
+        p.error("--model, --checkpoint and --output are evaluation options")
+    if a.check and a.stage == "download":
+        p.error("--check is a train/evaluate option")
     work = (
         a.work or ROOT / "outputs" / ("rgb-policy-smoke" if a.smoke else "rgb-policy")
     ).resolve()
@@ -201,14 +267,15 @@ def main():
             if a.smoke
             else None
         )
-        snapshot_download(
-            "clothdojo/flatten",
-            repo_type="dataset",
-            revision=DATA_REV,
-            local_dir=work / "dataset",
-            allow_patterns=patterns,
-            max_workers=8,
-        )
+        if not a.assets_only:
+            snapshot_download(
+                "clothdojo/flatten",
+                repo_type="dataset",
+                revision=DATA_REV,
+                local_dir=work / "dataset",
+                allow_patterns=patterns,
+                max_workers=8,
+            )
         snapshot_download(
             "clothdojo/assets",
             repo_type="dataset",
@@ -230,7 +297,7 @@ def main():
             raise RuntimeError(
                 "asset download is incomplete; retry after the Hub rate limit resets"
             )
-        if a.smoke:
+        if a.smoke and not a.assets_only:
             for name in ("episodes.jsonl", "episodes_stats.jsonl"):
                 path = work / "dataset/meta" / name
                 rows = [json.loads(line) for line in path.read_text().splitlines()]
@@ -249,7 +316,12 @@ def main():
             write(work / "dataset/meta/info.json", info)
         write(
             work / "download.json",
-            {"smoke_only": a.smoke, "dataset_revision": DATA_REV, "assets_revision": ASSET_REV},
+            {
+                "smoke_only": a.smoke,
+                "dataset_revision": DATA_REV,
+                "assets_revision": ASSET_REV,
+                "training_data_included": not a.assets_only,
+            },
         )
         install_visuals(work)
     if a.stage == "download" or not (work / "evaluate.json").exists():
@@ -258,6 +330,8 @@ def main():
         raise ValueError("use separate directories for smoke and full runs")
     cli = [sys.executable, "-m", "clothdojo"]
     if a.stage == "train":
+        if not (work / "dataset/meta/info.json").is_file():
+            raise ValueError("download the training data without --assets-only before training")
         command = [*cli, "train", "diffusion", "--config", str(work / "train.yaml")]
         command += (
             ["--check", "--project", str(ROOT)]
@@ -266,7 +340,11 @@ def main():
         )
         subprocess.run(command, cwd=ROOT, check=True)
     elif a.stage == "evaluate":
+        check_xpolicy_runtime()
         check_visual_dependencies(work)
+        run = configure_model(work, a.model, a.checkpoint, a.output)
+        if not a.check and not Path(run["policy"]["checkpoint"]).exists():
+            raise FileNotFoundError(f"checkpoint is missing: {run['policy']['checkpoint']}")
         if a.check:
             from clothdojo.evaluation.run_config import load_benchmark_run_config
 

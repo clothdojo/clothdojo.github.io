@@ -4,6 +4,7 @@ ClothDojo original code is licensed under Apache-2.0. Third-party components ret
 
 | Distributed component | Source and license | Notices retained |
 | --- | --- | --- |
+| Optional policy serving | [XPolicyLab](https://github.com/XPolicyLab/XPolicyLab/tree/6baccd57ff958570d0db1588370289ee36c8bb70), pinned Git submodule; Apache-2.0 | XPolicyLab/LICENSE |
 | Guided RTC implementation | Hugging Face LeRobot, pinned revision 0cf864870cf29f4738d3ade893e6fd13fbd7cdb5; Apache-2.0 | src/clothdojo/rollout/guided_rtc.py attribution and third_party/lerobot/LICENSE |
 | RLinf ReCap extension patch | [RLinf](https://github.com/RLinf/RLinf/tree/7d07a4212ee6858cc333e1d4fab7a37256d1f839), pinned revision 7d07a4212ee6858cc333e1d4fab7a37256d1f839; Apache-2.0 | patches/rlinf-recap-value.patch and third_party/rlinf/LICENSE |
 | Downloaded Piper assets and their rendered media | AgileX agx_arm_urdf; MIT | third_party/agilex/LICENSE and attribution below |

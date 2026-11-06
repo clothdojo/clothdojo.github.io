@@ -249,7 +249,9 @@ def _policy_slots(config: BenchmarkRunConfig) -> tuple[_PolicySlot, ...]:
                 gpu=gpu,
                 port=node.port_start + offset,
                 scheme=(
-                    "starvla"
+                    "xpolicy"
+                    if config.policy.kind == "xpolicy"
+                    else "starvla"
                     if config.policy.kind == "starvla"
                     else "tcp"
                     if config.policy.kind == "groot"
@@ -320,7 +322,7 @@ def _policy_command(config: BenchmarkRunConfig, slot: _PolicySlot) -> list[str]:
         training = options.pop("training_config")
         training_path = _map_project_path(Path(training), config.project_root, slot.node)
         command.extend(["--training-config", str(training_path)])
-    if policy.kind not in ("groot", "starvla"):
+    if policy.kind not in ("groot", "starvla", "xpolicy"):
         command.extend(["--image-preprocessing", config.execution.image_preprocessing])
     for key, value in options.items():
         flag = "--" + key.replace("_", "-")

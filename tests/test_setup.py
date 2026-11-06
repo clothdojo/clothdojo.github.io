@@ -21,6 +21,12 @@ def installer(tmp_path):
     patch = tools / "patch"
     patch.write_text("#!/bin/sh\nexit 0\n")
     patch.chmod(0o755)
+    git = tools / "git"
+    git.write_text(f"#!{sys.executable}\n" +
+                   "import json, os, sys\n" +
+                   "with open(os.environ['SETUP_CALL_LOG'], 'a') as f: " +
+                   "f.write(json.dumps({'executable': 'git', 'args': sys.argv[1:]}) + '\\n')\n")
+    git.chmod(0o755)
     log = tmp_path / "calls.jsonl"
     bootstrap = tools / "bootstrap"
     bootstrap.write_text(f"#!{sys.executable}\n" + '''
@@ -79,6 +85,18 @@ elif args[0] == '-c':
 
 def pip_calls(calls):
     return [call for call in calls if call['args'][:3] == ['-m', 'pip', 'install']]
+
+
+def test_xpolicy_addon_preserves_environment_and_pins_upstream_submodule(installer):
+    root, result, calls = installer('--xpolicy', existing=True)
+    assert result.returncode == 0, result.stderr
+    assert (root / '.venv/keep-me').read_text() == 'existing environment'
+    assert any(call['args'] == ['submodule', 'update', '--init', 'XPolicyLab'] for call in calls)
+    installs = pip_calls(calls)
+    assert len(installs) == 2
+    assert 'msgpack-numpy==0.4.8' in installs[0]['args']
+    assert installs[1]['args'][-3:] == ['--no-deps', '-e', 'XPolicyLab']
+    assert not any('-r' in call['args'] or 'isaacsim==5.0.0' in call['args'] for call in installs)
 
 
 @pytest.mark.parametrize("rgb", [False, True])

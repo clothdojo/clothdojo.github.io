@@ -24,6 +24,7 @@ Follow the [RGB rendering guide](docs/randomized-rendering.md) to render the sav
 
 Follow the [RGB policy guide](docs/rgb-policy.md) to download Flatten demonstrations,
 train an example policy, and evaluate it on repaired initial states.
+To evaluate an existing checkpoint or connect another model, see [model adapters](docs/model-adapters.md).
 
 ## Resources
 

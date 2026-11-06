@@ -273,6 +273,10 @@ class RemotePolicy:
 def _connect_remote_policy(endpoint: str) -> Any:
     """Connect without treating a long synchronous inference as a dead peer."""
 
+    if endpoint.startswith("xpolicy://"):
+        from clothdojo.rollout.xpolicy import XPolicyClient
+
+        return XPolicyClient(endpoint)
     if endpoint.startswith("tcp://"):
         from clothdojo.rollout.groot import GrootZmqClient
 
@@ -1192,7 +1196,7 @@ def _validate_server_metadata(
     identity.setdefault("image_preprocessing", "none")
     backend = identity.get("backend")
     if backend not in {
-        "rlinf-sft", "rlinf-cfg", "openpi", "gr00t-n1.7", "lerobot_diffusion"
+        "rlinf-sft", "rlinf-cfg", "openpi", "gr00t-n1.7", "lerobot_diffusion", "xpolicylab"
     }:
         raise ValueError(f"unsupported policy server backend: {backend!r}")
     _validate_image_preprocessing(identity.get("image_preprocessing"))
@@ -1201,6 +1205,11 @@ def _validate_server_metadata(
     expected_transport = (
         POLICY_RENDER_SIZE if backend == "gr00t-n1.7" else POLICY_TRANSPORT_SIZE
     )
+    if backend == "xpolicylab":
+        transport = identity.get("transport_image_size")
+        if transport not in [list(POLICY_RENDER_SIZE), list(POLICY_TRANSPORT_SIZE)]:
+            raise ValueError("XPolicyLab image transport must be native RGB or the trained 224 letterbox")
+        expected_transport = tuple(transport)
     expected = {
         "protocol_version": POLICY_PROTOCOL_VERSION,
         "action_dim": POLICY_ACTION_DIM,
@@ -1223,6 +1232,13 @@ def _validate_server_metadata(
     if runtime_sha256 is not None:
         _require_sha256(runtime_sha256, "server ClothDojo runtime")
     _require_sha256(identity.get("norm_stats_sha256"), "server norm stats")
+    if backend == "xpolicylab":
+        if identity.get("observation_horizon") not in (1, 2):
+            raise ValueError("XPolicyLab adapters require one or two adjacent observations")
+        _require_sha256(identity.get("adapter_sha256"), "XPolicyLab adapter source")
+        if identity.get("batched_inference") is not True:
+            raise ValueError("XPolicyLab adapter must support batch inference")
+        return identity
     if backend == "gr00t-n1.7":
         if identity.get("embodiment_tag") != "new_embodiment":
             raise ValueError("GR00T server has an unsupported embodiment tag")

@@ -128,6 +128,12 @@ def load_benchmark_run_config(
         and configured_preprocessing != execution.image_preprocessing
     ):
         raise ValueError("policy and execution image_preprocessing must match")
+    deployment = load_deployment_config(deployment_path, project_root=root)
+    if policy.kind == "xpolicy":
+        if execution.mode != "chunk" or execution.image_preprocessing != "none":
+            raise ValueError("XPolicyLab uses chunk execution without extra image preprocessing")
+        if deployment.max_simulation_workers_per_policy != 1:
+            raise ValueError("XPolicyLab requires one simulation worker per policy server")
     return BenchmarkRunConfig(
         source=source,
         project_root=root,
@@ -136,7 +142,7 @@ def load_benchmark_run_config(
         benchmark=load_benchmark_paths(benchmark_path, project_root=root),
         policy=policy,
         execution=execution,
-        deployment=load_deployment_config(deployment_path, project_root=root),
+        deployment=deployment,
     )
 
 
@@ -233,9 +239,9 @@ def _load_policy(value: Any, root: Path) -> PolicyLaunchConfig:
     groot_only = {"groot_root", "dependency_root", "embodiment_tag"}
     starvla_only = {"starvla_root"}
     kind = _text(policy.get("kind"), "policy kind")
-    if kind not in {"sft", "cfg", "jax", "groot", "diffusion", "starvla"}:
+    if kind not in {"sft", "cfg", "jax", "groot", "diffusion", "starvla", "xpolicy"}:
         raise ValueError(
-            "policy kind must be 'sft', 'cfg', 'jax', 'groot', 'diffusion' or 'starvla'"
+            "policy kind must be 'sft', 'cfg', 'jax', 'groot', 'diffusion', 'starvla' or 'xpolicy'"
         )
     allowed = (
         common
@@ -247,11 +253,15 @@ def _load_policy(value: Any, root: Path) -> PolicyLaunchConfig:
     )
     required = (
         {"kind", "checkpoint"}
-        | ({"norm_stats"} if kind != "starvla" else set())
+        | ({"norm_stats"} if kind not in {"starvla", "xpolicy"} else set())
         | ({"training_config"} if kind == "jax" else set())
         | ({"groot_root"} if kind == "groot" else set())
         | ({"starvla_root"} if kind == "starvla" else set())
     )
+    if kind == "xpolicy":
+        allowed = {"kind", "checkpoint", "model", "expected_checkpoint_sha256"}
+        if "model" in policy:
+            _text(policy["model"], "XPolicyLab model")
     _keys(policy, allowed, "policy", required=required)
     expected = policy.get("expected_checkpoint_sha256")
     if expected is not None:

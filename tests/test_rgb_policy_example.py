@@ -4,6 +4,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+import sys
 
 import numpy as np
 import pytest
@@ -12,7 +13,8 @@ import yaml
 from clothdojo.rollout.initial_states import InitialStatePool
 
 
-def test_smoke_subsets_state_and_appearance_without_changing_release(tmp_path):
+@pytest.fixture
+def example_inputs(tmp_path):
     root = Path(__file__).resolve().parents[1]
     spec = importlib.util.spec_from_file_location("rgb_example", root / "scripts/rgb-policy.py")
     example = importlib.util.module_from_spec(spec)
@@ -52,6 +54,11 @@ def test_smoke_subsets_state_and_appearance_without_changing_release(tmp_path):
     )
     example.write(condition / "scenario.json", {"action_horizon": 40, "steps": 3000})
     example.write(work / "download.json", {"smoke_only": True})
+    return example, work, source, digest
+
+
+def test_smoke_subsets_state_and_appearance_without_changing_release(example_inputs):
+    example, work, source, digest = example_inputs
     example.prepare(work, True)
     selected = InitialStatePool.load(work / "smoke-state/garment/states.npz")
     assert selected.state_count == 1
@@ -66,6 +73,27 @@ def test_smoke_subsets_state_and_appearance_without_changing_release(tmp_path):
     scenario = json.loads((work / "scenario.json").read_text())
     assert scenario["steps"] == 3000
     assert scenario["action_horizon"] == 8
+
+
+def test_assets_only_evaluation_does_not_fetch_training_data(example_inputs, monkeypatch):
+    import huggingface_hub
+
+    example, work, source, digest = example_inputs
+    calls = []
+    monkeypatch.setattr(
+        huggingface_hub, "snapshot_download", lambda repo, **kwargs: calls.append(repo)
+    )
+    monkeypatch.setattr(
+        sys, "argv", ["rgb-policy.py", "download", "--assets-only", "--smoke", "--work", str(work)]
+    )
+    example.main()
+    assert calls == ["clothdojo/assets"]
+    assert not (work / "dataset").exists()
+    assert (work / "evaluate.json").is_file()
+    assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+    monkeypatch.setattr(sys, "argv", ["rgb-policy.py", "train", "--smoke", "--work", str(work)])
+    with pytest.raises(ValueError, match="without --assets-only"):
+        example.main()
 
 
 def test_evaluation_rejects_wrong_upstream_visual_version(tmp_path):
@@ -92,3 +120,23 @@ def test_evaluation_rejects_wrong_upstream_visual_version(tmp_path):
         example.check_visual_dependencies(work)
     path.write_bytes(expected)
     example.check_visual_dependencies(work)
+
+
+@pytest.mark.parametrize(
+    "arguments",
+    [
+        ["train", "--checkpoint", "model.pt"],
+        ["train", "--model", "my_policy:Model"],
+        ["train", "--assets-only"],
+        ["download", "--check"],
+    ],
+)
+def test_wrong_stage_options_fail_before_launch(arguments, monkeypatch):
+    root = Path(__file__).resolve().parents[1]
+    spec = importlib.util.spec_from_file_location("rgb_example", root / "scripts/rgb-policy.py")
+    example = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(example)
+    monkeypatch.setattr(sys, "argv", ["rgb-policy.py", *arguments])
+    with pytest.raises(SystemExit) as error:
+        example.main()
+    assert error.value.code == 2

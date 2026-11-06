@@ -214,6 +214,13 @@ def main(argv: Sequence[str] | None = None) -> None:
             port=args.port,
         )
         return
+    if args.command == "policy" and args.policy_command == "serve-xpolicy":
+        if passthrough:
+            parser.error(f"unrecognized arguments: {' '.join(passthrough)}")
+        from clothdojo.rollout.xpolicy import serve
+
+        serve(args.checkpoint, model=args.model, device=args.device, host=args.host, port=args.port)
+        return
     if args.command == "policy" and args.policy_command == "serve-diffusion":
         if passthrough:
             parser.error(f"unrecognized arguments: {' '.join(passthrough)}")
@@ -1100,6 +1107,12 @@ def _parser() -> argparse.ArgumentParser:
     serve_groot.add_argument("--device", default="cuda:0")
     serve_groot.add_argument("--host", default="127.0.0.1")
     serve_groot.add_argument("--port", type=int, default=5555)
+    serve_xpolicy = policy_commands.add_parser("serve-xpolicy", help="serve an XPolicyLab model adapter")
+    serve_xpolicy.add_argument("--checkpoint", required=True)
+    serve_xpolicy.add_argument("--model", default="diffusion")
+    serve_xpolicy.add_argument("--device", default="cuda:0")
+    serve_xpolicy.add_argument("--host", default="127.0.0.1")
+    serve_xpolicy.add_argument("--port", type=int, default=8080)
     serve_diffusion = policy_commands.add_parser(
         "serve-diffusion",
         help="serve the trained EMA Diffusion Policy for chunk rollout",
