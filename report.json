@@ -1,5 +1,5 @@
 {
-  "commit": "b2a386f0a30d978b2b3baeab83cf43dfc5664332",
+  "commit": "54d0c44ecedd4a3d9ebfdac6d7a77ac39defe3bc",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -268,13 +268,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 1771.3999999999883,
+        "startupMs": 1962.6999999999766,
         "frames": 107,
-        "maxWallGapMs": 733.2999999999993,
-        "waitingMs": 7625.400000000023,
+        "maxWallGapMs": 716.5999999999995,
+        "waitingMs": 7631.5,
         "droppedFrames": 10,
-        "totalFrames": 110,
-        "elapsedMs": 12018.899999999994,
+        "totalFrames": 108,
+        "elapsedMs": 12013,
         "readyState": 2,
         "paused": false
       }
@@ -288,13 +288,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 398.1659999999938,
-        "frames": 295,
-        "maxWallGapMs": 99.99599999999919,
+        "startupMs": 295.90000000001237,
+        "frames": 296,
+        "maxWallGapMs": 66.79999999999927,
         "waitingMs": 0,
         "droppedFrames": 0,
-        "totalFrames": 297,
-        "elapsedMs": 12223,
+        "totalFrames": 296,
+        "elapsedMs": 12092.900000000023,
         "readyState": 4,
         "paused": false
       }
@@ -308,13 +308,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 288.6999999999898,
-        "frames": 45,
-        "maxWallGapMs": 50.10000000000218,
+        "startupMs": 300.96600000001126,
+        "frames": 43,
+        "maxWallGapMs": 66.60599999999977,
         "waitingMs": 0,
         "droppedFrames": 0,
-        "totalFrames": 45,
-        "elapsedMs": 2048.1999999999825,
+        "totalFrames": 44,
+        "elapsedMs": 2024.100000000035,
         "readyState": 4,
         "paused": false
       }
@@ -328,13 +328,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 861.4000000000115,
-        "frames": 275,
-        "maxWallGapMs": 216.70000000000027,
-        "waitingMs": 847.1000000000058,
+        "startupMs": 862.9000000000233,
+        "frames": 276,
+        "maxWallGapMs": 183.19999999999982,
+        "waitingMs": 834.4000000000233,
         "droppedFrames": 0,
         "totalFrames": 279,
-        "elapsedMs": 12006.100000000006,
+        "elapsedMs": 12006.800000000047,
         "readyState": 4,
         "paused": false
       }
@@ -348,13 +348,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 283.83199999998214,
+        "startupMs": 302.966000000024,
         "frames": 295,
-        "maxWallGapMs": 66.79999999999927,
+        "maxWallGapMs": 66.60000000000218,
         "waitingMs": 0,
         "droppedFrames": 0,
-        "totalFrames": 295,
-        "elapsedMs": 12065.199999999953,
+        "totalFrames": 296,
+        "elapsedMs": 12080.100000000035,
         "readyState": 4,
         "paused": false
       }
@@ -368,13 +368,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 263.33199999998396,
-        "frames": 44,
-        "maxWallGapMs": 66.66599999999744,
+        "startupMs": 270.2320000000109,
+        "frames": 45,
+        "maxWallGapMs": 50.10000000000218,
         "waitingMs": 0,
         "droppedFrames": 0,
-        "totalFrames": 46,
-        "elapsedMs": 2038.2999999999884,
+        "totalFrames": 45,
+        "elapsedMs": 2045.2999999999884,
         "readyState": 4,
         "paused": false
       }
@@ -388,13 +388,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 1912.5000000000118,
+        "startupMs": 1896.7000000000116,
         "frames": 105,
-        "maxWallGapMs": 733.3000000000002,
-        "waitingMs": 7683.299999999988,
+        "maxWallGapMs": 733.3000000000011,
+        "waitingMs": 7687.0999999999185,
         "droppedFrames": 9,
         "totalFrames": 107,
-        "elapsedMs": 12006.700000000012,
+        "elapsedMs": 12004.900000000023,
         "readyState": 3,
         "paused": false
       }
@@ -408,13 +408,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 218.43199999996432,
+        "startupMs": 205.36599999999999,
         "frames": 296,
-        "maxWallGapMs": 66.70000000000073,
+        "maxWallGapMs": 66.79999999999927,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 297,
-        "elapsedMs": 12064.599999999977,
+        "elapsedMs": 12047.5,
         "readyState": 4,
         "paused": false
       }
@@ -428,13 +428,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 250.86599999998725,
+        "startupMs": 238.66600000000108,
         "frames": 46,
         "maxWallGapMs": 50.10000000000218,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 46,
-        "elapsedMs": 2044,
+        "elapsedMs": 2028.7000000000116,
         "readyState": 4,
         "paused": false
       }
@@ -448,13 +448,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 678.8999999999767,
+        "startupMs": 696.4000000000233,
         "frames": 279,
-        "maxWallGapMs": 199.9000000000001,
-        "waitingMs": 712.7999999999884,
+        "maxWallGapMs": 200,
+        "waitingMs": 731.1000000000349,
         "droppedFrames": 0,
-        "totalFrames": 283,
-        "elapsedMs": 12007.599999999977,
+        "totalFrames": 282,
+        "elapsedMs": 12005.299999999988,
         "readyState": 4,
         "paused": false
       }
@@ -468,13 +468,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 217.1659999999647,
+        "startupMs": 204.4000000000342,
         "frames": 296,
-        "maxWallGapMs": 66.70000000000073,
+        "maxWallGapMs": 66.60000000000036,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 297,
-        "elapsedMs": 12060.899999999965,
+        "elapsedMs": 12029.5,
         "readyState": 4,
         "paused": false
       }
@@ -488,13 +488,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 202.63199999998687,
+        "startupMs": 188.60000000003492,
         "frames": 47,
         "maxWallGapMs": 50.10000000000218,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 47,
-        "elapsedMs": 2044.0999999999767,
+        "elapsedMs": 2027.7000000000698,
         "readyState": 4,
         "paused": false
       }
@@ -697,7 +697,7 @@
           "width": 350
         },
         "gallery": {
-          "left": 109,
+          "left": 117,
           "width": 350
         }
       }
@@ -717,8 +717,8 @@
       "galleryFramesBufferedBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
-        "/assets/cards78/atlas-wide.webp",
         "/assets/cards78/rgb-wide.webp",
+        "/assets/cards78/atlas-wide.webp",
         "/assets/gallery86/rgb.mp4",
         "/assets/gallery86/retarget.mp4"
       ]
@@ -726,13 +726,13 @@
     {
       "width": 1440,
       "heroLoopSeam": 0.16666666666666666,
-      "heroMaxFrameGap": 0.04000000000000625
+      "heroMaxFrameGap": 0.0799999999999983
     },
     {
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.04000000000000625,
+      "maxFrameGap": 0.0799999999999983,
       "exclusiveAmbientPlayback": true
     },
     {
@@ -740,9 +740,9 @@
       "galleryFramesBufferedBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
+        "/assets/cards78/atlas-mobile.webp",
         "/assets/cards78/rgb-mobile.webp",
         "/assets/robots82/robot-mobile.webp",
-        "/assets/cards78/atlas-mobile.webp",
         "/assets/gallery86/rgb-mobile.mp4",
         "/assets/gallery86/retarget-mobile.mp4"
       ]
