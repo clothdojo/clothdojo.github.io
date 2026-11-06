@@ -26,12 +26,6 @@ Follow the [RGB policy guide](docs/rgb-policy.md) to download Flatten demonstrat
 train an example policy, and evaluate it on repaired initial states.
 To evaluate an existing checkpoint or connect another model, see [model adapters](docs/model-adapters.md).
 
-## Resources
-
-- [Assets](https://huggingface.co/datasets/clothdojo/assets) · [NOCS teachers](https://huggingface.co/clothdojo/nocs-teachers) · [Download details](docs/data-and-assets.md)
-- [More workflows](docs/advanced.md): successful-trajectory selection, evaluation, and RGB export
-- [Questions and bug reports](https://github.com/clothdojo/clothdojo.github.io/issues)
-
 ## Citation
 
 If you use ClothDojo in your research, please cite:
