@@ -1,6 +1,7 @@
 const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process'),out=process.env.REVIEW_OUTPUT;fs.mkdirSync(out,{recursive:true});
 const manifest=JSON.parse(fs.readFileSync('website/assets/film62/manifest.json','utf8'));
+const leaderboardModels=JSON.parse(fs.readFileSync('website/assets/experiment-results.json','utf8')).models;
 const normalizeCommands=text=>text.split('\n').map(line=>line.trim()).filter(Boolean).join('\n');
 const quickstartBlocks=[...fs.readFileSync('docs/usage.md','utf8').matchAll(/^```bash\n([\s\S]*?)^```/gm)];
 const quickstartCommands=normalizeCommands(quickstartBlocks.slice(0,3).map(block=>block[1]).join('\n'));
@@ -40,7 +41,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.equal(await page.locator('.story-track details, .story-track p').count(),0,'Capabilities are presented as full headings, without fine print or collapsed explanations');
    assert.equal(await page.locator('#authors, .author-credit').count(),0,'The homepage omits author details');
    const paper=page.locator('.site-header .paper-link');assert(await paper.isVisible());assert.equal(await paper.getAttribute('href'),'https://arxiv.org/abs/2611.01190');
-   assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','capabilities','highlights','use']);
+   assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','capabilities','highlights','leaderboard','use']);
    assert.deepEqual(await page.locator('.story-track > .story-card').evaluateAll(s=>s.map(x=>x.id)),['diversity','rgb','render']);
    assert.equal(await page.locator('#results, #transfer-results, #method, .story-track #use').count(),0);
    assert(await page.locator('body').evaluate(b=>b.classList.contains('research30')),'Keep the approved research design at the official entry');
@@ -55,7 +56,25 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
     assert(fit.paintedWidth>=fit.cardWidth-20,JSON.stringify(fit));
     const assetFile='atlas-fit-'+width+'.jpg';await page.screenshot({path:path.join(out,assetFile),type:'jpeg',quality:92});report.screenshots.push({file:assetFile,width,height,assetFit:fit});
    }
-   report.checks.push({target,width,height,oneViewport:true,noHeroControls:true,whiteGround:true,reducedMotion:true});await context.close();save();
+   for(const task of ['flatten','fold']){
+    await page.locator('[data-leaderboard-task="'+task+'"]').click();
+    const panel=page.locator('[data-leaderboard-panel="'+task+'"]');assert(await panel.isVisible());
+    assert.equal(await page.locator('[data-leaderboard-panel]:visible').count(),1);
+    assert.equal(await page.locator('[data-leaderboard-task="'+task+'"]').getAttribute('aria-pressed'),'true');
+    const expected=[...leaderboardModels.rows].sort((a,b)=>b[task][4]-a[task][4]);
+    const rows=panel.locator('tbody tr');assert.equal(await rows.count(),expected.length);
+    for(let i=0;i<expected.length;i++){
+     assert.equal(await rows.nth(i).locator('th').innerText(),expected[i].name);
+     assert.deepEqual(await rows.nth(i).locator('td').allTextContents(),[String(i+1),expected[i][task][4].toFixed(1),...expected[i][task].slice(0,4).map(n=>n.toFixed(1))]);
+    }
+   }
+   await page.locator('[data-leaderboard-task="flatten"]').focus();await page.keyboard.press('Enter');
+   assert(await page.locator('[data-leaderboard-panel="flatten"]').isVisible());
+   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+   if(target==='index.html'&&(width===1440||width===390)){
+    const file='leaderboard-'+width+'.jpg';await page.locator('#leaderboard').screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,target,width,leaderboard:true});
+   }
+   report.checks.push({target,width,height,leaderboardScoresMatchSource:true,taskSwitching:true,oneViewport:true,noHeroControls:true,whiteGround:true,reducedMotion:true});await context.close();save();
   }
  }
  for(const width of [1440,1280,390]){

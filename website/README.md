@@ -2,11 +2,13 @@
 
 Buildless research website. GitHub Pages publishes this directory only; code, tests and benchmark fixtures remain in the same repository.
 
-The current homepage uses one 1200px content width with responsive gutters. `generation-hero.css` owns navigation, opening typography and the footer; `story-cards.css` owns the shared gallery heading/media rhythm and the open code chapter. The white opening leads into a single soft-gray highlight band, then returns to white for the code and credits. Existing recordings, responsive sources and horizontal-gallery interactions remain the content foundation.
+The current homepage uses one 1200px content width with responsive gutters. `generation-hero.css` owns navigation and opening typography; `story-cards.css` owns capability copy, the shared gallery rhythm and the open code chapter. The white opening leads into a single soft-gray highlight band, then returns to white for the leaderboard and code. The gallery starts on its middle RGB card. Existing recordings, responsive sources and horizontal-gallery interactions remain the content foundation.
 
-The top navigation links directly to the [ClothDojo paper on arXiv](https://arxiv.org/abs/2611.01190).
+The top navigation links directly to the [ClothDojo paper on arXiv](https://arxiv.org/abs/2611.01190), the RGB leaderboard, and the code chapter.
 
 ## Structure
+
+`leaderboard.css` and `leaderboard.js` own the homepage RGB-policy table and its flattening/folding task buttons. The static scores in both maintained entrypoints match `assets/experiment-results.json` → `models` and arXiv v1 Table VI. Rows are ordered by the reported task average; averages are retained from the source, not recomputed from rounded cells. These are historical paper-panel baselines, distinct from the released benchmark. Protocol and training differences are available beside the table. The browser review checks every displayed score, task switching, keyboard activation and responsive table scrolling.
 
 Gallery delivery MP4s live in `assets/gallery86/`. They preserve the source frame sequence, timing and composition, with one-second keyframes, bounded bitrate and H.264 High Level 4.0. Desktop RGB is 1280×480; mobile RGB is 720×1080; desktop retarget is 1920×442. The gallery buffers actual media data when approaching the viewport, respecting reduced-motion and data-saving preferences. The browser review compares cold card switches and sustained playback against the prior delivery at 4 Mbps with 80 ms latency and 2× CPU throttling, including a return to a paused card. Source hashes and encoding parameters are in the delivery manifest.
 
