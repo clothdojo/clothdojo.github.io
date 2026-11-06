@@ -1,5 +1,5 @@
 {
-  "commit": "4b948a2d3bc661b56f04383f877d2f6390887a91",
+  "commit": "bb98c740c8531c421ab9fe9c7ffa63ae8fd9681c",
   "passed": true,
   "errors": [],
   "screenshots": [
@@ -12,7 +12,7 @@
         "x": 0,
         "y": 64,
         "width": 1440,
-        "height": 727.34375
+        "height": 725.09375
       }
     },
     {
@@ -31,7 +31,7 @@
         "x": 0,
         "y": 64,
         "width": 1280,
-        "height": 508.96875
+        "height": 473.78125
       }
     },
     {
@@ -43,7 +43,7 @@
         "x": 0,
         "y": 64,
         "width": 1920,
-        "height": 907.34375
+        "height": 905.09375
       }
     },
     {
@@ -55,7 +55,7 @@
         "x": 0,
         "y": 64,
         "width": 1724,
-        "height": 544.96875
+        "height": 509.78125
       }
     },
     {
@@ -67,7 +67,7 @@
         "x": 0,
         "y": 60,
         "width": 390,
-        "height": 453
+        "height": 425.40625
       }
     },
     {
@@ -95,7 +95,7 @@
         "x": 0,
         "y": 60,
         "width": 320,
-        "height": 474.5
+        "height": 421.90625
       }
     },
     {
@@ -116,7 +116,7 @@
         "x": 0,
         "y": 64,
         "width": 1440,
-        "height": 727.34375
+        "height": 725.09375
       }
     },
     {
@@ -128,7 +128,7 @@
         "x": 0,
         "y": 64,
         "width": 1280,
-        "height": 508.96875
+        "height": 473.78125
       }
     },
     {
@@ -140,7 +140,7 @@
         "x": 0,
         "y": 64,
         "width": 1920,
-        "height": 907.34375
+        "height": 905.09375
       }
     },
     {
@@ -152,7 +152,7 @@
         "x": 0,
         "y": 64,
         "width": 1724,
-        "height": 544.96875
+        "height": 509.78125
       }
     },
     {
@@ -164,7 +164,7 @@
         "x": 0,
         "y": 60,
         "width": 390,
-        "height": 453
+        "height": 425.40625
       }
     },
     {
@@ -176,7 +176,7 @@
         "x": 0,
         "y": 60,
         "width": 320,
-        "height": 474.5
+        "height": 421.90625
       }
     },
     {
@@ -256,13 +256,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 1895.500000000006,
+        "startupMs": 1977.1999999999998,
         "frames": 107,
-        "maxWallGapMs": 716.6000000000004,
-        "waitingMs": 7460.499999999971,
+        "maxWallGapMs": 716.6999999999989,
+        "waitingMs": 7634.600000000006,
         "droppedFrames": 10,
-        "totalFrames": 110,
-        "elapsedMs": 12091.800000000017,
+        "totalFrames": 108,
+        "elapsedMs": 12016,
         "readyState": 2,
         "paused": false
       }
@@ -276,13 +276,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 334.0319999999829,
-        "frames": 296,
-        "maxWallGapMs": 66.80000000000109,
+        "startupMs": 307.16599999998834,
+        "frames": 295,
+        "maxWallGapMs": 66.70000000000073,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 296,
-        "elapsedMs": 12144,
+        "elapsedMs": 12074.199999999983,
         "readyState": 4,
         "paused": false
       }
@@ -296,13 +296,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 304.4659999999931,
-        "frames": 42,
+        "startupMs": 313.3300000000054,
+        "frames": 43,
         "maxWallGapMs": 66.70000000000073,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 44,
-        "elapsedMs": 2027.7000000000116,
+        "elapsedMs": 2039.3999999999942,
         "readyState": 4,
         "paused": false
       }
@@ -316,13 +316,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 863.4000000000174,
+        "startupMs": 862.0000000000059,
         "frames": 275,
-        "maxWallGapMs": 216.70000000000027,
-        "waitingMs": 853.5,
+        "maxWallGapMs": 200,
+        "waitingMs": 856.3000000000175,
         "droppedFrames": 0,
         "totalFrames": 279,
-        "elapsedMs": 12004.899999999994,
+        "elapsedMs": 12007.800000000017,
         "readyState": 4,
         "paused": false
       }
@@ -336,13 +336,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 289.1000000000058,
+        "startupMs": 298.69999999998254,
         "frames": 295,
-        "maxWallGapMs": 50.10000000000218,
+        "maxWallGapMs": 66.70000000000073,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 295,
-        "elapsedMs": 12047.100000000006,
+        "elapsedMs": 12076.199999999983,
         "readyState": 4,
         "paused": false
       }
@@ -356,13 +356,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 256.63200000002325,
-        "frames": 45,
-        "maxWallGapMs": 50.10000000000218,
+        "startupMs": 236.4999999999891,
+        "frames": 46,
+        "maxWallGapMs": 66.70000000000073,
         "waitingMs": 0,
         "droppedFrames": 0,
-        "totalFrames": 45,
-        "elapsedMs": 2028.9000000000233,
+        "totalFrames": 46,
+        "elapsedMs": 2030,
         "readyState": 4,
         "paused": false
       }
@@ -376,13 +376,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 1897.4000000000115,
+        "startupMs": 1911.5999999999826,
         "frames": 105,
-        "maxWallGapMs": 733.3000000000011,
-        "waitingMs": 7667.099999999977,
+        "maxWallGapMs": 733.4000000000005,
+        "waitingMs": 7677.199999999953,
         "droppedFrames": 9,
         "totalFrames": 107,
-        "elapsedMs": 12005.299999999988,
+        "elapsedMs": 12007,
         "readyState": 3,
         "paused": false
       }
@@ -396,13 +396,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 217.93200000001707,
-        "frames": 297,
+        "startupMs": 217.39999999998327,
+        "frames": 296,
         "maxWallGapMs": 66.79999999999927,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 297,
-        "elapsedMs": 12059.700000000012,
+        "elapsedMs": 12047.699999999983,
         "readyState": 4,
         "paused": false
       }
@@ -416,13 +416,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 222.7320000000218,
-        "frames": 46,
-        "maxWallGapMs": 50.099999999998545,
+        "startupMs": 250.39999999999418,
+        "frames": 45,
+        "maxWallGapMs": 50.10000000000218,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 46,
-        "elapsedMs": 2029.2000000000116,
+        "elapsedMs": 2042.8000000000175,
         "readyState": 4,
         "paused": false
       }
@@ -436,13 +436,13 @@
         "cpuSlowdown": 2,
         "action": "rgb",
         "id": "rgb-film",
-        "startupMs": 696.0000000000059,
-        "frames": 278,
-        "maxWallGapMs": 216.5999999999999,
-        "waitingMs": 705,
+        "startupMs": 678.3000000000116,
+        "frames": 279,
+        "maxWallGapMs": 200,
+        "waitingMs": 714.5,
         "droppedFrames": 0,
         "totalFrames": 283,
-        "elapsedMs": 12004.700000000012,
+        "elapsedMs": 12006.300000000017,
         "readyState": 4,
         "paused": false
       }
@@ -456,13 +456,13 @@
         "cpuSlowdown": 2,
         "action": "next",
         "id": "transfer-film",
-        "startupMs": 205.1319999999996,
-        "frames": 296,
+        "startupMs": 218.79800000000614,
+        "frames": 297,
         "maxWallGapMs": 66.70000000000073,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 297,
-        "elapsedMs": 12046,
+        "elapsedMs": 12047.799999999988,
         "readyState": 4,
         "paused": false
       }
@@ -476,13 +476,13 @@
         "cpuSlowdown": 2,
         "action": "previous",
         "id": "rgb-film",
-        "startupMs": 172.4999999999818,
-        "frames": 47,
+        "startupMs": 167.5999999999949,
+        "frames": 48,
         "maxWallGapMs": 50.10000000000218,
         "waitingMs": 0,
         "droppedFrames": 0,
         "totalFrames": 48,
-        "elapsedMs": 2029.8999999999942,
+        "elapsedMs": 2027.7999999999884,
         "readyState": 4,
         "paused": false
       }
@@ -661,7 +661,7 @@
           "width": 350
         },
         "gallery": {
-          "left": 100,
+          "left": 93,
           "width": 350
         }
       }
@@ -681,8 +681,8 @@
       "galleryFramesBufferedBeforeNavigation": true,
       "correctViewportPoster": true,
       "cardRequests": [
-        "/assets/cards78/rgb-wide.webp",
         "/assets/cards78/atlas-wide.webp",
+        "/assets/cards78/rgb-wide.webp",
         "/assets/gallery86/rgb.mp4",
         "/assets/gallery86/retarget.mp4"
       ]
@@ -690,13 +690,13 @@
     {
       "width": 1440,
       "heroLoopSeam": 0.16666666666666666,
-      "heroMaxFrameGap": 0.04000000000000625
+      "heroMaxFrameGap": 0.08000000000000185
     },
     {
       "width": 1440,
       "fullLoop": true,
       "seamMeanRgbDifference": 0.16666666666666666,
-      "maxFrameGap": 0.04000000000000625,
+      "maxFrameGap": 0.08000000000000185,
       "exclusiveAmbientPlayback": true
     },
     {
