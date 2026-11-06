@@ -41,6 +41,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.equal(await page.locator('.story-track details, .story-track p').count(),0,'Capabilities are presented as full headings, without fine print or collapsed explanations');
    assert.equal(await page.locator('#authors, .author-credit').count(),0,'The homepage omits author details');
    const paper=page.locator('.site-header .paper-link');assert(await paper.isVisible());assert.equal(await paper.getAttribute('href'),'https://arxiv.org/abs/2611.01190');
+   const codeLink=page.locator('.site-header a[href="https://github.com/clothdojo/clothdojo.github.io"]');assert.equal(await codeLink.innerText(),'Code');assert.equal(await page.locator('.site-header .nav-code').count(),0);
    assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','capabilities','highlights','leaderboard','use']);
    assert.deepEqual(await page.locator('.story-track > .story-card').evaluateAll(s=>s.map(x=>x.id)),['diversity','rgb','render']);
    assert.equal(await page.locator('#results, #transfer-results, #method, .story-track #use').count(),0);
@@ -108,7 +109,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.locator('.story-track').focus();await page.keyboard.press('ArrowRight');await page.waitForFunction(()=>window.storyCards.state.active===1);
   if(width!==390){const box=await page.locator('.story-track').boundingBox();await page.mouse.move(width*.75,box.y+140);await page.mouse.down();await page.mouse.move(width*.2,box.y+140,{steps:12});await page.mouse.up();await page.waitForFunction(()=>window.storyCards.state.active===2);}
   else {const box=await page.locator('.story-track').boundingBox(),session=await context.newCDPSession(page),y=box.y+140;await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:width*.85,y}]});for(let i=1;i<=12;i++){await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:width*(.85-.7*i/12),y}]});await page.waitForTimeout(16);}await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await page.waitForFunction(()=>window.storyCards.state.active===2);await session.detach();}
-  await page.locator('header a[href="#use"]').click();await page.waitForFunction(()=>{
+  await page.evaluate(()=>{location.hash='use';});await page.waitForFunction(()=>{
    const heading=document.getElementById('story-use-title').getBoundingClientRect(),panel=document.querySelector('#use .code-panel').getBoundingClientRect();
    return heading.top>=document.querySelector('.site-header').getBoundingClientRect().bottom&&panel.bottom<=innerHeight+1;
   });

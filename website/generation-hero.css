@@ -23,14 +23,16 @@ html { scroll-padding-top: 64px; }
   box-shadow: none;
 }
 .research30 .nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   width: min(var(--width), calc(100% - var(--gutter) * 2));
   height: 64px;
   min-height: 64px;
   margin-inline: auto;
   padding: 0;
 }
-.research30 .nav .brand { font-size: 22px; letter-spacing: -.6px; }
-.research30 .nav-links { gap: 28px; }
+.research30 .nav .brand { justify-self: start; font-size: 22px; letter-spacing: -.6px; }
+.research30 .nav-links { grid-column: 2; gap: 28px; }
 .research30 .nav-links a { font-size: 13px; }
 .research30 .nav-code { background: transparent; color: var(--ink); padding: 0; }
 .research30 .hero {
@@ -99,7 +101,7 @@ html { scroll-padding-top: 64px; }
   html { scroll-padding-top: 60px; }
   .research30 { --gutter: 20px; }
   .research30 .site-header, .research30 .nav { height: 60px; min-height: 60px; }
-  .research30 .nav { gap: 20px; }
+  .research30 .nav { grid-template-columns: 1fr auto; gap: 20px; }
   .research30 .nav .brand { font-size: 20px; }
   .research30 .nav-links { gap: 16px; }
   .research30 .nav-links a { font-size: 12px; }

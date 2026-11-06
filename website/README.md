@@ -4,7 +4,7 @@ Buildless research website. GitHub Pages publishes this directory only; code, te
 
 The current homepage uses one 1200px content width with responsive gutters. `generation-hero.css` owns navigation and opening typography; `story-cards.css` owns capability copy, the shared gallery rhythm and the open code chapter. The white opening leads into a single soft-gray highlight band, then returns to white for the leaderboard and code. The gallery starts on its middle RGB card. Existing recordings, responsive sources and horizontal-gallery interactions remain the content foundation.
 
-The top navigation links directly to the [ClothDojo paper on arXiv](https://arxiv.org/abs/2611.01190), the RGB leaderboard, and the code chapter.
+The top navigation links directly to the [ClothDojo paper on arXiv](https://arxiv.org/abs/2611.01190), the RGB leaderboard, and the [GitHub code repository](https://github.com/clothdojo/clothdojo.github.io). There is one Code entry, with no duplicate GitHub link on the right.
 
 ## Structure
 
