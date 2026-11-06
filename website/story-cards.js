@@ -37,5 +37,5 @@
  document.addEventListener('click',e=>{const link=e.target.closest('a[href^="#"]');if(!link)return;const id=link.getAttribute('href').slice(1),target=document.getElementById(id);if(!target?.closest('.story-card'))return;e.preventDefault();history.pushState(null,'','#'+id);fromHash(true);});
  addEventListener('hashchange',()=>fromHash(true));addEventListener('resize',()=>go(active<0?0:active,'auto'));
  Object.defineProperty(window,'storyCards',{value:{go,get state(){return {active,requested,count:cards.length,ids:cards.map(c=>c.id),scrollLeft:track.scrollLeft};}}});
- sync();fromHash(false);
+ go(1,'auto');fromHash(false);
 })();

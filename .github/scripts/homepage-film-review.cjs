@@ -30,7 +30,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.equal(await page.locator('#overview button, #overview input').count(),0);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    assert.equal(await video.evaluate(v=>v.paused),true,'Respect reduced motion');
    const bounds=await page.locator('#overview').boundingBox();assert(bounds.y+bounds.height<=height+1,JSON.stringify({target,width,height,bounds}));
-   const title=await page.locator('#title').boundingBox();assert(title.x>=0&&title.x+title.width<=width+1);assert.match(await page.locator('.publication-title').innerText(),/Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding/);
+   const title=await page.locator('#title').boundingBox();assert(title.x>=0&&title.x+title.width<=width+1);assert.match(await page.locator('#title').innerText(),/Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding/);
    const style=await video.evaluate(v=>{const s=getComputedStyle(v);return {fit:s.objectFit,background:s.backgroundColor};});assert.deepEqual(style,{fit:'contain',background:'rgb(255, 255, 255)'});
    const time=width===1440?25.32:3;await video.evaluate(async(v,t)=>{v.currentTime=t;await new Promise(resolve=>v.addEventListener('seeked',resolve,{once:true}));},time);
    const file=target.replace('.html','')+'-'+width+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,target,width,height,bounds});
@@ -62,7 +62,10 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   const context=await browser.newContext({viewport:{width,height:width===1280?720:900},reducedMotion:'reduce',hasTouch:width===390}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));
   await page.goto('http://127.0.0.1:8787/index.html');await page.locator('#highlights').evaluate(e=>e.scrollIntoView({block:'start'}));
   const next=page.locator('[data-story-next]'),prev=page.locator('[data-story-prev]');
-  assert(await prev.isDisabled());console.log('Gallery initial state',width,await page.evaluate(()=>window.storyCards.state));
+  await page.waitForFunction(()=>window.storyCards.state.active===1);
+  assert(!(await prev.isDisabled())&&!(await next.isDisabled()),'Start on the middle RGB card with both directions available');
+  console.log('Gallery initial state',width,await page.evaluate(()=>window.storyCards.state));
+  await prev.click();await page.waitForFunction(()=>window.storyCards.state.active===0);
   for(let i=0;i<3;i++){
    if(i)await next.click();await page.waitForFunction(i=>window.storyCards.state.active===i,i);
    const card=page.locator('.story-card').nth(i);const box=await card.boundingBox();assert(Math.abs(box.x+box.width/2-width/2)<2,'Center the selected card');
