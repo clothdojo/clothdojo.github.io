@@ -6,7 +6,7 @@ Zilong Huang, Zipeng Ye, Caicheng Wang, Yuchen Xie, Jiaxiang Luo
 
 [Website](https://clothdojo.github.io/) · [Paper](https://arxiv.org/abs/2611.01190) · [Assets](https://huggingface.co/datasets/clothdojo/assets)
 
-ClothDojo combines learned data generation, policy evaluation, and an interactive platform for bimanual garment manipulation. Built on [Newton](https://github.com/newton-physics/newton), it supports autonomous trajectory generation, evaluation on fixed task conditions, and VR teleoperation with human-in-the-loop corrections. NOCS teachers are provided for flattening and folding.
+ClothDojo is a simulation platform for dynamic interaction between bimanual robots and deformable garments. Built on [Newton](https://github.com/newton-physics/newton), it supports learned data generation, policy evaluation on fixed task conditions, and human intervention through VR demonstrations, rollout corrections, and trajectory review. NOCS teachers are provided for flattening and folding.
 
 ## NOCS Quickstart
 

@@ -1,4 +1,5 @@
-/* Three equal contributions, followed by their supporting media. */
+/* Physical interaction first, followed by the platform's functions. */
+.research30 .hero .publication-title { max-width: 900px; margin: 12px 0 0; font-size: 16px; line-height: 1.45; color: var(--text); }
 .core-capabilities { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; padding-block: 40px 72px; }
 .research30 .core-capabilities h2 { margin: 0 0 16px; font-size: 25px; line-height: 1.2; letter-spacing: -.5px; font-weight: 600; }
 .core-capabilities p { max-width: 34ch; margin: 0; font-size: 16px; line-height: 1.65; color: var(--text); }
@@ -127,6 +128,7 @@
   .story-card--render .story-card-body { display: flex; align-items: center; }
 }
 @media (max-width: 700px) {
+  .research30 .hero .publication-title { font-size: 14px; }
   .core-capabilities { grid-template-columns: 1fr; gap: 28px; padding-block: 24px 48px; }
   .research30 .core-capabilities h2 { margin-bottom: 10px; font-size: 24px; }
   .core-capabilities p { max-width: none; font-size: 15px; }

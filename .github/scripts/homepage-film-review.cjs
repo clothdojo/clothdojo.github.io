@@ -30,7 +30,7 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.equal(await page.locator('#overview button, #overview input').count(),0);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    assert.equal(await video.evaluate(v=>v.paused),true,'Respect reduced motion');
    const bounds=await page.locator('#overview').boundingBox();assert(bounds.y+bounds.height<=height+1,JSON.stringify({target,width,height,bounds}));
-   const title=await page.locator('#title').boundingBox();assert(title.x>=0&&title.x+title.width<=width+1);assert.match(await page.locator('#title').innerText(),/Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding/);
+   const title=await page.locator('#title').boundingBox();assert(title.x>=0&&title.x+title.width<=width+1);assert.match(await page.locator('.publication-title').innerText(),/Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding/);
    const style=await video.evaluate(v=>{const s=getComputedStyle(v);return {fit:s.objectFit,background:s.backgroundColor};});assert.deepEqual(style,{fit:'contain',background:'rgb(255, 255, 255)'});
    const time=width===1440?25.32:3;await video.evaluate(async(v,t)=>{v.currentTime=t;await new Promise(resolve=>v.addEventListener('seeked',resolve,{once:true}));},time);
    const file=target.replace('.html','')+'-'+width+'.jpg';await page.screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,target,width,height,bounds});
