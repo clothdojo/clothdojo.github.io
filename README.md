@@ -6,7 +6,7 @@ Zilong Huang, Zipeng Ye, Caicheng Wang, Yuchen Xie, Jiaxiang Luo
 
 [Website](https://clothdojo.github.io/) · [Paper](https://arxiv.org/abs/2611.01190) · [Assets](https://huggingface.co/datasets/clothdojo/assets)
 
-ClothDojo generates bimanual garment-manipulation trajectories in simulation, with NOCS teachers for flattening and folding.
+ClothDojo is a simulation platform for dynamic interaction between bimanual robots and deformable garments. Built on [Newton](https://github.com/newton-physics/newton), it supports learned data generation, policy evaluation on fixed task conditions, and human intervention through VR demonstrations, rollout corrections, and trajectory review. NOCS teachers are provided for flattening and folding.
 
 ## NOCS Quickstart
 
@@ -25,6 +25,20 @@ Follow the [RGB rendering guide](docs/randomized-rendering.md) to render the sav
 Follow the [RGB policy guide](docs/rgb-policy.md) to download Flatten or Fold demonstrations,
 train an example policy, and evaluate it on repaired initial states.
 To evaluate an existing checkpoint or connect another model, see [model adapters](docs/model-adapters.md).
+
+## Acknowledgements
+
+We thank the authors and contributors of the following projects:
+
+| Area | Projects |
+| --- | --- |
+| Simulation | [Newton](https://github.com/newton-physics/newton) · [Warp](https://github.com/NVIDIA/warp) · [MuJoCo](https://github.com/google-deepmind/mujoco) · [MuJoCo Warp](https://github.com/google-deepmind/mujoco_warp) |
+| Garments | [GarmentCodeData](https://www.research-collection.ethz.ch/handle/20.500.11850/690432) |
+| Textures and scenes | [Poly Haven](https://polyhaven.com/) · [GenieSimAssets](https://huggingface.co/datasets/agibot-world/GenieSimAssets) · [Isaac Sim](https://docs.isaacsim.omniverse.nvidia.com/5.0.0/index.html) |
+| Robots | [AgileX](https://github.com/agilexrobotics/agx_arm_urdf) · [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie) · [RoboDojo](https://github.com/RoboDojo-Benchmark/RoboDojo) · [Franka Robotics](https://franka.de/3d-assets) |
+| Policy and data | [OpenPI](https://github.com/Physical-Intelligence/openpi) · [RLinf](https://github.com/RLinf/RLinf) · [LeRobot](https://github.com/huggingface/lerobot) · [XPolicyLab](https://github.com/XPolicyLab/XPolicyLab) |
+
+See [third-party notices](THIRD_PARTY_NOTICES.md) for attribution, source versions, modifications and licenses.
 
 ## Citation
 

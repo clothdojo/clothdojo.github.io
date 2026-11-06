@@ -1,6 +1,10 @@
 const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process'),out=process.env.REVIEW_OUTPUT;fs.mkdirSync(out,{recursive:true});
 const manifest=JSON.parse(fs.readFileSync('website/assets/film62/manifest.json','utf8'));
+const leaderboardModels=JSON.parse(fs.readFileSync('website/assets/experiment-results.json','utf8')).models;
+const normalizeCommands=text=>text.split('\n').map(line=>line.trim()).filter(Boolean).join('\n');
+const quickstartBlocks=[...fs.readFileSync('docs/usage.md','utf8').matchAll(/^```bash\n([\s\S]*?)^```/gm)];
+const quickstartCommands=normalizeCommands(quickstartBlocks.slice(0,3).map(block=>block[1]).join('\n'));
 const report={commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),passed:false,errors:[],screenshots:[],checks:[],recordings:[]};
 const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));let browser;
 (async()=>{try{
@@ -16,10 +20,12 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
  }
  report.checks.push({independentOrthographicViews:4,sharedCameraScale:true,desktopTablesInOneRow:true,completeForegroundBounds:true});
  browser=await chromium.launch({channel:'chrome'});
+ await require('./gallery-playback-review.cjs')(browser,report,save);
  for(const target of ['index.html','research-preview-v31.html']){
   for(const [width,height] of [[1440,900],[1280,720],[1920,1080],[1724,756],[390,844],[320,640]]){
    const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));page.on('response',r=>{if(r.status()>=400)report.errors.push(r.status()+' '+r.url());});
    await page.goto('http://127.0.0.1:8787/'+target,{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);
+   assert.equal(normalizeCommands(await page.locator('#commands').innerText()),quickstartCommands,'Website quickstart follows the current install, generate and replay tutorial');
    const video=page.locator('#hero-film');await page.waitForFunction(()=>document.getElementById('hero-film').readyState>=2,null,{timeout:45000});
    assert.equal(await video.getAttribute('data-src'),'assets/film62/generation-loop.mp4');assert.equal(await video.getAttribute('data-mobile-src'),null);assert.equal(await video.evaluate(v=>v.controls),false);
    assert.equal(await page.locator('#overview button, #overview input').count(),0);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
@@ -35,7 +41,8 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.equal(await page.locator('.story-track details, .story-track p').count(),0,'Capabilities are presented as full headings, without fine print or collapsed explanations');
    assert.equal(await page.locator('#authors, .author-credit').count(),0,'The homepage omits author details');
    const paper=page.locator('.site-header .paper-link');assert(await paper.isVisible());assert.equal(await paper.getAttribute('href'),'https://arxiv.org/abs/2611.01190');
-   assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','highlights','use']);
+   const codeLink=page.locator('.site-header a[href="https://github.com/clothdojo/clothdojo.github.io"]');assert.equal(await codeLink.innerText(),'Code');assert.equal(await page.locator('.site-header .nav-code').count(),0);
+   assert.deepEqual(await page.locator('main > section').evaluateAll(s=>s.map(x=>x.id)),['overview','capabilities','highlights','leaderboard','use']);
    assert.deepEqual(await page.locator('.story-track > .story-card').evaluateAll(s=>s.map(x=>x.id)),['diversity','rgb','render']);
    assert.equal(await page.locator('#results, #transfer-results, #method, .story-track #use').count(),0);
    assert(await page.locator('body').evaluate(b=>b.classList.contains('research30')),'Keep the approved research design at the official entry');
@@ -43,21 +50,42 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
    assert.equal(await page.locator('[data-ambient-toggle], video[controls]').count(),0,'Homepage videos have no playback controls');
    assert.deepEqual(await page.locator('.rgb-task-labels span').allTextContents(),['Flattening','Folding']);
    if(target==='index.html'&&width<700){
-    await page.locator('header a[href="#diversity"]').click();await page.waitForFunction(()=>window.storyCards.state.active===0);
+    await page.evaluate(()=>{location.hash='diversity';});await page.waitForFunction(()=>window.storyCards.state.active===0);
     await page.locator('#highlights').evaluate(e=>e.scrollIntoView({block:'start'}));
     await page.waitForFunction(()=>{const i=document.querySelector('#diversity img');return i.complete&&i.naturalWidth>0;});
     const fit=await page.locator('#diversity').evaluate(card=>{const i=card.querySelector('img');return {paintedWidth:Math.min(i.clientWidth,i.clientHeight*i.naturalWidth/i.naturalHeight),cardWidth:card.clientWidth};});
     assert(fit.paintedWidth>=fit.cardWidth-20,JSON.stringify(fit));
     const assetFile='atlas-fit-'+width+'.jpg';await page.screenshot({path:path.join(out,assetFile),type:'jpeg',quality:92});report.screenshots.push({file:assetFile,width,height,assetFit:fit});
    }
-   report.checks.push({target,width,height,oneViewport:true,noHeroControls:true,whiteGround:true,reducedMotion:true});await context.close();save();
+   for(const task of ['flatten','fold']){
+    await page.locator('[data-leaderboard-task="'+task+'"]').click();
+    const panel=page.locator('[data-leaderboard-panel="'+task+'"]');assert(await panel.isVisible());
+    assert.equal(await page.locator('[data-leaderboard-panel]:visible').count(),1);
+    assert.equal(await page.locator('[data-leaderboard-task="'+task+'"]').getAttribute('aria-pressed'),'true');
+    const expected=[...leaderboardModels.rows].sort((a,b)=>b[task][4]-a[task][4]);
+    const rows=panel.locator('tbody tr');assert.equal(await rows.count(),expected.length);
+    for(let i=0;i<expected.length;i++){
+     assert.equal(await rows.nth(i).locator('th').innerText(),expected[i].name);
+     assert.deepEqual(await rows.nth(i).locator('td').allTextContents(),[String(i+1),expected[i][task][4].toFixed(1),...expected[i][task].slice(0,4).map(n=>n.toFixed(1))]);
+    }
+   }
+   await page.locator('[data-leaderboard-task="flatten"]').focus();await page.keyboard.press('Enter');
+   assert(await page.locator('[data-leaderboard-panel="flatten"]').isVisible());
+   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+   if(target==='index.html'&&(width===1440||width===390)){
+    const file='leaderboard-'+width+'.jpg';await page.locator('#leaderboard').screenshot({path:path.join(out,file),type:'jpeg',quality:92});report.screenshots.push({file,target,width,leaderboard:true});
+   }
+   report.checks.push({target,width,height,leaderboardScoresMatchSource:true,taskSwitching:true,oneViewport:true,noHeroControls:true,whiteGround:true,reducedMotion:true});await context.close();save();
   }
  }
  for(const width of [1440,1280,390]){
   const context=await browser.newContext({viewport:{width,height:width===1280?720:900},reducedMotion:'reduce',hasTouch:width===390}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));
   await page.goto('http://127.0.0.1:8787/index.html');await page.locator('#highlights').evaluate(e=>e.scrollIntoView({block:'start'}));
   const next=page.locator('[data-story-next]'),prev=page.locator('[data-story-prev]');
-  assert(await prev.isDisabled());console.log('Gallery initial state',width,await page.evaluate(()=>window.storyCards.state));
+  await page.waitForFunction(()=>window.storyCards.state.active===1);
+  assert(!(await prev.isDisabled())&&!(await next.isDisabled()),'Start on the middle RGB card with both directions available');
+  console.log('Gallery initial state',width,await page.evaluate(()=>window.storyCards.state));
+  await prev.click();await page.waitForFunction(()=>window.storyCards.state.active===0);
   for(let i=0;i<3;i++){
    if(i)await next.click();await page.waitForFunction(i=>window.storyCards.state.active===i,i);
    const card=page.locator('.story-card').nth(i);const box=await card.boundingBox();assert(Math.abs(box.x+box.width/2-width/2)<2,'Center the selected card');
@@ -81,7 +109,10 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   await page.locator('.story-track').focus();await page.keyboard.press('ArrowRight');await page.waitForFunction(()=>window.storyCards.state.active===1);
   if(width!==390){const box=await page.locator('.story-track').boundingBox();await page.mouse.move(width*.75,box.y+140);await page.mouse.down();await page.mouse.move(width*.2,box.y+140,{steps:12});await page.mouse.up();await page.waitForFunction(()=>window.storyCards.state.active===2);}
   else {const box=await page.locator('.story-track').boundingBox(),session=await context.newCDPSession(page),y=box.y+140;await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:width*.85,y}]});for(let i=1;i<=12;i++){await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:width*(.85-.7*i/12),y}]});await page.waitForTimeout(16);}await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await page.waitForFunction(()=>window.storyCards.state.active===2);await session.detach();}
-  await page.locator('header a[href="#use"]').click();await page.waitForFunction(()=>document.querySelector('#use').getBoundingClientRect().top>=0&&document.querySelector('#use').getBoundingClientRect().top<200);
+  await page.evaluate(()=>{location.hash='use';});await page.waitForFunction(()=>{
+   const heading=document.getElementById('story-use-title').getBoundingClientRect(),panel=document.querySelector('#use .code-panel').getBoundingClientRect();
+   return heading.top>=document.querySelector('.site-header').getBoundingClientRect().bottom&&panel.bottom<=innerHeight+1;
+  });
   assert.equal(await page.locator('#use').evaluate(e=>!!e.closest('.story-track')),false);
   assert(await page.locator('#use .code-card').evaluate(e=>Math.abs(parseFloat(getComputedStyle(e).height)-e.scrollHeight)<2),'The code card grows with its content');
    const edges=await page.evaluate(()=>{
@@ -99,12 +130,12 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   const context=await browser.newContext({viewport:{width,height:900},recordVideo:{dir:path.join(out,'recordings'),size:{width,height:900}}}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));
   const mediaRequests=[];page.on('request',r=>{if(/\.(mp4|webp|jpg)$/.test(new URL(r.url()).pathname))mediaRequests.push(new URL(r.url()).pathname);});
   await page.goto('http://127.0.0.1:8787/index.html');await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return !v.paused&&v.currentTime>.1;},null,{timeout:45000});
-  await page.waitForFunction(()=>['rgb-film','transfer-film'].every(id=>document.getElementById(id).readyState>=1));
-  assert(mediaRequests.includes(width===390?'/assets/rgb77/ribbon-mobile.mp4':'/assets/rgb76/ribbon.mp4'),'The correct RGB video is prepared before gallery navigation');
+  await page.waitForFunction(()=>['rgb-film','transfer-film'].every(id=>document.getElementById(id).readyState>=2));
+  assert(mediaRequests.includes(width===390?'/assets/gallery86/rgb-mobile.mp4':'/assets/gallery86/rgb.mp4'),'The correct RGB video is prepared before gallery navigation');
   assert(!mediaRequests.includes(width===390?'/assets/cards78/rgb-wide.webp':'/assets/cards78/rgb-mobile.webp'),'Do not download the other viewport poster');
   assert(!mediaRequests.includes(width===390?'/assets/robots85/robot-wide.webp':'/assets/robots82/robot-mobile.webp'),'Select the robot poster before requesting it');
-  assert.equal(await page.locator('#rgb-film').evaluate(v=>v.paused),true,'Preparing metadata must not start offscreen playback');
-  report.checks.push({width,galleryMetadataBeforeNavigation:true,correctViewportPoster:true,cardRequests:mediaRequests.filter(p=>/cards78|rgb76|rgb77|robots82/.test(p))});save();
+  assert.equal(await page.locator('#rgb-film').evaluate(v=>v.paused),true,'Buffering data must not start offscreen playback');
+  report.checks.push({width,galleryFramesBufferedBeforeNavigation:true,correctViewportPoster:true,cardRequests:mediaRequests.filter(p=>/cards78|gallery86|robots82/.test(p))});save();
   await page.evaluate(()=>{
    window.heroProbe={wrapped:false,gaps:[],seam:null};const v=document.getElementById('hero-film'),c=document.createElement('canvas');c.width=160;c.height=56;const ctx=c.getContext('2d',{willReadFrequently:true});let last,lastPixels;
    v.requestVideoFrameCallback(function sample(_now,f){ctx.drawImage(v,0,0,160,56);const p=ctx.getImageData(0,0,160,56).data;
@@ -115,13 +146,13 @@ const save=()=>fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(repo
   const source=await page.locator('#hero-film').evaluate(v=>v.currentSrc);
   for(const c of manifest.cases){await page.waitForFunction(t=>document.getElementById('hero-film').currentTime>=t,c.first_frame/25+3,{timeout:30000});}
   await page.waitForFunction(()=>window.heroProbe.wrapped,null,{timeout:20000});const probe=await page.evaluate(()=>window.heroProbe);const maxGap=Math.max(...probe.gaps);report.checks.push({width,heroLoopSeam:probe.seam,heroMaxFrameGap:maxGap});save();assert(probe.seam<8);assert(maxGap<.161,`Hero frame gap ${maxGap.toFixed(3)}s exceeds 0.161s at ${width}px`);assert.equal(await page.locator('#hero-film').evaluate(v=>v.currentSrc),source);
-  await page.locator('header a[href="#rgb"]').click();await page.waitForFunction(()=>{const v=document.getElementById('rgb-film');return !v.paused&&v.currentTime>.2;},null,{timeout:30000});
-  assert((await page.locator('#rgb-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'rgb77/ribbon-mobile.mp4':'rgb76/ribbon.mp4'));
-  assert.deepEqual(await page.locator('#rgb-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[960,1440]:[1920,720]);
+  await page.evaluate(()=>{location.hash='rgb';});await page.waitForFunction(()=>{const v=document.getElementById('rgb-film');return !v.paused&&v.currentTime>.2;},null,{timeout:30000});
+  assert((await page.locator('#rgb-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'gallery86/rgb-mobile.mp4':'gallery86/rgb.mp4'));
+  assert.deepEqual(await page.locator('#rgb-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[720,1080]:[1280,480]);
   await page.locator('[data-story-next]').click();await page.waitForFunction(()=>{const v=document.getElementById('transfer-film');return window.storyCards.state.active===2&&!v.paused&&v.currentTime>.2;},null,{timeout:30000});await page.waitForFunction(()=>{const v=document.getElementById('hero-film');return v.paused;});
-  assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'robots82/robot-transfer-mobile.mp4':'robots85/robot-transfer.mp4'));
+  assert((await page.locator('#transfer-film').evaluate(v=>v.currentSrc)).endsWith(width===390?'gallery86/retarget-mobile.mp4':'gallery86/retarget.mp4'));
   const robotCorner=await page.locator('#transfer-film').evaluate(v=>{const c=document.createElement('canvas');c.width=20;c.height=20;const x=c.getContext('2d');x.drawImage(v,0,0,20,20);return [...x.getImageData(0,0,1,1).data].slice(0,3);});assert(robotCorner.every(x=>x>=245),'The robot replay blends into white');
-  assert.deepEqual(await page.locator('#transfer-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[1000,900]:[2328,536]);
+  assert.deepEqual(await page.locator('#transfer-film').evaluate(v=>[v.videoWidth,v.videoHeight]),width===390?[1000,900]:[1920,442]);
   await page.locator('#transfer-film').evaluate(v=>{window.robotWrapped=false;let last=v.currentTime;v.addEventListener('timeupdate',()=>{if(v.currentTime<last)window.robotWrapped=true;last=v.currentTime;});});await page.waitForFunction(()=>window.robotWrapped,null,{timeout:30000});
   await page.waitForFunction(()=>document.querySelectorAll('video[data-auto]').length&&[...document.querySelectorAll('video[data-auto]')].filter(v=>!v.paused).length===1);
   await page.locator('#hero-film').scrollIntoViewIfNeeded();await page.waitForFunction(()=>!document.getElementById('hero-film').paused);

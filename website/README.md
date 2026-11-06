@@ -2,11 +2,15 @@
 
 Buildless research website. GitHub Pages publishes this directory only; code, tests and benchmark fixtures remain in the same repository.
 
-The current homepage uses one 1200px content width with responsive gutters. `generation-hero.css` owns navigation, opening typography and the footer; `story-cards.css` owns the shared gallery heading/media rhythm and the open code chapter. The white opening leads into a single soft-gray highlight band, then returns to white for the code and credits. Existing recordings, responsive sources and horizontal-gallery interactions remain the content foundation.
+The current homepage uses one 1200px content width with responsive gutters. `generation-hero.css` owns navigation and opening typography; `story-cards.css` owns capability copy, the shared gallery rhythm and the open code chapter. The white opening leads into a single soft-gray highlight band, then returns to white for the leaderboard and code. The gallery starts on its middle RGB card. Existing recordings, responsive sources and horizontal-gallery interactions remain the content foundation.
 
-The top navigation links directly to the [ClothDojo paper on arXiv](https://arxiv.org/abs/2611.01190).
+The top navigation links directly to the [ClothDojo paper on arXiv](https://arxiv.org/abs/2611.01190), the RGB leaderboard, and the [GitHub code repository](https://github.com/clothdojo/clothdojo.github.io). There is one Code entry, with no duplicate GitHub link on the right.
 
 ## Structure
+
+`leaderboard.css` and `leaderboard.js` own the homepage RGB-policy table and its flattening/folding task buttons. The static scores in both maintained entrypoints match `assets/experiment-results.json` → `models` and arXiv v1 Table VI. Rows are ordered by the reported task average; averages are retained from the source, not recomputed from rounded cells. These are historical paper-panel baselines, distinct from the released benchmark. Source and training differences remain documented in the paper and source metrics; the homepage table has no protocol disclosure block. The browser review checks every displayed score, task switching, keyboard activation and responsive table scrolling.
+
+Gallery delivery MP4s live in `assets/gallery86/`. They preserve the source frame sequence, timing and composition, with one-second keyframes, bounded bitrate and H.264 High Level 4.0. Desktop RGB is 1280×480; mobile RGB is 720×1080; desktop retarget is 1920×442. The gallery buffers actual media data when approaching the viewport, respecting reduced-motion and data-saving preferences. The browser review compares cold card switches and sustained playback against the prior delivery at 4 Mbps with 80 ms latency and 2× CPU throttling, including a return to a paused card. Source hashes and encoding parameters are in the delivery manifest.
 
 The current `distance-study.html` preview plays one ordinary MP4 from `assets/film62/`, with muted autoplay and a native loop. Two worktables and one camera remain fixed. Six rounds compare flattening on the left and folding on the right, using the same garment identity and colour in each round. The film contains six garments and twelve unique real trajectories; each reaches its recorded successful released endpoint, then the arms return home before the asset changes. The 65.44-second loop uses original native 1600×560, 25 fps Isaac frames at 2× source replay, without individual retiming. Only the final home hold dissolves to the next initial state. There are no distance controls, progress bar, JavaScript player or dynamic clip loading. The interactive `distance-stream.js`, camera58/camera60 components and unshipped film61 assembly remain archived and are not loaded by this page. Browser playback, all six rounds and the actual loop seam are checked by `.github/scripts/generation-film-review.cjs`.
 
@@ -63,7 +67,7 @@ All homepage and experiment-page charts are HTML components from `results.css`, 
 
 All research tables use `.table-block` with a caption outside the horizontally scrolling `.table-wrap > .data-table`. They share typography, numeric alignment, headings and borders; narrow screens show a scrolling hint for wide tables. Captions remain fully readable while numeric columns scroll. Full numerical results and experimental qualifications are retained. Combined data does not exceed Generated alone; three epochs do not mean equal optimizer steps; pretrained models are distinguished from Diffusion Policy trained from scratch.
 
-The first usage entry is an executable CPU saved-state scoring example. Generation, training and full evaluation workflows disclose their dependence on forthcoming model/data/visual-resource bundles.
+The homepage quickstart follows `docs/usage.md`: download the flattening resources, install and activate the environment, generate a trajectory, then replay both NOCS views. Its command panel is checked against the tutorial's installation, generation and replay blocks by the browser review. The adjacent links point to the released-panel evaluation, separate randomized RGB-renderer setup and training-data export workflows.
 
 ## Delivery and playback
 

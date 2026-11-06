@@ -7,14 +7,29 @@
   const versions = new WeakMap();
   const variantLoading = new WeakMap();
   const resizePaused = new WeakSet();
+  const suspended = new WeakMap();
   const comparisons = films.filter(video => video.dataset.mobileSrc).map(video => ({
     video, desktopSrc: video.dataset.src, desktopPoster: video.dataset.poster || video.getAttribute('poster')
   }));
   function attach(video) {
-    if (!video.hasAttribute('src')) { video.src = video.dataset.src; video.load(); }
+    if (!video.hasAttribute('src')) {
+      const position = suspended.get(video);
+      suspended.delete(video);
+      if (position) video.addEventListener('loadedmetadata', () => { video.currentTime = Math.min(position, video.duration - .05); }, { once: true });
+      video.src = video.dataset.src; video.load();
+    }
+  }
+  function suspend(video) {
+    video.pause();
+    if (!video.hasAttribute('src')) return;
+    suspended.set(video, video.currentTime);
+    video.removeAttribute('src');
+    video.load();
   }
   function play(video) {
+    video.preload = 'auto';
     attach(video);
+    if (active && active !== video && films.includes(active)) suspend(active);
     document.querySelectorAll('video').forEach(other => { if (other !== video) other.pause(); });
     active = video;
     video.play().catch(() => {});
@@ -108,7 +123,7 @@
   const observer = new IntersectionObserver(entries => {
     for (const { target, isIntersecting, intersectionRatio } of entries) {
       if (isIntersecting && intersectionRatio >= .2) { visible.set(target, intersectionRatio); attach(target); }
-      else { visible.delete(target); resizePaused.delete(target); target.pause(); if (active === target) active = undefined; }
+      else { visible.delete(target); resizePaused.delete(target); target.pause(); if (active === target) { suspend(target); active = undefined; } }
     }
     ambient();
   }, { threshold: [0,.2,.5,1] });
@@ -122,7 +137,8 @@
         if (document.hidden || motion.matches || navigator.connection?.saveData) return;
         gallery.querySelectorAll('img').forEach(image => { image.loading = 'eager'; });
         gallery.querySelectorAll('video[data-src]').forEach(video => {
-          if (!video.hasAttribute('src')) { video.preload = 'metadata'; attach(video); }
+          video.preload = 'auto';
+          attach(video);
         });
       };
       const box = hero?.getBoundingClientRect();
