@@ -1,8 +1,8 @@
 /* Keep native media proportions while adapting to window width and height. */
-.research30 { --width: clamp(1040px, 84vw, 1600px); --gutter: clamp(16px, 2.4vw, 48px); }
+.research30 { --width: 1180px; --gutter: clamp(16px, 2.4vw, 40px); }
 .research30 .hero .embedded-generation {
   width: min(100%, max(560px, calc(52svh * 20 / 7)));
-  max-width: min(100%, 1600px);
+  max-width: min(100%, 1180px);
   margin-inline: auto;
 }
 #hero-film { width: 100%; height: auto; max-height: none; aspect-ratio: 20 / 7; }
@@ -15,6 +15,22 @@
 @media (min-width: 1800px) {
   .research30 .hero h1 { max-width: 1100px; }
   .research30 .hero .studio-paper-title { max-width: 1050px; font-size: 30px; }
+}
+@media (min-width: 701px) {
+  .highlights-section {
+    --story-card-height: auto;
+    padding-block: clamp(40px, 5vh, 64px);
+  }
+  .research30 .story-card {
+    height: auto;
+    min-height: 0;
+  }
+  .story-card-body { overflow: visible; padding-bottom: 32px; }
+  .story-card--diversity .atlas-overview { min-height: 0; }
+  .story-card--diversity .atlas-overview picture { height: auto; }
+  .research30 .story-card--diversity .atlas-overview img { height: auto; }
+  .research30 .story-card-body video { height: auto; max-height: none; }
+  .research30 .story-card--render .story-card-body { display: block; }
 }
 @media (max-width: 700px) {
   .research30 .hero .embedded-generation { width: 100%; }
