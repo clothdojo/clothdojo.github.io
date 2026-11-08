@@ -136,7 +136,7 @@
       const prepare = () => {
         if (document.hidden || motion.matches || navigator.connection?.saveData) return;
         gallery.querySelectorAll('img').forEach(image => { image.loading = 'eager'; });
-        gallery.querySelectorAll('video[data-src]').forEach(video => {
+        gallery.querySelectorAll('.story-card[data-active="true"] video[data-src]').forEach(video => {
           video.preload = 'auto';
           attach(video);
         });
