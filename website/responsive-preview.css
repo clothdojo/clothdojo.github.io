@@ -1,4 +1,118 @@
 /* Keep native media proportions while adapting to window width and height. */
+.research30 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.research30 .site-header {
+  background: rgba(255, 255, 255, .28);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border-bottom-color: rgba(0, 0, 0, .07);
+}
+.research30 .site-header {
+  top: 12px;
+  width: min(1220px, calc(100% - 24px));
+  height: 58px;
+  margin: 12px auto 0;
+  border: 1px solid rgba(255, 255, 255, .75);
+  border-radius: 22px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9),
+    inset 0 -1px 0 rgba(255, 255, 255, .2), 0 6px 24px rgba(20, 30, 50, .08);
+}
+.research30 .site-header .nav {
+  width: calc(100% - 40px);
+  height: 56px;
+  min-height: 56px;
+}
+.research30 .nav-links a { color: #424245; transition: color .18s ease; }
+.research30 .nav-links a:hover { color: #0066cc; text-decoration: none; }
+.research30 .hero .studio-paper-title { font-weight: 500; text-wrap: balance; }
+.research30 .hero-intro p { color: #6e6e73; }
+.research30 .core-capabilities h2 { letter-spacing: -.6px; }
+.research30 .core-capabilities p { color: #6e6e73; line-height: 1.65; }
+.research30 .story-card { border-radius: 28px; }
+.research30 .story-card-heading h2 { font-weight: 600; }
+.research30 .story-arrow { transition: background .18s ease, transform .18s ease; }
+.research30 .story-arrow:hover:not(:disabled) { background: #dcdce1; }
+.research30 .story-arrow:active:not(:disabled) { transform: scale(.95); }
+.research30 .code-card .repository-link { border-radius: 24px; padding: 12px 20px; }
+.research30 .code-card .code-panel { border-radius: 20px; }
+.research30 .leaderboard th, .research30 .leaderboard td { border-color: #e8e8ed; }
+/* Frosted surfaces stay outside the footage so the recorded pixels remain clear. */
+.research30 .highlights-section {
+  background: radial-gradient(ellipse at 15% 15%, #e9eef5 0, transparent 55%),
+    radial-gradient(ellipse at 85% 90%, #eeebf4 0, transparent 55%), #f5f5f7;
+}
+.research30 .story-card {
+  background: rgba(255, 255, 255, .82);
+  border: 1px solid rgba(255, 255, 255, .85);
+  box-shadow: inset 0 1px 0 #fff, 0 8px 24px rgba(29, 29, 31, .035);
+}
+.research30 .story-arrow {
+  background: rgba(255, 255, 255, .24);
+  border: 1px solid rgba(255, 255, 255, .85);
+  box-shadow: inset 0 1px 0 #fff, 0 2px 8px rgba(29, 29, 31, .05);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+}
+.research30 .leaderboard-tasks {
+  background: rgba(235, 235, 240, .3);
+  border: 1px solid rgba(255, 255, 255, .8);
+  box-shadow: inset 0 1px 2px rgba(29, 29, 31, .04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.research30 .leaderboard-tasks button {
+  min-height: 40px;
+  color: #515158;
+  transition: background .18s ease, box-shadow .18s ease;
+}
+.research30 .leaderboard-tasks button[aria-pressed="true"] {
+  color: #1d1d1f;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 2px 7px rgba(20, 30, 50, .1), inset 0 1px 0 #fff;
+}
+.research30 .leaderboard-scroll {
+  border: 1px solid #e8e8ed;
+  border-radius: 20px;
+  background: #fff;
+}
+.research30 .leaderboard thead { background: #fafafc; }
+.research30 .leaderboard tbody tr:last-child { border-bottom: 0; }
+.research30 .leaderboard-best { background: #f3f6fa; }
+.research30 .story-dots {
+  padding-inline: 5px;
+  border: 1px solid rgba(255, 255, 255, .85);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .35);
+}
+.research30 .story-dots button { min-width: 34px; min-height: 40px; }
+.research30 .code-card .code-panel {
+  background: linear-gradient(135deg, #fafafc, #f1f2f6);
+  border: 1px solid #e8e8ed;
+  box-shadow: inset 0 1px 0 #fff, 0 8px 24px rgba(20, 30, 50, .035);
+}
+.research30 .code-heading button {
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 0, 0, .06);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .8);
+  color: #0066cc;
+}
+.research30 .code-heading button:hover { background: #fff; }
+.research30 .code-card pre { color: #424245; }
+.research30 a:focus-visible, .research30 button:focus-visible {
+  outline: 3px solid #0071e3;
+  outline-offset: 4px;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .research30 .site-header, .research30 .story-arrow { background: #fafafc; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .research30 .nav-links a, .research30 .story-arrow,
+  .research30 .leaderboard-tasks button { transition: none; }
+}
 .research30 { --width: 1180px; --gutter: clamp(16px, 2.4vw, 40px); }
 .research30 .hero .embedded-generation {
   width: min(100%, max(560px, calc(52svh * 20 / 7)));
@@ -33,6 +147,8 @@
   .research30 .story-card--render .story-card-body { display: block; }
 }
 @media (max-width: 700px) {
+  .research30 .site-header { top: 8px; height: 54px; margin-top: 8px; border-radius: 19px; }
+  .research30 .site-header .nav { width: calc(100% - 28px); height: 52px; min-height: 52px; }
   .research30 .hero .embedded-generation { width: 100%; }
   .research30 .hero .studio-wordmark { font-size: clamp(38px, 10vw, 48px); }
   .research30 .hero .studio-paper-title { font-size: clamp(18px, 4.5vw, 22px); }
