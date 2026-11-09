@@ -6,7 +6,7 @@ The current homepage uses a centered 1180px maximum content width and responsive
 
 The opening film is `assets/film88/generation-loop.mp4`: six retained garment cases alternate with six additions, covering twelve garments and twenty-four distinct trajectories. Each garment has a shared identity color across flattening and folding. Verified released endpoints precede scripted robot home returns, with twelve-frame dissolves confined to the home hold. This is a fixed-camera presentation replay at 2× source speed, not live throughput or autonomous home behavior. The 185.72-second film has 4,643 frames at 25 fps; `assets/film88/manifest.json` records case order and full-decode and loop-seam validation. Responsive browser checks cover 360, 390, 768, 1366, 1920, 2560 and 3840px widths, with no document-level horizontal overflow.
 
-The top navigation links directly to the [ClothDojo paper on arXiv](https://arxiv.org/abs/2611.01190), the RGB leaderboard, and the [GitHub code repository](https://github.com/clothdojo/clothdojo.github.io). There is one Code entry, with no duplicate GitHub link on the right.
+The floating translucent top navigation links directly to the [ClothDojo paper on arXiv](https://arxiv.org/abs/2611.01190) and the [GitHub code repository](https://github.com/clothdojo/clothdojo.github.io). The leaderboard remains in the page, without a navigation entry. `responsive-preview.css` also owns the system typography, frosted controls, rounded table and code surfaces, keyboard focus treatment and reduced-motion transition rules. Blur stays outside recorded footage; unsupported backdrop filtering uses opaque navigation and arrow surfaces.
 
 ## Structure
 
